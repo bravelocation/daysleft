@@ -88,6 +88,32 @@ class daysleftTests: XCTestCase {
         self.actualTestRun(3, endDay:11, currentDay:7, weekdaysOnly:true, expectedLength:5, expectedGone:3, expectedLeft:2)
     }
     
+    // Tests that the initial pre-millenium start date setting is detected
+    func testInitialSettingsDetectionBeforeMillenium() {
+        var model: DaysLeftModel = DaysLeftModel()
+        
+        var startComponents: NSDateComponents = NSDateComponents();
+        startComponents.year = 1999;
+        startComponents.month = 12;
+        startComponents.day = 31;
+        model.start = NSCalendar.autoupdatingCurrentCalendar().dateFromComponents(startComponents)!
+        
+        XCTAssertTrue(model.hasInitialValue, "hasInitialValue is correct on initialisation");
+    }
+    
+    // Tests that a post-millenium start date setting is detected
+    func testInitialSettingsDetectionAfterMillenium() {
+        var model: DaysLeftModel = DaysLeftModel()
+        
+        var startComponents: NSDateComponents = NSDateComponents();
+        startComponents.year = 2001;
+        startComponents.month = 12;
+        startComponents.day = 31;
+        model.start = NSCalendar.autoupdatingCurrentCalendar().dateFromComponents(startComponents)!
+        
+        XCTAssertFalse(model.hasInitialValue, "hasInitialValue is correct on non-initialisation");
+    }
+    
     // Helper method for running tests
     func actualTestRun(startDay: Int, endDay: Int, currentDay: Int, weekdaysOnly: Bool, expectedLength: Int, expectedGone: Int, expectedLeft: Int) {
         var model: DaysLeftModel = DaysLeftModel()

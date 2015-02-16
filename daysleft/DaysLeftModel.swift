@@ -8,15 +8,36 @@
 
 import Foundation
 
-public class DaysLeftModel
+public class DaysLeftModel: BLUserSettings
 {
-    public var start: NSDate = NSDate()
-    public var end: NSDate = NSDate()
-    public var title: String = ""
-    public var weekdaysOnly: Bool = false
+    public var start: NSDate {
+        get { return self.readObjectFromStore("start") as! NSDate }
+        set { self.writeObjectToStore(newValue, key: "start") }
+    }
     
-    public init() {
-        // Defualt initialiser
+    public var end: NSDate {
+        get { return self.readObjectFromStore("end") as! NSDate }
+        set { self.writeObjectToStore(newValue, key: "end") }
+    }
+
+    public var title: String {
+        get { return self.readObjectFromStore("title") as! String }
+        set { self.writeObjectToStore(newValue, key: "title") }
+    }
+
+    public var weekdaysOnly: Bool {
+        get { return self.readObjectFromStore("weekdaysOnly") as! Bool }
+        set { self.writeBoolToStore(newValue, key: "weekdaysOnly") }
+    }
+    
+    public var hasInitialValue: Bool {
+        get {
+            // Return true if the start date is before the millenium i.e. the default value
+            let dateStringFormatter = NSDateFormatter()
+            dateStringFormatter.dateFormat = "yyyy-MM-dd"
+            let millenium = dateStringFormatter.dateFromString("2000-01-01")
+            return self.DaysDifference(millenium!, endDate: self.start) < 0
+        }
     }
     
     public var DaysLength: Int {
