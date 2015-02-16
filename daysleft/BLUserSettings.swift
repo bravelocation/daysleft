@@ -30,6 +30,10 @@ public class BLUserSettings {
     public convenience init() {
         self.init(defaultPreferencesName: "DefaultPreferences")
     }
+    
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
  
     public func readObjectFromStore(key: String) -> AnyObject?{
         return self.appStandardUserDefaults.valueForKey(key)
