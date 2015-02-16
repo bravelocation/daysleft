@@ -12,6 +12,9 @@ public class BLUserSettings {
 
     private var appStandardUserDefaults: NSUserDefaults
     
+    /// Default initialiser for the class
+    ///
+    /// param: defaultPreferencesName The name of the plist file containing the default preferences
     public init(defaultPreferencesName: String) {
         // Setup the default preferences
         let defaultPrefsFile: NSURL? = NSBundle.mainBundle().URLForResource(defaultPreferencesName, withExtension: "plist")
@@ -27,18 +30,28 @@ public class BLUserSettings {
         store.synchronize()
     }
     
+    /// Convenience constructor using the value "DefaultPreferences" for the plist file
     public convenience init() {
         self.init(defaultPreferencesName: "DefaultPreferences")
     }
     
+    /// Destructor
     deinit {
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
  
+    /// Used to read an object setting from the user setting store
+    ///
+    /// param: key The key for the setting
+    /// returns: An AnyObject? value retrieved from the settings store
     public func readObjectFromStore(key: String) -> AnyObject?{
         return self.appStandardUserDefaults.valueForKey(key)
     }
-
+    
+    /// Used to write an Integer setting to the user setting store (local and the cloud)
+    ///
+    /// param: value The value for the setting
+    /// param: key The key for the setting
     public func writeIntegerToStore(value: Int, key: String) {
         // First write to local store
         self.appStandardUserDefaults.setInteger(value, forKey: key)
@@ -50,6 +63,10 @@ public class BLUserSettings {
         store.synchronize()
     }
     
+    /// Used to write an Boolean setting to the user setting store (local and the cloud)
+    ///
+    /// param: value The value for the setting
+    /// param: key The key for the setting
     public func writeBoolToStore(value: Bool, key: String) {
         // First write to local store
         self.appStandardUserDefaults.setBool(value, forKey: key)
@@ -61,6 +78,10 @@ public class BLUserSettings {
         store.synchronize()
     }
     
+    /// Used to write an Object setting to the user setting store (local and the cloud)
+    ///
+    /// param: value The value for the setting
+    /// param: key The key for the setting
     public func writeObjectToStore(value: AnyObject, key: String) {
         // First write to local store
         self.appStandardUserDefaults.setObject(value, forKey: key)
@@ -72,7 +93,10 @@ public class BLUserSettings {
         store.synchronize()
     }
     
-    public func updateKVStoreItems(notification: NSNotification) {
+    /// Used in the selector to handle incoming notifications of changes from the cloud
+    ///
+    /// param: notification The incoming notification
+    private func updateKVStoreItems(notification: NSNotification) {
         NSLog("Detected iCloud key-value storage change")
         
         // Get the list of keys that changed

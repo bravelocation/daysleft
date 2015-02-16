@@ -10,26 +10,32 @@ import Foundation
 
 public class DaysLeftModel: BLUserSettings
 {
+    
+    /// Property to get and set the start date
     public var start: NSDate {
         get { return self.readObjectFromStore("start") as! NSDate }
         set { self.writeObjectToStore(newValue, key: "start") }
     }
     
+    /// Property to get and set the end date
     public var end: NSDate {
         get { return self.readObjectFromStore("end") as! NSDate }
         set { self.writeObjectToStore(newValue, key: "end") }
     }
 
+    /// Property to get and set the title
     public var title: String {
         get { return self.readObjectFromStore("title") as! String }
         set { self.writeObjectToStore(newValue, key: "title") }
     }
 
+    /// Property to get and set the weekdays only flag
     public var weekdaysOnly: Bool {
         get { return self.readObjectFromStore("weekdaysOnly") as! Bool }
         set { self.writeBoolToStore(newValue, key: "weekdaysOnly") }
     }
     
+    /// Property to get whether we still have the initial values in the settings
     public var hasInitialValue: Bool {
         get {
             // Return true if the start date is before the millenium i.e. the default value
@@ -40,12 +46,17 @@ public class DaysLeftModel: BLUserSettings
         }
     }
     
+    /// Property to get the number of days between the start and the end
     public var DaysLength: Int {
         get {
             return self.DaysDifference(self.start, endDate: self.end) + 1; // Day count is inclusive, so add one to the total
         }
     }
-    
+
+    /// Finds the number of days to the end of the period from the current date
+    ///
+    /// param: currentDate The current date
+    /// returns: The number of days to the end from the current date
     public func DaysLeft(currentDate: NSDate) -> Int {
         // If the current date is before the start, return the length
         if (currentDate.compare(self.start) == NSComparisonResult.OrderedAscending) {
@@ -61,6 +72,10 @@ public class DaysLeftModel: BLUserSettings
         return self.DaysDifference(currentDate, endDate: self.end);
     }
     
+    /// Finds the number of days from the start of the period from the current date
+    ///
+    /// param: currentDate The current date
+    /// returns: The number of days from the start to the current date
     public func DaysGone(currentDate: NSDate) -> Int  {
         // If the current date is before the start, return 0
         if (currentDate.compare(self.start) == NSComparisonResult.OrderedAscending) {
