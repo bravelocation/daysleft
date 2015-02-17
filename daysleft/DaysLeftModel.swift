@@ -10,6 +10,7 @@ import Foundation
 
 public class DaysLeftModel: BLUserSettings
 {
+    public let currentFirstRun: Int = 1;
     
     /// Property to get and set the start date
     public var start: NSDate {
@@ -35,15 +36,10 @@ public class DaysLeftModel: BLUserSettings
         set { self.writeBoolToStore(newValue, key: "weekdaysOnly") }
     }
     
-    /// Property to get whether we still have the initial values in the settings
-    public var hasInitialValue: Bool {
-        get {
-            // Return true if the start date is before the millenium i.e. the default value
-            let dateStringFormatter = NSDateFormatter()
-            dateStringFormatter.dateFormat = "yyyy-MM-dd"
-            let millenium = dateStringFormatter.dateFromString("2000-01-01")
-            return self.DaysDifference(millenium!, endDate: self.start) < 0
-        }
+    /// Property to get and set the firstRun value
+    public var firstRun: Int {
+        get { return self.readObjectFromStore("firstRun") as! Int }
+        set { self.writeIntegerToStore(newValue, key: "firstRun") }
     }
     
     /// Property to get the number of days between the start and the end

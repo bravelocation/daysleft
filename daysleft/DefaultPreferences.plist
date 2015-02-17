@@ -4,6 +4,8 @@
 <dict>
 	<key>title</key>
 	<string></string>
+	<key>firstRun</key>
+	<integer>0</integer>
 	<key>weekdaysOnly</key>
 	<false/>
 	<key>end</key>
