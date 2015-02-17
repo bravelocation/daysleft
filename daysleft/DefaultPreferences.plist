@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>title</key>
-	<string></string>
+	<string>&quot;&quot;</string>
 	<key>firstRun</key>
 	<integer>0</integer>
 	<key>weekdaysOnly</key>

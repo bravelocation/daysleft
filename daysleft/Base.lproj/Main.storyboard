@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7515.2" systemVersion="14D72i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7512"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="daysleft" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,169 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Cu-F3-Vt7">
+                                <rect key="frame" x="200" y="200" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="Tma-Y3-Kpr"/>
+                                    <constraint firstAttribute="height" constant="200" id="prT-e1-F3H"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="68"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="days until Christmas" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B5u-71-7aF">
+                                <rect key="frame" x="16" y="408" width="568" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hFl-pt-p0h">
+                                <rect key="frame" x="530" y="550" width="54" height="30"/>
+                                <state key="normal" title="Change">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="z2b-N0-uxI" kind="show" identifier="settingsSegue" id="6gT-0X-6rY"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="1Cu-F3-Vt7" secondAttribute="centerX" id="0SF-jc-yz5"/>
+                            <constraint firstItem="hFl-pt-p0h" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="LIw-oT-JvV"/>
+                            <constraint firstAttribute="centerY" secondItem="1Cu-F3-Vt7" secondAttribute="centerY" id="SIL-Fp-NT5"/>
+                            <constraint firstItem="B5u-71-7aF" firstAttribute="top" secondItem="1Cu-F3-Vt7" secondAttribute="bottom" constant="8" id="ViD-S1-3gq"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="hFl-pt-p0h" secondAttribute="bottom" constant="20" id="WCd-q0-dSB"/>
+                            <constraint firstItem="B5u-71-7aF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="jEm-Vy-936"/>
+                            <constraint firstItem="B5u-71-7aF" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="qnL-F9-ca1"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="labelDaysLeft" destination="1Cu-F3-Vt7" id="kyQ-4w-7gb"/>
+                        <outlet property="labelTitle" destination="B5u-71-7aF" id="F0s-ex-nay"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="101" y="365"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="tAi-DP-7eA">
+            <objects>
+                <viewController storyboardIdentifier="SettingsView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="z2b-N0-uxI" customClass="SettingsViewController" customModule="daysleft" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="c3T-Pd-kx7"/>
+                        <viewControllerLayoutGuide type="bottom" id="xvE-HC-IrB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kXt-M9-RbJ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Count the days until ..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C0g-P5-LGc">
+                                <rect key="frame" x="16" y="16" width="568" height="20"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Christmas" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="uI3-ws-3To">
+                                <rect key="frame" x="16" y="44" width="568" height="30"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="textTitleChanged:" destination="z2b-N0-uxI" eventType="editingChanged" id="lfP-Zj-Y2X"/>
+                                </connections>
+                            </textField>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="tmN-wU-bPh">
+                                <rect key="frame" x="0.0" y="90" width="600" height="162"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="162" id="5r5-AR-Nju"/>
+                                </constraints>
+                                <date key="date" timeIntervalSinceReferenceDate="445875632.00009298">
+                                    <!--2015-02-17 14:20:32 +0000-->
+                                </date>
+                                <connections>
+                                    <action selector="dateEndChanged:" destination="z2b-N0-uxI" eventType="valueChanged" id="OHd-3b-KEK"/>
+                                </connections>
+                            </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start counting from" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zFr-hv-glV">
+                                <rect key="frame" x="16" y="260" width="568" height="17"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="eaR-eU-XfL">
+                                <rect key="frame" x="0.0" y="285" width="600" height="162"/>
+                                <date key="date" timeIntervalSinceReferenceDate="445875737.11938399">
+                                    <!--2015-02-17 14:22:17 +0000-->
+                                </date>
+                                <connections>
+                                    <action selector="dateStartChanged:" destination="z2b-N0-uxI" eventType="valueChanged" id="ynf-xm-kXB"/>
+                                </connections>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J0w-jG-0FG">
+                                <rect key="frame" x="547" y="550" width="37" height="30"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="MGc-eh-GcC" kind="unwind" unwindAction="returnFromSettings:" id="dZd-Aq-Hsn"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weekdays only?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lIB-pJ-cWT">
+                                <rect key="frame" x="16" y="555" width="132" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="132" id="jRo-gE-j5o"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wec-Rr-dJk">
+                                <rect key="frame" x="156" y="549" width="51" height="31"/>
+                                <connections>
+                                    <action selector="switchWeekdaysOnlyChanged:" destination="z2b-N0-uxI" eventType="valueChanged" id="6NG-Mk-vKu"/>
+                                </connections>
+                            </switch>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="tmN-wU-bPh" firstAttribute="leading" secondItem="kXt-M9-RbJ" secondAttribute="leadingMargin" constant="-16" id="83n-Wl-qnV"/>
+                            <constraint firstItem="uI3-ws-3To" firstAttribute="trailing" secondItem="kXt-M9-RbJ" secondAttribute="trailingMargin" id="B1Z-gJ-dgg"/>
+                            <constraint firstItem="eaR-eU-XfL" firstAttribute="top" secondItem="zFr-hv-glV" secondAttribute="bottom" constant="8" id="BTQ-cM-TNC"/>
+                            <constraint firstItem="J0w-jG-0FG" firstAttribute="trailing" secondItem="kXt-M9-RbJ" secondAttribute="trailingMargin" id="BoZ-KK-hmx"/>
+                            <constraint firstItem="Wec-Rr-dJk" firstAttribute="centerY" secondItem="J0w-jG-0FG" secondAttribute="centerY" id="ED0-IZ-VEd"/>
+                            <constraint firstItem="zFr-hv-glV" firstAttribute="trailing" secondItem="kXt-M9-RbJ" secondAttribute="trailingMargin" id="JRZ-k2-ypb"/>
+                            <constraint firstItem="zFr-hv-glV" firstAttribute="top" secondItem="tmN-wU-bPh" secondAttribute="bottom" constant="8" id="L91-He-jzx"/>
+                            <constraint firstItem="lIB-pJ-cWT" firstAttribute="leading" secondItem="kXt-M9-RbJ" secondAttribute="leadingMargin" id="LD0-DP-tB0"/>
+                            <constraint firstItem="C0g-P5-LGc" firstAttribute="top" secondItem="kXt-M9-RbJ" secondAttribute="topMargin" constant="16" id="V7e-6X-jCo"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="tmN-wU-bPh" secondAttribute="trailing" constant="-16" id="ZBJ-Xo-mNB"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="eaR-eU-XfL" secondAttribute="trailing" constant="-16" id="ZRU-rk-E0d"/>
+                            <constraint firstItem="zFr-hv-glV" firstAttribute="leading" secondItem="kXt-M9-RbJ" secondAttribute="leadingMargin" id="cCh-aw-nyH"/>
+                            <constraint firstItem="uI3-ws-3To" firstAttribute="leading" secondItem="kXt-M9-RbJ" secondAttribute="leadingMargin" id="ftj-V2-Chl"/>
+                            <constraint firstItem="eaR-eU-XfL" firstAttribute="leading" secondItem="kXt-M9-RbJ" secondAttribute="leadingMargin" constant="-16" id="hvq-td-Rek"/>
+                            <constraint firstItem="xvE-HC-IrB" firstAttribute="top" secondItem="J0w-jG-0FG" secondAttribute="bottom" constant="20" id="iM6-j6-1dk"/>
+                            <constraint firstItem="C0g-P5-LGc" firstAttribute="trailing" secondItem="kXt-M9-RbJ" secondAttribute="trailingMargin" id="inx-OT-72l"/>
+                            <constraint firstItem="J0w-jG-0FG" firstAttribute="trailing" secondItem="kXt-M9-RbJ" secondAttribute="trailingMargin" id="irZ-7W-g34"/>
+                            <constraint firstItem="uI3-ws-3To" firstAttribute="top" secondItem="C0g-P5-LGc" secondAttribute="bottom" constant="8" id="iw0-Zr-aD2"/>
+                            <constraint firstItem="Wec-Rr-dJk" firstAttribute="leading" secondItem="lIB-pJ-cWT" secondAttribute="trailing" constant="8" id="jWn-cj-fRS"/>
+                            <constraint firstItem="lIB-pJ-cWT" firstAttribute="leading" secondItem="kXt-M9-RbJ" secondAttribute="leadingMargin" id="n3Z-AC-ivs"/>
+                            <constraint firstItem="tmN-wU-bPh" firstAttribute="top" secondItem="uI3-ws-3To" secondAttribute="bottom" constant="16" id="pWG-v0-pmb"/>
+                            <constraint firstItem="C0g-P5-LGc" firstAttribute="leading" secondItem="kXt-M9-RbJ" secondAttribute="leadingMargin" id="tl2-P2-vbp"/>
+                            <constraint firstItem="Wec-Rr-dJk" firstAttribute="centerY" secondItem="lIB-pJ-cWT" secondAttribute="centerY" id="y79-Cm-kJu"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="dateEnd" destination="tmN-wU-bPh" id="0OZ-FF-Mvq"/>
+                        <outlet property="dateStart" destination="eaR-eU-XfL" id="cQc-vf-Nus"/>
+                        <outlet property="switchWeekdaysOnly" destination="Wec-Rr-dJk" id="o0b-4w-YpR"/>
+                        <outlet property="textTitle" destination="uI3-ws-3To" id="UP5-Zk-BdO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GYY-Hv-8Lu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="MGc-eh-GcC" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="752" y="369"/>
         </scene>
     </scenes>
 </document>

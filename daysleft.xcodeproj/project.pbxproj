@@ -11,11 +11,11 @@
 		52CFBF001A8B631B005234FB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CFBEFF1A8B631B005234FB /* ViewController.swift */; };
 		52CFBF031A8B631B005234FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52CFBF011A8B631B005234FB /* Main.storyboard */; };
 		52CFBF051A8B631B005234FB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52CFBF041A8B631B005234FB /* Images.xcassets */; };
-		52CFBF081A8B631B005234FB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52CFBF061A8B631B005234FB /* LaunchScreen.xib */; };
 		52CFBF141A8B631B005234FB /* daysleftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CFBF131A8B631B005234FB /* daysleftTests.swift */; };
 		52CFBF1E1A8B642C005234FB /* DaysLeftModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CFBF1D1A8B642C005234FB /* DaysLeftModel.swift */; };
 		52FAB1191A9231970039691E /* BLUserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FAB1181A9231970039691E /* BLUserSettings.swift */; };
 		52FAB11C1A9240490039691E /* DefaultPreferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52FAB11B1A9240490039691E /* DefaultPreferences.plist */; };
+		52FAB11E1A9381B70039691E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FAB11D1A9381B70039691E /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +35,6 @@
 		52CFBEFF1A8B631B005234FB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		52CFBF021A8B631B005234FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		52CFBF041A8B631B005234FB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		52CFBF071A8B631B005234FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		52CFBF0D1A8B631B005234FB /* daysleftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = daysleftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		52CFBF121A8B631B005234FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52CFBF131A8B631B005234FB /* daysleftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = daysleftTests.swift; sourceTree = "<group>"; };
@@ -43,6 +42,7 @@
 		52FAB1181A9231970039691E /* BLUserSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BLUserSettings.swift; sourceTree = "<group>"; };
 		52FAB11A1A923F500039691E /* daysleft.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = daysleft.entitlements; sourceTree = "<group>"; };
 		52FAB11B1A9240490039691E /* DefaultPreferences.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DefaultPreferences.plist; sourceTree = "<group>"; };
+		52FAB11D1A9381B70039691E /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,11 +89,11 @@
 				52CFBEFF1A8B631B005234FB /* ViewController.swift */,
 				52CFBF011A8B631B005234FB /* Main.storyboard */,
 				52CFBF041A8B631B005234FB /* Images.xcassets */,
-				52CFBF061A8B631B005234FB /* LaunchScreen.xib */,
 				52CFBEFB1A8B631B005234FB /* Supporting Files */,
 				52CFBF1D1A8B642C005234FB /* DaysLeftModel.swift */,
 				52FAB1181A9231970039691E /* BLUserSettings.swift */,
 				52FAB11B1A9240490039691E /* DefaultPreferences.plist */,
+				52FAB11D1A9381B70039691E /* SettingsViewController.swift */,
 			);
 			path = daysleft;
 			sourceTree = "<group>";
@@ -211,7 +211,6 @@
 			files = (
 				52CFBF031A8B631B005234FB /* Main.storyboard in Resources */,
 				52FAB11C1A9240490039691E /* DefaultPreferences.plist in Resources */,
-				52CFBF081A8B631B005234FB /* LaunchScreen.xib in Resources */,
 				52CFBF051A8B631B005234FB /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -233,6 +232,7 @@
 				52CFBF001A8B631B005234FB /* ViewController.swift in Sources */,
 				52FAB1191A9231970039691E /* BLUserSettings.swift in Sources */,
 				52CFBEFE1A8B631B005234FB /* AppDelegate.swift in Sources */,
+				52FAB11E1A9381B70039691E /* SettingsViewController.swift in Sources */,
 				52CFBF1E1A8B642C005234FB /* DaysLeftModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -262,14 +262,6 @@
 				52CFBF021A8B631B005234FB /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		52CFBF061A8B631B005234FB /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				52CFBF071A8B631B005234FB /* Base */,
-			);
-			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -367,6 +359,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = daysleft/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -382,6 +375,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = daysleft/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
