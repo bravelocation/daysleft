@@ -8,7 +8,7 @@
 
 import UIKit
 import XCTest
-import daysleft
+import daysleftlibrary
 
 class daysleftTests: XCTestCase {
     

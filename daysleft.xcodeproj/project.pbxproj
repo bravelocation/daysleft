@@ -7,18 +7,42 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5295EDDB1A94AE53007EF7E7 /* daysleftlibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5295EDD01A94AE53007EF7E7 /* daysleftlibrary.framework */; };
+		5295EDE71A94AE53007EF7E7 /* daysleftlibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5295EDD01A94AE53007EF7E7 /* daysleftlibrary.framework */; };
+		5295EDE91A94AE53007EF7E7 /* daysleftlibrary.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5295EDD01A94AE53007EF7E7 /* daysleftlibrary.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5295EDF01A94AF83007EF7E7 /* daysleftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CFBF131A8B631B005234FB /* daysleftTests.swift */; };
+		5295EDF11A94AFA7007EF7E7 /* DaysLeftModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CFBF1D1A8B642C005234FB /* DaysLeftModel.swift */; };
+		5295EDF21A94AFA7007EF7E7 /* BLUserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FAB1181A9231970039691E /* BLUserSettings.swift */; };
 		52CFBEFE1A8B631B005234FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CFBEFD1A8B631B005234FB /* AppDelegate.swift */; };
 		52CFBF001A8B631B005234FB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CFBEFF1A8B631B005234FB /* ViewController.swift */; };
 		52CFBF031A8B631B005234FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52CFBF011A8B631B005234FB /* Main.storyboard */; };
 		52CFBF051A8B631B005234FB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52CFBF041A8B631B005234FB /* Images.xcassets */; };
-		52CFBF141A8B631B005234FB /* daysleftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CFBF131A8B631B005234FB /* daysleftTests.swift */; };
-		52CFBF1E1A8B642C005234FB /* DaysLeftModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CFBF1D1A8B642C005234FB /* DaysLeftModel.swift */; };
-		52FAB1191A9231970039691E /* BLUserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FAB1181A9231970039691E /* BLUserSettings.swift */; };
 		52FAB11C1A9240490039691E /* DefaultPreferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52FAB11B1A9240490039691E /* DefaultPreferences.plist */; };
 		52FAB11E1A9381B70039691E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FAB11D1A9381B70039691E /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		5295EDDC1A94AE53007EF7E7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 52CFBEF01A8B631B005234FB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5295EDCF1A94AE53007EF7E7;
+			remoteInfo = daysleftlibrary;
+		};
+		5295EDDE1A94AE53007EF7E7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 52CFBEF01A8B631B005234FB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 52CFBEF71A8B631B005234FB;
+			remoteInfo = daysleft;
+		};
+		5295EDE51A94AE53007EF7E7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 52CFBEF01A8B631B005234FB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5295EDCF1A94AE53007EF7E7;
+			remoteInfo = daysleftlibrary;
+		};
 		52CFBF0E1A8B631B005234FB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 52CFBEF01A8B631B005234FB /* Project object */;
@@ -28,7 +52,25 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		5295EDE81A94AE53007EF7E7 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5295EDE91A94AE53007EF7E7 /* daysleftlibrary.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		5295EDD01A94AE53007EF7E7 /* daysleftlibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = daysleftlibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5295EDD31A94AE53007EF7E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5295EDDA1A94AE53007EF7E7 /* daysleftlibraryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = daysleftlibraryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5295EDE21A94AE53007EF7E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52CFBEF81A8B631B005234FB /* daysleft.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = daysleft.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52CFBEFC1A8B631B005234FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52CFBEFD1A8B631B005234FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -37,19 +79,35 @@
 		52CFBF041A8B631B005234FB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		52CFBF0D1A8B631B005234FB /* daysleftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = daysleftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		52CFBF121A8B631B005234FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		52CFBF131A8B631B005234FB /* daysleftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = daysleftTests.swift; sourceTree = "<group>"; };
-		52CFBF1D1A8B642C005234FB /* DaysLeftModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DaysLeftModel.swift; sourceTree = "<group>"; };
-		52FAB1181A9231970039691E /* BLUserSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BLUserSettings.swift; sourceTree = "<group>"; };
+		52CFBF131A8B631B005234FB /* daysleftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = daysleftTests.swift; path = ../daysleftTests/daysleftTests.swift; sourceTree = "<group>"; };
+		52CFBF1D1A8B642C005234FB /* DaysLeftModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DaysLeftModel.swift; path = ../daysleft/DaysLeftModel.swift; sourceTree = "<group>"; };
+		52FAB1181A9231970039691E /* BLUserSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BLUserSettings.swift; path = ../daysleft/BLUserSettings.swift; sourceTree = "<group>"; };
 		52FAB11A1A923F500039691E /* daysleft.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = daysleft.entitlements; sourceTree = "<group>"; };
 		52FAB11B1A9240490039691E /* DefaultPreferences.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DefaultPreferences.plist; sourceTree = "<group>"; };
 		52FAB11D1A9381B70039691E /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		5295EDCC1A94AE53007EF7E7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5295EDD71A94AE53007EF7E7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5295EDDB1A94AE53007EF7E7 /* daysleftlibrary.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		52CFBEF51A8B631B005234FB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5295EDE71A94AE53007EF7E7 /* daysleftlibrary.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,11 +121,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5295EDD11A94AE53007EF7E7 /* daysleftlibrary */ = {
+			isa = PBXGroup;
+			children = (
+				52CFBF1D1A8B642C005234FB /* DaysLeftModel.swift */,
+				52FAB1181A9231970039691E /* BLUserSettings.swift */,
+				5295EDD21A94AE53007EF7E7 /* Supporting Files */,
+			);
+			path = daysleftlibrary;
+			sourceTree = "<group>";
+		};
+		5295EDD21A94AE53007EF7E7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5295EDD31A94AE53007EF7E7 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5295EDE01A94AE53007EF7E7 /* daysleftlibraryTests */ = {
+			isa = PBXGroup;
+			children = (
+				52CFBF131A8B631B005234FB /* daysleftTests.swift */,
+				5295EDE11A94AE53007EF7E7 /* Supporting Files */,
+			);
+			path = daysleftlibraryTests;
+			sourceTree = "<group>";
+		};
+		5295EDE11A94AE53007EF7E7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5295EDE21A94AE53007EF7E7 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		52CFBEEF1A8B631B005234FB = {
 			isa = PBXGroup;
 			children = (
 				52CFBEFA1A8B631B005234FB /* daysleft */,
 				52CFBF101A8B631B005234FB /* daysleftTests */,
+				5295EDD11A94AE53007EF7E7 /* daysleftlibrary */,
+				5295EDE01A94AE53007EF7E7 /* daysleftlibraryTests */,
 				52CFBEF91A8B631B005234FB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -77,6 +172,8 @@
 			children = (
 				52CFBEF81A8B631B005234FB /* daysleft.app */,
 				52CFBF0D1A8B631B005234FB /* daysleftTests.xctest */,
+				5295EDD01A94AE53007EF7E7 /* daysleftlibrary.framework */,
+				5295EDDA1A94AE53007EF7E7 /* daysleftlibraryTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -90,8 +187,6 @@
 				52CFBF011A8B631B005234FB /* Main.storyboard */,
 				52CFBF041A8B631B005234FB /* Images.xcassets */,
 				52CFBEFB1A8B631B005234FB /* Supporting Files */,
-				52CFBF1D1A8B642C005234FB /* DaysLeftModel.swift */,
-				52FAB1181A9231970039691E /* BLUserSettings.swift */,
 				52FAB11B1A9240490039691E /* DefaultPreferences.plist */,
 				52FAB11D1A9381B70039691E /* SettingsViewController.swift */,
 			);
@@ -109,7 +204,6 @@
 		52CFBF101A8B631B005234FB /* daysleftTests */ = {
 			isa = PBXGroup;
 			children = (
-				52CFBF131A8B631B005234FB /* daysleftTests.swift */,
 				52CFBF111A8B631B005234FB /* Supporting Files */,
 			);
 			path = daysleftTests;
@@ -125,7 +219,54 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		5295EDCD1A94AE53007EF7E7 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		5295EDCF1A94AE53007EF7E7 /* daysleftlibrary */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5295EDEE1A94AE53007EF7E7 /* Build configuration list for PBXNativeTarget "daysleftlibrary" */;
+			buildPhases = (
+				5295EDCB1A94AE53007EF7E7 /* Sources */,
+				5295EDCC1A94AE53007EF7E7 /* Frameworks */,
+				5295EDCD1A94AE53007EF7E7 /* Headers */,
+				5295EDCE1A94AE53007EF7E7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = daysleftlibrary;
+			productName = daysleftlibrary;
+			productReference = 5295EDD01A94AE53007EF7E7 /* daysleftlibrary.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		5295EDD91A94AE53007EF7E7 /* daysleftlibraryTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5295EDEF1A94AE53007EF7E7 /* Build configuration list for PBXNativeTarget "daysleftlibraryTests" */;
+			buildPhases = (
+				5295EDD61A94AE53007EF7E7 /* Sources */,
+				5295EDD71A94AE53007EF7E7 /* Frameworks */,
+				5295EDD81A94AE53007EF7E7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5295EDDD1A94AE53007EF7E7 /* PBXTargetDependency */,
+				5295EDDF1A94AE53007EF7E7 /* PBXTargetDependency */,
+			);
+			name = daysleftlibraryTests;
+			productName = daysleftlibraryTests;
+			productReference = 5295EDDA1A94AE53007EF7E7 /* daysleftlibraryTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		52CFBEF71A8B631B005234FB /* daysleft */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 52CFBF171A8B631B005234FB /* Build configuration list for PBXNativeTarget "daysleft" */;
@@ -133,10 +274,12 @@
 				52CFBEF41A8B631B005234FB /* Sources */,
 				52CFBEF51A8B631B005234FB /* Frameworks */,
 				52CFBEF61A8B631B005234FB /* Resources */,
+				5295EDE81A94AE53007EF7E7 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				5295EDE61A94AE53007EF7E7 /* PBXTargetDependency */,
 			);
 			name = daysleft;
 			productName = daysleft;
@@ -170,6 +313,14 @@
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "Brave Location Software";
 				TargetAttributes = {
+					5295EDCF1A94AE53007EF7E7 = {
+						CreatedOnToolsVersion = 6.3;
+						DevelopmentTeam = W8B3V597R9;
+					};
+					5295EDD91A94AE53007EF7E7 = {
+						CreatedOnToolsVersion = 6.3;
+						TestTargetID = 52CFBEF71A8B631B005234FB;
+					};
 					52CFBEF71A8B631B005234FB = {
 						CreatedOnToolsVersion = 6.3;
 						DevelopmentTeam = W8B3V597R9;
@@ -200,11 +351,27 @@
 			targets = (
 				52CFBEF71A8B631B005234FB /* daysleft */,
 				52CFBF0C1A8B631B005234FB /* daysleftTests */,
+				5295EDCF1A94AE53007EF7E7 /* daysleftlibrary */,
+				5295EDD91A94AE53007EF7E7 /* daysleftlibraryTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		5295EDCE1A94AE53007EF7E7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5295EDD81A94AE53007EF7E7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		52CFBEF61A8B631B005234FB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -225,15 +392,30 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		5295EDCB1A94AE53007EF7E7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5295EDF11A94AFA7007EF7E7 /* DaysLeftModel.swift in Sources */,
+				5295EDF21A94AFA7007EF7E7 /* BLUserSettings.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5295EDD61A94AE53007EF7E7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5295EDF01A94AF83007EF7E7 /* daysleftTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		52CFBEF41A8B631B005234FB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				52CFBF001A8B631B005234FB /* ViewController.swift in Sources */,
-				52FAB1191A9231970039691E /* BLUserSettings.swift in Sources */,
 				52CFBEFE1A8B631B005234FB /* AppDelegate.swift in Sources */,
 				52FAB11E1A9381B70039691E /* SettingsViewController.swift in Sources */,
-				52CFBF1E1A8B642C005234FB /* DaysLeftModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,13 +423,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52CFBF141A8B631B005234FB /* daysleftTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		5295EDDD1A94AE53007EF7E7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5295EDCF1A94AE53007EF7E7 /* daysleftlibrary */;
+			targetProxy = 5295EDDC1A94AE53007EF7E7 /* PBXContainerItemProxy */;
+		};
+		5295EDDF1A94AE53007EF7E7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 52CFBEF71A8B631B005234FB /* daysleft */;
+			targetProxy = 5295EDDE1A94AE53007EF7E7 /* PBXContainerItemProxy */;
+		};
+		5295EDE61A94AE53007EF7E7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5295EDCF1A94AE53007EF7E7 /* daysleftlibrary */;
+			targetProxy = 5295EDE51A94AE53007EF7E7 /* PBXContainerItemProxy */;
+		};
 		52CFBF0F1A8B631B005234FB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 52CFBEF71A8B631B005234FB /* daysleft */;
@@ -267,6 +463,84 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		5295EDEA1A94AE53007EF7E7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = daysleftlibrary/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		5295EDEB1A94AE53007EF7E7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = daysleftlibrary/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		5295EDEC1A94AE53007EF7E7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = daysleftlibraryTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/daysleft.app/daysleft";
+			};
+			name = Debug;
+		};
+		5295EDED1A94AE53007EF7E7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = daysleftlibraryTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/daysleft.app/daysleft";
+			};
+			name = Release;
+		};
 		52CFBF151A8B631B005234FB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -419,6 +693,22 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		5295EDEE1A94AE53007EF7E7 /* Build configuration list for PBXNativeTarget "daysleftlibrary" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5295EDEA1A94AE53007EF7E7 /* Debug */,
+				5295EDEB1A94AE53007EF7E7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		5295EDEF1A94AE53007EF7E7 /* Build configuration list for PBXNativeTarget "daysleftlibraryTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5295EDEC1A94AE53007EF7E7 /* Debug */,
+				5295EDED1A94AE53007EF7E7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		52CFBEF31A8B631B005234FB /* Build configuration list for PBXProject "daysleft" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
