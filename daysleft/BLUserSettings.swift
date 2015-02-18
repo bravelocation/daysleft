@@ -15,12 +15,12 @@ public class BLUserSettings {
     /// Default initialiser for the class
     ///
     /// param: defaultPreferencesName The name of the plist file containing the default preferences
-    public init(defaultPreferencesName: String) {
+    public init(defaultPreferencesName: String, suiteName: String) {
         // Setup the default preferences
         let defaultPrefsFile: NSURL? = NSBundle.mainBundle().URLForResource(defaultPreferencesName, withExtension: "plist")
         let defaultPrefs: NSDictionary? = NSDictionary(contentsOfURL:defaultPrefsFile!)
         
-        self.appStandardUserDefaults = NSUserDefaults()
+        self.appStandardUserDefaults = NSUserDefaults(suiteName: suiteName)!
         self.appStandardUserDefaults.registerDefaults(defaultPrefs as! [NSObject : AnyObject]);
         
         // Setup the iCloud store
@@ -32,7 +32,7 @@ public class BLUserSettings {
     
     /// Convenience constructor using the value "DefaultPreferences" for the plist file
     public convenience init() {
-        self.init(defaultPreferencesName: "DefaultPreferences")
+        self.init(defaultPreferencesName: "DefaultPreferences", suiteName: "group.bravelocation.daysleft")
     }
     
     /// Destructor
