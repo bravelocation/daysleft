@@ -14,6 +14,8 @@ let π:CGFloat = CGFloat(M_PI)
     
     @IBInspectable public var counter: Int = 5
     @IBInspectable public var maximumValue: Int = 8
+    @IBInspectable public var arcWidth: CGFloat = 76
+    @IBInspectable public var outlineWidth: CGFloat = 5.0
     @IBInspectable public var outlineColor: UIColor = UIColor.blueColor()
     @IBInspectable public var counterColor: UIColor = UIColor.orangeColor()
     
@@ -24,16 +26,13 @@ let π:CGFloat = CGFloat(M_PI)
         // Calculate the radius based on the max dimension of the view
         let radius: CGFloat = max(bounds.width, bounds.height)
         
-        // Define the thickness of the arc
-        let arcWidth: CGFloat = 76
-        
         // Define the start and end angles for the arc
         let startAngle: CGFloat = 3 * π / 4
         let endAngle: CGFloat = π / 4
         
         // Create a path based on the center point, radius, and angles you just defined
         var path = UIBezierPath(arcCenter: center,
-            radius: bounds.width/2 - arcWidth/2,
+            radius: bounds.width/2 - self.arcWidth/2,
             startAngle: startAngle,
             endAngle: endAngle,
             clockwise: true)
@@ -57,14 +56,14 @@ let π:CGFloat = CGFloat(M_PI)
         
         // Draw the outer arc
         var outlinePath = UIBezierPath(arcCenter: center,
-            radius: bounds.width/2 - 2.5,
+            radius: bounds.width/2 - self.outlineWidth/2,
             startAngle: startAngle,
             endAngle: outlineEndAngle,
             clockwise: true)
         
         // Draw the inner arc
         outlinePath.addArcWithCenter(center,
-            radius: bounds.width/2 - arcWidth + 2.5,
+            radius: bounds.width/2 - arcWidth + self.outlineWidth/2,
             startAngle: outlineEndAngle,
             endAngle: startAngle,
             clockwise: false)
@@ -73,7 +72,7 @@ let π:CGFloat = CGFloat(M_PI)
         outlinePath.closePath()
         
         outlineColor.setStroke()
-        outlinePath.lineWidth = 5.0
+        outlinePath.lineWidth = self.outlineWidth
         outlinePath.stroke()
     }
 }

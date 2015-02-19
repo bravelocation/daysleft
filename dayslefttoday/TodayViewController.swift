@@ -13,14 +13,12 @@ import daysleftlibrary
 class TodayViewController: UIViewController, NCWidgetProviding {
         
     @IBOutlet weak var labelNumberTitle: UILabel!
+    @IBOutlet weak var counterView: CounterView!
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        self.preferredContentSize = CGSizeMake(0, 100)
         self.updateViewData()
-    }
-    
-    func widgetMarginInsetsForProposedMarginInsets (defaultMarginInsets: UIEdgeInsets) -> (UIEdgeInsets) {
-        return UIEdgeInsetsZero
     }
     
     func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)!) {
@@ -29,11 +27,17 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     }
     
     private func updateViewData() {
+        let now: NSDate = NSDate()
         let model: DaysLeftModel = DaysLeftModel()
-        let daysLeft: Int = model.DaysLeft(NSDate())
+        let daysLeft: Int = model.DaysLeft(now)
         let titleSuffix: String = (count(model.title) == 0 ? "left" : "until " + model.title)
         let titleDays: String = model.weekdaysOnly ? "weekdays" : "days"
         
         self.labelNumberTitle.text = String(format: "%d %@ %@", daysLeft, titleDays, titleSuffix)
+                
+        self.counterView.counter = model.DaysGone(now)
+        self.counterView.maximumValue = model.DaysLength
+        self.counterView.setNeedsDisplay()
+
     }
 }
