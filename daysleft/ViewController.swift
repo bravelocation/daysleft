@@ -13,6 +13,10 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var labelDaysLeft: UILabel!
     @IBOutlet weak var labelTitle: UILabel!
+    @IBOutlet weak var counterView: CounterView!
+    @IBOutlet weak var labelStartDate: UILabel!
+    @IBOutlet weak var labelEndDate: UILabel!
+    @IBOutlet weak var labelPercentageDone: UILabel!
     
     let model: DaysLeftModel = DaysLeftModel()
     
@@ -34,6 +38,10 @@ class ViewController: UIViewController {
 
         self.updateViewFromModel()
     }
+    
+    override func viewDidAppear(animated: Bool) {
+        self.updateViewFromModel()
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -50,6 +58,24 @@ class ViewController: UIViewController {
         let titleSuffix: String = (count(self.model.title) == 0 ? "left" : "until " + self.model.title)
         let titleDays: String = self.model.weekdaysOnly ? "weekdays" : "days"
         self.labelTitle.text = String(format: "%@ %@", titleDays, titleSuffix)
+
+        var shortDateFormatter = NSDateFormatter()
+        shortDateFormatter.dateFormat = "EEE d MMM"
+        
+        self.labelStartDate.text = String(format: "%@", shortDateFormatter.stringFromDate(self.model.start))
+        self.labelEndDate.text = String(format: "%@", shortDateFormatter.stringFromDate(self.model.end))
+        
+        if (self.model.DaysLength == 0) {
+            self.labelPercentageDone.text = ""
+        }
+        else {
+            let percentageDone: Float = (Float(self.model.DaysGone(now)) * 100.0) / Float(self.model.DaysLength)
+            self.labelPercentageDone.text = String(format:"%3.0f%% done", percentageDone)
+        }
+        
+        self.counterView.counter = self.model.DaysGone(now)
+        self.counterView.maximumValue = self.model.DaysLength
+        self.counterView.setNeedsDisplay()
     }
 
 }
