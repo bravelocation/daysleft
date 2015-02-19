@@ -7,18 +7,17 @@
 //  Based heavily on an article at http://www.raywenderlich.com/90690/modern-core-graphics-with-swift-part-1
 
 import UIKit
-import daysleftlibrary
 
 let π:CGFloat = CGFloat(M_PI)
 
-@IBDesignable class CounterView: UIView {
+@IBDesignable public class CounterView: UIView {
     
-    @IBInspectable var counter: Int = 5
-    @IBInspectable var maximumValue: Int = 8
-    @IBInspectable var outlineColor: UIColor = UIColor.blueColor()
-    @IBInspectable var counterColor: UIColor = UIColor.orangeColor()
+    @IBInspectable public var counter: Int = 5
+    @IBInspectable public var maximumValue: Int = 8
+    @IBInspectable public var outlineColor: UIColor = UIColor.blueColor()
+    @IBInspectable public var counterColor: UIColor = UIColor.orangeColor()
     
-    override func drawRect(rect: CGRect) {
+    override public func drawRect(rect: CGRect) {
         // Define the center point of the view where you’ll rotate the arc around
         let center = CGPoint(x:bounds.width/2, y: bounds.height/2)
         
