@@ -876,6 +876,7 @@
 				5295EDEB1A94AE53007EF7E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5295EDEF1A94AE53007EF7E7 /* Build configuration list for PBXNativeTarget "daysleftlibraryTests" */ = {
 			isa = XCConfigurationList;
@@ -884,6 +885,7 @@
 				5295EDED1A94AE53007EF7E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5295EE061A94B398007EF7E7 /* Build configuration list for PBXNativeTarget "dayslefttoday" */ = {
 			isa = XCConfigurationList;
@@ -892,6 +894,7 @@
 				5295EE081A94B398007EF7E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		52CFBEF31A8B631B005234FB /* Build configuration list for PBXProject "daysleft" */ = {
 			isa = XCConfigurationList;

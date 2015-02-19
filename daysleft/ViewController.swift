@@ -35,20 +35,13 @@ class ViewController: UIViewController {
             // Save the first run once working
             self.model.firstRun = self.model.currentFirstRun
         }
-
-        self.updateViewFromModel()
     }
     
     override func viewDidAppear(animated: Bool) {
         self.updateViewFromModel()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
     
     @IBAction func returnFromSettings(segue: UIStoryboardSegue) {
-        self.updateViewFromModel()
     }
     
     func updateViewFromModel() {
