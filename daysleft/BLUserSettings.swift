@@ -25,7 +25,7 @@ public class BLUserSettings {
         
         // Setup the iCloud store
         var store: NSUbiquitousKeyValueStore = NSUbiquitousKeyValueStore.defaultStore()
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateKVStoreItems", name: NSUbiquitousKeyValueStoreDidChangeExternallyNotification, object: store)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateKVStoreItems:", name: NSUbiquitousKeyValueStoreDidChangeExternallyNotification, object: store)
         
         store.synchronize()
     }
@@ -96,6 +96,7 @@ public class BLUserSettings {
     /// Used in the selector to handle incoming notifications of changes from the cloud
     ///
     /// param: notification The incoming notification
+    @objc
     private func updateKVStoreItems(notification: NSNotification) {
         NSLog("Detected iCloud key-value storage change")
         
