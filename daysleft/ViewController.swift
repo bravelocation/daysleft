@@ -35,6 +35,22 @@ class ViewController: UIViewController {
             // Save the first run once working
             self.model.firstRun = self.model.currentFirstRun
         }
+        
+        // Customise the nav bar
+        let navBar = self.navigationController?.navigationBar
+        navBar!.barTintColor = UIColor(red: 56/255, green: 111/255, blue: 29/255, alpha: 1.0)
+        navBar!.tintColor = UIColor.whiteColor()
+        navBar!.translucent = false
+        
+        let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        navBar!.titleTextAttributes = titleDict as? [NSObject : AnyObject]
+        
+        /*
+        [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
+            [DOUIColor navBarTitleColor], NSForegroundColorAttributeName,
+            [DOUIColor navBarTitleFont], NSFontAttributeName,
+            nil]];
+*/
     }
     
     override func viewDidAppear(animated: Bool) {
