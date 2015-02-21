@@ -9,7 +9,7 @@
 import UIKit
 import daysleftlibrary
 
-class SettingsViewController: UIViewController, UITextFieldDelegate {
+class SettingsViewController: UITableViewController, UITextFieldDelegate {
     
     @IBOutlet weak var textTitle: UITextField!
     @IBOutlet weak var textStart: UITextField!
@@ -68,7 +68,11 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func buttonStartTodayTouchUp(sender: AnyObject) {
+        self.model.weekdaysOnly = false
+        self.switchWeekdaysOnly.on = false
+        
         self.startDatePicker.date = NSDate()
+        self.endDatePicker.date = NSCalendar.currentCalendar().dateByAddingUnit(NSCalendarUnit.DayCalendarUnit, value: 30, toDate: self.model.start, options: nil)!
         self.validateAndSaveDates()
     }
     

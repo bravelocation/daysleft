@@ -122,11 +122,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "daysleft/SettingsViewController.swift"
-            timestampString = "446212692.650391"
+            timestampString = "446219269.044676"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
             landmarkName = "validateAndSaveDates()"
             landmarkType = "5">
          </BreakpointContent>

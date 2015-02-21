@@ -28,7 +28,7 @@ class ViewController: UIViewController {
         {
             // If it is initialise the model dat
             self.model.start = NSDate()
-            self.model.end = NSCalendar.currentCalendar().dateByAddingUnit(NSCalendarUnit.DayCalendarUnit, value: 11, toDate: self.model.start, options: nil)!
+            self.model.end = NSCalendar.currentCalendar().dateByAddingUnit(NSCalendarUnit.DayCalendarUnit, value: 30, toDate: self.model.start, options: nil)!
             self.model.title = ""
             self.model.weekdaysOnly = false
             
