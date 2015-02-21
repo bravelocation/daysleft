@@ -44,13 +44,6 @@ class ViewController: UIViewController {
         
         let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor()]
         navBar!.titleTextAttributes = titleDict as? [NSObject : AnyObject]
-        
-        /*
-        [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
-            [DOUIColor navBarTitleColor], NSForegroundColorAttributeName,
-            [DOUIColor navBarTitleFont], NSFontAttributeName,
-            nil]];
-*/
     }
     
     override func viewDidAppear(animated: Bool) {

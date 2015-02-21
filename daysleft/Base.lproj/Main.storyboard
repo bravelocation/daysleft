@@ -140,51 +140,67 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Christmas" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="uI3-ws-3To">
-                                <rect key="frame" x="16" y="48" width="568" height="30"/>
+                                <rect key="frame" x="16" y="80" width="568" height="30"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <action selector="textTitleChanged:" destination="z2b-N0-uxI" eventType="editingChanged" id="lfP-Zj-Y2X"/>
                                 </connections>
                             </textField>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="tmN-wU-bPh">
-                                <rect key="frame" x="0.0" y="94" width="600" height="162"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Wed 22 May 2015" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FAI-cS-r6n">
+                                <rect key="frame" x="16" y="126" width="160" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="162" id="5r5-AR-Nju"/>
+                                    <constraint firstAttribute="width" constant="160" id="yEG-t4-PWK"/>
                                 </constraints>
-                                <date key="date" timeIntervalSinceReferenceDate="445875632.00009298">
-                                    <!--2015-02-17 14:20:32 +0000-->
-                                </date>
-                                <connections>
-                                    <action selector="dateEndChanged:" destination="z2b-N0-uxI" eventType="valueChanged" id="OHd-3b-KEK"/>
-                                </connections>
-                            </datePicker>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start counting from" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zFr-hv-glV">
-                                <rect key="frame" x="16" y="264" width="568" height="17"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="to" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J4j-U7-7EY">
+                                <rect key="frame" x="90" y="164" width="12" height="15"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="eaR-eU-XfL">
-                                <rect key="frame" x="0.0" y="289" width="600" height="162"/>
-                                <date key="date" timeIntervalSinceReferenceDate="445875737.11938399">
-                                    <!--2015-02-17 14:22:17 +0000-->
-                                </date>
-                                <connections>
-                                    <action selector="dateStartChanged:" destination="z2b-N0-uxI" eventType="valueChanged" id="ynf-xm-kXB"/>
-                                </connections>
-                            </datePicker>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weekdays only?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lIB-pJ-cWT">
-                                <rect key="frame" x="16" y="459" width="132" height="20"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Wed 22 May 2015" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s27-Qv-AsP">
+                                <rect key="frame" x="16" y="187" width="160" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="132" id="jRo-gE-j5o"/>
+                                    <constraint firstAttribute="width" constant="160" id="TFV-4W-efN"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="req-N4-Fcg">
+                                <rect key="frame" x="192" y="126" width="79" height="30"/>
+                                <state key="normal" title="Start Today">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="disabled" title="Start Today"/>
+                                <state key="highlighted">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonStartTodayTouchUp:" destination="z2b-N0-uxI" eventType="touchUpInside" id="xQl-mi-pfw"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="101 days" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hjT-hI-qWU">
+                                <rect key="frame" x="194" y="192" width="67" height="20"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weekdays only?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lIB-pJ-cWT">
+                                <rect key="frame" x="24" y="241" width="128" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="128" id="jRo-gE-j5o"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wec-Rr-dJk">
-                                <rect key="frame" x="156" y="454" width="51" height="31"/>
+                                <rect key="frame" x="160" y="234" width="51" height="31"/>
+                                <color key="tintColor" red="0.33333333329999998" green="0.61960784310000006" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="switchWeekdaysOnlyChanged:" destination="z2b-N0-uxI" eventType="valueChanged" id="6NG-Mk-vKu"/>
                                 </connections>
@@ -192,29 +208,31 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="lIB-pJ-cWT" firstAttribute="top" secondItem="eaR-eU-XfL" secondAttribute="bottom" constant="8" id="53b-tH-eoo"/>
-                            <constraint firstItem="tmN-wU-bPh" firstAttribute="leading" secondItem="kXt-M9-RbJ" secondAttribute="leadingMargin" constant="-16" id="83n-Wl-qnV"/>
-                            <constraint firstItem="uI3-ws-3To" firstAttribute="trailing" secondItem="kXt-M9-RbJ" secondAttribute="trailingMargin" id="B1Z-gJ-dgg"/>
-                            <constraint firstItem="eaR-eU-XfL" firstAttribute="top" secondItem="zFr-hv-glV" secondAttribute="bottom" constant="8" id="BTQ-cM-TNC"/>
-                            <constraint firstItem="zFr-hv-glV" firstAttribute="trailing" secondItem="kXt-M9-RbJ" secondAttribute="trailingMargin" id="JRZ-k2-ypb"/>
-                            <constraint firstItem="zFr-hv-glV" firstAttribute="top" secondItem="tmN-wU-bPh" secondAttribute="bottom" constant="8" id="L91-He-jzx"/>
-                            <constraint firstItem="lIB-pJ-cWT" firstAttribute="leading" secondItem="kXt-M9-RbJ" secondAttribute="leadingMargin" id="LD0-DP-tB0"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="tmN-wU-bPh" secondAttribute="trailing" constant="-16" id="ZBJ-Xo-mNB"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="eaR-eU-XfL" secondAttribute="trailing" constant="-16" id="ZRU-rk-E0d"/>
-                            <constraint firstItem="zFr-hv-glV" firstAttribute="leading" secondItem="kXt-M9-RbJ" secondAttribute="leadingMargin" id="cCh-aw-nyH"/>
-                            <constraint firstItem="uI3-ws-3To" firstAttribute="leading" secondItem="kXt-M9-RbJ" secondAttribute="leadingMargin" id="ftj-V2-Chl"/>
-                            <constraint firstItem="eaR-eU-XfL" firstAttribute="leading" secondItem="kXt-M9-RbJ" secondAttribute="leadingMargin" constant="-16" id="hvq-td-Rek"/>
-                            <constraint firstItem="Wec-Rr-dJk" firstAttribute="leading" secondItem="lIB-pJ-cWT" secondAttribute="trailing" constant="8" id="jWn-cj-fRS"/>
-                            <constraint firstItem="lIB-pJ-cWT" firstAttribute="leading" secondItem="kXt-M9-RbJ" secondAttribute="leadingMargin" id="n3Z-AC-ivs"/>
-                            <constraint firstItem="tmN-wU-bPh" firstAttribute="top" secondItem="uI3-ws-3To" secondAttribute="bottom" constant="16" id="pWG-v0-pmb"/>
-                            <constraint firstItem="uI3-ws-3To" firstAttribute="top" secondItem="kXt-M9-RbJ" secondAttribute="topMargin" constant="48" id="rcp-Mq-48t"/>
-                            <constraint firstItem="Wec-Rr-dJk" firstAttribute="centerY" secondItem="lIB-pJ-cWT" secondAttribute="centerY" id="y79-Cm-kJu"/>
+                            <constraint firstItem="uI3-ws-3To" firstAttribute="trailing" secondItem="kXt-M9-RbJ" secondAttribute="trailingMargin" id="42B-3D-pvm"/>
+                            <constraint firstItem="hjT-hI-qWU" firstAttribute="leading" secondItem="s27-Qv-AsP" secondAttribute="trailing" constant="18" id="78A-na-8Dj"/>
+                            <constraint firstItem="FAI-cS-r6n" firstAttribute="centerX" secondItem="J4j-U7-7EY" secondAttribute="centerX" id="FzB-Nx-epu"/>
+                            <constraint firstItem="s27-Qv-AsP" firstAttribute="top" secondItem="J4j-U7-7EY" secondAttribute="bottom" constant="8" id="Jp8-UI-6Zt"/>
+                            <constraint firstItem="Wec-Rr-dJk" firstAttribute="centerY" secondItem="lIB-pJ-cWT" secondAttribute="centerY" id="KzU-97-mi2"/>
+                            <constraint firstItem="hjT-hI-qWU" firstAttribute="centerY" secondItem="s27-Qv-AsP" secondAttribute="centerY" id="etG-YI-DDd"/>
+                            <constraint firstItem="lIB-pJ-cWT" firstAttribute="top" secondItem="s27-Qv-AsP" secondAttribute="bottom" constant="24" id="g3I-o6-RJK"/>
+                            <constraint firstItem="FAI-cS-r6n" firstAttribute="leading" secondItem="kXt-M9-RbJ" secondAttribute="leadingMargin" id="gFX-Iz-pGq"/>
+                            <constraint firstItem="FAI-cS-r6n" firstAttribute="top" secondItem="uI3-ws-3To" secondAttribute="bottom" constant="16" id="gde-6h-LNO"/>
+                            <constraint firstItem="req-N4-Fcg" firstAttribute="leading" secondItem="FAI-cS-r6n" secondAttribute="trailing" constant="16" id="hCf-Ze-9WU"/>
+                            <constraint firstItem="uI3-ws-3To" firstAttribute="leading" secondItem="kXt-M9-RbJ" secondAttribute="leadingMargin" id="hHT-ae-GIT"/>
+                            <constraint firstItem="J4j-U7-7EY" firstAttribute="top" secondItem="FAI-cS-r6n" secondAttribute="bottom" constant="8" id="jXK-qB-GA1"/>
+                            <constraint firstItem="lIB-pJ-cWT" firstAttribute="leading" secondItem="kXt-M9-RbJ" secondAttribute="leadingMargin" constant="8" id="k18-hN-P4r"/>
+                            <constraint firstItem="Wec-Rr-dJk" firstAttribute="leading" secondItem="lIB-pJ-cWT" secondAttribute="trailing" constant="8" id="uuU-w3-UoA"/>
+                            <constraint firstItem="s27-Qv-AsP" firstAttribute="leading" secondItem="kXt-M9-RbJ" secondAttribute="leadingMargin" id="uzd-JD-hwO"/>
+                            <constraint firstItem="uI3-ws-3To" firstAttribute="top" secondItem="c3T-Pd-kx7" secondAttribute="bottom" constant="16" id="wQV-z0-5Fr"/>
+                            <constraint firstItem="FAI-cS-r6n" firstAttribute="centerY" secondItem="req-N4-Fcg" secondAttribute="centerY" id="zTx-08-feP"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="dateEnd" destination="tmN-wU-bPh" id="0OZ-FF-Mvq"/>
-                        <outlet property="dateStart" destination="eaR-eU-XfL" id="cQc-vf-Nus"/>
+                        <outlet property="buttonStartToday" destination="req-N4-Fcg" id="zea-J0-Iea"/>
+                        <outlet property="labelDaysLength" destination="hjT-hI-qWU" id="0yi-fq-837"/>
                         <outlet property="switchWeekdaysOnly" destination="Wec-Rr-dJk" id="o0b-4w-YpR"/>
+                        <outlet property="textEnd" destination="s27-Qv-AsP" id="t7o-9n-hWr"/>
+                        <outlet property="textStart" destination="FAI-cS-r6n" id="D6S-LA-sWu"/>
                         <outlet property="textTitle" destination="uI3-ws-3To" id="UP5-Zk-BdO"/>
                     </connections>
                 </viewController>
