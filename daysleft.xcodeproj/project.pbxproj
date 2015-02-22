@@ -365,6 +365,7 @@
 				52CFBEF61A8B631B005234FB /* Resources */,
 				5295EDE81A94AE53007EF7E7 /* Embed Frameworks */,
 				5295EE091A94B398007EF7E7 /* Embed App Extensions */,
+				5295EE1F1A9A0084007EF7E7 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -506,6 +507,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5295EE1F1A9A0084007EF7E7 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "git=`sh /etc/profile; which git`\nappBuild=`$git rev-list --all |wc -l`\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $appBuild\" \"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\necho \"Updated ${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5295EDCB1A94AE53007EF7E7 /* Sources */ = {

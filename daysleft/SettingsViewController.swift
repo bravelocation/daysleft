@@ -17,6 +17,7 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate {
     @IBOutlet weak var switchWeekdaysOnly: UISwitch!
     @IBOutlet weak var buttonStartToday: UIButton!
     @IBOutlet weak var labelDaysLength: UILabel!
+    @IBOutlet weak var labelVersion: UILabel!
     
     var model: DaysLeftModel = DaysLeftModel()
     var dateFormatter: NSDateFormatter = NSDateFormatter()
@@ -52,8 +53,14 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate {
 
         // Set up the delegate of text field for handling return below
         self.textTitle.delegate = self
+        
+        // Add version number
+        let infoDictionary = NSBundle.mainBundle()
+        let version = infoDictionary.objectForInfoDictionaryKey("CFBundleShortVersionString") as! String
+        let build = infoDictionary.objectForInfoDictionaryKey("CFBundleVersion") as! String
+        self.labelVersion.text = String(format: "v%@.%@", version, build)
     }
-    
+
     @IBAction func textTitleChanged(sender: AnyObject) {
         model.title = self.textTitle.text
     }
@@ -80,6 +87,32 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate {
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         self.view.endEditing(true)
         super.touchesBegan(touches, withEvent: event)
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.view.endEditing(true)
+        NSLog("Selected section: %d row:%d", indexPath.section, indexPath.row)
+        
+        if (indexPath.section == 3) {
+            if (indexPath.row == 0) {
+                let url: NSURL = NSURL(string: "http://www.bravelocationstudios.com")!
+                if (UIApplication.sharedApplication().openURL(url) == false) {
+                    NSLog("Failed to open %@", url)
+                }
+            }
+            else if (indexPath.row == 1) {
+                let url: NSURL = NSURL(string: "http://blog.bravelocation.com")!
+                if (UIApplication.sharedApplication().openURL(url) == false) {
+                    NSLog("Failed to open %@", url)
+                }
+            }
+            else if (indexPath.row == 2) {
+                let url: NSURL = NSURL(string: "http://github.com/bravelocation/daysleft")!
+                if (UIApplication.sharedApplication().openURL(url) == false) {
+                    NSLog("Failed to open %@", url)
+                }
+            }
+        }
     }
     
     // Hides the keyboard if return is pressed
