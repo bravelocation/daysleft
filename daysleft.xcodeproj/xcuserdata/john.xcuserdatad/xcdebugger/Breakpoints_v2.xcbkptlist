@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "daysleft/ViewController.swift"
-            timestampString = "446209329.030205"
+            timestampString = "446828946.937056"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
             landmarkName = "updateViewFromModel()"
             landmarkType = "5">
          </BreakpointContent>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "daysleft/ViewController.swift"
-            timestampString = "446209329.030205"
+            timestampString = "446828946.937056"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
             landmarkName = "updateViewFromModel()"
             landmarkType = "5">
          </BreakpointContent>
@@ -106,11 +106,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "daysleft/ViewController.swift"
-            timestampString = "446209329.030205"
+            timestampString = "446828946.937056"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
             landmarkName = "updateViewFromModel()"
             landmarkType = "5">
          </BreakpointContent>

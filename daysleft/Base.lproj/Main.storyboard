@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7515.2" systemVersion="14D72i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dDU-Kp-oSy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7515.2" systemVersion="14D87h" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dDU-Kp-oSy">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7512"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -110,7 +110,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="zK2-rI-cSr">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
-                                <segue destination="l0H-Z7-pvf" kind="show" id="0X6-PC-jXy"/>
+                                <segue destination="l0H-Z7-pvf" kind="show" identifier="segueShowSettings" id="0X6-PC-jXy"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

@@ -44,6 +44,11 @@ class ViewController: UIViewController {
         
         let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor()]
         navBar!.titleTextAttributes = titleDict as? [NSObject : AnyObject]
+        
+        // Add a swipe recogniser
+        let swipeLeft : UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: "swipeLeft:")
+        swipeLeft.direction = UISwipeGestureRecognizerDirection.Left
+        self.view.addGestureRecognizer(swipeLeft)
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -80,5 +85,8 @@ class ViewController: UIViewController {
         self.counterView.setNeedsDisplay()
     }
 
+    func swipeLeft(gesture: UISwipeGestureRecognizer) {
+        self.performSegueWithIdentifier("segueShowSettings", sender: self)
+    }
 }
 
