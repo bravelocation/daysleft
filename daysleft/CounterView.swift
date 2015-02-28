@@ -42,8 +42,8 @@ let π:CGFloat = CGFloat(M_PI)
         counterColor.setStroke()
         path.stroke()
         
-        // Draw the outline
-        
+        // Now draw the progress line
+
         // First calculate the difference between the two angles
         // ensuring it is positive
         let angleDifference: CGFloat = 2 * π - startAngle + endAngle
@@ -52,27 +52,18 @@ let π:CGFloat = CGFloat(M_PI)
         let arcLengthPerGlass = angleDifference / CGFloat(maximumValue)
         
         // Then multiply out by the actual glasses drunk
-        let outlineEndAngle = arcLengthPerGlass * CGFloat(counter) + startAngle
+        let progressEndAngle = arcLengthPerGlass * CGFloat(counter) + startAngle
         
-        // Draw the outer arc
-        var outlinePath = UIBezierPath(arcCenter: center,
-            radius: bounds.width/2 - self.outlineWidth/2,
+        var progressPath = UIBezierPath(arcCenter: center,
+            radius: bounds.width/2 - self.arcWidth/2,
             startAngle: startAngle,
-            endAngle: outlineEndAngle,
+            endAngle: progressEndAngle,
             clockwise: true)
         
-        // Draw the inner arc
-        outlinePath.addArcWithCenter(center,
-            radius: bounds.width/2 - arcWidth + self.outlineWidth/2,
-            startAngle: outlineEndAngle,
-            endAngle: startAngle,
-            clockwise: false)
-        
-        // Close the path
-        outlinePath.closePath()
-        
+        // Set the line width and color before finally stroking the path
+        progressPath.lineWidth = arcWidth
         outlineColor.setStroke()
-        outlinePath.lineWidth = self.outlineWidth
-        outlinePath.stroke()
+        progressPath.stroke()
+ 
     }
 }
