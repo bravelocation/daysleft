@@ -13,6 +13,7 @@ import daysleftlibrary
 class TodayViewController: UIViewController, NCWidgetProviding {
         
     @IBOutlet weak var labelNumberTitle: UILabel!
+    @IBOutlet weak var labelPercentDone: UILabel!
     @IBOutlet weak var counterView: CounterView!
     
     override func viewDidAppear(animated: Bool) {
@@ -34,7 +35,10 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         let titleDays: String = model.weekdaysOnly ? "weekdays" : "days"
         
         self.labelNumberTitle.text = String(format: "%d %@ %@", daysLeft, titleDays, titleSuffix)
-                
+ 
+        let percentageDone: Float = (Float(model.DaysGone(now)) * 100.0) / Float(model.DaysLength)
+        self.labelPercentDone.text = String(format:"%3.0f%% done", percentageDone)
+
         self.counterView.counter = model.DaysGone(now)
         self.counterView.maximumValue = model.DaysLength
         self.counterView.setNeedsDisplay()
