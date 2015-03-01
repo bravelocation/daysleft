@@ -19,21 +19,20 @@ let π:CGFloat = CGFloat(M_PI)
     @IBInspectable public var outlineColor: UIColor = UIColor.blueColor()
     @IBInspectable public var counterColor: UIColor = UIColor.orangeColor()
     
+    private var circleSubView: CAShapeLayer? = nil
+    private var progressSubView: CAShapeLayer? = nil
+    
     public func clearControl() {
-        // First clear all existing layers
-        if let currentlayers = self.layer.sublayers {
-            for sublayer in currentlayers {
-                sublayer.removeFromSuperlayer()
-            }
+        // First clear existing progress view
+        if self.progressSubView != nil {
+            self.progressSubView?.removeFromSuperlayer()
+            self.progressSubView = nil
         }
     }
     
     public func updateControl() {
         self.clearControl()
 
-        let circle: CAShapeLayer = CAShapeLayer(layer: self.layer)
-        
-        // Define the center point of the view where you’ll rotate the arc around
         let center = CGPoint(x:bounds.width/2, y: bounds.height/2)
         
         // Calculate the radius based on the max dimension of the view
@@ -41,24 +40,30 @@ let π:CGFloat = CGFloat(M_PI)
         
         // Define the start and end angles for the arc
         let startAngle: CGFloat = 3 * π / 4
-        let endAngle: CGFloat = π / 4
-        
-        // Create a path based on the center point, radius, and angles you just defined
-        var path = UIBezierPath(arcCenter: center,
-            radius: bounds.width/2 - self.arcWidth/2,
-            startAngle: startAngle,
-            endAngle: endAngle,
-            clockwise: true)
 
-        circle.path = path.CGPath
-        circle.fillColor = UIColor.clearColor().CGColor
-        circle.strokeColor = self.counterColor.CGColor
-        circle.lineWidth = self.arcWidth
-        self.layer.addSublayer(circle)
+        // Define the center point of the view where you’ll rotate the arc around
+        let endAngle: CGFloat = π / 4
+
+        if (self.circleSubView == nil) {
+            self.circleSubView = CAShapeLayer(layer: self.layer)
+        
+        
+            // Create a path based on the center point, radius, and angles you just defined
+            var path = UIBezierPath(arcCenter: center,
+                radius: bounds.width/2 - self.arcWidth/2,
+                startAngle: startAngle,
+                endAngle: endAngle,
+                clockwise: true)
+
+            self.circleSubView?.path = path.CGPath
+            self.circleSubView?.fillColor = UIColor.clearColor().CGColor
+            self.circleSubView?.strokeColor = self.counterColor.CGColor
+            self.circleSubView?.lineWidth = self.arcWidth
+            self.layer.addSublayer(self.circleSubView)
+        }
         
         // Now add the progress circle
-        let progress: CAShapeLayer = CAShapeLayer(layer: self.layer)
-        
+        self.progressSubView = CAShapeLayer(layer: self.layer)
         
         // First calculate the difference between the two angles
         // ensuring it is positive
@@ -76,12 +81,12 @@ let π:CGFloat = CGFloat(M_PI)
             endAngle: progressEndAngle,
             clockwise: true)
 
-        progress.path = progressPath.CGPath
-        progress.fillColor = UIColor.clearColor().CGColor
-        progress.strokeColor = self.outlineColor.CGColor
-        progress.lineWidth = self.arcWidth
+        self.progressSubView?.path = progressPath.CGPath
+        self.progressSubView?.fillColor = UIColor.clearColor().CGColor
+        self.progressSubView?.strokeColor = self.outlineColor.CGColor
+        self.progressSubView?.lineWidth = self.arcWidth
 
-        self.layer.addSublayer(progress)
+        self.layer.addSublayer(self.progressSubView)
         
         // Now animate the progress drawing
         let animation: CABasicAnimation = CABasicAnimation(keyPath: "strokeEnd")
@@ -90,6 +95,6 @@ let π:CGFloat = CGFloat(M_PI)
         animation.fromValue = 0
         animation.toValue = 1
         animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
-        progress.addAnimation(animation, forKey: "drawProgressAnimation")
+        self.progressSubView?.addAnimation(animation, forKey: "drawProgressAnimation")
     }
 }

@@ -138,11 +138,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "daysleft/CounterView.swift"
-            timestampString = "446892457.820918"
+            timestampString = "446911548.975469"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "101"
-            endingLineNumber = "101">
+            startingLineNumber = "106"
+            endingLineNumber = "106">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -152,11 +152,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "daysleft/CounterView.swift"
-            timestampString = "446892457.820918"
+            timestampString = "446911548.975469"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
             landmarkName = "updateControl()"
             landmarkType = "5">
          </BreakpointContent>
