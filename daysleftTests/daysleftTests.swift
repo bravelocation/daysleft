@@ -37,7 +37,6 @@ class daysleftTests: XCTestCase {
         self.actualTestRun(1, endDay:15, currentDay:16, weekdaysOnly:false, expectedLength:15, expectedGone:15, expectedLeft:0)
     }
 
-    
     func testAllDaysOnFirstDay() {
         // On the first day, so one day has gone
         self.actualTestRun(1, endDay:15, currentDay:1, weekdaysOnly:false, expectedLength:15, expectedGone:1, expectedLeft:14)
@@ -51,10 +50,20 @@ class daysleftTests: XCTestCase {
     func testWeekdaysCalculations() {
         // 1st of Jan is a Thursday
         // 12th of Jan is a Monday
-        // So that's 8 weekdays in length
-        // If today is Wednesday 7th, that's 5 days gone (Thu, Fri, Mon, Tue, Wed), 3 days to go (Wed, Thu, Fri)
+        // So that's 8 weekdays in length (T,F,M,T,W,T,F,M)
+        // If today is Wednesday 7th, that's 5 days gone (T,F,M,T,W), 3 days to go (T,F,M)
         self.actualTestRun(1, endDay:12, currentDay:7, weekdaysOnly:true, expectedLength:8, expectedGone:5, expectedLeft:3)
     }
+
+    /*
+    func testWeekdaysOnMiddleWeekendCalculations() {
+        // 5th of Jan is a Monday
+        // 16th of Jan is a Friday
+        // So that's 10 weekdays in length
+        // If today is Sunday 11th, that's 5 days gone, 5 days to go
+        self.actualTestRun(5, endDay:16, currentDay:11, weekdaysOnly:true, expectedLength:10, expectedGone:5, expectedLeft:5)
+    }
+*/
     
     func testWeekdaysStartOnSaturdayEndOnMonday() {
         // 3rd of Jan is a Saturday
@@ -112,9 +121,9 @@ class daysleftTests: XCTestCase {
         model.end = NSCalendar.autoupdatingCurrentCalendar().dateFromComponents(endComponents)!
         let currentDate: NSDate = NSCalendar.autoupdatingCurrentCalendar().dateFromComponents(currentComponents)!
         
-        XCTAssertEqual(expectedLength, model.DaysLength, "DaysLength is correct")
-        XCTAssertEqual(expectedGone, model.DaysGone(currentDate), "DaysGone is correct")
-        XCTAssertEqual(expectedLeft, model.DaysLeft(currentDate), "DaysLeft is correct")
+        XCTAssertEqual(expectedLength, model.DaysLength, "DaysLength is incorrect")
+        XCTAssertEqual(expectedGone, model.DaysGone(currentDate), "DaysGone is incorrect")
+        XCTAssertEqual(expectedLeft, model.DaysLeft(currentDate), "DaysLeft is incorrect")
         
     }
 }

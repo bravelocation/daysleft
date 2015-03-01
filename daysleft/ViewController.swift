@@ -24,17 +24,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         // Check if this is the first run
-        if (self.model.firstRun < self.model.currentFirstRun)
-        {
-            // If it is initialise the model dat
-            self.model.start = NSDate()
-            self.model.end = NSCalendar.currentCalendar().dateByAddingUnit(NSCalendarUnit.DayCalendarUnit, value: 30, toDate: self.model.start, options: nil)!
-            self.model.title = ""
-            self.model.weekdaysOnly = false
-            
-            // Save the first run once working
-            self.model.firstRun = self.model.currentFirstRun
-        }
+        self.model.initialRun()
         
         // Customise the nav bar
         let navBar = self.navigationController?.navigationBar
