@@ -51,6 +51,11 @@ class ViewController: UIViewController {
         self.view.addGestureRecognizer(swipeLeft)
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.counterView.clearControl()
+    }
+    
     override func viewDidAppear(animated: Bool) {
         self.updateViewFromModel()
     }
@@ -82,7 +87,7 @@ class ViewController: UIViewController {
         
         self.counterView.counter = self.model.DaysGone(now)
         self.counterView.maximumValue = self.model.DaysLength
-        self.counterView.setNeedsDisplay()
+        self.counterView.updateControl()
     }
 
     func swipeLeft(gesture: UISwipeGestureRecognizer) {

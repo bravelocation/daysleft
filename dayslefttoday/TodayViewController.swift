@@ -15,7 +15,12 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     @IBOutlet weak var labelNumberTitle: UILabel!
     @IBOutlet weak var labelPercentDone: UILabel!
     @IBOutlet weak var counterView: CounterView!
-    
+
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.counterView.clearControl()
+    }
+
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         self.preferredContentSize = CGSizeMake(0, 100)
@@ -41,7 +46,6 @@ class TodayViewController: UIViewController, NCWidgetProviding {
 
         self.counterView.counter = model.DaysGone(now)
         self.counterView.maximumValue = model.DaysLength
-        self.counterView.setNeedsDisplay()
-
+        self.counterView.updateControl()
     }
 }

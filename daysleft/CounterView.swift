@@ -19,7 +19,20 @@ let π:CGFloat = CGFloat(M_PI)
     @IBInspectable public var outlineColor: UIColor = UIColor.blueColor()
     @IBInspectable public var counterColor: UIColor = UIColor.orangeColor()
     
-    override public func drawRect(rect: CGRect) {
+    public func clearControl() {
+        // First clear all existing layers
+        if let currentlayers = self.layer.sublayers {
+            for sublayer in currentlayers {
+                sublayer.removeFromSuperlayer()
+            }
+        }
+    }
+    
+    public func updateControl() {
+        self.clearControl()
+
+        let circle: CAShapeLayer = CAShapeLayer(layer: self.layer)
+        
         // Define the center point of the view where you’ll rotate the arc around
         let center = CGPoint(x:bounds.width/2, y: bounds.height/2)
         
@@ -36,14 +49,17 @@ let π:CGFloat = CGFloat(M_PI)
             startAngle: startAngle,
             endAngle: endAngle,
             clockwise: true)
-        
-        // Set the line width and color before finally stroking the path
-        path.lineWidth = arcWidth
-        counterColor.setStroke()
-        path.stroke()
-        
-        // Now draw the progress line
 
+        circle.path = path.CGPath
+        circle.fillColor = UIColor.clearColor().CGColor
+        circle.strokeColor = self.counterColor.CGColor
+        circle.lineWidth = self.arcWidth
+        self.layer.addSublayer(circle)
+        
+        // Now add the progress circle
+        let progress: CAShapeLayer = CAShapeLayer(layer: self.layer)
+        
+        
         // First calculate the difference between the two angles
         // ensuring it is positive
         let angleDifference: CGFloat = 2 * π - startAngle + endAngle
@@ -59,11 +75,21 @@ let π:CGFloat = CGFloat(M_PI)
             startAngle: startAngle,
             endAngle: progressEndAngle,
             clockwise: true)
+
+        progress.path = progressPath.CGPath
+        progress.fillColor = UIColor.clearColor().CGColor
+        progress.strokeColor = self.outlineColor.CGColor
+        progress.lineWidth = self.arcWidth
+
+        self.layer.addSublayer(progress)
         
-        // Set the line width and color before finally stroking the path
-        progressPath.lineWidth = arcWidth
-        outlineColor.setStroke()
-        progressPath.stroke()
- 
+        // Now animate the progress drawing
+        let animation: CABasicAnimation = CABasicAnimation(keyPath: "strokeEnd")
+        animation.duration = 0.5
+        animation.removedOnCompletion = true
+        animation.fromValue = 0
+        animation.toValue = 1
+        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+        progress.addAnimation(animation, forKey: "drawProgressAnimation")
     }
 }
