@@ -151,7 +151,7 @@ public class DaysLeftModel: BLUserSettings
             adjustedStartDate = self.AddDays(startOfStartDate, daysToAdd: 1)
         }
             
-        // If end is a weekend, move it back to Fridau
+        // If end is a weekend, move it back to Friday
         if (endDayOfWeek == 7) {
             // Saturday
             adjustedEndDate = self.AddDays(startOfEndDate, daysToAdd: -1)

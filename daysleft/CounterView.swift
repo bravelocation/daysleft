@@ -15,7 +15,6 @@ let π:CGFloat = CGFloat(M_PI)
     @IBInspectable public var counter: Int = 5
     @IBInspectable public var maximumValue: Int = 8
     @IBInspectable public var arcWidth: CGFloat = 76
-    @IBInspectable public var outlineWidth: CGFloat = 5.0
     @IBInspectable public var outlineColor: UIColor = UIColor.blueColor()
     @IBInspectable public var counterColor: UIColor = UIColor.orangeColor()
     
@@ -59,6 +58,10 @@ let π:CGFloat = CGFloat(M_PI)
             self.circleSubView?.fillColor = UIColor.clearColor().CGColor
             self.circleSubView?.strokeColor = self.counterColor.CGColor
             self.circleSubView?.lineWidth = self.arcWidth
+            
+            self.circleSubView?.shadowOffset = CGSize(width: 3.0, height: 3.0)
+            self.circleSubView?.shadowOpacity = 0.25
+            
             self.layer.addSublayer(self.circleSubView)
         }
         
