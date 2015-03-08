@@ -45,7 +45,7 @@ public class DaysLeftModel: BLUserSettings
     /// Property to get the number of days between the start and the end
     public var DaysLength: Int {
         get {
-            return self.DaysDifference(self.start, endDate: self.end) + 1 // Day count is inclusive, so add one to the total
+            return self.DaysDifference(self.start, endDate: self.end) + 1 // Inclusive so add one
         }
     }
 
@@ -67,7 +67,7 @@ public class DaysLeftModel: BLUserSettings
         }
         
         // Otherwise, return the actual difference
-        return self.DaysDifference(startCurrentDate, endDate: self.end)
+        return self.DaysLength - self.DaysGone(startCurrentDate)
     }
     
     /// Finds the number of days from the start of the period from the current date
@@ -88,7 +88,7 @@ public class DaysLeftModel: BLUserSettings
         }
         
         // Otherwise, return the actual difference
-        return self.DaysLength - self.DaysLeft(startCurrentDate);
+        return self.DaysDifference(self.start, endDate: startCurrentDate) + 1 // Inclusive so add 1
     }
     
     public func initialRun() {
@@ -128,27 +128,54 @@ public class DaysLeftModel: BLUserSettings
         var startOfStartDate = self.StartOfDay(startDate)
         var startOfEndDate = self.StartOfDay(endDate)
 
-        let components: NSDateComponents = globalCalendar.components(NSCalendarUnit.CalendarUnitDay, fromDate: startOfStartDate, toDate: startOfEndDate, options: NSCalendarOptions.WrapComponents)
-        
-        var totalDays: Int = components.day
-        if (self.weekdaysOnly) {
+        // If want all days, just calculate the days difference and return it
+        if (!self.weekdaysOnly) {
+            let components: NSDateComponents = globalCalendar.components(NSCalendarUnit.CalendarUnitDay, fromDate: startOfStartDate, toDate: startOfEndDate, options: NSCalendarOptions.WrapComponents)
             
-            var firstDayOfWeek: Int = globalCalendar.component(NSCalendarUnit.CalendarUnitWeekday, fromDate: startOfStartDate)
-            var lastDayOfWeek: Int = globalCalendar.component(NSCalendarUnit.CalendarUnitWeekday, fromDate: startOfEndDate)
-            
-            var calculatedDays = ((totalDays * 5) - (firstDayOfWeek - lastDayOfWeek) * 2) / 7
-            
-            if (lastDayOfWeek == 7) {
-                calculatedDays--
-            }
-            if (firstDayOfWeek == 1) {
-                calculatedDays--
-            }
-            
-            totalDays = calculatedDays
+            return components.day
         }
         
-        return totalDays
+        // If we are calculating weekdays only, first adjust the start or end date if on a weekend
+        var startDayOfWeek: Int = globalCalendar.component(NSCalendarUnit.CalendarUnitWeekday, fromDate: startOfStartDate)
+        var endDayOfWeek: Int = globalCalendar.component(NSCalendarUnit.CalendarUnitWeekday, fromDate: startOfEndDate)
+            
+        var adjustedStartDate = startOfStartDate
+        var adjustedEndDate = startOfEndDate
+            
+        // If start is a weekend, adjust to Monday
+        if (startDayOfWeek == 7) {
+            // Saturday
+            adjustedStartDate = self.AddDays(startOfStartDate, daysToAdd: 2)
+        } else if (startDayOfWeek == 1) {
+            // Sunday
+            adjustedStartDate = self.AddDays(startOfStartDate, daysToAdd: 1)
+        }
+            
+        // If end is a weekend, move it back to Fridau
+        if (endDayOfWeek == 7) {
+            // Saturday
+            adjustedEndDate = self.AddDays(startOfEndDate, daysToAdd: -1)
+        } else if (endDayOfWeek == 1) {
+            // Sunday
+            adjustedEndDate = self.AddDays(startOfEndDate, daysToAdd: -2)
+        }
+            
+        let adjustedComponents: NSDateComponents = globalCalendar.components(NSCalendarUnit.CalendarUnitDay, fromDate: adjustedStartDate, toDate: adjustedEndDate, options: NSCalendarOptions.WrapComponents)
+            
+        let adjustedTotalDays: Int = adjustedComponents.day
+        let fullWeeks: Int = adjustedTotalDays / 7
+        
+        // Now we need to take into account if the day of the start date is before or after the day of the end date
+        startDayOfWeek = globalCalendar.component(NSCalendarUnit.CalendarUnitWeekday, fromDate: adjustedStartDate)
+        endDayOfWeek = globalCalendar.component(NSCalendarUnit.CalendarUnitWeekday, fromDate: adjustedEndDate)
+        
+        var daysOfWeekDifference = endDayOfWeek - startDayOfWeek
+        if (daysOfWeekDifference < 0) {
+            daysOfWeekDifference += 5
+        }
+
+        // Finally return the number of weekdays
+        return (fullWeeks * 5) + daysOfWeekDifference
     }
     
     private func StartOfDay(fullDate: NSDate) -> NSDate {

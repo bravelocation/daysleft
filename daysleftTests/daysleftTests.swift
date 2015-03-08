@@ -55,7 +55,6 @@ class daysleftTests: XCTestCase {
         self.actualTestRun(1, endDay:12, currentDay:7, weekdaysOnly:true, expectedLength:8, expectedGone:5, expectedLeft:3)
     }
 
-    /*
     func testWeekdaysOnMiddleWeekendCalculations() {
         // 5th of Jan is a Monday
         // 16th of Jan is a Friday
@@ -63,7 +62,6 @@ class daysleftTests: XCTestCase {
         // If today is Sunday 11th, that's 5 days gone, 5 days to go
         self.actualTestRun(5, endDay:16, currentDay:11, weekdaysOnly:true, expectedLength:10, expectedGone:5, expectedLeft:5)
     }
-*/
     
     func testWeekdaysStartOnSaturdayEndOnMonday() {
         // 3rd of Jan is a Saturday
@@ -77,7 +75,7 @@ class daysleftTests: XCTestCase {
         // 4th of Jan is a Sunday
         // 12th of Jan is a Monday
         // So that's 6 weekdays in length
-        // If today is Wednesday 7th, that's 3 days gone (Mon, Tue, Wed), 3 days to go (Wed, Thu, Fri)
+        // If today is Wednesday 7th, that's 3 days gone (Mon, Tue, Wed), 3 days to go (Thu, Fri, Mon)
         self.actualTestRun(4, endDay:12, currentDay:7, weekdaysOnly:true, expectedLength:6, expectedGone:3, expectedLeft:3)
     }
     
