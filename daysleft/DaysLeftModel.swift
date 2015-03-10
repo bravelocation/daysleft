@@ -14,31 +14,31 @@ public class DaysLeftModel: BLUserSettings
     
     /// Property to get and set the start date
     public var start: NSDate {
-        get { return self.readObjectFromStore("start") as! NSDate }
+        get { return self.readObjectFromStore("start") as NSDate }
         set { self.writeObjectToStore(self.StartOfDay(newValue), key: "start") }
     }
     
     /// Property to get and set the end date
     public var end: NSDate {
-        get { return self.readObjectFromStore("end") as! NSDate }
+        get { return self.readObjectFromStore("end") as NSDate }
         set { self.writeObjectToStore(self.StartOfDay(newValue), key: "end") }
     }
 
     /// Property to get and set the title
     public var title: String {
-        get { return self.readObjectFromStore("title") as! String }
+        get { return self.readObjectFromStore("title") as String }
         set { self.writeObjectToStore(newValue, key: "title") }
     }
 
     /// Property to get and set the weekdays only flag
     public var weekdaysOnly: Bool {
-        get { return self.readObjectFromStore("weekdaysOnly") as! Bool }
+        get { return self.readObjectFromStore("weekdaysOnly") as Bool }
         set { self.writeBoolToStore(newValue, key: "weekdaysOnly") }
     }
     
     /// Property to get and set the firstRun value
     public var firstRun: Int {
-        get { return self.readObjectFromStore("firstRun") as! Int }
+        get { return self.readObjectFromStore("firstRun") as Int }
         set { self.writeIntegerToStore(newValue, key: "firstRun") }
     }
     

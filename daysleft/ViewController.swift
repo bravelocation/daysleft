@@ -33,7 +33,7 @@ class ViewController: UIViewController {
         navBar!.translucent = false
         
         let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor()]
-        navBar!.titleTextAttributes = titleDict as? [NSObject : AnyObject]
+        navBar!.titleTextAttributes = titleDict as [NSObject : AnyObject]
         
         // Add a swipe recogniser
         let swipeLeft : UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: "swipeLeft:")
@@ -57,7 +57,7 @@ class ViewController: UIViewController {
         let now: NSDate = NSDate()
         self.labelDaysLeft.text = String(format: "%d", self.model.DaysLeft(now))
         
-        let titleSuffix: String = (count(self.model.title) == 0 ? "left" : "until " + self.model.title)
+        let titleSuffix: String = (countElements(self.model.title) == 0 ? "left" : "until " + self.model.title)
         let titleDays: String = self.model.weekdaysOnly ? "weekdays" : "days"
         self.labelTitle.text = String(format: "%@ %@", titleDays, titleSuffix)
 

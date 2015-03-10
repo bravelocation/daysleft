@@ -21,7 +21,7 @@ public class BLUserSettings {
         let defaultPrefs: NSDictionary? = NSDictionary(contentsOfURL:defaultPrefsFile!)
         
         self.appStandardUserDefaults = NSUserDefaults(suiteName: suiteName)!
-        self.appStandardUserDefaults.registerDefaults(defaultPrefs as! [NSObject : AnyObject]);
+        self.appStandardUserDefaults.registerDefaults(defaultPrefs as [NSObject : AnyObject]);
         
         // Setup the iCloud store
         var store: NSUbiquitousKeyValueStore = NSUbiquitousKeyValueStore.defaultStore()
@@ -109,7 +109,7 @@ public class BLUserSettings {
             let reason: NSInteger = downcastedReason.integerValue
             if ((reason == NSUbiquitousKeyValueStoreServerChange) || (reason == NSUbiquitousKeyValueStoreInitialSyncChange)) {
                 // If something is changing externally, get the changes and update the corresponding keys locally.
-                let changedKeys = userInfo.objectForKey(NSUbiquitousKeyValueStoreChangedKeysKey) as! [String]
+                let changedKeys = userInfo.objectForKey(NSUbiquitousKeyValueStoreChangedKeysKey) as [String]
                 let store: NSUbiquitousKeyValueStore = NSUbiquitousKeyValueStore.defaultStore();
                 let userDefaults = self.appStandardUserDefaults
             
