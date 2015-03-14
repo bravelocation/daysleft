@@ -31,6 +31,7 @@ let π:CGFloat = CGFloat(M_PI)
     
     public func updateControl() {
         self.clearControl()
+        self.arcWidth = bounds.width / 3.0;
 
         let center = CGPoint(x:bounds.width/2, y: bounds.height/2)
         
