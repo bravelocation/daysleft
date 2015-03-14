@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Cu-F3-Vt7">
-                                <rect key="frame" x="88" y="83" width="200" height="82"/>
+                                <rect key="frame" x="88" y="99" width="200" height="82"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="Tma-Y3-Kpr"/>
                                 </constraints>
@@ -28,7 +28,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="days until Christmas" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B5u-71-7aF">
-                                <rect key="frame" x="16" y="173" width="343" height="21"/>
+                                <rect key="frame" x="16" y="189" width="343" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -101,7 +101,7 @@
                             <constraint firstItem="qRM-og-tk4" firstAttribute="top" secondItem="6ap-MQ-ZgB" secondAttribute="bottom" id="kjW-HW-per"/>
                             <constraint firstAttribute="centerX" secondItem="6ap-MQ-ZgB" secondAttribute="centerX" id="oHa-t2-d24"/>
                             <constraint firstItem="B5u-71-7aF" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="qnL-F9-ca1"/>
-                            <constraint firstItem="6ap-MQ-ZgB" firstAttribute="top" secondItem="B5u-71-7aF" secondAttribute="bottom" constant="32" id="sHF-a1-tVS"/>
+                            <constraint firstItem="6ap-MQ-ZgB" firstAttribute="top" secondItem="B5u-71-7aF" secondAttribute="bottom" constant="16" id="sHF-a1-tVS"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Count The Days Left" id="GgR-KT-7FI">
