@@ -24,6 +24,8 @@
 		52CFBF001A8B631B005234FB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CFBEFF1A8B631B005234FB /* ViewController.swift */; };
 		52CFBF031A8B631B005234FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52CFBF011A8B631B005234FB /* Main.storyboard */; };
 		52CFBF051A8B631B005234FB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52CFBF041A8B631B005234FB /* Images.xcassets */; };
+		52DAC1DE1AB01D61008C8354 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52DAC1DC1AB01D61008C8354 /* Crashlytics.framework */; };
+		52DAC1DF1AB01D61008C8354 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52DAC1DD1AB01D61008C8354 /* Fabric.framework */; };
 		52FAB11C1A9240490039691E /* DefaultPreferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52FAB11B1A9240490039691E /* DefaultPreferences.plist */; };
 		52FAB11E1A9381B70039691E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FAB11D1A9381B70039691E /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
@@ -113,6 +115,8 @@
 		52CFBF121A8B631B005234FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52CFBF131A8B631B005234FB /* daysleftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = daysleftTests.swift; path = ../daysleftTests/daysleftTests.swift; sourceTree = "<group>"; };
 		52CFBF1D1A8B642C005234FB /* DaysLeftModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DaysLeftModel.swift; path = ../daysleft/DaysLeftModel.swift; sourceTree = "<group>"; };
+		52DAC1DC1AB01D61008C8354 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		52DAC1DD1AB01D61008C8354 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		52FAB1181A9231970039691E /* BLUserSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BLUserSettings.swift; path = ../daysleft/BLUserSettings.swift; sourceTree = "<group>"; };
 		52FAB11A1A923F500039691E /* daysleft.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = daysleft.entitlements; sourceTree = "<group>"; };
 		52FAB11B1A9240490039691E /* DefaultPreferences.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DefaultPreferences.plist; sourceTree = "<group>"; };
@@ -148,7 +152,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52DAC1DE1AB01D61008C8354 /* Crashlytics.framework in Frameworks */,
 				5295EDE71A94AE53007EF7E7 /* daysleftlibrary.framework in Frameworks */,
+				52DAC1DF1AB01D61008C8354 /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,6 +234,8 @@
 		52CFBEEF1A8B631B005234FB = {
 			isa = PBXGroup;
 			children = (
+				52DAC1DC1AB01D61008C8354 /* Crashlytics.framework */,
+				52DAC1DD1AB01D61008C8354 /* Fabric.framework */,
 				52CFBEFA1A8B631B005234FB /* daysleft */,
 				52CFBF101A8B631B005234FB /* daysleftTests */,
 				5295EDD11A94AE53007EF7E7 /* daysleftlibrary */,
@@ -814,6 +822,10 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = daysleft/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -831,6 +843,10 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = daysleft/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
