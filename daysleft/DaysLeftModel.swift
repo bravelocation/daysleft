@@ -178,7 +178,7 @@ public class DaysLeftModel: BLUserSettings
         return (fullWeeks * 5) + daysOfWeekDifference
     }
     
-    private func StartOfDay(fullDate: NSDate) -> NSDate {
+    public func StartOfDay(fullDate: NSDate) -> NSDate {
 
         let preservedComponents = (NSCalendarUnit.YearCalendarUnit | NSCalendarUnit.MonthCalendarUnit | NSCalendarUnit.DayCalendarUnit);
         let startOfDayComponents =  NSCalendar.currentCalendar().components(preservedComponents, fromDate: fullDate)
@@ -186,7 +186,7 @@ public class DaysLeftModel: BLUserSettings
         return NSCalendar.currentCalendar().dateFromComponents(startOfDayComponents)!
     }
     
-    private func AddDays(originalDate: NSDate, daysToAdd: Int) -> NSDate {
+    public func AddDays(originalDate: NSDate, daysToAdd: Int) -> NSDate {
         let dateComponents: NSDateComponents = NSDateComponents()
          dateComponents.day = daysToAdd
          return NSCalendar.currentCalendar().dateByAddingComponents(dateComponents, toDate: originalDate, options: nil)!

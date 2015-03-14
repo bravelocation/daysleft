@@ -18,6 +18,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var labelEndDate: UILabel!
     @IBOutlet weak var labelPercentageDone: UILabel!
     
+    var dayChangeTimer: NSTimer!
+    
     let model: DaysLeftModel = DaysLeftModel()
     
     override func viewDidLoad() {
@@ -39,18 +41,28 @@ class ViewController: UIViewController {
         let swipeLeft : UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: "swipeLeft:")
         swipeLeft.direction = UISwipeGestureRecognizerDirection.Left
         self.view.addGestureRecognizer(swipeLeft)
+        
+        // Add timer in case runs over a day change
+        let now = NSDate()
+        let secondsInADay: Double = 60 * 60 * 24
+        let startOfTomorrow = self.model.AddDays(self.model.StartOfDay(now), daysToAdd: 1)
+        self.dayChangeTimer = NSTimer(fireDate: startOfTomorrow, interval: secondsInADay, target: self, selector: "dayChangeTimerFired:", userInfo: nil, repeats: false)
     }
-    
+
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.counterView.clearControl()
     }
-    
+
     override func viewDidAppear(animated: Bool) {
         self.updateViewFromModel()
     }
     
     @IBAction func returnFromSettings(segue: UIStoryboardSegue) {
+    }
+    
+    func dayChangedTimerFired(timer: NSTimer) {
+        self.updateViewFromModel()
     }
     
     func updateViewFromModel() {
