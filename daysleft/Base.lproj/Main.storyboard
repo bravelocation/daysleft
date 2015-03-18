@@ -19,17 +19,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Cu-F3-Vt7">
-                                <rect key="frame" x="88" y="99" width="200" height="82"/>
+                                <rect key="frame" x="88" y="113" width="200" height="77"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="Tma-Y3-Kpr"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="68"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="64"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="days until Christmas" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B5u-71-7aF">
-                                <rect key="frame" x="16" y="189" width="343" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="16" y="190" width="343" height="20"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -77,9 +77,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30% done" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tik-NR-YWh">
-                                <rect key="frame" x="80" y="464" width="215" height="20"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="80" y="464" width="215" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" red="0.20784313730000001" green="0.30980392159999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -92,7 +92,7 @@
                             <constraint firstItem="e4s-jj-SxE" firstAttribute="top" secondItem="6ap-MQ-ZgB" secondAttribute="bottom" id="G8h-s2-sTC"/>
                             <constraint firstItem="6ap-MQ-ZgB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="64" id="LuF-w0-DKN"/>
                             <constraint firstItem="e4s-jj-SxE" firstAttribute="leading" secondItem="6ap-MQ-ZgB" secondAttribute="leading" id="Tku-lR-FrQ"/>
-                            <constraint firstItem="B5u-71-7aF" firstAttribute="top" secondItem="1Cu-F3-Vt7" secondAttribute="bottom" constant="8" id="ViD-S1-3gq"/>
+                            <constraint firstItem="B5u-71-7aF" firstAttribute="top" secondItem="1Cu-F3-Vt7" secondAttribute="bottom" id="ViD-S1-3gq"/>
                             <constraint firstItem="Tik-NR-YWh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="64" id="WwJ-eU-1xd"/>
                             <constraint firstItem="Tik-NR-YWh" firstAttribute="top" secondItem="qRM-og-tk4" secondAttribute="bottom" constant="8" id="fi6-cQ-eu9"/>
                             <constraint firstAttribute="centerY" secondItem="6ap-MQ-ZgB" secondAttribute="centerY" id="hCr-ua-ecC"/>
