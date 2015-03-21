@@ -137,7 +137,7 @@
                         <sections>
                             <tableViewSection headerTitle="What are you counting down to?" id="hfp-I3-RlM">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="p4D-4I-liI">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="44" id="p4D-4I-liI">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="p4D-4I-liI" id="YfY-qB-Y2A">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -162,7 +162,7 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Dates" id="DNT-0n-Cdv">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="hYS-cI-WBl">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="44" id="hYS-cI-WBl">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hYS-cI-WBl" id="ahV-b2-f12">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -191,7 +191,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="UqI-De-np0">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="44" id="UqI-De-np0">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UqI-De-np0" id="dRr-Vo-MK4">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -219,7 +219,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="tgZ-Fk-p4D">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="44" id="tgZ-Fk-p4D">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tgZ-Fk-p4D" id="k3O-sG-RVz">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -246,7 +246,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="bnH-K0-kUa">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="44" id="bnH-K0-kUa">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bnH-K0-kUa" id="kHe-O8-0lX">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -268,7 +268,7 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Shortcuts" id="w7t-Pk-drw">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="rVV-OY-o6m">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="44" id="rVV-OY-o6m">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rVV-OY-o6m" id="O9z-m1-xq4">
                                             <autoresizingMask key="autoresizingMask"/>
