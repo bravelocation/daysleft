@@ -47,6 +47,9 @@ class InterfaceController: WKInterfaceController {
         let percentageDone: Float = (Float(model.DaysGone(now)) * 100.0) / Float(model.DaysLength)
         self.labelPercentDone.setText(String(format:"%3.0f%% done", percentageDone))
         
-        // TODO: Set the progress image set
+        // Set the progress image set
+        let intPercentageDone: Int = Int(percentageDone)
+        self.imageProgress.setImageNamed("progress")
+        self.imageProgress.startAnimatingWithImagesInRange(NSRange(location:0, length: intPercentageDone), duration: 0.5, repeatCount: 1)
     }
 }
