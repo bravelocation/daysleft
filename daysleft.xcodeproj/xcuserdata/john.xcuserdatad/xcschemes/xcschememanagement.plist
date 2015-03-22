@@ -4,10 +4,25 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>daysleft WatchKit App.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
 		<key>daysleft.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+		<key>daysleftlibrary.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>dayslefttoday.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
@@ -23,6 +38,11 @@
 			<true/>
 		</dict>
 		<key>5295EDF71A94B398007EF7E7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>52B7E8801ABEDE9300E1949C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
