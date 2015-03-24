@@ -10,12 +10,12 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="daysleft_WatchKit_App" customModuleProvider="target">
                     <items>
-                        <label alignment="center" verticalAlignment="center" text="65 weekdays until end of contract" textAlignment="center" numberOfLines="2" id="KUj-Gc-2DT">
+                        <label alignment="center" verticalAlignment="center" textAlignment="center" numberOfLines="2" id="KUj-Gc-2DT">
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <fontDescription key="font" style="UICTFontTextStyleSubhead"/>
                         </label>
                         <imageView width="75" height="75" alignment="center" verticalAlignment="center" id="PVN-ca-kV0"/>
-                        <label alignment="center" verticalAlignment="center" text="25% done" textAlignment="center" id="ozf-ge-NQR">
+                        <label alignment="center" verticalAlignment="center" textAlignment="center" id="ozf-ge-NQR">
                             <color key="textColor" red="0.20784313730000001" green="0.30980392159999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </label>
                     </items>
