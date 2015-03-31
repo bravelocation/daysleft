@@ -1171,6 +1171,7 @@
 				52B7E8931ABEDE9300E1949C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		52B7E8951ABEDE9300E1949C /* Build configuration list for PBXNativeTarget "daysleft WatchKit Extension" */ = {
 			isa = XCConfigurationList;
@@ -1179,6 +1180,7 @@
 				52B7E8911ABEDE9300E1949C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		52CFBEF31A8B631B005234FB /* Build configuration list for PBXProject "daysleft" */ = {
 			isa = XCConfigurationList;
