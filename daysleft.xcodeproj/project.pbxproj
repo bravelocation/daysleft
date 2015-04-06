@@ -564,6 +564,7 @@
 					};
 					52B7E8801ABEDE9300E1949C = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = W8B3V597R9;
 					};
 					52CFBEF71A8B631B005234FB = {
 						CreatedOnToolsVersion = 6.3;
@@ -681,7 +682,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "./Fabric.framework/run de20d03a9cd3af9832860083836d12964a8b11f5 0a8628bec808495065a9f124e4fd6d79b5f2e0e69b63845d0544c96c777ae566\n\ngit=`sh /etc/profile; which git`\nappBuild=`$git rev-list --all |wc -l`\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $appBuild\" \"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\necho \"Updated ${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\n";
+			shellScript = "./Fabric.framework/run de20d03a9cd3af9832860083836d12964a8b11f5 0a8628bec808495065a9f124e4fd6d79b5f2e0e69b63845d0544c96c777ae566\n\necho \"Updated Fabric\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -947,6 +948,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -964,6 +966,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				IBSC_MODULE = daysleft_WatchKit_Extension;
 				INFOPLIST_FILE = "daysleft WatchKit App/Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
