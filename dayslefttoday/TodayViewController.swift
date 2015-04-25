@@ -36,7 +36,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         let now: NSDate = NSDate()
         let model: DaysLeftModel = DaysLeftModel()
         let daysLeft: Int = model.DaysLeft(now)
-        let titleSuffix: String = (countElements(model.title) == 0 ? "left" : "until " + model.title)
+        let titleSuffix: String = (count(model.title) == 0 ? "left" : "until " + model.title)
         let titleDays: String = model.weekdaysOnly ? "weekdays" : "days"
         
         self.labelNumberTitle.text = String(format: "%d %@ %@", daysLeft, titleDays, titleSuffix)

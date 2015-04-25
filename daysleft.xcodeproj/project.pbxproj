@@ -949,6 +949,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -956,6 +957,7 @@
 				IBSC_MODULE = daysleft_WatchKit_Extension;
 				INFOPLIST_FILE = "daysleft WatchKit App/Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
 				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
@@ -967,9 +969,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				IBSC_MODULE = daysleft_WatchKit_Extension;
 				INFOPLIST_FILE = "daysleft WatchKit App/Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
 				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";

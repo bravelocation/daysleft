@@ -69,7 +69,7 @@ class ViewController: UIViewController {
         let now: NSDate = NSDate()
         self.labelDaysLeft.text = String(format: "%d", self.model.DaysLeft(now))
         
-        let titleSuffix: String = (countElements(self.model.title) == 0 ? "left" : "until " + self.model.title)
+        let titleSuffix: String = (count(self.model.title) == 0 ? "left" : "until " + self.model.title)
         let titleDays: String = self.model.weekdaysOnly ? "weekdays" : "days"
         self.labelTitle.text = String(format: "%@ %@", titleDays, titleSuffix)
 

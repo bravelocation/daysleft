@@ -56,8 +56,8 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate {
         
         // Add version number
         let infoDictionary = NSBundle.mainBundle()
-        let version = infoDictionary.objectForInfoDictionaryKey("CFBundleShortVersionString") as String
-        let build = infoDictionary.objectForInfoDictionaryKey("CFBundleVersion") as String
+        let version = infoDictionary.objectForInfoDictionaryKey("CFBundleShortVersionString") as! String
+        let build = infoDictionary.objectForInfoDictionaryKey("CFBundleVersion") as! String
         self.labelVersion.text = String(format: "v%@.%@", version, build)
     }
 
@@ -79,12 +79,12 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate {
         self.switchWeekdaysOnly.on = false
         
         self.startDatePicker.date = NSDate()
-        self.endDatePicker.date = NSCalendar.currentCalendar().dateByAddingUnit(NSCalendarUnit.DayCalendarUnit, value: 30, toDate: self.model.start, options: nil)!
+        self.endDatePicker.date = NSCalendar.currentCalendar().dateByAddingUnit(NSCalendarUnit.CalendarUnitDay, value: 30, toDate: self.model.start, options: nil)!
         self.validateAndSaveDates()
     }
     
     // Hides the keyboard if touch anywhere outside text box
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         self.view.endEditing(true)
         super.touchesBegan(touches, withEvent: event)
     }
