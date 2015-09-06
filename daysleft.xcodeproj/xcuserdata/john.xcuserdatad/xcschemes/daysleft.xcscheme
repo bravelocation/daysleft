@@ -34,6 +34,20 @@
                ReferencedContainer = "container:daysleft.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "5295EDD91A94AE53007EF7E7"
+               BuildableName = "daysleftlibraryTests.xctest"
+               BlueprintName = "daysleftlibraryTests"
+               ReferencedContainer = "container:daysleft.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -49,6 +63,16 @@
                BlueprintIdentifier = "52CFBF0C1A8B631B005234FB"
                BuildableName = "daysleftTests.xctest"
                BlueprintName = "daysleftTests"
+               ReferencedContainer = "container:daysleft.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "5295EDD91A94AE53007EF7E7"
+               BuildableName = "daysleftlibraryTests.xctest"
+               BlueprintName = "daysleftlibraryTests"
                ReferencedContainer = "container:daysleft.xcodeproj">
             </BuildableReference>
          </TestableReference>
