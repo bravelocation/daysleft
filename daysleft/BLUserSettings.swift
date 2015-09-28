@@ -21,10 +21,10 @@ public class BLUserSettings {
         let defaultPrefs: NSDictionary? = NSDictionary(contentsOfURL:defaultPrefsFile!)
         
         self.appStandardUserDefaults = NSUserDefaults(suiteName: suiteName)!
-        self.appStandardUserDefaults.registerDefaults(defaultPrefs as! [NSObject : AnyObject]);
+        self.appStandardUserDefaults.registerDefaults(defaultPrefs as! [String: AnyObject]);
         
         // Setup the iCloud store
-        var store: NSUbiquitousKeyValueStore = NSUbiquitousKeyValueStore.defaultStore()
+        let store: NSUbiquitousKeyValueStore = NSUbiquitousKeyValueStore.defaultStore()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateKVStoreItems:", name: NSUbiquitousKeyValueStoreDidChangeExternallyNotification, object: store)
         
         store.synchronize()
@@ -116,7 +116,7 @@ public class BLUserSettings {
                 // This loop assumes you are using the same key names in both the user defaults database and the iCloud key-value store
                 for key:String in changedKeys {
                     let settingValue: AnyObject? = store.objectForKey(key)
-                    self.appStandardUserDefaults.setObject(settingValue, forKey: key)
+                    userDefaults.setObject(settingValue, forKey: key)
                     NSLog("Updated local setting for %@", key)
                 }
             }

@@ -62,7 +62,7 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate {
     }
 
     @IBAction func textTitleChanged(sender: AnyObject) {
-        model.title = self.textTitle.text
+        model.title = self.textTitle.text!
     }
     
     @IBAction func dateChanged(sender: AnyObject) {
@@ -79,12 +79,12 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate {
         self.switchWeekdaysOnly.on = false
         
         self.startDatePicker.date = NSDate()
-        self.endDatePicker.date = NSCalendar.currentCalendar().dateByAddingUnit(NSCalendarUnit.CalendarUnitDay, value: 30, toDate: self.model.start, options: nil)!
+        self.endDatePicker.date = NSCalendar.currentCalendar().dateByAddingUnit(NSCalendarUnit.Day, value: 30, toDate: self.model.start, options: [])!
         self.validateAndSaveDates()
     }
     
     // Hides the keyboard if touch anywhere outside text box
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         self.view.endEditing(true)
         super.touchesBegan(touches, withEvent: event)
     }

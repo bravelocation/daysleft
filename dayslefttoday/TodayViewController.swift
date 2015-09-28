@@ -27,7 +27,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         self.updateViewData()
     }
     
-    func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)!) {
+    func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)) {
         self.updateViewData()
         completionHandler(NCUpdateResult.NewData)
     }
@@ -36,7 +36,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         let now: NSDate = NSDate()
         let model: DaysLeftModel = DaysLeftModel()
         let daysLeft: Int = model.DaysLeft(now)
-        let titleSuffix: String = (count(model.title) == 0 ? "left" : "until " + model.title)
+        let titleSuffix: String = (model.title.characters.count == 0 ? "left" : "until " + model.title)
         let titleDays: String = model.weekdaysOnly ? "weekdays" : "days"
         
         self.labelNumberTitle.text = String(format: "%d %@ %@", daysLeft, titleDays, titleSuffix)

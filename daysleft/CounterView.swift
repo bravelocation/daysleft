@@ -34,10 +34,7 @@ let π:CGFloat = CGFloat(M_PI)
         self.arcWidth = bounds.width / 3.0;
 
         let center = CGPoint(x:bounds.width/2, y: bounds.height/2)
-        
-        // Calculate the radius based on the max dimension of the view
-        let radius: CGFloat = max(bounds.width, bounds.height)
-        
+                
         // Define the start and end angles for the arc
         let startAngle: CGFloat = 3 * π / 4
 
@@ -49,7 +46,7 @@ let π:CGFloat = CGFloat(M_PI)
         
         
             // Create a path based on the center point, radius, and angles you just defined
-            var path = UIBezierPath(arcCenter: center,
+            let path = UIBezierPath(arcCenter: center,
                 radius: bounds.width/2 - self.arcWidth/2,
                 startAngle: startAngle,
                 endAngle: endAngle,
@@ -63,7 +60,7 @@ let π:CGFloat = CGFloat(M_PI)
             self.circleSubView?.shadowOffset = CGSize(width: 3.0, height: 3.0)
             self.circleSubView?.shadowOpacity = 0.25
             
-            self.layer.addSublayer(self.circleSubView)
+            self.layer.addSublayer(self.circleSubView!)
         }
         
         // Now add the progress circle
@@ -79,7 +76,7 @@ let π:CGFloat = CGFloat(M_PI)
         // Then multiply out by the actual glasses drunk
         let progressEndAngle = arcLengthPerGlass * CGFloat(counter) + startAngle
         
-        var progressPath = UIBezierPath(arcCenter: center,
+        let progressPath = UIBezierPath(arcCenter: center,
             radius: bounds.width/2 - self.arcWidth/2,
             startAngle: startAngle,
             endAngle: progressEndAngle,
@@ -90,7 +87,7 @@ let π:CGFloat = CGFloat(M_PI)
         self.progressSubView?.strokeColor = self.outlineColor.CGColor
         self.progressSubView?.lineWidth = self.arcWidth
 
-        self.layer.addSublayer(self.progressSubView)
+        self.layer.addSublayer(self.progressSubView!)
         
         // Now animate the progress drawing
         let animation: CABasicAnimation = CABasicAnimation(keyPath: "strokeEnd")

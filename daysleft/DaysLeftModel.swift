@@ -95,10 +95,10 @@ public class DaysLeftModel: BLUserSettings
         if (self.firstRun < self.currentFirstRun)
         {
             // If it is first run, initialise the model data to Christmas
-            var todayComponents = NSCalendar.currentCalendar().components(NSCalendarUnit.CalendarUnitYear | NSCalendarUnit.CalendarUnitMonth | NSCalendarUnit.CalendarUnitDay, fromDate: NSDate())
-            var todayDate = NSCalendar.currentCalendar().dateFromComponents(todayComponents)!
+            let todayComponents = NSCalendar.currentCalendar().components([NSCalendarUnit.Year, NSCalendarUnit.Month, NSCalendarUnit.Day], fromDate: NSDate())
+            let todayDate = NSCalendar.currentCalendar().dateFromComponents(todayComponents)!
             
-            var xmasComponents = NSDateComponents()
+            let xmasComponents = NSDateComponents()
             xmasComponents.day = 25
             xmasComponents.month = 12
             xmasComponents.year = todayComponents.year
@@ -125,19 +125,19 @@ public class DaysLeftModel: BLUserSettings
     private func DaysDifference(startDate: NSDate, endDate: NSDate) -> Int {
         let globalCalendar: NSCalendar = NSCalendar.autoupdatingCurrentCalendar()
 
-        var startOfStartDate = self.StartOfDay(startDate)
-        var startOfEndDate = self.StartOfDay(endDate)
+        let startOfStartDate = self.StartOfDay(startDate)
+        let startOfEndDate = self.StartOfDay(endDate)
 
         // If want all days, just calculate the days difference and return it
         if (!self.weekdaysOnly) {
-            let components: NSDateComponents = globalCalendar.components(NSCalendarUnit.CalendarUnitDay, fromDate: startOfStartDate, toDate: startOfEndDate, options: NSCalendarOptions.WrapComponents)
+            let components: NSDateComponents = globalCalendar.components(NSCalendarUnit.Day, fromDate: startOfStartDate, toDate: startOfEndDate, options: NSCalendarOptions.WrapComponents)
             
             return components.day
         }
         
         // If we are calculating weekdays only, first adjust the start or end date if on a weekend
-        var startDayOfWeek: Int = globalCalendar.component(NSCalendarUnit.CalendarUnitWeekday, fromDate: startOfStartDate)
-        var endDayOfWeek: Int = globalCalendar.component(NSCalendarUnit.CalendarUnitWeekday, fromDate: startOfEndDate)
+        var startDayOfWeek: Int = globalCalendar.component(NSCalendarUnit.Weekday, fromDate: startOfStartDate)
+        var endDayOfWeek: Int = globalCalendar.component(NSCalendarUnit.Weekday, fromDate: startOfEndDate)
             
         var adjustedStartDate = startOfStartDate
         var adjustedEndDate = startOfEndDate
@@ -160,14 +160,14 @@ public class DaysLeftModel: BLUserSettings
             adjustedEndDate = self.AddDays(startOfEndDate, daysToAdd: -2)
         }
             
-        let adjustedComponents: NSDateComponents = globalCalendar.components(NSCalendarUnit.CalendarUnitDay, fromDate: adjustedStartDate, toDate: adjustedEndDate, options: NSCalendarOptions.WrapComponents)
+        let adjustedComponents: NSDateComponents = globalCalendar.components(NSCalendarUnit.Day, fromDate: adjustedStartDate, toDate: adjustedEndDate, options: NSCalendarOptions.WrapComponents)
             
         let adjustedTotalDays: Int = adjustedComponents.day
         let fullWeeks: Int = adjustedTotalDays / 7
         
         // Now we need to take into account if the day of the start date is before or after the day of the end date
-        startDayOfWeek = globalCalendar.component(NSCalendarUnit.CalendarUnitWeekday, fromDate: adjustedStartDate)
-        endDayOfWeek = globalCalendar.component(NSCalendarUnit.CalendarUnitWeekday, fromDate: adjustedEndDate)
+        startDayOfWeek = globalCalendar.component(NSCalendarUnit.Weekday, fromDate: adjustedStartDate)
+        endDayOfWeek = globalCalendar.component(NSCalendarUnit.Weekday, fromDate: adjustedEndDate)
         
         var daysOfWeekDifference = endDayOfWeek - startDayOfWeek
         if (daysOfWeekDifference < 0) {
@@ -180,8 +180,7 @@ public class DaysLeftModel: BLUserSettings
     
     public func StartOfDay(fullDate: NSDate) -> NSDate {
 
-        let preservedComponents = (NSCalendarUnit.CalendarUnitYear | NSCalendarUnit.CalendarUnitMonth | NSCalendarUnit.CalendarUnitDay);
-        let startOfDayComponents =  NSCalendar.currentCalendar().components(preservedComponents, fromDate: fullDate)
+        let startOfDayComponents =  NSCalendar.currentCalendar().components([NSCalendarUnit.Year, NSCalendarUnit.Month, NSCalendarUnit.Day], fromDate: fullDate)
         
         return NSCalendar.currentCalendar().dateFromComponents(startOfDayComponents)!
     }
@@ -189,6 +188,6 @@ public class DaysLeftModel: BLUserSettings
     public func AddDays(originalDate: NSDate, daysToAdd: Int) -> NSDate {
         let dateComponents: NSDateComponents = NSDateComponents()
          dateComponents.day = daysToAdd
-         return NSCalendar.currentCalendar().dateByAddingComponents(dateComponents, toDate: originalDate, options: nil)!
+         return NSCalendar.currentCalendar().dateByAddingComponents(dateComponents, toDate: originalDate, options: [])!
     }
 }
