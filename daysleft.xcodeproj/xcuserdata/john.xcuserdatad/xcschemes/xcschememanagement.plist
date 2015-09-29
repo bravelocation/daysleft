@@ -14,6 +14,16 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>daysleftlibrary copy 2.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>6</integer>
+		</dict>
+		<key>daysleftlibrary copy.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
 		<key>daysleftlibrary.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -24,9 +34,19 @@
 			<key>orderHint</key>
 			<integer>2</integer>
 		</dict>
+		<key>daysleftwatchlibrary.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>5</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>5234434B1BBAF88A00E95BA4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>5295EDCF1A94AE53007EF7E7</key>
 		<dict>
 			<key>primary</key>
