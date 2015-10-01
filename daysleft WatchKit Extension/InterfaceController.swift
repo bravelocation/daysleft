@@ -16,6 +16,18 @@ class InterfaceController: WKInterfaceController {
     @IBOutlet weak var labelPercentDone: WKInterfaceLabel!
     @IBOutlet weak var imageProgress: WKInterfaceImage!
     
+    private var model: DaysLeftModel = DaysLeftModel(onWatch:true)
+    
+    override init() {
+        super.init()
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "userSettingsUpdated:", name: BLUserSettings.UpdateSettingsNotification, object: nil)
+    }
+    
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
         
@@ -37,19 +49,28 @@ class InterfaceController: WKInterfaceController {
     
     private func updateViewData() {
         let now: NSDate = NSDate()
-        let model: DaysLeftModel = DaysLeftModel(onWatch:true)
-        let daysLeft: Int = model.DaysLeft(now)
-        let titleSuffix: String = (model.title.characters.count == 0 ? "left" : "until " + model.title)
-        let titleDays: String = model.weekdaysOnly ? "weekdays" : "days"
+        let daysLeft: Int = self.model.DaysLeft(now)
+        let titleSuffix: String = (self.model.title.characters.count == 0 ? "left" : "until " + self.model.title)
+        let titleDays: String = self.model.weekdaysOnly ? "weekdays" : "days"
         
         self.labelTitle.setText(String(format: "%d %@ %@", daysLeft, titleDays, titleSuffix))
         
-        let percentageDone: Float = (Float(model.DaysGone(now)) * 100.0) / Float(model.DaysLength)
+        let percentageDone: Float = (Float(self.model.DaysGone(now)) * 100.0) / Float(self.model.DaysLength)
         self.labelPercentDone.setText(String(format:"%3.0f%% done", percentageDone))
         
         // Set the progress image set
         let intPercentageDone: Int = Int(percentageDone)
         self.imageProgress.setImageNamed("progress")
         self.imageProgress.startAnimatingWithImagesInRange(NSRange(location:0, length: intPercentageDone), duration: 0.5, repeatCount: 1)
+    }
+    
+    @objc
+    private func userSettingsUpdated(notification: NSNotification) {
+        NSLog("Received BLUserSettingsUpdated notification")
+        
+        // Update view data on main thread
+        dispatch_async(dispatch_get_main_queue()) {
+            self.updateViewData()
+        }
     }
 }

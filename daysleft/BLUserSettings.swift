@@ -11,6 +11,7 @@ import WatchConnectivity
 
 public class BLUserSettings: NSObject, WCSessionDelegate {
 
+    public static let UpdateSettingsNotification = "kBLUserSettingsNotification"
     private var appStandardUserDefaults: NSUserDefaults?
     private var onWatch: Bool = false
     
@@ -127,6 +128,9 @@ public class BLUserSettings: NSObject, WCSessionDelegate {
         }
 
         self.appStandardUserDefaults!.synchronize()
+        
+        NSNotificationCenter.defaultCenter().postNotificationName(BLUserSettings.UpdateSettingsNotification, object:nil, userInfo:nil)
+        NSLog("Sent BLUserSettingsUpdated notification")
     }
     
     /// Send updated settings to watch
