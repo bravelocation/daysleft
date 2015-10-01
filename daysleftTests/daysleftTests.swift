@@ -97,20 +97,20 @@ class daysleftTests: XCTestCase {
     
     // Helper method for running tests
     func actualTestRun(startDay: Int, endDay: Int, currentDay: Int, weekdaysOnly: Bool, expectedLength: Int, expectedGone: Int, expectedLeft: Int) {
-        var model: DaysLeftModel = DaysLeftModel()
+        let model: DaysLeftModel = DaysLeftModel()
         model.weekdaysOnly = weekdaysOnly
         
-        var startComponents: NSDateComponents = NSDateComponents();
+        let startComponents: NSDateComponents = NSDateComponents();
         startComponents.year = 2015;
         startComponents.month = 1;
         startComponents.day = startDay;
         
-        var endComponents: NSDateComponents = NSDateComponents();
+        let endComponents: NSDateComponents = NSDateComponents();
         endComponents.year = 2015;
         endComponents.month = 1;
         endComponents.day = endDay;
         
-        var currentComponents: NSDateComponents = NSDateComponents();
+        let currentComponents: NSDateComponents = NSDateComponents();
         currentComponents.year = 2015;
         currentComponents.month = 1;
         currentComponents.day = currentDay;

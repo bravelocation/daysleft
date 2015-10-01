@@ -37,7 +37,7 @@ class InterfaceController: WKInterfaceController {
     
     private func updateViewData() {
         let now: NSDate = NSDate()
-        let model: DaysLeftModel = DaysLeftModel()
+        let model: DaysLeftModel = DaysLeftModel(onWatch:true)
         let daysLeft: Int = model.DaysLeft(now)
         let titleSuffix: String = (model.title.characters.count == 0 ? "left" : "until " + model.title)
         let titleDays: String = model.weekdaysOnly ? "weekdays" : "days"

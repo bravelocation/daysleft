@@ -12,6 +12,18 @@ public class DaysLeftModel: BLUserSettings
 {
     public let currentFirstRun: Int = 1;
     
+    public init(onWatch: Bool = false) {
+        super.init(onWatch: onWatch)
+        
+        // If not on watch, sync all the key settings
+        if (onWatch == false) {
+            self.updateWatchSettings("start");
+            self.updateWatchSettings("end");
+            self.updateWatchSettings("title");
+            self.updateWatchSettings("weekdaysOnly");
+        }
+    }
+    
     /// Property to get and set the start date
     public var start: NSDate {
         get { return self.readObjectFromStore("start") as! NSDate }
