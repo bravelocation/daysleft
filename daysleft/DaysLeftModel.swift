@@ -15,12 +15,15 @@ public class DaysLeftModel: BLUserSettings
     public init(onWatch: Bool = false) {
         super.init(onWatch: onWatch)
         
-        // If not on watch, sync all the key settings
-        if (onWatch == false) {
+        // If not on watch, sync all the key settings (once only)
+        if (onWatch == false && self.initialisedWatch == false) {
             self.updateWatchSettings("start");
             self.updateWatchSettings("end");
             self.updateWatchSettings("title");
             self.updateWatchSettings("weekdaysOnly");
+            
+            self.initialisedWatch = true;
+            NSLog("Initialised watch for first time")
         }
     }
     
@@ -52,6 +55,12 @@ public class DaysLeftModel: BLUserSettings
     public var firstRun: Int {
         get { return self.readObjectFromStore("firstRun") as! Int }
         set { self.writeIntegerToStore(newValue, key: "firstRun") }
+    }
+    
+    /// Property to get and set the initialisedWatch flag
+    public var initialisedWatch: Bool {
+        get { return self.readObjectFromStore("initialisedWatch") as! Bool }
+        set { self.writeBoolToStore(newValue, key: "initialisedWatch") }
     }
     
     /// Property to get the number of days between the start and the end

@@ -12,5 +12,7 @@
 	<date>1999-12-31T00:00:00Z</date>
 	<key>start</key>
 	<date>1999-12-31T00:00:00Z</date>
+	<key>initialisedWatch</key>
+	<false/>
 </dict>
 </plist>

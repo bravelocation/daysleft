@@ -97,7 +97,7 @@ class daysleftTests: XCTestCase {
     
     // Helper method for running tests
     func actualTestRun(startDay: Int, endDay: Int, currentDay: Int, weekdaysOnly: Bool, expectedLength: Int, expectedGone: Int, expectedLeft: Int) {
-        let model: DaysLeftModel = DaysLeftModel()
+        let model: DaysLeftModel = DaysLeftModel(onWatch: false)
         model.weekdaysOnly = weekdaysOnly
         
         let startComponents: NSDateComponents = NSDateComponents();
