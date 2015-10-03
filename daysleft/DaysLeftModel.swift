@@ -17,7 +17,7 @@ public class DaysLeftModel: BLUserSettings
         super.init()
         
         // Preload cache
-        print("Preloading settings cache...")
+        NSLog("Preloading settings cache...")
         self.settingsCache["start"] = self.appStandardUserDefaults!.valueForKey("start")
         self.settingsCache["end"] = self.appStandardUserDefaults!.valueForKey("end")
         self.settingsCache["title"] = self.appStandardUserDefaults!.valueForKey("title")
@@ -29,7 +29,7 @@ public class DaysLeftModel: BLUserSettings
 
     /// Send updated settings to watch
     public func initialiseiCloudSettings() {
-        print("Initialising iCloud Settings")
+        NSLog("Initialising iCloud Settings")
         let store: NSUbiquitousKeyValueStore = NSUbiquitousKeyValueStore.defaultStore()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateKVStoreItems:", name: NSUbiquitousKeyValueStoreDidChangeExternallyNotification, object: store)
         store.synchronize()
@@ -58,9 +58,9 @@ public class DaysLeftModel: BLUserSettings
             self.pushSettingChangeToWatch("weekdaysOnly");
             
             self.initialisedWatch = true;
-            print("Settings pushed to watch")
+            NSLog("Settings pushed to watch")
         } else {
-            print("All settings already pushed to watch")
+            NSLog("All settings already pushed to watch")
         }
     }
     

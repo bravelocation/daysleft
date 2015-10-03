@@ -28,9 +28,12 @@ class InterfaceController: WKInterfaceController {
     
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
-        super.willActivate()
+        NSLog("InterfaceController.willActivate() started")
         
+        super.willActivate()
         self.updateViewData()
+        
+        NSLog("InterfaceController.willActivate() ended")
     }
     
     private func updateViewData() {

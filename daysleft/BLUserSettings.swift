@@ -76,25 +76,27 @@ public class BLUserSettings: NSObject, WCSessionDelegate {
     
     public func initialiseWatchSession() {
         if (self.watchSessionInitialised) {
-            print("Watch session already initialised")
+            NSLog("Watch session already initialised")
             return
         }
         
         // Set up watch setting if appropriate
         if (WCSession.isSupported()) {
-            print("Setting up watch session")
+            NSLog("Setting up watch session")
             let session: WCSession = WCSession.defaultSession();
             session.delegate = self
             session.activateSession()
+            NSLog("Watch session activated")
         } else {
-            print("No watch session set up")
+            NSLog("No watch session set up")
         }
     }
     
     /// WCSessionDelegate implementation - update local settings when transfered from phone
     @objc
     public func session(session: WCSession, didReceiveUserInfo userInfo: [String : AnyObject]) {
-        print("New user info transfer data received on watch")
+        NSLog("New user info transfer data received on watch")
+
         for (key, value) in userInfo {
             self.writeObjectToStore(value, key: key)
             print("Received setting update for \(key)")
@@ -104,7 +106,6 @@ public class BLUserSettings: NSObject, WCSessionDelegate {
         
         // Finally send a notification for the view controllers to refresh
         NSNotificationCenter.defaultCenter().postNotificationName(BLUserSettings.UpdateSettingsNotification, object:nil, userInfo:nil)
-        print("Sent UpdateSettingsNotification")
+        NSLog("Sent UpdateSettingsNotification")
     }
-
 }

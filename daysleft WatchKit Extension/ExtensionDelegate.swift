@@ -14,20 +14,21 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
     var model:WatchDaysLeftModel?
     
     func applicationDidFinishLaunching() {
+        NSLog("applicationDidFinishLaunching starting")
         self.model = WatchDaysLeftModel()
+        NSLog("applicationDidFinishLaunching completed")
     }
     
     func applicationDidBecomeActive() {
+        NSLog("applicationDidBecomeActive started")
+
+        // Delay setting up watch session until application is active on background queue
+        let backgroundQueue = dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)
+        dispatch_async(backgroundQueue, {
+            NSLog("Running watch session initialisation on background thread")
+            self.model!.initialiseWatchSession()
+        })
         
-        // Delay setting up watch session until application is active
-        self.model!.initialiseWatchSession()
-        
-        print("applicationDidBecomeActive")
-    }
-    
-    func applicationWillResignActive() {
-        print("applicationWillResignActive")
-        // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-        // Use this method to pause ongoing tasks, disable timers, etc.
+        NSLog("applicationDidBecomeActive completed")
     }
 }
