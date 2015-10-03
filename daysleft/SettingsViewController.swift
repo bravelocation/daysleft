@@ -19,7 +19,6 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate {
     @IBOutlet weak var labelDaysLength: UILabel!
     @IBOutlet weak var labelVersion: UILabel!
     
-    var model: DaysLeftModel = DaysLeftModel()
     var dateFormatter: NSDateFormatter = NSDateFormatter()
     
     let startDatePicker : UIDatePicker = UIDatePicker();
@@ -27,16 +26,18 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+        let model = self.modelData()
+
         self.textTitle.text = model.title
         self.switchWeekdaysOnly.on = model.weekdaysOnly
         
         // Setup date formatter
         self.dateFormatter.dateFormat = "EEE d MMM YYYY"
         
-        self.textStart.text = String(format: "%@", self.dateFormatter.stringFromDate(self.model.start))
-        self.textEnd.text = String(format: "%@", self.dateFormatter.stringFromDate(self.model.end))
-        self.labelDaysLength.text = String(format: "%d days", self.model.DaysLength)
+        self.textStart.text = String(format: "%@", self.dateFormatter.stringFromDate(model.start))
+        self.textEnd.text = String(format: "%@", self.dateFormatter.stringFromDate(model.end))
+        self.labelDaysLength.text = String(format: "%d days", model.DaysLength)
         
         // Setup the date pickers as editors for text fields
         self.startDatePicker.date = model.start
@@ -62,6 +63,7 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate {
     }
 
     @IBAction func textTitleChanged(sender: AnyObject) {
+        let model = self.modelData()
         model.title = self.textTitle.text!
     }
     
@@ -70,16 +72,20 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate {
     }
     
     @IBAction func switchWeekdaysOnlyChanged(sender: AnyObject) {
+        let model = self.modelData()
+
         model.weekdaysOnly = self.switchWeekdaysOnly.on
         self.validateAndSaveDates()
     }
     
     @IBAction func buttonStartTodayTouchUp(sender: AnyObject) {
-        self.model.weekdaysOnly = false
+        let model = self.modelData()
+
+        model.weekdaysOnly = false
         self.switchWeekdaysOnly.on = false
         
         self.startDatePicker.date = NSDate()
-        self.endDatePicker.date = NSCalendar.currentCalendar().dateByAddingUnit(NSCalendarUnit.Day, value: 30, toDate: self.model.start, options: [])!
+        self.endDatePicker.date = NSCalendar.currentCalendar().dateByAddingUnit(NSCalendarUnit.Day, value: 30, toDate: model.start, options: [])!
         self.validateAndSaveDates()
     }
     
@@ -91,25 +97,25 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         self.view.endEditing(true)
-        NSLog("Selected section: %d row:%d", indexPath.section, indexPath.row)
+        print("Selected section:\(indexPath.section) row:\(indexPath.row)")
         
         if (indexPath.section == 3) {
             if (indexPath.row == 0) {
                 let url: NSURL = NSURL(string: "http://www.bravelocationstudios.com")!
                 if (UIApplication.sharedApplication().openURL(url) == false) {
-                    NSLog("Failed to open %@", url)
+                    print("Failed to open \(url)")
                 }
             }
             else if (indexPath.row == 1) {
                 let url: NSURL = NSURL(string: "http://blog.bravelocation.com")!
                 if (UIApplication.sharedApplication().openURL(url) == false) {
-                    NSLog("Failed to open %@", url)
+                    print("Failed to open \(url)")
                 }
             }
             else if (indexPath.row == 2) {
                 let url: NSURL = NSURL(string: "http://github.com/bravelocation/daysleft")!
                 if (UIApplication.sharedApplication().openURL(url) == false) {
-                    NSLog("Failed to open %@", url)
+                    print("Failed to open \(url)")
                 }
             }
         }
@@ -123,17 +129,24 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate {
     
     func validateAndSaveDates() {
         // Update the model
+        let model = self.modelData()
+
         model.start = self.startDatePicker.date
         model.end = self.endDatePicker.date
         
         // Update the text fields
-        self.textStart.text = String(format: "%@", self.dateFormatter.stringFromDate(self.model.start))
-        self.textEnd.text = String(format: "%@", self.dateFormatter.stringFromDate(self.model.end))
-        self.labelDaysLength.text = String(format: "%d days", self.model.DaysLength)
+        self.textStart.text = String(format: "%@", self.dateFormatter.stringFromDate(model.start))
+        self.textEnd.text = String(format: "%@", self.dateFormatter.stringFromDate(model.end))
+        self.labelDaysLength.text = String(format: "%d days", model.DaysLength)
         
         // Update the date restrictions too
         self.startDatePicker.maximumDate = model.end
         self.endDatePicker.minimumDate = model.start
+    }
+    
+    func modelData() -> DaysLeftModel {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        return appDelegate.model
     }
 }
 

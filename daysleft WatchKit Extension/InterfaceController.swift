@@ -16,8 +16,6 @@ class InterfaceController: WKInterfaceController {
     @IBOutlet weak var labelPercentDone: WKInterfaceLabel!
     @IBOutlet weak var imageProgress: WKInterfaceImage!
     
-    private var model: WatchDaysLeftModel = WatchDaysLeftModel()
-    
     override init() {
         super.init()
         
@@ -37,13 +35,15 @@ class InterfaceController: WKInterfaceController {
     
     private func updateViewData() {
         let now: NSDate = NSDate()
-        let daysLeft: Int = self.model.DaysLeft(now)
-        let titleSuffix: String = (self.model.title.characters.count == 0 ? "left" : "until " + self.model.title)
-        let titleDays: String = self.model.weekdaysOnly ? "weekdays" : "days"
+        let model = modelData()
+        
+        let daysLeft: Int = model.DaysLeft(now)
+        let titleSuffix: String = (model.title.characters.count == 0 ? "left" : "until " + model.title)
+        let titleDays: String = model.weekdaysOnly ? "weekdays" : "days"
         
         self.labelTitle.setText(String(format: "%d %@ %@", daysLeft, titleDays, titleSuffix))
         
-        let percentageDone: Float = (Float(self.model.DaysGone(now)) * 100.0) / Float(self.model.DaysLength)
+        let percentageDone: Float = (Float(model.DaysGone(now)) * 100.0) / Float(model.DaysLength)
         self.labelPercentDone.setText(String(format:"%3.0f%% done", percentageDone))
         
         // Set the progress image set
@@ -54,11 +54,16 @@ class InterfaceController: WKInterfaceController {
     
     @objc
     private func userSettingsUpdated(notification: NSNotification) {
-        NSLog("Received BLUserSettingsUpdated notification")
+        print("Received BLUserSettingsUpdated notification")
         
         // Update view data on main thread
         dispatch_async(dispatch_get_main_queue()) {
             self.updateViewData()
         }
+    }
+    
+    func modelData() -> DaysLeftModel {
+        let appDelegate = WKExtension.sharedExtension().delegate as! ExtensionDelegate
+        return appDelegate.model
     }
 }

@@ -15,7 +15,14 @@ public class DaysLeftModel: BLUserSettings
     
     public init() {
         super.init()
-
+        
+        // Preload cache
+        print("Preloading settings cache...")
+        self.settingsCache["start"] = self.appStandardUserDefaults!.valueForKey("start")
+        self.settingsCache["end"] = self.appStandardUserDefaults!.valueForKey("end")
+        self.settingsCache["title"] = self.appStandardUserDefaults!.valueForKey("title")
+        self.settingsCache["weekdaysOnly"] = self.appStandardUserDefaults!.valueForKey("weekdaysOnly")
+        
         self.initialiseiCloudSettings()
         self.initialiseWatchSettings()
     }
@@ -35,7 +42,7 @@ public class DaysLeftModel: BLUserSettings
             updatedSettings[key] = self.appStandardUserDefaults!.valueForKey(key)
             
             session.transferUserInfo(updatedSettings)
-            NSLog("Sent settings for %@ to watch", key)
+            print("Sent settings for \(key) to watch")
         }
     }
     
@@ -48,7 +55,7 @@ public class DaysLeftModel: BLUserSettings
             self.updateWatchSettings("weekdaysOnly");
             
             self.initialisedWatch = true;
-            NSLog("Initialised watch for first time")
+            print("Initialised watch for first time")
         }
     }
     
@@ -101,11 +108,11 @@ public class DaysLeftModel: BLUserSettings
     ///
     /// param: value The value for the setting
     /// param: key The key for the setting
-    public override func writeObjectToStore(value: AnyObject, key: String) {
+    public override func writeObjectToStore(value: AnyObject, key:String) {
         super.writeObjectToStore(value, key: key)
         
         let store: NSUbiquitousKeyValueStore = NSUbiquitousKeyValueStore.defaultStore()
-        store.setObject(value, forKey: key)
+        store.setObject(value, forKey:key)
         store.synchronize()
         self.updateWatchSettings(key)
     }
@@ -264,7 +271,7 @@ public class DaysLeftModel: BLUserSettings
     /// param: notification The incoming notification
     @objc
     private func updateKVStoreItems(notification: NSNotification) {
-        NSLog("Detected iCloud key-value storage change")
+        print("Detected iCloud key-value storage change")
         
         // Get the list of keys that changed
         let userInfo: NSDictionary = notification.userInfo!
@@ -282,11 +289,11 @@ public class DaysLeftModel: BLUserSettings
                 for key:String in changedKeys {
                     let settingValue: AnyObject? = store.objectForKey(key)
                     self.appStandardUserDefaults!.setObject(settingValue, forKey: key)
-                    NSLog("Updated local setting for %@", key)
+                    print("Updated local setting for \(key)")
                 }
             }
         } else {
-            NSLog("Unknown iCloud KV reason for change")
+            print("Unknown iCloud KV reason for change")
         }
     }
 }

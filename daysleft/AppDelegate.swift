@@ -9,12 +9,13 @@
 import UIKit
 import Fabric
 import Crashlytics
+import daysleftlibrary
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var model = DaysLeftModel()
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         Fabric.with([Crashlytics()])

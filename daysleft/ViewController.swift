@@ -20,13 +20,13 @@ class ViewController: UIViewController {
     
     var dayChangeTimer: NSTimer!
     
-    let model: DaysLeftModel = DaysLeftModel()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let model = self.modelData()
+        
         // Check if this is the first run
-        self.model.initialRun()
+        model.initialRun()
         
         // Customise the nav bar
         let navBar = self.navigationController?.navigationBar
@@ -45,10 +45,10 @@ class ViewController: UIViewController {
         // Add timer in case runs over a day change
         let now = NSDate()
         let secondsInADay: Double = 60 * 60 * 24
-        let startOfTomorrow = self.model.AddDays(self.model.StartOfDay(now), daysToAdd: 1)
+        let startOfTomorrow = model.AddDays(model.StartOfDay(now), daysToAdd: 1)
         self.dayChangeTimer = NSTimer(fireDate: startOfTomorrow, interval: secondsInADay, target: self, selector: "dayChangeTimerFired:", userInfo: nil, repeats: false)
     }
-
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.counterView.clearControl()
@@ -66,34 +66,42 @@ class ViewController: UIViewController {
     }
     
     func updateViewFromModel() {
-        let now: NSDate = NSDate()
-        self.labelDaysLeft.text = String(format: "%d", self.model.DaysLeft(now))
+        let model = self.modelData()
         
-        let titleSuffix: String = (self.model.title.characters.count == 0 ? "left" : "until " + self.model.title)
-        let titleDays: String = self.model.weekdaysOnly ? "weekdays" : "days"
+        let now: NSDate = NSDate()
+
+        self.labelDaysLeft.text = String(format: "%d", model.DaysLeft(now))
+        
+        let titleSuffix: String = (model.title.characters.count == 0 ? "left" : "until " + model.title)
+        let titleDays: String = model.weekdaysOnly ? "weekdays" : "days"
         self.labelTitle.text = String(format: "%@ %@", titleDays, titleSuffix)
 
         let shortDateFormatter = NSDateFormatter()
         shortDateFormatter.dateFormat = "EEE d MMM"
         
-        self.labelStartDate.text = String(format: "%@", shortDateFormatter.stringFromDate(self.model.start))
-        self.labelEndDate.text = String(format: "%@", shortDateFormatter.stringFromDate(self.model.end))
+        self.labelStartDate.text = String(format: "%@", shortDateFormatter.stringFromDate(model.start))
+        self.labelEndDate.text = String(format: "%@", shortDateFormatter.stringFromDate(model.end))
         
-        if (self.model.DaysLength == 0) {
+        if (model.DaysLength == 0) {
             self.labelPercentageDone.text = ""
         }
         else {
-            let percentageDone: Float = (Float(self.model.DaysGone(now)) * 100.0) / Float(self.model.DaysLength)
+            let percentageDone: Float = (Float(model.DaysGone(now)) * 100.0) / Float(model.DaysLength)
             self.labelPercentageDone.text = String(format:"%3.0f%% done", percentageDone)
         }
         
-        self.counterView.counter = self.model.DaysGone(now)
-        self.counterView.maximumValue = self.model.DaysLength
+        self.counterView.counter = model.DaysGone(now)
+        self.counterView.maximumValue = model.DaysLength
         self.counterView.updateControl()
     }
 
     func swipeLeft(gesture: UISwipeGestureRecognizer) {
         self.performSegueWithIdentifier("segueShowSettings", sender: self)
+    }
+    
+    func modelData() -> DaysLeftModel {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        return appDelegate.model
     }
 }
 
