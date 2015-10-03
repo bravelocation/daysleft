@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "daysleft/BLUserSettings.swift"
-            timestampString = "465426398.953521"
+            timestampString = "465555516.787676"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "130"
-            endingLineNumber = "130"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
             landmarkName = "session(_:didReceiveUserInfo:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "daysleft/BLUserSettings.swift"
-            timestampString = "465426398.953521"
+            timestampString = "465555516.787676"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "126"
-            endingLineNumber = "126"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
             landmarkName = "session(_:didReceiveUserInfo:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "daysleft WatchKit Extension/InterfaceController.swift"
-            timestampString = "465425428.043591"
+            timestampString = "465556607.266089"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
             landmarkName = "updateViewData()"
             landmarkType = "5">
          </BreakpointContent>
