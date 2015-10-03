@@ -36,6 +36,8 @@
 		52CFBF001A8B631B005234FB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CFBEFF1A8B631B005234FB /* ViewController.swift */; };
 		52CFBF031A8B631B005234FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52CFBF011A8B631B005234FB /* Main.storyboard */; };
 		52CFBF051A8B631B005234FB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52CFBF041A8B631B005234FB /* Images.xcassets */; };
+		52D9373A1BBFCEF200B215BC /* WatchDaysLeftModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D937391BBFCEF200B215BC /* WatchDaysLeftModel.swift */; settings = {ASSET_TAGS = (); }; };
+		52D9373B1BBFD01300B215BC /* WatchDaysLeftModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D937391BBFCEF200B215BC /* WatchDaysLeftModel.swift */; };
 		52DAC1DE1AB01D61008C8354 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52DAC1DC1AB01D61008C8354 /* Crashlytics.framework */; };
 		52DAC1DF1AB01D61008C8354 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52DAC1DD1AB01D61008C8354 /* Fabric.framework */; };
 		52FAB11C1A9240490039691E /* DefaultPreferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52FAB11B1A9240490039691E /* DefaultPreferences.plist */; };
@@ -177,6 +179,7 @@
 		52CFBF121A8B631B005234FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52CFBF131A8B631B005234FB /* daysleftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = daysleftTests.swift; path = ../daysleftTests/daysleftTests.swift; sourceTree = "<group>"; };
 		52CFBF1D1A8B642C005234FB /* DaysLeftModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DaysLeftModel.swift; path = ../daysleft/DaysLeftModel.swift; sourceTree = "<group>"; };
+		52D937391BBFCEF200B215BC /* WatchDaysLeftModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchDaysLeftModel.swift; sourceTree = "<group>"; };
 		52DAC1DC1AB01D61008C8354 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		52DAC1DD1AB01D61008C8354 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		52FAB1181A9231970039691E /* BLUserSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BLUserSettings.swift; path = ../daysleft/BLUserSettings.swift; sourceTree = "<group>"; };
@@ -250,6 +253,7 @@
 			children = (
 				5295EE0D1A95E647007EF7E7 /* CounterView.swift */,
 				52CFBF1D1A8B642C005234FB /* DaysLeftModel.swift */,
+				52D937391BBFCEF200B215BC /* WatchDaysLeftModel.swift */,
 				52FAB1181A9231970039691E /* BLUserSettings.swift */,
 				5295EDD21A94AE53007EF7E7 /* Supporting Files */,
 			);
@@ -771,6 +775,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52D9373B1BBFD01300B215BC /* WatchDaysLeftModel.swift in Sources */,
 				5234434E1BBAF88A00E95BA4 /* DaysLeftModel.swift in Sources */,
 				5234434F1BBAF88A00E95BA4 /* BLUserSettings.swift in Sources */,
 			);
@@ -783,6 +788,7 @@
 				5295EE1D1A961A77007EF7E7 /* CounterView.swift in Sources */,
 				5295EDF11A94AFA7007EF7E7 /* DaysLeftModel.swift in Sources */,
 				5295EDF21A94AFA7007EF7E7 /* BLUserSettings.swift in Sources */,
+				52D9373A1BBFCEF200B215BC /* WatchDaysLeftModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

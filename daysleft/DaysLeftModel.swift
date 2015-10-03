@@ -7,16 +7,41 @@
 //
 
 import Foundation
+import WatchConnectivity
 
 public class DaysLeftModel: BLUserSettings
 {
-    public let currentFirstRun: Int = 1;
+    public let currentFirstRun: Int = 1
     
-    public init(onWatch: Bool = false) {
-        super.init(onWatch: onWatch)
-        
-        // If not on watch, sync all the key settings (once only)
-        if (onWatch == false && self.initialisedWatch == false) {
+    public init() {
+        super.init()
+
+        self.initialiseiCloudSettings()
+        self.initialiseWatchSettings()
+    }
+
+    /// Send updated settings to watch
+    public func initialiseiCloudSettings() {
+        let store: NSUbiquitousKeyValueStore = NSUbiquitousKeyValueStore.defaultStore()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateKVStoreItems:", name: NSUbiquitousKeyValueStoreDidChangeExternallyNotification, object: store)
+        store.synchronize()
+    }
+    
+    public func updateWatchSettings(key : String) {
+        if (WCSession.isSupported()) {
+            let session = WCSession.defaultSession()
+            
+            var updatedSettings = Dictionary<String, AnyObject>()
+            updatedSettings[key] = self.appStandardUserDefaults!.valueForKey(key)
+            
+            session.transferUserInfo(updatedSettings)
+            NSLog("Sent settings for %@ to watch", key)
+        }
+    }
+    
+    /// Send initial settings to watch
+    public func initialiseWatchSettings() {
+        if (self.initialisedWatch == false) {
             self.updateWatchSettings("start");
             self.updateWatchSettings("end");
             self.updateWatchSettings("title");
@@ -25,6 +50,15 @@ public class DaysLeftModel: BLUserSettings
             self.initialisedWatch = true;
             NSLog("Initialised watch for first time")
         }
+    }
+    
+    /// Write settings to iCloud store
+    public func writeSettingToiCloudStore(value: AnyObject, key: String) {
+        let store: NSUbiquitousKeyValueStore = NSUbiquitousKeyValueStore.defaultStore()
+        store.setObject(value, forKey: key)
+        store.synchronize()
+        
+        self.updateWatchSettings(key)
     }
     
     /// Property to get and set the start date
@@ -48,19 +82,32 @@ public class DaysLeftModel: BLUserSettings
     /// Property to get and set the weekdays only flag
     public var weekdaysOnly: Bool {
         get { return self.readObjectFromStore("weekdaysOnly") as! Bool }
-        set { self.writeBoolToStore(newValue, key: "weekdaysOnly") }
+        set { self.writeObjectToStore(newValue, key: "weekdaysOnly") }
     }
     
     /// Property to get and set the firstRun value
     public var firstRun: Int {
         get { return self.readObjectFromStore("firstRun") as! Int }
-        set { self.writeIntegerToStore(newValue, key: "firstRun") }
+        set { self.writeObjectToStore(newValue, key: "firstRun") }
     }
     
     /// Property to get and set the initialisedWatch flag
     public var initialisedWatch: Bool {
         get { return self.readObjectFromStore("initialisedWatch") as! Bool }
-        set { self.writeBoolToStore(newValue, key: "initialisedWatch") }
+        set { self.writeObjectToStore(newValue, key: "initialisedWatch") }
+    }
+    
+    /// Used to write an Integer setting to the user setting store (local and the cloud)
+    ///
+    /// param: value The value for the setting
+    /// param: key The key for the setting
+    public override func writeObjectToStore(value: AnyObject, key: String) {
+        super.writeObjectToStore(value, key: key)
+        
+        let store: NSUbiquitousKeyValueStore = NSUbiquitousKeyValueStore.defaultStore()
+        store.setObject(value, forKey: key)
+        store.synchronize()
+        self.updateWatchSettings(key)
     }
     
     /// Property to get the number of days between the start and the end
@@ -210,5 +257,36 @@ public class DaysLeftModel: BLUserSettings
         let dateComponents: NSDateComponents = NSDateComponents()
          dateComponents.day = daysToAdd
          return NSCalendar.currentCalendar().dateByAddingComponents(dateComponents, toDate: originalDate, options: [])!
+    }
+        
+    /// Used in the selector to handle incoming notifications of changes from the cloud
+    ///
+    /// param: notification The incoming notification
+    @objc
+    private func updateKVStoreItems(notification: NSNotification) {
+        NSLog("Detected iCloud key-value storage change")
+        
+        // Get the list of keys that changed
+        let userInfo: NSDictionary = notification.userInfo!
+        let reasonForChange: AnyObject? = userInfo.objectForKey(NSUbiquitousKeyValueStoreChangeReasonKey)
+        
+        // Assuming we have a valid reason for the change
+        if let downcastedReason = reasonForChange as? NSNumber {
+            let reason: NSInteger = downcastedReason.integerValue
+            if ((reason == NSUbiquitousKeyValueStoreServerChange) || (reason == NSUbiquitousKeyValueStoreInitialSyncChange)) {
+                // If something is changing externally, get the changes and update the corresponding keys locally.
+                let changedKeys = userInfo.objectForKey(NSUbiquitousKeyValueStoreChangedKeysKey) as! [String]
+                let store: NSUbiquitousKeyValueStore = NSUbiquitousKeyValueStore.defaultStore();
+                
+                // This loop assumes you are using the same key names in both the user defaults database and the iCloud key-value store
+                for key:String in changedKeys {
+                    let settingValue: AnyObject? = store.objectForKey(key)
+                    self.appStandardUserDefaults!.setObject(settingValue, forKey: key)
+                    NSLog("Updated local setting for %@", key)
+                }
+            }
+        } else {
+            NSLog("Unknown iCloud KV reason for change")
+        }
     }
 }

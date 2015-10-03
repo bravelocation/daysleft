@@ -16,7 +16,7 @@ class InterfaceController: WKInterfaceController {
     @IBOutlet weak var labelPercentDone: WKInterfaceLabel!
     @IBOutlet weak var imageProgress: WKInterfaceImage!
     
-    private var model: DaysLeftModel = DaysLeftModel(onWatch:true)
+    private var model: WatchDaysLeftModel = WatchDaysLeftModel()
     
     override init() {
         super.init()
