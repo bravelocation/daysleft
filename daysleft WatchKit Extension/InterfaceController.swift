@@ -64,6 +64,6 @@ class InterfaceController: WKInterfaceController {
     
     func modelData() -> DaysLeftModel {
         let appDelegate = WKExtension.sharedExtension().delegate as! ExtensionDelegate
-        return appDelegate.model
+        return appDelegate.model!
     }
 }

@@ -24,17 +24,18 @@ public class DaysLeftModel: BLUserSettings
         self.settingsCache["weekdaysOnly"] = self.appStandardUserDefaults!.valueForKey("weekdaysOnly")
         
         self.initialiseiCloudSettings()
-        self.initialiseWatchSettings()
+        self.pushAllSettingsToWatch()
     }
 
     /// Send updated settings to watch
     public func initialiseiCloudSettings() {
+        print("Initialising iCloud Settings")
         let store: NSUbiquitousKeyValueStore = NSUbiquitousKeyValueStore.defaultStore()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateKVStoreItems:", name: NSUbiquitousKeyValueStoreDidChangeExternallyNotification, object: store)
         store.synchronize()
     }
     
-    public func updateWatchSettings(key : String) {
+    public func pushSettingChangeToWatch(key : String) {
         if (WCSession.isSupported()) {
             let session = WCSession.defaultSession()
             
@@ -47,15 +48,19 @@ public class DaysLeftModel: BLUserSettings
     }
     
     /// Send initial settings to watch
-    public func initialiseWatchSettings() {
+    public func pushAllSettingsToWatch() {
+        self.initialiseWatchSession()
+        
         if (self.initialisedWatch == false) {
-            self.updateWatchSettings("start");
-            self.updateWatchSettings("end");
-            self.updateWatchSettings("title");
-            self.updateWatchSettings("weekdaysOnly");
+            self.pushSettingChangeToWatch("start");
+            self.pushSettingChangeToWatch("end");
+            self.pushSettingChangeToWatch("title");
+            self.pushSettingChangeToWatch("weekdaysOnly");
             
             self.initialisedWatch = true;
-            print("Initialised watch for first time")
+            print("Settings pushed to watch")
+        } else {
+            print("All settings already pushed to watch")
         }
     }
     
@@ -65,7 +70,13 @@ public class DaysLeftModel: BLUserSettings
         store.setObject(value, forKey: key)
         store.synchronize()
         
-        self.updateWatchSettings(key)
+        self.pushSettingChangeToWatch(key)
+    }
+
+    // Save value locally, and then write to iClud store as appropriate
+    public override func writeObjectToStore(value: AnyObject, key: String) {
+        super.writeObjectToStore(value, key: key)
+        self.writeSettingToiCloudStore(value, key: key)
     }
     
     /// Property to get and set the start date
@@ -102,19 +113,6 @@ public class DaysLeftModel: BLUserSettings
     public var initialisedWatch: Bool {
         get { return self.readObjectFromStore("initialisedWatch") as! Bool }
         set { self.writeObjectToStore(newValue, key: "initialisedWatch") }
-    }
-    
-    /// Used to write an Integer setting to the user setting store (local and the cloud)
-    ///
-    /// param: value The value for the setting
-    /// param: key The key for the setting
-    public override func writeObjectToStore(value: AnyObject, key:String) {
-        super.writeObjectToStore(value, key: key)
-        
-        let store: NSUbiquitousKeyValueStore = NSUbiquitousKeyValueStore.defaultStore()
-        store.setObject(value, forKey:key)
-        store.synchronize()
-        self.updateWatchSettings(key)
     }
     
     /// Property to get the number of days between the start and the end

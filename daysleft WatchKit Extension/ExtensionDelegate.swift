@@ -11,16 +11,18 @@ import daysleftlibrary
 
 class ExtensionDelegate: NSObject, WKExtensionDelegate {
     
-    let model = WatchDaysLeftModel()
+    var model:WatchDaysLeftModel?
     
     func applicationDidFinishLaunching() {
-        print("applicationDidFinishLaunching")
-        // Perform any final initialization of your application.
+        self.model = WatchDaysLeftModel()
     }
     
     func applicationDidBecomeActive() {
+        
+        // Delay setting up watch session until application is active
+        self.model!.initialiseWatchSession()
+        
         print("applicationDidBecomeActive")
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     }
     
     func applicationWillResignActive() {

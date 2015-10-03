@@ -14,13 +14,14 @@ public class BLUserSettings: NSObject, WCSessionDelegate {
     public static let UpdateSettingsNotification = "kBLUserSettingsNotification"
     public var appStandardUserDefaults: NSUserDefaults?
     public var settingsCache = Dictionary<String, AnyObject>()
+    public var watchSessionInitialised: Bool = false
     
     /// Default initialiser for the class
     ///
     /// param: defaultPreferencesName The name of the plist file containing the default preferences
     public init(defaultPreferencesName: String = "DefaultPreferences", suiteName: String = "group.bravelocation.daysleft") {
         
-        // Now we inherit from NSObject, call base class constructor
+        // Need to inherit from NSObject, so call super.init()
         super.init()
         
         // Setup the default preferences
@@ -29,16 +30,6 @@ public class BLUserSettings: NSObject, WCSessionDelegate {
         
         self.appStandardUserDefaults = NSUserDefaults(suiteName: suiteName)!
         self.appStandardUserDefaults!.registerDefaults(defaultPrefs as! [String: AnyObject]);
-        
-        // Set up watch setting if appropriate
-        if (WCSession.isSupported()) {
-            print("Setting up watch session")
-            let session: WCSession = WCSession.defaultSession();
-            session.delegate = self
-            session.activateSession()
-        } else {
-            print("No watch session set up")
-        }
     }
     
     /// Destructor
@@ -82,18 +73,38 @@ public class BLUserSettings: NSObject, WCSessionDelegate {
         self.appStandardUserDefaults!.synchronize()
     }
     
+    
+    public func initialiseWatchSession() {
+        if (self.watchSessionInitialised) {
+            print("Watch session already initialised")
+            return
+        }
+        
+        // Set up watch setting if appropriate
+        if (WCSession.isSupported()) {
+            print("Setting up watch session")
+            let session: WCSession = WCSession.defaultSession();
+            session.delegate = self
+            session.activateSession()
+        } else {
+            print("No watch session set up")
+        }
+    }
+    
     /// WCSessionDelegate implementation - update local settings when transfered from phone
+    @objc
     public func session(session: WCSession, didReceiveUserInfo userInfo: [String : AnyObject]) {
         print("New user info transfer data received on watch")
         for (key, value) in userInfo {
             self.writeObjectToStore(value, key: key)
             print("Received setting update for \(key)")
         }
-
+        
         self.appStandardUserDefaults!.synchronize()
-
+        
         // Finally send a notification for the view controllers to refresh
         NSNotificationCenter.defaultCenter().postNotificationName(BLUserSettings.UpdateSettingsNotification, object:nil, userInfo:nil)
         print("Sent UpdateSettingsNotification")
     }
+
 }
