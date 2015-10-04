@@ -23,6 +23,7 @@ public class DaysLeftModel: BLUserSettings
         self.settingsCache["title"] = self.appStandardUserDefaults!.valueForKey("title")
         self.settingsCache["weekdaysOnly"] = self.appStandardUserDefaults!.valueForKey("weekdaysOnly")
         
+        self.initialRun()
         self.initialiseiCloudSettings()
         self.pushAllSettingsToWatch()
     }
