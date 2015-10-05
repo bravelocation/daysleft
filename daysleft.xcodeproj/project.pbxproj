@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		5234434E1BBAF88A00E95BA4 /* DaysLeftModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CFBF1D1A8B642C005234FB /* DaysLeftModel.swift */; };
 		5234434F1BBAF88A00E95BA4 /* BLUserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FAB1181A9231970039691E /* BLUserSettings.swift */; };
-		523443581BBAF96E00E95BA4 /* daysleftlibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 523443561BBAF88A00E95BA4 /* daysleftlibrary.framework */; };
+		523443581BBAF96E00E95BA4 /* daysleftwatchlibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 523443561BBAF88A00E95BA4 /* daysleftwatchlibrary.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		523443631BBAFBEF00E95BA4 /* daysleft WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 52B7E8771ABEDE9300E1949C /* daysleft WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		523443661BBAFBEF00E95BA4 /* daysleft WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 52B7E8811ABEDE9300E1949C /* daysleft WatchKit App.app */; };
 		5234436A1BBAFCCF00E95BA4 /* daysleftwatchlibrary-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 523443691BBAFCCF00E95BA4 /* daysleftwatchlibrary-Info.plist */; settings = {ASSET_TAGS = (); }; };
@@ -144,7 +144,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		523443561BBAF88A00E95BA4 /* daysleftlibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = daysleftlibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		523443561BBAF88A00E95BA4 /* daysleftwatchlibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = daysleftwatchlibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		523443691BBAFCCF00E95BA4 /* daysleftwatchlibrary-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "daysleftwatchlibrary-Info.plist"; path = "daysleft/daysleftwatchlibrary-Info.plist"; sourceTree = SOURCE_ROOT; };
 		5234436B1BBB00B800E95BA4 /* daysleft WatchKit App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "daysleft WatchKit App.entitlements"; sourceTree = "<group>"; };
 		5234436C1BBB181C00E95BA4 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
@@ -231,7 +231,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				523443581BBAF96E00E95BA4 /* daysleftlibrary.framework in Frameworks */,
+				523443581BBAF96E00E95BA4 /* daysleftwatchlibrary.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,7 +387,7 @@
 				5295EDF81A94B398007EF7E7 /* dayslefttoday.appex */,
 				52B7E8771ABEDE9300E1949C /* daysleft WatchKit Extension.appex */,
 				52B7E8811ABEDE9300E1949C /* daysleft WatchKit App.app */,
-				523443561BBAF88A00E95BA4 /* daysleftlibrary.framework */,
+				523443561BBAF88A00E95BA4 /* daysleftwatchlibrary.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -466,7 +466,7 @@
 			);
 			name = daysleftwatchlibrary;
 			productName = daysleftlibrary;
-			productReference = 523443561BBAF88A00E95BA4 /* daysleftlibrary.framework */;
+			productReference = 523443561BBAF88A00E95BA4 /* daysleftwatchlibrary.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		5295EDCF1A94AE53007EF7E7 /* daysleftlibrary */ = {
@@ -920,7 +920,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = daysleftlibrary;
+				PRODUCT_NAME = daysleftwatchlibrary;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "watchsimulator watchos";
@@ -943,7 +943,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = daysleftlibrary;
+				PRODUCT_NAME = daysleftwatchlibrary;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "watchsimulator watchos";
