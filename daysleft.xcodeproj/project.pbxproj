@@ -459,6 +459,7 @@
 				523443501BBAF88A00E95BA4 /* Frameworks */,
 				523443511BBAF88A00E95BA4 /* Headers */,
 				523443521BBAF88A00E95BA4 /* Resources */,
+				5244C0421BC38D7800D57F28 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -477,6 +478,7 @@
 				5295EDCC1A94AE53007EF7E7 /* Frameworks */,
 				5295EDCD1A94AE53007EF7E7 /* Headers */,
 				5295EDCE1A94AE53007EF7E7 /* Resources */,
+				5244C03F1BC38D4400D57F28 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -513,6 +515,7 @@
 				5295EDF41A94B398007EF7E7 /* Sources */,
 				5295EDF51A94B398007EF7E7 /* Frameworks */,
 				5295EDF61A94B398007EF7E7 /* Resources */,
+				5244C0401BC38D5300D57F28 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -530,6 +533,7 @@
 				52B7E8731ABEDE9300E1949C /* Sources */,
 				52B7E8741ABEDE9300E1949C /* Frameworks */,
 				52B7E8751ABEDE9300E1949C /* Resources */,
+				5244C0411BC38D5C00D57F28 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -763,6 +767,58 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		5244C03F1BC38D4400D57F28 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "git=`sh /etc/profile; which git`\nappBuild=`$git rev-list --all |wc -l`\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $appBuild\" \"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\necho \"Updated ${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\n";
+		};
+		5244C0401BC38D5300D57F28 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "git=`sh /etc/profile; which git`\nappBuild=`$git rev-list --all |wc -l`\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $appBuild\" \"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\necho \"Updated ${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\n\n";
+		};
+		5244C0411BC38D5C00D57F28 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "git=`sh /etc/profile; which git`\nappBuild=`$git rev-list --all |wc -l`\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $appBuild\" \"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\necho \"Updated ${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\n\n";
+		};
+		5244C0421BC38D7800D57F28 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "git=`sh /etc/profile; which git`\nappBuild=`$git rev-list --all |wc -l`\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $appBuild\" \"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\necho \"Updated ${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\n\n";
+		};
 		5295EE1F1A9A0084007EF7E7 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -774,7 +830,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "./Fabric.framework/run de20d03a9cd3af9832860083836d12964a8b11f5 0a8628bec808495065a9f124e4fd6d79b5f2e0e69b63845d0544c96c777ae566\n\necho \"Updated Fabric\"\n";
+			shellScript = "git=`sh /etc/profile; which git`\nappBuild=`$git rev-list --all |wc -l`\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $appBuild\" \"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\necho \"Updated ${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\n\n./Fabric.framework/run de20d03a9cd3af9832860083836d12964a8b11f5 0a8628bec808495065a9f124e4fd6d79b5f2e0e69b63845d0544c96c777ae566\n\necho \"Updated Fabric\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
