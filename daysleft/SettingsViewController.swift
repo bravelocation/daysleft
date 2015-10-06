@@ -85,7 +85,7 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate {
         self.switchWeekdaysOnly.on = false
         
         self.startDatePicker.date = NSDate()
-        self.endDatePicker.date = NSCalendar.currentCalendar().dateByAddingUnit(NSCalendarUnit.Day, value: 30, toDate: model.start, options: [])!
+        self.endDatePicker.date = NSCalendar.currentCalendar().dateByAddingUnit(NSCalendarUnit.Day, value: 30, toDate: NSDate(), options: [])!
         self.validateAndSaveDates()
     }
     
