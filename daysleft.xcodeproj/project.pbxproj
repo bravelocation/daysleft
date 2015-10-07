@@ -58,13 +58,6 @@
 			remoteGlobalIDString = 52B7E8801ABEDE9300E1949C;
 			remoteInfo = "daysleft WatchKit App";
 		};
-		5244C0531BC43B1000D57F28 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 52CFBEF01A8B631B005234FB /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 5234434B1BBAF88A00E95BA4;
-			remoteInfo = daysleftwatchlibrary;
-		};
 		5295EDDC1A94AE53007EF7E7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 52CFBEF01A8B631B005234FB /* Project object */;
@@ -535,7 +528,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				5244C0541BC43B1000D57F28 /* PBXTargetDependency */,
 			);
 			name = "daysleft WatchKit Extension";
 			productName = "daysleft WatchKit Extension";
@@ -873,11 +865,6 @@
 			isa = PBXTargetDependency;
 			target = 52B7E8801ABEDE9300E1949C /* daysleft WatchKit App */;
 			targetProxy = 523443641BBAFBEF00E95BA4 /* PBXContainerItemProxy */;
-		};
-		5244C0541BC43B1000D57F28 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 5234434B1BBAF88A00E95BA4 /* daysleftwatchlibrary */;
-			targetProxy = 5244C0531BC43B1000D57F28 /* PBXContainerItemProxy */;
 		};
 		5295EDDD1A94AE53007EF7E7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
