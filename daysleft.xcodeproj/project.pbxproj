@@ -13,7 +13,6 @@
 		523443661BBAFBEF00E95BA4 /* daysleft WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 52B7E8811ABEDE9300E1949C /* daysleft WatchKit App.app */; };
 		5234436A1BBAFCCF00E95BA4 /* daysleftwatchlibrary-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 523443691BBAFCCF00E95BA4 /* daysleftwatchlibrary-Info.plist */; settings = {ASSET_TAGS = (); }; };
 		5234436D1BBB181C00E95BA4 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5234436C1BBB181C00E95BA4 /* ExtensionDelegate.swift */; settings = {ASSET_TAGS = (); }; };
-		5244C0501BC43AFD00D57F28 /* daysleftwatchlibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 523443561BBAF88A00E95BA4 /* daysleftwatchlibrary.framework */; };
 		5244C0521BC43B1000D57F28 /* daysleftwatchlibrary.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 523443561BBAF88A00E95BA4 /* daysleftwatchlibrary.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5295EDDB1A94AE53007EF7E7 /* daysleftlibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5295EDD01A94AE53007EF7E7 /* daysleftlibrary.framework */; };
 		5295EDE91A94AE53007EF7E7 /* daysleftlibrary.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5295EDD01A94AE53007EF7E7 /* daysleftlibrary.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -198,7 +197,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5244C0501BC43AFD00D57F28 /* daysleftwatchlibrary.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
