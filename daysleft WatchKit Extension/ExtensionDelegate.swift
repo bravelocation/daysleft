@@ -7,7 +7,6 @@
 //
 
 import WatchKit
-import daysleftwatchlibrary
 
 class ExtensionDelegate: NSObject, WKExtensionDelegate {
     

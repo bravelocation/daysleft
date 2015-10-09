@@ -8,7 +8,6 @@
 
 import WatchKit
 import Foundation
-import daysleftwatchlibrary
 
 class InterfaceController: WKInterfaceController {
 
