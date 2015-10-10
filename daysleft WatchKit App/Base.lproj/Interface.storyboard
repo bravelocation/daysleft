@@ -10,13 +10,13 @@
             <objects>
                 <controller identifier="MainInterfaceController" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="daysleft_WatchKit_Extension">
                     <items>
-                        <label alignment="center" verticalAlignment="center" textAlignment="center" numberOfLines="2" id="KUj-Gc-2DT">
-                            <color key="textColor" red="0.21960784310000001" green="0.43529411759999997" blue="0.1137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <label alignment="center" textAlignment="center" numberOfLines="2" id="KUj-Gc-2DT">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <fontDescription key="font" style="UICTFontTextStyleBody"/>
                         </label>
                         <imageView width="75" height="75" alignment="center" verticalAlignment="center" id="PVN-ca-kV0"/>
                         <label alignment="center" verticalAlignment="center" textAlignment="center" id="ozf-ge-NQR">
-                            <color key="textColor" red="0.21960784310000001" green="0.43529411759999997" blue="0.1137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <fontDescription key="font" style="UICTFontTextStyleBody"/>
                         </label>
                     </items>
