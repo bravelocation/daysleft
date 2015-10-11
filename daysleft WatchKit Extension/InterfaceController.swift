@@ -15,6 +15,8 @@ class InterfaceController: WKInterfaceController {
     @IBOutlet weak var labelPercentDone: WKInterfaceLabel!
     @IBOutlet weak var imageProgress: WKInterfaceImage!
     
+    var currentDaysLeft: Int = -1;
+    
     override init() {
         super.init()
         
@@ -25,25 +27,40 @@ class InterfaceController: WKInterfaceController {
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
-    override func willActivate() {
-        // This method is called when watch view controller is about to be visible to user
-        NSLog("InterfaceController.willActivate() started")
+    override func awakeWithContext(context: AnyObject?) {
+        super.awakeWithContext(context)
         
-        super.willActivate()
+        NSLog("Starting awakeWithContext ...")
         self.updateViewData()
+        NSLog("Completed awakeWithContext")
+    }
+    
+    override func willActivate() {
+        super.willActivate()
+ 
+        NSLog("Starting willActivate ...")
         
-        NSLog("InterfaceController.willActivate() ended")
+        // Do we need to update the view?
+        let now: NSDate = NSDate()
+
+        if (self.modelData().DaysLeft(now) != self.currentDaysLeft) {
+            self.updateViewData()
+        }
+        
+        NSLog("Completed willActivate")
     }
     
     private func updateViewData() {
+        NSLog("Updating view data...")
+        
         let now: NSDate = NSDate()
         let model = modelData()
         
-        let daysLeft: Int = model.DaysLeft(now)
+        self.currentDaysLeft = model.DaysLeft(now)
         let titleSuffix: String = (model.title.characters.count == 0 ? "left" : "until " + model.title)
         let titleDays: String = model.weekdaysOnly ? "weekdays" : "days"
         
-        self.labelTitle.setText(String(format: "%d %@ %@", daysLeft, titleDays, titleSuffix))
+        self.labelTitle.setText(String(format: "%d %@ %@", self.currentDaysLeft , titleDays, titleSuffix))
         
         let percentageDone: Float = (Float(model.DaysGone(now)) * 100.0) / Float(model.DaysLength)
         self.labelPercentDone.setText(String(format:"%3.0f%% done", percentageDone))
@@ -66,6 +83,6 @@ class InterfaceController: WKInterfaceController {
     
     func modelData() -> DaysLeftModel {
         let appDelegate = WKExtension.sharedExtension().delegate as! ExtensionDelegate
-        return appDelegate.model!
+        return appDelegate.model
     }
 }

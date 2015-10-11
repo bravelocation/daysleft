@@ -10,14 +10,8 @@ import WatchKit
 
 class ExtensionDelegate: NSObject, WKExtensionDelegate {
     
-    var model:WatchDaysLeftModel?
-    
-    func applicationDidFinishLaunching() {
-        NSLog("applicationDidFinishLaunching starting")
-        self.model = WatchDaysLeftModel()
-        NSLog("applicationDidFinishLaunching completed")
-    }
-    
+    lazy var model:WatchDaysLeftModel = WatchDaysLeftModel()
+        
     func applicationDidBecomeActive() {
         NSLog("applicationDidBecomeActive started")
 
@@ -25,7 +19,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
         let backgroundQueue = dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)
         dispatch_async(backgroundQueue, {
             NSLog("Running watch session initialisation on background thread")
-            self.model!.initialiseWatchSession()
+            self.model.initialiseWatchSession()
         })
         
         NSLog("applicationDidBecomeActive completed")
