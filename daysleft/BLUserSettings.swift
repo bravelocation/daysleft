@@ -78,6 +78,9 @@ public class BLUserSettings: NSObject, WCSessionDelegate {
         if (self.watchSessionInitialised) {
             NSLog("Watch session already initialised")
             return
+        } else {
+            self.watchSessionInitialised = true
+            NSLog("Watch session starting initialisation...")
         }
         
         // Set up watch setting if appropriate
