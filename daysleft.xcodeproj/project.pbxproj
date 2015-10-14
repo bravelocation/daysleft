@@ -34,7 +34,7 @@
 		52D18D701BC8281200DB7E3A /* WatchDaysLeftModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D937391BBFCEF200B215BC /* WatchDaysLeftModel.swift */; };
 		52D18D711BC8282A00DB7E3A /* DaysLeftModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CFBF1D1A8B642C005234FB /* DaysLeftModel.swift */; };
 		52D18D721BC8283300DB7E3A /* BLUserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FAB1181A9231970039691E /* BLUserSettings.swift */; };
-		52D9373A1BBFCEF200B215BC /* WatchDaysLeftModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D937391BBFCEF200B215BC /* WatchDaysLeftModel.swift */; settings = {ASSET_TAGS = (); }; };
+		52D25F3C1BCB8595002E4C76 /* ComplicationsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D25F3B1BCB8595002E4C76 /* ComplicationsDataSource.swift */; settings = {ASSET_TAGS = (); }; };
 		52DAC1DE1AB01D61008C8354 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52DAC1DC1AB01D61008C8354 /* Crashlytics.framework */; };
 		52DAC1DF1AB01D61008C8354 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52DAC1DD1AB01D61008C8354 /* Fabric.framework */; };
 		52FAB11C1A9240490039691E /* DefaultPreferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52FAB11B1A9240490039691E /* DefaultPreferences.plist */; };
@@ -163,7 +163,8 @@
 		52CFBF121A8B631B005234FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52CFBF131A8B631B005234FB /* daysleftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = daysleftTests.swift; path = ../daysleftTests/daysleftTests.swift; sourceTree = "<group>"; };
 		52CFBF1D1A8B642C005234FB /* DaysLeftModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DaysLeftModel.swift; path = ../daysleft/DaysLeftModel.swift; sourceTree = "<group>"; };
-		52D937391BBFCEF200B215BC /* WatchDaysLeftModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchDaysLeftModel.swift; sourceTree = "<group>"; };
+		52D25F3B1BCB8595002E4C76 /* ComplicationsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComplicationsDataSource.swift; sourceTree = "<group>"; };
+		52D937391BBFCEF200B215BC /* WatchDaysLeftModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WatchDaysLeftModel.swift; path = ../daysleftlibrary/WatchDaysLeftModel.swift; sourceTree = "<group>"; };
 		52DAC1DC1AB01D61008C8354 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		52DAC1DD1AB01D61008C8354 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		52FAB1181A9231970039691E /* BLUserSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BLUserSettings.swift; path = ../daysleft/BLUserSettings.swift; sourceTree = "<group>"; };
@@ -229,7 +230,6 @@
 			children = (
 				5295EE0D1A95E647007EF7E7 /* CounterView.swift */,
 				52CFBF1D1A8B642C005234FB /* DaysLeftModel.swift */,
-				52D937391BBFCEF200B215BC /* WatchDaysLeftModel.swift */,
 				52FAB1181A9231970039691E /* BLUserSettings.swift */,
 				5295EDD21A94AE53007EF7E7 /* Supporting Files */,
 			);
@@ -294,8 +294,10 @@
 		52B7E8781ABEDE9300E1949C /* daysleft WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				52D937391BBFCEF200B215BC /* WatchDaysLeftModel.swift */,
 				52B7E8961ABEDEDE00E1949C /* daysleft WatchKit Extension.entitlements */,
 				5234436C1BBB181C00E95BA4 /* ExtensionDelegate.swift */,
+				52D25F3B1BCB8595002E4C76 /* ComplicationsDataSource.swift */,
 				52B7E87B1ABEDE9300E1949C /* InterfaceController.swift */,
 				52B7E87D1ABEDE9300E1949C /* Images.xcassets */,
 				52B7E8791ABEDE9300E1949C /* Supporting Files */,
@@ -724,7 +726,6 @@
 				5295EE1D1A961A77007EF7E7 /* CounterView.swift in Sources */,
 				5295EDF11A94AFA7007EF7E7 /* DaysLeftModel.swift in Sources */,
 				5295EDF21A94AFA7007EF7E7 /* BLUserSettings.swift in Sources */,
-				52D9373A1BBFCEF200B215BC /* WatchDaysLeftModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -750,6 +751,7 @@
 			files = (
 				52D18D721BC8283300DB7E3A /* BLUserSettings.swift in Sources */,
 				52D18D711BC8282A00DB7E3A /* DaysLeftModel.swift in Sources */,
+				52D25F3C1BCB8595002E4C76 /* ComplicationsDataSource.swift in Sources */,
 				52D18D701BC8281200DB7E3A /* WatchDaysLeftModel.swift in Sources */,
 				5234436D1BBB181C00E95BA4 /* ExtensionDelegate.swift in Sources */,
 				52B7E87C1ABEDE9300E1949C /* InterfaceController.swift in Sources */,

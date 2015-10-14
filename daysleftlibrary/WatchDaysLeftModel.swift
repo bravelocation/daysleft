@@ -8,9 +8,15 @@
 
 import Foundation
 import WatchConnectivity
+import ClockKit
 
 public class WatchDaysLeftModel: DaysLeftModel
 {
+    public override init() {
+        super.init()
+        self.updateCompications()
+    }
+    
     /// Send updated settings to watch
     public override func initialiseiCloudSettings() {
         // Don't setup iCloud on watch!
@@ -28,5 +34,20 @@ public class WatchDaysLeftModel: DaysLeftModel
     /// Send initial settings to watch
     public override func pushAllSettingsToWatch() {
         // Don't send settings to watch when on watch!
+    }
+    
+    public override func session(session: WCSession, didReceiveUserInfo userInfo: [String : AnyObject]) {
+        super.session(session, didReceiveUserInfo: userInfo)
+        self.updateCompications()
+    }
+    
+    func updateCompications() {
+        NSLog("Updating complications...")
+        let complicationServer = CLKComplicationServer.sharedInstance()
+        if (complicationServer != nil) {
+            for complication in complicationServer.activeComplications {
+                complicationServer.reloadTimelineForComplication(complication)
+            }
+        }
     }
 }
