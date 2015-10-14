@@ -66,22 +66,37 @@ class ComplicationsDataSource : NSObject, CLKComplicationDataSource {
     func getTimelineEntriesForComplication(complication: CLKComplication, beforeDate date: NSDate, limit: Int, withHandler handler: ([CLKComplicationTimelineEntry]?) -> Void) {
         NSLog("Getting timeline before date entries")
 
-        handler([])
+        var entries: [CLKComplicationTimelineEntry] = [];
+        
+        for var i = 1; i <= limit; i++ {
+            let previousDate = date.dateByAddingTimeInterval(-1*60*60*24*Double(i))
+            let entry = self.createTimeLineEntry(complication.family, date:previousDate);
+            if (entry != nil) {
+                entries.append(entry!)
+            }
+        }
+
+        handler(entries)
     }
     
     func getTimelineEntriesForComplication(complication: CLKComplication, afterDate date: NSDate, limit: Int, withHandler handler: ([CLKComplicationTimelineEntry]?) -> Void) {
+        var entries: [CLKComplicationTimelineEntry] = [];
         
-        NSLog("Getting timeline after date entries")
-        handler([])
+        for var i = 1; i <= limit; i++ {
+            let previousDate = date.dateByAddingTimeInterval(60*60*24*Double(i))
+            let entry = self.createTimeLineEntry(complication.family, date:previousDate);
+            if (entry != nil) {
+                entries.append(entry!)
+            }
+        }
+        
+        handler(entries)
     }
     
     func getSupportedTimeTravelDirectionsForComplication(complication: CLKComplication, withHandler handler: (CLKComplicationTimeTravelDirections) -> Void) {
-
-        NSLog("Getting supported time travel directions")
-
+        
         // Call the handler with the time travel directions are supported?
-        handler([CLKComplicationTimeTravelDirections.None])
-        //handler([CLKComplicationTimeTravelDirections.Backward, CLKComplicationTimeTravelDirections.Forward])
+        handler([CLKComplicationTimeTravelDirections.Backward, CLKComplicationTimeTravelDirections.Forward])
     }
     
     func getTimelineStartDateForComplication(complication: CLKComplication, withHandler handler: (NSDate?) -> Void) {
@@ -111,7 +126,6 @@ class ComplicationsDataSource : NSObject, CLKComplicationDataSource {
         // Calculate the data needed for complications
         let currentDaysLeft: Int = model.DaysLeft(date)
         let percentageDone: Float = Float(model.DaysGone(date)) / Float(model.DaysLength)
-        //NSLog("Timeline entry", currentDaysLeft, percentageDone)
         
         var entry : CLKComplicationTimelineEntry?
         
