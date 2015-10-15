@@ -13,63 +13,56 @@ import ClockKit
 class ComplicationsDataSource : NSObject, CLKComplicationDataSource {
     
     func getCurrentTimelineEntryForComplication(complication: CLKComplication, withHandler handler: (CLKComplicationTimelineEntry?) -> Void) {
-
-        NSLog("Getting current timeline entry")
-        let now: NSDate = NSDate()
-        let entry = self.createTimeLineEntry(complication.family, date:now)
+        let entry = self.createTimeLineEntry(complication.family, date:NSDate())
         handler(entry)
     }
     
     func getNextRequestedUpdateDateWithHandler(handler: (NSDate?) -> Void) {
-        NSLog("Requesting complication update time")
-        handler(NSDate(timeIntervalSinceNow: 60))
+        // Update once per hour
+        handler(NSDate(timeIntervalSinceNow: 60*60))
     }
     
     func getPlaceholderTemplateForComplication(complication: CLKComplication, withHandler handler: (CLKComplicationTemplate?) -> Void) {
-        NSLog("Getting complication placeholder template")
-        var template: CLKComplicationTemplate? = nil
-        
+
         switch complication.family {
-        case .ModularSmall:
-            let modularTemplate = CLKComplicationTemplateModularSmallRingText()
-            modularTemplate.textProvider = CLKSimpleTextProvider(text: "--")
-            modularTemplate.fillFraction = 0.7
-            modularTemplate.ringStyle = CLKComplicationRingStyle.Closed
-            template = modularTemplate
-        case .ModularLarge:
-            template = nil
-        case .UtilitarianSmall:
-            let modularTemplate = CLKComplicationTemplateUtilitarianSmallRingText()
-            modularTemplate.textProvider = CLKSimpleTextProvider(text: "--")
-            modularTemplate.fillFraction = 0.7
-            modularTemplate.ringStyle = CLKComplicationRingStyle.Closed
-            template = modularTemplate
-        case .UtilitarianLarge:
-            template = nil
-        case .CircularSmall:
-            let modularTemplate = CLKComplicationTemplateCircularSmallRingText()
-            modularTemplate.textProvider = CLKSimpleTextProvider(text: "--")
-            modularTemplate.fillFraction = 0.7
-            modularTemplate.ringStyle = CLKComplicationRingStyle.Closed
-            template = modularTemplate
+            case .ModularSmall:
+                let template = CLKComplicationTemplateModularSmallRingText()
+                template.textProvider = CLKSimpleTextProvider(text: "--")
+                template.fillFraction = 0.7
+                template.ringStyle = CLKComplicationRingStyle.Closed
+                handler(template)
+            case .UtilitarianSmall:
+                let template = CLKComplicationTemplateUtilitarianSmallRingText()
+                template.textProvider = CLKSimpleTextProvider(text: "--")
+                template.fillFraction = 0.7
+                template.ringStyle = CLKComplicationRingStyle.Closed
+                handler(template)
+            case .CircularSmall:
+                let template = CLKComplicationTemplateCircularSmallRingText()
+                template.textProvider = CLKSimpleTextProvider(text: "--")
+                template.fillFraction = 0.7
+                template.ringStyle = CLKComplicationRingStyle.Closed
+                handler(template)
+            default:
+                handler(nil)
         }
-        
-        handler(template)
     }
     
     func getPrivacyBehaviorForComplication(complication: CLKComplication, withHandler handler: (CLKComplicationPrivacyBehavior) -> Void) {
-        NSLog("Getting complication privacy")
-
-        handler(CLKComplicationPrivacyBehavior.ShowOnLockScreen)
+        // Don't show the complication on the lock screen
+        handler(CLKComplicationPrivacyBehavior.HideOnLockScreen)
     }
     
+    // --- Timeline functions ---
+
     func getTimelineEntriesForComplication(complication: CLKComplication, beforeDate date: NSDate, limit: Int, withHandler handler: ([CLKComplicationTimelineEntry]?) -> Void) {
-        NSLog("Getting timeline before date entries")
+        NSLog("Getting timeline: %d before %@", limit, date)
 
         var entries: [CLKComplicationTimelineEntry] = [];
         
-        for var i = 1; i <= limit; i++ {
-            let previousDate = date.dateByAddingTimeInterval(-1*60*60*24*Double(i))
+        for var i = limit; i >= 1; i-- {
+            // Calculate the entry i * 5 mins ago (in chronological order)
+            let previousDate = date.dateByAddingTimeInterval(-1*60*5*Double(i))
             let entry = self.createTimeLineEntry(complication.family, date:previousDate);
             if (entry != nil) {
                 entries.append(entry!)
@@ -80,10 +73,13 @@ class ComplicationsDataSource : NSObject, CLKComplicationDataSource {
     }
     
     func getTimelineEntriesForComplication(complication: CLKComplication, afterDate date: NSDate, limit: Int, withHandler handler: ([CLKComplicationTimelineEntry]?) -> Void) {
+        NSLog("Getting timeline: %d after %@", limit, date)
+
         var entries: [CLKComplicationTimelineEntry] = [];
         
         for var i = 1; i <= limit; i++ {
-            let previousDate = date.dateByAddingTimeInterval(60*60*24*Double(i))
+            // Calculate the entry i x 5 mins ahead
+            let previousDate = date.dateByAddingTimeInterval(60*5*Double(i))
             let entry = self.createTimeLineEntry(complication.family, date:previousDate);
             if (entry != nil) {
                 entries.append(entry!)
@@ -94,19 +90,15 @@ class ComplicationsDataSource : NSObject, CLKComplicationDataSource {
     }
     
     func getSupportedTimeTravelDirectionsForComplication(complication: CLKComplication, withHandler handler: (CLKComplicationTimeTravelDirections) -> Void) {
-        
-        // Call the handler with the time travel directions are supported?
         handler([CLKComplicationTimeTravelDirections.Backward, CLKComplicationTimeTravelDirections.Forward])
     }
     
     func getTimelineStartDateForComplication(complication: CLKComplication, withHandler handler: (NSDate?) -> Void) {
-        let model = modelData()
-        handler(model.start)
+        handler(modelData().start)
     }
     
     func getTimelineEndDateForComplication(complication: CLKComplication, withHandler handler: (NSDate?) -> Void) {
-        let model = modelData()
-        handler(model.end)
+        handler(modelData().end)
     }
     
     func getTimelineAnimationBehaviorForComplication(complication: CLKComplication,
@@ -114,48 +106,41 @@ class ComplicationsDataSource : NSObject, CLKComplicationDataSource {
             handler(CLKComplicationTimelineAnimationBehavior.Always)
     }
     
-    // Helper methods
-    func modelData() -> DaysLeftModel {
+    // Internal helper methods
+    private func modelData() -> DaysLeftModel {
         let appDelegate = WKExtension.sharedExtension().delegate as! ExtensionDelegate
         return appDelegate.model
     }
     
-    func createTimeLineEntry(family: CLKComplicationFamily, date: NSDate) -> CLKComplicationTimelineEntry? {
+    private func createTimeLineEntry(family: CLKComplicationFamily, date: NSDate) -> CLKComplicationTimelineEntry? {
+
         let model = modelData()
-        
-        // Calculate the data needed for complications
         let currentDaysLeft: Int = model.DaysLeft(date)
         let percentageDone: Float = Float(model.DaysGone(date)) / Float(model.DaysLength)
         
         var entry : CLKComplicationTimelineEntry?
-        
+
         switch family {
-            
-        case .ModularSmall:
-            let template = CLKComplicationTemplateModularSmallRingText()
-            template.textProvider = CLKSimpleTextProvider(text: String(currentDaysLeft))
-            template.fillFraction = percentageDone
-            template.ringStyle = CLKComplicationRingStyle.Closed
-            
-            entry = CLKComplicationTimelineEntry(date: date, complicationTemplate: template)
-        case .ModularLarge:
-            entry = nil
-        case .UtilitarianSmall:
-            let template = CLKComplicationTemplateUtilitarianSmallRingText()
-            template.textProvider = CLKSimpleTextProvider(text: String(currentDaysLeft))
-            template.fillFraction = percentageDone
-            template.ringStyle = CLKComplicationRingStyle.Closed
-            
-            entry = CLKComplicationTimelineEntry(date: date, complicationTemplate: template)
-        case .UtilitarianLarge:
-            entry = nil
-        case .CircularSmall:
-            let template = CLKComplicationTemplateCircularSmallRingText()
-            template.textProvider = CLKSimpleTextProvider(text: String(currentDaysLeft))
-            template.fillFraction = percentageDone
-            template.ringStyle = CLKComplicationRingStyle.Closed
-            
-            entry = CLKComplicationTimelineEntry(date: date, complicationTemplate: template)
+            case .ModularSmall:
+                let template = CLKComplicationTemplateModularSmallRingText()
+                template.textProvider = CLKSimpleTextProvider(text: String(currentDaysLeft))
+                template.fillFraction = percentageDone
+                template.ringStyle = CLKComplicationRingStyle.Closed
+                entry = CLKComplicationTimelineEntry(date: date, complicationTemplate: template)
+            case .UtilitarianSmall:
+                let template = CLKComplicationTemplateUtilitarianSmallRingText()
+                template.textProvider = CLKSimpleTextProvider(text: String(currentDaysLeft))
+                template.fillFraction = percentageDone
+                template.ringStyle = CLKComplicationRingStyle.Closed
+                entry = CLKComplicationTimelineEntry(date: date, complicationTemplate: template)
+            case .CircularSmall:
+                let template = CLKComplicationTemplateCircularSmallRingText()
+                template.textProvider = CLKSimpleTextProvider(text: String(currentDaysLeft))
+                template.fillFraction = percentageDone
+                template.ringStyle = CLKComplicationRingStyle.Closed
+                entry = CLKComplicationTimelineEntry(date: date, complicationTemplate: template)
+            default:
+                entry = nil
         }
         
         return(entry)
