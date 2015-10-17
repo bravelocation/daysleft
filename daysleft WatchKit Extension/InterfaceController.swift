@@ -73,7 +73,7 @@ class InterfaceController: WKInterfaceController {
     
     @objc
     private func userSettingsUpdated(notification: NSNotification) {
-        print("Received BLUserSettingsUpdated notification")
+        NSLog("Received BLUserSettingsUpdated notification")
         
         // Update view data on main thread
         dispatch_async(dispatch_get_main_queue()) {

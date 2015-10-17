@@ -52,7 +52,6 @@ public class BLUserSettings: NSObject, WCSessionDelegate {
         // Otherwise try the user details
         let userSettingsValue = self.appStandardUserDefaults!.valueForKey(key)
         if (userSettingsValue != nil) {
-            print("Updating settings cache for \(key)")
             self.settingsCache[key] = userSettingsValue
         }
         
@@ -66,7 +65,6 @@ public class BLUserSettings: NSObject, WCSessionDelegate {
     public func writeObjectToStore(value: AnyObject, key: String) {
         // First write to local store
         self.settingsCache[key] = value
-        print("Updated \(key) in local settings cache");
         
         // Then write to local user settings
         self.appStandardUserDefaults!.setObject(value, forKey:key)
@@ -102,7 +100,6 @@ public class BLUserSettings: NSObject, WCSessionDelegate {
 
         for (key, value) in userInfo {
             self.writeObjectToStore(value, key: key)
-            print("Received setting update for \(key)")
         }
         
         self.appStandardUserDefaults!.synchronize()

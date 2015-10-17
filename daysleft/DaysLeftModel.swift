@@ -25,7 +25,12 @@ public class DaysLeftModel: BLUserSettings
         
         self.initialRun()
         self.initialiseiCloudSettings()
-        self.pushAllSettingsToWatch()
+        
+        // Push settings to watch on background thread
+        let backgroundQueue = dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)
+        dispatch_async(backgroundQueue, {
+            self.pushAllSettingsToWatch()
+        })
     }
 
     /// Send updated settings to watch
@@ -44,7 +49,6 @@ public class DaysLeftModel: BLUserSettings
             updatedSettings[key] = self.appStandardUserDefaults!.valueForKey(key)
             
             session.transferUserInfo(updatedSettings)
-            print("Sent settings for \(key) to watch")
         }
     }
     
@@ -270,7 +274,7 @@ public class DaysLeftModel: BLUserSettings
     /// param: notification The incoming notification
     @objc
     private func updateKVStoreItems(notification: NSNotification) {
-        print("Detected iCloud key-value storage change")
+        NSLog("Detected iCloud key-value storage change")
         
         // Get the list of keys that changed
         let userInfo: NSDictionary = notification.userInfo!
@@ -288,11 +292,10 @@ public class DaysLeftModel: BLUserSettings
                 for key:String in changedKeys {
                     let settingValue: AnyObject? = store.objectForKey(key)
                     self.appStandardUserDefaults!.setObject(settingValue, forKey: key)
-                    print("Updated local setting for \(key)")
                 }
             }
         } else {
-            print("Unknown iCloud KV reason for change")
+            NSLog("Unknown iCloud KV reason for change")
         }
     }
 }
