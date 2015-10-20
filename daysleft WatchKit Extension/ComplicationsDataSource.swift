@@ -18,8 +18,13 @@ class ComplicationsDataSource : NSObject, CLKComplicationDataSource {
     }
     
     func getNextRequestedUpdateDateWithHandler(handler: (NSDate?) -> Void) {
-        // Update once per hour
-        handler(NSDate(timeIntervalSinceNow: 60*60))
+        // Update at the start of tomorrow
+        let model = modelData()
+        let nextUpdate = model.StartOfDay(model.AddDays(NSDate(), daysToAdd: 1))
+        
+        NSLog("Setting next extension update to be at %@", nextUpdate)
+        
+        handler(nextUpdate)
     }
     
     func getPlaceholderTemplateForComplication(complication: CLKComplication, withHandler handler: (CLKComplicationTemplate?) -> Void) {
