@@ -48,16 +48,27 @@ public class DaysLeftModel: BLUserSettings
         if (WCSession.isSupported()) {
             let session = WCSession.defaultSession()
             
-            var updatedSettings = Dictionary<String, AnyObject>()
-            updatedSettings["start"] = self.appStandardUserDefaults!.valueForKey("start")
-            updatedSettings["end"] = self.appStandardUserDefaults!.valueForKey("end")
-            updatedSettings["title"] = self.appStandardUserDefaults!.valueForKey("title")
-            updatedSettings["weekdaysOnly"] = self.appStandardUserDefaults!.valueForKey("weekdaysOnly")
-            
-            session.transferUserInfo(updatedSettings)
+            session.transferUserInfo(self.allCurrentSettings())
         }
         
         NSLog("Settings pushed to watch")
+    }
+    
+    public func updateWatchContext()
+    {
+        self.initialiseWatchSession()
+        
+        if (WCSession.isSupported()) {
+            let session = WCSession.defaultSession()
+            
+            do {
+                try session.updateApplicationContext(self.allCurrentSettings())
+            } catch {
+                NSLog("Error occurred updating application context")
+            }
+        }
+        
+        NSLog("Context pushed to watch")
     }
     
     /// Write settings to iCloud store
@@ -253,7 +264,17 @@ public class DaysLeftModel: BLUserSettings
          dateComponents.day = daysToAdd
          return NSCalendar.currentCalendar().dateByAddingComponents(dateComponents, toDate: originalDate, options: [])!
     }
-        
+    
+    private func allCurrentSettings() -> Dictionary<String, AnyObject> {
+        var updatedSettings = Dictionary<String, AnyObject>()
+        updatedSettings["start"] = self.appStandardUserDefaults!.valueForKey("start")
+        updatedSettings["end"] = self.appStandardUserDefaults!.valueForKey("end")
+        updatedSettings["title"] = self.appStandardUserDefaults!.valueForKey("title")
+        updatedSettings["weekdaysOnly"] = self.appStandardUserDefaults!.valueForKey("weekdaysOnly")
+
+        return updatedSettings;
+    }
+    
     /// Used in the selector to handle incoming notifications of changes from the cloud
     ///
     /// param: notification The incoming notification

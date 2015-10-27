@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		523443631BBAFBEF00E95BA4 /* daysleft WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 52B7E8771ABEDE9300E1949C /* daysleft WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		523443661BBAFBEF00E95BA4 /* daysleft WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 52B7E8811ABEDE9300E1949C /* daysleft WatchKit App.app */; };
-		5234436D1BBB181C00E95BA4 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5234436C1BBB181C00E95BA4 /* ExtensionDelegate.swift */; settings = {ASSET_TAGS = (); }; };
+		5234436D1BBB181C00E95BA4 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5234436C1BBB181C00E95BA4 /* ExtensionDelegate.swift */; };
 		5295EDDB1A94AE53007EF7E7 /* daysleftlibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5295EDD01A94AE53007EF7E7 /* daysleftlibrary.framework */; };
 		5295EDF01A94AF83007EF7E7 /* daysleftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CFBF131A8B631B005234FB /* daysleftTests.swift */; };
 		5295EDF11A94AFA7007EF7E7 /* DaysLeftModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CFBF1D1A8B642C005234FB /* DaysLeftModel.swift */; };
@@ -34,7 +34,7 @@
 		52D18D701BC8281200DB7E3A /* WatchDaysLeftModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D937391BBFCEF200B215BC /* WatchDaysLeftModel.swift */; };
 		52D18D711BC8282A00DB7E3A /* DaysLeftModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CFBF1D1A8B642C005234FB /* DaysLeftModel.swift */; };
 		52D18D721BC8283300DB7E3A /* BLUserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FAB1181A9231970039691E /* BLUserSettings.swift */; };
-		52D25F3C1BCB8595002E4C76 /* ComplicationsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D25F3B1BCB8595002E4C76 /* ComplicationsDataSource.swift */; settings = {ASSET_TAGS = (); }; };
+		52D25F3C1BCB8595002E4C76 /* ComplicationsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D25F3B1BCB8595002E4C76 /* ComplicationsDataSource.swift */; };
 		52DAC1DE1AB01D61008C8354 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52DAC1DC1AB01D61008C8354 /* Crashlytics.framework */; };
 		52DAC1DF1AB01D61008C8354 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52DAC1DD1AB01D61008C8354 /* Fabric.framework */; };
 		52FAB11C1A9240490039691E /* DefaultPreferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52FAB11B1A9240490039691E /* DefaultPreferences.plist */; };
@@ -584,6 +584,9 @@
 						DevelopmentTeam = W8B3V597R9;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+							com.apple.BackgroundModes = {
 								enabled = 1;
 							};
 							com.apple.iCloud = {

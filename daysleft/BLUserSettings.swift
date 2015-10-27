@@ -108,4 +108,19 @@ public class BLUserSettings: NSObject, WCSessionDelegate {
         NSNotificationCenter.defaultCenter().postNotificationName(BLUserSettings.UpdateSettingsNotification, object:nil, userInfo:nil)
         NSLog("Sent UpdateSettingsNotification")
     }
+    
+    @objc
+    public func session(session: WCSession, didReceiveUpdate receivedApplicationContext: [String : AnyObject]) {
+        NSLog("New context transfer data received on watch")
+        
+        for (key, value) in receivedApplicationContext {
+            self.writeObjectToStore(value, key: key)
+        }
+        
+        self.appStandardUserDefaults!.synchronize()
+        
+        // Finally send a notification for the view controllers to refresh
+        NSNotificationCenter.defaultCenter().postNotificationName(BLUserSettings.UpdateSettingsNotification, object:nil, userInfo:nil)
+        NSLog("Sent UpdateSettingsNotification")
+    }
 }
