@@ -41,32 +41,23 @@ public class DaysLeftModel: BLUserSettings
         store.synchronize()
     }
     
-    public func pushSettingChangeToWatch(key : String) {
-        if (WCSession.isSupported()) {
-            let session = WCSession.defaultSession()
-            
-            var updatedSettings = Dictionary<String, AnyObject>()
-            updatedSettings[key] = self.appStandardUserDefaults!.valueForKey(key)
-            
-            session.transferUserInfo(updatedSettings)
-        }
-    }
-    
     /// Send initial settings to watch
     public func pushAllSettingsToWatch() {
         self.initialiseWatchSession()
         
-        if (self.initialisedWatch == false) {
-            self.pushSettingChangeToWatch("start");
-            self.pushSettingChangeToWatch("end");
-            self.pushSettingChangeToWatch("title");
-            self.pushSettingChangeToWatch("weekdaysOnly");
+        if (WCSession.isSupported()) {
+            let session = WCSession.defaultSession()
             
-            self.initialisedWatch = true;
-            NSLog("Settings pushed to watch")
-        } else {
-            NSLog("All settings already pushed to watch")
+            var updatedSettings = Dictionary<String, AnyObject>()
+            updatedSettings["start"] = self.appStandardUserDefaults!.valueForKey("start")
+            updatedSettings["end"] = self.appStandardUserDefaults!.valueForKey("end")
+            updatedSettings["title"] = self.appStandardUserDefaults!.valueForKey("title")
+            updatedSettings["weekdaysOnly"] = self.appStandardUserDefaults!.valueForKey("weekdaysOnly")
+            
+            session.transferUserInfo(updatedSettings)
         }
+        
+        NSLog("Settings pushed to watch")
     }
     
     /// Write settings to iCloud store
@@ -75,7 +66,7 @@ public class DaysLeftModel: BLUserSettings
         store.setObject(value, forKey: key)
         store.synchronize()
         
-        self.pushSettingChangeToWatch(key)
+        self.pushAllSettingsToWatch()
     }
 
     // Save value locally, and then write to iClud store as appropriate
@@ -112,12 +103,6 @@ public class DaysLeftModel: BLUserSettings
     public var firstRun: Int {
         get { return self.readObjectFromStore("firstRun") as! Int }
         set { self.writeObjectToStore(newValue, key: "firstRun") }
-    }
-    
-    /// Property to get and set the initialisedWatch flag
-    public var initialisedWatch: Bool {
-        get { return self.readObjectFromStore("initialisedWatch") as! Bool }
-        set { self.writeObjectToStore(newValue, key: "initialisedWatch") }
     }
     
     /// Property to get the number of days between the start and the end

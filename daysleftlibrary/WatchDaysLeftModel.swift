@@ -14,7 +14,7 @@ public class WatchDaysLeftModel: DaysLeftModel
 {
     public override init() {
         super.init()
-        self.updateCompications()
+        self.updateComplications()
     }
     
     /// Send updated settings to watch
@@ -26,10 +26,6 @@ public class WatchDaysLeftModel: DaysLeftModel
     public override func writeSettingToiCloudStore(value: AnyObject, key: String) {
         // Don't write settings to iCloud when on watch!
     }
-
-    public override func pushSettingChangeToWatch(key : String) {
-        // Don't send settings to watch when on watch!
-    }
     
     /// Send initial settings to watch
     public override func pushAllSettingsToWatch() {
@@ -38,10 +34,10 @@ public class WatchDaysLeftModel: DaysLeftModel
     
     public override func session(session: WCSession, didReceiveUserInfo userInfo: [String : AnyObject]) {
         super.session(session, didReceiveUserInfo: userInfo)
-        self.updateCompications()
+        self.updateComplications()
     }
     
-    func updateCompications() {
+    func updateComplications() {
         NSLog("Updating complications...")
         let complicationServer = CLKComplicationServer.sharedInstance()
         if (complicationServer != nil) {
