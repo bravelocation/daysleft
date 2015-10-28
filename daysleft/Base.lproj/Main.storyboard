@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dDU-Kp-oSy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dDU-Kp-oSy">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Count The Days Left-->
@@ -19,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Cu-F3-Vt7">
-                                <rect key="frame" x="88" y="98" width="200" height="76.5"/>
+                                <rect key="frame" x="80" y="98" width="215" height="76.5"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="Tma-Y3-Kpr"/>
@@ -27,6 +28,11 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="64"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Tma-Y3-Kpr"/>
+                                    </mask>
+                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="days until Christmas" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B5u-71-7aF">
                                 <rect key="frame" x="16" y="182" width="343" height="19.5"/>
@@ -62,7 +68,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 Dec" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e4s-jj-SxE">
-                                <rect key="frame" x="80" y="441" width="100" height="14.5"/>
+                                <rect key="frame" x="80" y="441" width="107.5" height="14.5"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="eXP-Me-ly6"/>
@@ -70,9 +76,14 @@
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="eXP-Me-ly6"/>
+                                    </mask>
+                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25 Dec" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qRM-og-tk4">
-                                <rect key="frame" x="195" y="441" width="100" height="14.5"/>
+                                <rect key="frame" x="187" y="441" width="107.5" height="14.5"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="qMO-jn-kR4"/>
@@ -80,6 +91,11 @@
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="qMO-jn-kR4"/>
+                                    </mask>
+                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30% done" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tik-NR-YWh">
                                 <rect key="frame" x="80" y="471" width="215" height="29"/>
@@ -92,24 +108,38 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="qRM-og-tk4" firstAttribute="width" secondItem="e4s-jj-SxE" secondAttribute="width" id="0E0-Au-zbh"/>
                             <constraint firstAttribute="centerX" secondItem="1Cu-F3-Vt7" secondAttribute="centerX" id="0SF-jc-yz5"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Tik-NR-YWh" secondAttribute="trailing" constant="64" id="29Q-cg-mvh"/>
                             <constraint firstItem="e4s-jj-SxE" firstAttribute="leading" secondItem="Tik-NR-YWh" secondAttribute="leading" id="86P-GY-aJl"/>
                             <constraint firstItem="qRM-og-tk4" firstAttribute="trailing" secondItem="6ap-MQ-ZgB" secondAttribute="trailing" id="Ep6-NI-aXf"/>
                             <constraint firstItem="e4s-jj-SxE" firstAttribute="top" secondItem="6ap-MQ-ZgB" secondAttribute="bottom" id="G8h-s2-sTC"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="B5u-71-7aF" secondAttribute="trailing" id="Kyt-gy-REq"/>
                             <constraint firstItem="6ap-MQ-ZgB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="64" id="LuF-w0-DKN"/>
                             <constraint firstItem="e4s-jj-SxE" firstAttribute="leading" secondItem="6ap-MQ-ZgB" secondAttribute="leading" id="Tku-lR-FrQ"/>
                             <constraint firstItem="B5u-71-7aF" firstAttribute="top" secondItem="1Cu-F3-Vt7" secondAttribute="bottom" constant="8" id="ViD-S1-3gq"/>
                             <constraint firstItem="Tik-NR-YWh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="64" id="WwJ-eU-1xd"/>
+                            <constraint firstItem="e4s-jj-SxE" firstAttribute="width" secondItem="6ap-MQ-ZgB" secondAttribute="width" multiplier="0.5" id="XCc-SN-Hm0"/>
                             <constraint firstItem="Tik-NR-YWh" firstAttribute="top" secondItem="qRM-og-tk4" secondAttribute="bottom" constant="16" id="fi6-cQ-eu9"/>
+                            <constraint firstItem="B5u-71-7aF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="gib-zV-pXw"/>
                             <constraint firstAttribute="centerY" secondItem="6ap-MQ-ZgB" secondAttribute="centerY" id="hCr-ua-ecC"/>
                             <constraint firstItem="B5u-71-7aF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="jEm-Vy-936"/>
+                            <constraint firstItem="1Cu-F3-Vt7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="64" id="jVY-Ye-G8n"/>
                             <constraint firstAttribute="trailingMargin" secondItem="6ap-MQ-ZgB" secondAttribute="trailing" constant="64" id="k3P-Cq-cls"/>
                             <constraint firstItem="qRM-og-tk4" firstAttribute="top" secondItem="6ap-MQ-ZgB" secondAttribute="bottom" id="kjW-HW-per"/>
                             <constraint firstAttribute="centerX" secondItem="6ap-MQ-ZgB" secondAttribute="centerX" id="oHa-t2-d24"/>
                             <constraint firstItem="B5u-71-7aF" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="qnL-F9-ca1"/>
                             <constraint firstItem="6ap-MQ-ZgB" firstAttribute="top" secondItem="B5u-71-7aF" secondAttribute="bottom" constant="24" id="sHF-a1-tVS"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="1Cu-F3-Vt7" secondAttribute="trailing" constant="64" id="w5z-GG-Yuc"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="0SF-jc-yz5"/>
+                                <exclude reference="jEm-Vy-936"/>
+                                <exclude reference="qnL-F9-ca1"/>
+                                <exclude reference="86P-GY-aJl"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Count The Days Left" id="GgR-KT-7FI">
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="zK2-rI-cSr">
@@ -131,7 +161,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="913" y="365"/>
+            <point key="canvasLocation" x="912.5" y="364.5"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="x8v-1w-SPI">
