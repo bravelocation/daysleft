@@ -55,7 +55,7 @@ class ComplicationsDataSource : NSObject, CLKComplicationDataSource {
     
     func getPrivacyBehaviorForComplication(complication: CLKComplication, withHandler handler: (CLKComplicationPrivacyBehavior) -> Void) {
         // Show the complication on the lock screen
-        handler(CLKComplicationPrivacyBehavior.ShowOnLockScreen)
+        handler(CLKComplicationPrivacyBehavior.HideOnLockScreen)
     }
     
     // --- Timeline functions ---
