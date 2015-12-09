@@ -18,6 +18,7 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate {
     @IBOutlet weak var buttonStartToday: UIButton!
     @IBOutlet weak var labelDaysLength: UILabel!
     @IBOutlet weak var labelVersion: UILabel!
+    @IBOutlet weak var switchShowBadge: UISwitch!
     
     var dateFormatter: NSDateFormatter = NSDateFormatter()
     
@@ -31,6 +32,7 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate {
 
         self.textTitle.text = model.title
         self.switchWeekdaysOnly.on = model.weekdaysOnly
+        self.switchShowBadge.on = model.showBadge
         
         // Setup date formatter
         self.dateFormatter.dateFormat = "EEE d MMM YYYY"
@@ -67,7 +69,7 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate {
         model.title = self.textTitle.text!
     }
     
-    @IBAction func dateChanged(sender: AnyObject) {
+    func dateChanged(sender: AnyObject) {
         self.validateAndSaveDates()
     }
     
@@ -76,6 +78,20 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate {
 
         model.weekdaysOnly = self.switchWeekdaysOnly.on
         self.validateAndSaveDates()
+    }
+ 
+    @IBAction func switchShowBadgeChanged(sender: AnyObject) {
+        let model = self.modelData()
+        model.showBadge = self.switchShowBadge.on
+
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+
+        if (model.showBadge) {
+            appDelegate.registerForNotifications()
+            appDelegate.updateBadge()
+        } else {
+            appDelegate.clearBadge()
+        }
     }
     
     @IBAction func buttonStartTodayTouchUp(sender: AnyObject) {
@@ -141,6 +157,10 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate {
         // Update the date restrictions too
         self.startDatePicker.maximumDate = model.end
         self.endDatePicker.minimumDate = model.start
+        
+        // Update the badge too
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        appDelegate.updateBadge()
     }
     
     func modelData() -> DaysLeftModel {

@@ -122,6 +122,12 @@ public class DaysLeftModel: BLUserSettings
             return self.DaysDifference(self.start, endDate: self.end) + 1 // Inclusive so add one
         }
     }
+    
+    /// Property to get and set the show badge flag
+    public var showBadge: Bool {
+        get { return self.readObjectFromStore("showBadge") as! Bool }
+        set { self.writeObjectToStore(newValue, key: "showBadge") }
+    }
 
     /// Finds the number of days to the end of the period from the current date
     ///

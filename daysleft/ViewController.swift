@@ -90,6 +90,9 @@ class ViewController: UIViewController {
         self.counterView.counter = model.DaysGone(now)
         self.counterView.maximumValue = model.DaysLength
         self.counterView.updateControl()
+        
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        appDelegate.updateBadge()
     }
 
     func swipeLeft(gesture: UISwipeGestureRecognizer) {

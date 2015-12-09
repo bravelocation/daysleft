@@ -1124,7 +1124,7 @@
 					"$(PROJECT_DIR)/DerivedData/daysleft/Build/Intermediates/ArchiveIntermediates/daysleft/IntermediateBuildFilesPath/UninstalledProducts",
 				);
 				INFOPLIST_FILE = daysleft/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bravelocation.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1149,7 +1149,7 @@
 					"$(PROJECT_DIR)/DerivedData/daysleft/Build/Intermediates/ArchiveIntermediates/daysleft/IntermediateBuildFilesPath/UninstalledProducts",
 				);
 				INFOPLIST_FILE = daysleft/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bravelocation.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
