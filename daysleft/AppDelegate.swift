@@ -33,6 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         NSLog("Updating watch context from background")
         
         self.updateBadge()
+        completionHandler(UIBackgroundFetchResult.NewData)
     }
     
     func registerForNotifications() {

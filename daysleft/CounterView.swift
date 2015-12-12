@@ -22,7 +22,13 @@ let π:CGFloat = CGFloat(M_PI)
     private var progressSubView: CAShapeLayer? = nil
     
     public func clearControl() {
-        // First clear existing progress view
+        // First clear circle view
+        if self.circleSubView != nil {
+            self.circleSubView?.removeFromSuperlayer()
+            self.circleSubView = nil
+        }
+        
+        // Then clear existing progress view
         if self.progressSubView != nil {
             self.progressSubView?.removeFromSuperlayer()
             self.progressSubView = nil

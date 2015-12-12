@@ -145,6 +145,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="counterView" destination="6ap-MQ-ZgB" id="Bqr-ZM-7tY"/>
+                        <outlet property="counterWidth" destination="Vn5-tj-SnF" id="fsO-Rm-ccw"/>
                         <outlet property="labelDaysLeft" destination="1Cu-F3-Vt7" id="kyQ-4w-7gb"/>
                         <outlet property="labelEndDate" destination="qRM-og-tk4" id="K5d-GZ-oAo"/>
                         <outlet property="labelPercentageDone" destination="Tik-NR-YWh" id="4wM-MZ-l8k"/>

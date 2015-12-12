@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var labelStartDate: UILabel!
     @IBOutlet weak var labelEndDate: UILabel!
     @IBOutlet weak var labelPercentageDone: UILabel!
+    @IBOutlet weak var counterWidth: NSLayoutConstraint!
     
     var dayChangeTimer: NSTimer!
     
@@ -53,6 +54,20 @@ class ViewController: UIViewController {
 
     override func viewDidAppear(animated: Bool) {
         self.updateViewFromModel()
+    }
+    
+    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransitionToSize(size, withTransitionCoordinator: coordinator)
+        
+        coordinator.animateAlongsideTransition(nil, completion:{ context in self.setCounterWidth() })
+    }
+
+    override func traitCollectionDidChange(previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        
+        if (self.traitCollection.verticalSizeClass != previousTraitCollection?.verticalSizeClass || self.traitCollection.horizontalSizeClass != previousTraitCollection?.horizontalSizeClass) {
+            self.setCounterWidth()
+        }
     }
     
     @IBAction func returnFromSettings(segue: UIStoryboardSegue) {
@@ -102,6 +117,18 @@ class ViewController: UIViewController {
     func modelData() -> DaysLeftModel {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         return appDelegate.model
+    }
+    
+    func setCounterWidth() {
+        var smallestDimension = self.view.frame.size.width;
+        if (self.view.frame.size.width > self.view.frame.size.height) {
+            smallestDimension = self.view.frame.size.height
+        }
+        
+        let ratioWidth = smallestDimension / 2.0;
+        
+        self.counterWidth.constant = ratioWidth;
+        self.counterView.updateControl()
     }
 }
 
