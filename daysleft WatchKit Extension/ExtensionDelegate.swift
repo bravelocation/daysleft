@@ -20,7 +20,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
         dispatch_async(backgroundQueue, {
             NSLog("Running watch session initialisation on background thread")
             self.model.initialiseWatchSession()
-        })
+        }) 
         
         NSLog("applicationDidBecomeActive completed")
     }
