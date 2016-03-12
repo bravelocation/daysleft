@@ -106,8 +106,11 @@ class ViewController: UIViewController {
         self.counterView.maximumValue = model.DaysLength
         self.counterView.updateControl()
         
+        // Update badge and watch settings
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         appDelegate.updateBadge()
+        
+        model.pushAllSettingsToWatch()
     }
 
     func swipeLeft(gesture: UISwipeGestureRecognizer) {

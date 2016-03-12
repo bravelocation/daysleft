@@ -25,12 +25,6 @@ public class DaysLeftModel: BLUserSettings
         
         self.initialRun()
         self.initialiseiCloudSettings()
-        
-        // Push settings to watch on background thread
-        let backgroundQueue = dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)
-        dispatch_async(backgroundQueue, {
-            self.pushAllSettingsToWatch()
-        })
     }
 
     /// Send updated settings to watch
