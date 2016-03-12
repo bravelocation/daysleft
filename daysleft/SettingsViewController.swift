@@ -114,7 +114,7 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         self.view.endEditing(true)
         
-        if (indexPath.section == 3) {
+        if (indexPath.section == 4) {
             if (indexPath.row == 0) {
                 let url: NSURL = NSURL(string: "http://www.bravelocationstudios.com")!
                 if (UIApplication.sharedApplication().openURL(url) == false) {
@@ -122,7 +122,7 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate {
                 }
             }
             else if (indexPath.row == 1) {
-                let url: NSURL = NSURL(string: "http://blog.bravelocation.com")!
+                let url: NSURL = NSURL(string: "http://blog.bravelocation.com/countthedaysleft")!
                 if (UIApplication.sharedApplication().openURL(url) == false) {
                     NSLog("Failed to open %@", url)
                }
