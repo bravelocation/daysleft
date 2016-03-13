@@ -78,6 +78,7 @@ class ViewController: UIViewController {
     }
     
     func updateViewFromModel() {
+        NSLog("updateViewFromModel started")
         let model = self.modelData()
         
         let now: NSDate = NSDate()
@@ -111,6 +112,7 @@ class ViewController: UIViewController {
         appDelegate.updateBadge()
         
         model.pushAllSettingsToWatch()
+        NSLog("updateViewFromModel completed")
     }
 
     func swipeLeft(gesture: UISwipeGestureRecognizer) {
