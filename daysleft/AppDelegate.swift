@@ -18,10 +18,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     lazy var model = DaysLeftModel()
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        NSLog("Starting didFinishLaunchingWithOptions")
         Fabric.with([Crashlytics()])
-        
         application.setMinimumBackgroundFetchInterval(UIApplicationBackgroundFetchIntervalMinimum)
-
+        NSLog("Ending didFinishLaunchingWithOptions")
         return true
     }
     
