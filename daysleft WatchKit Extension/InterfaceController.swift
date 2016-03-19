@@ -29,34 +29,29 @@ class InterfaceController: WKInterfaceController {
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
-        
-        NSLog("Starting awakeWithContext ...")
         self.updateViewData()
-        NSLog("Completed awakeWithContext")
     }
     
     override func willActivate() {
         super.willActivate()
- 
-        NSLog("Starting willActivate ...")
-        
-        // Do we need to update the view?
-        let now: NSDate = NSDate()
-
-        if (self.modelData().DaysLeft(now) != self.currentDaysLeft) {
-            self.updateViewData()
-        }
-        
-        NSLog("Completed willActivate")
+        self.updateViewData()
     }
     
     private func updateViewData() {
         NSLog("Updating view data...")
         
         let now: NSDate = NSDate()
-        let model = modelData()
+        let appDelegate = WKExtension.sharedExtension().delegate as! ExtensionDelegate
+        let model = appDelegate.model
         
-        self.currentDaysLeft = model.DaysLeft(now)
+        // Do we need to update the view?
+        let daysLeft = model.DaysLeft(now);
+        if (daysLeft == self.currentDaysLeft) {
+            NSLog("View unchanged")
+            return;
+        }
+        
+        self.currentDaysLeft = daysLeft
         let titleSuffix: String = (model.title.characters.count == 0 ? "left" : "until " + model.title)
         let titleDays: String = model.weekdaysOnly ? "weekdays" : "days"
         
@@ -69,6 +64,7 @@ class InterfaceController: WKInterfaceController {
         let intPercentageDone: Int = Int(percentageDone)
         self.imageProgress.setImageNamed("progress")
         self.imageProgress.startAnimatingWithImagesInRange(NSRange(location:0, length: intPercentageDone), duration: 0.5, repeatCount: 1)
+        NSLog("View updated")
     }
     
     @objc
@@ -79,10 +75,5 @@ class InterfaceController: WKInterfaceController {
         dispatch_async(dispatch_get_main_queue()) {
             self.updateViewData()
         }
-    }
-    
-    func modelData() -> DaysLeftModel {
-        let appDelegate = WKExtension.sharedExtension().delegate as! ExtensionDelegate
-        return appDelegate.model
     }
 }

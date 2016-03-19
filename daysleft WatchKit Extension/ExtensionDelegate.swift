@@ -14,14 +14,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
         
     func applicationDidBecomeActive() {
         NSLog("applicationDidBecomeActive started")
-
-        // Delay setting up watch session until application is active on background queue
-        let backgroundQueue = dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)
-        dispatch_async(backgroundQueue, {
-            NSLog("Running watch session initialisation on background thread")
-            self.model.initialiseWatchSession()
-        }) 
-        
+        self.model.initialiseWatchSession()        
         NSLog("applicationDidBecomeActive completed")
     }
 }
