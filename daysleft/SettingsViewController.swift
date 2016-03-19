@@ -122,7 +122,7 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate {
                 }
             }
             else if (indexPath.row == 1) {
-                let url: NSURL = NSURL(string: "http://blog.bravelocation.com/countthedaysleft")!
+                let url: NSURL = NSURL(string: "http://www.bravelocation.com/countthedaysleft")!
                 if (UIApplication.sharedApplication().openURL(url) == false) {
                     NSLog("Failed to open %@", url)
                }
