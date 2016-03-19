@@ -46,13 +46,10 @@ class ViewController: UIViewController {
         let startOfTomorrow = model.AddDays(model.StartOfDay(now), daysToAdd: 1)
         self.dayChangeTimer = NSTimer(fireDate: startOfTomorrow, interval: secondsInADay, target: self, selector: "dayChangeTimerFired:", userInfo: nil, repeats: false)
     }
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        self.counterView.clearControl()
-    }
 
     override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        self.counterView.clearControl()
         self.updateViewFromModel()
     }
     
@@ -68,9 +65,6 @@ class ViewController: UIViewController {
         if (self.traitCollection.verticalSizeClass != previousTraitCollection?.verticalSizeClass || self.traitCollection.horizontalSizeClass != previousTraitCollection?.horizontalSizeClass) {
             self.setCounterWidth()
         }
-    }
-    
-    @IBAction func returnFromSettings(segue: UIStoryboardSegue) {
     }
     
     func dayChangedTimerFired(timer: NSTimer) {
