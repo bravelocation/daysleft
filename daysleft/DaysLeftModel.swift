@@ -31,7 +31,7 @@ public class DaysLeftModel: BLUserSettings
     public func initialiseiCloudSettings() {
         NSLog("Initialising iCloud Settings")
         let store: NSUbiquitousKeyValueStore = NSUbiquitousKeyValueStore.defaultStore()
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateKVStoreItems:", name: NSUbiquitousKeyValueStoreDidChangeExternallyNotification, object: store)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(DaysLeftModel.updateKVStoreItems(_:)), name: NSUbiquitousKeyValueStoreDidChangeExternallyNotification, object: store)
         store.synchronize()
     }
     

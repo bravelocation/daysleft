@@ -45,13 +45,13 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate {
         self.startDatePicker.date = model.start
         self.startDatePicker.maximumDate = model.end
         self.startDatePicker.datePickerMode = UIDatePickerMode.Date
-        self.startDatePicker.addTarget(self, action: "dateChanged:", forControlEvents: UIControlEvents.ValueChanged)
+        self.startDatePicker.addTarget(self, action: #selector(SettingsViewController.dateChanged(_:)), forControlEvents: UIControlEvents.ValueChanged)
         self.textStart.inputView = self.startDatePicker
         
         self.endDatePicker.date = model.end
         self.endDatePicker.minimumDate = model.start
         self.endDatePicker.datePickerMode = UIDatePickerMode.Date
-        self.endDatePicker.addTarget(self, action: "dateChanged:", forControlEvents: UIControlEvents.ValueChanged)
+        self.endDatePicker.addTarget(self, action: #selector(SettingsViewController.dateChanged(_:)), forControlEvents: UIControlEvents.ValueChanged)
         self.textEnd.inputView = self.endDatePicker
 
         // Set up the delegate of text field for handling return below

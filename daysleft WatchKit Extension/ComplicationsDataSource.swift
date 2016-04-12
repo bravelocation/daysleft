@@ -65,7 +65,7 @@ class ComplicationsDataSource : NSObject, CLKComplicationDataSource {
 
         var entries: [CLKComplicationTimelineEntry] = [];
         
-        for var i = limit; i >= 1; i-- {
+        for i in limit...1 {
             // Calculate the entry i * 5 mins ago (in chronological order)
             let previousDate = date.dateByAddingTimeInterval(-1*60*5*Double(i))
             let entry = self.createTimeLineEntry(complication.family, date:previousDate);
@@ -82,7 +82,7 @@ class ComplicationsDataSource : NSObject, CLKComplicationDataSource {
 
         var entries: [CLKComplicationTimelineEntry] = [];
         
-        for var i = 1; i <= limit; i++ {
+        for i in 1...limit {
             // Calculate the entry i x 5 mins ahead
             let previousDate = date.dateByAddingTimeInterval(60*5*Double(i))
             let entry = self.createTimeLineEntry(complication.family, date:previousDate);

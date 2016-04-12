@@ -49,10 +49,8 @@ public class WatchDaysLeftModel: DaysLeftModel
     func updateComplications() {
         NSLog("Updating complications...")
         let complicationServer = CLKComplicationServer.sharedInstance()
-        if (complicationServer != nil) {
-            for complication in complicationServer.activeComplications {
-                complicationServer.reloadTimelineForComplication(complication)
-            }
+        for complication in complicationServer.activeComplications! {
+            complicationServer.reloadTimelineForComplication(complication)
         }
     }
 }

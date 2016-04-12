@@ -36,7 +36,7 @@ class ViewController: UIViewController {
         navBar!.titleTextAttributes = titleDict
         
         // Add a swipe recogniser
-        let swipeLeft : UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: "swipeLeft:")
+        let swipeLeft : UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(ViewController.swipeLeft(_:)))
         swipeLeft.direction = UISwipeGestureRecognizerDirection.Left
         self.view.addGestureRecognizer(swipeLeft)
         
@@ -46,7 +46,7 @@ class ViewController: UIViewController {
         let startOfTomorrow = model.AddDays(model.StartOfDay(now), daysToAdd: 1)
         self.dayChangeTimer = NSTimer(fireDate: startOfTomorrow, interval: secondsInADay, target: self, selector: "dayChangeTimerFired:", userInfo: nil, repeats: false)
     }
-
+ 
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         self.counterView.clearControl()

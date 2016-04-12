@@ -20,7 +20,7 @@ class InterfaceController: WKInterfaceController {
     override init() {
         super.init()
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "userSettingsUpdated:", name: BLUserSettings.UpdateSettingsNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(InterfaceController.userSettingsUpdated(_:)), name: BLUserSettings.UpdateSettingsNotification, object: nil)
     }
     
     deinit {
