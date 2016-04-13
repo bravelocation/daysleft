@@ -116,7 +116,7 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate {
         
         if (indexPath.section == 4) {
             if (indexPath.row == 0) {
-                let url: NSURL = NSURL(string: "http://www.bravelocation.com")!
+                let url: NSURL = NSURL(string: "http://www.bravelocation.com/apps")!
                 if (UIApplication.sharedApplication().openURL(url) == false) {
                     NSLog("Failed to open %@", url)
                 }
