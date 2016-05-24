@@ -44,7 +44,7 @@ class ViewController: UIViewController {
         let now = NSDate()
         let secondsInADay: Double = 60 * 60 * 24
         let startOfTomorrow = model.AddDays(model.StartOfDay(now), daysToAdd: 1)
-        self.dayChangeTimer = NSTimer(fireDate: startOfTomorrow, interval: secondsInADay, target: self, selector: "dayChangeTimerFired:", userInfo: nil, repeats: false)
+        self.dayChangeTimer = NSTimer(fireDate: startOfTomorrow, interval: secondsInADay, target: self, selector: #selector(ViewController.dayChangedTimerFired), userInfo: nil, repeats: false)
     }
  
     override func viewDidAppear(animated: Bool) {
