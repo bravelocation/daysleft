@@ -19,8 +19,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let azureNotifications = AzureNotifications()
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Setup analytics
-        Fabric.with([Crashlytics()])
+        
+        #if RELEASE
+            // Setup analytics in release mode only
+            Fabric.with([Crashlytics()])
+        #endif
         
         // Setup push notifications (if required) to ensure the badge gets updated
         self.azureNotifications.setupNotifications(false)
