@@ -16,29 +16,53 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     lazy var model = DaysLeftModel()
+    let azureNotifications = AzureNotifications()
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        NSLog("Starting didFinishLaunchingWithOptions")
+        // Setup analytics
         Fabric.with([Crashlytics()])
-        application.setMinimumBackgroundFetchInterval(UIApplicationBackgroundFetchIntervalMinimum)
-        NSLog("Ending didFinishLaunchingWithOptions")
+        
+        // Setup push notifications (if required) to ensure the badge gets updated
+        self.azureNotifications.setupNotifications(false)
+        
         return true
     }
     
-    func application(application: UIApplication, performFetchWithCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
-        // Push latest settings to watch periodically
+    func application(application: UIApplication,
+                     didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+        self.azureNotifications.register(deviceToken)
+    }
+    
+    func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
+        print("Device token for push notifications: FAIL -- ")
+        print(error.description)
+    }
+    
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+        self.messageReceived(application, userInfo: userInfo)
+    }
+    
+    func application(application: UIApplication,
+                     didReceiveRemoteNotification userInfo: [NSObject : AnyObject],
+                                                  fetchCompletionHandler handler: (UIBackgroundFetchResult) -> Void) {
+        self.messageReceived(application, userInfo: userInfo)
+        handler(UIBackgroundFetchResult.NewData);
+    }
+    
+    func messageReceived(application: UIApplication,
+                         userInfo: [NSObject : AnyObject]) {
+        // Print message
+        print("Notification received: \(userInfo)")
+
+        // Push latest settings and update badge
         self.model.updateWatchContext()
-        NSLog("Updating watch context from background")
-        
         self.updateBadge()
-        completionHandler(UIBackgroundFetchResult.NewData)
     }
     
     func registerForNotifications() {
         NSLog("Registering notification settings")
-        let types: UIUserNotificationType = UIUserNotificationType.Badge
-        let notificationSettings:UIUserNotificationSettings = UIUserNotificationSettings.init(forTypes: types, categories:nil)
-        UIApplication.sharedApplication().registerUserNotificationSettings(notificationSettings)
+        self.azureNotifications.setupNotifications(true)
+        self.updateBadge()
     }
     
     func updateBadge() {

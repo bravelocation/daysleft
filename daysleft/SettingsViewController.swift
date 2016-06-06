@@ -85,13 +85,7 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate {
         model.showBadge = self.switchShowBadge.on
 
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-
-        if (model.showBadge) {
-            appDelegate.registerForNotifications()
-            appDelegate.updateBadge()
-        } else {
-            appDelegate.clearBadge()
-        }
+        appDelegate.registerForNotifications()
     }
     
     @IBAction func buttonStartTodayTouchUp(sender: AnyObject) {

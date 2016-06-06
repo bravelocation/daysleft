@@ -10,6 +10,8 @@
 		523443631BBAFBEF00E95BA4 /* daysleft WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 52B7E8771ABEDE9300E1949C /* daysleft WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		523443661BBAFBEF00E95BA4 /* daysleft WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 52B7E8811ABEDE9300E1949C /* daysleft WatchKit App.app */; };
 		5234436D1BBB181C00E95BA4 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5234436C1BBB181C00E95BA4 /* ExtensionDelegate.swift */; };
+		52790F771D056F2E0025AF10 /* WindowsAzureMessaging.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52790F761D056F2E0025AF10 /* WindowsAzureMessaging.framework */; };
+		52790F7A1D056FB90025AF10 /* AzureNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52790F791D056FB90025AF10 /* AzureNotifications.swift */; };
 		5295EDDB1A94AE53007EF7E7 /* daysleftlibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5295EDD01A94AE53007EF7E7 /* daysleftlibrary.framework */; };
 		5295EDF01A94AF83007EF7E7 /* daysleftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CFBF131A8B631B005234FB /* daysleftTests.swift */; };
 		5295EDF11A94AFA7007EF7E7 /* DaysLeftModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CFBF1D1A8B642C005234FB /* DaysLeftModel.swift */; };
@@ -133,6 +135,9 @@
 		5234436C1BBB181C00E95BA4 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		5244C04B1BC4383F00D57F28 /* daysleftlibrary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = daysleftlibrary.h; path = daysleftlibrary/daysleftlibrary.h; sourceTree = "<group>"; };
 		5244C04D1BC438DE00D57F28 /* daysleftlibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = daysleftlibrary.framework; path = DerivedData/daysleft/Build/Intermediates/ArchiveIntermediates/daysleft/IntermediateBuildFilesPath/UninstalledProducts/daysleftlibrary.framework; sourceTree = "<group>"; };
+		52790F761D056F2E0025AF10 /* WindowsAzureMessaging.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WindowsAzureMessaging.framework; sourceTree = "<group>"; };
+		52790F781D056F500025AF10 /* daysleft-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "daysleft-Bridging-Header.h"; sourceTree = "<group>"; };
+		52790F791D056FB90025AF10 /* AzureNotifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AzureNotifications.swift; sourceTree = "<group>"; };
 		5295EDD01A94AE53007EF7E7 /* daysleftlibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = daysleftlibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5295EDD31A94AE53007EF7E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5295EDDA1A94AE53007EF7E7 /* daysleftlibraryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = daysleftlibraryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -219,6 +224,7 @@
 				52D18D611BC4E91500DB7E3A /* daysleftlibrary.framework in Frameworks */,
 				52DAC1DE1AB01D61008C8354 /* Crashlytics.framework in Frameworks */,
 				52DAC1DF1AB01D61008C8354 /* Fabric.framework in Frameworks */,
+				52790F771D056F2E0025AF10 /* WindowsAzureMessaging.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,6 +342,7 @@
 		52CFBEEF1A8B631B005234FB = {
 			isa = PBXGroup;
 			children = (
+				52790F761D056F2E0025AF10 /* WindowsAzureMessaging.framework */,
 				52DAC1DC1AB01D61008C8354 /* Crashlytics.framework */,
 				52DAC1DD1AB01D61008C8354 /* Fabric.framework */,
 				52CFBEFA1A8B631B005234FB /* daysleft */,
@@ -374,6 +381,8 @@
 				52CFBEFB1A8B631B005234FB /* Supporting Files */,
 				52FAB11B1A9240490039691E /* DefaultPreferences.plist */,
 				52FAB11D1A9381B70039691E /* SettingsViewController.swift */,
+				52790F781D056F500025AF10 /* daysleft-Bridging-Header.h */,
+				52790F791D056FB90025AF10 /* AzureNotifications.swift */,
 			);
 			path = daysleft;
 			sourceTree = "<group>";
@@ -589,6 +598,9 @@
 							com.apple.BackgroundModes = {
 								enabled = 1;
 							};
+							com.apple.Push = {
+								enabled = 1;
+							};
 							com.apple.iCloud = {
 								enabled = 1;
 							};
@@ -765,6 +777,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52790F7A1D056FB90025AF10 /* AzureNotifications.swift in Sources */,
 				52CFBF001A8B631B005234FB /* ViewController.swift in Sources */,
 				52CFBEFE1A8B631B005234FB /* AppDelegate.swift in Sources */,
 				52FAB11E1A9381B70039691E /* SettingsViewController.swift in Sources */,
@@ -1134,9 +1147,11 @@
 				INFOPLIST_FILE = daysleft/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-DDEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bravelocation.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "./daysleft/daysleft-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1159,9 +1174,11 @@
 				INFOPLIST_FILE = daysleft/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-DRELEASE";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bravelocation.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "./daysleft/daysleft-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
