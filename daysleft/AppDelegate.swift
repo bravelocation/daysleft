@@ -52,7 +52,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func messageReceived(application: UIApplication,
                          userInfo: [NSObject : AnyObject]) {
         // Print message
-        print("Notification received: \(userInfo)")
+        NSLog("Notification received: \(userInfo)")
 
         // Push latest settings and update badge
         self.model.updateWatchContext()
