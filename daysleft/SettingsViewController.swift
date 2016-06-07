@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import SafariServices
 import daysleftlibrary
 
-class SettingsViewController: UITableViewController, UITextFieldDelegate {
+class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafariViewControllerDelegate {
     
     @IBOutlet weak var textTitle: UITextField!
     @IBOutlet weak var textStart: UITextField!
@@ -109,24 +110,21 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate {
         self.view.endEditing(true)
         
         if (indexPath.section == 4) {
+            var url: NSURL? = nil;
+            
             if (indexPath.row == 0) {
-                let url: NSURL = NSURL(string: "http://www.bravelocation.com/apps")!
-                if (UIApplication.sharedApplication().openURL(url) == false) {
-                    NSLog("Failed to open %@", url)
-                }
+                url = NSURL(string: "http://www.bravelocation.com/countthedaysleft")!
             }
             else if (indexPath.row == 1) {
-                let url: NSURL = NSURL(string: "http://www.bravelocation.com/countthedaysleft")!
-                if (UIApplication.sharedApplication().openURL(url) == false) {
-                    NSLog("Failed to open %@", url)
-               }
+                url = NSURL(string: "http://github.com/bravelocation/daysleft")!
             }
             else if (indexPath.row == 2) {
-                let url: NSURL = NSURL(string: "http://github.com/bravelocation/daysleft")!
-                if (UIApplication.sharedApplication().openURL(url) == false) {
-                    NSLog("Failed to open %@", url)
-                }
+                url = NSURL(string: "http://www.bravelocation.com/apps")!
             }
+            
+            let svc = SFSafariViewController(URL: url!)
+            svc.delegate = self
+            self.presentViewController(svc, animated: true, completion: nil)
         }
     }
     
@@ -160,6 +158,12 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate {
     func modelData() -> DaysLeftModel {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         return appDelegate.model
+    }
+    
+    // MARK: - SFSafariViewControllerDelegate methods
+    func safariViewControllerDidFinish(controller: SFSafariViewController)
+    {
+        controller.dismissViewControllerAnimated(true, completion: nil)
     }
 }
 
