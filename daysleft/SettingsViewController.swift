@@ -122,9 +122,11 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
                 url = NSURL(string: "http://www.bravelocation.com/apps")!
             }
             
-            let svc = SFSafariViewController(URL: url!)
-            svc.delegate = self
-            self.presentViewController(svc, animated: true, completion: nil)
+            if (url != nil) {
+                let svc = SFSafariViewController(URL: url!)
+                svc.delegate = self
+                self.presentViewController(svc, animated: true, completion: nil)
+            }
         }
     }
     
