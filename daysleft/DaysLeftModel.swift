@@ -275,6 +275,31 @@ public class DaysLeftModel: BLUserSettings
         return updatedSettings;
     }
     
+    public func FullDescription(currentDate: NSDate) -> String {        
+        return String(format: "%d %@", self.DaysLeft(currentDate), self.Description(currentDate))
+    }
+    
+    
+    public func Description(currentDate: NSDate) -> String {
+        let daysLeft: Int = self.DaysLeft(currentDate)
+        
+        var titleSuffix = "left"
+        var titleDays = ""
+        
+        if (self.title.characters.count > 0) {
+            titleSuffix = "until " + self.title
+        }
+        
+        if (self.weekdaysOnly) {
+            titleDays = (daysLeft == 1) ? "weekday" : "weekdays"
+        } else {
+            titleDays = (daysLeft == 1) ? "day" : "days"
+        }
+        
+        return String(format: "%@ %@", titleDays, titleSuffix)
+    }
+
+    
     /// Used in the selector to handle incoming notifications of changes from the cloud
     ///
     /// param: notification The incoming notification

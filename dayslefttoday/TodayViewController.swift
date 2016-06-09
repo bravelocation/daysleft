@@ -35,11 +35,8 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     private func updateViewData() {
         let now: NSDate = NSDate()
         let model: DaysLeftModel = DaysLeftModel()
-        let daysLeft: Int = model.DaysLeft(now)
-        let titleSuffix: String = (model.title.characters.count == 0 ? "left" : "until " + model.title)
-        let titleDays: String = model.weekdaysOnly ? "weekdays" : "days"
         
-        self.labelNumberTitle.text = String(format: "%d %@ %@", daysLeft, titleDays, titleSuffix)
+        self.labelNumberTitle.text = model.FullDescription(now)
  
         let percentageDone: Float = (Float(model.DaysGone(now)) * 100.0) / Float(model.DaysLength)
         self.labelPercentDone.text = String(format:"%3.0f%% done", percentageDone)

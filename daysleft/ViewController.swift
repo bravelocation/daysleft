@@ -78,10 +78,7 @@ class ViewController: UIViewController {
         let now: NSDate = NSDate()
 
         self.labelDaysLeft.text = String(format: "%d", model.DaysLeft(now))
-        
-        let titleSuffix: String = (model.title.characters.count == 0 ? "left" : "until " + model.title)
-        let titleDays: String = model.weekdaysOnly ? "weekdays" : "days"
-        self.labelTitle.text = String(format: "%@ %@", titleDays, titleSuffix)
+        self.labelTitle.text = model.Description(now)
 
         let shortDateFormatter = NSDateFormatter()
         shortDateFormatter.dateFormat = "EEE d MMM"

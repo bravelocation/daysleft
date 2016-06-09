@@ -52,10 +52,7 @@ class InterfaceController: WKInterfaceController {
         }
         
         self.currentDaysLeft = daysLeft
-        let titleSuffix: String = (model.title.characters.count == 0 ? "left" : "until " + model.title)
-        let titleDays: String = model.weekdaysOnly ? "weekdays" : "days"
-        
-        self.labelTitle.setText(String(format: "%d %@ %@", self.currentDaysLeft , titleDays, titleSuffix))
+        self.labelTitle.setText(model.FullDescription(now))
         
         let percentageDone: Float = (Float(model.DaysGone(now)) * 100.0) / Float(model.DaysLength)
         self.labelPercentDone.setText(String(format:"%3.0f%% done", percentageDone))
