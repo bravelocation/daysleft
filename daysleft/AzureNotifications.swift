@@ -35,7 +35,7 @@ public class AzureNotifications {
         if (forceSetup || self.enabled) {
             let application = UIApplication.sharedApplication()
             
-            let settings: UIUserNotificationSettings = UIUserNotificationSettings(forTypes: [.Alert, .Sound], categories: nil)
+            let settings: UIUserNotificationSettings = UIUserNotificationSettings(forTypes: [.Alert, .Badge], categories: nil)
             application.registerUserNotificationSettings(settings)
             application.registerForRemoteNotifications()
         }
