@@ -47,31 +47,12 @@ public class DaysLeftModel: BLUserSettings
         
         NSLog("Settings pushed to watch")
     }
-    
-    public func updateWatchContext()
-    {
-        self.initialiseWatchSession()
         
-        if (WCSession.isSupported()) {
-            let session = WCSession.defaultSession()
-            
-            do {
-                try session.updateApplicationContext(self.allCurrentSettings())
-            } catch {
-                NSLog("Error occurred updating application context")
-            }
-        }
-        
-        NSLog("Context pushed to watch")
-    }
-    
     /// Write settings to iCloud store
     public func writeSettingToiCloudStore(value: AnyObject, key: String) {
         let store: NSUbiquitousKeyValueStore = NSUbiquitousKeyValueStore.defaultStore()
         store.setObject(value, forKey: key)
         store.synchronize()
-        
-        self.pushAllSettingsToWatch()
     }
 
     // Save value locally, and then write to iClud store as appropriate

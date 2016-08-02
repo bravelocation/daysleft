@@ -58,7 +58,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         NSLog("Notification received: \(userInfo)")
 
         // Push latest settings and update badge
-        self.model.updateWatchContext()
+        self.model.pushAllSettingsToWatch()
         self.updateBadge()
     }
     

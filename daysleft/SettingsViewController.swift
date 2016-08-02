@@ -155,6 +155,9 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
         // Update the badge too
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         appDelegate.updateBadge()
+        
+        // Push any changes to watch
+        model.pushAllSettingsToWatch()
     }
     
     func modelData() -> DaysLeftModel {

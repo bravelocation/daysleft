@@ -31,11 +31,7 @@ public class WatchDaysLeftModel: DaysLeftModel
     public override func pushAllSettingsToWatch() {
         // Don't send settings to watch when on watch!
     }
-    
-    public override func updateWatchContext() {
-        // Don't update context on watch!
-    }
-    
+        
     public override func session(session: WCSession, didReceiveUserInfo userInfo: [String : AnyObject]) {
         super.session(session, didReceiveUserInfo: userInfo)
         self.updateComplications()
