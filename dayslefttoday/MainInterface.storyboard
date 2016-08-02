@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="M4Y-Lb-cyx">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -15,7 +14,7 @@
                         <viewControllerLayoutGuide type="bottom" id="FKl-LY-JtV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" simulatedAppContext="notificationCenter" id="S3S-Oj-5AN">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="9" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="GcN-lo-r42">
@@ -53,7 +52,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kaD-yb-UKC">
-                                <rect key="frame" x="132" y="92" width="172" height="0.0"/>
+                                <rect key="frame" x="132" y="74" width="172" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -62,11 +61,11 @@
                         <constraints>
                             <constraint firstItem="kaD-yb-UKC" firstAttribute="trailing" secondItem="S3S-Oj-5AN" secondAttribute="trailingMargin" id="1BB-d2-Omx"/>
                             <constraint firstItem="kaD-yb-UKC" firstAttribute="leading" secondItem="PEU-20-ieI" secondAttribute="trailing" constant="8" id="2lS-Uc-JP1"/>
+                            <constraint firstItem="kaD-yb-UKC" firstAttribute="top" secondItem="GcN-lo-r42" secondAttribute="bottom" constant="8" id="7c9-Hu-msS"/>
                             <constraint firstItem="PEU-20-ieI" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" constant="8" id="9I7-5q-7Bj"/>
                             <constraint firstItem="GcN-lo-r42" firstAttribute="trailing" secondItem="S3S-Oj-5AN" secondAttribute="trailingMargin" id="XYl-s9-QDU"/>
                             <constraint firstItem="GcN-lo-r42" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" constant="16" id="bdz-Ye-Abt"/>
                             <constraint firstItem="PEU-20-ieI" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leadingMargin" constant="8" id="deh-Me-auO"/>
-                            <constraint firstItem="FKl-LY-JtV" firstAttribute="top" secondItem="kaD-yb-UKC" secondAttribute="bottom" constant="8" id="hn2-AC-t2N"/>
                             <constraint firstItem="GcN-lo-r42" firstAttribute="leading" secondItem="PEU-20-ieI" secondAttribute="trailing" constant="8" id="mbF-fI-88t"/>
                         </constraints>
                     </view>
@@ -75,7 +74,7 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="320" height="100"/>
+                    <size key="freeformSize" width="320" height="120"/>
                     <connections>
                         <outlet property="counterView" destination="PEU-20-ieI" id="csX-yh-0Tj"/>
                         <outlet property="labelNumberTitle" destination="GcN-lo-r42" id="HD3-ML-Fdq"/>
