@@ -20,6 +20,20 @@ class ViewController: UIViewController {
     @IBOutlet weak var counterWidth: NSLayoutConstraint!
     
     var dayChangeTimer: NSTimer!
+
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?)   {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.iCloudSettingsUpdated(_:)), name: DaysLeftModel.iCloudSettingsNotification, object: nil)
+    }
+    
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)!
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.iCloudSettingsUpdated(_:)), name: DaysLeftModel.iCloudSettingsNotification, object: nil)
+    }
+        
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -120,6 +134,16 @@ class ViewController: UIViewController {
         
         self.counterWidth.constant = ratioWidth;
         self.counterView.updateControl()
+    }
+    
+    @objc
+    private func iCloudSettingsUpdated(notification: NSNotification) {
+        NSLog("Received iCloud settings update notification in main view controller")
+        
+        // Update view data on main thread
+        dispatch_async(dispatch_get_main_queue()) {
+            self.updateViewFromModel()
+        }
     }
 }
 

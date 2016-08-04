@@ -11,6 +11,7 @@ import WatchConnectivity
 
 public class DaysLeftModel: BLUserSettings
 {
+    public static let iCloudSettingsNotification = "kBLiCloudSettingsNotification"
     public let currentFirstRun: Int = 1
     
     public init() {
@@ -41,13 +42,11 @@ public class DaysLeftModel: BLUserSettings
         
         if (WCSession.isSupported()) {
             let session = WCSession.defaultSession()
-            
             session.transferUserInfo(self.allCurrentSettings())
+            NSLog("Settings pushed to watch")
         }
-        
-        NSLog("Settings pushed to watch")
     }
-        
+    
     /// Write settings to iCloud store
     public func writeSettingToiCloudStore(value: AnyObject, key: String) {
         let store: NSUbiquitousKeyValueStore = NSUbiquitousKeyValueStore.defaultStore()
@@ -303,8 +302,15 @@ public class DaysLeftModel: BLUserSettings
                 // This loop assumes you are using the same key names in both the user defaults database and the iCloud key-value store
                 for key:String in changedKeys {
                     let settingValue: AnyObject? = store.objectForKey(key)
-                    self.appStandardUserDefaults!.setObject(settingValue, forKey: key)
+                    self.writeObjectToStore(settingValue!, key: key)
+                    print("iCloud change for \(key): \(settingValue)")
                 }
+                
+                store.synchronize()
+                
+                // Finally send a notification for the view controllers to refresh
+                NSNotificationCenter.defaultCenter().postNotificationName(DaysLeftModel.iCloudSettingsNotification, object:nil, userInfo:nil)
+                NSLog("Sent notification for iCloud change")
             }
         } else {
             NSLog("Unknown iCloud KV reason for change")

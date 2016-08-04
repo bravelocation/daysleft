@@ -120,7 +120,7 @@ public class BLUserSettings: NSObject, WCSessionDelegate {
         self.appStandardUserDefaults!.synchronize()
         
         // Finally send a notification for the view controllers to refresh
-        NSNotificationCenter.defaultCenter().postNotificationName(BLUserSettings.UpdateSettingsNotification, object:nil, userInfo:nil)
+        NSNotificationCenter.defaultCenter().postNotificationName(DaysLeftModel.UpdateSettingsNotification, object:nil, userInfo:nil)
         NSLog("Sent UpdateSettingsNotification")
     }
 }

@@ -18,6 +18,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     lazy var model = DaysLeftModel()
     let azureNotifications = AzureNotifications()
 
+    
+    override init() {
+        super.init()
+        
+        // Setup listener for iCloud setting change
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(AppDelegate.iCloudSettingsUpdated(_:)), name: DaysLeftModel.iCloudSettingsNotification, object: nil)
+    }
+    
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
         #if RELEASE
@@ -27,7 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Setup push notifications (if required) to ensure the badge gets updated
         self.azureNotifications.setupNotifications(false)
-        
+
         return true
     }
     
@@ -94,6 +106,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             application.applicationIconBadgeNumber = 0
             NSLog("Cleared app badge")
         }
+    }
+    
+    @objc
+    private func iCloudSettingsUpdated(notification: NSNotification) {
+        NSLog("Received iCloudSettingsUpdated notification")
+        
+        // Push latest settings and update badge
+        self.model.pushAllSettingsToWatch()
+        self.updateBadge()
     }
 }
 
