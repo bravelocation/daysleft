@@ -66,19 +66,15 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
     }
 
     @IBAction func textTitleChanged(sender: AnyObject) {
-        let model = self.modelData()
-        model.title = self.textTitle.text!
+        self.validateAndSaveModel()
     }
     
     func dateChanged(sender: AnyObject) {
-        self.validateAndSaveDates()
+        self.validateAndSaveModel()
     }
     
     @IBAction func switchWeekdaysOnlyChanged(sender: AnyObject) {
-        let model = self.modelData()
-
-        model.weekdaysOnly = self.switchWeekdaysOnly.on
-        self.validateAndSaveDates()
+        self.validateAndSaveModel()
     }
  
     @IBAction func switchShowBadgeChanged(sender: AnyObject) {
@@ -97,7 +93,7 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
         
         self.startDatePicker.date = NSDate()
         self.endDatePicker.date = NSCalendar.currentCalendar().dateByAddingUnit(NSCalendarUnit.Day, value: 30, toDate: NSDate(), options: [])!
-        self.validateAndSaveDates()
+        self.validateAndSaveModel()
     }
     
     // Hides the keyboard if touch anywhere outside text box
@@ -136,12 +132,14 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
         return false;
     }
     
-    func validateAndSaveDates() {
+    func validateAndSaveModel() {
         // Update the model
         let model = self.modelData()
 
         model.start = self.startDatePicker.date
         model.end = self.endDatePicker.date
+        model.weekdaysOnly = self.switchWeekdaysOnly.on
+        model.title = self.textTitle!.text!
         
         // Update the text fields
         self.textStart.text = String(format: "%@", self.dateFormatter.stringFromDate(model.start))

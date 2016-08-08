@@ -54,7 +54,7 @@ public class DaysLeftModel: BLUserSettings
         store.synchronize()
     }
 
-    // Save value locally, and then write to iClud store as appropriate
+    // Save value locally, and then write to iCloud store as appropriate
     public override func writeObjectToStore(value: AnyObject, key: String) {
         super.writeObjectToStore(value, key: key)
         self.writeSettingToiCloudStore(value, key: key)
@@ -247,10 +247,10 @@ public class DaysLeftModel: BLUserSettings
     
     private func allCurrentSettings() -> Dictionary<String, AnyObject> {
         var updatedSettings = Dictionary<String, AnyObject>()
-        updatedSettings["start"] = self.appStandardUserDefaults!.valueForKey("start")
-        updatedSettings["end"] = self.appStandardUserDefaults!.valueForKey("end")
-        updatedSettings["title"] = self.appStandardUserDefaults!.valueForKey("title")
-        updatedSettings["weekdaysOnly"] = self.appStandardUserDefaults!.valueForKey("weekdaysOnly")
+        updatedSettings["start"] = self.start
+        updatedSettings["end"] = self.end
+        updatedSettings["title"] = self.title
+        updatedSettings["weekdaysOnly"] = self.weekdaysOnly
 
         return updatedSettings;
     }

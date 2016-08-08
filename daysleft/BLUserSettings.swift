@@ -67,8 +67,12 @@ public class BLUserSettings: NSObject, WCSessionDelegate {
         self.settingsCache[key] = value
         
         // Then write to local user settings
-        self.appStandardUserDefaults!.setObject(value, forKey:key)
-        self.appStandardUserDefaults!.synchronize()
+        if let settings = self.appStandardUserDefaults {
+            settings.setObject(value, forKey:key)
+            settings.synchronize()
+        } else {
+            NSLog("Couldn't get settings defaults")
+        }
     }
     
     
@@ -102,8 +106,6 @@ public class BLUserSettings: NSObject, WCSessionDelegate {
             self.writeObjectToStore(value, key: key)
         }
         
-        self.appStandardUserDefaults!.synchronize()
-        
         // Finally send a notification for the view controllers to refresh
         NSNotificationCenter.defaultCenter().postNotificationName(BLUserSettings.UpdateSettingsNotification, object:nil, userInfo:nil)
         NSLog("Sent UpdateSettingsNotification")
@@ -116,9 +118,7 @@ public class BLUserSettings: NSObject, WCSessionDelegate {
         for (key, value) in receivedApplicationContext {
             self.writeObjectToStore(value, key: key)
         }
-        
-        self.appStandardUserDefaults!.synchronize()
-        
+                
         // Finally send a notification for the view controllers to refresh
         NSNotificationCenter.defaultCenter().postNotificationName(DaysLeftModel.UpdateSettingsNotification, object:nil, userInfo:nil)
         NSLog("Sent UpdateSettingsNotification")

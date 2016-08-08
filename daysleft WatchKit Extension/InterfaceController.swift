@@ -16,6 +16,8 @@ class InterfaceController: WKInterfaceController {
     @IBOutlet weak var imageProgress: WKInterfaceImage!
     
     var currentDaysLeft: Int = -1;
+    var currentWeekdaysOnly = false;
+    var currentTitle = ""
     
     override init() {
         super.init()
@@ -46,12 +48,18 @@ class InterfaceController: WKInterfaceController {
         
         // Do we need to update the view?
         let daysLeft = model.DaysLeft(now);
-        if (daysLeft == self.currentDaysLeft) {
+        let weekdaysOnly = model.weekdaysOnly
+        let title = model.title
+        
+        if (daysLeft == self.currentDaysLeft && currentWeekdaysOnly == weekdaysOnly && currentTitle.compare(title) == NSComparisonResult.OrderedSame) {
             NSLog("View unchanged")
             return;
         }
         
         self.currentDaysLeft = daysLeft
+        self.currentWeekdaysOnly = weekdaysOnly
+        self.currentTitle = title
+        
         self.labelTitle.setText(model.FullDescription(now))
         
         let percentageDone: Float = (Float(model.DaysGone(now)) * 100.0) / Float(model.DaysLength)
@@ -62,6 +70,9 @@ class InterfaceController: WKInterfaceController {
         self.imageProgress.setImageNamed("progress")
         self.imageProgress.startAnimatingWithImagesInRange(NSRange(location:0, length: intPercentageDone), duration: 0.5, repeatCount: 1)
         NSLog("View updated")
+        
+        // Let's also update the complications if the data has changed
+        model.updateComplications()
     }
     
     @objc
