@@ -23,7 +23,6 @@ class TodayViewController: UIViewController, NCWidgetProviding {
 
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        self.preferredContentSize = CGSizeMake(0, 100)
         self.updateViewData()
     }
     
