@@ -112,6 +112,10 @@ class ViewController: UIViewController {
         self.counterView.maximumValue = model.DaysLength
         self.counterView.updateControl()
         
+        // Update the badge too
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        appDelegate.updateBadge()
+        
         NSLog("updateViewFromModel completed")
     }
 
