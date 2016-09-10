@@ -123,4 +123,15 @@ public class BLUserSettings: NSObject, WCSessionDelegate {
         NSNotificationCenter.defaultCenter().postNotificationName(DaysLeftModel.UpdateSettingsNotification, object:nil, userInfo:nil)
         NSLog("Sent UpdateSettingsNotification")
     }
+    
+    @objc
+    public func session(session: WCSession,
+                          activationDidCompleteWithState activationState: WCSessionActivationState,
+                                                         error: NSError?) {}
+    
+    @objc
+    public func sessionDidBecomeInactive(session: WCSession) {}
+    
+    @objc
+    public func sessionDidDeactivate(session: WCSession) {}
 }
