@@ -23,7 +23,7 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Cu-F3-Vt7">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="Tma-Y3-Kpr"/>
+                                    <constraint firstAttribute="width" constant="200" placeholder="YES" id="Tma-Y3-Kpr"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="64"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -66,7 +66,7 @@
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e4s-jj-SxE">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="eXP-Me-ly6"/>
+                                    <constraint firstAttribute="width" constant="100" placeholder="YES" id="eXP-Me-ly6"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -79,7 +79,7 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qRM-og-tk4">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="qMO-jn-kR4"/>
+                                    <constraint firstAttribute="width" constant="100" placeholder="YES" id="qMO-jn-kR4"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -99,9 +99,9 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="qRM-og-tk4" firstAttribute="width" secondItem="e4s-jj-SxE" secondAttribute="width" id="0E0-Au-zbh"/>
-                            <constraint firstAttribute="centerX" secondItem="1Cu-F3-Vt7" secondAttribute="centerX" id="0SF-jc-yz5"/>
+                            <constraint firstAttribute="centerX" secondItem="1Cu-F3-Vt7" secondAttribute="centerX" placeholder="YES" id="0SF-jc-yz5"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Tik-NR-YWh" secondAttribute="trailing" constant="64" id="29Q-cg-mvh"/>
-                            <constraint firstItem="e4s-jj-SxE" firstAttribute="leading" secondItem="Tik-NR-YWh" secondAttribute="leading" id="86P-GY-aJl"/>
+                            <constraint firstItem="e4s-jj-SxE" firstAttribute="leading" secondItem="Tik-NR-YWh" secondAttribute="leading" placeholder="YES" id="86P-GY-aJl"/>
                             <constraint firstItem="qRM-og-tk4" firstAttribute="trailing" secondItem="6ap-MQ-ZgB" secondAttribute="trailing" id="Ep6-NI-aXf"/>
                             <constraint firstItem="e4s-jj-SxE" firstAttribute="top" secondItem="6ap-MQ-ZgB" secondAttribute="bottom" id="G8h-s2-sTC"/>
                             <constraint firstAttribute="trailingMargin" secondItem="B5u-71-7aF" secondAttribute="trailing" id="Kyt-gy-REq"/>
@@ -112,11 +112,11 @@
                             <constraint firstItem="Tik-NR-YWh" firstAttribute="top" secondItem="qRM-og-tk4" secondAttribute="bottom" constant="16" id="fi6-cQ-eu9"/>
                             <constraint firstItem="B5u-71-7aF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="gib-zV-pXw"/>
                             <constraint firstAttribute="centerY" secondItem="6ap-MQ-ZgB" secondAttribute="centerY" id="hCr-ua-ecC"/>
-                            <constraint firstItem="B5u-71-7aF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="jEm-Vy-936"/>
+                            <constraint firstItem="B5u-71-7aF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" placeholder="YES" id="jEm-Vy-936"/>
                             <constraint firstItem="1Cu-F3-Vt7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="64" id="jVY-Ye-G8n"/>
                             <constraint firstItem="qRM-og-tk4" firstAttribute="top" secondItem="6ap-MQ-ZgB" secondAttribute="bottom" id="kjW-HW-per"/>
                             <constraint firstAttribute="centerX" secondItem="6ap-MQ-ZgB" secondAttribute="centerX" id="oHa-t2-d24"/>
-                            <constraint firstItem="B5u-71-7aF" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="qnL-F9-ca1"/>
+                            <constraint firstItem="B5u-71-7aF" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" placeholder="YES" id="qnL-F9-ca1"/>
                             <constraint firstItem="6ap-MQ-ZgB" firstAttribute="top" secondItem="B5u-71-7aF" secondAttribute="bottom" constant="24" id="sHF-a1-tVS"/>
                             <constraint firstAttribute="trailingMargin" secondItem="1Cu-F3-Vt7" secondAttribute="trailing" constant="64" id="w5z-GG-Yuc"/>
                         </constraints>
@@ -202,8 +202,7 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Start from ..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Anz-8T-J6u">
-                                                    <frame key="frameInset" minX="16" minY="11" width="91" height="20"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start from ..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Anz-8T-J6u">
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -225,8 +224,7 @@
                                             <frame key="frameInset" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="... to" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k8N-oH-UmX">
-                                                    <frame key="frameInset" minX="16" minY="12" width="33" height="20"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="... to" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k8N-oH-UmX">
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -254,8 +252,7 @@
                                             <frame key="frameInset" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Weekdays only?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="otR-3q-2bd">
-                                                    <frame key="frameInset" minX="16" minY="12" width="116.5" height="19.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weekdays only?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="otR-3q-2bd">
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -283,8 +280,7 @@
                                             <frame key="frameInset" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="100 days" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zZH-Bf-1Ed">
-                                                    <frame key="frameInset" minX="330" minY="12.5" width="68" height="19.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100 days" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zZH-Bf-1Ed">
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -307,8 +303,7 @@
                                             <frame key="frameInset" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CX8-4t-wyK">
-                                                    <frame key="frameInset" minX="8" minY="6" width="398" height="32"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CX8-4t-wyK">
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <state key="normal" title="Start today for 30 days">
                                                         <color key="titleColor" red="0.17380592226982117" green="0.36919349431991577" blue="0.087881088256835938" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

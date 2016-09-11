@@ -10,7 +10,7 @@ import UIKit
 
 let π:CGFloat = CGFloat(M_PI)
 
-@IBDesignable public class CounterView: UIView {
+public class CounterView: UIView {
     
     @IBInspectable public var counter: Int = 5
     @IBInspectable public var maximumValue: Int = 8
@@ -20,6 +20,16 @@ let π:CGFloat = CGFloat(M_PI)
     
     private var circleSubView: CAShapeLayer? = nil
     private var progressSubView: CAShapeLayer? = nil
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.clearControl()
+    }
+    
+    required public init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        self.clearControl()
+    }
     
     public func clearControl() {
         // First clear circle view
