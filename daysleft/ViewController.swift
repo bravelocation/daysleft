@@ -20,6 +20,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var counterWidth: NSLayoutConstraint!
     
     var dayChangeTimer: NSTimer!
+    var shareButton: UIBarButtonItem!
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?)   {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -48,6 +49,11 @@ class ViewController: UIViewController {
         
         let titleDict: Dictionary<String, AnyObject> = [NSForegroundColorAttributeName: UIColor.whiteColor()]
         navBar!.titleTextAttributes = titleDict
+        
+        // Add a share button
+        self.shareButton = UIBarButtonItem.init(barButtonSystemItem: .Action, target: self, action: #selector(ViewController.shareButtonTouchUp))
+        
+        self.navigationItem.leftBarButtonItem = shareButton
         
         // Add a swipe recogniser
         let swipeLeft : UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(ViewController.swipeLeft(_:)))
@@ -133,7 +139,19 @@ class ViewController: UIViewController {
         return appDelegate.model
     }
     
-    
+    func shareButtonTouchUp() {
+        let modelText = self.modelData().FullDescription(NSDate())
+        let objectsToShare = [modelText]
+        
+        let activityViewController = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+            
+        if (activityViewController.popoverPresentationController != nil) {
+                activityViewController.popoverPresentationController!.barButtonItem = self.shareButton;
+        }
+            
+        self.presentViewController(activityViewController, animated: true, completion: nil)
+    }
+
     @objc
     private func iCloudSettingsUpdated(notification: NSNotification) {
         NSLog("Received iCloud settings update notification in main view controller")
