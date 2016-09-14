@@ -73,6 +73,14 @@ class InterfaceController: WKInterfaceController {
         
         // Let's also update the complications if the data has changed
         model.updateComplications()
+        
+        // Let's update the snapshot if the view changed
+        print("Scheduling snapshot")
+        let soon = NSDate().addTimeInterval(5.0)
+        WKExtension.sharedExtension().scheduleSnapshotRefreshWithPreferredDate(soon as! NSDate, userInfo: nil, scheduledCompletion: { (error: NSError?) in
+            if let error = error {
+                print("Error occurred while scheduling snapshot: \(error.localizedDescription)")
+            }})
     }
     
     @objc
