@@ -49,7 +49,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         self.counterView.updateControl()
         
         // Set widget colors based on version of iOS
-        let ios10AndAbove:Bool = NSProcessInfo.processInfo().isOperatingSystemAtLeastVersion(NSOperatingSystemVersion(majorVersion: 10, minorVersion: 0, patchVersion: 0))
+        let ios10AndAbove:Bool = NSProcessInfo().isOperatingSystemAtLeastVersion(NSOperatingSystemVersion(majorVersion: 10, minorVersion: 0, patchVersion: 0))
 
         if (ios10AndAbove) {
             let darkGreen = UIColor(red: 53.0/255.0, green: 79.0/255.0, blue: 0.0, alpha: 1.0)
