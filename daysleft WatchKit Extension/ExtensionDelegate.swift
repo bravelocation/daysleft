@@ -46,16 +46,14 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
     func setupBackgroundRefresh() {
         // Setup a background refresh for 0100 tomorrow
         let globalCalendar = NSCalendar.autoupdatingCurrentCalendar()
-        let startOfTodayComponents = globalCalendar.components([.Year, .Month, .Day], fromDate: NSDate())
-        let startOfToday = globalCalendar.dateFromComponents(startOfTodayComponents)
-        let tomorrowMorning = startOfToday!.addTimeInterval(25.0 * 60.0 * 60.0)
+        let twoHoursTime = globalCalendar.dateByAddingUnit(.Hour, value: 2, toDate: NSDate(), options: [])
         
-        WKExtension.sharedExtension().scheduleBackgroundRefreshWithPreferredDate(tomorrowMorning as! NSDate, userInfo: nil, scheduledCompletion: { (error: NSError?) in
+        WKExtension.sharedExtension().scheduleBackgroundRefreshWithPreferredDate(twoHoursTime!, userInfo: nil, scheduledCompletion: { (error: NSError?) in
             if let error = error {
                 print("Error occurred while scheduling background refresh: \(error.localizedDescription)")
             }
         })
         
-        print("Setup background task for \(tomorrowMorning)")
+        print("Setup background task for \(twoHoursTime)")
     }
 }
