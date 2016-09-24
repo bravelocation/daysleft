@@ -26,3 +26,5 @@ DerivedData
 # Pods/
 
 *.xcbkptlist
+
+.DS_Store
