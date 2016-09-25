@@ -8,7 +8,6 @@
 
 import UIKit
 import Messages
-import daysleftlibrary
 
 class MessagesViewController: MSMessagesAppViewController {
     
