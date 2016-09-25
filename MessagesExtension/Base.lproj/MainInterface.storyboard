@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ObA-dk-sSI">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Messages View Controller-->
+        <scene sceneID="7MM-of-jgj">
+            <objects>
+                <viewController id="ObA-dk-sSI" customClass="MessagesViewController" customModule="MessagesExtension" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qkL-Od-lgU"/>
+                        <viewControllerLayoutGuide type="bottom" id="n38-gi-rB5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zMn-AG-sqS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="528"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nRP-eB-EKV">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="cHX-gy-7Xn"/>
+                                    <constraint firstAttribute="width" constant="75" id="vka-Bv-r7Z"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YvD-TV-phV">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="05x-AV-faA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W4C-zi-fkJ">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="Eay-0w-x6x"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dqi-CQ-cnW">
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <state key="normal" title="Send Message"/>
+                                <connections>
+                                    <action selector="sendMessageTouchUp:" destination="ObA-dk-sSI" eventType="touchUpInside" id="pVK-iq-aCj"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="dqi-CQ-cnW" firstAttribute="leading" secondItem="zMn-AG-sqS" secondAttribute="leadingMargin" id="1J4-6Z-BuU"/>
+                            <constraint firstItem="nRP-eB-EKV" firstAttribute="centerX" secondItem="zMn-AG-sqS" secondAttribute="centerX" id="8fw-c2-pPp"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="YvD-TV-phV" secondAttribute="trailing" id="Ixl-bb-w9V"/>
+                            <constraint firstItem="W4C-zi-fkJ" firstAttribute="trailing" secondItem="zMn-AG-sqS" secondAttribute="trailingMargin" id="WUj-7j-vlC"/>
+                            <constraint firstItem="dqi-CQ-cnW" firstAttribute="trailing" secondItem="zMn-AG-sqS" secondAttribute="trailingMargin" id="d93-Ij-w9i"/>
+                            <constraint firstItem="nRP-eB-EKV" firstAttribute="top" secondItem="YvD-TV-phV" secondAttribute="bottom" constant="8" id="ikX-6Q-Tvl"/>
+                            <constraint firstItem="YvD-TV-phV" firstAttribute="leading" secondItem="zMn-AG-sqS" secondAttribute="leadingMargin" id="jpW-Oo-j57"/>
+                            <constraint firstItem="YvD-TV-phV" firstAttribute="trailing" secondItem="zMn-AG-sqS" secondAttribute="trailingMargin" id="kWV-dT-BnU"/>
+                            <constraint firstItem="YvD-TV-phV" firstAttribute="top" secondItem="qkL-Od-lgU" secondAttribute="bottom" constant="16" id="oM6-gK-bcU"/>
+                            <constraint firstItem="W4C-zi-fkJ" firstAttribute="leading" secondItem="zMn-AG-sqS" secondAttribute="leadingMargin" id="pHO-jk-Hi1"/>
+                            <constraint firstItem="dqi-CQ-cnW" firstAttribute="top" secondItem="W4C-zi-fkJ" secondAttribute="bottom" id="ph2-1h-Xc4"/>
+                            <constraint firstItem="W4C-zi-fkJ" firstAttribute="top" secondItem="nRP-eB-EKV" secondAttribute="bottom" id="znh-dy-KgS"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="528"/>
+                    <connections>
+                        <outlet property="imageProgress" destination="nRP-eB-EKV" id="O1L-qS-YN2"/>
+                        <outlet property="labelPercentDone" destination="W4C-zi-fkJ" id="fAB-0r-6kq"/>
+                        <outlet property="labelTitle" destination="YvD-TV-phV" id="Vq5-uM-4a1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X47-rx-isc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="116.8" y="123.23838080959521"/>
+        </scene>
+    </scenes>
+</document>

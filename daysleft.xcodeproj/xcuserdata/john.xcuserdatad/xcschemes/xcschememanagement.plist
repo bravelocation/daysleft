@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>MessagesExtension.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>daysleft WatchKit App.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -48,6 +53,11 @@
 			<true/>
 		</dict>
 		<key>5295EDF71A94B398007EF7E7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>52B78DEE1D982A6D00AB629D</key>
 		<dict>
 			<key>primary</key>
 			<true/>

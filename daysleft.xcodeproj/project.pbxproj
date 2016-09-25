@@ -24,6 +24,17 @@
 		5295EE0A1A94B3AA007EF7E7 /* daysleftlibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5295EDD01A94AE53007EF7E7 /* daysleftlibrary.framework */; };
 		5295EE0B1A94B4C7007EF7E7 /* DefaultPreferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52FAB11B1A9240490039691E /* DefaultPreferences.plist */; };
 		5295EE1D1A961A77007EF7E7 /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5295EE0D1A95E647007EF7E7 /* CounterView.swift */; };
+		52B78DE91D982A6D00AB629D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52B78DE81D982A6D00AB629D /* Assets.xcassets */; };
+		52B78DF01D982A6E00AB629D /* MessagesExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 52B78DEF1D982A6D00AB629D /* MessagesExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		52B78DF41D982A6E00AB629D /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52B78DF31D982A6E00AB629D /* Messages.framework */; };
+		52B78DF71D982A6E00AB629D /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B78DF61D982A6E00AB629D /* MessagesViewController.swift */; };
+		52B78DFA1D982A6E00AB629D /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52B78DF81D982A6E00AB629D /* MainInterface.storyboard */; };
+		52B78DFC1D982A6E00AB629D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52B78DFB1D982A6E00AB629D /* Assets.xcassets */; };
+		52B78E061D98330100AB629D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52B7E88B1ABEDE9300E1949C /* Images.xcassets */; };
+		52B78E0E1D983A0400AB629D /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52B78E0B1D9838B800AB629D /* WatchConnectivity.framework */; };
+		52B78E0F1D983A1B00AB629D /* DaysLeftModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CFBF1D1A8B642C005234FB /* DaysLeftModel.swift */; };
+		52B78E101D983A2300AB629D /* BLUserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FAB1181A9231970039691E /* BLUserSettings.swift */; };
+		52B78E111D983A6000AB629D /* DefaultPreferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52FAB11B1A9240490039691E /* DefaultPreferences.plist */; };
 		52B7E87C1ABEDE9300E1949C /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B7E87B1ABEDE9300E1949C /* InterfaceController.swift */; };
 		52B7E87E1ABEDE9300E1949C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52B7E87D1ABEDE9300E1949C /* Images.xcassets */; };
 		52B7E88A1ABEDE9300E1949C /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52B7E8881ABEDE9300E1949C /* Interface.storyboard */; };
@@ -81,6 +92,13 @@
 			remoteGlobalIDString = 5295EDF71A94B398007EF7E7;
 			remoteInfo = dayslefttoday;
 		};
+		52B78DF11D982A6E00AB629D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 52CFBEF01A8B631B005234FB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 52B78DEE1D982A6D00AB629D;
+			remoteInfo = MessagesExtension;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -128,6 +146,17 @@
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		52B78E011D982A6E00AB629D /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				52B78DF01D982A6E00AB629D /* MessagesExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -151,6 +180,18 @@
 		5295EE011A94B398007EF7E7 /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
 		5295EE0C1A94B527007EF7E7 /* dayslefttoday.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = dayslefttoday.entitlements; sourceTree = "<group>"; };
 		5295EE0D1A95E647007EF7E7 /* CounterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CounterView.swift; path = ../daysleft/CounterView.swift; sourceTree = "<group>"; };
+		52B78DE61D982A6D00AB629D /* daysleft iMessage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "daysleft iMessage.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		52B78DE81D982A6D00AB629D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		52B78DEA1D982A6D00AB629D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52B78DEF1D982A6D00AB629D /* MessagesExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MessagesExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		52B78DF31D982A6E00AB629D /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
+		52B78DF61D982A6E00AB629D /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
+		52B78DF91D982A6E00AB629D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		52B78DFB1D982A6E00AB629D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		52B78DFD1D982A6E00AB629D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52B78E071D9834C500AB629D /* MessagesExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MessagesExtension.entitlements; sourceTree = "<group>"; };
+		52B78E091D98388D00AB629D /* WatchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchKit.framework; path = System/Library/Frameworks/WatchKit.framework; sourceTree = SDKROOT; };
+		52B78E0B1D9838B800AB629D /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = System/Library/Frameworks/WatchConnectivity.framework; sourceTree = SDKROOT; };
 		52B7E8771ABEDE9300E1949C /* daysleft WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "daysleft WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52B7E87A1ABEDE9300E1949C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52B7E87B1ABEDE9300E1949C /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
@@ -192,6 +233,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52B78E0E1D983A0400AB629D /* WatchConnectivity.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,6 +251,14 @@
 			files = (
 				5295EE0A1A94B3AA007EF7E7 /* daysleftlibrary.framework in Frameworks */,
 				5295EDFB1A94B398007EF7E7 /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52B78DEC1D982A6D00AB629D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52B78DF41D982A6E00AB629D /* Messages.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,9 +323,12 @@
 		5295EDF91A94B398007EF7E7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				52B78E0B1D9838B800AB629D /* WatchConnectivity.framework */,
+				52B78E091D98388D00AB629D /* WatchKit.framework */,
 				5244C04D1BC438DE00D57F28 /* daysleftlibrary.framework */,
 				5244C04B1BC4383F00D57F28 /* daysleftlibrary.h */,
 				5295EDFA1A94B398007EF7E7 /* NotificationCenter.framework */,
+				52B78DF31D982A6E00AB629D /* Messages.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -297,6 +350,27 @@
 				5295EDFE1A94B398007EF7E7 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		52B78DE71D982A6D00AB629D /* daysleft iMessage */ = {
+			isa = PBXGroup;
+			children = (
+				52B78DE81D982A6D00AB629D /* Assets.xcassets */,
+				52B78DEA1D982A6D00AB629D /* Info.plist */,
+			);
+			path = "daysleft iMessage";
+			sourceTree = "<group>";
+		};
+		52B78DF51D982A6E00AB629D /* MessagesExtension */ = {
+			isa = PBXGroup;
+			children = (
+				52B78E071D9834C500AB629D /* MessagesExtension.entitlements */,
+				52B78DF61D982A6E00AB629D /* MessagesViewController.swift */,
+				52B78DF81D982A6E00AB629D /* MainInterface.storyboard */,
+				52B78DFB1D982A6E00AB629D /* Assets.xcassets */,
+				52B78DFD1D982A6E00AB629D /* Info.plist */,
+			);
+			path = MessagesExtension;
 			sourceTree = "<group>";
 		};
 		52B7E8781ABEDE9300E1949C /* daysleft WatchKit Extension */ = {
@@ -354,6 +428,8 @@
 				5295EDFC1A94B398007EF7E7 /* dayslefttoday */,
 				52B7E8781ABEDE9300E1949C /* daysleft WatchKit Extension */,
 				52B7E8851ABEDE9300E1949C /* daysleft WatchKit App */,
+				52B78DE71D982A6D00AB629D /* daysleft iMessage */,
+				52B78DF51D982A6E00AB629D /* MessagesExtension */,
 				5295EDF91A94B398007EF7E7 /* Frameworks */,
 				52CFBEF91A8B631B005234FB /* Products */,
 			);
@@ -368,6 +444,8 @@
 				5295EDF81A94B398007EF7E7 /* dayslefttoday.appex */,
 				52B7E8771ABEDE9300E1949C /* daysleft WatchKit Extension.appex */,
 				52B7E8811ABEDE9300E1949C /* daysleft WatchKit App.app */,
+				52B78DE61D982A6D00AB629D /* daysleft iMessage.app */,
+				52B78DEF1D982A6D00AB629D /* MessagesExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -482,6 +560,41 @@
 			productReference = 5295EDF81A94B398007EF7E7 /* dayslefttoday.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		52B78DE51D982A6D00AB629D /* daysleft iMessage */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52B78E021D982A6E00AB629D /* Build configuration list for PBXNativeTarget "daysleft iMessage" */;
+			buildPhases = (
+				52B78DE41D982A6D00AB629D /* Resources */,
+				52B78E011D982A6E00AB629D /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				52B78DF21D982A6E00AB629D /* PBXTargetDependency */,
+			);
+			name = "daysleft iMessage";
+			productName = "daysleft iMessage";
+			productReference = 52B78DE61D982A6D00AB629D /* daysleft iMessage.app */;
+			productType = "com.apple.product-type.application.messages";
+		};
+		52B78DEE1D982A6D00AB629D /* MessagesExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52B78DFE1D982A6E00AB629D /* Build configuration list for PBXNativeTarget "MessagesExtension" */;
+			buildPhases = (
+				52B78DEB1D982A6D00AB629D /* Sources */,
+				52B78DEC1D982A6D00AB629D /* Frameworks */,
+				52B78DED1D982A6D00AB629D /* Resources */,
+				52B78E051D982AA900AB629D /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MessagesExtension;
+			productName = MessagesExtension;
+			productReference = 52B78DEF1D982A6D00AB629D /* MessagesExtension.appex */;
+			productType = "com.apple.product-type.app-extension.messages";
+		};
 		52B7E8761ABEDE9300E1949C /* daysleft WatchKit Extension */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 52B7E8951ABEDE9300E1949C /* Build configuration list for PBXNativeTarget "daysleft WatchKit Extension" */;
@@ -547,6 +660,7 @@
 		52CFBEF01A8B631B005234FB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0800;
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Brave Location Software";
 				TargetAttributes = {
@@ -565,6 +679,24 @@
 						CreatedOnToolsVersion = 6.3;
 						DevelopmentTeam = W8B3V597R9;
 						LastSwiftMigration = 0800;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
+					};
+					52B78DE51D982A6D00AB629D = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = W8B3V597R9;
+						ProvisioningStyle = Automatic;
+					};
+					52B78DEE1D982A6D00AB629D = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = W8B3V597R9;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -637,6 +769,8 @@
 				5295EDF71A94B398007EF7E7 /* dayslefttoday */,
 				52B7E8761ABEDE9300E1949C /* daysleft WatchKit Extension */,
 				52B7E8801ABEDE9300E1949C /* daysleft WatchKit App */,
+				52B78DE51D982A6D00AB629D /* daysleft iMessage */,
+				52B78DEE1D982A6D00AB629D /* MessagesExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -655,6 +789,25 @@
 			files = (
 				5295EE0B1A94B4C7007EF7E7 /* DefaultPreferences.plist in Resources */,
 				5295EE021A94B398007EF7E7 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52B78DE41D982A6D00AB629D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52B78DE91D982A6D00AB629D /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52B78DED1D982A6D00AB629D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52B78E061D98330100AB629D /* Images.xcassets in Resources */,
+				52B78E111D983A6000AB629D /* DefaultPreferences.plist in Resources */,
+				52B78DFC1D982A6E00AB629D /* Assets.xcassets in Resources */,
+				52B78DFA1D982A6E00AB629D /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -742,6 +895,19 @@
 			shellPath = /bin/sh;
 			shellScript = "git=`sh /etc/profile; which git`\nappBuild=`$git rev-list --all |wc -l`\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $appBuild\" \"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\necho \"Updated ${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\n\n./Fabric.framework/run de20d03a9cd3af9832860083836d12964a8b11f5 0a8628bec808495065a9f124e4fd6d79b5f2e0e69b63845d0544c96c777ae566\n\necho \"Updated Fabric\"\n";
 		};
+		52B78E051D982AA900AB629D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "git=`sh /etc/profile; which git`\nappBuild=`$git rev-list --all |wc -l`\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $appBuild\" \"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\necho \"Updated ${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -768,6 +934,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				5295EE001A94B398007EF7E7 /* TodayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52B78DEB1D982A6D00AB629D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52B78E101D983A2300AB629D /* BLUserSettings.swift in Sources */,
+				52B78DF71D982A6E00AB629D /* MessagesViewController.swift in Sources */,
+				52B78E0F1D983A1B00AB629D /* DaysLeftModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -823,9 +999,22 @@
 			target = 5295EDF71A94B398007EF7E7 /* dayslefttoday */;
 			targetProxy = 5295EE031A94B398007EF7E7 /* PBXContainerItemProxy */;
 		};
+		52B78DF21D982A6E00AB629D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 52B78DEE1D982A6D00AB629D /* MessagesExtension */;
+			targetProxy = 52B78DF11D982A6E00AB629D /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		52B78DF81D982A6E00AB629D /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				52B78DF91D982A6E00AB629D /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 		52B7E8881ABEDE9300E1949C /* Interface.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -981,6 +1170,82 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		52B78DFF1D982A6E00AB629D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CODE_SIGN_ENTITLEMENTS = MessagesExtension/MessagesExtension.entitlements;
+				DEVELOPMENT_TEAM = W8B3V597R9;
+				INFOPLIST_FILE = MessagesExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bravelocation.daysleft.daysleft-iMessage.MessagesExtension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 2.3;
+			};
+			name = Debug;
+		};
+		52B78E001D982A6E00AB629D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CODE_SIGN_ENTITLEMENTS = MessagesExtension/MessagesExtension.entitlements;
+				DEVELOPMENT_TEAM = W8B3V597R9;
+				INFOPLIST_FILE = MessagesExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bravelocation.daysleft.daysleft-iMessage.MessagesExtension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 2.3;
+			};
+			name = Release;
+		};
+		52B78E031D982A6E00AB629D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				DEVELOPMENT_TEAM = W8B3V597R9;
+				INFOPLIST_FILE = "daysleft iMessage/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bravelocation.daysleft.daysleft-iMessage";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		52B78E041D982A6E00AB629D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				DEVELOPMENT_TEAM = W8B3V597R9;
+				INFOPLIST_FILE = "daysleft iMessage/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bravelocation.daysleft.daysleft-iMessage";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -1255,6 +1520,22 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		52B78DFE1D982A6E00AB629D /* Build configuration list for PBXNativeTarget "MessagesExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52B78DFF1D982A6E00AB629D /* Debug */,
+				52B78E001D982A6E00AB629D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		52B78E021D982A6E00AB629D /* Build configuration list for PBXNativeTarget "daysleft iMessage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52B78E031D982A6E00AB629D /* Debug */,
+				52B78E041D982A6E00AB629D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 		52B7E8941ABEDE9300E1949C /* Build configuration list for PBXNativeTarget "daysleft WatchKit App" */ = {
 			isa = XCConfigurationList;
