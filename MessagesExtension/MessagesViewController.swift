@@ -15,13 +15,20 @@ class MessagesViewController: MSMessagesAppViewController {
     @IBOutlet weak var imageProgress: UIImageView!
     @IBOutlet weak var labelTitle: UILabel!
     @IBOutlet weak var labelPercentDone: UILabel!
+    @IBOutlet weak var buttonSendMessage: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+             
+        // Set border on button
+        self.buttonSendMessage!.layer.borderColor = UIColor(red: 44.0/255.0, green: 94.0/255.0, blue: 22.0/255.0, alpha: 1.0).CGColor
+        self.buttonSendMessage!.layer.borderWidth = 1.0
+        self.buttonSendMessage!.layer.cornerRadius = 5.0
+        
         self.updateViewData()
     }
     
-    @IBAction func sendMessageTouchUp(_ sender: AnyObject) {
+    @IBAction func sendMessageTouchUp(sender: AnyObject) {
         if let conversation = self.activeConversation {
             let layout = MSMessageTemplateLayout()
             

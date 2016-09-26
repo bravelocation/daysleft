@@ -42,8 +42,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dqi-CQ-cnW">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="124" id="ZNI-id-U42"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <state key="normal" title="Send Message"/>
+                                <color key="tintColor" red="0.086543494215390857" green="0.27984216370558379" blue="0.10133821576889974" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Send Message">
+                                    <color key="titleColor" red="0.1738059223" green="0.36919349429999998" blue="0.087881088260000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="sendMessageTouchUp:" destination="ObA-dk-sSI" eventType="touchUpInside" id="pVK-iq-aCj"/>
                                 </connections>
@@ -51,23 +57,23 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="dqi-CQ-cnW" firstAttribute="leading" secondItem="zMn-AG-sqS" secondAttribute="leadingMargin" id="1J4-6Z-BuU"/>
                             <constraint firstItem="nRP-eB-EKV" firstAttribute="centerX" secondItem="zMn-AG-sqS" secondAttribute="centerX" id="8fw-c2-pPp"/>
                             <constraint firstAttribute="trailingMargin" secondItem="YvD-TV-phV" secondAttribute="trailing" id="Ixl-bb-w9V"/>
                             <constraint firstItem="W4C-zi-fkJ" firstAttribute="trailing" secondItem="zMn-AG-sqS" secondAttribute="trailingMargin" id="WUj-7j-vlC"/>
-                            <constraint firstItem="dqi-CQ-cnW" firstAttribute="trailing" secondItem="zMn-AG-sqS" secondAttribute="trailingMargin" id="d93-Ij-w9i"/>
                             <constraint firstItem="nRP-eB-EKV" firstAttribute="top" secondItem="YvD-TV-phV" secondAttribute="bottom" constant="8" id="ikX-6Q-Tvl"/>
                             <constraint firstItem="YvD-TV-phV" firstAttribute="leading" secondItem="zMn-AG-sqS" secondAttribute="leadingMargin" id="jpW-Oo-j57"/>
+                            <constraint firstItem="dqi-CQ-cnW" firstAttribute="centerX" secondItem="zMn-AG-sqS" secondAttribute="centerX" id="kEV-DM-I3l"/>
                             <constraint firstItem="YvD-TV-phV" firstAttribute="trailing" secondItem="zMn-AG-sqS" secondAttribute="trailingMargin" id="kWV-dT-BnU"/>
                             <constraint firstItem="YvD-TV-phV" firstAttribute="top" secondItem="qkL-Od-lgU" secondAttribute="bottom" constant="16" id="oM6-gK-bcU"/>
                             <constraint firstItem="W4C-zi-fkJ" firstAttribute="leading" secondItem="zMn-AG-sqS" secondAttribute="leadingMargin" id="pHO-jk-Hi1"/>
-                            <constraint firstItem="dqi-CQ-cnW" firstAttribute="top" secondItem="W4C-zi-fkJ" secondAttribute="bottom" id="ph2-1h-Xc4"/>
+                            <constraint firstItem="dqi-CQ-cnW" firstAttribute="top" secondItem="W4C-zi-fkJ" secondAttribute="bottom" constant="8" id="ph2-1h-Xc4"/>
                             <constraint firstItem="W4C-zi-fkJ" firstAttribute="top" secondItem="nRP-eB-EKV" secondAttribute="bottom" id="znh-dy-KgS"/>
                         </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="528"/>
                     <connections>
+                        <outlet property="buttonSendMessage" destination="dqi-CQ-cnW" id="QFR-k8-twN"/>
                         <outlet property="imageProgress" destination="nRP-eB-EKV" id="O1L-qS-YN2"/>
                         <outlet property="labelPercentDone" destination="W4C-zi-fkJ" id="fAB-0r-6kq"/>
                         <outlet property="labelTitle" destination="YvD-TV-phV" id="Vq5-uM-4a1"/>
