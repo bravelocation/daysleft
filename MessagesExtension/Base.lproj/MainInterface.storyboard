@@ -48,7 +48,7 @@
                         <constraints>
                             <constraint firstItem="nRP-eB-EKV" firstAttribute="centerX" secondItem="zMn-AG-sqS" secondAttribute="centerX" id="8fw-c2-pPp"/>
                             <constraint firstItem="nRP-eB-EKV" firstAttribute="top" secondItem="YvD-TV-phV" secondAttribute="bottom" constant="8" id="A3n-Q3-4E0"/>
-                            <constraint firstItem="n38-gi-rB5" firstAttribute="top" secondItem="dqi-CQ-cnW" secondAttribute="bottom" constant="8" id="aFw-Bz-2V3"/>
+                            <constraint firstItem="n38-gi-rB5" firstAttribute="top" secondItem="dqi-CQ-cnW" secondAttribute="bottom" constant="16" id="aFw-Bz-2V3"/>
                             <constraint firstItem="YvD-TV-phV" firstAttribute="leading" secondItem="zMn-AG-sqS" secondAttribute="leadingMargin" id="jpW-Oo-j57"/>
                             <constraint firstItem="dqi-CQ-cnW" firstAttribute="centerX" secondItem="zMn-AG-sqS" secondAttribute="centerX" id="kEV-DM-I3l"/>
                             <constraint firstItem="YvD-TV-phV" firstAttribute="trailing" secondItem="zMn-AG-sqS" secondAttribute="trailingMargin" id="kWV-dT-BnU"/>
