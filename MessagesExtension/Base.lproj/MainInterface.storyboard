@@ -19,25 +19,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="528"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nRP-eB-EKV">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="75" id="cHX-gy-7Xn"/>
-                                    <constraint firstAttribute="width" constant="75" id="vka-Bv-r7Z"/>
-                                </constraints>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YvD-TV-phV">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="25" id="05x-AV-faA"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W4C-zi-fkJ">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="25" id="Eay-0w-x6x"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -54,20 +37,22 @@
                                     <action selector="sendMessageTouchUp:" destination="ObA-dk-sSI" eventType="touchUpInside" id="pVK-iq-aCj"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nRP-eB-EKV">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="cHX-gy-7Xn"/>
+                                    <constraint firstAttribute="width" constant="75" id="vka-Bv-r7Z"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="nRP-eB-EKV" firstAttribute="centerX" secondItem="zMn-AG-sqS" secondAttribute="centerX" id="8fw-c2-pPp"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="YvD-TV-phV" secondAttribute="trailing" id="Ixl-bb-w9V"/>
-                            <constraint firstItem="W4C-zi-fkJ" firstAttribute="trailing" secondItem="zMn-AG-sqS" secondAttribute="trailingMargin" id="WUj-7j-vlC"/>
+                            <constraint firstItem="nRP-eB-EKV" firstAttribute="top" secondItem="YvD-TV-phV" secondAttribute="bottom" constant="8" id="A3n-Q3-4E0"/>
                             <constraint firstItem="n38-gi-rB5" firstAttribute="top" secondItem="dqi-CQ-cnW" secondAttribute="bottom" constant="8" id="aFw-Bz-2V3"/>
-                            <constraint firstItem="nRP-eB-EKV" firstAttribute="top" secondItem="YvD-TV-phV" secondAttribute="bottom" constant="4" id="ikX-6Q-Tvl"/>
                             <constraint firstItem="YvD-TV-phV" firstAttribute="leading" secondItem="zMn-AG-sqS" secondAttribute="leadingMargin" id="jpW-Oo-j57"/>
                             <constraint firstItem="dqi-CQ-cnW" firstAttribute="centerX" secondItem="zMn-AG-sqS" secondAttribute="centerX" id="kEV-DM-I3l"/>
                             <constraint firstItem="YvD-TV-phV" firstAttribute="trailing" secondItem="zMn-AG-sqS" secondAttribute="trailingMargin" id="kWV-dT-BnU"/>
-                            <constraint firstItem="W4C-zi-fkJ" firstAttribute="leading" secondItem="zMn-AG-sqS" secondAttribute="leadingMargin" id="pHO-jk-Hi1"/>
-                            <constraint firstItem="dqi-CQ-cnW" firstAttribute="top" secondItem="W4C-zi-fkJ" secondAttribute="bottom" constant="4" id="ph2-1h-Xc4"/>
-                            <constraint firstItem="W4C-zi-fkJ" firstAttribute="top" secondItem="nRP-eB-EKV" secondAttribute="bottom" id="znh-dy-KgS"/>
+                            <constraint firstItem="nRP-eB-EKV" firstAttribute="centerY" secondItem="zMn-AG-sqS" secondAttribute="centerY" constant="-16" id="qYW-Zx-TcJ"/>
                         </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -75,7 +60,6 @@
                     <connections>
                         <outlet property="buttonSendMessage" destination="dqi-CQ-cnW" id="QFR-k8-twN"/>
                         <outlet property="imageProgress" destination="nRP-eB-EKV" id="O1L-qS-YN2"/>
-                        <outlet property="labelPercentDone" destination="W4C-zi-fkJ" id="fAB-0r-6kq"/>
                         <outlet property="labelTitle" destination="YvD-TV-phV" id="Vq5-uM-4a1"/>
                     </connections>
                 </viewController>

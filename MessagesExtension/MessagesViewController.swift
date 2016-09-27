@@ -14,10 +14,11 @@ class MessagesViewController: MSMessagesAppViewController {
     
     @IBOutlet weak var imageProgress: UIImageView!
     @IBOutlet weak var labelTitle: UILabel!
-    @IBOutlet weak var labelPercentDone: UILabel!
+    //@IBOutlet weak var labelPercentDone: UILabel!
     @IBOutlet weak var buttonSendMessage: UIButton!
     
     override func viewDidLoad() {
+        print("In viewDidload...")
         super.viewDidLoad()
              
         // Set border on button
@@ -58,16 +59,13 @@ class MessagesViewController: MSMessagesAppViewController {
         self.labelTitle.text = model.FullDescription(now)
         
         let percentageDone: Float = (Float(model.DaysGone(now)) * 100.0) / Float(model.DaysLength)
-        self.labelPercentDone.text = String(format:"%3.0f%% done", percentageDone)
+        //self.labelPercentDone.text = String(format:"%3.0f%% done", percentageDone)
         
         // Update image
         let intPercentageDone: Int = Int(percentageDone)
         let imageName = String(format: "progress%d", intPercentageDone)
         self.imageProgress!.image = UIImage(imageLiteral:imageName)
         
-        NSLog("View updated")
+        NSLog("View updated!")
     }
-
-    
-    // MARK: - Conversation Handling
 }
