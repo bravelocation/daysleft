@@ -109,13 +109,13 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
             var url: NSURL? = nil;
             
             if (indexPath.row == 0) {
-                url = NSURL(string: "http://www.bravelocation.com/countthedaysleft")!
+                url = NSURL(string: "https://www.bravelocation.com/countthedaysleft")!
             }
             else if (indexPath.row == 1) {
                 url = NSURL(string: "http://github.com/bravelocation/daysleft")!
             }
             else if (indexPath.row == 2) {
-                url = NSURL(string: "http://www.bravelocation.com/apps")!
+                url = NSURL(string: "https://www.bravelocation.com/apps")!
             }
             
             if (url != nil) {
