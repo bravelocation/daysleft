@@ -78,10 +78,10 @@ class InterfaceController: WKInterfaceController {
         print("Scheduling snapshot")
         
         let soon =  (Calendar.autoupdatingCurrent as NSCalendar).date(byAdding: .second, value: 5, to: Date(), options: [])
-        WKExtension.shared().scheduleSnapshotRefresh(withPreferredDate: soon!, userInfo: nil, scheduledCompletion: { (error: NSError?) in
+        WKExtension.shared().scheduleSnapshotRefresh(withPreferredDate: soon!, userInfo: nil, scheduledCompletion: { (error: Error?) in
             if let error = error {
                 print("Error occurred while scheduling snapshot: \(error.localizedDescription)")
-            }} as! (Error?) -> Void)
+            }})
     }
     
     @objc

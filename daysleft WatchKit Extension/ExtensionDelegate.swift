@@ -48,11 +48,11 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
         let globalCalendar = Calendar.autoupdatingCurrent
         let twoHoursTime = (globalCalendar as NSCalendar).date(byAdding: .hour, value: 2, to: Date(), options: [])
         
-        WKExtension.shared().scheduleBackgroundRefresh(withPreferredDate: twoHoursTime!, userInfo: nil, scheduledCompletion: { (error: NSError?) in
+        WKExtension.shared().scheduleBackgroundRefresh(withPreferredDate: twoHoursTime!, userInfo: nil, scheduledCompletion: { (error: Error?) in
             if let error = error {
                 print("Error occurred while scheduling background refresh: \(error.localizedDescription)")
             }
-        } as! (Error?) -> Void)
+        })
         
         print("Setup background task for \(twoHoursTime)")
     }
