@@ -48,6 +48,34 @@
                ReferencedContainer = "container:daysleft.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "52B7E8801ABEDE9300E1949C"
+               BuildableName = "daysleft WatchKit App.app"
+               BlueprintName = "daysleft WatchKit App"
+               ReferencedContainer = "container:daysleft.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "52B7E8761ABEDE9300E1949C"
+               BuildableName = "daysleft WatchKit Extension.appex"
+               BlueprintName = "daysleft WatchKit Extension"
+               ReferencedContainer = "container:daysleft.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
