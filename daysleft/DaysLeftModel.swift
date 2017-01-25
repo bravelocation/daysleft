@@ -259,7 +259,6 @@ open class DaysLeftModel: BLUserSettings
         return String(format: "%d %@", self.DaysLeft(currentDate), self.Description(currentDate))
     }
     
-    
     open func Description(_ currentDate: Date) -> String {
         let daysLeft: Int = self.DaysLeft(currentDate)
         
@@ -277,6 +276,20 @@ open class DaysLeftModel: BLUserSettings
         }
         
         return String(format: "%@ %@", titleDays, titleSuffix)
+    }
+    
+    open func DaysLeftDescription(_ currentDate: Date) -> String {
+        let daysLeft: Int = self.DaysLeft(currentDate)
+        
+        var titleDays = ""
+        
+        if (self.weekdaysOnly) {
+            titleDays = (daysLeft == 1) ? "weekday" : "weekdays"
+        } else {
+            titleDays = (daysLeft == 1) ? "day" : "days"
+        }
+        
+        return String(format: "%d %@", daysLeft, titleDays)
     }
 
     
