@@ -10,16 +10,16 @@ import UIKit
 
 let π:CGFloat = CGFloat(M_PI)
 
-public class CounterView: UIView {
+open class CounterView: UIView {
     
-    @IBInspectable public var counter: Int = 5
-    @IBInspectable public var maximumValue: Int = 8
-    @IBInspectable public var arcWidth: CGFloat = 76
-    @IBInspectable public var outlineColor: UIColor = UIColor.blueColor()
-    @IBInspectable public var counterColor: UIColor = UIColor.orangeColor()
+    @IBInspectable open var counter: Int = 5
+    @IBInspectable open var maximumValue: Int = 8
+    @IBInspectable open var arcWidth: CGFloat = 76
+    @IBInspectable open var outlineColor: UIColor = UIColor.blue
+    @IBInspectable open var counterColor: UIColor = UIColor.orange
     
-    private var circleSubView: CAShapeLayer? = nil
-    private var progressSubView: CAShapeLayer? = nil
+    fileprivate var circleSubView: CAShapeLayer? = nil
+    fileprivate var progressSubView: CAShapeLayer? = nil
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -31,7 +31,7 @@ public class CounterView: UIView {
         self.clearControl()
     }
     
-    public func clearControl() {
+    open func clearControl() {
         // First clear circle view
         if self.circleSubView != nil {
             self.circleSubView?.removeFromSuperlayer()
@@ -45,7 +45,7 @@ public class CounterView: UIView {
         }
     }
     
-    public func updateControl() {
+    open func updateControl() {
         self.clearControl()
         self.arcWidth = bounds.width / 3.0;
 
@@ -68,9 +68,9 @@ public class CounterView: UIView {
                 endAngle: endAngle,
                 clockwise: true)
 
-            self.circleSubView?.path = path.CGPath
-            self.circleSubView?.fillColor = UIColor.clearColor().CGColor
-            self.circleSubView?.strokeColor = self.counterColor.CGColor
+            self.circleSubView?.path = path.cgPath
+            self.circleSubView?.fillColor = UIColor.clear.cgColor
+            self.circleSubView?.strokeColor = self.counterColor.cgColor
             self.circleSubView?.lineWidth = self.arcWidth
             
             self.circleSubView?.shadowOffset = CGSize(width: 3.0, height: 3.0)
@@ -98,9 +98,9 @@ public class CounterView: UIView {
             endAngle: progressEndAngle,
             clockwise: true)
 
-        self.progressSubView?.path = progressPath.CGPath
-        self.progressSubView?.fillColor = UIColor.clearColor().CGColor
-        self.progressSubView?.strokeColor = self.outlineColor.CGColor
+        self.progressSubView?.path = progressPath.cgPath
+        self.progressSubView?.fillColor = UIColor.clear.cgColor
+        self.progressSubView?.strokeColor = self.outlineColor.cgColor
         self.progressSubView?.lineWidth = self.arcWidth
 
         self.layer.addSublayer(self.progressSubView!)
@@ -108,10 +108,10 @@ public class CounterView: UIView {
         // Now animate the progress drawing
         let animation: CABasicAnimation = CABasicAnimation(keyPath: "strokeEnd")
         animation.duration = 0.5
-        animation.removedOnCompletion = true
+        animation.isRemovedOnCompletion = true
         animation.fromValue = 0
         animation.toValue = 1
         animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
-        self.progressSubView?.addAnimation(animation, forKey: "drawProgressAnimation")
+        self.progressSubView?.add(animation, forKey: "drawProgressAnimation")
     }
 }

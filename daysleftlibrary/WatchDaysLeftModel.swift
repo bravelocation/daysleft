@@ -10,7 +10,7 @@ import Foundation
 import WatchConnectivity
 import ClockKit
 
-public class WatchDaysLeftModel: DaysLeftModel
+open class WatchDaysLeftModel: DaysLeftModel
 {
     public override init() {
         super.init()
@@ -18,26 +18,26 @@ public class WatchDaysLeftModel: DaysLeftModel
     }
     
     /// Send updated settings to watch
-    public override func initialiseiCloudSettings() {
+    open override func initialiseiCloudSettings() {
         // Don't setup iCloud on watch!
     }
     
     /// Write settings to iCloud store
-    public override func writeSettingToiCloudStore(value: AnyObject, key: String) {
+    open override func writeSettingToiCloudStore(_ value: AnyObject, key: String) {
         // Don't write settings to iCloud when on watch!
     }
     
     /// Send initial settings to watch
-    public override func pushAllSettingsToWatch() {
+    open override func pushAllSettingsToWatch() {
         // Don't send settings to watch when on watch!
     }
         
-    public override func session(session: WCSession, didReceiveUserInfo userInfo: [String : AnyObject]) {
+    open override func session(_ session: WCSession, didReceiveUserInfo userInfo: [String : Any]) {
         super.session(session, didReceiveUserInfo: userInfo)
         self.updateComplications()
     }
 
-    public override func session(session: WCSession, didReceiveUpdate receivedApplicationContext: [String : AnyObject]) {
+    open override func session(_ session: WCSession, didReceiveUpdate receivedApplicationContext: [String : AnyObject]) {
         super.session(session, didReceiveUpdate: receivedApplicationContext)
         self.updateComplications()
     }
@@ -49,7 +49,7 @@ public class WatchDaysLeftModel: DaysLeftModel
         
         if (activeComplications != nil) {
             for complication in activeComplications! {
-                complicationServer.reloadTimelineForComplication(complication)
+                complicationServer.reloadTimeline(for: complication)
             }
         }
     }

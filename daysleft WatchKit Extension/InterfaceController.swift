@@ -22,15 +22,15 @@ class InterfaceController: WKInterfaceController {
     override init() {
         super.init()
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(InterfaceController.userSettingsUpdated(_:)), name: BLUserSettings.UpdateSettingsNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(InterfaceController.userSettingsUpdated(_:)), name: NSNotification.Name(rawValue: BLUserSettings.UpdateSettingsNotification), object: nil)
     }
     
     deinit {
-        NSNotificationCenter.defaultCenter().removeObserver(self)
+        NotificationCenter.default.removeObserver(self)
     }
     
-    override func awakeWithContext(context: AnyObject?) {
-        super.awakeWithContext(context)
+    override func awake(withContext context: Any?) {
+        super.awake(withContext: context)
         self.updateViewData()
     }
     
@@ -39,11 +39,11 @@ class InterfaceController: WKInterfaceController {
         self.updateViewData()
     }
     
-    private func updateViewData() {
+    fileprivate func updateViewData() {
         NSLog("Updating view data...")
         
-        let now: NSDate = NSDate()
-        let appDelegate = WKExtension.sharedExtension().delegate as! ExtensionDelegate
+        let now: Date = Date()
+        let appDelegate = WKExtension.shared().delegate as! ExtensionDelegate
         let model = appDelegate.model
         
         // Do we need to update the view?
@@ -51,7 +51,7 @@ class InterfaceController: WKInterfaceController {
         let weekdaysOnly = model.weekdaysOnly
         let title = model.title
         
-        if (daysLeft == self.currentDaysLeft && currentWeekdaysOnly == weekdaysOnly && currentTitle.compare(title) == NSComparisonResult.OrderedSame) {
+        if (daysLeft == self.currentDaysLeft && currentWeekdaysOnly == weekdaysOnly && currentTitle.compare(title) == ComparisonResult.orderedSame) {
             NSLog("View unchanged")
             return;
         }
@@ -68,7 +68,7 @@ class InterfaceController: WKInterfaceController {
         // Set the progress image set
         let intPercentageDone: Int = Int(percentageDone)
         self.imageProgress.setImageNamed("progress")
-        self.imageProgress.startAnimatingWithImagesInRange(NSRange(location:0, length: intPercentageDone), duration: 0.5, repeatCount: 1)
+        self.imageProgress.startAnimatingWithImages(in: NSRange(location:0, length: intPercentageDone), duration: 0.5, repeatCount: 1)
         NSLog("View updated")
         
         // Let's also update the complications if the data has changed
@@ -77,19 +77,19 @@ class InterfaceController: WKInterfaceController {
         // Let's update the snapshot if the view changed
         print("Scheduling snapshot")
         
-        let soon =  NSCalendar.autoupdatingCurrentCalendar().dateByAddingUnit(.Second, value: 5, toDate: NSDate(), options: [])
-        WKExtension.sharedExtension().scheduleSnapshotRefreshWithPreferredDate(soon!, userInfo: nil, scheduledCompletion: { (error: NSError?) in
+        let soon =  (Calendar.autoupdatingCurrent as NSCalendar).date(byAdding: .second, value: 5, to: Date(), options: [])
+        WKExtension.shared().scheduleSnapshotRefresh(withPreferredDate: soon!, userInfo: nil, scheduledCompletion: { (error: NSError?) in
             if let error = error {
                 print("Error occurred while scheduling snapshot: \(error.localizedDescription)")
-            }})
+            }} as! (Error?) -> Void)
     }
     
     @objc
-    private func userSettingsUpdated(notification: NSNotification) {
+    fileprivate func userSettingsUpdated(_ notification: Notification) {
         NSLog("Received BLUserSettingsUpdated notification")
         
         // Update view data on main thread
-        dispatch_async(dispatch_get_main_queue()) {
+        DispatchQueue.main.async {
             self.updateViewData()
         }
     }

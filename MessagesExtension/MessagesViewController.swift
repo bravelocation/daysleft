@@ -22,18 +22,18 @@ class MessagesViewController: MSMessagesAppViewController {
         super.viewDidLoad()
              
         // Set border on button
-        self.buttonSendMessage!.layer.borderColor = UIColor(red: 44.0/255.0, green: 94.0/255.0, blue: 22.0/255.0, alpha: 1.0).CGColor
+        self.buttonSendMessage!.layer.borderColor = UIColor(red: 44.0/255.0, green: 94.0/255.0, blue: 22.0/255.0, alpha: 1.0).cgColor
         self.buttonSendMessage!.layer.borderWidth = 1.0
         self.buttonSendMessage!.layer.cornerRadius = 5.0
         
         self.updateViewData()
     }
     
-    @IBAction func sendMessageTouchUp(sender: AnyObject) {
+    @IBAction func sendMessageTouchUp(_ sender: AnyObject) {
         if let conversation = self.activeConversation {
             let layout = MSMessageTemplateLayout()
             
-            let now: NSDate = NSDate()
+            let now: Date = Date()
             let model: DaysLeftModel = DaysLeftModel()
             
             layout.caption = model.FullDescription(now)
@@ -41,19 +41,19 @@ class MessagesViewController: MSMessagesAppViewController {
             let percentageDone: Float = (Float(model.DaysGone(now)) * 100.0) / Float(model.DaysLength)
             let intPercentageDone: Int = Int(percentageDone)            
             let imageName = String(format: "progress%d", intPercentageDone)
-            layout.image = UIImage(imageLiteral:imageName)
+            layout.image = UIImage(named:imageName)
             
             let message = MSMessage()
             message.layout = layout
             
-            conversation.insertMessage(message, completionHandler: { (error: NSError?) in
-                print(error)
+            conversation.insert(message, completionHandler: { (error: Error?) in
+                print(error ?? "")
             })
         }
     }
     
-    private func updateViewData() {
-        let now: NSDate = NSDate()
+    fileprivate func updateViewData() {
+        let now: Date = Date()
         let model: DaysLeftModel = DaysLeftModel()
         
         self.labelTitle.text = model.FullDescription(now)
@@ -64,7 +64,7 @@ class MessagesViewController: MSMessagesAppViewController {
         // Update image
         let intPercentageDone: Int = Int(percentageDone)
         let imageName = String(format: "progress%d", intPercentageDone)
-        self.imageProgress!.image = UIImage(imageLiteral:imageName)
+        self.imageProgress!.image = UIImage(named:imageName)
         
         NSLog("View updated!")
     }

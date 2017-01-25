@@ -21,7 +21,7 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
     @IBOutlet weak var labelVersion: UILabel!
     @IBOutlet weak var switchShowBadge: UISwitch!
     
-    var dateFormatter: NSDateFormatter = NSDateFormatter()
+    var dateFormatter: DateFormatter = DateFormatter()
     
     let startDatePicker : UIDatePicker = UIDatePicker();
     let endDatePicker : UIDatePicker = UIDatePicker();
@@ -32,102 +32,102 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
         let model = self.modelData()
 
         self.textTitle.text = model.title
-        self.switchWeekdaysOnly.on = model.weekdaysOnly
-        self.switchShowBadge.on = model.showBadge
+        self.switchWeekdaysOnly.isOn = model.weekdaysOnly
+        self.switchShowBadge.isOn = model.showBadge
         
         // Setup date formatter
         self.dateFormatter.dateFormat = "EEE d MMM YYYY"
         
-        self.textStart.text = String(format: "%@", self.dateFormatter.stringFromDate(model.start))
-        self.textEnd.text = String(format: "%@", self.dateFormatter.stringFromDate(model.end))
+        self.textStart.text = String(format: "%@", self.dateFormatter.string(from: model.start))
+        self.textEnd.text = String(format: "%@", self.dateFormatter.string(from: model.end))
         self.labelDaysLength.text = String(format: "%d days", model.DaysLength)
         
         // Setup the date pickers as editors for text fields
         self.startDatePicker.date = model.start
         self.startDatePicker.maximumDate = model.end
-        self.startDatePicker.datePickerMode = UIDatePickerMode.Date
-        self.startDatePicker.addTarget(self, action: #selector(SettingsViewController.dateChanged(_:)), forControlEvents: UIControlEvents.ValueChanged)
+        self.startDatePicker.datePickerMode = UIDatePickerMode.date
+        self.startDatePicker.addTarget(self, action: #selector(SettingsViewController.dateChanged(_:)), for: UIControlEvents.valueChanged)
         self.textStart.inputView = self.startDatePicker
         
         self.endDatePicker.date = model.end
         self.endDatePicker.minimumDate = model.start
-        self.endDatePicker.datePickerMode = UIDatePickerMode.Date
-        self.endDatePicker.addTarget(self, action: #selector(SettingsViewController.dateChanged(_:)), forControlEvents: UIControlEvents.ValueChanged)
+        self.endDatePicker.datePickerMode = UIDatePickerMode.date
+        self.endDatePicker.addTarget(self, action: #selector(SettingsViewController.dateChanged(_:)), for: UIControlEvents.valueChanged)
         self.textEnd.inputView = self.endDatePicker
 
         // Set up the delegate of text field for handling return below
         self.textTitle.delegate = self
         
         // Add version number
-        let infoDictionary = NSBundle.mainBundle()
-        let version = infoDictionary.objectForInfoDictionaryKey("CFBundleShortVersionString") as! String
-        let build = infoDictionary.objectForInfoDictionaryKey("CFBundleVersion") as! String
+        let infoDictionary = Bundle.main
+        let version = infoDictionary.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
+        let build = infoDictionary.object(forInfoDictionaryKey: "CFBundleVersion") as! String
         self.labelVersion.text = String(format: "v%@.%@", version, build)
     }
 
-    @IBAction func textTitleChanged(sender: AnyObject) {
+    @IBAction func textTitleChanged(_ sender: AnyObject) {
         self.validateAndSaveModel()
     }
     
-    func dateChanged(sender: AnyObject) {
+    func dateChanged(_ sender: AnyObject) {
         self.validateAndSaveModel()
     }
     
-    @IBAction func switchWeekdaysOnlyChanged(sender: AnyObject) {
+    @IBAction func switchWeekdaysOnlyChanged(_ sender: AnyObject) {
         self.validateAndSaveModel()
     }
  
-    @IBAction func switchShowBadgeChanged(sender: AnyObject) {
+    @IBAction func switchShowBadgeChanged(_ sender: AnyObject) {
         let model = self.modelData()
-        model.showBadge = self.switchShowBadge.on
+        model.showBadge = self.switchShowBadge.isOn
 
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.registerForNotifications()
     }
     
-    @IBAction func buttonStartTodayTouchUp(sender: AnyObject) {
+    @IBAction func buttonStartTodayTouchUp(_ sender: AnyObject) {
         let model = self.modelData()
 
         model.weekdaysOnly = false
-        self.switchWeekdaysOnly.on = false
+        self.switchWeekdaysOnly.isOn = false
         
-        self.startDatePicker.date = NSDate()
-        self.endDatePicker.date = NSCalendar.currentCalendar().dateByAddingUnit(NSCalendarUnit.Day, value: 30, toDate: NSDate(), options: [])!
+        self.startDatePicker.date = Date()
+        self.endDatePicker.date = (Calendar.current as NSCalendar).date(byAdding: NSCalendar.Unit.day, value: 30, to: Date(), options: [])!
         self.validateAndSaveModel()
     }
     
     // Hides the keyboard if touch anywhere outside text box
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
-        super.touchesBegan(touches, withEvent: event)
+        super.touchesBegan(touches, with: event)
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.view.endEditing(true)
         
         if (indexPath.section == 4) {
-            var url: NSURL? = nil;
+            var url: URL? = nil;
             
             if (indexPath.row == 0) {
-                url = NSURL(string: "https://www.bravelocation.com/countthedaysleft")!
+                url = URL(string: "https://www.bravelocation.com/countthedaysleft")!
             }
             else if (indexPath.row == 1) {
-                url = NSURL(string: "http://github.com/bravelocation/daysleft")!
+                url = URL(string: "http://github.com/bravelocation/daysleft")!
             }
             else if (indexPath.row == 2) {
-                url = NSURL(string: "https://www.bravelocation.com/apps")!
+                url = URL(string: "https://www.bravelocation.com/apps")!
             }
             
             if (url != nil) {
-                let svc = SFSafariViewController(URL: url!)
+                let svc = SFSafariViewController(url: url!)
                 svc.delegate = self
-                self.presentViewController(svc, animated: true, completion: nil)
+                self.present(svc, animated: true, completion: nil)
             }
         }
     }
     
     // Hides the keyboard if return is pressed
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true);
         return false;
     }
@@ -138,12 +138,12 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
 
         model.start = self.startDatePicker.date
         model.end = self.endDatePicker.date
-        model.weekdaysOnly = self.switchWeekdaysOnly.on
+        model.weekdaysOnly = self.switchWeekdaysOnly.isOn
         model.title = self.textTitle!.text!
         
         // Update the text fields
-        self.textStart.text = String(format: "%@", self.dateFormatter.stringFromDate(model.start))
-        self.textEnd.text = String(format: "%@", self.dateFormatter.stringFromDate(model.end))
+        self.textStart.text = String(format: "%@", self.dateFormatter.string(from: model.start))
+        self.textEnd.text = String(format: "%@", self.dateFormatter.string(from: model.end))
         self.labelDaysLength.text = String(format: "%d days", model.DaysLength)
         
         // Update the date restrictions too
@@ -151,7 +151,7 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
         self.endDatePicker.minimumDate = model.start
         
         // Update the badge too
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.updateBadge()
         
         // Push any changes to watch
@@ -159,14 +159,14 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
     }
     
     func modelData() -> DaysLeftModel {
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
         return appDelegate.model
     }
     
     // MARK: - SFSafariViewControllerDelegate methods
-    func safariViewControllerDidFinish(controller: SFSafariViewController)
+    func safariViewControllerDidFinish(_ controller: SFSafariViewController)
     {
-        controller.dismissViewControllerAnimated(true, completion: nil)
+        controller.dismiss(animated: true, completion: nil)
     }
 }
 

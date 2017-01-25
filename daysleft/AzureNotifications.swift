@@ -9,7 +9,7 @@
 import UIKit
 import daysleftlibrary
 
-public class AzureNotifications {
+open class AzureNotifications {
     #if DEBUG
     let hubName = "daysleftiospushsandbox"
     let hubListenAccess = "Endpoint=sb://daysleft.servicebus.windows.net/;SharedAccessKeyName=DefaultListenSharedAccessSignature;SharedAccessKey=39vE2a/hG/a451waf3JjbmrwN/axobCh56ajdQMv0Rw="
@@ -19,7 +19,7 @@ public class AzureNotifications {
     #endif
     
     var tagNames:Set<NSObject> = []
-    let defaults = NSUserDefaults.standardUserDefaults()
+    let defaults = UserDefaults.standard
     
     var enabled: Bool {
         get {
@@ -28,26 +28,26 @@ public class AzureNotifications {
     }
     
     init() {
-        self.tagNames = ["dataupdates"]
+        self.tagNames = ["dataupdates" as NSObject]
     }
     
-    func setupNotifications(forceSetup: Bool) {
+    func setupNotifications(_ forceSetup: Bool) {
         if (forceSetup || self.enabled) {
-            let application = UIApplication.sharedApplication()
+            let application = UIApplication.shared
             
-            let settings: UIUserNotificationSettings = UIUserNotificationSettings(forTypes: [.Alert, .Badge], categories: nil)
+            let settings: UIUserNotificationSettings = UIUserNotificationSettings(types: [.alert, .badge], categories: nil)
             application.registerUserNotificationSettings(settings)
             application.registerForRemoteNotifications()
         }
     }
     
-    func register(deviceToken: NSData) {
+    func register(_ deviceToken: Data) {
         // Register with Azure Hub
         let hub = SBNotificationHub(connectionString: self.hubListenAccess, notificationHubPath: self.hubName)
         
         if (self.enabled) {
             do {
-                try hub.registerNativeWithDeviceToken(deviceToken, tags: self.tagNames)
+                try hub?.registerNative(withDeviceToken: deviceToken, tags: self.tagNames)
                 print("Registered with \(self.hubName) hub: \(self.tagNames)")
             }
             catch {
@@ -55,7 +55,7 @@ public class AzureNotifications {
             }
         } else {
             do {
-                try hub.unregisterAllWithDeviceToken(deviceToken)
+                try hub?.unregisterAll(withDeviceToken: deviceToken)
                 print("Unregistered with \(self.hubName) hub")
             }
             catch {
@@ -65,7 +65,7 @@ public class AzureNotifications {
     }
     
     func modelData() -> DaysLeftModel {
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
         return appDelegate.model
     }
 }

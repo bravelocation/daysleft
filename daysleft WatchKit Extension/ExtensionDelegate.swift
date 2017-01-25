@@ -24,7 +24,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
         NSLog("applicationDidBecomeActive completed")
     }
     
-    func handleBackgroundTasks(backgroundTasks: Set<WKRefreshBackgroundTask>) {
+    func handle(_ backgroundTasks: Set<WKRefreshBackgroundTask>) {
         print("Handling background task started")
 
         // Mark tasks as completed
@@ -45,14 +45,14 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
     
     func setupBackgroundRefresh() {
         // Setup a background refresh for 0100 tomorrow
-        let globalCalendar = NSCalendar.autoupdatingCurrentCalendar()
-        let twoHoursTime = globalCalendar.dateByAddingUnit(.Hour, value: 2, toDate: NSDate(), options: [])
+        let globalCalendar = Calendar.autoupdatingCurrent
+        let twoHoursTime = (globalCalendar as NSCalendar).date(byAdding: .hour, value: 2, to: Date(), options: [])
         
-        WKExtension.sharedExtension().scheduleBackgroundRefreshWithPreferredDate(twoHoursTime!, userInfo: nil, scheduledCompletion: { (error: NSError?) in
+        WKExtension.shared().scheduleBackgroundRefresh(withPreferredDate: twoHoursTime!, userInfo: nil, scheduledCompletion: { (error: NSError?) in
             if let error = error {
                 print("Error occurred while scheduling background refresh: \(error.localizedDescription)")
             }
-        })
+        } as! (Error?) -> Void)
         
         print("Setup background task for \(twoHoursTime)")
     }

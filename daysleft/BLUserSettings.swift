@@ -9,12 +9,12 @@
 import Foundation
 import WatchConnectivity
 
-public class BLUserSettings: NSObject, WCSessionDelegate {
+open class BLUserSettings: NSObject, WCSessionDelegate {
 
-    public static let UpdateSettingsNotification = "kBLUserSettingsNotification"
-    public var appStandardUserDefaults: NSUserDefaults?
-    public var settingsCache = Dictionary<String, AnyObject>()
-    public var watchSessionInitialised: Bool = false
+    open static let UpdateSettingsNotification = "kBLUserSettingsNotification"
+    open var appStandardUserDefaults: UserDefaults?
+    open var settingsCache = Dictionary<String, Any>()
+    open var watchSessionInitialised: Bool = false
     
     /// Default initialiser for the class
     ///
@@ -25,23 +25,23 @@ public class BLUserSettings: NSObject, WCSessionDelegate {
         super.init()
         
         // Setup the default preferences
-        let defaultPrefsFile: NSURL? = NSBundle.mainBundle().URLForResource(defaultPreferencesName, withExtension: "plist")
-        let defaultPrefs: NSDictionary? = NSDictionary(contentsOfURL:defaultPrefsFile!)
+        let defaultPrefsFile: URL? = Bundle.main.url(forResource: defaultPreferencesName, withExtension: "plist")
+        let defaultPrefs: NSDictionary? = NSDictionary(contentsOf:defaultPrefsFile!)
         
-        self.appStandardUserDefaults = NSUserDefaults(suiteName: suiteName)!
-        self.appStandardUserDefaults!.registerDefaults(defaultPrefs as! [String: AnyObject]);
+        self.appStandardUserDefaults = UserDefaults(suiteName: suiteName)!
+        self.appStandardUserDefaults!.register(defaults: defaultPrefs as! [String: AnyObject]);
     }
     
     /// Destructor
     deinit {
-        NSNotificationCenter.defaultCenter().removeObserver(self)
+        NotificationCenter.default.removeObserver(self)
     }
  
     /// Used to read an object setting from the user setting store
     ///
     /// param: key The key for the setting
     /// returns: An AnyObject? value retrieved from the settings store
-    public func readObjectFromStore(key: String) -> AnyObject?{
+    open func readObjectFromStore(_ key: String) -> Any?{
         // First try the local cache
         let cachedValue = self.settingsCache[key]
         
@@ -50,25 +50,25 @@ public class BLUserSettings: NSObject, WCSessionDelegate {
         }
         
         // Otherwise try the user details
-        let userSettingsValue = self.appStandardUserDefaults!.valueForKey(key)
+        let userSettingsValue = self.appStandardUserDefaults!.value(forKey: key)
         if (userSettingsValue != nil) {
-            self.settingsCache[key] = userSettingsValue
+            self.settingsCache[key] = userSettingsValue as AnyObject?
         }
         
-        return userSettingsValue
+        return userSettingsValue as AnyObject?
     }
     
     /// Used to write an Object setting to the user setting store (local and the cloud)
     ///
     /// param: value The value for the setting
     /// param: key The key for the setting
-    public func writeObjectToStore(value: AnyObject, key: String) {
+    open func writeObjectToStore(_ value: AnyObject, key: String) {
         // First write to local store
         self.settingsCache[key] = value
         
         // Then write to local user settings
         if let settings = self.appStandardUserDefaults {
-            settings.setObject(value, forKey:key)
+            settings.set(value, forKey:key)
             settings.synchronize()
         } else {
             NSLog("Couldn't get settings defaults")
@@ -76,7 +76,7 @@ public class BLUserSettings: NSObject, WCSessionDelegate {
     }
     
     
-    public func initialiseWatchSession() {
+    open func initialiseWatchSession() {
         if (self.watchSessionInitialised) {
             NSLog("Watch session already initialised")
             return
@@ -88,9 +88,9 @@ public class BLUserSettings: NSObject, WCSessionDelegate {
         // Set up watch setting if appropriate
         if (WCSession.isSupported()) {
             NSLog("Setting up watch session")
-            let session: WCSession = WCSession.defaultSession();
+            let session: WCSession = WCSession.default();
             session.delegate = self
-            session.activateSession()
+            session.activate()
             NSLog("Watch session activated")
         } else {
             NSLog("No watch session set up")
@@ -98,40 +98,39 @@ public class BLUserSettings: NSObject, WCSessionDelegate {
     }
     
     /// WCSessionDelegate implementation - update local settings when transfered from phone
-    @objc
-    public func session(session: WCSession, didReceiveUserInfo userInfo: [String : AnyObject]) {
-        NSLog("New user info transfer data received on watch")
-
+    open func session(_ session: WCSession, didReceiveUserInfo userInfo: [String : Any]) {
+        print("New user info transfer data received on watch")
+        
         for (key, value) in userInfo {
-            self.writeObjectToStore(value, key: key)
+            self.writeObjectToStore(value as AnyObject, key: key)
         }
         
         // Finally send a notification for the view controllers to refresh
-        NSNotificationCenter.defaultCenter().postNotificationName(BLUserSettings.UpdateSettingsNotification, object:nil, userInfo:nil)
+        NotificationCenter.default.post(name: Notification.Name(rawValue: BLUserSettings.UpdateSettingsNotification), object:nil, userInfo:nil)
         NSLog("Sent UpdateSettingsNotification")
     }
     
-    @objc
-    public func session(session: WCSession, didReceiveUpdate receivedApplicationContext: [String : AnyObject]) {
+    @nonobjc open func session(_ session: WCSession, didReceiveUpdate receivedApplicationContext: [String : AnyObject]) {
         NSLog("New context transfer data received on watch")
         
         for (key, value) in receivedApplicationContext {
             self.writeObjectToStore(value, key: key)
         }
-                
+        
         // Finally send a notification for the view controllers to refresh
-        NSNotificationCenter.defaultCenter().postNotificationName(DaysLeftModel.UpdateSettingsNotification, object:nil, userInfo:nil)
+        NotificationCenter.default.post(name: Notification.Name(rawValue: DaysLeftModel.UpdateSettingsNotification), object:nil, userInfo:nil)
         NSLog("Sent UpdateSettingsNotification")
     }
     
-    @objc
-    public func session(session: WCSession,
-                          activationDidCompleteWithState activationState: WCSessionActivationState,
-                                                         error: NSError?) {}
+    open func session(_ session: WCSession,
+                      activationDidCompleteWith activationState: WCSessionActivationState,
+                      error: Error?) {}
     
-    @objc
-    public func sessionDidBecomeInactive(session: WCSession) {}
+    #if os(iOS)
+    public func sessionDidBecomeInactive(_ session: WCSession) { }
+    public func sessionDidDeactivate(_ session: WCSession) {
+        session.activate()
+    }
+    #endif
     
-    @objc
-    public func sessionDidDeactivate(session: WCSession) {}
 }

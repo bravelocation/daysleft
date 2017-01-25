@@ -16,27 +16,27 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     @IBOutlet weak var labelPercentDone: UILabel!
     @IBOutlet weak var counterView: CounterView!
 
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.counterView.clearControl()
     }
 
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.updateViewData()
     }
     
-    func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)) {
+    func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
         self.updateViewData()
-        completionHandler(NCUpdateResult.NewData)
+        completionHandler(NCUpdateResult.newData)
     }
     
-    func widgetMarginInsetsForProposedMarginInsets(defaultMarginInsets: UIEdgeInsets) -> UIEdgeInsets {
+    func widgetMarginInsets(forProposedMarginInsets defaultMarginInsets: UIEdgeInsets) -> UIEdgeInsets {
         return UIEdgeInsetsMake(0, 0, 0, 0)
     }
     
-    private func updateViewData() {
-        let now: NSDate = NSDate()
+    fileprivate func updateViewData() {
+        let now: Date = Date()
         let model: DaysLeftModel = DaysLeftModel()
         
         self.labelNumberTitle.text = model.FullDescription(now)
@@ -49,7 +49,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         self.counterView.updateControl()
         
         // Set widget colors based on version of iOS
-        let ios10AndAbove:Bool = NSProcessInfo().isOperatingSystemAtLeastVersion(NSOperatingSystemVersion(majorVersion: 10, minorVersion: 0, patchVersion: 0))
+        let ios10AndAbove:Bool = ProcessInfo().isOperatingSystemAtLeast(OperatingSystemVersion(majorVersion: 10, minorVersion: 0, patchVersion: 0))
 
         if (ios10AndAbove) {
             let darkGreen = UIColor(red: 53.0/255.0, green: 79.0/255.0, blue: 0.0, alpha: 1.0)
@@ -59,9 +59,9 @@ class TodayViewController: UIViewController, NCWidgetProviding {
             self.labelNumberTitle.textColor = darkGreen
             self.labelPercentDone.textColor = darkGreen
         } else {
-            self.view.backgroundColor = UIColor.clearColor()
-            self.labelNumberTitle.textColor = UIColor.whiteColor()
-            self.labelPercentDone.textColor = UIColor.whiteColor()
+            self.view.backgroundColor = UIColor.clear
+            self.labelNumberTitle.textColor = UIColor.white
+            self.labelPercentDone.textColor = UIColor.white
         }
     }
 }

@@ -23,14 +23,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         super.init()
         
         // Setup listener for iCloud setting change
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(AppDelegate.iCloudSettingsUpdated(_:)), name: DaysLeftModel.iCloudSettingsNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(AppDelegate.iCloudSettingsUpdated(_:)), name: NSNotification.Name(rawValue: DaysLeftModel.iCloudSettingsNotification), object: nil)
     }
     
     deinit {
-        NSNotificationCenter.defaultCenter().removeObserver(self)
+        NotificationCenter.default.removeObserver(self)
     }
     
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         #if RELEASE
             // Setup analytics in release mode only
@@ -43,29 +43,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
-    func application(application: UIApplication,
-                     didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+    func application(_ application: UIApplication,
+                     didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         self.azureNotifications.register(deviceToken)
     }
     
-    func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
         print("Device token for push notifications: FAIL -- ")
-        print(error.description)
+        print(error.localizedDescription)
     }
     
-    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any]) {
         self.messageReceived(application, userInfo: userInfo)
     }
     
-    func application(application: UIApplication,
-                     didReceiveRemoteNotification userInfo: [NSObject : AnyObject],
-                                                  fetchCompletionHandler handler: (UIBackgroundFetchResult) -> Void) {
+    func application(_ application: UIApplication,
+                     didReceiveRemoteNotification userInfo: [AnyHashable: Any],
+                                                  fetchCompletionHandler handler: @escaping (UIBackgroundFetchResult) -> Void) {
         self.messageReceived(application, userInfo: userInfo)
-        handler(UIBackgroundFetchResult.NewData);
+        handler(UIBackgroundFetchResult.newData);
     }
     
-    func messageReceived(application: UIApplication,
-                         userInfo: [NSObject : AnyObject]) {
+    func messageReceived(_ application: UIApplication,
+                         userInfo: [AnyHashable: Any]) {
         // Print message
         NSLog("Notification received: \(userInfo)")
 
@@ -86,21 +86,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return
         }
         
-        let application: UIApplication = UIApplication.sharedApplication()
+        let application: UIApplication = UIApplication.shared
         
-        let badgePermission: Bool = (application.currentUserNotificationSettings()?.types.contains(UIUserNotificationType.Badge))!
+        let badgePermission: Bool = (application.currentUserNotificationSettings?.types.contains(UIUserNotificationType.badge))!
         if (badgePermission)
         {
-            let now: NSDate = NSDate()
+            let now: Date = Date()
             application.applicationIconBadgeNumber = self.model.DaysLeft(now)
             NSLog("Updated app badge")
         }
     }
     
     func clearBadge() {
-        let application: UIApplication = UIApplication.sharedApplication()
+        let application: UIApplication = UIApplication.shared
         
-        let badgePermission: Bool = (application.currentUserNotificationSettings()?.types.contains(UIUserNotificationType.Badge))!
+        let badgePermission: Bool = (application.currentUserNotificationSettings?.types.contains(UIUserNotificationType.badge))!
         if (badgePermission)
         {
             application.applicationIconBadgeNumber = 0
@@ -109,7 +109,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     @objc
-    private func iCloudSettingsUpdated(notification: NSNotification) {
+    fileprivate func iCloudSettingsUpdated(_ notification: Notification) {
         NSLog("Received iCloudSettingsUpdated notification")
         
         // Push latest settings and update badge

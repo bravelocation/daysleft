@@ -96,28 +96,28 @@ class daysleftTests: XCTestCase {
     }
     
     // Helper method for running tests
-    func actualTestRun(startDay: Int, endDay: Int, currentDay: Int, weekdaysOnly: Bool, expectedLength: Int, expectedGone: Int, expectedLeft: Int) {
+    func actualTestRun(_ startDay: Int, endDay: Int, currentDay: Int, weekdaysOnly: Bool, expectedLength: Int, expectedGone: Int, expectedLeft: Int) {
         let model: DaysLeftModel = DaysLeftModel()
         model.weekdaysOnly = weekdaysOnly
         
-        let startComponents: NSDateComponents = NSDateComponents();
+        var startComponents: DateComponents = DateComponents();
         startComponents.year = 2015;
         startComponents.month = 1;
         startComponents.day = startDay;
         
-        let endComponents: NSDateComponents = NSDateComponents();
+        var endComponents: DateComponents = DateComponents();
         endComponents.year = 2015;
         endComponents.month = 1;
         endComponents.day = endDay;
         
-        let currentComponents: NSDateComponents = NSDateComponents();
+        var currentComponents: DateComponents = DateComponents();
         currentComponents.year = 2015;
         currentComponents.month = 1;
         currentComponents.day = currentDay;
         
-        model.start = NSCalendar.autoupdatingCurrentCalendar().dateFromComponents(startComponents)!
-        model.end = NSCalendar.autoupdatingCurrentCalendar().dateFromComponents(endComponents)!
-        let currentDate: NSDate = NSCalendar.autoupdatingCurrentCalendar().dateFromComponents(currentComponents)!
+        model.start = Calendar.autoupdatingCurrent.date(from: startComponents)!
+        model.end = Calendar.autoupdatingCurrent.date(from: endComponents)!
+        let currentDate: Date = Calendar.autoupdatingCurrent.date(from: currentComponents)!
         
         XCTAssertEqual(expectedLength, model.DaysLength, "DaysLength is incorrect")
         XCTAssertEqual(expectedGone, model.DaysGone(currentDate), "DaysGone is incorrect")

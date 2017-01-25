@@ -9,114 +9,114 @@
 import Foundation
 import WatchConnectivity
 
-public class DaysLeftModel: BLUserSettings
+open class DaysLeftModel: BLUserSettings
 {
-    public static let iCloudSettingsNotification = "kBLiCloudSettingsNotification"
-    public let currentFirstRun: Int = 1
+    open static let iCloudSettingsNotification = "kBLiCloudSettingsNotification"
+    open let currentFirstRun: Int = 1
     
     public init() {
         super.init()
         
         // Preload cache
         NSLog("Preloading settings cache...")
-        self.settingsCache["start"] = self.appStandardUserDefaults!.valueForKey("start")
-        self.settingsCache["end"] = self.appStandardUserDefaults!.valueForKey("end")
-        self.settingsCache["title"] = self.appStandardUserDefaults!.valueForKey("title")
-        self.settingsCache["weekdaysOnly"] = self.appStandardUserDefaults!.valueForKey("weekdaysOnly")
+        self.settingsCache["start"] = self.appStandardUserDefaults!.value(forKey: "start")
+        self.settingsCache["end"] = self.appStandardUserDefaults!.value(forKey: "end")
+        self.settingsCache["title"] = self.appStandardUserDefaults!.value(forKey: "title")
+        self.settingsCache["weekdaysOnly"] = self.appStandardUserDefaults!.value(forKey: "weekdaysOnly")
         
         self.initialRun()
         self.initialiseiCloudSettings()
     }
 
     /// Send updated settings to watch
-    public func initialiseiCloudSettings() {
+    open func initialiseiCloudSettings() {
         NSLog("Initialising iCloud Settings")
-        let store: NSUbiquitousKeyValueStore = NSUbiquitousKeyValueStore.defaultStore()
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(DaysLeftModel.updateKVStoreItems(_:)), name: NSUbiquitousKeyValueStoreDidChangeExternallyNotification, object: store)
+        let store: NSUbiquitousKeyValueStore = NSUbiquitousKeyValueStore.default()
+        NotificationCenter.default.addObserver(self, selector: #selector(DaysLeftModel.updateKVStoreItems(_:)), name: NSUbiquitousKeyValueStore.didChangeExternallyNotification, object: store)
         store.synchronize()
     }
     
     /// Send initial settings to watch
-    public func pushAllSettingsToWatch() {
+    open func pushAllSettingsToWatch() {
         self.initialiseWatchSession()
         
         if (WCSession.isSupported()) {
-            let session = WCSession.defaultSession()
+            let session = WCSession.default()
             session.transferUserInfo(self.allCurrentSettings())
             NSLog("Settings pushed to watch")
         }
     }
     
     /// Write settings to iCloud store
-    public func writeSettingToiCloudStore(value: AnyObject, key: String) {
-        let store: NSUbiquitousKeyValueStore = NSUbiquitousKeyValueStore.defaultStore()
-        store.setObject(value, forKey: key)
+    open func writeSettingToiCloudStore(_ value: AnyObject, key: String) {
+        let store: NSUbiquitousKeyValueStore = NSUbiquitousKeyValueStore.default()
+        store.set(value, forKey: key)
         store.synchronize()
     }
 
     // Save value locally, and then write to iCloud store as appropriate
-    public override func writeObjectToStore(value: AnyObject, key: String) {
+    open override func writeObjectToStore(_ value: AnyObject, key: String) {
         super.writeObjectToStore(value, key: key)
         self.writeSettingToiCloudStore(value, key: key)
     }
     
     /// Property to get and set the start date
-    public var start: NSDate {
-        get { return self.readObjectFromStore("start") as! NSDate }
-        set { self.writeObjectToStore(self.StartOfDay(newValue), key: "start") }
+    open var start: Date {
+        get { return self.readObjectFromStore("start") as! Date }
+        set { self.writeObjectToStore(self.StartOfDay(newValue) as AnyObject, key: "start") }
     }
     
     /// Property to get and set the end date
-    public var end: NSDate {
-        get { return self.readObjectFromStore("end") as! NSDate }
-        set { self.writeObjectToStore(self.StartOfDay(newValue), key: "end") }
+    open var end: Date {
+        get { return self.readObjectFromStore("end") as! Date }
+        set { self.writeObjectToStore(self.StartOfDay(newValue) as AnyObject, key: "end") }
     }
 
     /// Property to get and set the title
-    public var title: String {
+    open var title: String {
         get { return self.readObjectFromStore("title") as! String }
-        set { self.writeObjectToStore(newValue, key: "title") }
+        set { self.writeObjectToStore(newValue as AnyObject, key: "title") }
     }
 
     /// Property to get and set the weekdays only flag
-    public var weekdaysOnly: Bool {
+    open var weekdaysOnly: Bool {
         get { return self.readObjectFromStore("weekdaysOnly") as! Bool }
-        set { self.writeObjectToStore(newValue, key: "weekdaysOnly") }
+        set { self.writeObjectToStore(newValue as AnyObject, key: "weekdaysOnly") }
     }
     
     /// Property to get and set the firstRun value
-    public var firstRun: Int {
+    open var firstRun: Int {
         get { return self.readObjectFromStore("firstRun") as! Int }
-        set { self.writeObjectToStore(newValue, key: "firstRun") }
+        set { self.writeObjectToStore(newValue as AnyObject, key: "firstRun") }
     }
     
     /// Property to get the number of days between the start and the end
-    public var DaysLength: Int {
+    open var DaysLength: Int {
         get {
             return self.DaysDifference(self.start, endDate: self.end) + 1 // Inclusive so add one
         }
     }
     
     /// Property to get and set the show badge flag
-    public var showBadge: Bool {
+    open var showBadge: Bool {
         get { return self.readObjectFromStore("showBadge") as! Bool }
-        set { self.writeObjectToStore(newValue, key: "showBadge") }
+        set { self.writeObjectToStore(newValue as AnyObject, key: "showBadge") }
     }
 
     /// Finds the number of days to the end of the period from the current date
     ///
     /// param: currentDate The current date
     /// returns: The number of days to the end from the current date
-    public func DaysLeft(currentDate: NSDate) -> Int {
+    open func DaysLeft(_ currentDate: Date) -> Int {
         let startCurrentDate = self.StartOfDay(currentDate)
         
         // If the current date is before the start, return the length
-        if (startCurrentDate.compare(self.start) == NSComparisonResult.OrderedAscending) {
+        if (startCurrentDate.compare(self.start) == ComparisonResult.orderedAscending) {
             return self.DaysLength
         }
         
         // If the current date is after the end, return 0
-        if (startCurrentDate.compare(self.end) == NSComparisonResult.OrderedDescending) {
+        if (startCurrentDate.compare(self.end) == ComparisonResult.orderedDescending) {
             return 0
         }
         
@@ -128,16 +128,16 @@ public class DaysLeftModel: BLUserSettings
     ///
     /// param: currentDate The current date
     /// returns: The number of days from the start to the current date
-    public func DaysGone(currentDate: NSDate) -> Int  {
+    open func DaysGone(_ currentDate: Date) -> Int  {
         let startCurrentDate = self.StartOfDay(currentDate)
         
         // If the current date is before the start, return 0
-        if (startCurrentDate.compare(self.start) == NSComparisonResult.OrderedAscending) {
+        if (startCurrentDate.compare(self.start) == ComparisonResult.orderedAscending) {
             return 0
         }
         
         // If the current date is after the end, return the length
-        if (startCurrentDate.compare(self.end) == NSComparisonResult.OrderedDescending) {
+        if (startCurrentDate.compare(self.end) == ComparisonResult.orderedDescending) {
             return self.DaysLength
         }
         
@@ -145,25 +145,25 @@ public class DaysLeftModel: BLUserSettings
         return self.DaysDifference(self.start, endDate: startCurrentDate) + 1 // Inclusive so add 1
     }
     
-    public func initialRun() {
+    open func initialRun() {
         if (self.firstRun < self.currentFirstRun)
         {
             // If it is first run, initialise the model data to Christmas
-            let todayComponents = NSCalendar.currentCalendar().components([NSCalendarUnit.Year, NSCalendarUnit.Month, NSCalendarUnit.Day], fromDate: NSDate())
-            let todayDate = NSCalendar.currentCalendar().dateFromComponents(todayComponents)!
+            let todayComponents = (Calendar.current as NSCalendar).components([NSCalendar.Unit.year, NSCalendar.Unit.month, NSCalendar.Unit.day], from: Date())
+            let todayDate = Calendar.current.date(from: todayComponents)!
             
-            let xmasComponents = NSDateComponents()
+            var xmasComponents = DateComponents()
             xmasComponents.day = 25
             xmasComponents.month = 12
             xmasComponents.year = todayComponents.year
             
-            var xmasDate: NSDate = NSCalendar.currentCalendar().dateFromComponents(xmasComponents)!
+            var xmasDate: Date = Calendar.current.date(from: xmasComponents)!
             
             if (self.DaysDifference(todayDate, endDate: xmasDate) <= 0)
             {
                 // If we're past Xmas in the year, set it to next year
-                xmasComponents.year += 1
-                xmasDate = NSCalendar.currentCalendar().dateFromComponents(xmasComponents)!
+                xmasComponents.year = xmasComponents.year! + 1
+                xmasDate = Calendar.current.date(from: xmasComponents)!
             }
             
             self.start = todayDate
@@ -176,22 +176,22 @@ public class DaysLeftModel: BLUserSettings
         }
     }
     
-    private func DaysDifference(startDate: NSDate, endDate: NSDate) -> Int {
-        let globalCalendar: NSCalendar = NSCalendar.autoupdatingCurrentCalendar()
+    fileprivate func DaysDifference(_ startDate: Date, endDate: Date) -> Int {
+        let globalCalendar: Calendar = Calendar.autoupdatingCurrent
 
         let startOfStartDate = self.StartOfDay(startDate)
         let startOfEndDate = self.StartOfDay(endDate)
 
         // If want all days, just calculate the days difference and return it
         if (!self.weekdaysOnly) {
-            let components: NSDateComponents = globalCalendar.components(NSCalendarUnit.Day, fromDate: startOfStartDate, toDate: startOfEndDate, options: NSCalendarOptions.WrapComponents)
+            let components: DateComponents = (globalCalendar as NSCalendar).components(NSCalendar.Unit.day, from: startOfStartDate, to: startOfEndDate, options: NSCalendar.Options.wrapComponents)
             
-            return components.day
+            return components.day!
         }
         
         // If we are calculating weekdays only, first adjust the start or end date if on a weekend
-        var startDayOfWeek: Int = globalCalendar.component(NSCalendarUnit.Weekday, fromDate: startOfStartDate)
-        var endDayOfWeek: Int = globalCalendar.component(NSCalendarUnit.Weekday, fromDate: startOfEndDate)
+        var startDayOfWeek: Int = (globalCalendar as NSCalendar).component(NSCalendar.Unit.weekday, from: startOfStartDate)
+        var endDayOfWeek: Int = (globalCalendar as NSCalendar).component(NSCalendar.Unit.weekday, from: startOfEndDate)
             
         var adjustedStartDate = startOfStartDate
         var adjustedEndDate = startOfEndDate
@@ -214,14 +214,14 @@ public class DaysLeftModel: BLUserSettings
             adjustedEndDate = self.AddDays(startOfEndDate, daysToAdd: -2)
         }
             
-        let adjustedComponents: NSDateComponents = globalCalendar.components(NSCalendarUnit.Day, fromDate: adjustedStartDate, toDate: adjustedEndDate, options: NSCalendarOptions.WrapComponents)
+        let adjustedComponents: DateComponents = (globalCalendar as NSCalendar).components(NSCalendar.Unit.day, from: adjustedStartDate, to: adjustedEndDate, options: NSCalendar.Options.wrapComponents)
             
-        let adjustedTotalDays: Int = adjustedComponents.day
+        let adjustedTotalDays: Int = adjustedComponents.day!
         let fullWeeks: Int = adjustedTotalDays / 7
         
         // Now we need to take into account if the day of the start date is before or after the day of the end date
-        startDayOfWeek = globalCalendar.component(NSCalendarUnit.Weekday, fromDate: adjustedStartDate)
-        endDayOfWeek = globalCalendar.component(NSCalendarUnit.Weekday, fromDate: adjustedEndDate)
+        startDayOfWeek = (globalCalendar as NSCalendar).component(NSCalendar.Unit.weekday, from: adjustedStartDate)
+        endDayOfWeek = (globalCalendar as NSCalendar).component(NSCalendar.Unit.weekday, from: adjustedEndDate)
         
         var daysOfWeekDifference = endDayOfWeek - startDayOfWeek
         if (daysOfWeekDifference < 0) {
@@ -232,35 +232,35 @@ public class DaysLeftModel: BLUserSettings
         return (fullWeeks * 5) + daysOfWeekDifference
     }
     
-    public func StartOfDay(fullDate: NSDate) -> NSDate {
+    open func StartOfDay(_ fullDate: Date) -> Date {
 
-        let startOfDayComponents =  NSCalendar.currentCalendar().components([NSCalendarUnit.Year, NSCalendarUnit.Month, NSCalendarUnit.Day], fromDate: fullDate)
+        let startOfDayComponents =  (Calendar.current as NSCalendar).components([NSCalendar.Unit.year, NSCalendar.Unit.month, NSCalendar.Unit.day], from: fullDate)
         
-        return NSCalendar.currentCalendar().dateFromComponents(startOfDayComponents)!
+        return Calendar.current.date(from: startOfDayComponents)!
     }
     
-    public func AddDays(originalDate: NSDate, daysToAdd: Int) -> NSDate {
-        let dateComponents: NSDateComponents = NSDateComponents()
+    open func AddDays(_ originalDate: Date, daysToAdd: Int) -> Date {
+        var dateComponents: DateComponents = DateComponents()
          dateComponents.day = daysToAdd
-         return NSCalendar.currentCalendar().dateByAddingComponents(dateComponents, toDate: originalDate, options: [])!
+         return (Calendar.current as NSCalendar).date(byAdding: dateComponents, to: originalDate, options: [])!
     }
     
-    private func allCurrentSettings() -> Dictionary<String, AnyObject> {
+    fileprivate func allCurrentSettings() -> Dictionary<String, AnyObject> {
         var updatedSettings = Dictionary<String, AnyObject>()
-        updatedSettings["start"] = self.start
-        updatedSettings["end"] = self.end
-        updatedSettings["title"] = self.title
-        updatedSettings["weekdaysOnly"] = self.weekdaysOnly
+        updatedSettings["start"] = self.start as AnyObject?
+        updatedSettings["end"] = self.end as AnyObject?
+        updatedSettings["title"] = self.title as AnyObject?
+        updatedSettings["weekdaysOnly"] = self.weekdaysOnly as AnyObject?
 
         return updatedSettings;
     }
     
-    public func FullDescription(currentDate: NSDate) -> String {        
+    open func FullDescription(_ currentDate: Date) -> String {        
         return String(format: "%d %@", self.DaysLeft(currentDate), self.Description(currentDate))
     }
     
     
-    public func Description(currentDate: NSDate) -> String {
+    open func Description(_ currentDate: Date) -> String {
         let daysLeft: Int = self.DaysLeft(currentDate)
         
         var titleSuffix = "left"
@@ -284,24 +284,24 @@ public class DaysLeftModel: BLUserSettings
     ///
     /// param: notification The incoming notification
     @objc
-    private func updateKVStoreItems(notification: NSNotification) {
+    fileprivate func updateKVStoreItems(_ notification: Notification) {
         NSLog("Detected iCloud key-value storage change")
         
         // Get the list of keys that changed
-        let userInfo: NSDictionary = notification.userInfo!
-        let reasonForChange: AnyObject? = userInfo.objectForKey(NSUbiquitousKeyValueStoreChangeReasonKey)
+        let userInfo: NSDictionary = notification.userInfo! as NSDictionary
+        let reasonForChange: AnyObject? = userInfo.object(forKey: NSUbiquitousKeyValueStoreChangeReasonKey) as AnyObject?
         
         // Assuming we have a valid reason for the change
         if let downcastedReason = reasonForChange as? NSNumber {
-            let reason: NSInteger = downcastedReason.integerValue
+            let reason: NSInteger = downcastedReason.intValue
             if ((reason == NSUbiquitousKeyValueStoreServerChange) || (reason == NSUbiquitousKeyValueStoreInitialSyncChange)) {
                 // If something is changing externally, get the changes and update the corresponding keys locally.
-                let changedKeys = userInfo.objectForKey(NSUbiquitousKeyValueStoreChangedKeysKey) as! [String]
-                let store: NSUbiquitousKeyValueStore = NSUbiquitousKeyValueStore.defaultStore();
+                let changedKeys = userInfo.object(forKey: NSUbiquitousKeyValueStoreChangedKeysKey) as! [String]
+                let store: NSUbiquitousKeyValueStore = NSUbiquitousKeyValueStore.default();
                 
                 // This loop assumes you are using the same key names in both the user defaults database and the iCloud key-value store
                 for key:String in changedKeys {
-                    let settingValue: AnyObject? = store.objectForKey(key)
+                    let settingValue: AnyObject? = store.object(forKey: key) as AnyObject?
                     self.writeObjectToStore(settingValue!, key: key)
                     print("iCloud change for \(key): \(settingValue)")
                 }
@@ -309,7 +309,7 @@ public class DaysLeftModel: BLUserSettings
                 store.synchronize()
                 
                 // Finally send a notification for the view controllers to refresh
-                NSNotificationCenter.defaultCenter().postNotificationName(DaysLeftModel.iCloudSettingsNotification, object:nil, userInfo:nil)
+                NotificationCenter.default.post(name: Notification.Name(rawValue: DaysLeftModel.iCloudSettingsNotification), object:nil, userInfo:nil)
                 NSLog("Sent notification for iCloud change")
             }
         } else {
