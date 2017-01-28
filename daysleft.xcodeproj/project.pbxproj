@@ -51,6 +51,7 @@
 		52D18D711BC8282A00DB7E3A /* DaysLeftModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CFBF1D1A8B642C005234FB /* DaysLeftModel.swift */; };
 		52D18D721BC8283300DB7E3A /* BLUserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FAB1181A9231970039691E /* BLUserSettings.swift */; };
 		52D25F3C1BCB8595002E4C76 /* ComplicationsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D25F3B1BCB8595002E4C76 /* ComplicationsDataSource.swift */; };
+		52E735DF1E3CA0D1005FD8A7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52E735DE1E3CA0D1005FD8A7 /* GoogleService-Info.plist */; };
 		52FAB11C1A9240490039691E /* DefaultPreferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52FAB11B1A9240490039691E /* DefaultPreferences.plist */; };
 		52FAB11E1A9381B70039691E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FAB11D1A9381B70039691E /* SettingsViewController.swift */; };
 		52FBB73C1BC92D5300B426C0 /* daysleftlibrary.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5295EDD01A94AE53007EF7E7 /* daysleftlibrary.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -212,6 +213,7 @@
 		52CFBF1D1A8B642C005234FB /* DaysLeftModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DaysLeftModel.swift; path = ../daysleft/DaysLeftModel.swift; sourceTree = "<group>"; };
 		52D25F3B1BCB8595002E4C76 /* ComplicationsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComplicationsDataSource.swift; sourceTree = "<group>"; };
 		52D937391BBFCEF200B215BC /* WatchDaysLeftModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WatchDaysLeftModel.swift; path = ../daysleftlibrary/WatchDaysLeftModel.swift; sourceTree = "<group>"; };
+		52E735DE1E3CA0D1005FD8A7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		52FAB1181A9231970039691E /* BLUserSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BLUserSettings.swift; path = ../daysleft/BLUserSettings.swift; sourceTree = "<group>"; };
 		52FAB11A1A923F500039691E /* daysleft.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = daysleft.entitlements; sourceTree = "<group>"; };
 		52FAB11B1A9240490039691E /* DefaultPreferences.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DefaultPreferences.plist; sourceTree = "<group>"; };
@@ -506,6 +508,7 @@
 		52CFBEFB1A8B631B005234FB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				52E735DE1E3CA0D1005FD8A7 /* GoogleService-Info.plist */,
 				52CFBEFC1A8B631B005234FB /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -694,7 +697,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Brave Location Software";
 				TargetAttributes = {
 					5295EDCF1A94AE53007EF7E7 = {
@@ -855,6 +858,7 @@
 			files = (
 				527E15401D83F80300D81B15 /* gallery.ckcomplication in Resources */,
 				52CFBF031A8B631B005234FB /* Main.storyboard in Resources */,
+				52E735DF1E3CA0D1005FD8A7 /* GoogleService-Info.plist in Resources */,
 				52FAB11C1A9240490039691E /* DefaultPreferences.plist in Resources */,
 				52CFBF051A8B631B005234FB /* Images.xcassets in Resources */,
 			);
@@ -1270,7 +1274,7 @@
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
@@ -1301,7 +1305,7 @@
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
