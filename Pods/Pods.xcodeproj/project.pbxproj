@@ -1,0 +1,952 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0950B06F59DD9EDE0084A50E945E51FB /* Pods-daysleft WatchKit Extension-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 00049760AFB5495C9EC8530C8A1D5A18 /* Pods-daysleft WatchKit Extension-dummy.m */; };
+		1451B35AF0A9EE2EF459E988EF36F5FC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9AE61DEB7F70B8D5B09290911F0E1C8 /* Foundation.framework */; };
+		3BD9795BE140B93A7EED016723CFEBDC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9AE61DEB7F70B8D5B09290911F0E1C8 /* Foundation.framework */; };
+		5E8EFA13FB2B865212009452319B665B /* Pods-dayslefttoday-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C69797728740C719F7602F86968A6884 /* Pods-dayslefttoday-dummy.m */; };
+		66E3D185BFC8BB98961B546B2BC61180 /* Pods-daysleft-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DC27B065F3C37EFC1A1CEA85E612D072 /* Pods-daysleft-dummy.m */; };
+		6F20C6D90FFA1F7997FE6B828C0F851F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7752798AED75D2190758A21548AB728 /* Foundation.framework */; };
+		80471CF8CD37543BA0AC512D240BF5C1 /* Pods-daysleft WatchKit App-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C593FEBA41026FCE2BE5918090658797 /* Pods-daysleft WatchKit App-dummy.m */; };
+		BAC3FEF21C24484D4148746D3A52C848 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9AE61DEB7F70B8D5B09290911F0E1C8 /* Foundation.framework */; };
+		C8707AF2E681BCD540629A9898723FAA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7752798AED75D2190758A21548AB728 /* Foundation.framework */; };
+		CDB3EB5EA518FF311033444BAC4FA962 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9AE61DEB7F70B8D5B09290911F0E1C8 /* Foundation.framework */; };
+		DA8F9FA4638D280798CE4B8A7F108F6C /* Pods-daysleftlibrary-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B12FBDE81939B47EE7DFD609DD9728C3 /* Pods-daysleftlibrary-dummy.m */; };
+		FEB22E38BDA492AFF288A9F01EE5EEAF /* Pods-MessagesExtension-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A29277559AF7F2B74DA103CD2B6FECF /* Pods-MessagesExtension-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		00049760AFB5495C9EC8530C8A1D5A18 /* Pods-daysleft WatchKit Extension-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-daysleft WatchKit Extension-dummy.m"; sourceTree = "<group>"; };
+		008A523D14B832A16D278472975357CD /* Pods-daysleft WatchKit App-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-daysleft WatchKit App-acknowledgements.plist"; sourceTree = "<group>"; };
+		0AA73702481613685D27500F24A20DAA /* libPods-daysleft WatchKit Extension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-daysleft WatchKit Extension.a"; path = "libPods-daysleft WatchKit Extension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		200C81134ACADBF4B01AF7F1C51DE9EC /* Crashlytics.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Crashlytics.h; path = iOS/Crashlytics.framework/Headers/Crashlytics.h; sourceTree = "<group>"; };
+		256E01290F5B5BDC6E2F44D541EC7338 /* Pods-daysleftlibrary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-daysleftlibrary.debug.xcconfig"; sourceTree = "<group>"; };
+		28C5731636A3D1A496F183DAA49987C3 /* Pods-MessagesExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MessagesExtension.release.xcconfig"; sourceTree = "<group>"; };
+		29DE526E5B1D3B37719460B12B391B91 /* CLSLogging.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSLogging.h; path = iOS/Crashlytics.framework/Headers/CLSLogging.h; sourceTree = "<group>"; };
+		3C4F3C3F7112ACE6A5F85467298E1829 /* Pods-MessagesExtension-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MessagesExtension-acknowledgements.markdown"; sourceTree = "<group>"; };
+		422D6CACDEF8797F1C9DAFC33CD05271 /* Pods-MessagesExtension-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MessagesExtension-resources.sh"; sourceTree = "<group>"; };
+		45D4A8EDCA4D9205081A52F24A4654FD /* Pods-daysleft-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-daysleft-frameworks.sh"; sourceTree = "<group>"; };
+		461922C75BDC0250F15813DD4191236F /* Pods-daysleftlibrary-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-daysleftlibrary-acknowledgements.markdown"; sourceTree = "<group>"; };
+		494C290BDBEAED23BA5743A3CE2FA0D1 /* FABAttributes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FABAttributes.h; path = iOS/Fabric.framework/Headers/FABAttributes.h; sourceTree = "<group>"; };
+		4B54DF405B5752D857FB376E46BEFE9F /* Pods-daysleft WatchKit Extension-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-daysleft WatchKit Extension-acknowledgements.plist"; sourceTree = "<group>"; };
+		4E4B12FD2299E1DEFB758EC65F132193 /* Pods-daysleft WatchKit App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-daysleft WatchKit App.debug.xcconfig"; sourceTree = "<group>"; };
+		51D95805F538BA464E85B74A9F663753 /* Pods-daysleft-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-daysleft-acknowledgements.markdown"; sourceTree = "<group>"; };
+		521AD2D30D4C5D9CBD9D6189E51E3C56 /* libPods-daysleftlibrary.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-daysleftlibrary.a"; path = "libPods-daysleftlibrary.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		59F007BF1006F3F05E855CB9967F5735 /* Pods-daysleft.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-daysleft.debug.xcconfig"; sourceTree = "<group>"; };
+		5A29277559AF7F2B74DA103CD2B6FECF /* Pods-MessagesExtension-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MessagesExtension-dummy.m"; sourceTree = "<group>"; };
+		5A7F45A707320C78DEDADB60B436A9B6 /* Pods-MessagesExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MessagesExtension.debug.xcconfig"; sourceTree = "<group>"; };
+		5B0AC4555A08701A9F1760172610E0AF /* ANSCompatibility.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ANSCompatibility.h; path = iOS/Crashlytics.framework/Headers/ANSCompatibility.h; sourceTree = "<group>"; };
+		63FA8412E0BA564D36676E7C9D09FAC4 /* Pods-daysleft WatchKit Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-daysleft WatchKit Extension.release.xcconfig"; sourceTree = "<group>"; };
+		69B091ED15DBF16DEDFBD07CC1D3DA14 /* Pods-daysleft WatchKit App-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-daysleft WatchKit App-frameworks.sh"; sourceTree = "<group>"; };
+		7079A13C6D1DC21903E5C36DE6A2BF25 /* Pods-daysleft WatchKit App-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-daysleft WatchKit App-acknowledgements.markdown"; sourceTree = "<group>"; };
+		744A8C48E1E0B0C7DCD37F3917FADB19 /* Pods-dayslefttoday-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-dayslefttoday-acknowledgements.plist"; sourceTree = "<group>"; };
+		7540EEDDDA2A2693228E61A37A2DC99F /* libPods-daysleft WatchKit App.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-daysleft WatchKit App.a"; path = "libPods-daysleft WatchKit App.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		77E61E5AEE28C6212863E80F0B55A849 /* Pods-daysleft WatchKit App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-daysleft WatchKit App.release.xcconfig"; sourceTree = "<group>"; };
+		82981FB005A4ED4C556297735FD4ACED /* Fabric.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Fabric.h; path = iOS/Fabric.framework/Headers/Fabric.h; sourceTree = "<group>"; };
+		856A7EF81F93DD33C78FA7140067110C /* CLSReport.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSReport.h; path = iOS/Crashlytics.framework/Headers/CLSReport.h; sourceTree = "<group>"; };
+		86EE1FCFA82EC3C48FA3DD685B971CE2 /* Pods-dayslefttoday-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-dayslefttoday-resources.sh"; sourceTree = "<group>"; };
+		8981CFFFC7C777B052DE3A11E51CB2DF /* libPods-MessagesExtension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-MessagesExtension.a"; path = "libPods-MessagesExtension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		89E7BA072E55DF9B868164E6ACC2485B /* Pods-dayslefttoday.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-dayslefttoday.release.xcconfig"; sourceTree = "<group>"; };
+		8AF19FF6175CDF84C9738B899E0507AC /* Pods-daysleft WatchKit App-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-daysleft WatchKit App-resources.sh"; sourceTree = "<group>"; };
+		8DB331D62E03B90D571016097AB0A7E0 /* CLSAttributes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSAttributes.h; path = iOS/Crashlytics.framework/Headers/CLSAttributes.h; sourceTree = "<group>"; };
+		8DDD360B4D104941991F5FE2DC42AECA /* Pods-daysleft WatchKit Extension-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-daysleft WatchKit Extension-frameworks.sh"; sourceTree = "<group>"; };
+		92972CC1C216B42A9AB4B6EABB27FC16 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = iOS/Fabric.framework; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9933E79B897917FB3B132175B87316E8 /* Pods-daysleft-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-daysleft-resources.sh"; sourceTree = "<group>"; };
+		A01C797CF812BA9CB5E98558715D33CA /* Pods-MessagesExtension-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MessagesExtension-acknowledgements.plist"; sourceTree = "<group>"; };
+		A61E08527EFC3DBEDD4BFA0B5C45104C /* Answers.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Answers.h; path = iOS/Crashlytics.framework/Headers/Answers.h; sourceTree = "<group>"; };
+		A8A7EEEE24873AADE08C352BF01054FF /* Pods-daysleft WatchKit Extension-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-daysleft WatchKit Extension-resources.sh"; sourceTree = "<group>"; };
+		B12FBDE81939B47EE7DFD609DD9728C3 /* Pods-daysleftlibrary-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-daysleftlibrary-dummy.m"; sourceTree = "<group>"; };
+		B5F1467ECB502A579CB67F8CAF9832DA /* libPods-dayslefttoday.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-dayslefttoday.a"; path = "libPods-dayslefttoday.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B7752798AED75D2190758A21548AB728 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS3.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		BD941B37090123AAAF64DB9631FA58D8 /* Pods-daysleft WatchKit Extension-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-daysleft WatchKit Extension-acknowledgements.markdown"; sourceTree = "<group>"; };
+		C1F314FE1DB7BEAE077E4AF76D461220 /* Pods-dayslefttoday.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-dayslefttoday.debug.xcconfig"; sourceTree = "<group>"; };
+		C593FEBA41026FCE2BE5918090658797 /* Pods-daysleft WatchKit App-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-daysleft WatchKit App-dummy.m"; sourceTree = "<group>"; };
+		C69797728740C719F7602F86968A6884 /* Pods-dayslefttoday-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-dayslefttoday-dummy.m"; sourceTree = "<group>"; };
+		CA445831B1946368A5C663A470911A46 /* Pods-daysleftlibrary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-daysleftlibrary.release.xcconfig"; sourceTree = "<group>"; };
+		CAB2B4A081B2A8A804F911916AB068E9 /* Pods-daysleftlibrary-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-daysleftlibrary-acknowledgements.plist"; sourceTree = "<group>"; };
+		CE32AFBDECD35F66B80B8D03C365B1E0 /* Pods-daysleft-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-daysleft-acknowledgements.plist"; sourceTree = "<group>"; };
+		CF3AF10CD316691CBCF5C516C785A9BC /* Pods-daysleft.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-daysleft.release.xcconfig"; sourceTree = "<group>"; };
+		D91AB1423EA65E5610666153A392F037 /* Pods-daysleftlibrary-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-daysleftlibrary-resources.sh"; sourceTree = "<group>"; };
+		DBA48C54AB315A7317F3DD387EF04883 /* CLSStackFrame.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSStackFrame.h; path = iOS/Crashlytics.framework/Headers/CLSStackFrame.h; sourceTree = "<group>"; };
+		DC27B065F3C37EFC1A1CEA85E612D072 /* Pods-daysleft-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-daysleft-dummy.m"; sourceTree = "<group>"; };
+		EAC88243AB9F702F3015F7068842116A /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = iOS/Crashlytics.framework; sourceTree = "<group>"; };
+		EDD8D53881FFB3791BAD82852F98E77B /* Pods-dayslefttoday-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-dayslefttoday-acknowledgements.markdown"; sourceTree = "<group>"; };
+		EE101058F1D31DDF04E2610D4735875E /* libPods-daysleft.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-daysleft.a"; path = "libPods-daysleft.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5CDF979633BB70FA572CF0D629F540C /* Pods-daysleft WatchKit Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-daysleft WatchKit Extension.debug.xcconfig"; sourceTree = "<group>"; };
+		F9AE61DEB7F70B8D5B09290911F0E1C8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2659E38702B35ACB8FFD117D27538A96 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C8707AF2E681BCD540629A9898723FAA /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2979D1D604FDE01ED13B1C5AF5E02937 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1451B35AF0A9EE2EF459E988EF36F5FC /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		363C890CBEC775BBE2A00FB731B2DF25 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDB3EB5EA518FF311033444BAC4FA962 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A3ADFBA679AE9183D1CB5233341F023 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BAC3FEF21C24484D4148746D3A52C848 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8F27545844552C38F3D3498804E5B16E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3BD9795BE140B93A7EED016723CFEBDC /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E39BB37326987BE07CA7342BBCF13301 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6F20C6D90FFA1F7997FE6B828C0F851F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		19923D019C837F9F0BE0A4AF23F3E829 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				F25D5A23731CEDB56BC8163C58629C3C /* Pods-daysleft */,
+				AFB815FE8B885BD82A5AF8D4802D5DA3 /* Pods-daysleft WatchKit App */,
+				79B0A2D41871C390BF558C0BC520A737 /* Pods-daysleft WatchKit Extension */,
+				28DA0AA333F14A5901A9D4F9F6CF9197 /* Pods-daysleftlibrary */,
+				DCB482736521AD13BB1ADEC759192FE9 /* Pods-dayslefttoday */,
+				5D3C248BC83AF84AFB8A043D4179AA0B /* Pods-MessagesExtension */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		1DECF7299F0875E9BCB9492390207331 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				26F9D6AB1F30C869A5F58AF8EF5A99C8 /* Crashlytics */,
+				D479A0301687E2A8F6F67D392B8551D2 /* Fabric */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		26F9D6AB1F30C869A5F58AF8EF5A99C8 /* Crashlytics */ = {
+			isa = PBXGroup;
+			children = (
+				5B0AC4555A08701A9F1760172610E0AF /* ANSCompatibility.h */,
+				A61E08527EFC3DBEDD4BFA0B5C45104C /* Answers.h */,
+				8DB331D62E03B90D571016097AB0A7E0 /* CLSAttributes.h */,
+				29DE526E5B1D3B37719460B12B391B91 /* CLSLogging.h */,
+				856A7EF81F93DD33C78FA7140067110C /* CLSReport.h */,
+				DBA48C54AB315A7317F3DD387EF04883 /* CLSStackFrame.h */,
+				200C81134ACADBF4B01AF7F1C51DE9EC /* Crashlytics.h */,
+				E268B07786115FF5D5DFF396150E695F /* Frameworks */,
+			);
+			name = Crashlytics;
+			path = Crashlytics;
+			sourceTree = "<group>";
+		};
+		28DA0AA333F14A5901A9D4F9F6CF9197 /* Pods-daysleftlibrary */ = {
+			isa = PBXGroup;
+			children = (
+				461922C75BDC0250F15813DD4191236F /* Pods-daysleftlibrary-acknowledgements.markdown */,
+				CAB2B4A081B2A8A804F911916AB068E9 /* Pods-daysleftlibrary-acknowledgements.plist */,
+				B12FBDE81939B47EE7DFD609DD9728C3 /* Pods-daysleftlibrary-dummy.m */,
+				D91AB1423EA65E5610666153A392F037 /* Pods-daysleftlibrary-resources.sh */,
+				256E01290F5B5BDC6E2F44D541EC7338 /* Pods-daysleftlibrary.debug.xcconfig */,
+				CA445831B1946368A5C663A470911A46 /* Pods-daysleftlibrary.release.xcconfig */,
+			);
+			name = "Pods-daysleftlibrary";
+			path = "Target Support Files/Pods-daysleftlibrary";
+			sourceTree = "<group>";
+		};
+		2DDA681774534EB985F60A3418A4C908 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				92972CC1C216B42A9AB4B6EABB27FC16 /* Fabric.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5D3C248BC83AF84AFB8A043D4179AA0B /* Pods-MessagesExtension */ = {
+			isa = PBXGroup;
+			children = (
+				3C4F3C3F7112ACE6A5F85467298E1829 /* Pods-MessagesExtension-acknowledgements.markdown */,
+				A01C797CF812BA9CB5E98558715D33CA /* Pods-MessagesExtension-acknowledgements.plist */,
+				5A29277559AF7F2B74DA103CD2B6FECF /* Pods-MessagesExtension-dummy.m */,
+				422D6CACDEF8797F1C9DAFC33CD05271 /* Pods-MessagesExtension-resources.sh */,
+				5A7F45A707320C78DEDADB60B436A9B6 /* Pods-MessagesExtension.debug.xcconfig */,
+				28C5731636A3D1A496F183DAA49987C3 /* Pods-MessagesExtension.release.xcconfig */,
+			);
+			name = "Pods-MessagesExtension";
+			path = "Target Support Files/Pods-MessagesExtension";
+			sourceTree = "<group>";
+		};
+		79B0A2D41871C390BF558C0BC520A737 /* Pods-daysleft WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				BD941B37090123AAAF64DB9631FA58D8 /* Pods-daysleft WatchKit Extension-acknowledgements.markdown */,
+				4B54DF405B5752D857FB376E46BEFE9F /* Pods-daysleft WatchKit Extension-acknowledgements.plist */,
+				00049760AFB5495C9EC8530C8A1D5A18 /* Pods-daysleft WatchKit Extension-dummy.m */,
+				8DDD360B4D104941991F5FE2DC42AECA /* Pods-daysleft WatchKit Extension-frameworks.sh */,
+				A8A7EEEE24873AADE08C352BF01054FF /* Pods-daysleft WatchKit Extension-resources.sh */,
+				F5CDF979633BB70FA572CF0D629F540C /* Pods-daysleft WatchKit Extension.debug.xcconfig */,
+				63FA8412E0BA564D36676E7C9D09FAC4 /* Pods-daysleft WatchKit Extension.release.xcconfig */,
+			);
+			name = "Pods-daysleft WatchKit Extension";
+			path = "Target Support Files/Pods-daysleft WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				8F91EE078EA3977443D1BDC2601132EF /* Frameworks */,
+				1DECF7299F0875E9BCB9492390207331 /* Pods */,
+				A3092B8504BE01C07A9C36E636B217CD /* Products */,
+				19923D019C837F9F0BE0A4AF23F3E829 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		8F91EE078EA3977443D1BDC2601132EF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BE50AB4B3645EA9432322BA2E72BE2F9 /* iOS */,
+				9880A75209637E3915A438772C6A676D /* watchOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9880A75209637E3915A438772C6A676D /* watchOS */ = {
+			isa = PBXGroup;
+			children = (
+				B7752798AED75D2190758A21548AB728 /* Foundation.framework */,
+			);
+			name = watchOS;
+			sourceTree = "<group>";
+		};
+		A3092B8504BE01C07A9C36E636B217CD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EE101058F1D31DDF04E2610D4735875E /* libPods-daysleft.a */,
+				7540EEDDDA2A2693228E61A37A2DC99F /* libPods-daysleft WatchKit App.a */,
+				0AA73702481613685D27500F24A20DAA /* libPods-daysleft WatchKit Extension.a */,
+				521AD2D30D4C5D9CBD9D6189E51E3C56 /* libPods-daysleftlibrary.a */,
+				B5F1467ECB502A579CB67F8CAF9832DA /* libPods-dayslefttoday.a */,
+				8981CFFFC7C777B052DE3A11E51CB2DF /* libPods-MessagesExtension.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AFB815FE8B885BD82A5AF8D4802D5DA3 /* Pods-daysleft WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				7079A13C6D1DC21903E5C36DE6A2BF25 /* Pods-daysleft WatchKit App-acknowledgements.markdown */,
+				008A523D14B832A16D278472975357CD /* Pods-daysleft WatchKit App-acknowledgements.plist */,
+				C593FEBA41026FCE2BE5918090658797 /* Pods-daysleft WatchKit App-dummy.m */,
+				69B091ED15DBF16DEDFBD07CC1D3DA14 /* Pods-daysleft WatchKit App-frameworks.sh */,
+				8AF19FF6175CDF84C9738B899E0507AC /* Pods-daysleft WatchKit App-resources.sh */,
+				4E4B12FD2299E1DEFB758EC65F132193 /* Pods-daysleft WatchKit App.debug.xcconfig */,
+				77E61E5AEE28C6212863E80F0B55A849 /* Pods-daysleft WatchKit App.release.xcconfig */,
+			);
+			name = "Pods-daysleft WatchKit App";
+			path = "Target Support Files/Pods-daysleft WatchKit App";
+			sourceTree = "<group>";
+		};
+		BE50AB4B3645EA9432322BA2E72BE2F9 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				F9AE61DEB7F70B8D5B09290911F0E1C8 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		D479A0301687E2A8F6F67D392B8551D2 /* Fabric */ = {
+			isa = PBXGroup;
+			children = (
+				494C290BDBEAED23BA5743A3CE2FA0D1 /* FABAttributes.h */,
+				82981FB005A4ED4C556297735FD4ACED /* Fabric.h */,
+				2DDA681774534EB985F60A3418A4C908 /* Frameworks */,
+			);
+			name = Fabric;
+			path = Fabric;
+			sourceTree = "<group>";
+		};
+		DCB482736521AD13BB1ADEC759192FE9 /* Pods-dayslefttoday */ = {
+			isa = PBXGroup;
+			children = (
+				EDD8D53881FFB3791BAD82852F98E77B /* Pods-dayslefttoday-acknowledgements.markdown */,
+				744A8C48E1E0B0C7DCD37F3917FADB19 /* Pods-dayslefttoday-acknowledgements.plist */,
+				C69797728740C719F7602F86968A6884 /* Pods-dayslefttoday-dummy.m */,
+				86EE1FCFA82EC3C48FA3DD685B971CE2 /* Pods-dayslefttoday-resources.sh */,
+				C1F314FE1DB7BEAE077E4AF76D461220 /* Pods-dayslefttoday.debug.xcconfig */,
+				89E7BA072E55DF9B868164E6ACC2485B /* Pods-dayslefttoday.release.xcconfig */,
+			);
+			name = "Pods-dayslefttoday";
+			path = "Target Support Files/Pods-dayslefttoday";
+			sourceTree = "<group>";
+		};
+		E268B07786115FF5D5DFF396150E695F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EAC88243AB9F702F3015F7068842116A /* Crashlytics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F25D5A23731CEDB56BC8163C58629C3C /* Pods-daysleft */ = {
+			isa = PBXGroup;
+			children = (
+				51D95805F538BA464E85B74A9F663753 /* Pods-daysleft-acknowledgements.markdown */,
+				CE32AFBDECD35F66B80B8D03C365B1E0 /* Pods-daysleft-acknowledgements.plist */,
+				DC27B065F3C37EFC1A1CEA85E612D072 /* Pods-daysleft-dummy.m */,
+				45D4A8EDCA4D9205081A52F24A4654FD /* Pods-daysleft-frameworks.sh */,
+				9933E79B897917FB3B132175B87316E8 /* Pods-daysleft-resources.sh */,
+				59F007BF1006F3F05E855CB9967F5735 /* Pods-daysleft.debug.xcconfig */,
+				CF3AF10CD316691CBCF5C516C785A9BC /* Pods-daysleft.release.xcconfig */,
+			);
+			name = "Pods-daysleft";
+			path = "Target Support Files/Pods-daysleft";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1525D2451956BF357C50FB2517466194 /* Pods-daysleft */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3345EF4C4884F3DA9B748B2624CD36E4 /* Build configuration list for PBXNativeTarget "Pods-daysleft" */;
+			buildPhases = (
+				B9FDB1C11CC8F52DB4C94D9A3DB0F4FE /* Sources */,
+				2979D1D604FDE01ED13B1C5AF5E02937 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-daysleft";
+			productName = "Pods-daysleft";
+			productReference = EE101058F1D31DDF04E2610D4735875E /* libPods-daysleft.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		4E2A4A17578F2442F9EB75D9501C0218 /* Pods-MessagesExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 78C39FB119C8BF044566CE5731C9AB9D /* Build configuration list for PBXNativeTarget "Pods-MessagesExtension" */;
+			buildPhases = (
+				40B763564CFDE06FEEE5C0274AE466F3 /* Sources */,
+				363C890CBEC775BBE2A00FB731B2DF25 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-MessagesExtension";
+			productName = "Pods-MessagesExtension";
+			productReference = 8981CFFFC7C777B052DE3A11E51CB2DF /* libPods-MessagesExtension.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		6D37E51B7F43E2F0D7F88E50D5D8BD06 /* Pods-daysleftlibrary */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04897342A6AF20C251D132E9D04511CE /* Build configuration list for PBXNativeTarget "Pods-daysleftlibrary" */;
+			buildPhases = (
+				119A2FFF550DE984FD381BDA9A5961EA /* Sources */,
+				8F27545844552C38F3D3498804E5B16E /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-daysleftlibrary";
+			productName = "Pods-daysleftlibrary";
+			productReference = 521AD2D30D4C5D9CBD9D6189E51E3C56 /* libPods-daysleftlibrary.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		96B989179E166393307B06916CE18119 /* Pods-dayslefttoday */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9ACB2FD99837E7AE2FE54211A51C4544 /* Build configuration list for PBXNativeTarget "Pods-dayslefttoday" */;
+			buildPhases = (
+				68305C4EB0713FDEA7524326B3F518CF /* Sources */,
+				3A3ADFBA679AE9183D1CB5233341F023 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-dayslefttoday";
+			productName = "Pods-dayslefttoday";
+			productReference = B5F1467ECB502A579CB67F8CAF9832DA /* libPods-dayslefttoday.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		CA54EB8BE896474AC2B0BB6069FE33BA /* Pods-daysleft WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6C0CB4FB5CA924553FB0F644B775CC3A /* Build configuration list for PBXNativeTarget "Pods-daysleft WatchKit App" */;
+			buildPhases = (
+				FAD60FFD976640967FEB9B067BA48CCC /* Sources */,
+				2659E38702B35ACB8FFD117D27538A96 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-daysleft WatchKit App";
+			productName = "Pods-daysleft WatchKit App";
+			productReference = 7540EEDDDA2A2693228E61A37A2DC99F /* libPods-daysleft WatchKit App.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		F8BE274390EE80858559FB30CFC9A0C3 /* Pods-daysleft WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 60D2780427A36FF2CCEEE6C63684C25B /* Build configuration list for PBXNativeTarget "Pods-daysleft WatchKit Extension" */;
+			buildPhases = (
+				9D322E69AD3401D95E1F63975DC2648F /* Sources */,
+				E39BB37326987BE07CA7342BBCF13301 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-daysleft WatchKit Extension";
+			productName = "Pods-daysleft WatchKit Extension";
+			productReference = 0AA73702481613685D27500F24A20DAA /* libPods-daysleft WatchKit Extension.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = A3092B8504BE01C07A9C36E636B217CD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1525D2451956BF357C50FB2517466194 /* Pods-daysleft */,
+				CA54EB8BE896474AC2B0BB6069FE33BA /* Pods-daysleft WatchKit App */,
+				F8BE274390EE80858559FB30CFC9A0C3 /* Pods-daysleft WatchKit Extension */,
+				6D37E51B7F43E2F0D7F88E50D5D8BD06 /* Pods-daysleftlibrary */,
+				96B989179E166393307B06916CE18119 /* Pods-dayslefttoday */,
+				4E2A4A17578F2442F9EB75D9501C0218 /* Pods-MessagesExtension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		119A2FFF550DE984FD381BDA9A5961EA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA8F9FA4638D280798CE4B8A7F108F6C /* Pods-daysleftlibrary-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		40B763564CFDE06FEEE5C0274AE466F3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FEB22E38BDA492AFF288A9F01EE5EEAF /* Pods-MessagesExtension-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		68305C4EB0713FDEA7524326B3F518CF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5E8EFA13FB2B865212009452319B665B /* Pods-dayslefttoday-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9D322E69AD3401D95E1F63975DC2648F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0950B06F59DD9EDE0084A50E945E51FB /* Pods-daysleft WatchKit Extension-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B9FDB1C11CC8F52DB4C94D9A3DB0F4FE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				66E3D185BFC8BB98961B546B2BC61180 /* Pods-daysleft-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAD60FFD976640967FEB9B067BA48CCC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80471CF8CD37543BA0AC512D240BF5C1 /* Pods-daysleft WatchKit App-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1434FFF189591253BE5A203967EF0264 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4E4B12FD2299E1DEFB758EC65F132193 /* Pods-daysleft WatchKit App.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+			};
+			name = Debug;
+		};
+		1F1ABD52FC95BA9E1FDC329C29EA10DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 256E01290F5B5BDC6E2F44D541EC7338 /* Pods-daysleftlibrary.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		2ACE844ECCB44DE6D6B80A378537BDA5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C1F314FE1DB7BEAE077E4AF76D461220 /* Pods-dayslefttoday.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		4515F062077403A2B66EDEC80F035E1D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 63FA8412E0BA564D36676E7C9D09FAC4 /* Pods-daysleft WatchKit Extension.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+			};
+			name = Release;
+		};
+		4C490A4A45011E1D6DD7AF407897EA27 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CA445831B1946368A5C663A470911A46 /* Pods-daysleftlibrary.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		5CBAF694392126FAB160C5DDA1799774 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CF3AF10CD316691CBCF5C516C785A9BC /* Pods-daysleft.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		7F5E284D8677A8AC79F2072DD8D54FA3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+			};
+			name = Debug;
+		};
+		AB1A91387F8A88CD1A38F748FF5DF610 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 28C5731636A3D1A496F183DAA49987C3 /* Pods-MessagesExtension.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		ADB0FAB602BD1580512ECD0662341A36 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F5CDF979633BB70FA572CF0D629F540C /* Pods-daysleft WatchKit Extension.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+			};
+			name = Debug;
+		};
+		B9E79DF97D1E7B0D32CE8DD0A241B5FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 77E61E5AEE28C6212863E80F0B55A849 /* Pods-daysleft WatchKit App.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+			};
+			name = Release;
+		};
+		CC567ECDC72232516177B2E12E8DE9F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+			};
+			name = Release;
+		};
+		CF3AAF46D0B6B21F7BA9D4A658D8FFC8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5A7F45A707320C78DEDADB60B436A9B6 /* Pods-MessagesExtension.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		FC5C9522D68567AFFAF5F2BB0DCE2470 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 89E7BA072E55DF9B868164E6ACC2485B /* Pods-dayslefttoday.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		FF6923B7CC52B547913FC0EB41450EB7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 59F007BF1006F3F05E855CB9967F5735 /* Pods-daysleft.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		04897342A6AF20C251D132E9D04511CE /* Build configuration list for PBXNativeTarget "Pods-daysleftlibrary" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F1ABD52FC95BA9E1FDC329C29EA10DE /* Debug */,
+				4C490A4A45011E1D6DD7AF407897EA27 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7F5E284D8677A8AC79F2072DD8D54FA3 /* Debug */,
+				CC567ECDC72232516177B2E12E8DE9F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3345EF4C4884F3DA9B748B2624CD36E4 /* Build configuration list for PBXNativeTarget "Pods-daysleft" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF6923B7CC52B547913FC0EB41450EB7 /* Debug */,
+				5CBAF694392126FAB160C5DDA1799774 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		60D2780427A36FF2CCEEE6C63684C25B /* Build configuration list for PBXNativeTarget "Pods-daysleft WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ADB0FAB602BD1580512ECD0662341A36 /* Debug */,
+				4515F062077403A2B66EDEC80F035E1D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6C0CB4FB5CA924553FB0F644B775CC3A /* Build configuration list for PBXNativeTarget "Pods-daysleft WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1434FFF189591253BE5A203967EF0264 /* Debug */,
+				B9E79DF97D1E7B0D32CE8DD0A241B5FC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		78C39FB119C8BF044566CE5731C9AB9D /* Build configuration list for PBXNativeTarget "Pods-MessagesExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF3AAF46D0B6B21F7BA9D4A658D8FFC8 /* Debug */,
+				AB1A91387F8A88CD1A38F748FF5DF610 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9ACB2FD99837E7AE2FE54211A51C4544 /* Build configuration list for PBXNativeTarget "Pods-dayslefttoday" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2ACE844ECCB44DE6D6B80A378537BDA5 /* Debug */,
+				FC5C9522D68567AFFAF5F2BB0DCE2470 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
