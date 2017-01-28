@@ -120,7 +120,7 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.view.endEditing(true)
         
-        if (indexPath.section == 5) {
+        if (indexPath.section == 4) {
             var url: URL? = nil;
             
             if (indexPath.row == 0) {
