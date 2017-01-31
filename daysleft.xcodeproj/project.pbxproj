@@ -652,6 +652,7 @@
 				523443671BBAFBEF00E95BA4 /* Embed App Extensions */,
 				20118CCB11B59DAA0A7CA7B7 /* Frameworks */,
 				DC7A9E4EC91A911498B7921D /* [CP] Copy Pods Resources */,
+				5242D8411E40A20F00BF6FEE /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -911,6 +912,19 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
+		};
+		5242D8411E40A20F00BF6FEE /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "git=`sh /etc/profile; which git`\nappBuild=`$git rev-list --all |wc -l`\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $appBuild\" \"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\necho \"Updated ${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"";
 		};
 		5244C03F1BC38D4400D57F28 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
