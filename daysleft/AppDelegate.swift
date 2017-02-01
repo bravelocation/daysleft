@@ -10,6 +10,8 @@ import UIKit
 import Fabric
 import Crashlytics
 import daysleftlibrary
+import GoogleMobileAds
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -39,6 +41,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Setup push notifications (if required) to ensure the badge gets updated
         self.azureNotifications.setupNotifications(false)
+        
+        // Use Firebase library to configure APIs
+        FIRApp.configure()
+        GADMobileAds.configure(withApplicationID: "ca-app-pub-6795405439060738~5447156632")
 
         return true
     }

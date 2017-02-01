@@ -4,6 +4,8 @@
 target 'daysleft' do
     pod 'Fabric'
     pod 'Crashlytics'
+    pod 'Firebase/Core'
+    pod 'Firebase/AdMob'
 end
 
 target 'daysleft WatchKit App' do

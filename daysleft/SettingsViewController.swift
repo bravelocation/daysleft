@@ -9,6 +9,8 @@
 import UIKit
 import SafariServices
 import daysleftlibrary
+import GoogleMobileAds
+import Firebase
 
 class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafariViewControllerDelegate {
     
@@ -20,6 +22,7 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
     @IBOutlet weak var labelDaysLength: UILabel!
     @IBOutlet weak var labelVersion: UILabel!
     @IBOutlet weak var switchShowBadge: UISwitch!
+    @IBOutlet weak var bannerView: GADBannerView!
     
     var dateFormatter: DateFormatter = DateFormatter()
     
@@ -57,6 +60,18 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
 
         // Set up the delegate of text field for handling return below
         self.textTitle.delegate = self
+        
+        // Setup ads
+        self.bannerView.adUnitID = "ca-app-pub-6795405439060738/6923889836"
+        self.bannerView.rootViewController = self
+        
+        let request = GADRequest()
+        
+        #if DEBUG
+            request.testDevices = [kGADSimulatorID]
+        #endif
+        
+        self.bannerView.load(request)
         
         // Add version number
         let infoDictionary = Bundle.main
