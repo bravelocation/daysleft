@@ -8,7 +8,7 @@
 
 import UIKit
 
-let π:CGFloat = CGFloat(M_PI)
+let π:CGFloat = CGFloat(Double.pi)
 
 open class CounterView: UIView {
     

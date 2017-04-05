@@ -16,5 +16,7 @@
 	<false/>
 	<key>showBadge</key>
 	<false/>
+	<key>adsFree</key>
+	<false/>
 </dict>
 </plist>

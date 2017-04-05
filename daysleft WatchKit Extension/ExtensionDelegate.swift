@@ -54,6 +54,6 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
             }
         })
         
-        print("Setup background task for \(twoHoursTime)")
+        print("Setup background task for \(String(describing: twoHoursTime))")
     }
 }

@@ -9,18 +9,18 @@
 /* Begin PBXBuildFile section */
 		0950B06F59DD9EDE0084A50E945E51FB /* Pods-daysleft WatchKit Extension-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 00049760AFB5495C9EC8530C8A1D5A18 /* Pods-daysleft WatchKit Extension-dummy.m */; };
 		0DA51072B6AC8810702F5559D81B05C2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9AE61DEB7F70B8D5B09290911F0E1C8 /* Foundation.framework */; };
-		1B6053DB4F426B47C4A91E97990824D3 /* GoogleToolboxForMac-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E6E9D391CD1A754DFB4926D59E0A530 /* GoogleToolboxForMac-dummy.m */; };
+		1B6053DB4F426B47C4A91E97990824D3 /* GoogleToolboxForMac-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FEB9A0494940196EFD2D069FE26C2D /* GoogleToolboxForMac-dummy.m */; };
 		3BD9795BE140B93A7EED016723CFEBDC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9AE61DEB7F70B8D5B09290911F0E1C8 /* Foundation.framework */; };
-		3D5A8358B3CE03D143C39C4BF52B34D3 /* GTMNSData+zlib.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F0F1B2D80CA86E8E04E1874A953A91 /* GTMNSData+zlib.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		3D5A8358B3CE03D143C39C4BF52B34D3 /* GTMNSData+zlib.m in Sources */ = {isa = PBXBuildFile; fileRef = 306D4E9D34ECCAF125D3D9FBC6C5E661 /* GTMNSData+zlib.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 		5130B1B7B235899CCAD7CEF3CB9CF65F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9AE61DEB7F70B8D5B09290911F0E1C8 /* Foundation.framework */; };
 		5E8EFA13FB2B865212009452319B665B /* Pods-dayslefttoday-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C69797728740C719F7602F86968A6884 /* Pods-dayslefttoday-dummy.m */; };
-		6B02824B166AF4649072CAB930283EEA /* GTMDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = CB71C1A5C44E865B6D5792B078984697 /* GTMDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6B02824B166AF4649072CAB930283EEA /* GTMDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = E19526E1F8DF64F7A75263CD5A2903D2 /* GTMDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6F20C6D90FFA1F7997FE6B828C0F851F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7752798AED75D2190758A21548AB728 /* Foundation.framework */; };
 		80471CF8CD37543BA0AC512D240BF5C1 /* Pods-daysleft WatchKit App-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C593FEBA41026FCE2BE5918090658797 /* Pods-daysleft WatchKit App-dummy.m */; };
 		AE183667A0BFE3EEA4C5C4E573214CB8 /* Pods-daysleft-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DC27B065F3C37EFC1A1CEA85E612D072 /* Pods-daysleft-dummy.m */; };
 		BAC3FEF21C24484D4148746D3A52C848 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9AE61DEB7F70B8D5B09290911F0E1C8 /* Foundation.framework */; };
 		C8707AF2E681BCD540629A9898723FAA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7752798AED75D2190758A21548AB728 /* Foundation.framework */; };
-		CBC7548501161D689ACF033CA42AA1AB /* GTMNSData+zlib.h in Headers */ = {isa = PBXBuildFile; fileRef = FB95B4F2541DDE472883AA0DDB9B71F3 /* GTMNSData+zlib.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CBC7548501161D689ACF033CA42AA1AB /* GTMNSData+zlib.h in Headers */ = {isa = PBXBuildFile; fileRef = 4078C35D246B2110A53532C1A2889BEB /* GTMNSData+zlib.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CDB3EB5EA518FF311033444BAC4FA962 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9AE61DEB7F70B8D5B09290911F0E1C8 /* Foundation.framework */; };
 		DA8F9FA4638D280798CE4B8A7F108F6C /* Pods-daysleftlibrary-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B12FBDE81939B47EE7DFD609DD9728C3 /* Pods-daysleftlibrary-dummy.m */; };
 		FEB22E38BDA492AFF288A9F01EE5EEAF /* Pods-MessagesExtension-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A29277559AF7F2B74DA103CD2B6FECF /* Pods-MessagesExtension-dummy.m */; };
@@ -39,36 +39,36 @@
 /* Begin PBXFileReference section */
 		00049760AFB5495C9EC8530C8A1D5A18 /* Pods-daysleft WatchKit Extension-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-daysleft WatchKit Extension-dummy.m"; sourceTree = "<group>"; };
 		008A523D14B832A16D278472975357CD /* Pods-daysleft WatchKit App-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-daysleft WatchKit App-acknowledgements.plist"; sourceTree = "<group>"; };
-		0E4B8B0FAB5F0791491670164EF46B68 /* GoogleToolboxForMac-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GoogleToolboxForMac-prefix.pch"; sourceTree = "<group>"; };
+		105C033FEDF5B399B73BDE2CB7CC5DC9 /* GoogleToolboxForMac-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GoogleToolboxForMac-prefix.pch"; sourceTree = "<group>"; };
 		1521A24E2BA82670499B0A9C9B76540F /* libPods-daysleft.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-daysleft.a"; path = "libPods-daysleft.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		191FA08AB5D53DC16B717F2C866EC628 /* CLSLogging.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSLogging.h; path = iOS/Crashlytics.framework/Headers/CLSLogging.h; sourceTree = "<group>"; };
-		1DEAAD9F9F4CDD287F53E494976F7A1B /* CLSAttributes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSAttributes.h; path = iOS/Crashlytics.framework/Headers/CLSAttributes.h; sourceTree = "<group>"; };
+		1DF1DEBFF85ABAB8991B732008576CBE /* Crashlytics.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Crashlytics.h; path = iOS/Crashlytics.framework/Headers/Crashlytics.h; sourceTree = "<group>"; };
 		256E01290F5B5BDC6E2F44D541EC7338 /* Pods-daysleftlibrary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-daysleftlibrary.debug.xcconfig"; sourceTree = "<group>"; };
+		27679DAEF83896E4C58A3C6F84C1804E /* CLSReport.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSReport.h; path = iOS/Crashlytics.framework/Headers/CLSReport.h; sourceTree = "<group>"; };
 		28C5731636A3D1A496F183DAA49987C3 /* Pods-MessagesExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MessagesExtension.release.xcconfig"; sourceTree = "<group>"; };
-		2E418813F99AECFD7349BDC7F7FC355A /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAnalytics.framework; path = Frameworks/frameworks/FirebaseAnalytics.framework; sourceTree = "<group>"; };
-		3720442E1DE86B86EBD5488937688340 /* Fabric.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Fabric.h; path = iOS/Fabric.framework/Headers/Fabric.h; sourceTree = "<group>"; };
-		3A9C273FBB806544ACED333BB4A03012 /* CLSStackFrame.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSStackFrame.h; path = iOS/Crashlytics.framework/Headers/CLSStackFrame.h; sourceTree = "<group>"; };
+		2FA7F9DDF62E2B7725C1DB96D86A155C /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAnalytics.framework; path = Frameworks/FirebaseAnalytics.framework; sourceTree = "<group>"; };
+		306D4E9D34ECCAF125D3D9FBC6C5E661 /* GTMNSData+zlib.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "GTMNSData+zlib.m"; path = "Foundation/GTMNSData+zlib.m"; sourceTree = "<group>"; };
 		3C4F3C3F7112ACE6A5F85467298E1829 /* Pods-MessagesExtension-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MessagesExtension-acknowledgements.markdown"; sourceTree = "<group>"; };
+		4078C35D246B2110A53532C1A2889BEB /* GTMNSData+zlib.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "GTMNSData+zlib.h"; path = "Foundation/GTMNSData+zlib.h"; sourceTree = "<group>"; };
+		40FEB9A0494940196EFD2D069FE26C2D /* GoogleToolboxForMac-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GoogleToolboxForMac-dummy.m"; sourceTree = "<group>"; };
 		422D6CACDEF8797F1C9DAFC33CD05271 /* Pods-MessagesExtension-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MessagesExtension-resources.sh"; sourceTree = "<group>"; };
 		45D4A8EDCA4D9205081A52F24A4654FD /* Pods-daysleft-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-daysleft-frameworks.sh"; sourceTree = "<group>"; };
 		461922C75BDC0250F15813DD4191236F /* Pods-daysleftlibrary-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-daysleftlibrary-acknowledgements.markdown"; sourceTree = "<group>"; };
 		4B54DF405B5752D857FB376E46BEFE9F /* Pods-daysleft WatchKit Extension-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-daysleft WatchKit Extension-acknowledgements.plist"; sourceTree = "<group>"; };
 		4E4B12FD2299E1DEFB758EC65F132193 /* Pods-daysleft WatchKit App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-daysleft WatchKit App.debug.xcconfig"; sourceTree = "<group>"; };
-		4E6E9D391CD1A754DFB4926D59E0A530 /* GoogleToolboxForMac-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GoogleToolboxForMac-dummy.m"; sourceTree = "<group>"; };
 		51D95805F538BA464E85B74A9F663753 /* Pods-daysleft-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-daysleft-acknowledgements.markdown"; sourceTree = "<group>"; };
 		53443452214A5029F4A76E3778FF0AF6 /* libGoogleToolboxForMac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libGoogleToolboxForMac.a; path = libGoogleToolboxForMac.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		58E30DEC2D9D6DB72115B40CFDDBE701 /* FirebaseInstanceID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseInstanceID.framework; path = Frameworks/FirebaseInstanceID.framework; sourceTree = "<group>"; };
 		59F007BF1006F3F05E855CB9967F5735 /* Pods-daysleft.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-daysleft.debug.xcconfig"; sourceTree = "<group>"; };
 		5A29277559AF7F2B74DA103CD2B6FECF /* Pods-MessagesExtension-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MessagesExtension-dummy.m"; sourceTree = "<group>"; };
 		5A7F45A707320C78DEDADB60B436A9B6 /* Pods-MessagesExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MessagesExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		5D0961E46917596EF8A4ABEC3A13D49E /* libPods-dayslefttoday.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-dayslefttoday.a"; path = "libPods-dayslefttoday.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5EE342992DAB47B8AD322047FF0B29E8 /* Answers.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Answers.h; path = iOS/Crashlytics.framework/Headers/Answers.h; sourceTree = "<group>"; };
+		5F70EEE1806C5545B84A1EFE284D1880 /* ANSCompatibility.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ANSCompatibility.h; path = iOS/Crashlytics.framework/Headers/ANSCompatibility.h; sourceTree = "<group>"; };
 		63FA8412E0BA564D36676E7C9D09FAC4 /* Pods-daysleft WatchKit Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-daysleft WatchKit Extension.release.xcconfig"; sourceTree = "<group>"; };
+		6906F449DBBB87ED3300FEF493FD4EED /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = iOS/Crashlytics.framework; sourceTree = "<group>"; };
 		69B091ED15DBF16DEDFBD07CC1D3DA14 /* Pods-daysleft WatchKit App-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-daysleft WatchKit App-frameworks.sh"; sourceTree = "<group>"; };
-		6BBEEFD613A35A1299FA29C2704C15AD /* FABAttributes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FABAttributes.h; path = iOS/Fabric.framework/Headers/FABAttributes.h; sourceTree = "<group>"; };
 		6E4312CD230E66B346634DDFE92794F3 /* libPods-daysleft WatchKit App.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-daysleft WatchKit App.a"; path = "libPods-daysleft WatchKit App.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		705D47D807C66E723FB76EDF84CFCE37 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = iOS/Fabric.framework; sourceTree = "<group>"; };
 		7079A13C6D1DC21903E5C36DE6A2BF25 /* Pods-daysleft WatchKit App-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-daysleft WatchKit App-acknowledgements.markdown"; sourceTree = "<group>"; };
-		721B6A79229CA3F10E649F3FD0E7F36F /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = Frameworks/frameworks/GoogleMobileAds.framework; sourceTree = "<group>"; };
-		739CF3947F28BCC674AF39918D814103 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = iOS/Fabric.framework; sourceTree = "<group>"; };
 		744A8C48E1E0B0C7DCD37F3917FADB19 /* Pods-dayslefttoday-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-dayslefttoday-acknowledgements.plist"; sourceTree = "<group>"; };
 		77E61E5AEE28C6212863E80F0B55A849 /* Pods-daysleft WatchKit App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-daysleft WatchKit App.release.xcconfig"; sourceTree = "<group>"; };
 		86EE1FCFA82EC3C48FA3DD685B971CE2 /* Pods-dayslefttoday-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-dayslefttoday-resources.sh"; sourceTree = "<group>"; };
@@ -76,41 +76,38 @@
 		89E7BA072E55DF9B868164E6ACC2485B /* Pods-dayslefttoday.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-dayslefttoday.release.xcconfig"; sourceTree = "<group>"; };
 		8AF19FF6175CDF84C9738B899E0507AC /* Pods-daysleft WatchKit App-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-daysleft WatchKit App-resources.sh"; sourceTree = "<group>"; };
 		8DDD360B4D104941991F5FE2DC42AECA /* Pods-daysleft WatchKit Extension-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-daysleft WatchKit Extension-frameworks.sh"; sourceTree = "<group>"; };
-		92F0F1B2D80CA86E8E04E1874A953A91 /* GTMNSData+zlib.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "GTMNSData+zlib.m"; path = "Foundation/GTMNSData+zlib.m"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9933E79B897917FB3B132175B87316E8 /* Pods-daysleft-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-daysleft-resources.sh"; sourceTree = "<group>"; };
+		9A4C23331D03DF052E4B26CCAD3CAA7D /* GoogleToolboxForMac.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GoogleToolboxForMac.xcconfig; sourceTree = "<group>"; };
 		A01C797CF812BA9CB5E98558715D33CA /* Pods-MessagesExtension-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MessagesExtension-acknowledgements.plist"; sourceTree = "<group>"; };
-		A04C3AAD5C2E8857C09E8AA41FD76B29 /* FirebaseInstanceID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseInstanceID.framework; path = Frameworks/frameworks/FirebaseInstanceID.framework; sourceTree = "<group>"; };
-		A25ECA3A5503FAF02AFAF6E7E29CA0D7 /* FirebaseCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseCore.framework; path = Frameworks/FirebaseCore.framework; sourceTree = "<group>"; };
 		A8A7EEEE24873AADE08C352BF01054FF /* Pods-daysleft WatchKit Extension-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-daysleft WatchKit Extension-resources.sh"; sourceTree = "<group>"; };
+		AB97EC216E3F2A286EDC225066305234 /* FirebaseCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseCore.framework; path = Frameworks/FirebaseCore.framework; sourceTree = "<group>"; };
+		AD4A5E23D4237CC958705CB653CA4B44 /* CLSAttributes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSAttributes.h; path = iOS/Crashlytics.framework/Headers/CLSAttributes.h; sourceTree = "<group>"; };
+		AE8D345845FE00A3FAC4A230E1E693FE /* CLSStackFrame.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSStackFrame.h; path = iOS/Crashlytics.framework/Headers/CLSStackFrame.h; sourceTree = "<group>"; };
 		B12FBDE81939B47EE7DFD609DD9728C3 /* Pods-daysleftlibrary-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-daysleftlibrary-dummy.m"; sourceTree = "<group>"; };
-		B66043EC87F64D4CE80A296CA58B2571 /* ANSCompatibility.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ANSCompatibility.h; path = iOS/Crashlytics.framework/Headers/ANSCompatibility.h; sourceTree = "<group>"; };
 		B7752798AED75D2190758A21548AB728 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS3.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		B81988F2DF2C32D4767275ECB9816B5E /* Firebase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Firebase.h; path = Core/Sources/Firebase.h; sourceTree = "<group>"; };
 		BD941B37090123AAAF64DB9631FA58D8 /* Pods-daysleft WatchKit Extension-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-daysleft WatchKit Extension-acknowledgements.markdown"; sourceTree = "<group>"; };
 		C1F314FE1DB7BEAE077E4AF76D461220 /* Pods-dayslefttoday.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-dayslefttoday.debug.xcconfig"; sourceTree = "<group>"; };
 		C593FEBA41026FCE2BE5918090658797 /* Pods-daysleft WatchKit App-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-daysleft WatchKit App-dummy.m"; sourceTree = "<group>"; };
 		C59E8B526C5BEA7A8085BF2362E7B529 /* libPods-daysleft WatchKit Extension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-daysleft WatchKit Extension.a"; path = "libPods-daysleft WatchKit Extension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C69797728740C719F7602F86968A6884 /* Pods-dayslefttoday-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-dayslefttoday-dummy.m"; sourceTree = "<group>"; };
-		C92160F91142A882E72A41182BCE075A /* GoogleToolboxForMac.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GoogleToolboxForMac.xcconfig; sourceTree = "<group>"; };
 		CA445831B1946368A5C663A470911A46 /* Pods-daysleftlibrary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-daysleftlibrary.release.xcconfig"; sourceTree = "<group>"; };
 		CAB2B4A081B2A8A804F911916AB068E9 /* Pods-daysleftlibrary-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-daysleftlibrary-acknowledgements.plist"; sourceTree = "<group>"; };
-		CB71C1A5C44E865B6D5792B078984697 /* GTMDefines.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
+		CC3BC19360C0AB552AD7799B1B4C4856 /* CLSLogging.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSLogging.h; path = iOS/Crashlytics.framework/Headers/CLSLogging.h; sourceTree = "<group>"; };
+		CCF558AF527A6E79919E20A4ED1CF9FF /* Firebase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Firebase.h; path = Core/Sources/Firebase.h; sourceTree = "<group>"; };
 		CE32AFBDECD35F66B80B8D03C365B1E0 /* Pods-daysleft-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-daysleft-acknowledgements.plist"; sourceTree = "<group>"; };
-		CE64CE903289DAA6B86F0B8A8F076B1F /* FIRInstanceID.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRInstanceID.h; path = Sources/FIRInstanceID.h; sourceTree = "<group>"; };
 		CF3AF10CD316691CBCF5C516C785A9BC /* Pods-daysleft.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-daysleft.release.xcconfig"; sourceTree = "<group>"; };
 		D91AB1423EA65E5610666153A392F037 /* Pods-daysleftlibrary-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-daysleftlibrary-resources.sh"; sourceTree = "<group>"; };
 		DAF0245DCA437B99118EF148EC4CD21D /* libPods-daysleftlibrary.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-daysleftlibrary.a"; path = "libPods-daysleftlibrary.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC27B065F3C37EFC1A1CEA85E612D072 /* Pods-daysleft-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-daysleft-dummy.m"; sourceTree = "<group>"; };
-		E08FC0DA84B1068816CE028295DBFD11 /* GoogleSymbolUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleSymbolUtilities.framework; path = Frameworks/frameworks/GoogleSymbolUtilities.framework; sourceTree = "<group>"; };
-		E0C7107BC4EE2D7CABC044FF5C5C7241 /* GoogleInterchangeUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleInterchangeUtilities.framework; path = Frameworks/frameworks/GoogleInterchangeUtilities.framework; sourceTree = "<group>"; };
-		E3B0B9AE9A30A170E333133274349229 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = iOS/Crashlytics.framework; sourceTree = "<group>"; };
+		E19526E1F8DF64F7A75263CD5A2903D2 /* GTMDefines.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
+		E2F9884BE86E094B89DAB1DA8BFA9161 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = Frameworks/frameworks/GoogleMobileAds.framework; sourceTree = "<group>"; };
+		E412D392B21F624558F636090A681434 /* Answers.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Answers.h; path = iOS/Crashlytics.framework/Headers/Answers.h; sourceTree = "<group>"; };
+		EAFC58A90843EDB01E948AE774883BB1 /* Fabric.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Fabric.h; path = iOS/Fabric.framework/Headers/Fabric.h; sourceTree = "<group>"; };
 		EDD8D53881FFB3791BAD82852F98E77B /* Pods-dayslefttoday-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-dayslefttoday-acknowledgements.markdown"; sourceTree = "<group>"; };
-		F487D54900351F3A1E788A006F06870C /* CLSReport.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSReport.h; path = iOS/Crashlytics.framework/Headers/CLSReport.h; sourceTree = "<group>"; };
 		F5CDF979633BB70FA572CF0D629F540C /* Pods-daysleft WatchKit Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-daysleft WatchKit Extension.debug.xcconfig"; sourceTree = "<group>"; };
 		F9AE61DEB7F70B8D5B09290911F0E1C8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		FB95B4F2541DDE472883AA0DDB9B71F3 /* GTMNSData+zlib.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "GTMNSData+zlib.h"; path = "Foundation/GTMNSData+zlib.h"; sourceTree = "<group>"; };
-		FDFE08D7E37B31A8EE8127F1688C8FFD /* Crashlytics.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Crashlytics.h; path = iOS/Crashlytics.framework/Headers/Crashlytics.h; sourceTree = "<group>"; };
+		FD2E2C809AF4B05BADA525CCBC75E74D /* FABAttributes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FABAttributes.h; path = iOS/Fabric.framework/Headers/FABAttributes.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,48 +170,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		06732D8354CF0C1BC5AA430A586B01F2 /* Firebase */ = {
+		0E47E98264DA2A9B581A9F9B4A99F08B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5EC12129B7D2AF282C1E0A527EE91741 /* Core */,
+				E2F9884BE86E094B89DAB1DA8BFA9161 /* GoogleMobileAds.framework */,
 			);
-			name = Firebase;
-			path = Firebase;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		1012EE8B4F50FBF791D9113B8DA05BFC /* Support Files */ = {
+		11F302D04F97D8ED8285C424DE66CCE4 /* Google-Mobile-Ads-SDK */ = {
 			isa = PBXGroup;
 			children = (
-				C92160F91142A882E72A41182BCE075A /* GoogleToolboxForMac.xcconfig */,
-				4E6E9D391CD1A754DFB4926D59E0A530 /* GoogleToolboxForMac-dummy.m */,
-				0E4B8B0FAB5F0791491670164EF46B68 /* GoogleToolboxForMac-prefix.pch */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/GoogleToolboxForMac";
-			sourceTree = "<group>";
-		};
-		16780A7722447823B8BD36F30B74DA6C /* GoogleInterchangeUtilities */ = {
-			isa = PBXGroup;
-			children = (
-				2E5A1871F6BCE6FA3343B0B50BB8F0C4 /* Frameworks */,
-			);
-			name = GoogleInterchangeUtilities;
-			path = GoogleInterchangeUtilities;
-			sourceTree = "<group>";
-		};
-		16DF41855900B52BFBD5159953A3CF65 /* NSData+zlib */ = {
-			isa = PBXGroup;
-			children = (
-				FB95B4F2541DDE472883AA0DDB9B71F3 /* GTMNSData+zlib.h */,
-				92F0F1B2D80CA86E8E04E1874A953A91 /* GTMNSData+zlib.m */,
-			);
-			name = "NSData+zlib";
-			sourceTree = "<group>";
-		};
-		17945A17EC51E24AA38752FE7EC08488 /* Google-Mobile-Ads-SDK */ = {
-			isa = PBXGroup;
-			children = (
-				5A22BB9E20654B9D66498747556B5A75 /* Frameworks */,
+				0E47E98264DA2A9B581A9F9B4A99F08B /* Frameworks */,
 			);
 			name = "Google-Mobile-Ads-SDK";
 			path = "Google-Mobile-Ads-SDK";
@@ -233,6 +200,23 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
+		1A9291A1C9714502D23D2219E2646256 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				705D47D807C66E723FB76EDF84CFCE37 /* Fabric.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1CAE03AFD0F78C37ECEA76057CDB50AC /* FirebaseCore */ = {
+			isa = PBXGroup;
+			children = (
+				7DF3B6A09AB328C352F224B9B9F722AD /* Frameworks */,
+			);
+			name = FirebaseCore;
+			path = FirebaseCore;
+			sourceTree = "<group>";
+		};
 		28DA0AA333F14A5901A9D4F9F6CF9197 /* Pods-daysleftlibrary */ = {
 			isa = PBXGroup;
 			children = (
@@ -247,49 +231,60 @@
 			path = "Target Support Files/Pods-daysleftlibrary";
 			sourceTree = "<group>";
 		};
-		2E5A1871F6BCE6FA3343B0B50BB8F0C4 /* Frameworks */ = {
+		317687EF91164D789A95E929851A1B5B /* NSData+zlib */ = {
 			isa = PBXGroup;
 			children = (
-				E0C7107BC4EE2D7CABC044FF5C5C7241 /* GoogleInterchangeUtilities.framework */,
+				4078C35D246B2110A53532C1A2889BEB /* GTMNSData+zlib.h */,
+				306D4E9D34ECCAF125D3D9FBC6C5E661 /* GTMNSData+zlib.m */,
+			);
+			name = "NSData+zlib";
+			sourceTree = "<group>";
+		};
+		3A920592E6DAA9394B3B2A0CE1A79FE3 /* Defines */ = {
+			isa = PBXGroup;
+			children = (
+				E19526E1F8DF64F7A75263CD5A2903D2 /* GTMDefines.h */,
+			);
+			name = Defines;
+			sourceTree = "<group>";
+		};
+		4382FF043E7A76929E46556DC6A73D80 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6906F449DBBB87ED3300FEF493FD4EED /* Crashlytics.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		3212B7927729669357947F4D086ECB4E /* Fabric */ = {
+		4D1946061ECF605D8081CA14B3DAAC5E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				6BBEEFD613A35A1299FA29C2704C15AD /* FABAttributes.h */,
-				3720442E1DE86B86EBD5488937688340 /* Fabric.h */,
-				D4BA08D8620A2A6D86E2834FCA413BA0 /* Frameworks */,
+				50D5881BFE1A5E77A324DE770E7B112C /* Crashlytics */,
+				F5D4807EA213C29F63CC75AF0AB83C18 /* Fabric */,
+				AAB2F1ACE488D4024A4E40EE343A3401 /* Firebase */,
+				E3A9C918199FA9EEFF47EA105187842B /* FirebaseAnalytics */,
+				1CAE03AFD0F78C37ECEA76057CDB50AC /* FirebaseCore */,
+				BC8B069FD5FFFFEEE3255943C73DC57D /* FirebaseInstanceID */,
+				11F302D04F97D8ED8285C424DE66CCE4 /* Google-Mobile-Ads-SDK */,
+				6EBC245340615E886AC60E78EE131F7C /* GoogleToolboxForMac */,
 			);
-			name = Fabric;
-			path = Fabric;
+			name = Pods;
 			sourceTree = "<group>";
 		};
-		33496FBEDE200DC5273773D8829B9E82 /* FirebaseInstanceID */ = {
+		50D5881BFE1A5E77A324DE770E7B112C /* Crashlytics */ = {
 			isa = PBXGroup;
 			children = (
-				CE64CE903289DAA6B86F0B8A8F076B1F /* FIRInstanceID.h */,
-				607CD50315B91CCD89E9DF1F8E8AA543 /* Frameworks */,
+				5F70EEE1806C5545B84A1EFE284D1880 /* ANSCompatibility.h */,
+				E412D392B21F624558F636090A681434 /* Answers.h */,
+				AD4A5E23D4237CC958705CB653CA4B44 /* CLSAttributes.h */,
+				CC3BC19360C0AB552AD7799B1B4C4856 /* CLSLogging.h */,
+				27679DAEF83896E4C58A3C6F84C1804E /* CLSReport.h */,
+				AE8D345845FE00A3FAC4A230E1E693FE /* CLSStackFrame.h */,
+				1DF1DEBFF85ABAB8991B732008576CBE /* Crashlytics.h */,
+				4382FF043E7A76929E46556DC6A73D80 /* Frameworks */,
 			);
-			name = FirebaseInstanceID;
-			path = FirebaseInstanceID;
-			sourceTree = "<group>";
-		};
-		478BC0764BB0440ACF7E375E70449B1A /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				E08FC0DA84B1068816CE028295DBFD11 /* GoogleSymbolUtilities.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		5A22BB9E20654B9D66498747556B5A75 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				721B6A79229CA3F10E649F3FD0E7F36F /* GoogleMobileAds.framework */,
-			);
-			name = Frameworks;
+			name = Crashlytics;
+			path = Crashlytics;
 			sourceTree = "<group>";
 		};
 		5D3C248BC83AF84AFB8A043D4179AA0B /* Pods-MessagesExtension */ = {
@@ -306,70 +301,23 @@
 			path = "Target Support Files/Pods-MessagesExtension";
 			sourceTree = "<group>";
 		};
-		5EC12129B7D2AF282C1E0A527EE91741 /* Core */ = {
+		60DA50F47D322D25820130436D7CB56B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B81988F2DF2C32D4767275ECB9816B5E /* Firebase.h */,
-			);
-			name = Core;
-			sourceTree = "<group>";
-		};
-		607CD50315B91CCD89E9DF1F8E8AA543 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				A04C3AAD5C2E8857C09E8AA41FD76B29 /* FirebaseInstanceID.framework */,
+				58E30DEC2D9D6DB72115B40CFDDBE701 /* FirebaseInstanceID.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		63A4E807EC2E80CC79D844D5FC576007 /* Pods */ = {
+		6EBC245340615E886AC60E78EE131F7C /* GoogleToolboxForMac */ = {
 			isa = PBXGroup;
 			children = (
-				6555A3901F9B7213EC7C76AB89DCA5E0 /* Crashlytics */,
-				3212B7927729669357947F4D086ECB4E /* Fabric */,
-				06732D8354CF0C1BC5AA430A586B01F2 /* Firebase */,
-				E0812E2804552E0F236B31A10CF9549F /* FirebaseAnalytics */,
-				745B2BAB6B3296E7FFDA9B9EAACF617F /* FirebaseCore */,
-				33496FBEDE200DC5273773D8829B9E82 /* FirebaseInstanceID */,
-				17945A17EC51E24AA38752FE7EC08488 /* Google-Mobile-Ads-SDK */,
-				16780A7722447823B8BD36F30B74DA6C /* GoogleInterchangeUtilities */,
-				D47F2AFC8694F5624F894E1D10CC1C11 /* GoogleSymbolUtilities */,
-				9EDFDDDB0BDE07EE5CE1A38DC54F53E2 /* GoogleToolboxForMac */,
+				3A920592E6DAA9394B3B2A0CE1A79FE3 /* Defines */,
+				317687EF91164D789A95E929851A1B5B /* NSData+zlib */,
+				AFCBE3EAE8B1EB9A7A981F984AA7C14D /* Support Files */,
 			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		6555A3901F9B7213EC7C76AB89DCA5E0 /* Crashlytics */ = {
-			isa = PBXGroup;
-			children = (
-				B66043EC87F64D4CE80A296CA58B2571 /* ANSCompatibility.h */,
-				5EE342992DAB47B8AD322047FF0B29E8 /* Answers.h */,
-				1DEAAD9F9F4CDD287F53E494976F7A1B /* CLSAttributes.h */,
-				191FA08AB5D53DC16B717F2C866EC628 /* CLSLogging.h */,
-				F487D54900351F3A1E788A006F06870C /* CLSReport.h */,
-				3A9C273FBB806544ACED333BB4A03012 /* CLSStackFrame.h */,
-				FDFE08D7E37B31A8EE8127F1688C8FFD /* Crashlytics.h */,
-				C6E332EB0B9ACA000F10FEA61E5CCADB /* Frameworks */,
-			);
-			name = Crashlytics;
-			path = Crashlytics;
-			sourceTree = "<group>";
-		};
-		69AD31314B0ADAD0211E0E2667B9EEC0 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				A25ECA3A5503FAF02AFAF6E7E29CA0D7 /* FirebaseCore.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		745B2BAB6B3296E7FFDA9B9EAACF617F /* FirebaseCore */ = {
-			isa = PBXGroup;
-			children = (
-				69AD31314B0ADAD0211E0E2667B9EEC0 /* Frameworks */,
-			);
-			name = FirebaseCore;
-			path = FirebaseCore;
+			name = GoogleToolboxForMac;
+			path = GoogleToolboxForMac;
 			sourceTree = "<group>";
 		};
 		79B0A2D41871C390BF558C0BC520A737 /* Pods-daysleft WatchKit Extension */ = {
@@ -392,10 +340,18 @@
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				8F91EE078EA3977443D1BDC2601132EF /* Frameworks */,
-				63A4E807EC2E80CC79D844D5FC576007 /* Pods */,
+				4D1946061ECF605D8081CA14B3DAAC5E /* Pods */,
 				C487A8AFF1536BB63C10B9B68C812A8D /* Products */,
 				19923D019C837F9F0BE0A4AF23F3E829 /* Targets Support Files */,
 			);
+			sourceTree = "<group>";
+		};
+		7DF3B6A09AB328C352F224B9B9F722AD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AB97EC216E3F2A286EDC225066305234 /* FirebaseCore.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		8F91EE078EA3977443D1BDC2601132EF /* Frameworks */ = {
@@ -415,23 +371,13 @@
 			name = watchOS;
 			sourceTree = "<group>";
 		};
-		9EDFDDDB0BDE07EE5CE1A38DC54F53E2 /* GoogleToolboxForMac */ = {
+		AAB2F1ACE488D4024A4E40EE343A3401 /* Firebase */ = {
 			isa = PBXGroup;
 			children = (
-				ED028D1ADE9A83FAC4A53C2C787EAA09 /* Defines */,
-				16DF41855900B52BFBD5159953A3CF65 /* NSData+zlib */,
-				1012EE8B4F50FBF791D9113B8DA05BFC /* Support Files */,
+				F7EBF433877A7E3832DB467BA8C4886D /* Core */,
 			);
-			name = GoogleToolboxForMac;
-			path = GoogleToolboxForMac;
-			sourceTree = "<group>";
-		};
-		A750F7E1FBC72EB2CFE3280C42B5F79C /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				2E418813F99AECFD7349BDC7F7FC355A /* FirebaseAnalytics.framework */,
-			);
-			name = Frameworks;
+			name = Firebase;
+			path = Firebase;
 			sourceTree = "<group>";
 		};
 		AFB815FE8B885BD82A5AF8D4802D5DA3 /* Pods-daysleft WatchKit App */ = {
@@ -447,6 +393,26 @@
 			);
 			name = "Pods-daysleft WatchKit App";
 			path = "Target Support Files/Pods-daysleft WatchKit App";
+			sourceTree = "<group>";
+		};
+		AFCBE3EAE8B1EB9A7A981F984AA7C14D /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				9A4C23331D03DF052E4B26CCAD3CAA7D /* GoogleToolboxForMac.xcconfig */,
+				40FEB9A0494940196EFD2D069FE26C2D /* GoogleToolboxForMac-dummy.m */,
+				105C033FEDF5B399B73BDE2CB7CC5DC9 /* GoogleToolboxForMac-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/GoogleToolboxForMac";
+			sourceTree = "<group>";
+		};
+		BC8B069FD5FFFFEEE3255943C73DC57D /* FirebaseInstanceID */ = {
+			isa = PBXGroup;
+			children = (
+				60DA50F47D322D25820130436D7CB56B /* Frameworks */,
+			);
+			name = FirebaseInstanceID;
+			path = FirebaseInstanceID;
 			sourceTree = "<group>";
 		};
 		BE50AB4B3645EA9432322BA2E72BE2F9 /* iOS */ = {
@@ -471,31 +437,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C6E332EB0B9ACA000F10FEA61E5CCADB /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				E3B0B9AE9A30A170E333133274349229 /* Crashlytics.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		D47F2AFC8694F5624F894E1D10CC1C11 /* GoogleSymbolUtilities */ = {
-			isa = PBXGroup;
-			children = (
-				478BC0764BB0440ACF7E375E70449B1A /* Frameworks */,
-			);
-			name = GoogleSymbolUtilities;
-			path = GoogleSymbolUtilities;
-			sourceTree = "<group>";
-		};
-		D4BA08D8620A2A6D86E2834FCA413BA0 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				739CF3947F28BCC674AF39918D814103 /* Fabric.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		DCB482736521AD13BB1ADEC759192FE9 /* Pods-dayslefttoday */ = {
 			isa = PBXGroup;
 			children = (
@@ -510,21 +451,21 @@
 			path = "Target Support Files/Pods-dayslefttoday";
 			sourceTree = "<group>";
 		};
-		E0812E2804552E0F236B31A10CF9549F /* FirebaseAnalytics */ = {
+		E3A9C918199FA9EEFF47EA105187842B /* FirebaseAnalytics */ = {
 			isa = PBXGroup;
 			children = (
-				A750F7E1FBC72EB2CFE3280C42B5F79C /* Frameworks */,
+				EE0FAD44BA7E923659D8B0D492EC4945 /* Frameworks */,
 			);
 			name = FirebaseAnalytics;
 			path = FirebaseAnalytics;
 			sourceTree = "<group>";
 		};
-		ED028D1ADE9A83FAC4A53C2C787EAA09 /* Defines */ = {
+		EE0FAD44BA7E923659D8B0D492EC4945 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				CB71C1A5C44E865B6D5792B078984697 /* GTMDefines.h */,
+				2FA7F9DDF62E2B7725C1DB96D86A155C /* FirebaseAnalytics.framework */,
 			);
-			name = Defines;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		F25D5A23731CEDB56BC8163C58629C3C /* Pods-daysleft */ = {
@@ -540,6 +481,25 @@
 			);
 			name = "Pods-daysleft";
 			path = "Target Support Files/Pods-daysleft";
+			sourceTree = "<group>";
+		};
+		F5D4807EA213C29F63CC75AF0AB83C18 /* Fabric */ = {
+			isa = PBXGroup;
+			children = (
+				FD2E2C809AF4B05BADA525CCBC75E74D /* FABAttributes.h */,
+				EAFC58A90843EDB01E948AE774883BB1 /* Fabric.h */,
+				1A9291A1C9714502D23D2219E2646256 /* Frameworks */,
+			);
+			name = Fabric;
+			path = Fabric;
+			sourceTree = "<group>";
+		};
+		F7EBF433877A7E3832DB467BA8C4886D /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				CCF558AF527A6E79919E20A4ED1CF9FF /* Firebase.h */,
+			);
+			name = Core;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -958,7 +918,7 @@
 		};
 		894F306B90FA064E2DD93D8024B46661 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C92160F91142A882E72A41182BCE075A /* GoogleToolboxForMac.xcconfig */;
+			baseConfigurationReference = 9A4C23331D03DF052E4B26CCAD3CAA7D /* GoogleToolboxForMac.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -982,7 +942,7 @@
 		};
 		98391A651F42402B6E41B847CD9D7B4A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C92160F91142A882E72A41182BCE075A /* GoogleToolboxForMac.xcconfig */;
+			baseConfigurationReference = 9A4C23331D03DF052E4B26CCAD3CAA7D /* GoogleToolboxForMac.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";

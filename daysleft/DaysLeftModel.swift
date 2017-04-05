@@ -102,6 +102,13 @@ open class DaysLeftModel: BLUserSettings
         get { return self.readObjectFromStore("showBadge") as! Bool }
         set { self.writeObjectToStore(newValue as AnyObject, key: "showBadge") }
     }
+    
+    /// Property to get and set the adsfree flag
+    open var adsFree: Bool {
+        get { return self.readObjectFromStore("adsFree") as! Bool }
+        set { self.writeObjectToStore(newValue as AnyObject, key: "adsFree") }
+    }
+
 
     /// Finds the number of days to the end of the period from the current date
     ///
@@ -316,7 +323,6 @@ open class DaysLeftModel: BLUserSettings
                 for key:String in changedKeys {
                     let settingValue: AnyObject? = store.object(forKey: key) as AnyObject?
                     self.writeObjectToStore(settingValue!, key: key)
-                    print("iCloud change for \(key): \(settingValue)")
                 }
                 
                 store.synchronize()

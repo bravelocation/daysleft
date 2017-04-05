@@ -23,6 +23,8 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
     @IBOutlet weak var labelVersion: UILabel!
     @IBOutlet weak var switchShowBadge: UISwitch!
     @IBOutlet weak var bannerView: GADBannerView!
+    @IBOutlet weak var adCell: UITableViewCell!
+    @IBOutlet weak var removeAdsCell: UITableViewCell!
     
     var dateFormatter: DateFormatter = DateFormatter()
     
@@ -65,19 +67,34 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
         self.bannerView.adUnitID = "ca-app-pub-6795405439060738/6923889836"
         self.bannerView.rootViewController = self
         
-        let request = GADRequest()
-        
-        #if DEBUG
-            request.testDevices = [kGADSimulatorID]
-        #endif
-        
-        self.bannerView.load(request)
-        
         // Add version number
         let infoDictionary = Bundle.main
         let version = infoDictionary.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
         let build = infoDictionary.object(forInfoDictionaryKey: "CFBundleVersion") as! String
         self.labelVersion.text = String(format: "v%@.%@", version, build)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // Show the ads if not hidden
+        if (self.showAds()) {
+            let request = GADRequest()
+            
+            #if DEBUG
+                request.testDevices = [kGADSimulatorID]
+            #endif
+            
+            self.bannerView.load(request)
+            
+            self.bannerView.isHidden = false
+            self.adCell.isHidden = false
+            self.removeAdsCell.isHidden = false
+        } else {
+            self.bannerView.isHidden = true
+            self.adCell.isHidden = true
+            self.removeAdsCell.isHidden = true
+        }
     }
 
     @IBAction func textTitleChanged(_ sender: AnyObject) {
@@ -138,6 +155,37 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
                 svc.delegate = self
                 self.present(svc, animated: true, completion: nil)
             }
+        } else if (indexPath.section == 5) {
+            if (indexPath.row == 1) {
+                // Open the purchase controller
+                let purchaseViewController = PurchaseViewController(nibName: "PurchaseViewController", bundle: nil)
+                self.navigationController?.pushViewController(purchaseViewController, animated: true)
+            }
+        }
+    }
+    
+    override func tableView( _ tableView : UITableView,  titleForHeaderInSection section: Int)->String
+    {
+        switch(section)
+        {
+        case 0:
+            return "What are you counting down to?"
+        case 1:
+            return "Dates"
+        case 2:
+            return "Shortcuts"
+        case 3:
+            return "Settings"
+        case 4:
+            return "About"
+        case 5:
+            if (self.showAds()) {
+                return "Ad (To help pay the bills)"
+            } else {
+                return "No Ads for you - thanks!"
+            }
+        default:
+            return "Other"
         }
     }
     
@@ -176,6 +224,11 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
     func modelData() -> DaysLeftModel {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         return appDelegate.model
+    }
+    
+    func showAds() -> Bool {
+        let model = self.modelData()
+        return model.adsFree == false
     }
     
     // MARK: - SFSafariViewControllerDelegate methods

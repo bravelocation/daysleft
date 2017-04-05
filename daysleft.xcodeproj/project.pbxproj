@@ -15,6 +15,8 @@
 		5234436D1BBB181C00E95BA4 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5234436C1BBB181C00E95BA4 /* ExtensionDelegate.swift */; };
 		52790F771D056F2E0025AF10 /* WindowsAzureMessaging.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52790F761D056F2E0025AF10 /* WindowsAzureMessaging.framework */; };
 		52790F7A1D056FB90025AF10 /* AzureNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52790F791D056FB90025AF10 /* AzureNotifications.swift */; };
+		527AD75D1E94EB2800F8637B /* PurchaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527AD75B1E94EB2800F8637B /* PurchaseViewController.swift */; };
+		527AD75E1E94EB2800F8637B /* PurchaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 527AD75C1E94EB2800F8637B /* PurchaseViewController.xib */; };
 		527E15401D83F80300D81B15 /* gallery.ckcomplication in Resources */ = {isa = PBXBuildFile; fileRef = 527E153F1D83F80300D81B15 /* gallery.ckcomplication */; };
 		5295EDDB1A94AE53007EF7E7 /* daysleftlibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5295EDD01A94AE53007EF7E7 /* daysleftlibrary.framework */; };
 		5295EDF01A94AF83007EF7E7 /* daysleftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CFBF131A8B631B005234FB /* daysleftTests.swift */; };
@@ -169,6 +171,8 @@
 		52790F761D056F2E0025AF10 /* WindowsAzureMessaging.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WindowsAzureMessaging.framework; sourceTree = "<group>"; };
 		52790F781D056F500025AF10 /* daysleft-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "daysleft-Bridging-Header.h"; sourceTree = "<group>"; };
 		52790F791D056FB90025AF10 /* AzureNotifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AzureNotifications.swift; sourceTree = "<group>"; };
+		527AD75B1E94EB2800F8637B /* PurchaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurchaseViewController.swift; sourceTree = "<group>"; };
+		527AD75C1E94EB2800F8637B /* PurchaseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PurchaseViewController.xib; sourceTree = "<group>"; };
 		527E153F1D83F80300D81B15 /* gallery.ckcomplication */ = {isa = PBXFileReference; lastKnownFileType = folder; path = gallery.ckcomplication; sourceTree = "<group>"; };
 		5295EDD01A94AE53007EF7E7 /* daysleftlibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = daysleftlibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5295EDD31A94AE53007EF7E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -494,13 +498,15 @@
 				52FAB11A1A923F500039691E /* daysleft.entitlements */,
 				52CFBEFD1A8B631B005234FB /* AppDelegate.swift */,
 				52CFBEFF1A8B631B005234FB /* ViewController.swift */,
+				52FAB11D1A9381B70039691E /* SettingsViewController.swift */,
+				527AD75B1E94EB2800F8637B /* PurchaseViewController.swift */,
 				52CFBF011A8B631B005234FB /* Main.storyboard */,
+				527AD75C1E94EB2800F8637B /* PurchaseViewController.xib */,
+				52790F791D056FB90025AF10 /* AzureNotifications.swift */,
+				52FAB11B1A9240490039691E /* DefaultPreferences.plist */,
 				52CFBF041A8B631B005234FB /* Images.xcassets */,
 				52CFBEFB1A8B631B005234FB /* Supporting Files */,
-				52FAB11B1A9240490039691E /* DefaultPreferences.plist */,
-				52FAB11D1A9381B70039691E /* SettingsViewController.swift */,
 				52790F781D056F500025AF10 /* daysleft-Bridging-Header.h */,
-				52790F791D056FB90025AF10 /* AzureNotifications.swift */,
 			);
 			path = daysleft;
 			sourceTree = "<group>";
@@ -858,6 +864,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				527E15401D83F80300D81B15 /* gallery.ckcomplication in Resources */,
+				527AD75E1E94EB2800F8637B /* PurchaseViewController.xib in Resources */,
 				52CFBF031A8B631B005234FB /* Main.storyboard in Resources */,
 				52E735DF1E3CA0D1005FD8A7 /* GoogleService-Info.plist in Resources */,
 				52FAB11C1A9240490039691E /* DefaultPreferences.plist in Resources */,
@@ -1212,6 +1219,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				527AD75D1E94EB2800F8637B /* PurchaseViewController.swift in Sources */,
 				52790F7A1D056FB90025AF10 /* AzureNotifications.swift in Sources */,
 				52CFBF001A8B631B005234FB /* ViewController.swift in Sources */,
 				52CFBEFE1A8B631B005234FB /* AppDelegate.swift in Sources */,

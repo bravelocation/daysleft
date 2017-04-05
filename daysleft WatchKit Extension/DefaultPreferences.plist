@@ -14,5 +14,7 @@
 	<date>1999-12-31T00:00:00Z</date>
 	<key>initialisedWatch</key>
 	<false/>
+	<key>adsFree</key>
+	<false/>
 </dict>
 </plist>
