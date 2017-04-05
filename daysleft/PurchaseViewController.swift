@@ -73,7 +73,7 @@ class PurchaseViewController: UIViewController, SKProductsRequestDelegate, SKPay
         self.transactionInProgress = false
         
         // Check if already ads free
-        if (self.model?.adsFree)! {
+        if (self.showAds() == false) {
             self.statusChange(status:"You're already Ads Free - thanks!", enableActivityMonitor:false)
         } else {
             // Look for product information
@@ -110,7 +110,7 @@ class PurchaseViewController: UIViewController, SKProductsRequestDelegate, SKPay
     }
     
     func actionButtonChange(message:String, enable:Bool) {
-        if (enable == false || (self.model?.adsFree)!) {
+        if (enable == false || self.showAds() == false) {
             self.buttonAction.setTitle("", for: UIControlState.normal)
             self.buttonAction.layer.borderColor = UIColor.clear.cgColor
             self.buttonAction.tintColor = UIColor.clear
@@ -141,6 +141,10 @@ class PurchaseViewController: UIViewController, SKProductsRequestDelegate, SKPay
         self.betweenButtonConstraint.constant = 0.0
     }
     
+    func showAds() -> Bool {
+        return self.model?.adsFree == false
+    }
+    
     // MARK: - SKProductsRequestDelegate
     func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
         if (response.products.count > 0) {
@@ -151,7 +155,7 @@ class PurchaseViewController: UIViewController, SKProductsRequestDelegate, SKPay
                 self.product = response.products[0]
                 
                  // If we've not already restored
-                if (self.model?.adsFree == false) {
+                if (self.showAds()) {
                     self.statusChange(status: "", enableActivityMonitor: false)
                     self.labelProductDetails.text = self.product?.localizedDescription
                     
@@ -166,6 +170,8 @@ class PurchaseViewController: UIViewController, SKProductsRequestDelegate, SKPay
                     
                 } else {
                     print("Already Ads Free")
+                    self.statusChange(status: "Already Ads Free", enableActivityMonitor: false)
+                    self.actionButtonChange(message: "", enable: false)
                 }
             }
             
@@ -204,6 +210,11 @@ class PurchaseViewController: UIViewController, SKProductsRequestDelegate, SKPay
             }
         }
     }
+    
+    func paymentQueueRestoreCompletedTransactionsFinished(_ queue: SKPaymentQueue) {
+        self.statusChange(status: "Ads Free successfully restored!", enableActivityMonitor: false)
+        self.successfulPayment()
+    }
 
     // MARK: - Button handlers methods
     @IBAction func buttonActionClicked(_ sender: Any) {
@@ -225,9 +236,8 @@ class PurchaseViewController: UIViewController, SKProductsRequestDelegate, SKPay
             self.transactionInProgress = true
             self.actionButtonChange(message: "", enable: false)
             
-            SKPaymentQueue.default().restoreCompletedTransactions()
             self.statusChange(status:"Restoring Ads Free from App Store ...", enableActivityMonitor:true)
-            
+            SKPaymentQueue.default().restoreCompletedTransactions()
         }
     }
 }
