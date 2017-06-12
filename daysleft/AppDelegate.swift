@@ -43,7 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.azureNotifications.setupNotifications(false)
         
         // Use Firebase library to configure APIs
-        FIRApp.configure()
+        FirebaseApp.configure()
         GADMobileAds.configure(withApplicationID: "ca-app-pub-6795405439060738~5447156632")
 
         return true

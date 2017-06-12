@@ -24,16 +24,21 @@ class ViewController: UIViewController {
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)   {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.iCloudSettingsUpdated(_:)), name: NSNotification.Name(rawValue: DaysLeftModel.iCloudSettingsNotification), object: nil)
+        self.setupNotificationHandlers()
     }
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
-        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.iCloudSettingsUpdated(_:)), name: NSNotification.Name(rawValue: DaysLeftModel.iCloudSettingsNotification), object: nil)
+        self.setupNotificationHandlers()
     }
         
     deinit {
         NotificationCenter.default.removeObserver(self)
+    }
+    
+    func setupNotificationHandlers() {
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.iCloudSettingsUpdated(_:)), name: NSNotification.Name(rawValue: DaysLeftModel.iCloudSettingsNotification), object: nil)
+        NotificationCenter.default.addObserver(self, selector:#selector(ViewController.appEntersForeground), name: NSNotification.Name.UIApplicationWillEnterForeground, object: nil)
     }
     
     override func viewDidLoad() {
@@ -158,6 +163,17 @@ class ViewController: UIViewController {
         
         // Update view data on main thread
         DispatchQueue.main.async {
+            self.updateViewFromModel()
+        }
+    }
+        
+    @objc
+    fileprivate func appEntersForeground() {
+        NSLog("App enters foreground in main view controller")
+        
+        // Update view data on main thread
+        DispatchQueue.main.async {
+            self.counterView.clearControl()
             self.updateViewFromModel()
         }
     }
