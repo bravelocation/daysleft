@@ -36,7 +36,7 @@ class ComplicationsDataSource : NSObject, CLKComplicationDataSource {
                 template.fillFraction = 0.7
                 template.ringStyle = CLKComplicationRingStyle.open
                 handler(template)
-            case .utilitarianSmall:
+            case .utilitarianSmall, .utilitarianSmallFlat:
                 let template = CLKComplicationTemplateUtilitarianSmallRingText()
                 template.textProvider = CLKSimpleTextProvider(text: "--")
                 template.fillFraction = 0.7
@@ -44,6 +44,12 @@ class ComplicationsDataSource : NSObject, CLKComplicationDataSource {
                 handler(template)
             case .circularSmall:
                 let template = CLKComplicationTemplateCircularSmallRingText()
+                template.textProvider = CLKSimpleTextProvider(text: "--")
+                template.fillFraction = 0.7
+                template.ringStyle = CLKComplicationRingStyle.open
+                handler(template)
+            case .extraLarge:
+                let template = CLKComplicationTemplateExtraLargeRingText()
                 template.textProvider = CLKSimpleTextProvider(text: "--")
                 template.fillFraction = 0.7
                 template.ringStyle = CLKComplicationRingStyle.open
@@ -132,7 +138,7 @@ class ComplicationsDataSource : NSObject, CLKComplicationDataSource {
                 template.fillFraction = percentageDone
                 template.ringStyle = CLKComplicationRingStyle.open
                 entry = CLKComplicationTimelineEntry(date: date, complicationTemplate: template)
-            case .utilitarianSmall:
+            case .utilitarianSmall, .utilitarianSmallFlat:
                 let template = CLKComplicationTemplateUtilitarianSmallRingText()
                 template.textProvider = CLKSimpleTextProvider(text: String(currentDaysLeft))
                 template.fillFraction = percentageDone
@@ -140,6 +146,12 @@ class ComplicationsDataSource : NSObject, CLKComplicationDataSource {
                 entry = CLKComplicationTimelineEntry(date: date, complicationTemplate: template)
             case .circularSmall:
                 let template = CLKComplicationTemplateCircularSmallRingText()
+                template.textProvider = CLKSimpleTextProvider(text: String(currentDaysLeft))
+                template.fillFraction = percentageDone
+                template.ringStyle = CLKComplicationRingStyle.open
+                entry = CLKComplicationTimelineEntry(date: date, complicationTemplate: template)
+            case .extraLarge:
+                let template = CLKComplicationTemplateExtraLargeRingText()
                 template.textProvider = CLKSimpleTextProvider(text: String(currentDaysLeft))
                 template.fillFraction = percentageDone
                 template.ringStyle = CLKComplicationRingStyle.open

@@ -17,7 +17,7 @@
 	<key>CFBundlePackageType</key>
 	<string>XPC!</string>
 	<key>CFBundleShortVersionString</key>
-	<string>2.3.7</string>
+	<string>2.3.8</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
@@ -29,6 +29,8 @@
 		<string>CLKComplicationFamilyModularSmall</string>
 		<string>CLKComplicationFamilyUtilitarianSmall</string>
 		<string>CLKComplicationFamilyCircularSmall</string>
+		<string>CLKComplicationFamilyExtraLarge</string>
+		<string>CLKComplicationFamilyUtilitarianSmallFlat</string>
 	</array>
 	<key>NSExtension</key>
 	<dict>

@@ -33,7 +33,6 @@
 		52B78DF71D982A6E00AB629D /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B78DF61D982A6E00AB629D /* MessagesViewController.swift */; };
 		52B78DFA1D982A6E00AB629D /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52B78DF81D982A6E00AB629D /* MainInterface.storyboard */; };
 		52B78DFC1D982A6E00AB629D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52B78DFB1D982A6E00AB629D /* Assets.xcassets */; };
-		52B78E061D98330100AB629D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52B7E88B1ABEDE9300E1949C /* Images.xcassets */; };
 		52B78E0E1D983A0400AB629D /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52B78E0B1D9838B800AB629D /* WatchConnectivity.framework */; };
 		52B78E0F1D983A1B00AB629D /* DaysLeftModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CFBF1D1A8B642C005234FB /* DaysLeftModel.swift */; };
 		52B78E101D983A2300AB629D /* BLUserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FAB1181A9231970039691E /* BLUserSettings.swift */; };
@@ -846,7 +845,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52B78E061D98330100AB629D /* Images.xcassets in Resources */,
 				52B78E111D983A6000AB629D /* DefaultPreferences.plist in Resources */,
 				52B78DFC1D982A6E00AB629D /* Assets.xcassets in Resources */,
 				52B78DFA1D982A6E00AB629D /* MainInterface.storyboard in Resources */,

@@ -1,0 +1,10 @@
+{
+  "class" : "CLKComplicationTemplateExtraLargeRingText",
+  "fillFraction" : 0.7,
+  "ringStyle" : 1,
+  "textProvider" : {
+    "class" : "CLKSimpleTextProvider",
+    "text" : "--"
+  },
+  "version" : 30000
+}
