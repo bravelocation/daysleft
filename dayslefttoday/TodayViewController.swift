@@ -28,13 +28,20 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Add tap handler to everything
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.tapHandler(_:)))
+        self.labelNumberTitle.addGestureRecognizer(tapGesture)
+        self.labelPercentDone.addGestureRecognizer(tapGesture)
+        self.counterView.addGestureRecognizer(tapGesture)
+        self.view.addGestureRecognizer(tapGesture)
+        
         if #available(iOSApplicationExtension 10.0, *) {
             self.extensionContext?.widgetLargestAvailableDisplayMode = NCWidgetDisplayMode.expanded
         } else {
             // Fallback on earlier versions
         }
     }
-    
     
     @available(iOSApplicationExtension 10.0, *)
     func widgetActiveDisplayModeDidChange(_ activeDisplayMode: NCWidgetDisplayMode, withMaximumSize maxSize: CGSize) {
@@ -47,7 +54,6 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         
         self.view.layoutIfNeeded()
     }
-
     
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
         self.updateViewData()
@@ -58,7 +64,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         return UIEdgeInsetsMake(0, 0, 0, 0)
     }
     
-    @IBAction func openAppTouchUp(_ sender: Any) {
+    func tapHandler(_ sender: UITapGestureRecognizer) {
         let url = URL(fileURLWithPath: "daysleft://")
         self.extensionContext?.open(url, completionHandler: nil)
     }

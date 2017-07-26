@@ -59,28 +59,13 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1bU-mG-a2E">
-                                <rect key="frame" x="132" y="168" width="164" height="22"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="22" id="dum-fa-c9I"/>
-                                </constraints>
-                                <state key="normal" title="Open counter in app ...">
-                                    <color key="titleColor" red="0.1738059223" green="0.36919349429999998" blue="0.087881088260000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="openAppTouchUp:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="Djc-Hq-u7o"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="1bU-mG-a2E" secondAttribute="trailing" constant="8" id="7el-TH-Rvv"/>
                             <constraint firstItem="PEU-20-ieI" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" constant="8" id="9I7-5q-7Bj"/>
                             <constraint firstItem="kaD-yb-UKC" firstAttribute="trailing" secondItem="PEU-20-ieI" secondAttribute="trailing" id="9LI-DB-a5J"/>
                             <constraint firstItem="FKl-LY-JtV" firstAttribute="top" secondItem="kaD-yb-UKC" secondAttribute="bottom" constant="8" id="Aa0-xc-Bph"/>
                             <constraint firstAttribute="trailingMargin" secondItem="GcN-lo-r42" secondAttribute="trailing" constant="8" id="FbC-bL-Azs"/>
-                            <constraint firstItem="FKl-LY-JtV" firstAttribute="top" secondItem="1bU-mG-a2E" secondAttribute="bottom" constant="10" id="HCH-wZ-ZSM"/>
                             <constraint firstItem="GcN-lo-r42" firstAttribute="bottom" secondItem="PEU-20-ieI" secondAttribute="bottom" id="Pfr-Rn-hq4"/>
-                            <constraint firstItem="1bU-mG-a2E" firstAttribute="leading" secondItem="kaD-yb-UKC" secondAttribute="trailing" constant="8" id="Qlp-1m-dgj"/>
                             <constraint firstItem="kaD-yb-UKC" firstAttribute="leading" secondItem="PEU-20-ieI" secondAttribute="leading" id="Z9O-s6-4wi"/>
                             <constraint firstItem="GcN-lo-r42" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" constant="8" id="bdz-Ye-Abt"/>
                             <constraint firstItem="kaD-yb-UKC" firstAttribute="top" secondItem="PEU-20-ieI" secondAttribute="bottom" id="bkh-Fy-IW7"/>
