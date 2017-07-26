@@ -1,8 +1,13 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="M4Y-Lb-cyx">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="M4Y-Lb-cyx">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Today View Controller-->
@@ -19,7 +24,7 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PEU-20-ieI" customClass="CounterView" customModule="daysleftlibrary">
                                 <rect key="frame" x="24" y="8" width="100" height="100"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="6AI-0f-dLE"/>
                                     <constraint firstAttribute="height" constant="100" id="d3O-on-rw7"/>
@@ -29,10 +34,10 @@
                                         <integer key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="outlineColor">
-                                        <color key="value" red="0.20784313725490194" green="0.30980392156862746" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="value" red="0.15977859497070312" green="0.24872206151485443" blue="0.0029078114312142134" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="counterColor">
-                                        <color key="value" red="0.83137254901960778" green="0.93333333333333335" blue="0.62352941176470589" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="value" red="0.7968142032623291" green="0.92925727367401123" blue="0.55632990598678589" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="maximumValue">
                                         <integer key="value" value="8"/>
@@ -45,22 +50,37 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="kaD-yb-UKC">
                                 <rect key="frame" x="24" y="108" width="100" height="84"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="GcN-lo-r42">
                                 <rect key="frame" x="132" y="8" width="164" height="100"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1bU-mG-a2E">
+                                <rect key="frame" x="132" y="168" width="164" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="dum-fa-c9I"/>
+                                </constraints>
+                                <state key="normal" title="Open counter in app ...">
+                                    <color key="titleColor" red="0.1738059223" green="0.36919349429999998" blue="0.087881088260000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="openAppTouchUp:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="Djc-Hq-u7o"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="1bU-mG-a2E" secondAttribute="trailing" constant="8" id="7el-TH-Rvv"/>
                             <constraint firstItem="PEU-20-ieI" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" constant="8" id="9I7-5q-7Bj"/>
                             <constraint firstItem="kaD-yb-UKC" firstAttribute="trailing" secondItem="PEU-20-ieI" secondAttribute="trailing" id="9LI-DB-a5J"/>
                             <constraint firstItem="FKl-LY-JtV" firstAttribute="top" secondItem="kaD-yb-UKC" secondAttribute="bottom" constant="8" id="Aa0-xc-Bph"/>
                             <constraint firstAttribute="trailingMargin" secondItem="GcN-lo-r42" secondAttribute="trailing" constant="8" id="FbC-bL-Azs"/>
+                            <constraint firstItem="FKl-LY-JtV" firstAttribute="top" secondItem="1bU-mG-a2E" secondAttribute="bottom" constant="10" id="HCH-wZ-ZSM"/>
                             <constraint firstItem="GcN-lo-r42" firstAttribute="bottom" secondItem="PEU-20-ieI" secondAttribute="bottom" id="Pfr-Rn-hq4"/>
+                            <constraint firstItem="1bU-mG-a2E" firstAttribute="leading" secondItem="kaD-yb-UKC" secondAttribute="trailing" constant="8" id="Qlp-1m-dgj"/>
                             <constraint firstItem="kaD-yb-UKC" firstAttribute="leading" secondItem="PEU-20-ieI" secondAttribute="leading" id="Z9O-s6-4wi"/>
                             <constraint firstItem="GcN-lo-r42" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" constant="8" id="bdz-Ye-Abt"/>
                             <constraint firstItem="kaD-yb-UKC" firstAttribute="top" secondItem="PEU-20-ieI" secondAttribute="bottom" id="bkh-Fy-IW7"/>
@@ -86,4 +106,9 @@
             <point key="canvasLocation" x="516" y="285"/>
         </scene>
     </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
+    </simulatedMetricsContainer>
 </document>

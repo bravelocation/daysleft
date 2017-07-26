@@ -26,6 +26,29 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         self.updateViewData()
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        if #available(iOSApplicationExtension 10.0, *) {
+            self.extensionContext?.widgetLargestAvailableDisplayMode = NCWidgetDisplayMode.expanded
+        } else {
+            // Fallback on earlier versions
+        }
+    }
+    
+    
+    @available(iOSApplicationExtension 10.0, *)
+    func widgetActiveDisplayModeDidChange(_ activeDisplayMode: NCWidgetDisplayMode, withMaximumSize maxSize: CGSize) {
+        if (activeDisplayMode == NCWidgetDisplayMode.compact) {
+            self.preferredContentSize = maxSize
+        }
+        else {
+            self.preferredContentSize = CGSize(width: maxSize.width, height: 140)
+        }
+        
+        self.view.layoutIfNeeded()
+    }
+
+    
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
         self.updateViewData()
         completionHandler(NCUpdateResult.newData)
@@ -33,6 +56,11 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     
     func widgetMarginInsets(forProposedMarginInsets defaultMarginInsets: UIEdgeInsets) -> UIEdgeInsets {
         return UIEdgeInsetsMake(0, 0, 0, 0)
+    }
+    
+    @IBAction func openAppTouchUp(_ sender: Any) {
+        let url = URL(fileURLWithPath: "daysleft://")
+        self.extensionContext?.open(url, completionHandler: nil)
     }
     
     fileprivate func updateViewData() {
