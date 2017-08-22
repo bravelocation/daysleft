@@ -73,7 +73,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func messageReceived(_ application: UIApplication,
                          userInfo: [AnyHashable: Any]) {
         // Print message
-        NSLog("Notification received: \(userInfo)")
+        print("Notification received ...")
 
         // Push latest settings and update badge
         self.model.pushAllSettingsToWatch()
@@ -81,7 +81,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func registerForNotifications() {
-        NSLog("Registering notification settings")
+        print("Registering notification settings")
         self.azureNotifications.setupNotifications(true)
         self.updateBadge()
     }
@@ -99,7 +99,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         {
             let now: Date = Date()
             application.applicationIconBadgeNumber = self.model.DaysLeft(now)
-            NSLog("Updated app badge")
+            print("Updated app badge")
         }
     }
     
@@ -110,13 +110,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if (badgePermission)
         {
             application.applicationIconBadgeNumber = 0
-            NSLog("Cleared app badge")
+            print("Cleared app badge")
         }
     }
     
     @objc
     fileprivate func iCloudSettingsUpdated(_ notification: Notification) {
-        NSLog("Received iCloudSettingsUpdated notification")
+        print("Received iCloudSettingsUpdated notification")
         
         // Push latest settings and update badge
         self.model.pushAllSettingsToWatch()
