@@ -221,7 +221,7 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
         model.pushAllSettingsToWatch()
     }
     
-    func modelData() -> DaysLeftModel {
+    func modelData() -> AppDaysLeftModel {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         return appDelegate.model
     }

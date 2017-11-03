@@ -17,15 +17,14 @@ import Firebase
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    lazy var model = DaysLeftModel()
+    lazy var model = AppDaysLeftModel()
     let azureNotifications = AzureNotifications()
 
-    
     override init() {
         super.init()
         
         // Setup listener for iCloud setting change
-        NotificationCenter.default.addObserver(self, selector: #selector(AppDelegate.iCloudSettingsUpdated(_:)), name: NSNotification.Name(rawValue: DaysLeftModel.iCloudSettingsNotification), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(AppDelegate.iCloudSettingsUpdated(_:)), name: NSNotification.Name(rawValue: AppDaysLeftModel.iCloudSettingsNotification), object: nil)
     }
     
     deinit {

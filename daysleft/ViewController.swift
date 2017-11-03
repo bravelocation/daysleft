@@ -37,7 +37,7 @@ class ViewController: UIViewController {
     }
     
     func setupNotificationHandlers() {
-        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.iCloudSettingsUpdated(_:)), name: NSNotification.Name(rawValue: DaysLeftModel.iCloudSettingsNotification), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.iCloudSettingsUpdated(_:)), name: NSNotification.Name(rawValue: AppDaysLeftModel.iCloudSettingsNotification), object: nil)
         NotificationCenter.default.addObserver(self, selector:#selector(ViewController.appEntersForeground), name: NSNotification.Name.UIApplicationWillEnterForeground, object: nil)
     }
     
@@ -139,7 +139,7 @@ class ViewController: UIViewController {
         self.performSegue(withIdentifier: "segueShowSettings", sender: self)
     }
     
-    func modelData() -> DaysLeftModel {
+    func modelData() -> AppDaysLeftModel {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         return appDelegate.model
     }

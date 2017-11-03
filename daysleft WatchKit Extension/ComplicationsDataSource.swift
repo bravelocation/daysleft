@@ -118,7 +118,7 @@ class ComplicationsDataSource : NSObject, CLKComplicationDataSource {
     }
     
     // Internal helper methods
-    fileprivate func modelData() -> DaysLeftModel {
+    fileprivate func modelData() -> WatchDaysLeftModel {
         let appDelegate = WKExtension.shared().delegate as! ExtensionDelegate
         return appDelegate.model
     }

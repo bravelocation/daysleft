@@ -64,7 +64,7 @@ open class AzureNotifications {
         }
     }
     
-    func modelData() -> DaysLeftModel {
+    func modelData() -> AppDaysLeftModel {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         return appDelegate.model
     }
