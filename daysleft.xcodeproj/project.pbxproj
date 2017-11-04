@@ -7,9 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		42FB7AA05E567608BD6690E9 /* libPods-daysleftlibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6956DABE3A7AE4B317EC535 /* libPods-daysleftlibrary.a */; };
 		457A5E5B984A1C9DE0CFE419 /* libPods-daysleft.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F3CCE5FDC8DDA59A37F2F1F4 /* libPods-daysleft.a */; };
-		4697C12D997FA1DAFEB0447B /* libPods-daysleft WatchKit App.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9516F4FE66EFC74E057B4165 /* libPods-daysleft WatchKit App.a */; };
 		523443631BBAFBEF00E95BA4 /* daysleft WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 52B7E8771ABEDE9300E1949C /* daysleft WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		523443661BBAFBEF00E95BA4 /* daysleft WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 52B7E8811ABEDE9300E1949C /* daysleft WatchKit App.app */; };
 		5234436D1BBB181C00E95BA4 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5234436C1BBB181C00E95BA4 /* ExtensionDelegate.swift */; };
@@ -58,9 +56,6 @@
 		52FAB11C1A9240490039691E /* DefaultPreferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52FAB11B1A9240490039691E /* DefaultPreferences.plist */; };
 		52FAB11E1A9381B70039691E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FAB11D1A9381B70039691E /* SettingsViewController.swift */; };
 		52FBB73C1BC92D5300B426C0 /* daysleftlibrary.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5295EDD01A94AE53007EF7E7 /* daysleftlibrary.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		9BEC59212F90C0BF21DB1E4C /* libPods-MessagesExtension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 89AB9E2F84FC728A8A76AC47 /* libPods-MessagesExtension.a */; };
-		C576BA3CBA9A7B942C72FD71 /* libPods-dayslefttoday.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9617E6CA9F2A12BF2299ABAE /* libPods-dayslefttoday.a */; };
-		D8F508B92589C14B892CABAD /* libPods-daysleft WatchKit Extension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 37942D6E74C88723CC5E5442 /* libPods-daysleft WatchKit Extension.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -157,13 +152,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0269D46E34D3F525BE17A11F /* Pods-daysleftlibrary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-daysleftlibrary.release.xcconfig"; path = "Pods/Target Support Files/Pods-daysleftlibrary/Pods-daysleftlibrary.release.xcconfig"; sourceTree = "<group>"; };
-		06D69850868C5906836EEE8B /* Pods-daysleft WatchKit Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-daysleft WatchKit Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-daysleft WatchKit Extension/Pods-daysleft WatchKit Extension.release.xcconfig"; sourceTree = "<group>"; };
-		1C6200DB23E4E5267B914426 /* Pods-dayslefttoday.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dayslefttoday.debug.xcconfig"; path = "Pods/Target Support Files/Pods-dayslefttoday/Pods-dayslefttoday.debug.xcconfig"; sourceTree = "<group>"; };
 		20D7C2776D16B97A9237DC10 /* Pods-daysleft.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-daysleft.release.xcconfig"; path = "Pods/Target Support Files/Pods-daysleft/Pods-daysleft.release.xcconfig"; sourceTree = "<group>"; };
 		37942D6E74C88723CC5E5442 /* libPods-daysleft WatchKit Extension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-daysleft WatchKit Extension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		39638B2E57648DB9142D4833 /* Pods-daysleft.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-daysleft.debug.xcconfig"; path = "Pods/Target Support Files/Pods-daysleft/Pods-daysleft.debug.xcconfig"; sourceTree = "<group>"; };
-		412009C86738C05A611A67CB /* Pods-daysleft WatchKit App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-daysleft WatchKit App.release.xcconfig"; path = "Pods/Target Support Files/Pods-daysleft WatchKit App/Pods-daysleft WatchKit App.release.xcconfig"; sourceTree = "<group>"; };
 		523443691BBAFCCF00E95BA4 /* daysleftwatchlibrary-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "daysleftwatchlibrary-Info.plist"; path = "daysleft/daysleftwatchlibrary-Info.plist"; sourceTree = SOURCE_ROOT; };
 		5234436B1BBB00B800E95BA4 /* daysleft WatchKit App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "daysleft WatchKit App.entitlements"; sourceTree = "<group>"; };
 		5234436C1BBB181C00E95BA4 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
@@ -225,15 +216,9 @@
 		52FAB11A1A923F500039691E /* daysleft.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = daysleft.entitlements; sourceTree = "<group>"; };
 		52FAB11B1A9240490039691E /* DefaultPreferences.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DefaultPreferences.plist; sourceTree = "<group>"; };
 		52FAB11D1A9381B70039691E /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		5794FAF44CD46B65CA21A6D1 /* Pods-dayslefttoday.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dayslefttoday.release.xcconfig"; path = "Pods/Target Support Files/Pods-dayslefttoday/Pods-dayslefttoday.release.xcconfig"; sourceTree = "<group>"; };
-		69186783160D736B1A148E5E /* Pods-MessagesExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MessagesExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-MessagesExtension/Pods-MessagesExtension.release.xcconfig"; sourceTree = "<group>"; };
-		827CA0DE08CF8BB12EAB7089 /* Pods-MessagesExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MessagesExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MessagesExtension/Pods-MessagesExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		89AB9E2F84FC728A8A76AC47 /* libPods-MessagesExtension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MessagesExtension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8F6F4540907550193A08563C /* Pods-daysleft WatchKit App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-daysleft WatchKit App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-daysleft WatchKit App/Pods-daysleft WatchKit App.debug.xcconfig"; sourceTree = "<group>"; };
 		9516F4FE66EFC74E057B4165 /* libPods-daysleft WatchKit App.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-daysleft WatchKit App.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9617E6CA9F2A12BF2299ABAE /* libPods-dayslefttoday.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-dayslefttoday.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A211FC6E111550C6E66EFFCC /* Pods-daysleftlibrary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-daysleftlibrary.debug.xcconfig"; path = "Pods/Target Support Files/Pods-daysleftlibrary/Pods-daysleftlibrary.debug.xcconfig"; sourceTree = "<group>"; };
-		BE804002ED996136069AE4B0 /* Pods-daysleft WatchKit Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-daysleft WatchKit Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-daysleft WatchKit Extension/Pods-daysleft WatchKit Extension.debug.xcconfig"; sourceTree = "<group>"; };
 		F3CCE5FDC8DDA59A37F2F1F4 /* libPods-daysleft.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-daysleft.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6956DABE3A7AE4B317EC535 /* libPods-daysleftlibrary.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-daysleftlibrary.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -243,7 +228,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4697C12D997FA1DAFEB0447B /* libPods-daysleft WatchKit App.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,7 +236,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				52B78E0E1D983A0400AB629D /* WatchConnectivity.framework in Frameworks */,
-				42FB7AA05E567608BD6690E9 /* libPods-daysleftlibrary.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,7 +253,6 @@
 			files = (
 				5295EE0A1A94B3AA007EF7E7 /* daysleftlibrary.framework in Frameworks */,
 				5295EDFB1A94B398007EF7E7 /* NotificationCenter.framework in Frameworks */,
-				C576BA3CBA9A7B942C72FD71 /* libPods-dayslefttoday.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,7 +261,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				52B78DF41D982A6E00AB629D /* Messages.framework in Frameworks */,
-				9BEC59212F90C0BF21DB1E4C /* libPods-MessagesExtension.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,7 +268,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8F508B92589C14B892CABAD /* libPods-daysleft WatchKit Extension.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,18 +288,8 @@
 		47ED22519B5BD25FB1149268 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				827CA0DE08CF8BB12EAB7089 /* Pods-MessagesExtension.debug.xcconfig */,
-				69186783160D736B1A148E5E /* Pods-MessagesExtension.release.xcconfig */,
 				39638B2E57648DB9142D4833 /* Pods-daysleft.debug.xcconfig */,
 				20D7C2776D16B97A9237DC10 /* Pods-daysleft.release.xcconfig */,
-				8F6F4540907550193A08563C /* Pods-daysleft WatchKit App.debug.xcconfig */,
-				412009C86738C05A611A67CB /* Pods-daysleft WatchKit App.release.xcconfig */,
-				BE804002ED996136069AE4B0 /* Pods-daysleft WatchKit Extension.debug.xcconfig */,
-				06D69850868C5906836EEE8B /* Pods-daysleft WatchKit Extension.release.xcconfig */,
-				A211FC6E111550C6E66EFFCC /* Pods-daysleftlibrary.debug.xcconfig */,
-				0269D46E34D3F525BE17A11F /* Pods-daysleftlibrary.release.xcconfig */,
-				1C6200DB23E4E5267B914426 /* Pods-dayslefttoday.debug.xcconfig */,
-				5794FAF44CD46B65CA21A6D1 /* Pods-dayslefttoday.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -559,12 +529,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5295EDEE1A94AE53007EF7E7 /* Build configuration list for PBXNativeTarget "daysleftlibrary" */;
 			buildPhases = (
-				A51552E26C83B933E6CE2D79 /* [CP] Check Pods Manifest.lock */,
 				5295EDCB1A94AE53007EF7E7 /* Sources */,
 				5295EDCC1A94AE53007EF7E7 /* Frameworks */,
 				5295EDCD1A94AE53007EF7E7 /* Headers */,
 				5244C03F1BC38D4400D57F28 /* ShellScript */,
-				EF32F83D55CE6B6DDD322B50 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -598,12 +566,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5295EE061A94B398007EF7E7 /* Build configuration list for PBXNativeTarget "dayslefttoday" */;
 			buildPhases = (
-				5E5C1D7351936DD58387B7C5 /* [CP] Check Pods Manifest.lock */,
 				5295EDF41A94B398007EF7E7 /* Sources */,
 				5295EDF51A94B398007EF7E7 /* Frameworks */,
 				5295EDF61A94B398007EF7E7 /* Resources */,
 				5244C0401BC38D5300D57F28 /* ShellScript */,
-				73C3FCFEABFDDE8A8AEE3640 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -618,12 +584,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 52B78DFE1D982A6E00AB629D /* Build configuration list for PBXNativeTarget "MessagesExtension" */;
 			buildPhases = (
-				46FE2E9E3813A6F21C12D879 /* [CP] Check Pods Manifest.lock */,
 				52B78DEB1D982A6D00AB629D /* Sources */,
 				52B78DEC1D982A6D00AB629D /* Frameworks */,
 				52B78DED1D982A6D00AB629D /* Resources */,
 				52B78E051D982AA900AB629D /* ShellScript */,
-				A6FE1AECA8A69B7082265242 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -638,13 +602,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 52B7E8951ABEDE9300E1949C /* Build configuration list for PBXNativeTarget "daysleft WatchKit Extension" */;
 			buildPhases = (
-				496C583A5A29EF7B1BDFE71B /* [CP] Check Pods Manifest.lock */,
 				52B7E8731ABEDE9300E1949C /* Sources */,
 				52B7E8741ABEDE9300E1949C /* Frameworks */,
 				52B7E8751ABEDE9300E1949C /* Resources */,
 				5244C0411BC38D5C00D57F28 /* ShellScript */,
-				21FB5F97385F23BE80CF76C9 /* [CP] Embed Pods Frameworks */,
-				FF93DA1B745B439B2C16EE37 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -659,11 +620,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 52B7E8941ABEDE9300E1949C /* Build configuration list for PBXNativeTarget "daysleft WatchKit App" */;
 			buildPhases = (
-				7DF047D1566A4175DCF30476 /* [CP] Check Pods Manifest.lock */,
 				52B7E87F1ABEDE9300E1949C /* Resources */,
 				523443671BBAFBEF00E95BA4 /* Embed App Extensions */,
 				20118CCB11B59DAA0A7CA7B7 /* Frameworks */,
-				DC7A9E4EC91A911498B7921D /* [CP] Copy Pods Resources */,
 				5242D8411E40A20F00BF6FEE /* ShellScript */,
 			);
 			buildRules = (
@@ -888,57 +847,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		21FB5F97385F23BE80CF76C9 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-daysleft WatchKit Extension/Pods-daysleft WatchKit Extension-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		46FE2E9E3813A6F21C12D879 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-MessagesExtension-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		496C583A5A29EF7B1BDFE71B /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-daysleft WatchKit Extension-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		5242D8411E40A20F00BF6FEE /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1017,57 +925,6 @@
 			shellPath = /bin/sh;
 			shellScript = "git=`sh /etc/profile; which git`\nappBuild=`$git rev-list --all |wc -l`\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $appBuild\" \"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\necho \"Updated ${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\n";
 		};
-		5E5C1D7351936DD58387B7C5 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-dayslefttoday-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		73C3FCFEABFDDE8A8AEE3640 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-dayslefttoday/Pods-dayslefttoday-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7DF047D1566A4175DCF30476 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-daysleft WatchKit App-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		81B550E6B6054FB80DFB7CC5 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1083,39 +940,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-daysleft/Pods-daysleft-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A51552E26C83B933E6CE2D79 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-daysleftlibrary-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A6FE1AECA8A69B7082265242 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MessagesExtension/Pods-MessagesExtension-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		B5DD2F40EF96F21BD22B4C7C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1129,21 +953,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-daysleft/Pods-daysleft-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		DC7A9E4EC91A911498B7921D /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-daysleft WatchKit App/Pods-daysleft WatchKit App-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E355ED4EB90C75625C166EE8 /* [CP] Check Pods Manifest.lock */ = {
@@ -1162,36 +971,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		EF32F83D55CE6B6DDD322B50 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-daysleftlibrary/Pods-daysleftlibrary-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		FF93DA1B745B439B2C16EE37 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-daysleft WatchKit Extension/Pods-daysleft WatchKit Extension-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1324,7 +1103,6 @@
 /* Begin XCBuildConfiguration section */
 		5295EDEA1A94AE53007EF7E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A211FC6E111550C6E66EFFCC /* Pods-daysleftlibrary.debug.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1356,7 +1134,6 @@
 		};
 		5295EDEB1A94AE53007EF7E7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0269D46E34D3F525BE17A11F /* Pods-daysleftlibrary.release.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1425,7 +1202,6 @@
 		};
 		5295EE071A94B398007EF7E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1C6200DB23E4E5267B914426 /* Pods-dayslefttoday.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = dayslefttoday/dayslefttoday.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1450,7 +1226,6 @@
 		};
 		5295EE081A94B398007EF7E7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5794FAF44CD46B65CA21A6D1 /* Pods-dayslefttoday.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = dayslefttoday/dayslefttoday.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1471,7 +1246,6 @@
 		};
 		52B78DFF1D982A6E00AB629D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 827CA0DE08CF8BB12EAB7089 /* Pods-MessagesExtension.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -1495,7 +1269,6 @@
 		};
 		52B78E001D982A6E00AB629D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 69186783160D736B1A148E5E /* Pods-MessagesExtension.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -1518,7 +1291,6 @@
 		};
 		52B7E8901ABEDE9300E1949C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BE804002ED996136069AE4B0 /* Pods-daysleft WatchKit Extension.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "daysleft WatchKit Extension/daysleft WatchKit Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1543,7 +1315,6 @@
 		};
 		52B7E8911ABEDE9300E1949C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 06D69850868C5906836EEE8B /* Pods-daysleft WatchKit Extension.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "daysleft WatchKit Extension/daysleft WatchKit Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1564,7 +1335,6 @@
 		};
 		52B7E8921ABEDE9300E1949C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8F6F4540907550193A08563C /* Pods-daysleft WatchKit App.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = WatchAppIcon;
@@ -1592,7 +1362,6 @@
 		};
 		52B7E8931ABEDE9300E1949C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 412009C86738C05A611A67CB /* Pods-daysleft WatchKit App.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = WatchAppIcon;

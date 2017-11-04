@@ -8,17 +8,3 @@ target 'daysleft' do
     pod 'Firebase/AdMob'
 end
 
-target 'daysleft WatchKit App' do
-end
-
-target 'daysleft WatchKit Extension' do
-end
-
-target 'daysleftlibrary' do
-end
-
-target 'dayslefttoday' do
-end
-
-target 'MessagesExtension' do
-end

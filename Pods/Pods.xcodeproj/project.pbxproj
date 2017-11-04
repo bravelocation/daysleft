@@ -7,19 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0950B06F59DD9EDE0084A50E945E51FB /* Pods-daysleft WatchKit Extension-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 00049760AFB5495C9EC8530C8A1D5A18 /* Pods-daysleft WatchKit Extension-dummy.m */; };
-		0AE95B5760A6397E2962BCBCDE86243A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		0AED6A8FBEF7F5C59C7082B8E7716BE2 /* pb_decode.h in Headers */ = {isa = PBXBuildFile; fileRef = BAC1C62823FA391C38E9407C25F2D6B1 /* pb_decode.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1B6053DB4F426B47C4A91E97990824D3 /* GoogleToolboxForMac-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F0FDA17A61C3E1C3B69D30022B8F93 /* GoogleToolboxForMac-dummy.m */; };
 		1E46EC8AB8830A23FAC91E8547748BF5 /* pb_common.h in Headers */ = {isa = PBXBuildFile; fileRef = 5C80CBFED3F1225F90D7B8B3852BDA05 /* pb_common.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		28B7761E1D77D96D267539A7B67188EA /* nanopb-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D6B490C52982375E2D9A3DA302084E23 /* nanopb-dummy.m */; };
-		384E48F1E55AFAE8F099EAF6050A98B2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		3D5A8358B3CE03D143C39C4BF52B34D3 /* GTMNSData+zlib.m in Sources */ = {isa = PBXBuildFile; fileRef = 8462DBB4C5DF22FA7C75B03582E804A2 /* GTMNSData+zlib.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		4219192FE9DD3770C1F1E6D164C132C3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		5E8EFA13FB2B865212009452319B665B /* Pods-dayslefttoday-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C69797728740C719F7602F86968A6884 /* Pods-dayslefttoday-dummy.m */; };
 		6B02824B166AF4649072CAB930283EEA /* GTMDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 6EB5A62C0E46D7587EA98016760DEB94 /* GTMDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7EB6BD2C95E768B1B5182BCED4B4970D /* Pods-daysleft-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DC27B065F3C37EFC1A1CEA85E612D072 /* Pods-daysleft-dummy.m */; };
-		80471CF8CD37543BA0AC512D240BF5C1 /* Pods-daysleft WatchKit App-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C593FEBA41026FCE2BE5918090658797 /* Pods-daysleft WatchKit App-dummy.m */; };
+		7EB6BD2C95E768B1B5182BCED4B4970D /* Pods-daysleft-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1196459F5570600CB03E34A5C7B43625 /* Pods-daysleft-dummy.m */; };
 		91C9C419C2E304B3A68293C22053034E /* pb_encode.c in Sources */ = {isa = PBXBuildFile; fileRef = 903F3C3A93A97F77A888BCEB6310A81E /* pb_encode.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc -fno-objc-arc"; }; };
 		9CBD14C17446EC9384CFAADBADF12387 /* pb_common.c in Sources */ = {isa = PBXBuildFile; fileRef = 35F62E67151938ACDC620C018EAA0CA3 /* pb_common.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc -fno-objc-arc -fno-objc-arc"; }; };
 		A39A7F90321353E49D6165BAD53505B2 /* pb.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F2801297387CD4D4B0302A76BA6EE80 /* pb.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -27,12 +21,8 @@
 		AE40968E45EB75088481466E4E7671A3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		CBC7548501161D689ACF033CA42AA1AB /* GTMNSData+zlib.h in Headers */ = {isa = PBXBuildFile; fileRef = BB7C3D5AF32C0FB69E2DDD41C38449CE /* GTMNSData+zlib.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D02A9BE496DF996BBC92776E586BCAF8 /* pb_encode.h in Headers */ = {isa = PBXBuildFile; fileRef = 1AE906097CE259256C89C1A2DA07DE2E /* pb_encode.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DA46CD8F49A6BED30DDFF5A381A6709A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		DA8F9FA4638D280798CE4B8A7F108F6C /* Pods-daysleftlibrary-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B12FBDE81939B47EE7DFD609DD9728C3 /* Pods-daysleftlibrary-dummy.m */; };
-		DBBDF77C8D0BFDA1F32741AC66F4DDA2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		F2A71EFF37214BF8F060F8710E7358A8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		F2A7C7D18755231B289C10D16DD6F730 /* pb_decode.c in Sources */ = {isa = PBXBuildFile; fileRef = 20EB65461F2A8E4A6B2DD12E7E2F6821 /* pb_decode.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc -fno-objc-arc"; }; };
-		FEB22E38BDA492AFF288A9F01EE5EEAF /* Pods-MessagesExtension-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A29277559AF7F2B74DA103CD2B6FECF /* Pods-MessagesExtension-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,129 +43,60 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00049760AFB5495C9EC8530C8A1D5A18 /* Pods-daysleft WatchKit Extension-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-daysleft WatchKit Extension-dummy.m"; sourceTree = "<group>"; };
-		008A523D14B832A16D278472975357CD /* Pods-daysleft WatchKit App-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-daysleft WatchKit App-acknowledgements.plist"; sourceTree = "<group>"; };
 		01403791AD115656C301C74A5253A6E2 /* FirebaseCoreDiagnostics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseCoreDiagnostics.framework; path = Frameworks/FirebaseCoreDiagnostics.framework; sourceTree = "<group>"; };
 		09E5D539A38C116947F83D19D84B5B84 /* GoogleToolboxForMac-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GoogleToolboxForMac-prefix.pch"; sourceTree = "<group>"; };
 		0D77503E33D6ED34C9346459DA1651D9 /* Firebase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Firebase.h; path = Core/Sources/Firebase.h; sourceTree = "<group>"; };
+		1196459F5570600CB03E34A5C7B43625 /* Pods-daysleft-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-daysleft-dummy.m"; sourceTree = "<group>"; };
 		1AE906097CE259256C89C1A2DA07DE2E /* pb_encode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = pb_encode.h; sourceTree = "<group>"; };
-		1EC2BA3D6B0D280C237853EEBD0DD64D /* libPods-dayslefttoday.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-dayslefttoday.a"; path = "libPods-dayslefttoday.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		20EB65461F2A8E4A6B2DD12E7E2F6821 /* pb_decode.c */ = {isa = PBXFileReference; includeInIndex = 1; path = pb_decode.c; sourceTree = "<group>"; };
-		256E01290F5B5BDC6E2F44D541EC7338 /* Pods-daysleftlibrary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-daysleftlibrary.debug.xcconfig"; sourceTree = "<group>"; };
-		28C5731636A3D1A496F183DAA49987C3 /* Pods-MessagesExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MessagesExtension.release.xcconfig"; sourceTree = "<group>"; };
 		35F62E67151938ACDC620C018EAA0CA3 /* pb_common.c */ = {isa = PBXFileReference; includeInIndex = 1; path = pb_common.c; sourceTree = "<group>"; };
-		377C3CBE576A834C39A77EB314352D43 /* libPods-daysleftlibrary.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-daysleftlibrary.a"; path = "libPods-daysleftlibrary.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3C4F3C3F7112ACE6A5F85467298E1829 /* Pods-MessagesExtension-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MessagesExtension-acknowledgements.markdown"; sourceTree = "<group>"; };
-		422D6CACDEF8797F1C9DAFC33CD05271 /* Pods-MessagesExtension-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MessagesExtension-resources.sh"; sourceTree = "<group>"; };
 		433FB2AD8EDF332FEF3D9A6DD33B93C9 /* FirebaseInstanceID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseInstanceID.framework; path = Frameworks/FirebaseInstanceID.framework; sourceTree = "<group>"; };
-		45D4A8EDCA4D9205081A52F24A4654FD /* Pods-daysleft-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-daysleft-frameworks.sh"; sourceTree = "<group>"; };
-		461922C75BDC0250F15813DD4191236F /* Pods-daysleftlibrary-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-daysleftlibrary-acknowledgements.markdown"; sourceTree = "<group>"; };
-		4B54DF405B5752D857FB376E46BEFE9F /* Pods-daysleft WatchKit Extension-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-daysleft WatchKit Extension-acknowledgements.plist"; sourceTree = "<group>"; };
 		4D7FC8AD51C22954991DA7D578E6BB38 /* Crashlytics.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Crashlytics.h; path = iOS/Crashlytics.framework/Headers/Crashlytics.h; sourceTree = "<group>"; };
-		4E4B12FD2299E1DEFB758EC65F132193 /* Pods-daysleft WatchKit App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-daysleft WatchKit App.debug.xcconfig"; sourceTree = "<group>"; };
-		501C337AAEF33B9A0433E3188030FC3E /* libPods-daysleft WatchKit Extension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-daysleft WatchKit Extension.a"; path = "libPods-daysleft WatchKit Extension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		51D95805F538BA464E85B74A9F663753 /* Pods-daysleft-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-daysleft-acknowledgements.markdown"; sourceTree = "<group>"; };
+		53DDC0167C276CB327B725ACD6ADB2EC /* libnanopb.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libnanopb.a; path = libnanopb.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		57F87A881633DFD216C2C20797614190 /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAnalytics.framework; path = Frameworks/FirebaseAnalytics.framework; sourceTree = "<group>"; };
-		59F007BF1006F3F05E855CB9967F5735 /* Pods-daysleft.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-daysleft.debug.xcconfig"; sourceTree = "<group>"; };
-		5A29277559AF7F2B74DA103CD2B6FECF /* Pods-MessagesExtension-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MessagesExtension-dummy.m"; sourceTree = "<group>"; };
-		5A7F45A707320C78DEDADB60B436A9B6 /* Pods-MessagesExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MessagesExtension.debug.xcconfig"; sourceTree = "<group>"; };
+		5A66DD1F605F397A9C3848DE9C5322A8 /* Pods-daysleft-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-daysleft-acknowledgements.plist"; sourceTree = "<group>"; };
 		5C80CBFED3F1225F90D7B8B3852BDA05 /* pb_common.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = pb_common.h; sourceTree = "<group>"; };
 		5F2801297387CD4D4B0302A76BA6EE80 /* pb.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = pb.h; sourceTree = "<group>"; };
-		63F86578092E313AE0B1281958EEBCB1 /* libPods-MessagesExtension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-MessagesExtension.a"; path = "libPods-MessagesExtension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		63FA8412E0BA564D36676E7C9D09FAC4 /* Pods-daysleft WatchKit Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-daysleft WatchKit Extension.release.xcconfig"; sourceTree = "<group>"; };
 		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		69B091ED15DBF16DEDFBD07CC1D3DA14 /* Pods-daysleft WatchKit App-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-daysleft WatchKit App-frameworks.sh"; sourceTree = "<group>"; };
 		6EB5A62C0E46D7587EA98016760DEB94 /* GTMDefines.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
-		7079A13C6D1DC21903E5C36DE6A2BF25 /* Pods-daysleft WatchKit App-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-daysleft WatchKit App-acknowledgements.markdown"; sourceTree = "<group>"; };
-		744A8C48E1E0B0C7DCD37F3917FADB19 /* Pods-dayslefttoday-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-dayslefttoday-acknowledgements.plist"; sourceTree = "<group>"; };
-		77E61E5AEE28C6212863E80F0B55A849 /* Pods-daysleft WatchKit App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-daysleft WatchKit App.release.xcconfig"; sourceTree = "<group>"; };
+		782827025756F23F5611A1195E050D95 /* Pods-daysleft-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-daysleft-resources.sh"; sourceTree = "<group>"; };
 		7E387F782E449067FDAFF2A61A34BA36 /* Answers.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Answers.h; path = iOS/Crashlytics.framework/Headers/Answers.h; sourceTree = "<group>"; };
 		8310EDD0246E4E535D3AF31C5814D166 /* CLSStackFrame.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSStackFrame.h; path = iOS/Crashlytics.framework/Headers/CLSStackFrame.h; sourceTree = "<group>"; };
 		8462DBB4C5DF22FA7C75B03582E804A2 /* GTMNSData+zlib.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "GTMNSData+zlib.m"; path = "Foundation/GTMNSData+zlib.m"; sourceTree = "<group>"; };
-		86B69D04907741630AF0091DF4F929FB /* libGoogleToolboxForMac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libGoogleToolboxForMac.a; path = libGoogleToolboxForMac.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		86EE1FCFA82EC3C48FA3DD685B971CE2 /* Pods-dayslefttoday-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-dayslefttoday-resources.sh"; sourceTree = "<group>"; };
-		89E7BA072E55DF9B868164E6ACC2485B /* Pods-dayslefttoday.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-dayslefttoday.release.xcconfig"; sourceTree = "<group>"; };
-		8AF19FF6175CDF84C9738B899E0507AC /* Pods-daysleft WatchKit App-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-daysleft WatchKit App-resources.sh"; sourceTree = "<group>"; };
 		8DBBCDAE98CFCF30ED59BD7DF4ABAE35 /* Fabric.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Fabric.h; path = iOS/Fabric.framework/Headers/Fabric.h; sourceTree = "<group>"; };
-		8DDD360B4D104941991F5FE2DC42AECA /* Pods-daysleft WatchKit Extension-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-daysleft WatchKit Extension-frameworks.sh"; sourceTree = "<group>"; };
 		903F3C3A93A97F77A888BCEB6310A81E /* pb_encode.c */ = {isa = PBXFileReference; includeInIndex = 1; path = pb_encode.c; sourceTree = "<group>"; };
 		918E3C7F97C4B6B50C82EDA7C81F28DA /* ANSCompatibility.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ANSCompatibility.h; path = iOS/Crashlytics.framework/Headers/ANSCompatibility.h; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9933E79B897917FB3B132175B87316E8 /* Pods-daysleft-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-daysleft-resources.sh"; sourceTree = "<group>"; };
-		A01C797CF812BA9CB5E98558715D33CA /* Pods-MessagesExtension-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MessagesExtension-acknowledgements.plist"; sourceTree = "<group>"; };
-		A4567EDE74DFBAB6E3365DE9366D6ED8 /* libPods-daysleft WatchKit App.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-daysleft WatchKit App.a"; path = "libPods-daysleft WatchKit App.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A57661D490C10D3898FF05D27AB42848 /* libnanopb.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libnanopb.a; path = libnanopb.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		A8A7EEEE24873AADE08C352BF01054FF /* Pods-daysleft WatchKit Extension-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-daysleft WatchKit Extension-resources.sh"; sourceTree = "<group>"; };
+		9CDFDF939987E4A721F150FB7BFC7DAE /* Pods-daysleft-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-daysleft-frameworks.sh"; sourceTree = "<group>"; };
 		A920841E33948A7BDF286A29B02A1400 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = iOS/Fabric.framework; sourceTree = "<group>"; };
 		ADE8A24D10E4D86CDF7DC30FDFB1141B /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = iOS/Crashlytics.framework; sourceTree = "<group>"; };
 		AE1B117FE8890E382D4344E705550753 /* FirebaseNanoPB.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseNanoPB.framework; path = Frameworks/FirebaseNanoPB.framework; sourceTree = "<group>"; };
-		B01C57003F39330822B619615C837689 /* libPods-daysleft.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-daysleft.a"; path = "libPods-daysleft.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B12FBDE81939B47EE7DFD609DD9728C3 /* Pods-daysleftlibrary-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-daysleftlibrary-dummy.m"; sourceTree = "<group>"; };
 		B4781D42889FE9016FA0C244FBB21348 /* nanopb.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = nanopb.xcconfig; sourceTree = "<group>"; };
 		B8F0FDA17A61C3E1C3B69D30022B8F93 /* GoogleToolboxForMac-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GoogleToolboxForMac-dummy.m"; sourceTree = "<group>"; };
 		BAC1C62823FA391C38E9407C25F2D6B1 /* pb_decode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = pb_decode.h; sourceTree = "<group>"; };
+		BB312CF94D0539BAAF7A6E79787255FC /* Pods-daysleft.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-daysleft.debug.xcconfig"; sourceTree = "<group>"; };
 		BB7C3D5AF32C0FB69E2DDD41C38449CE /* GTMNSData+zlib.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "GTMNSData+zlib.h"; path = "Foundation/GTMNSData+zlib.h"; sourceTree = "<group>"; };
-		BD941B37090123AAAF64DB9631FA58D8 /* Pods-daysleft WatchKit Extension-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-daysleft WatchKit Extension-acknowledgements.markdown"; sourceTree = "<group>"; };
 		BEA604AB058083998B875CB152F9E5DF /* CLSReport.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSReport.h; path = iOS/Crashlytics.framework/Headers/CLSReport.h; sourceTree = "<group>"; };
-		C1F314FE1DB7BEAE077E4AF76D461220 /* Pods-dayslefttoday.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-dayslefttoday.debug.xcconfig"; sourceTree = "<group>"; };
 		C409CBC5381A4793E65A68DCE6D50097 /* CLSAttributes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSAttributes.h; path = iOS/Crashlytics.framework/Headers/CLSAttributes.h; sourceTree = "<group>"; };
 		C4C00DA1B6ABB694CFCB46570FDEC472 /* CLSLogging.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSLogging.h; path = iOS/Crashlytics.framework/Headers/CLSLogging.h; sourceTree = "<group>"; };
-		C593FEBA41026FCE2BE5918090658797 /* Pods-daysleft WatchKit App-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-daysleft WatchKit App-dummy.m"; sourceTree = "<group>"; };
-		C69797728740C719F7602F86968A6884 /* Pods-dayslefttoday-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-dayslefttoday-dummy.m"; sourceTree = "<group>"; };
-		CA445831B1946368A5C663A470911A46 /* Pods-daysleftlibrary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-daysleftlibrary.release.xcconfig"; sourceTree = "<group>"; };
-		CAB2B4A081B2A8A804F911916AB068E9 /* Pods-daysleftlibrary-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-daysleftlibrary-acknowledgements.plist"; sourceTree = "<group>"; };
+		C75D6FCC089B161B161E7E7068675B0D /* Pods-daysleft.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-daysleft.release.xcconfig"; sourceTree = "<group>"; };
 		CCC0CBEC308A6CAE13F01E26F67C42B1 /* FirebaseCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseCore.framework; path = Frameworks/FirebaseCore.framework; sourceTree = "<group>"; };
-		CE32AFBDECD35F66B80B8D03C365B1E0 /* Pods-daysleft-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-daysleft-acknowledgements.plist"; sourceTree = "<group>"; };
-		CF3AF10CD316691CBCF5C516C785A9BC /* Pods-daysleft.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-daysleft.release.xcconfig"; sourceTree = "<group>"; };
+		CE4BC3DD4F2F5F655890B70CFBA745C5 /* libPods-daysleft.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-daysleft.a"; path = "libPods-daysleft.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4C84513BA4F409A69350D50069A7204 /* Pods-daysleft-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-daysleft-acknowledgements.markdown"; sourceTree = "<group>"; };
 		D6B490C52982375E2D9A3DA302084E23 /* nanopb-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "nanopb-dummy.m"; sourceTree = "<group>"; };
-		D91AB1423EA65E5610666153A392F037 /* Pods-daysleftlibrary-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-daysleftlibrary-resources.sh"; sourceTree = "<group>"; };
+		D7819879009DA44A8EAD906212C3B215 /* libGoogleToolboxForMac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libGoogleToolboxForMac.a; path = libGoogleToolboxForMac.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB07C811E5908F053EE3DFF671F787E5 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = Frameworks/frameworks/GoogleMobileAds.framework; sourceTree = "<group>"; };
-		DC27B065F3C37EFC1A1CEA85E612D072 /* Pods-daysleft-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-daysleft-dummy.m"; sourceTree = "<group>"; };
 		DE8A57FA524831623E61ACC21CCBE8C5 /* nanopb-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "nanopb-prefix.pch"; sourceTree = "<group>"; };
 		EAC1B7A5FB2EC1C7FD06DEA1DC9BF918 /* GoogleToolboxForMac.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GoogleToolboxForMac.xcconfig; sourceTree = "<group>"; };
-		EDD8D53881FFB3791BAD82852F98E77B /* Pods-dayslefttoday-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-dayslefttoday-acknowledgements.markdown"; sourceTree = "<group>"; };
 		EFA5A50EE2226C0DA1AE4084B7ABF561 /* FABAttributes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FABAttributes.h; path = iOS/Fabric.framework/Headers/FABAttributes.h; sourceTree = "<group>"; };
-		F5CDF979633BB70FA572CF0D629F540C /* Pods-daysleft WatchKit Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-daysleft WatchKit Extension.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		2659E38702B35ACB8FFD117D27538A96 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DA46CD8F49A6BED30DDFF5A381A6709A /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		363C890CBEC775BBE2A00FB731B2DF25 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0AE95B5760A6397E2962BCBCDE86243A /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3A3ADFBA679AE9183D1CB5233341F023 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DBBDF77C8D0BFDA1F32741AC66F4DDA2 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		736872D0F6BFBDB3F36ED73405DE4E29 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				AE40968E45EB75088481466E4E7671A3 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8F27545844552C38F3D3498804E5B16E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				384E48F1E55AFAE8F099EAF6050A98B2 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,64 +116,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E39BB37326987BE07CA7342BBCF13301 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4219192FE9DD3770C1F1E6D164C132C3 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		19923D019C837F9F0BE0A4AF23F3E829 /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				F25D5A23731CEDB56BC8163C58629C3C /* Pods-daysleft */,
-				AFB815FE8B885BD82A5AF8D4802D5DA3 /* Pods-daysleft WatchKit App */,
-				79B0A2D41871C390BF558C0BC520A737 /* Pods-daysleft WatchKit Extension */,
-				28DA0AA333F14A5901A9D4F9F6CF9197 /* Pods-daysleftlibrary */,
-				DCB482736521AD13BB1ADEC759192FE9 /* Pods-dayslefttoday */,
-				5D3C248BC83AF84AFB8A043D4179AA0B /* Pods-MessagesExtension */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		1A9C3A287245D4460EB25B9079A7B92E /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				86B69D04907741630AF0091DF4F929FB /* libGoogleToolboxForMac.a */,
-				A57661D490C10D3898FF05D27AB42848 /* libnanopb.a */,
-				B01C57003F39330822B619615C837689 /* libPods-daysleft.a */,
-				A4567EDE74DFBAB6E3365DE9366D6ED8 /* libPods-daysleft WatchKit App.a */,
-				501C337AAEF33B9A0433E3188030FC3E /* libPods-daysleft WatchKit Extension.a */,
-				377C3CBE576A834C39A77EB314352D43 /* libPods-daysleftlibrary.a */,
-				1EC2BA3D6B0D280C237853EEBD0DD64D /* libPods-dayslefttoday.a */,
-				63F86578092E313AE0B1281958EEBCB1 /* libPods-MessagesExtension.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		22A6D52778FE45CB80ED14908D730C43 /* encode */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			name = encode;
-			sourceTree = "<group>";
-		};
-		28DA0AA333F14A5901A9D4F9F6CF9197 /* Pods-daysleftlibrary */ = {
-			isa = PBXGroup;
-			children = (
-				461922C75BDC0250F15813DD4191236F /* Pods-daysleftlibrary-acknowledgements.markdown */,
-				CAB2B4A081B2A8A804F911916AB068E9 /* Pods-daysleftlibrary-acknowledgements.plist */,
-				B12FBDE81939B47EE7DFD609DD9728C3 /* Pods-daysleftlibrary-dummy.m */,
-				D91AB1423EA65E5610666153A392F037 /* Pods-daysleftlibrary-resources.sh */,
-				256E01290F5B5BDC6E2F44D541EC7338 /* Pods-daysleftlibrary.debug.xcconfig */,
-				CA445831B1946368A5C663A470911A46 /* Pods-daysleftlibrary.release.xcconfig */,
-			);
-			name = "Pods-daysleftlibrary";
-			path = "Target Support Files/Pods-daysleftlibrary";
 			sourceTree = "<group>";
 		};
 		29589E42225CBEEDADF92A92F9F844EB /* NSData+zlib */ = {
@@ -262,6 +133,16 @@
 				8462DBB4C5DF22FA7C75B03582E804A2 /* GTMNSData+zlib.m */,
 			);
 			name = "NSData+zlib";
+			sourceTree = "<group>";
+		};
+		31C052F37FE62722D555E15B0A1618E0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D7819879009DA44A8EAD906212C3B215 /* libGoogleToolboxForMac.a */,
+				53DDC0167C276CB327B725ACD6ADB2EC /* libnanopb.a */,
+				CE4BC3DD4F2F5F655890B70CFBA745C5 /* libPods-daysleft.a */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		3E9EC763E1605C03B6BB42CAE9B2C7CC /* Frameworks */ = {
@@ -305,20 +186,6 @@
 			path = Crashlytics;
 			sourceTree = "<group>";
 		};
-		5D3C248BC83AF84AFB8A043D4179AA0B /* Pods-MessagesExtension */ = {
-			isa = PBXGroup;
-			children = (
-				3C4F3C3F7112ACE6A5F85467298E1829 /* Pods-MessagesExtension-acknowledgements.markdown */,
-				A01C797CF812BA9CB5E98558715D33CA /* Pods-MessagesExtension-acknowledgements.plist */,
-				5A29277559AF7F2B74DA103CD2B6FECF /* Pods-MessagesExtension-dummy.m */,
-				422D6CACDEF8797F1C9DAFC33CD05271 /* Pods-MessagesExtension-resources.sh */,
-				5A7F45A707320C78DEDADB60B436A9B6 /* Pods-MessagesExtension.debug.xcconfig */,
-				28C5731636A3D1A496F183DAA49987C3 /* Pods-MessagesExtension.release.xcconfig */,
-			);
-			name = "Pods-MessagesExtension";
-			path = "Target Support Files/Pods-MessagesExtension";
-			sourceTree = "<group>";
-		};
 		652F5F0B061FD8542713E34CE593C8D8 /* FirebaseCore */ = {
 			isa = PBXGroup;
 			children = (
@@ -337,29 +204,14 @@
 			path = FirebaseInstanceID;
 			sourceTree = "<group>";
 		};
-		79B0A2D41871C390BF558C0BC520A737 /* Pods-daysleft WatchKit Extension */ = {
-			isa = PBXGroup;
-			children = (
-				BD941B37090123AAAF64DB9631FA58D8 /* Pods-daysleft WatchKit Extension-acknowledgements.markdown */,
-				4B54DF405B5752D857FB376E46BEFE9F /* Pods-daysleft WatchKit Extension-acknowledgements.plist */,
-				00049760AFB5495C9EC8530C8A1D5A18 /* Pods-daysleft WatchKit Extension-dummy.m */,
-				8DDD360B4D104941991F5FE2DC42AECA /* Pods-daysleft WatchKit Extension-frameworks.sh */,
-				A8A7EEEE24873AADE08C352BF01054FF /* Pods-daysleft WatchKit Extension-resources.sh */,
-				F5CDF979633BB70FA572CF0D629F540C /* Pods-daysleft WatchKit Extension.debug.xcconfig */,
-				63FA8412E0BA564D36676E7C9D09FAC4 /* Pods-daysleft WatchKit Extension.release.xcconfig */,
-			);
-			name = "Pods-daysleft WatchKit Extension";
-			path = "Target Support Files/Pods-daysleft WatchKit Extension";
-			sourceTree = "<group>";
-		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
 				E0303AC91BA63B8B9D548CFFC7DAF5DE /* Pods */,
-				1A9C3A287245D4460EB25B9079A7B92E /* Products */,
-				19923D019C837F9F0BE0A4AF23F3E829 /* Targets Support Files */,
+				31C052F37FE62722D555E15B0A1618E0 /* Products */,
+				BB8AD7D09330C10C877F25838512C9CF /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -381,21 +233,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		AFB815FE8B885BD82A5AF8D4802D5DA3 /* Pods-daysleft WatchKit App */ = {
-			isa = PBXGroup;
-			children = (
-				7079A13C6D1DC21903E5C36DE6A2BF25 /* Pods-daysleft WatchKit App-acknowledgements.markdown */,
-				008A523D14B832A16D278472975357CD /* Pods-daysleft WatchKit App-acknowledgements.plist */,
-				C593FEBA41026FCE2BE5918090658797 /* Pods-daysleft WatchKit App-dummy.m */,
-				69B091ED15DBF16DEDFBD07CC1D3DA14 /* Pods-daysleft WatchKit App-frameworks.sh */,
-				8AF19FF6175CDF84C9738B899E0507AC /* Pods-daysleft WatchKit App-resources.sh */,
-				4E4B12FD2299E1DEFB758EC65F132193 /* Pods-daysleft WatchKit App.debug.xcconfig */,
-				77E61E5AEE28C6212863E80F0B55A849 /* Pods-daysleft WatchKit App.release.xcconfig */,
-			);
-			name = "Pods-daysleft WatchKit App";
-			path = "Target Support Files/Pods-daysleft WatchKit App";
-			sourceTree = "<group>";
-		};
 		B5CBF49D36ED8E8825DAF44E9564BC2A /* Fabric */ = {
 			isa = PBXGroup;
 			children = (
@@ -405,6 +242,14 @@
 			);
 			name = Fabric;
 			path = Fabric;
+			sourceTree = "<group>";
+		};
+		BB8AD7D09330C10C877F25838512C9CF /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				C6A2A7DEEFD61FE1B2133791FCD34618 /* Pods-daysleft */,
+			);
+			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
@@ -434,6 +279,21 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C6A2A7DEEFD61FE1B2133791FCD34618 /* Pods-daysleft */ = {
+			isa = PBXGroup;
+			children = (
+				D4C84513BA4F409A69350D50069A7204 /* Pods-daysleft-acknowledgements.markdown */,
+				5A66DD1F605F397A9C3848DE9C5322A8 /* Pods-daysleft-acknowledgements.plist */,
+				1196459F5570600CB03E34A5C7B43625 /* Pods-daysleft-dummy.m */,
+				9CDFDF939987E4A721F150FB7BFC7DAE /* Pods-daysleft-frameworks.sh */,
+				782827025756F23F5611A1195E050D95 /* Pods-daysleft-resources.sh */,
+				BB312CF94D0539BAAF7A6E79787255FC /* Pods-daysleft.debug.xcconfig */,
+				C75D6FCC089B161B161E7E7068675B0D /* Pods-daysleft.release.xcconfig */,
+			);
+			name = "Pods-daysleft";
+			path = "Target Support Files/Pods-daysleft";
+			sourceTree = "<group>";
+		};
 		CA919B2D0A8F879F5B69968060198DD5 /* Defines */ = {
 			isa = PBXGroup;
 			children = (
@@ -457,20 +317,6 @@
 				6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */,
 			);
 			name = iOS;
-			sourceTree = "<group>";
-		};
-		DCB482736521AD13BB1ADEC759192FE9 /* Pods-dayslefttoday */ = {
-			isa = PBXGroup;
-			children = (
-				EDD8D53881FFB3791BAD82852F98E77B /* Pods-dayslefttoday-acknowledgements.markdown */,
-				744A8C48E1E0B0C7DCD37F3917FADB19 /* Pods-dayslefttoday-acknowledgements.plist */,
-				C69797728740C719F7602F86968A6884 /* Pods-dayslefttoday-dummy.m */,
-				86EE1FCFA82EC3C48FA3DD685B971CE2 /* Pods-dayslefttoday-resources.sh */,
-				C1F314FE1DB7BEAE077E4AF76D461220 /* Pods-dayslefttoday.debug.xcconfig */,
-				89E7BA072E55DF9B868164E6ACC2485B /* Pods-dayslefttoday.release.xcconfig */,
-			);
-			name = "Pods-dayslefttoday";
-			path = "Target Support Files/Pods-dayslefttoday";
 			sourceTree = "<group>";
 		};
 		DD75EFA39B91D6D49DDF775B9A7BE441 /* Support Files */ = {
@@ -543,21 +389,6 @@
 			name = Core;
 			sourceTree = "<group>";
 		};
-		F25D5A23731CEDB56BC8163C58629C3C /* Pods-daysleft */ = {
-			isa = PBXGroup;
-			children = (
-				51D95805F538BA464E85B74A9F663753 /* Pods-daysleft-acknowledgements.markdown */,
-				CE32AFBDECD35F66B80B8D03C365B1E0 /* Pods-daysleft-acknowledgements.plist */,
-				DC27B065F3C37EFC1A1CEA85E612D072 /* Pods-daysleft-dummy.m */,
-				45D4A8EDCA4D9205081A52F24A4654FD /* Pods-daysleft-frameworks.sh */,
-				9933E79B897917FB3B132175B87316E8 /* Pods-daysleft-resources.sh */,
-				59F007BF1006F3F05E855CB9967F5735 /* Pods-daysleft.debug.xcconfig */,
-				CF3AF10CD316691CBCF5C516C785A9BC /* Pods-daysleft.release.xcconfig */,
-			);
-			name = "Pods-daysleft";
-			path = "Target Support Files/Pods-daysleft";
-			sourceTree = "<group>";
-		};
 		F6EFF660E6517A24D9EC1F7E0AE1A702 /* nanopb */ = {
 			isa = PBXGroup;
 			children = (
@@ -602,22 +433,6 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		4E2A4A17578F2442F9EB75D9501C0218 /* Pods-MessagesExtension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 78C39FB119C8BF044566CE5731C9AB9D /* Build configuration list for PBXNativeTarget "Pods-MessagesExtension" */;
-			buildPhases = (
-				40B763564CFDE06FEEE5C0274AE466F3 /* Sources */,
-				363C890CBEC775BBE2A00FB731B2DF25 /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Pods-MessagesExtension";
-			productName = "Pods-MessagesExtension";
-			productReference = 63F86578092E313AE0B1281958EEBCB1 /* libPods-MessagesExtension.a */;
-			productType = "com.apple.product-type.library.static";
-		};
 		666128E520ADB8D779593537CB2E119E /* Pods-daysleft */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 44DB489DD6FF2593BD0E5F7BC72F389A /* Build configuration list for PBXNativeTarget "Pods-daysleft" */;
@@ -633,55 +448,7 @@
 			);
 			name = "Pods-daysleft";
 			productName = "Pods-daysleft";
-			productReference = B01C57003F39330822B619615C837689 /* libPods-daysleft.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		6D37E51B7F43E2F0D7F88E50D5D8BD06 /* Pods-daysleftlibrary */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 04897342A6AF20C251D132E9D04511CE /* Build configuration list for PBXNativeTarget "Pods-daysleftlibrary" */;
-			buildPhases = (
-				119A2FFF550DE984FD381BDA9A5961EA /* Sources */,
-				8F27545844552C38F3D3498804E5B16E /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Pods-daysleftlibrary";
-			productName = "Pods-daysleftlibrary";
-			productReference = 377C3CBE576A834C39A77EB314352D43 /* libPods-daysleftlibrary.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		96B989179E166393307B06916CE18119 /* Pods-dayslefttoday */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 9ACB2FD99837E7AE2FE54211A51C4544 /* Build configuration list for PBXNativeTarget "Pods-dayslefttoday" */;
-			buildPhases = (
-				68305C4EB0713FDEA7524326B3F518CF /* Sources */,
-				3A3ADFBA679AE9183D1CB5233341F023 /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Pods-dayslefttoday";
-			productName = "Pods-dayslefttoday";
-			productReference = 1EC2BA3D6B0D280C237853EEBD0DD64D /* libPods-dayslefttoday.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		CA54EB8BE896474AC2B0BB6069FE33BA /* Pods-daysleft WatchKit App */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 6C0CB4FB5CA924553FB0F644B775CC3A /* Build configuration list for PBXNativeTarget "Pods-daysleft WatchKit App" */;
-			buildPhases = (
-				FAD60FFD976640967FEB9B067BA48CCC /* Sources */,
-				2659E38702B35ACB8FFD117D27538A96 /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Pods-daysleft WatchKit App";
-			productName = "Pods-daysleft WatchKit App";
-			productReference = A4567EDE74DFBAB6E3365DE9366D6ED8 /* libPods-daysleft WatchKit App.a */;
+			productReference = CE4BC3DD4F2F5F655890B70CFBA745C5 /* libPods-daysleft.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		CF4B35B9FC819386EB09219BC91827D7 /* nanopb */ = {
@@ -698,7 +465,7 @@
 			);
 			name = nanopb;
 			productName = nanopb;
-			productReference = A57661D490C10D3898FF05D27AB42848 /* libnanopb.a */;
+			productReference = 53DDC0167C276CB327B725ACD6ADB2EC /* libnanopb.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		E1BBB76ADBF2EF4EF2CE5DF6BBC77296 /* GoogleToolboxForMac */ = {
@@ -715,23 +482,7 @@
 			);
 			name = GoogleToolboxForMac;
 			productName = GoogleToolboxForMac;
-			productReference = 86B69D04907741630AF0091DF4F929FB /* libGoogleToolboxForMac.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		F8BE274390EE80858559FB30CFC9A0C3 /* Pods-daysleft WatchKit Extension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 60D2780427A36FF2CCEEE6C63684C25B /* Build configuration list for PBXNativeTarget "Pods-daysleft WatchKit Extension" */;
-			buildPhases = (
-				9D322E69AD3401D95E1F63975DC2648F /* Sources */,
-				E39BB37326987BE07CA7342BBCF13301 /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Pods-daysleft WatchKit Extension";
-			productName = "Pods-daysleft WatchKit Extension";
-			productReference = 501C337AAEF33B9A0433E3188030FC3E /* libPods-daysleft WatchKit Extension.a */;
+			productReference = D7819879009DA44A8EAD906212C3B215 /* libGoogleToolboxForMac.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -751,18 +502,13 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 1A9C3A287245D4460EB25B9079A7B92E /* Products */;
+			productRefGroup = 31C052F37FE62722D555E15B0A1618E0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				E1BBB76ADBF2EF4EF2CE5DF6BBC77296 /* GoogleToolboxForMac */,
 				CF4B35B9FC819386EB09219BC91827D7 /* nanopb */,
 				666128E520ADB8D779593537CB2E119E /* Pods-daysleft */,
-				CA54EB8BE896474AC2B0BB6069FE33BA /* Pods-daysleft WatchKit App */,
-				F8BE274390EE80858559FB30CFC9A0C3 /* Pods-daysleft WatchKit Extension */,
-				6D37E51B7F43E2F0D7F88E50D5D8BD06 /* Pods-daysleftlibrary */,
-				96B989179E166393307B06916CE18119 /* Pods-dayslefttoday */,
-				4E2A4A17578F2442F9EB75D9501C0218 /* Pods-MessagesExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -773,22 +519,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7EB6BD2C95E768B1B5182BCED4B4970D /* Pods-daysleft-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		119A2FFF550DE984FD381BDA9A5961EA /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DA8F9FA4638D280798CE4B8A7F108F6C /* Pods-daysleftlibrary-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		40B763564CFDE06FEEE5C0274AE466F3 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FEB22E38BDA492AFF288A9F01EE5EEAF /* Pods-MessagesExtension-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -803,36 +533,12 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		68305C4EB0713FDEA7524326B3F518CF /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5E8EFA13FB2B865212009452319B665B /* Pods-dayslefttoday-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9D322E69AD3401D95E1F63975DC2648F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0950B06F59DD9EDE0084A50E945E51FB /* Pods-daysleft WatchKit Extension-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		E039C8832DF36C6AA9B398412DBAA4B5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				1B6053DB4F426B47C4A91E97990824D3 /* GoogleToolboxForMac-dummy.m in Sources */,
 				3D5A8358B3CE03D143C39C4BF52B34D3 /* GTMNSData+zlib.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FAD60FFD976640967FEB9B067BA48CCC /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				80471CF8CD37543BA0AC512D240BF5C1 /* Pods-daysleft WatchKit App-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -854,29 +560,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0622EDF53066B20957DA9862ACDA2620 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4E4B12FD2299E1DEFB758EC65F132193 /* Pods-daysleft WatchKit App.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				MACH_O_TYPE = staticlib;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
 		157AF0CD5E5AB2A2E74D3B8ECD865185 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -921,32 +604,9 @@
 			};
 			name = Release;
 		};
-		1F1ABD52FC95BA9E1FDC329C29EA10DE /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 256E01290F5B5BDC6E2F44D541EC7338 /* Pods-daysleftlibrary.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				MACH_O_TYPE = staticlib;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
 		28E4DCF62852AAA3268A0D34931C18F4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 59F007BF1006F3F05E855CB9967F5735 /* Pods-daysleft.debug.xcconfig */;
+			baseConfigurationReference = BB312CF94D0539BAAF7A6E79787255FC /* Pods-daysleft.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -966,98 +626,6 @@
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
-		};
-		2ACE844ECCB44DE6D6B80A378537BDA5 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = C1F314FE1DB7BEAE077E4AF76D461220 /* Pods-dayslefttoday.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				MACH_O_TYPE = staticlib;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		400DF0A72B69BB2E9F23371E3B1A3A94 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 28C5731636A3D1A496F183DAA49987C3 /* Pods-MessagesExtension.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				MACH_O_TYPE = staticlib;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		4A5368692860A33B2FC3EFCDFC0D715E /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 63FA8412E0BA564D36676E7C9D09FAC4 /* Pods-daysleft WatchKit Extension.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				MACH_O_TYPE = staticlib;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		4C490A4A45011E1D6DD7AF407897EA27 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = CA445831B1946368A5C663A470911A46 /* Pods-daysleftlibrary.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				MACH_O_TYPE = staticlib;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
 		};
 		50B2DB2329F58A9615CEE70B04F6BB89 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1086,7 +654,7 @@
 		};
 		81964C6CFC6F86F2E23E0A7BDB339349 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CF3AF10CD316691CBCF5C516C785A9BC /* Pods-daysleft.release.xcconfig */;
+			baseConfigurationReference = C75D6FCC089B161B161E7E7068675B0D /* Pods-daysleft.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1182,52 +750,6 @@
 			};
 			name = Release;
 		};
-		D049B1624AC81E6A33EB8ECB83CFFA48 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 77E61E5AEE28C6212863E80F0B55A849 /* Pods-daysleft WatchKit App.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				MACH_O_TYPE = staticlib;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		D57E100573807509865B27516D19A2B2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5A7F45A707320C78DEDADB60B436A9B6 /* Pods-MessagesExtension.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				MACH_O_TYPE = staticlib;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
 		EED546DBB23FC32035C9BDC4E22B30BD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1277,64 +799,9 @@
 			};
 			name = Debug;
 		};
-		F8AA1A6F8FBE2A2F4D52D71D271676B7 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F5CDF979633BB70FA572CF0D629F540C /* Pods-daysleft WatchKit Extension.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				MACH_O_TYPE = staticlib;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		FC5C9522D68567AFFAF5F2BB0DCE2470 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 89E7BA072E55DF9B868164E6ACC2485B /* Pods-dayslefttoday.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				MACH_O_TYPE = staticlib;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		04897342A6AF20C251D132E9D04511CE /* Build configuration list for PBXNativeTarget "Pods-daysleftlibrary" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1F1ABD52FC95BA9E1FDC329C29EA10DE /* Debug */,
-				4C490A4A45011E1D6DD7AF407897EA27 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1349,42 +816,6 @@
 			buildConfigurations = (
 				28E4DCF62852AAA3268A0D34931C18F4 /* Debug */,
 				81964C6CFC6F86F2E23E0A7BDB339349 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		60D2780427A36FF2CCEEE6C63684C25B /* Build configuration list for PBXNativeTarget "Pods-daysleft WatchKit Extension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F8AA1A6F8FBE2A2F4D52D71D271676B7 /* Debug */,
-				4A5368692860A33B2FC3EFCDFC0D715E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		6C0CB4FB5CA924553FB0F644B775CC3A /* Build configuration list for PBXNativeTarget "Pods-daysleft WatchKit App" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				0622EDF53066B20957DA9862ACDA2620 /* Debug */,
-				D049B1624AC81E6A33EB8ECB83CFFA48 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		78C39FB119C8BF044566CE5731C9AB9D /* Build configuration list for PBXNativeTarget "Pods-MessagesExtension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D57E100573807509865B27516D19A2B2 /* Debug */,
-				400DF0A72B69BB2E9F23371E3B1A3A94 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		9ACB2FD99837E7AE2FE54211A51C4544 /* Build configuration list for PBXNativeTarget "Pods-dayslefttoday" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				2ACE844ECCB44DE6D6B80A378537BDA5 /* Debug */,
-				FC5C9522D68567AFFAF5F2BB0DCE2470 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
