@@ -25,7 +25,7 @@
                                     <constraint firstAttribute="height" constant="180" id="GKv-QN-1zb"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="© Brave Location Software" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WFw-yU-WMU">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Another Brave Location App" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WFw-yU-WMU">
                                 <rect key="frame" x="16" y="630" width="343" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="EAq-If-nBS"/>
@@ -34,25 +34,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Count The Days Left" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gL8-dU-jRO">
-                                <rect key="frame" x="16" y="195" width="343" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="BIE-RM-Fs0"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                <color key="textColor" red="0.1738059223" green="0.36919349429999998" blue="0.087881088260000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Bcu-3y-fUS" firstAttribute="trailing" secondItem="WFw-yU-WMU" secondAttribute="trailing" constant="16" id="5az-hg-q20"/>
-                            <constraint firstItem="bex-l5-yn4" firstAttribute="top" secondItem="gL8-dU-jRO" secondAttribute="bottom" constant="16" id="9fp-7A-Txp"/>
                             <constraint firstItem="bex-l5-yn4" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="DN1-gY-uiR"/>
-                            <constraint firstItem="gL8-dU-jRO" firstAttribute="leading" secondItem="Bcu-3y-fUS" secondAttribute="leading" constant="16" id="OFC-IL-Z9y"/>
                             <constraint firstItem="WFw-yU-WMU" firstAttribute="leading" secondItem="Bcu-3y-fUS" secondAttribute="leading" constant="16" id="fx4-bh-K7E"/>
                             <constraint firstItem="Bcu-3y-fUS" firstAttribute="bottom" secondItem="WFw-yU-WMU" secondAttribute="bottom" constant="16" id="imj-RQ-uJn"/>
-                            <constraint firstItem="Bcu-3y-fUS" firstAttribute="trailing" secondItem="gL8-dU-jRO" secondAttribute="trailing" constant="16" id="ndp-du-bKr"/>
                             <constraint firstItem="bex-l5-yn4" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="xxR-LP-1Kv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Bcu-3y-fUS"/>
