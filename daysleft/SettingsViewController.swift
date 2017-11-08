@@ -101,6 +101,7 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
         self.validateAndSaveModel()
     }
     
+    @objc
     func dateChanged(_ sender: AnyObject) {
         self.validateAndSaveModel()
     }

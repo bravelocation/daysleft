@@ -64,6 +64,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         return UIEdgeInsetsMake(0, 0, 0, 0)
     }
     
+    @objc
     func tapHandler(_ sender: UITapGestureRecognizer) {
         let url = URL(fileURLWithPath: "daysleft://")
         self.extensionContext?.open(url, completionHandler: nil)

@@ -97,6 +97,7 @@ class ViewController: UIViewController {
         }
     }
     
+    @objc
     func dayChangedTimerFired(_ timer: Timer) {
         self.updateViewFromModel()
     }
@@ -135,6 +136,7 @@ class ViewController: UIViewController {
         NSLog("updateViewFromModel completed")
     }
 
+    @objc
     func swipeLeft(_ gesture: UISwipeGestureRecognizer) {
         self.performSegue(withIdentifier: "segueShowSettings", sender: self)
     }
@@ -144,6 +146,7 @@ class ViewController: UIViewController {
         return appDelegate.model
     }
     
+    @objc
     func shareButtonTouchUp() {
         let modelText = self.modelData().FullDescription(Date())
         let objectsToShare = [modelText]
