@@ -10,13 +10,8 @@ import UIKit
 import daysleftlibrary
 
 open class AzureNotifications {
-    #if DEBUG
-    let hubName = "daysleftiospushsandbox"
-    let hubListenAccess = "Endpoint=sb://daysleft.servicebus.windows.net/;SharedAccessKeyName=DefaultListenSharedAccessSignature;SharedAccessKey=39vE2a/hG/a451waf3JjbmrwN/axobCh56ajdQMv0Rw="
-    #else
     let hubName = "daysleftiospush"
-    let hubListenAccess = "Endpoint=sb://daysleftiospush.servicebus.windows.net/;SharedAccessKeyName=DefaultListenSharedAccessSignature;SharedAccessKey=0VIMBBXsJhFlzE/ZoThi0wOzWGoblXyi6tvPUfIp/Hk="
-    #endif
+    let hubListenAccess = "Endpoint=sb://daysleftios.servicebus.windows.net/;SharedAccessKeyName=DefaultListenSharedAccessSignature;SharedAccessKey=3KPSjW5HWKBZKXcmUp4kQiujUbeOiV386c4uVJYqzn0="
     
     var tagNames:Set<NSObject> = []
     let defaults = UserDefaults.standard
