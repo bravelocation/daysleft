@@ -18,5 +18,7 @@
 	<false/>
 	<key>adsFree</key>
 	<false/>
+	<key>appOpenCount</key>
+	<integer>0</integer>
 </dict>
 </plist>

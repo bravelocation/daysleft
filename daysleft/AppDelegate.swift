@@ -44,6 +44,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use Firebase library to configure APIs
         FirebaseApp.configure()
         GADMobileAds.configure(withApplicationID: "ca-app-pub-6795405439060738~5447156632")
+        
+        // Increment the number of times app opened
+        self.model.appOpenCount = self.model.appOpenCount + 1;
 
         return true
     }

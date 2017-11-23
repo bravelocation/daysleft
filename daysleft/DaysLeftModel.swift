@@ -101,6 +101,11 @@ open class DaysLeftModel: BLUserSettings
         set { self.writeObjectToStore(newValue as AnyObject, key: "adsFree") }
     }
 
+    /// Property to get and set the number of times the app has been opened
+    open var appOpenCount: Int {
+        get { return self.readObjectFromStore("appOpenCount") as! Int }
+        set { self.writeObjectToStore(newValue as AnyObject, key: "appOpenCount") }
+    }
 
     /// Finds the number of days to the end of the period from the current date
     ///

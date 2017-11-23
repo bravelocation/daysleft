@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import StoreKit
 import daysleftlibrary
 
 class ViewController: UIViewController {
@@ -76,6 +77,18 @@ class ViewController: UIViewController {
         super.viewDidAppear(animated)
         self.counterView.clearControl()
         self.updateViewFromModel()
+        
+        // Show request review every 10 times the user opend the app
+        if #available(iOS 10.3, *) {
+            let reviewPromptFrequency = 10;
+            
+            let appOpened = self.modelData().appOpenCount;
+            print("App opened \(appOpened) times")
+
+            if (appOpened >= reviewPromptFrequency && (appOpened % reviewPromptFrequency) == 0) {
+                SKStoreReviewController.requestReview()
+            }
+        }
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
