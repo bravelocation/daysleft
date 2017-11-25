@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     lazy var model = AppDaysLeftModel()
-    let azureNotifications = AzureNotifications()
+    let firebaseNotifications = FirebaseNotifications()
 
     override init() {
         super.init()
@@ -38,13 +38,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             Fabric.with([Crashlytics()])
         #endif
         
-        // Setup push notifications (if required) to ensure the badge gets updated
-        self.azureNotifications.setupNotifications(false)
-        
         // Use Firebase library to configure APIs
         FirebaseApp.configure()
         GADMobileAds.configure(withApplicationID: "ca-app-pub-6795405439060738~5447156632")
-        
+ 
+        // Setup push notifications (if required) to ensure the badge gets updated
+        self.firebaseNotifications.setupNotifications(false)
+
         // Increment the number of times app opened
         self.model.appOpenCount = self.model.appOpenCount + 1;
 
@@ -53,7 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication,
                      didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        self.azureNotifications.register(deviceToken)
+        self.firebaseNotifications.register(deviceToken)
     }
     
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
@@ -76,6 +76,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                          userInfo: [AnyHashable: Any]) {
         // Print message
         print("Notification received ...")
+        
+        Messaging.messaging().appDidReceiveMessage(userInfo)
 
         // Push latest settings and update badge
         self.model.pushAllSettingsToWatch()
@@ -84,7 +86,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func registerForNotifications() {
         print("Registering notification settings")
-        self.azureNotifications.setupNotifications(true)
+        self.firebaseNotifications.setupNotifications(true)
         self.updateBadge()
     }
     

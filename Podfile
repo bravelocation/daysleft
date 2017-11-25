@@ -6,5 +6,6 @@ target 'daysleft' do
     pod 'Crashlytics'
     pod 'Firebase/Core'
     pod 'Firebase/AdMob'
+    pod 'Firebase/Messaging'
 end
 
