@@ -39,7 +39,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
                 self.setupBackgroundRefresh()
             }
             
-            task.setTaskCompleted()
+            task.setTaskCompletedWithSnapshot(true)
         }
     }
     
