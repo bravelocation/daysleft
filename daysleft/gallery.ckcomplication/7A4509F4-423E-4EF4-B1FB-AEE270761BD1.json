@@ -1,6 +1,6 @@
 {
-  "class" : "CLKComplicationTemplateExtraLargeRingText",
-  "fillFraction" : 0.7,
+  "class" : "CLKComplicationTemplateUtilitarianSmallRingText",
+  "fillFraction" : 0.69999998807907104,
   "ringStyle" : 1,
   "textProvider" : {
     "class" : "CLKSimpleTextProvider",

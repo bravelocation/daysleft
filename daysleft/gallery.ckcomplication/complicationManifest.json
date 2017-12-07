@@ -1,9 +1,12 @@
 {
   "supported complication families" : {
-    "4" : "D3880D5C-89C3-4E16-B5B8-F10F238681A8.json",
-    "2" : "2BD2B4FA-2468-4EC1-A10E-64CD9BEDE87D.json",
-    "0" : "DEA83E98-6DB2-42E3-8233-99BDDD15A740.json",
-    "7" : "85FA468F-931E-4684-9C9A-D651595CADE8.json"
+    "7" : "35519787-BD1B-49A6-8C95-48F33B7E3AEC.json",
+    "3" : "28A8B46E-5F70-471E-8559-CAC913F6E1F9.json",
+    "4" : "7FF1770E-4D66-43E7-9B5F-686A4360031D.json",
+    "0" : "66E75057-CA44-46FB-8301-87A3577609EC.json",
+    "1" : "37C52952-0D16-4C9E-8471-EE8F08B60F49.json",
+    "6" : "0CA1BBC6-B8A4-427D-ACD6-9DB534B07999.json",
+    "2" : "7A4509F4-423E-4EF4-B1FB-AEE270761BD1.json"
   },
   "client ID" : "com.bravelocation.daysleft.watchkitapp.watchkitextension"
 }

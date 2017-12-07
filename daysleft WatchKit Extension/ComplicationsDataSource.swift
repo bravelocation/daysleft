@@ -27,35 +27,47 @@ class ComplicationsDataSource : NSObject, CLKComplicationDataSource {
         handler(nextUpdate)
     }
     
-    func getPlaceholderTemplate(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTemplate?) -> Void) {
-
+    func getLocalizableSampleTemplate(for complication: CLKComplication,
+                                      withHandler handler: @escaping (CLKComplicationTemplate?) -> Void) {
         switch complication.family {
-            case .modularSmall:
-                let template = CLKComplicationTemplateModularSmallRingText()
-                template.textProvider = CLKSimpleTextProvider(text: "--")
-                template.fillFraction = 0.7
-                template.ringStyle = CLKComplicationRingStyle.open
-                handler(template)
-            case .utilitarianSmall, .utilitarianSmallFlat:
-                let template = CLKComplicationTemplateUtilitarianSmallRingText()
-                template.textProvider = CLKSimpleTextProvider(text: "--")
-                template.fillFraction = 0.7
-                template.ringStyle = CLKComplicationRingStyle.open
-                handler(template)
-            case .circularSmall:
-                let template = CLKComplicationTemplateCircularSmallRingText()
-                template.textProvider = CLKSimpleTextProvider(text: "--")
-                template.fillFraction = 0.7
-                template.ringStyle = CLKComplicationRingStyle.open
-                handler(template)
-            case .extraLarge:
-                let template = CLKComplicationTemplateExtraLargeRingText()
-                template.textProvider = CLKSimpleTextProvider(text: "--")
-                template.fillFraction = 0.7
-                template.ringStyle = CLKComplicationRingStyle.open
-                handler(template)
-            default:
-                handler(nil)
+        case .circularSmall:
+            let template = CLKComplicationTemplateCircularSmallRingText()
+            template.textProvider = CLKSimpleTextProvider(text: "--")
+            template.fillFraction = 0.7
+            template.ringStyle = CLKComplicationRingStyle.open
+            handler(template)
+        case .modularSmall:
+            let template = CLKComplicationTemplateModularSmallRingText()
+            template.textProvider = CLKSimpleTextProvider(text: "--")
+            template.fillFraction = 0.7
+            template.ringStyle = CLKComplicationRingStyle.open
+            handler(template)
+        case .utilitarianSmall:
+            let template = CLKComplicationTemplateUtilitarianSmallRingText()
+            template.textProvider = CLKSimpleTextProvider(text: "--")
+            template.fillFraction = 0.7
+            template.ringStyle = CLKComplicationRingStyle.open
+            handler(template)
+        case .utilitarianSmallFlat:
+            let template = CLKComplicationTemplateUtilitarianSmallFlat()
+            template.textProvider = CLKSimpleTextProvider(text: "--")
+            handler(template)
+        case .utilitarianLarge:
+            let template = CLKComplicationTemplateUtilitarianLargeFlat()
+            template.textProvider = CLKSimpleTextProvider(text: "--")
+            handler(template)
+        case .extraLarge:
+            let template = CLKComplicationTemplateExtraLargeRingText()
+            template.textProvider = CLKSimpleTextProvider(text: "--")
+            template.fillFraction = 0.7
+            template.ringStyle = CLKComplicationRingStyle.open
+            handler(template)
+        case .modularLarge:
+            let template = CLKComplicationTemplateModularLargeStandardBody()
+            template.headerTextProvider = CLKSimpleTextProvider(text: "Christmas")
+            template.body1TextProvider = CLKSimpleTextProvider(text: "30 days")
+            template.body2TextProvider = CLKSimpleTextProvider(text: "10% done")
+            handler(template)
         }
     }
     
@@ -128,27 +140,36 @@ class ComplicationsDataSource : NSObject, CLKComplicationDataSource {
         let model = modelData()
         let currentDaysLeft: Int = model.DaysLeft(date)
         let percentageDone: Float = Float(model.DaysGone(date)) / Float(model.DaysLength)
+        let displayPercentageDone: Int = (Int) (percentageDone * 100)
         
         var entry : CLKComplicationTimelineEntry?
 
         switch family {
+            case .circularSmall:
+                let template = CLKComplicationTemplateCircularSmallRingText()
+                template.textProvider = CLKSimpleTextProvider(text: String(currentDaysLeft))
+                template.fillFraction = percentageDone
+                template.ringStyle = CLKComplicationRingStyle.open
+                entry = CLKComplicationTimelineEntry(date: date, complicationTemplate: template)
             case .modularSmall:
                 let template = CLKComplicationTemplateModularSmallRingText()
                 template.textProvider = CLKSimpleTextProvider(text: String(currentDaysLeft))
                 template.fillFraction = percentageDone
                 template.ringStyle = CLKComplicationRingStyle.open
                 entry = CLKComplicationTimelineEntry(date: date, complicationTemplate: template)
-            case .utilitarianSmall, .utilitarianSmallFlat:
+            case .utilitarianSmall:
                 let template = CLKComplicationTemplateUtilitarianSmallRingText()
                 template.textProvider = CLKSimpleTextProvider(text: String(currentDaysLeft))
                 template.fillFraction = percentageDone
                 template.ringStyle = CLKComplicationRingStyle.open
                 entry = CLKComplicationTimelineEntry(date: date, complicationTemplate: template)
-            case .circularSmall:
-                let template = CLKComplicationTemplateCircularSmallRingText()
+            case .utilitarianSmallFlat:
+                let template = CLKComplicationTemplateUtilitarianSmallFlat()
                 template.textProvider = CLKSimpleTextProvider(text: String(currentDaysLeft))
-                template.fillFraction = percentageDone
-                template.ringStyle = CLKComplicationRingStyle.open
+                entry = CLKComplicationTimelineEntry(date: date, complicationTemplate: template)
+            case .utilitarianLarge:
+                let template = CLKComplicationTemplateUtilitarianLargeFlat()
+                template.textProvider = CLKSimpleTextProvider(text: String(currentDaysLeft))
                 entry = CLKComplicationTimelineEntry(date: date, complicationTemplate: template)
             case .extraLarge:
                 let template = CLKComplicationTemplateExtraLargeRingText()
@@ -156,8 +177,13 @@ class ComplicationsDataSource : NSObject, CLKComplicationDataSource {
                 template.fillFraction = percentageDone
                 template.ringStyle = CLKComplicationRingStyle.open
                 entry = CLKComplicationTimelineEntry(date: date, complicationTemplate: template)
-            default:
-                entry = nil
+            case .modularLarge:
+                let template = CLKComplicationTemplateModularLargeStandardBody()
+                template.headerTextProvider = CLKSimpleTextProvider(text: model.title)
+                template.body1TextProvider = CLKSimpleTextProvider(text: String(format: "%d days", currentDaysLeft))
+                template.body2TextProvider = CLKSimpleTextProvider(text: String(format: "%d%% done", displayPercentageDone))
+                
+                entry = CLKComplicationTimelineEntry(date: date, complicationTemplate: template)
         }
         
         return(entry)
