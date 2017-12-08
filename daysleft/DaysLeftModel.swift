@@ -36,7 +36,7 @@ open class DaysLeftModel: BLUserSettings
         self.initialiseWatchSession()
         
         if (WCSession.isSupported()) {
-            let session = WCSession.default()
+            let session = WCSession.default
             session.transferUserInfo(self.allCurrentSettings())
             NSLog("Settings pushed to watch")
         }

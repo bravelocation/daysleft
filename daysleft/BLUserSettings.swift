@@ -88,7 +88,7 @@ open class BLUserSettings: NSObject, WCSessionDelegate {
         // Set up watch setting if appropriate
         if (WCSession.isSupported()) {
             NSLog("Setting up watch session")
-            let session: WCSession = WCSession.default();
+            let session: WCSession = WCSession.default;
             session.delegate = self
             session.activate()
             NSLog("Watch session activated")

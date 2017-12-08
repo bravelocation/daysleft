@@ -62,9 +62,7 @@ class PurchaseViewController: UIViewController, SKProductsRequestDelegate, SKPay
         navBar!.barTintColor = appGreen
         navBar!.tintColor = UIColor.white
         navBar!.isTranslucent = false
-        
-        let titleDict: Dictionary<String, AnyObject> = [NSForegroundColorAttributeName: UIColor.white]
-        navBar!.titleTextAttributes = titleDict
+        navBar!.titleTextAttributes = [.foregroundColor: UIColor.white]
         
         self.title = "Go Ads Free"
         

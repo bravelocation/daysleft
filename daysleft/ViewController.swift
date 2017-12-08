@@ -52,9 +52,7 @@ class ViewController: UIViewController {
         navBar!.barTintColor = UIColor(red: 53/255, green: 79/255, blue: 0/255, alpha: 1.0)
         navBar!.tintColor = UIColor.white
         navBar!.isTranslucent = false
-        
-        let titleDict: Dictionary<String, AnyObject> = [NSForegroundColorAttributeName: UIColor.white]
-        navBar!.titleTextAttributes = titleDict
+        navBar!.titleTextAttributes = [.foregroundColor: UIColor.white]
         
         // Add a share button
         self.shareButton = UIBarButtonItem.init(barButtonSystemItem: .action, target: self, action: #selector(ViewController.shareButtonTouchUp))

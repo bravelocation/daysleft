@@ -16,13 +16,13 @@ class AppDaysLeftModel: DaysLeftModel {
     /// Send updated settings to watch
     open override func initialiseiCloudSettings() {
         NSLog("Initialising iCloud Settings")
-        let store: NSUbiquitousKeyValueStore = NSUbiquitousKeyValueStore.default()
+        let store: NSUbiquitousKeyValueStore = NSUbiquitousKeyValueStore.default
         NotificationCenter.default.addObserver(self, selector: #selector(AppDaysLeftModel.updateKVStoreItems(_:)), name: NSUbiquitousKeyValueStore.didChangeExternallyNotification, object: store)
         store.synchronize()
     }
     
     open override func writeSettingToiCloudStore(_ value: AnyObject, key: String) {
-        let store: NSUbiquitousKeyValueStore = NSUbiquitousKeyValueStore.default()
+        let store: NSUbiquitousKeyValueStore = NSUbiquitousKeyValueStore.default
         store.set(value, forKey: key)
         store.synchronize()
     }
@@ -45,7 +45,7 @@ class AppDaysLeftModel: DaysLeftModel {
             if ((reason == NSUbiquitousKeyValueStoreServerChange) || (reason == NSUbiquitousKeyValueStoreInitialSyncChange)) {
                 // If something is changing externally, get the changes and update the corresponding keys locally.
                 let changedKeys = userInfo.object(forKey: NSUbiquitousKeyValueStoreChangedKeysKey) as! [String]
-                let store: NSUbiquitousKeyValueStore = NSUbiquitousKeyValueStore.default();
+                let store: NSUbiquitousKeyValueStore = NSUbiquitousKeyValueStore.default;
                 
                 // This loop assumes you are using the same key names in both the user defaults database and the iCloud key-value store
                 for key:String in changedKeys {
