@@ -1163,10 +1163,6 @@
 			buildSettings = {
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = W8B3V597R9;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -1186,10 +1182,6 @@
 			buildSettings = {
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = W8B3V597R9;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
 				INFOPLIST_FILE = daysleftlibraryTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bravelocation.$(PRODUCT_NAME:rfc1034identifier)";
@@ -1502,7 +1494,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/DerivedData/daysleft/Build/Intermediates/ArchiveIntermediates/daysleft/IntermediateBuildFilesPath/UninstalledProducts",
 				);
 				INFOPLIST_FILE = daysleft/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
@@ -1533,7 +1524,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/DerivedData/daysleft/Build/Intermediates/ArchiveIntermediates/daysleft/IntermediateBuildFilesPath/UninstalledProducts",
 				);
 				INFOPLIST_FILE = daysleft/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
