@@ -7,14 +7,14 @@
 
 #import <Foundation/Foundation.h>
 
-#import <GoogleMobileAds/GADMediatedNativeAd.h>
 #import <GoogleMobileAds/GADNativeAdImage.h>
 #import <GoogleMobileAds/GoogleMobileAdsDefines.h>
+#import <GoogleMobileAds/Mediation/GADMediatedNativeAd.h>
 
 GAD_ASSUME_NONNULL_BEGIN
 
 /// Provides methods used for constructing native app install ads. The adapter must return an object
-/// conforming to this protocol for native app install ad requests.
+/// conforming to this protocol for native app install requests.
 @protocol GADMediatedNativeAppInstallAd<GADMediatedNativeAd>
 
 /// App title.

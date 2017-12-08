@@ -1,3 +1,6 @@
+# 2017-11-27 -- v2.0.7
+- Improve identity reset process, ensuring all information is reset during Identity deletion.
+
 # 2017-11-06 -- v2.0.6
 - Make token refresh weekly.
 - Fixed a crash when performing token operation.
