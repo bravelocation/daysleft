@@ -26,6 +26,7 @@ PODS:
     - FirebaseInstanceID (~> 2.0)
     - GoogleToolboxForMac/Logger (~> 2.1)
     - Protobuf (~> 3.1)
+  - Font-Awesome-Swift (1.7.2)
   - Google-Mobile-Ads-SDK (7.27.0)
   - GoogleToolboxForMac/Defines (2.1.3)
   - GoogleToolboxForMac/Logger (2.1.3):
@@ -45,6 +46,7 @@ DEPENDENCIES:
   - Firebase/AdMob
   - Firebase/Core
   - Firebase/Messaging
+  - Font-Awesome-Swift
 
 SPEC CHECKSUMS:
   Crashlytics: dbb07d01876c171c5ccbdf7826410380189e452c
@@ -54,11 +56,12 @@ SPEC CHECKSUMS:
   FirebaseCore: 3c02ec652db3d03fdc8bc6d9154af3e20d64b6f5
   FirebaseInstanceID: 81df5805a08001e69138664bdd02c6719a9ac80f
   FirebaseMessaging: dfdcd307c2382290a1e297a81d0f18370f5b1bcd
+  Font-Awesome-Swift: 83ab9db365379ee6025167cec67bdc5d3226a811
   Google-Mobile-Ads-SDK: 83f7f890e638ce8f1debd440ea363338c9f6be3b
   GoogleToolboxForMac: 2501e2ad72a52eb3dfe7bd9aee7dad11b858bd20
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   Protobuf: 8a9838fba8dae3389230e1b7f8c104aa32389c03
 
-PODFILE CHECKSUM: 905046bfa5b6ccee40e9212e57f0c847853ee853
+PODFILE CHECKSUM: 8497afebcf5bbce1e030dd767417c182ef16cc46
 
 COCOAPODS: 1.3.1

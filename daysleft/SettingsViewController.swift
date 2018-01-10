@@ -11,6 +11,7 @@ import SafariServices
 import daysleftlibrary
 import GoogleMobileAds
 import Firebase
+import Font_Awesome_Swift
 
 class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafariViewControllerDelegate {
     
@@ -25,6 +26,10 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
     @IBOutlet weak var bannerView: GADBannerView!
     @IBOutlet weak var adCell: UITableViewCell!
     @IBOutlet weak var removeAdsCell: UITableViewCell!
+    
+    @IBOutlet weak var gitHubCell: UITableViewCell!
+    @IBOutlet weak var appMadeCell: UITableViewCell!
+    @IBOutlet weak var moreAppsCell: UITableViewCell!
     
     var dateFormatter: DateFormatter = DateFormatter()
     
@@ -95,6 +100,18 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
             self.adCell.isHidden = true
             self.removeAdsCell.isHidden = true
         }
+        
+        // Set the about cell logos
+        let logoDimension = 48
+        
+        let appMadeColor = UIColor(red: 44.0/255.0, green: 94.0/255.0, blue: 22.0/255.0, alpha: 1.0)
+        self.appMadeCell.imageView?.image = UIImage(icon: FAType.FANewspaperO, size: CGSize(width: logoDimension, height: logoDimension), textColor: appMadeColor, backgroundColor: UIColor.clear)
+        
+        let gitHubColor = UIColor.black
+        self.gitHubCell.imageView?.image = UIImage(icon: FAType.FAGithub, size: CGSize(width: logoDimension, height: logoDimension), textColor: gitHubColor, backgroundColor: UIColor.clear)
+
+        let braveLocationRedColor = UIColor(red: 170.0/255.0, green: 60.0/255.0, blue: 79.0/255.0, alpha: 1.0)
+        self.moreAppsCell.imageView?.image = UIImage(icon: FAType.FAMapMarker, size: CGSize(width: logoDimension, height: logoDimension), textColor: braveLocationRedColor, backgroundColor: UIColor.clear)
     }
 
     @IBAction func textTitleChanged(_ sender: AnyObject) {

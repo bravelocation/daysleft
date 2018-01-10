@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		457A5E5B984A1C9DE0CFE419 /* libPods-daysleft.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F3CCE5FDC8DDA59A37F2F1F4 /* libPods-daysleft.a */; };
+		39A194FFE9D0B3DE5A8D321B /* Pods_daysleft.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA7BBD7977F821A8A87B182E /* Pods_daysleft.framework */; };
 		523443631BBAFBEF00E95BA4 /* daysleft WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 52B7E8771ABEDE9300E1949C /* daysleft WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		523443661BBAFBEF00E95BA4 /* daysleft WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 52B7E8811ABEDE9300E1949C /* daysleft WatchKit App.app */; };
 		5234436D1BBB181C00E95BA4 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5234436C1BBB181C00E95BA4 /* ExtensionDelegate.swift */; };
@@ -219,7 +219,7 @@
 		89AB9E2F84FC728A8A76AC47 /* libPods-MessagesExtension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MessagesExtension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9516F4FE66EFC74E057B4165 /* libPods-daysleft WatchKit App.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-daysleft WatchKit App.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9617E6CA9F2A12BF2299ABAE /* libPods-dayslefttoday.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-dayslefttoday.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F3CCE5FDC8DDA59A37F2F1F4 /* libPods-daysleft.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-daysleft.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA7BBD7977F821A8A87B182E /* Pods_daysleft.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_daysleft.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6956DABE3A7AE4B317EC535 /* libPods-daysleftlibrary.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-daysleftlibrary.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -276,8 +276,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				52D18D611BC4E91500DB7E3A /* daysleftlibrary.framework in Frameworks */,
-				457A5E5B984A1C9DE0CFE419 /* libPods-daysleft.a in Frameworks */,
 				52C595311E952667006C5269 /* StoreKit.framework in Frameworks */,
+				39A194FFE9D0B3DE5A8D321B /* Pods_daysleft.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,11 +341,11 @@
 				5295EDFA1A94B398007EF7E7 /* NotificationCenter.framework */,
 				52B78DF31D982A6E00AB629D /* Messages.framework */,
 				89AB9E2F84FC728A8A76AC47 /* libPods-MessagesExtension.a */,
-				F3CCE5FDC8DDA59A37F2F1F4 /* libPods-daysleft.a */,
 				9516F4FE66EFC74E057B4165 /* libPods-daysleft WatchKit App.a */,
 				37942D6E74C88723CC5E5442 /* libPods-daysleft WatchKit Extension.a */,
 				F6956DABE3A7AE4B317EC535 /* libPods-daysleftlibrary.a */,
 				9617E6CA9F2A12BF2299ABAE /* libPods-dayslefttoday.a */,
+				BA7BBD7977F821A8A87B182E /* Pods_daysleft.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -946,9 +946,18 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-daysleft/Pods-daysleft-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Font-Awesome-Swift/Font_Awesome_Swift.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Font_Awesome_Swift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
