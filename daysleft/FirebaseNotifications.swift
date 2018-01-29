@@ -33,7 +33,7 @@ open class FirebaseNotifications: NSObject, MessagingDelegate {
         if (forceSetup || self.enabled) {
             let application = UIApplication.shared
             
-            let settings: UIUserNotificationSettings = UIUserNotificationSettings(types: [.alert, .sound], categories: nil)
+            let settings: UIUserNotificationSettings = UIUserNotificationSettings(types: [.alert, .sound, .badge], categories: nil)
             application.registerUserNotificationSettings(settings)
             application.registerForRemoteNotifications()
         }
