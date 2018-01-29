@@ -147,8 +147,7 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Count The Days Left" id="GgR-KT-7FI">
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="zK2-rI-cSr">
-                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="edit" id="zK2-rI-cSr">
                             <connections>
                                 <segue destination="l0H-Z7-pvf" kind="show" identifier="segueShowSettings" id="0X6-PC-jXy"/>
                             </connections>
@@ -559,5 +558,5 @@
             <point key="canvasLocation" x="101" y="365"/>
         </scene>
     </scenes>
-    <color key="tintColor" red="0.17380592226982117" green="0.36919349431991577" blue="0.087881088256835938" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+    <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
