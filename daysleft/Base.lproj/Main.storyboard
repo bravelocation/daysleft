@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dDU-Kp-oSy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dDU-Kp-oSy">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -400,7 +400,24 @@
                                             <rect key="frame" x="0.0" y="0.0" width="341" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Read how the app was made" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" id="5KC-H9-xvV">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Privacy Policy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" id="5KC-H9-xvV" userLabel="Privacy Policy">
+                                                    <rect key="frame" x="16" y="0.0" width="324" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="aMR-tr-2dx" rowHeight="44" style="IBUITableViewCellStyleDefault" id="9sZ-6a-5sj">
+                                        <rect key="frame" x="0.0" y="599.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9sZ-6a-5sj" id="DuA-aW-ocJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="341" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Read how the app was made" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" id="aMR-tr-2dx">
                                                     <rect key="frame" x="16" y="0.0" width="324" height="44"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
@@ -411,7 +428,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="bvO-ZU-Npa" rowHeight="44" style="IBUITableViewCellStyleDefault" id="I9v-Ds-Pit">
-                                        <rect key="frame" x="0.0" y="599.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="643.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="I9v-Ds-Pit" id="GMz-3i-UT2">
                                             <rect key="frame" x="0.0" y="0.0" width="341" height="44"/>
@@ -428,7 +445,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="ns0-rs-Ik7" rowHeight="44" style="IBUITableViewCellStyleDefault" id="Dub-25-YGm">
-                                        <rect key="frame" x="0.0" y="643.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="687.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Dub-25-YGm" id="3rb-gL-wap">
                                             <rect key="frame" x="0.0" y="0.0" width="341" height="44"/>
@@ -445,7 +462,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="44" id="Baf-hb-KOY">
-                                        <rect key="frame" x="0.0" y="687.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="731.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Baf-hb-KOY" id="Mcn-Gh-dSm">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -470,10 +487,10 @@
                             <tableViewSection headerTitle="Ad (to help pay the bills)" id="Fwq-hG-hz6">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="51" id="mvP-EY-vJX">
-                                        <rect key="frame" x="0.0" y="779.5" width="375" height="51"/>
+                                        <rect key="frame" x="0.0" y="823.5" width="375" height="51"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mvP-EY-vJX" id="lVe-PJ-TkG">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="51"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="50.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tuX-nY-n9F" customClass="GADBannerView">
@@ -493,14 +510,14 @@
                                         <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="QSx-Qd-NhG" rowHeight="51" style="IBUITableViewCellStyleDefault" id="ghp-sC-awT">
-                                        <rect key="frame" x="0.0" y="830.5" width="375" height="51"/>
+                                        <rect key="frame" x="0.0" y="874.5" width="375" height="51"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ghp-sC-awT" id="3uA-Ci-3h0">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="51"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="349" height="50.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Remove Ads (and support the app)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" id="QSx-Qd-NhG">
-                                                    <rect key="frame" x="15" y="0.0" width="325" height="51"/>
+                                                    <rect key="frame" x="15" y="0.0" width="325" height="50.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <nil key="textColor"/>
@@ -520,13 +537,14 @@
                     </tableView>
                     <connections>
                         <outlet property="adCell" destination="mvP-EY-vJX" id="NWf-Hd-3Dr"/>
-                        <outlet property="appMadeCell" destination="kgV-XU-Q9X" id="ANF-Mo-zib"/>
+                        <outlet property="appMadeCell" destination="9sZ-6a-5sj" id="KAB-t9-n2h"/>
                         <outlet property="bannerView" destination="tuX-nY-n9F" id="154-7S-fb5"/>
                         <outlet property="buttonStartToday" destination="CX8-4t-wyK" id="dqD-rh-LcG"/>
                         <outlet property="gitHubCell" destination="I9v-Ds-Pit" id="H2W-eF-kzV"/>
                         <outlet property="labelDaysLength" destination="zZH-Bf-1Ed" id="zxW-pP-bnD"/>
                         <outlet property="labelVersion" destination="B0F-JM-ow0" id="W7u-Kt-d3X"/>
                         <outlet property="moreAppsCell" destination="Dub-25-YGm" id="RWf-GF-IMD"/>
+                        <outlet property="privacyCell" destination="kgV-XU-Q9X" id="X0m-Fn-bTq"/>
                         <outlet property="removeAdsCell" destination="ghp-sC-awT" id="kDM-WU-vsU"/>
                         <outlet property="switchShowBadge" destination="Gc0-ce-bIi" id="d4Y-BY-mf6"/>
                         <outlet property="switchWeekdaysOnly" destination="cmn-B6-O7N" id="0ON-yG-GGR"/>

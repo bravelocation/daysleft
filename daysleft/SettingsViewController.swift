@@ -30,6 +30,7 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
     @IBOutlet weak var gitHubCell: UITableViewCell!
     @IBOutlet weak var appMadeCell: UITableViewCell!
     @IBOutlet weak var moreAppsCell: UITableViewCell!
+    @IBOutlet weak var privacyCell: UITableViewCell!
     
     var dateFormatter: DateFormatter = DateFormatter()
     
@@ -112,6 +113,10 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
 
         let braveLocationRedColor = UIColor(red: 170.0/255.0, green: 60.0/255.0, blue: 79.0/255.0, alpha: 1.0)
         self.moreAppsCell.imageView?.image = UIImage(icon: FAType.FAMapMarker, size: CGSize(width: logoDimension, height: logoDimension), textColor: braveLocationRedColor, backgroundColor: UIColor.clear)
+        
+        let privacyColor = UIColor(red: 44.0/255.0, green: 94.0/255.0, blue: 22.0/255.0, alpha: 1.0)
+        self.privacyCell.imageView?.image = UIImage(icon: FAType.FAUserSecret, size: CGSize(width: logoDimension, height: logoDimension), textColor: privacyColor, backgroundColor: UIColor.clear)
+
     }
 
     @IBAction func textTitleChanged(_ sender: AnyObject) {
@@ -159,13 +164,16 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
             var url: URL? = nil;
             
             if (indexPath.row == 0) {
-                url = URL(string: "https://www.bravelocation.com/countthedaysleft")!
+                url = URL(string: "https://bravelocation.com/privacy/daysleft")!
             }
             else if (indexPath.row == 1) {
-                url = URL(string: "http://github.com/bravelocation/daysleft")!
+                url = URL(string: "https://bravelocation.com/countthedaysleft")!
             }
             else if (indexPath.row == 2) {
-                url = URL(string: "https://www.bravelocation.com/apps")!
+                url = URL(string: "http://github.com/bravelocation/daysleft")!
+            }
+            else if (indexPath.row == 3) {
+                url = URL(string: "https://bravelocation.com/apps")!
             }
             
             if (url != nil) {
