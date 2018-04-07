@@ -647,7 +647,6 @@
 				5295EE1F1A9A0084007EF7E7 /* ShellScript */,
 				523443681BBAFBEF00E95BA4 /* Embed Watch Content */,
 				B5DD2F40EF96F21BD22B4C7C /* [CP] Embed Pods Frameworks */,
-				81B550E6B6054FB80DFB7CC5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -924,21 +923,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "git=`sh /etc/profile; which git`\nappBuild=`$git rev-list --all |wc -l`\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $appBuild\" \"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\necho \"Updated ${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\n";
-		};
-		81B550E6B6054FB80DFB7CC5 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-daysleft/Pods-daysleft-resources.sh\"\n";
-			showEnvVarsInLog = 0;
 		};
 		B5DD2F40EF96F21BD22B4C7C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
