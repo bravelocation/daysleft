@@ -114,21 +114,6 @@ typedef NS_ENUM(NSUInteger, FIRInstanceIDError) {
 } NS_SWIFT_NAME(InstanceIDError);
 
 /**
- *  The APNS token type for the app. If the token type is set to `UNKNOWN`
- *  InstanceID will implicitly try to figure out what the actual token type
- *  is from the provisioning profile.
- */
-typedef NS_ENUM(NSInteger, FIRInstanceIDAPNSTokenType) {
-  /// Unknown token type.
-  FIRInstanceIDAPNSTokenTypeUnknown,
-  /// Sandbox token type.
-  FIRInstanceIDAPNSTokenTypeSandbox,
-  /// Production token type.
-  FIRInstanceIDAPNSTokenTypeProd,
-} NS_SWIFT_NAME(InstanceIDAPNSTokenType)
-    __deprecated_enum_msg("Use FIRMessaging's APNSToken property instead.");
-
-/**
  *  Instance ID provides a unique identifier for each app instance and a mechanism
  *  to authenticate and authorize actions (for example, sending an FCM message).
  *
@@ -161,20 +146,6 @@ NS_SWIFT_NAME(InstanceID)
  *  Unavailable. Use +instanceID instead.
  */
 - (nonnull instancetype)init __attribute__((unavailable("Use +instanceID instead.")));
-
-/**
- *  Set APNS token for the application. This APNS token will be used to register
- *  with Firebase Messaging using `token` or
- *  `tokenWithAuthorizedEntity:scope:options:handler`. If the token type is set to
- *  `FIRInstanceIDAPNSTokenTypeUnknown` InstanceID will read the provisioning profile
- *  to find out the token type.
- *
- *  @param token The APNS token for the application.
- *  @param type  The APNS token type for the above token.
- */
-- (void)setAPNSToken:(nonnull NSData *)token
-                type:(FIRInstanceIDAPNSTokenType)type
-    __deprecated_msg("Use FIRMessaging's APNSToken property instead.");
 
 #pragma mark - Tokens
 

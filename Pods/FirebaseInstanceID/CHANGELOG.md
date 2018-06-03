@@ -1,3 +1,8 @@
+# 2018-05-08 -- v3.0.0
+- Removed deprecated method `setAPNSToken:type` defined in FIRInstanceID, please use `setAPNSToken:type` defined in FIRMessaging instead.
+- Removed deprecated enum `FIRInstanceIDAPNSTokenType` defined in FIRInstanceID, please use `FIRMessagingAPNSTokenType` defined in FIRMessaging instead.
+- Fixed an issue that FCM scheduled messages were not tracked successfully.
+
 # 2018-03-06 -- v2.0.10
 - Improved documentation on InstanceID usage for GDPR.
 - Improved the keypair handling during GCM to FCM migration. If you are migrating from GCM to FCM, we encourage you to update to this version and above.
