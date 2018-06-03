@@ -22,7 +22,7 @@ class PurchaseViewController: UIViewController, SKProductsRequestDelegate, SKPay
     @IBOutlet weak var buttonTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var betweenButtonConstraint: NSLayoutConstraint!
     
-    var productId:String?
+    var productRequest:SKProductsRequest?
     var product:SKProduct?
     var transactionInProgress:Bool = false
     var model:AppDaysLeftModel?
@@ -67,7 +67,9 @@ class PurchaseViewController: UIViewController, SKProductsRequestDelegate, SKPay
         self.title = "Go Ads Free"
         
         // Set product details
-        self.productId = "com.bravelocation.daysleft.adsfree"
+        self.productRequest = SKProductsRequest(productIdentifiers: ["com.bravelocation.daysleft.adsfree"])
+        self.productRequest!.delegate = self
+        
         self.transactionInProgress = false
         
         // Check if already ads free
@@ -87,11 +89,7 @@ class PurchaseViewController: UIViewController, SKProductsRequestDelegate, SKPay
         if (SKPaymentQueue.canMakePayments()) {
             // Get the product details from the store
             self.statusChange(status: "Fetching details from the App Store ...", enableActivityMonitor: true)
-            
-            let productIdentifiers:Set = [self.productId!]
-            let productRequest = SKProductsRequest(productIdentifiers: productIdentifiers)
-            productRequest.delegate = self
-            productRequest.start()
+            self.productRequest!.start()
         }
     }
     
