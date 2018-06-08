@@ -421,10 +421,7 @@ NSString *const kFIRMessagingPlistAutoInitEnabled =
                      openURL:url
            sourceApplication:FIRMessagingAppIdentifier()
                   annotation:@{}];
-#pragma clang diagnostic pop
   } else if ([appDelegate respondsToSelector:handleOpenURLSelector]) {
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wdeprecated-declarations"
     [appDelegate application:application handleOpenURL:url];
 #pragma clang diagnostic pop
   }
@@ -700,6 +697,11 @@ NSString *const kFIRMessagingPlistAutoInitEnabled =
               completion:(nullable FIRMessagingTopicOperationCompletion)completion {
   if (self.defaultFcmToken.length && topic.length) {
     NSString *normalizeTopic = [[self class ] normalizeTopic:topic];
+    if ([FIRMessagingPubSub hasTopicsPrefix:topic]) {
+      FIRMessagingLoggerWarn(kFIRMessagingMessageCodeTopicFormatIsDeprecated,
+                             @"Format '%@' is deprecated. Only '%@' should be used in "
+                             @"subscribeToTopic.", topic, normalizeTopic);
+    }
     if (normalizeTopic.length) {
       [self.pubsub subscribeToTopic:normalizeTopic handler:completion];
     } else {
@@ -721,6 +723,11 @@ NSString *const kFIRMessagingPlistAutoInitEnabled =
                   completion:(nullable FIRMessagingTopicOperationCompletion)completion {
   if (self.defaultFcmToken.length && topic.length) {
     NSString *normalizeTopic = [[self class] normalizeTopic:topic];
+    if ([FIRMessagingPubSub hasTopicsPrefix:topic]) {
+      FIRMessagingLoggerWarn(kFIRMessagingMessageCodeTopicFormatIsDeprecated,
+                             @"Format '%@' is deprecated. Only '%@' should be used in "
+                             @"unsubscribeFromTopic.", topic, normalizeTopic);
+    }
     if (normalizeTopic.length) {
       [self.pubsub unsubscribeFromTopic:normalizeTopic handler:completion];
     } else {
