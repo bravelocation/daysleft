@@ -39,7 +39,7 @@ class daysleftTests: XCTestCase {
 
     func testAllDaysOnFirstDay() {
         // On the first day, so one day has gone
-        self.actualTestRun(1, endDay:15, currentDay:1, weekdaysOnly:false, expectedLength:15, expectedGone:1, expectedLeft:14)
+        self.actualTestRun(1, endDay:15, currentDay:1, weekdaysOnly:false, expectedLength:15, expectedGone:0, expectedLeft:15)
     }
 
     func testAllDaysBeforeFirstDay() {
@@ -93,6 +93,14 @@ class daysleftTests: XCTestCase {
         // So that's 5 weekdays in length
         // If today is Wednesday 7th, that's 3 days gone (Mon, Tue, Wed), 2 days to go (Thur, Thu)
         self.actualTestRun(3, endDay:11, currentDay:7, weekdaysOnly:true, expectedLength:5, expectedGone:3, expectedLeft:2)
+    }
+    
+    func testWeekdaysStartOnCurrentWeekendDayEndOnMonday() {
+        // 4th of Jan is a Sunday
+        // 12th of Jan is a Monday
+        // So that's 6 weekdays in length
+        // If today is Sunday 4th, that's 0 days gone, 6 days to go
+        self.actualTestRun(4, endDay:12, currentDay:4, weekdaysOnly:true, expectedLength:6, expectedGone:0, expectedLeft:6)
     }
     
     // Helper method for running tests

@@ -115,7 +115,9 @@ open class DaysLeftModel: BLUserSettings
         let startCurrentDate = self.StartOfDay(currentDate)
         
         // If the current date is before the start, return the length
-        if (startCurrentDate.compare(self.start) == ComparisonResult.orderedAscending) {
+        let startComparison = startCurrentDate.compare(self.start)
+        
+        if (startComparison == ComparisonResult.orderedAscending) || (startComparison == ComparisonResult.orderedSame)  {
             return self.DaysLength
         }
         
@@ -135,8 +137,10 @@ open class DaysLeftModel: BLUserSettings
     open func DaysGone(_ currentDate: Date) -> Int  {
         let startCurrentDate = self.StartOfDay(currentDate)
         
-        // If the current date is before the start, return 0
-        if (startCurrentDate.compare(self.start) == ComparisonResult.orderedAscending) {
+        let startComparison = startCurrentDate.compare(self.start)
+        
+        // If the current date is before or on the start, return 0
+        if (startComparison == ComparisonResult.orderedAscending) || (startComparison == ComparisonResult.orderedSame) {
             return 0
         }
         
