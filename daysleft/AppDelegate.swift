@@ -47,6 +47,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         // Increment the number of times app opened
         self.model.appOpenCount = self.model.appOpenCount + 1;
+        
+        // Set status bar style
+        UIApplication.shared.statusBarStyle = .lightContent
 
         return true
     }
