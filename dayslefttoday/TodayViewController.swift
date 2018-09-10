@@ -83,20 +83,9 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         self.counterView.maximumValue = model.DaysLength
         self.counterView.updateControl()
         
-        // Set widget colors based on version of iOS
-        let ios10AndAbove:Bool = ProcessInfo().isOperatingSystemAtLeast(OperatingSystemVersion(majorVersion: 10, minorVersion: 0, patchVersion: 0))
-
-        if (ios10AndAbove) {
-            let darkGreen = UIColor(red: 53.0/255.0, green: 79.0/255.0, blue: 0.0, alpha: 1.0)
-            let lightTransparentColor = UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 0.8)
-            
-            self.view.backgroundColor = lightTransparentColor
-            self.labelNumberTitle.textColor = darkGreen
-            self.labelPercentDone.textColor = darkGreen
-        } else {
-            self.view.backgroundColor = UIColor.clear
-            self.labelNumberTitle.textColor = UIColor.white
-            self.labelPercentDone.textColor = UIColor.white
-        }
+        // Set widget colors
+        self.view.backgroundColor = UIColor.clear
+        self.labelNumberTitle.textColor = UIColor.black
+        self.labelPercentDone.textColor = UIColor.black
     }
 }
