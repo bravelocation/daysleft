@@ -11,7 +11,7 @@ import WatchConnectivity
 
 open class BLUserSettings: NSObject, WCSessionDelegate {
 
-    open static let UpdateSettingsNotification = "kBLUserSettingsNotification"
+    public static let UpdateSettingsNotification = "kBLUserSettingsNotification"
     open var appStandardUserDefaults: UserDefaults?
     open var settingsCache = Dictionary<String, Any>()
     open var watchSessionInitialised: Bool = false

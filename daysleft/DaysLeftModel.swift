@@ -11,7 +11,7 @@ import WatchConnectivity
 
 open class DaysLeftModel: BLUserSettings
 {
-    open let currentFirstRun: Int = 1
+    public let currentFirstRun: Int = 1
     
     public init() {
         super.init()

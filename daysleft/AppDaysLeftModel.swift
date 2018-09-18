@@ -11,7 +11,7 @@ import daysleftlibrary
 
 class AppDaysLeftModel: DaysLeftModel {
 
-    open static let iCloudSettingsNotification = "kBLiCloudSettingsNotification"
+    public static let iCloudSettingsNotification = "kBLiCloudSettingsNotification"
 
     /// Send updated settings to watch
     open override func initialiseiCloudSettings() {

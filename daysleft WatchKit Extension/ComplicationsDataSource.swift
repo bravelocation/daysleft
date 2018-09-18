@@ -68,6 +68,8 @@ class ComplicationsDataSource : NSObject, CLKComplicationDataSource {
             template.body1TextProvider = CLKSimpleTextProvider(text: "30 days")
             template.body2TextProvider = CLKSimpleTextProvider(text: "10% done")
             handler(template)
+        default:
+            handler(nil)
         }
     }
     
@@ -184,6 +186,8 @@ class ComplicationsDataSource : NSObject, CLKComplicationDataSource {
                 template.body2TextProvider = CLKSimpleTextProvider(text: String(format: "%d%% done", displayPercentageDone))
                 
                 entry = CLKComplicationTimelineEntry(date: date, complicationTemplate: template)
+            default:
+                break
         }
         
         return(entry)
