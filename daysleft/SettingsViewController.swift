@@ -12,8 +12,10 @@ import daysleftlibrary
 import GoogleMobileAds
 import Firebase
 import Font_Awesome_Swift
+import Intents
+import IntentsUI
 
-class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafariViewControllerDelegate {
+class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafariViewControllerDelegate, INUIAddVoiceShortcutViewControllerDelegate {
     
     @IBOutlet weak var textTitle: UITextField!
     @IBOutlet weak var textStart: UITextField!
@@ -26,6 +28,7 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
     @IBOutlet weak var bannerView: GADBannerView!
     @IBOutlet weak var adCell: UITableViewCell!
     @IBOutlet weak var removeAdsCell: UITableViewCell!
+    @IBOutlet weak var addToSiriButton: UIButton!
     
     @IBOutlet weak var gitHubCell: UITableViewCell!
     @IBOutlet weak var appMadeCell: UITableViewCell!
@@ -33,7 +36,6 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
     @IBOutlet weak var privacyCell: UITableViewCell!
     
     var dateFormatter: DateFormatter = DateFormatter()
-    
     let startDatePicker : UIDatePicker = UIDatePicker();
     let endDatePicker : UIDatePicker = UIDatePicker();
     
@@ -78,6 +80,9 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
         let version = infoDictionary.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
         let build = infoDictionary.object(forInfoDictionaryKey: "CFBundleVersion") as! String
         self.labelVersion.text = String(format: "v%@.%@", version, build)
+        
+        // Setup Add to Siri button
+        self.addToSiriButton.addTarget(self, action: #selector(addToSiri(_:)), for: .touchUpInside)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -260,6 +265,44 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
     // MARK: - SFSafariViewControllerDelegate methods
     func safariViewControllerDidFinish(_ controller: SFSafariViewController)
     {
+        controller.dismiss(animated: true, completion: nil)
+    }
+    
+    
+    // MARK: - Siri handling
+    @objc
+    func addToSiri(_ sender: Any) {
+        if #available(iOS 12.0, *) {
+            let intent = DaysLeftIntent()
+            intent.suggestedInvocationPhrase = "How Many Days Left"
+            
+            if let shortcut = INShortcut(intent: intent) {
+                let viewController = INUIAddVoiceShortcutViewController(shortcut: shortcut)
+                viewController.modalPresentationStyle = .formSheet
+                viewController.delegate = self
+                self.present(viewController, animated: true, completion: nil)
+            }
+        } else {
+            // Show an alert
+            let alert = UIAlertController(title:"Not Supported", message:"Add to Siri is only supported on iOS 12 and above", preferredStyle:.alert)
+            
+            let defaultAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil)
+            alert.addAction(defaultAction)
+            
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    // MARK:- INUIAddVoiceShortcutViewControllerDelegate
+    @available(iOS 12.0, *)
+    func addVoiceShortcutViewController(_ controller: INUIAddVoiceShortcutViewController, didFinishWith voiceShortcut: INVoiceShortcut?, error: Error?) {
+        print("Added shortcut")
+        controller.dismiss(animated: true, completion: nil)
+    }
+    
+    @available(iOS 12.0, *)
+    func addVoiceShortcutViewControllerDidCancel(_ controller: INUIAddVoiceShortcutViewController) {
+        print("Cancelled shortcut")
         controller.dismiss(animated: true, completion: nil)
     }
 }

@@ -198,11 +198,9 @@ class ViewController: UIViewController {
     private func donateInteraction() {
         if #available(iOS 12.0, *) {
             let intent = DaysLeftIntent()
-            
             intent.suggestedInvocationPhrase = "How Many Days Left"
             
-            let interaction = INInteraction(intent: intent, response: nil)
-            
+            let interaction = INInteraction(intent: intent, response: nil)            
             interaction.donate { (error) in
                 if error != nil {
                     if let error = error as NSError? {
