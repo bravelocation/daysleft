@@ -7,6 +7,7 @@
 //
 
 import IntentsUI
+import daysleftlibrary
 
 // As an example, this extension's Info.plist has been configured to handle interactions for INSendMessageIntent.
 // You will want to replace this or add other intents as appropriate.
@@ -17,21 +18,51 @@ import IntentsUI
 
 class IntentViewController: UIViewController, INUIHostedViewControlling {
     
+    @IBOutlet weak var counterView: CounterView!    
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var percentLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        let darkGreen = UIColor(red: 41/255, green: 63/255, blue: 1/255, alpha: 1.0)
+        let lightGreen = UIColor(red: 203/255, green: 237/255, blue: 142/255, alpha: 1.0)
+        let backgroundColor = UIColor.clear
+        
+        self.counterView.counterColor = lightGreen
+        self.counterView.outlineColor = darkGreen
+        self.counterView.backgroundColor = backgroundColor
+        
+        self.view.backgroundColor = backgroundColor
+        self.titleLabel.textColor = darkGreen
+        self.percentLabel.textColor = darkGreen
     }
         
     // MARK: - INUIHostedViewControlling
-    
-    // Prepare your view controller for the interaction to handle.
     func configureView(for parameters: Set<INParameter>, of interaction: INInteraction, interactiveBehavior: INUIInteractiveBehavior, context: INUIHostedViewContext, completion: @escaping (Bool, Set<INParameter>, CGSize) -> Void) {
-        // Do configuration here, including preparing views and calculating a desired size for presentation.
+    
+        guard interaction.intent is DaysLeftIntent else {
+            completion(false, Set(), .zero)
+            return
+        }
+        
+        let now: Date = Date()
+        let model: DaysLeftModel = DaysLeftModel()
+        
+        self.titleLabel.text = model.FullDescription(now)
+        
+        let percentageDone: Float = (Float(model.DaysGone(now)) * 100.0) / Float(model.DaysLength)
+        self.percentLabel.text = String(format:"%3.0f%% done", percentageDone)
+        
+        self.counterView.counter = model.DaysGone(now)
+        self.counterView.maximumValue = model.DaysLength
+        self.counterView.updateControl()
+        
         completion(true, parameters, self.desiredSize)
     }
     
     var desiredSize: CGSize {
-        return self.extensionContext!.hostedViewMaximumAllowedSize
+        return CGSize(width: self.extensionContext?.hostedViewMaximumAllowedSize.width ?? 320.00, height: 150.0)
     }
     
 }

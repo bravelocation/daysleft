@@ -199,7 +199,7 @@ class ViewController: UIViewController {
         if #available(iOS 12.0, *) {
             let intent = DaysLeftIntent()
             
-            intent.suggestedInvocationPhrase = "Days Left"
+            intent.suggestedInvocationPhrase = "How Many Days Left"
             
             let interaction = INInteraction(intent: intent, response: nil)
             
