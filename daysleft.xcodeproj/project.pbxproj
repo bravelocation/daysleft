@@ -27,6 +27,20 @@
 		5295EE0A1A94B3AA007EF7E7 /* daysleftlibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5295EDD01A94AE53007EF7E7 /* daysleftlibrary.framework */; };
 		5295EE0B1A94B4C7007EF7E7 /* DefaultPreferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52FAB11B1A9240490039691E /* DefaultPreferences.plist */; };
 		5295EE1D1A961A77007EF7E7 /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5295EE0D1A95E647007EF7E7 /* CounterView.swift */; };
+		52AC69362154DA7E00E6C833 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AC69352154DA7E00E6C833 /* IntentHandler.swift */; };
+		52AC693E2154DA7E00E6C833 /* IntentsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52AC693D2154DA7E00E6C833 /* IntentsUI.framework */; };
+		52AC69412154DA7E00E6C833 /* IntentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AC69402154DA7E00E6C833 /* IntentViewController.swift */; };
+		52AC69442154DA7E00E6C833 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52AC69422154DA7E00E6C833 /* MainInterface.storyboard */; };
+		52AC69482154DA7F00E6C833 /* DaysLeftIntentUI.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 52AC693C2154DA7E00E6C833 /* DaysLeftIntentUI.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		52AC694B2154DA7F00E6C833 /* DaysLeftIntent.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 52AC69332154DA7E00E6C833 /* DaysLeftIntent.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		52AC69532154DAFB00E6C833 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 52AC69522154DAFB00E6C833 /* Intents.intentdefinition */; settings = {ATTRIBUTES = (codegen, ); }; };
+		52AC69542154DC3000E6C833 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 52AC69522154DAFB00E6C833 /* Intents.intentdefinition */; settings = {ATTRIBUTES = (codegen, ); }; };
+		52AC69552154DC3600E6C833 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 52AC69522154DAFB00E6C833 /* Intents.intentdefinition */; settings = {ATTRIBUTES = (codegen, ); }; };
+		52AC69572154DDF100E6C833 /* daysleftlibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5295EDD01A94AE53007EF7E7 /* daysleftlibrary.framework */; };
+		52AC69582154DDF900E6C833 /* daysleftlibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5295EDD01A94AE53007EF7E7 /* daysleftlibrary.framework */; };
+		52AC695C2154DEB700E6C833 /* DaysLeftIntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AC695B2154DEB700E6C833 /* DaysLeftIntentHandler.swift */; };
+		52AC695D2154E42F00E6C833 /* DefaultPreferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52FAB11B1A9240490039691E /* DefaultPreferences.plist */; };
+		52AC695E2154E42F00E6C833 /* DefaultPreferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52FAB11B1A9240490039691E /* DefaultPreferences.plist */; };
 		52B78DF41D982A6E00AB629D /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52B78DF31D982A6E00AB629D /* Messages.framework */; };
 		52B78DF71D982A6E00AB629D /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B78DF61D982A6E00AB629D /* MessagesViewController.swift */; };
 		52B78DFA1D982A6E00AB629D /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52B78DF81D982A6E00AB629D /* MainInterface.storyboard */; };
@@ -94,6 +108,20 @@
 			remoteGlobalIDString = 5295EDF71A94B398007EF7E7;
 			remoteInfo = dayslefttoday;
 		};
+		52AC69462154DA7F00E6C833 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 52CFBEF01A8B631B005234FB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 52AC693B2154DA7E00E6C833;
+			remoteInfo = DaysLeftIntentUI;
+		};
+		52AC69492154DA7F00E6C833 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 52CFBEF01A8B631B005234FB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 52AC69322154DA7E00E6C833;
+			remoteInfo = DaysLeftIntent;
+		};
 		52B78E161D9904AD00AB629D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 52CFBEF01A8B631B005234FB /* Project object */;
@@ -144,6 +172,8 @@
 			dstSubfolderSpec = 13;
 			files = (
 				52B78E151D9904AD00AB629D /* MessagesExtension.appex in Embed App Extensions */,
+				52AC69482154DA7F00E6C833 /* DaysLeftIntentUI.appex in Embed App Extensions */,
+				52AC694B2154DA7F00E6C833 /* DaysLeftIntent.appex in Embed App Extensions */,
 				5295EE051A94B398007EF7E7 /* dayslefttoday.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
@@ -177,6 +207,18 @@
 		5295EE011A94B398007EF7E7 /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
 		5295EE0C1A94B527007EF7E7 /* dayslefttoday.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = dayslefttoday.entitlements; sourceTree = "<group>"; };
 		5295EE0D1A95E647007EF7E7 /* CounterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CounterView.swift; path = ../daysleft/CounterView.swift; sourceTree = "<group>"; };
+		52AC69332154DA7E00E6C833 /* DaysLeftIntent.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = DaysLeftIntent.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		52AC69352154DA7E00E6C833 /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
+		52AC69372154DA7E00E6C833 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52AC693C2154DA7E00E6C833 /* DaysLeftIntentUI.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = DaysLeftIntentUI.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		52AC693D2154DA7E00E6C833 /* IntentsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IntentsUI.framework; path = System/Library/Frameworks/IntentsUI.framework; sourceTree = SDKROOT; };
+		52AC69402154DA7E00E6C833 /* IntentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentViewController.swift; sourceTree = "<group>"; };
+		52AC69432154DA7E00E6C833 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		52AC69452154DA7F00E6C833 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52AC69522154DAFB00E6C833 /* Intents.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = Intents.intentdefinition; sourceTree = "<group>"; };
+		52AC695B2154DEB700E6C833 /* DaysLeftIntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysLeftIntentHandler.swift; sourceTree = "<group>"; };
+		52AC695F2154E4A300E6C833 /* DaysLeftIntent.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DaysLeftIntent.entitlements; sourceTree = "<group>"; };
+		52AC69602154E4AB00E6C833 /* DaysLeftIntentUI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DaysLeftIntentUI.entitlements; sourceTree = "<group>"; };
 		52B78DE81D982A6D00AB629D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		52B78DEA1D982A6D00AB629D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52B78DEF1D982A6D00AB629D /* MessagesExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MessagesExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -253,6 +295,23 @@
 			files = (
 				5295EE0A1A94B3AA007EF7E7 /* daysleftlibrary.framework in Frameworks */,
 				5295EDFB1A94B398007EF7E7 /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52AC69302154DA7E00E6C833 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52AC69572154DDF100E6C833 /* daysleftlibrary.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52AC69392154DA7E00E6C833 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52AC69582154DDF900E6C833 /* daysleftlibrary.framework in Frameworks */,
+				52AC693E2154DA7E00E6C833 /* IntentsUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,6 +405,7 @@
 				F6956DABE3A7AE4B317EC535 /* libPods-daysleftlibrary.a */,
 				9617E6CA9F2A12BF2299ABAE /* libPods-dayslefttoday.a */,
 				BA7BBD7977F821A8A87B182E /* Pods_daysleft.framework */,
+				52AC693D2154DA7E00E6C833 /* IntentsUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -367,6 +427,28 @@
 				5295EDFE1A94B398007EF7E7 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		52AC69342154DA7E00E6C833 /* DaysLeftIntent */ = {
+			isa = PBXGroup;
+			children = (
+				52AC695F2154E4A300E6C833 /* DaysLeftIntent.entitlements */,
+				52AC69352154DA7E00E6C833 /* IntentHandler.swift */,
+				52AC69372154DA7E00E6C833 /* Info.plist */,
+				52AC695B2154DEB700E6C833 /* DaysLeftIntentHandler.swift */,
+			);
+			path = DaysLeftIntent;
+			sourceTree = "<group>";
+		};
+		52AC693F2154DA7E00E6C833 /* DaysLeftIntentUI */ = {
+			isa = PBXGroup;
+			children = (
+				52AC69602154E4AB00E6C833 /* DaysLeftIntentUI.entitlements */,
+				52AC69402154DA7E00E6C833 /* IntentViewController.swift */,
+				52AC69422154DA7E00E6C833 /* MainInterface.storyboard */,
+				52AC69452154DA7F00E6C833 /* Info.plist */,
+			);
+			path = DaysLeftIntentUI;
 			sourceTree = "<group>";
 		};
 		52B78DE71D982A6D00AB629D /* daysleft iMessage */ = {
@@ -444,6 +526,8 @@
 				52B7E8851ABEDE9300E1949C /* daysleft WatchKit App */,
 				52B78DE71D982A6D00AB629D /* daysleft iMessage */,
 				52B78DF51D982A6E00AB629D /* MessagesExtension */,
+				52AC69342154DA7E00E6C833 /* DaysLeftIntent */,
+				52AC693F2154DA7E00E6C833 /* DaysLeftIntentUI */,
 				5295EDF91A94B398007EF7E7 /* Frameworks */,
 				52CFBEF91A8B631B005234FB /* Products */,
 				47ED22519B5BD25FB1149268 /* Pods */,
@@ -460,6 +544,8 @@
 				52B7E8771ABEDE9300E1949C /* daysleft WatchKit Extension.appex */,
 				52B7E8811ABEDE9300E1949C /* daysleft WatchKit App.app */,
 				52B78DEF1D982A6D00AB629D /* MessagesExtension.appex */,
+				52AC69332154DA7E00E6C833 /* DaysLeftIntent.appex */,
+				52AC693C2154DA7E00E6C833 /* DaysLeftIntentUI.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -489,6 +575,7 @@
 		52CFBEFB1A8B631B005234FB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				52AC69522154DAFB00E6C833 /* Intents.intentdefinition */,
 				52DC9EB21FC97A3200AE02F6 /* GoogleService-Info.plist */,
 				52CFBEFC1A8B631B005234FB /* Info.plist */,
 			);
@@ -579,6 +666,42 @@
 			productReference = 5295EDF81A94B398007EF7E7 /* dayslefttoday.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		52AC69322154DA7E00E6C833 /* DaysLeftIntent */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52AC694F2154DA7F00E6C833 /* Build configuration list for PBXNativeTarget "DaysLeftIntent" */;
+			buildPhases = (
+				52AC692F2154DA7E00E6C833 /* Sources */,
+				52AC69302154DA7E00E6C833 /* Frameworks */,
+				52AC69312154DA7E00E6C833 /* Resources */,
+				52AC69592154DE1900E6C833 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DaysLeftIntent;
+			productName = DaysLeftIntent;
+			productReference = 52AC69332154DA7E00E6C833 /* DaysLeftIntent.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		52AC693B2154DA7E00E6C833 /* DaysLeftIntentUI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52AC694C2154DA7F00E6C833 /* Build configuration list for PBXNativeTarget "DaysLeftIntentUI" */;
+			buildPhases = (
+				52AC69382154DA7E00E6C833 /* Sources */,
+				52AC69392154DA7E00E6C833 /* Frameworks */,
+				52AC693A2154DA7E00E6C833 /* Resources */,
+				52AC695A2154DE2600E6C833 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DaysLeftIntentUI;
+			productName = DaysLeftIntentUI;
+			productReference = 52AC693C2154DA7E00E6C833 /* DaysLeftIntentUI.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		52B78DEE1D982A6D00AB629D /* MessagesExtension */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 52B78DFE1D982A6E00AB629D /* Build configuration list for PBXNativeTarget "MessagesExtension" */;
@@ -654,6 +777,8 @@
 				5295EE041A94B398007EF7E7 /* PBXTargetDependency */,
 				523443651BBAFBEF00E95BA4 /* PBXTargetDependency */,
 				52B78E171D9904AD00AB629D /* PBXTargetDependency */,
+				52AC69472154DA7F00E6C833 /* PBXTargetDependency */,
+				52AC694A2154DA7F00E6C833 /* PBXTargetDependency */,
 			);
 			name = daysleft;
 			productName = daysleft;
@@ -666,7 +791,7 @@
 		52CFBEF01A8B631B005234FB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0800;
+				LastSwiftUpdateCheck = 1000;
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Brave Location Software";
 				TargetAttributes = {
@@ -691,6 +816,26 @@
 								enabled = 1;
 							};
 							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
+					};
+					52AC69322154DA7E00E6C833 = {
+						CreatedOnToolsVersion = 10.0;
+						DevelopmentTeam = W8B3V597R9;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					52AC693B2154DA7E00E6C833 = {
+						CreatedOnToolsVersion = 10.0;
+						DevelopmentTeam = W8B3V597R9;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
 							};
 						};
@@ -753,6 +898,9 @@
 							com.apple.Push = {
 								enabled = 1;
 							};
+							com.apple.Siri = {
+								enabled = 1;
+							};
 							com.apple.iCloud = {
 								enabled = 1;
 							};
@@ -780,6 +928,8 @@
 				52B7E8761ABEDE9300E1949C /* daysleft WatchKit Extension */,
 				52B7E8801ABEDE9300E1949C /* daysleft WatchKit App */,
 				52B78DEE1D982A6D00AB629D /* MessagesExtension */,
+				52AC69322154DA7E00E6C833 /* DaysLeftIntent */,
+				52AC693B2154DA7E00E6C833 /* DaysLeftIntentUI */,
 			);
 		};
 /* End PBXProject section */
@@ -798,6 +948,23 @@
 			files = (
 				5295EE0B1A94B4C7007EF7E7 /* DefaultPreferences.plist in Resources */,
 				5295EE021A94B398007EF7E7 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52AC69312154DA7E00E6C833 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52AC695D2154E42F00E6C833 /* DefaultPreferences.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52AC693A2154DA7E00E6C833 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52AC69442154DA7E00E6C833 /* MainInterface.storyboard in Resources */,
+				52AC695E2154E42F00E6C833 /* DefaultPreferences.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -911,6 +1078,40 @@
 			shellPath = /bin/sh;
 			shellScript = "git=`sh /etc/profile; which git`\nappBuild=`$git rev-list --all |wc -l`\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $appBuild\" \"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\necho \"Updated ${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\n\n\"${PODS_ROOT}/Fabric/run\" de20d03a9cd3af9832860083836d12964a8b11f5 0a8628bec808495065a9f124e4fd6d79b5f2e0e69b63845d0544c96c777ae566\n\necho \"Updated Fabric\"\n";
 		};
+		52AC69592154DE1900E6C833 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "git=`sh /etc/profile; which git`\nappBuild=`$git rev-list --all |wc -l`\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $appBuild\" \"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\necho \"Updated ${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\n";
+		};
+		52AC695A2154DE2600E6C833 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "git=`sh /etc/profile; which git`\nappBuild=`$git rev-list --all |wc -l`\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $appBuild\" \"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\necho \"Updated ${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\n";
+		};
 		52B78E051D982AA900AB629D /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -995,6 +1196,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		52AC692F2154DA7E00E6C833 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52AC69542154DC3000E6C833 /* Intents.intentdefinition in Sources */,
+				52AC695C2154DEB700E6C833 /* DaysLeftIntentHandler.swift in Sources */,
+				52AC69362154DA7E00E6C833 /* IntentHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52AC69382154DA7E00E6C833 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52AC69552154DC3600E6C833 /* Intents.intentdefinition in Sources */,
+				52AC69412154DA7E00E6C833 /* IntentViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		52B78DEB1D982A6D00AB629D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1022,6 +1242,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52AC69532154DAFB00E6C833 /* Intents.intentdefinition in Sources */,
 				527AD75D1E94EB2800F8637B /* PurchaseViewController.swift in Sources */,
 				52CFBF001A8B631B005234FB /* ViewController.swift in Sources */,
 				52CFBEFE1A8B631B005234FB /* AppDelegate.swift in Sources */,
@@ -1059,6 +1280,16 @@
 			target = 5295EDF71A94B398007EF7E7 /* dayslefttoday */;
 			targetProxy = 5295EE031A94B398007EF7E7 /* PBXContainerItemProxy */;
 		};
+		52AC69472154DA7F00E6C833 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 52AC693B2154DA7E00E6C833 /* DaysLeftIntentUI */;
+			targetProxy = 52AC69462154DA7F00E6C833 /* PBXContainerItemProxy */;
+		};
+		52AC694A2154DA7F00E6C833 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 52AC69322154DA7E00E6C833 /* DaysLeftIntent */;
+			targetProxy = 52AC69492154DA7F00E6C833 /* PBXContainerItemProxy */;
+		};
 		52B78E171D9904AD00AB629D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 52B78DEE1D982A6D00AB629D /* MessagesExtension */;
@@ -1067,6 +1298,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		52AC69422154DA7E00E6C833 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				52AC69432154DA7E00E6C833 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 		52B78DF81D982A6E00AB629D /* MainInterface.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1238,6 +1477,118 @@
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		52AC694D2154DA7F00E6C833 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = DaysLeftIntentUI/DaysLeftIntentUI.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W8B3V597R9;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = DaysLeftIntentUI/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bravelocation.daysleft.DaysLeftIntentUI;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		52AC694E2154DA7F00E6C833 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = DaysLeftIntentUI/DaysLeftIntentUI.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W8B3V597R9;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = DaysLeftIntentUI/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bravelocation.daysleft.DaysLeftIntentUI;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		52AC69502154DA7F00E6C833 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = DaysLeftIntent/DaysLeftIntent.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W8B3V597R9;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = DaysLeftIntent/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bravelocation.daysleft.DaysLeftIntent;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		52AC69512154DA7F00E6C833 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = DaysLeftIntent/DaysLeftIntent.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W8B3V597R9;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = DaysLeftIntent/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bravelocation.daysleft.DaysLeftIntent;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -1499,6 +1850,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 39638B2E57648DB9142D4833 /* Pods-daysleft.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = daysleft/daysleft.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1531,6 +1883,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 20D7C2776D16B97A9237DC10 /* Pods-daysleft.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = daysleft/daysleft.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1584,6 +1937,24 @@
 			buildConfigurations = (
 				5295EE071A94B398007EF7E7 /* Debug */,
 				5295EE081A94B398007EF7E7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		52AC694C2154DA7F00E6C833 /* Build configuration list for PBXNativeTarget "DaysLeftIntentUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52AC694D2154DA7F00E6C833 /* Debug */,
+				52AC694E2154DA7F00E6C833 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		52AC694F2154DA7F00E6C833 /* Build configuration list for PBXNativeTarget "DaysLeftIntent" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52AC69502154DA7F00E6C833 /* Debug */,
+				52AC69512154DA7F00E6C833 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

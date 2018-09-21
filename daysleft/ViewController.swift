@@ -9,6 +9,7 @@
 import UIKit
 import StoreKit
 import daysleftlibrary
+import Intents
 
 class ViewController: UIViewController {
 
@@ -69,6 +70,8 @@ class ViewController: UIViewController {
         let secondsInADay: Double = 60 * 60 * 24
         let startOfTomorrow = model.AddDays(model.StartOfDay(now), daysToAdd: 1)
         self.dayChangeTimer = Timer(fireAt: startOfTomorrow, interval: secondsInADay, target: self, selector: #selector(ViewController.dayChangedTimerFired), userInfo: nil, repeats: false)
+        
+        self.donateInteraction()
     }
  
     override func viewDidAppear(_ animated: Bool) {
@@ -189,6 +192,26 @@ class ViewController: UIViewController {
         DispatchQueue.main.async {
             self.counterView.clearControl()
             self.updateViewFromModel()
+        }
+    }
+    
+    private func donateInteraction() {
+        if #available(iOS 12.0, *) {
+            let intent = DaysLeftIntent()
+            
+            intent.suggestedInvocationPhrase = "Days Left"
+            
+            let interaction = INInteraction(intent: intent, response: nil)
+            
+            interaction.donate { (error) in
+                if error != nil {
+                    if let error = error as NSError? {
+                        print("Interaction donation failed: %@", error)
+                    } else {
+                        print("Successfully donated interaction")
+                    }
+                }
+            }
         }
     }
 }
