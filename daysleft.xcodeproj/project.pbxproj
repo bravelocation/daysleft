@@ -556,18 +556,18 @@
 				527E153F1D83F80300D81B15 /* gallery.ckcomplication */,
 				52FAB11A1A923F500039691E /* daysleft.entitlements */,
 				52CFBEFD1A8B631B005234FB /* AppDelegate.swift */,
-				52CFBEFF1A8B631B005234FB /* ViewController.swift */,
-				52FAB11D1A9381B70039691E /* SettingsViewController.swift */,
-				527AD75B1E94EB2800F8637B /* PurchaseViewController.swift */,
-				52CFBF011A8B631B005234FB /* Main.storyboard */,
-				527AD75C1E94EB2800F8637B /* PurchaseViewController.xib */,
-				52DC9EB41FC97A9200AE02F6 /* FirebaseNotifications.swift */,
-				52FAB11B1A9240490039691E /* DefaultPreferences.plist */,
-				52CFBF041A8B631B005234FB /* Images.xcassets */,
-				52CFBEFB1A8B631B005234FB /* Supporting Files */,
-				52790F781D056F500025AF10 /* daysleft-Bridging-Header.h */,
 				5285E6741FACC9A6001547CD /* AppDaysLeftModel.swift */,
+				52790F781D056F500025AF10 /* daysleft-Bridging-Header.h */,
+				52FAB11B1A9240490039691E /* DefaultPreferences.plist */,
+				52DC9EB41FC97A9200AE02F6 /* FirebaseNotifications.swift */,
+				52CFBF041A8B631B005234FB /* Images.xcassets */,
 				527BE7A51FB0FEE500455FE9 /* LaunchScreen.storyboard */,
+				52CFBF011A8B631B005234FB /* Main.storyboard */,
+				527AD75B1E94EB2800F8637B /* PurchaseViewController.swift */,
+				527AD75C1E94EB2800F8637B /* PurchaseViewController.xib */,
+				52FAB11D1A9381B70039691E /* SettingsViewController.swift */,
+				52CFBEFF1A8B631B005234FB /* ViewController.swift */,
+				52CFBEFB1A8B631B005234FB /* Supporting Files */,
 			);
 			path = daysleft;
 			sourceTree = "<group>";
@@ -575,9 +575,9 @@
 		52CFBEFB1A8B631B005234FB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				52AC69522154DAFB00E6C833 /* Intents.intentdefinition */,
 				52DC9EB21FC97A3200AE02F6 /* GoogleService-Info.plist */,
 				52CFBEFC1A8B631B005234FB /* Info.plist */,
+				52AC69522154DAFB00E6C833 /* Intents.intentdefinition */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";

@@ -13,6 +13,7 @@ import Intents
 
 class ViewController: UIViewController {
 
+    // MARK:- Properties
     @IBOutlet weak var labelDaysLeft: UILabel!
     @IBOutlet weak var labelTitle: UILabel!
     @IBOutlet weak var counterView: CounterView!
@@ -24,6 +25,7 @@ class ViewController: UIViewController {
     var dayChangeTimer: Timer!
     var shareButton: UIBarButtonItem!
 
+    // MARK:- Initialisation
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)   {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         self.setupNotificationHandlers()
@@ -43,6 +45,7 @@ class ViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector:#selector(ViewController.appEntersForeground), name: NSNotification.Name.UIApplicationWillEnterForeground, object: nil)
     }
     
+    // MARK:- View event handlers
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -71,6 +74,8 @@ class ViewController: UIViewController {
         let startOfTomorrow = model.AddDays(model.StartOfDay(now), daysToAdd: 1)
         self.dayChangeTimer = Timer(fireAt: startOfTomorrow, interval: secondsInADay, target: self, selector: #selector(ViewController.dayChangedTimerFired), userInfo: nil, repeats: false)
         
+        // Setup user intents
+        self.setupHandoff()
         self.donateInteraction()
     }
  
@@ -92,6 +97,7 @@ class ViewController: UIViewController {
         }
     }
     
+    // MARK:- Handle rotations
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
 
@@ -111,11 +117,53 @@ class ViewController: UIViewController {
         }
     }
     
+    // MARK:- Event handlers
     @objc
     func dayChangedTimerFired(_ timer: Timer) {
         self.updateViewFromModel()
     }
     
+    @objc
+    func swipeLeft(_ gesture: UISwipeGestureRecognizer) {
+        self.performSegue(withIdentifier: "segueShowSettings", sender: self)
+    }
+    
+    @objc
+    func shareButtonTouchUp() {
+        let modelText = self.modelData().FullDescription(Date())
+        let objectsToShare = [modelText]
+        
+        let activityViewController = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+        
+        if (activityViewController.popoverPresentationController != nil) {
+            activityViewController.popoverPresentationController!.barButtonItem = self.shareButton;
+        }
+        
+        self.present(activityViewController, animated: true, completion: nil)
+    }
+    
+    @objc
+    fileprivate func iCloudSettingsUpdated(_ notification: Notification) {
+        NSLog("Received iCloud settings update notification in main view controller")
+        
+        // Update view data on main thread
+        DispatchQueue.main.async {
+            self.updateViewFromModel()
+        }
+    }
+    
+    @objc
+    fileprivate func appEntersForeground() {
+        NSLog("App enters foreground in main view controller")
+        
+        // Update view data on main thread
+        DispatchQueue.main.async {
+            self.counterView.clearControl()
+            self.updateViewFromModel()
+        }
+    }
+    
+    // MARK:- Helper functions
     func updateViewFromModel() {
         NSLog("updateViewFromModel started")
         let model = self.modelData()
@@ -150,57 +198,23 @@ class ViewController: UIViewController {
         NSLog("updateViewFromModel completed")
     }
 
-    @objc
-    func swipeLeft(_ gesture: UISwipeGestureRecognizer) {
-        self.performSegue(withIdentifier: "segueShowSettings", sender: self)
-    }
     
     func modelData() -> AppDaysLeftModel {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         return appDelegate.model
     }
     
-    @objc
-    func shareButtonTouchUp() {
-        let modelText = self.modelData().FullDescription(Date())
-        let objectsToShare = [modelText]
-        
-        let activityViewController = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
-            
-        if (activityViewController.popoverPresentationController != nil) {
-                activityViewController.popoverPresentationController!.barButtonItem = self.shareButton;
-        }
-            
-        self.present(activityViewController, animated: true, completion: nil)
-    }
-
-    @objc
-    fileprivate func iCloudSettingsUpdated(_ notification: Notification) {
-        NSLog("Received iCloud settings update notification in main view controller")
-        
-        // Update view data on main thread
-        DispatchQueue.main.async {
-            self.updateViewFromModel()
-        }
-    }
-        
-    @objc
-    fileprivate func appEntersForeground() {
-        NSLog("App enters foreground in main view controller")
-        
-        // Update view data on main thread
-        DispatchQueue.main.async {
-            self.counterView.clearControl()
-            self.updateViewFromModel()
-        }
-    }
-    
+    // MARK:- User Activity functions
     private func donateInteraction() {
         if #available(iOS 12.0, *) {
             let intent = DaysLeftIntent()
             intent.suggestedInvocationPhrase = "How Many Days Left"
             
-            let interaction = INInteraction(intent: intent, response: nil)            
+            // Assumes setupHandoff() has already been called
+            let intentResponse = INIntentResponse()
+            intentResponse.userActivity = self.userActivity
+            
+            let interaction = INInteraction(intent: intent, response: intentResponse)
             interaction.donate { (error) in
                 if error != nil {
                     if let error = error as NSError? {
@@ -211,6 +225,20 @@ class ViewController: UIViewController {
                 }
             }
         }
+    }
+
+    @objc func setupHandoff() {
+        // Set activity for handoff
+        let activity = NSUserActivity(activityType: "com.bravelocation.daysleft.mainscreen")
+        
+        // Eligible for handoff
+        activity.isEligibleForHandoff = true
+        activity.isEligibleForSearch = true
+        activity.title = "Days Left"
+        activity.needsSave = true
+        
+        self.userActivity = activity
+        self.userActivity?.becomeCurrent()
     }
 }
 

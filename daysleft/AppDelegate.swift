@@ -72,6 +72,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         handler(UIBackgroundFetchResult.newData);
     }
     
+    func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([Any]?) -> Void) -> Bool {
+        if let window = self.window {
+            window.rootViewController?.restoreUserActivityState(userActivity)
+        }
+        
+        return true
+    }
+    
     func messageReceived(_ application: UIApplication,
                          userInfo: [AnyHashable: Any]) {
         // Print message
