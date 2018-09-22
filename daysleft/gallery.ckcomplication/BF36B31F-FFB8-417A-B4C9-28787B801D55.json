@@ -1,0 +1,14 @@
+{
+  "tintColor" : {
+    "green" : 0.92941176891326904,
+    "red" : 0.79607844352722168,
+    "alpha" : 1,
+    "blue" : 0.55686277151107788
+  },
+  "class" : "CLKComplicationTemplateGraphicBezelCircularText",
+  "textProvider" : {
+    "class" : "CLKSimpleTextProvider",
+    "text" : "20 days until Christmas"
+  },
+  "version" : 30000
+}
