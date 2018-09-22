@@ -475,14 +475,14 @@
 		52B7E8781ABEDE9300E1949C /* daysleft WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				52D937391BBFCEF200B215BC /* WatchDaysLeftModel.swift */,
 				52B7E8961ABEDEDE00E1949C /* daysleft WatchKit Extension.entitlements */,
-				5234436C1BBB181C00E95BA4 /* ExtensionDelegate.swift */,
 				52D25F3B1BCB8595002E4C76 /* ComplicationsDataSource.swift */,
-				52B7E87B1ABEDE9300E1949C /* InterfaceController.swift */,
-				52B7E87D1ABEDE9300E1949C /* Images.xcassets */,
-				52B7E8791ABEDE9300E1949C /* Supporting Files */,
 				52B7E8981ABEEA2200E1949C /* DefaultPreferences.plist */,
+				5234436C1BBB181C00E95BA4 /* ExtensionDelegate.swift */,
+				52B7E87D1ABEDE9300E1949C /* Images.xcassets */,
+				52B7E87B1ABEDE9300E1949C /* InterfaceController.swift */,
+				52D937391BBFCEF200B215BC /* WatchDaysLeftModel.swift */,
+				52B7E8791ABEDE9300E1949C /* Supporting Files */,
 			);
 			path = "daysleft WatchKit Extension";
 			sourceTree = "<group>";

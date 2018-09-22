@@ -43,7 +43,12 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
         }
     }
     
-    func setupBackgroundRefresh() {
+    func handle(_ userActivity: NSUserActivity) {
+        print("Handling user activity")
+        // Not sure what to do here
+    }
+    
+    private func setupBackgroundRefresh() {
         // Setup a background refresh for 0100 tomorrow
         let globalCalendar = Calendar.autoupdatingCurrent
         let twoHoursTime = (globalCalendar as NSCalendar).date(byAdding: .hour, value: 2, to: Date(), options: [])
