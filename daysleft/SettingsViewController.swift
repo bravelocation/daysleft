@@ -28,8 +28,7 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
     @IBOutlet weak var bannerView: GADBannerView!
     @IBOutlet weak var adCell: UITableViewCell!
     @IBOutlet weak var removeAdsCell: UITableViewCell!
-    @IBOutlet weak var addToSiriButton: UIButton!
-    
+    @IBOutlet weak var addToSiriCell: UITableViewCell!
     @IBOutlet weak var gitHubCell: UITableViewCell!
     @IBOutlet weak var appMadeCell: UITableViewCell!
     @IBOutlet weak var moreAppsCell: UITableViewCell!
@@ -82,7 +81,29 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
         self.labelVersion.text = String(format: "v%@.%@", version, build)
         
         // Setup Add to Siri button
-        self.addToSiriButton.addTarget(self, action: #selector(addToSiri(_:)), for: .touchUpInside)
+        if #available(iOS 12.0, *) {
+            let button = INUIAddVoiceShortcutButton(style: .whiteOutline)
+            button.translatesAutoresizingMaskIntoConstraints = false
+            
+            self.addToSiriCell.addSubview(button)
+            button.addTarget(self, action: #selector(addToSiri(_:)), for: .touchUpInside)
+            
+            self.addToSiriCell.centerXAnchor.constraint(equalTo: button.centerXAnchor).isActive = true
+            self.addToSiriCell.centerYAnchor.constraint(equalTo: button.centerYAnchor).isActive = true
+        } else {
+            let label = UILabel()
+            label.translatesAutoresizingMaskIntoConstraints = false
+
+            label.text = "Add to Siri only available on iOS 12+"
+            label.textColor = UIColor.lightGray
+            label.textAlignment = .center
+            label.adjustsFontSizeToFitWidth = true
+            
+            self.addToSiriCell.addSubview(label)
+            self.addToSiriCell.leftAnchor.constraint(equalTo: label.leftAnchor, constant: 8.0).isActive = true
+            self.addToSiriCell.rightAnchor.constraint(equalTo: label.rightAnchor, constant: 8.0).isActive = true
+            self.addToSiriCell.centerYAnchor.constraint(equalTo: label.centerYAnchor).isActive = true
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
