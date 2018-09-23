@@ -219,9 +219,31 @@ class ViewController: UIViewController {
                 if error != nil {
                     if let error = error as NSError? {
                         print("Interaction donation failed: %@", error)
-                    } else {
-                        print("Successfully donated interaction")
                     }
+                } else {
+                    print("Successfully donated interaction")
+                }
+            }
+            
+            // Donate relevant daily shortcut
+            var relevantShortcuts:[INRelevantShortcut] = []
+            
+            if let shortcut = INShortcut(intent: intent) {
+                
+                let relevantShortcut = INRelevantShortcut(shortcut: shortcut)
+                relevantShortcut.shortcutRole = INRelevantShortcutRole.action
+                
+                let dailyProvider = INDailyRoutineRelevanceProvider(situation: .morning)
+                relevantShortcut.relevanceProviders = [dailyProvider]
+                
+                relevantShortcuts.append(relevantShortcut)
+            }
+            
+            INRelevantShortcutStore.default.setRelevantShortcuts(relevantShortcuts) { (error) in
+                if let error = error {
+                    print("Failed to set relevant shortcuts. \(error))")
+                } else {
+                    print("Relevant shortcuts set.")
                 }
             }
         }
