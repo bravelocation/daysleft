@@ -28,3 +28,7 @@ Pods/
 *.xcbkptlist
 
 .DS_Store
+
+# App settings
+daysleft/Settings.plist
+daysleft/GoogleService-Info.plist

@@ -40,8 +40,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Use Firebase library to configure APIs
         FirebaseApp.configure()
-        GADMobileAds.configure(withApplicationID: "ca-app-pub-6795405439060738~5447156632")
- 
+        
+        if let googleAdsID:String = SettingsManager.instance.getSetting("GoogleAdsID") as? String {
+            GADMobileAds.configure(withApplicationID: googleAdsID)
+            print("Configured Google Ads")
+        }
+        
         // Setup push notifications (if required) to ensure the badge gets updated
         self.firebaseNotifications.setupNotifications(false)
 
