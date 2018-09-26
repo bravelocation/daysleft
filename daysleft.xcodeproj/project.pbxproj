@@ -569,10 +569,10 @@
 				52CFBF011A8B631B005234FB /* Main.storyboard */,
 				527AD75B1E94EB2800F8637B /* PurchaseViewController.swift */,
 				527AD75C1E94EB2800F8637B /* PurchaseViewController.xib */,
+				52EE20E42158CF5000B46ACF /* SettingsManager.swift */,
 				52FAB11D1A9381B70039691E /* SettingsViewController.swift */,
 				52CFBEFF1A8B631B005234FB /* ViewController.swift */,
 				52CFBEFB1A8B631B005234FB /* Supporting Files */,
-				52EE20E42158CF5000B46ACF /* SettingsManager.swift */,
 			);
 			path = daysleft;
 			sourceTree = "<group>";
