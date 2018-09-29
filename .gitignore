@@ -28,6 +28,7 @@ Pods/
 *.xcbkptlist
 
 .DS_Store
+._*
 
 # App settings
 daysleft/Settings.plist

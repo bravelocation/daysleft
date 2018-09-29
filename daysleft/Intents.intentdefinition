@@ -32,7 +32,7 @@
 					<key>INIntentParameterCombinationIsPrimary</key>
 					<true/>
 					<key>INIntentParameterCombinationSubtitle</key>
-					<string></string>
+					<string>How many days left?</string>
 					<key>INIntentParameterCombinationSubtitleID</key>
 					<string>nmcWOY</string>
 					<key>INIntentParameterCombinationSupportsBackgroundExecution</key>

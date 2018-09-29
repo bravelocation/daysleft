@@ -236,6 +236,15 @@ class ViewController: UIViewController {
                 let dailyProvider = INDailyRoutineRelevanceProvider(situation: .morning)
                 relevantShortcut.relevanceProviders = [dailyProvider]
                 
+                // Set template for displaying on Watch face
+                let model = self.modelData()
+                let templateTitle = model.weekdaysOnly ? "Weekdays until" : "Days until"
+                let templateSubTitle = model.title
+
+                let template = INDefaultCardTemplate(title: templateTitle)
+                template.subtitle = templateSubTitle
+                relevantShortcut.watchTemplate = template
+                
                 relevantShortcuts.append(relevantShortcut)
             }
             
