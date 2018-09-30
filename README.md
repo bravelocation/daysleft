@@ -11,6 +11,14 @@ I've also added a nice widget for the Today notification screen, for quick acces
     
 **The app was written as part of a &quot;develop in the open&quot; project, so if you're interested you can read more at [http://bravelocation.com/countthedaysleft](http://bravelocation.com/countthedaysleft)**
 
+## Developer requirements ##
+
+If you want to build this app yourself, you'll need to provide some API settings:
+
+- Settings.plist that contains your Google Ads ID
+- GoogleService-Info.plist that contains your Firebase details
+
+
 # License #
 
 (The MIT License)
