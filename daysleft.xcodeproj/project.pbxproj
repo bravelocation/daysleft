@@ -624,7 +624,7 @@
 				5295EDCB1A94AE53007EF7E7 /* Sources */,
 				5295EDCC1A94AE53007EF7E7 /* Frameworks */,
 				5295EDCD1A94AE53007EF7E7 /* Headers */,
-				5244C03F1BC38D4400D57F28 /* ShellScript */,
+				5244C03F1BC38D4400D57F28 /* Setup build number */,
 			);
 			buildRules = (
 			);
@@ -661,7 +661,7 @@
 				5295EDF41A94B398007EF7E7 /* Sources */,
 				5295EDF51A94B398007EF7E7 /* Frameworks */,
 				5295EDF61A94B398007EF7E7 /* Resources */,
-				5244C0401BC38D5300D57F28 /* ShellScript */,
+				5244C0401BC38D5300D57F28 /* Setup build number */,
 			);
 			buildRules = (
 			);
@@ -679,7 +679,7 @@
 				52AC692F2154DA7E00E6C833 /* Sources */,
 				52AC69302154DA7E00E6C833 /* Frameworks */,
 				52AC69312154DA7E00E6C833 /* Resources */,
-				52AC69592154DE1900E6C833 /* ShellScript */,
+				52AC69592154DE1900E6C833 /* Setup build number */,
 			);
 			buildRules = (
 			);
@@ -697,7 +697,7 @@
 				52AC69382154DA7E00E6C833 /* Sources */,
 				52AC69392154DA7E00E6C833 /* Frameworks */,
 				52AC693A2154DA7E00E6C833 /* Resources */,
-				52AC695A2154DE2600E6C833 /* ShellScript */,
+				52AC695A2154DE2600E6C833 /* Setup build number */,
 			);
 			buildRules = (
 			);
@@ -715,7 +715,7 @@
 				52B78DEB1D982A6D00AB629D /* Sources */,
 				52B78DEC1D982A6D00AB629D /* Frameworks */,
 				52B78DED1D982A6D00AB629D /* Resources */,
-				52B78E051D982AA900AB629D /* ShellScript */,
+				52B78E051D982AA900AB629D /* Setup build number */,
 			);
 			buildRules = (
 			);
@@ -733,7 +733,7 @@
 				52B7E8731ABEDE9300E1949C /* Sources */,
 				52B7E8741ABEDE9300E1949C /* Frameworks */,
 				52B7E8751ABEDE9300E1949C /* Resources */,
-				5244C0411BC38D5C00D57F28 /* ShellScript */,
+				5244C0411BC38D5C00D57F28 /* Setup build number */,
 			);
 			buildRules = (
 			);
@@ -751,7 +751,7 @@
 				52B7E87F1ABEDE9300E1949C /* Resources */,
 				523443671BBAFBEF00E95BA4 /* Embed App Extensions */,
 				20118CCB11B59DAA0A7CA7B7 /* Frameworks */,
-				5242D8411E40A20F00BF6FEE /* ShellScript */,
+				5242D8411E40A20F00BF6FEE /* Setup build number */,
 			);
 			buildRules = (
 			);
@@ -773,7 +773,9 @@
 				52CFBEF61A8B631B005234FB /* Resources */,
 				5295EDE81A94AE53007EF7E7 /* Embed Frameworks */,
 				5295EE091A94B398007EF7E7 /* Embed App Extensions */,
-				5295EE1F1A9A0084007EF7E7 /* ShellScript */,
+				520C4284227D7CF10099FFC5 /* Update Google Ads ID */,
+				520C4283227D79480099FFC5 /* Set build number */,
+				5295EE1F1A9A0084007EF7E7 /* Setup Fabric */,
 				523443681BBAFBEF00E95BA4 /* Embed Watch Content */,
 				B5DD2F40EF96F21BD22B4C7C /* [CP] Embed Pods Frameworks */,
 			);
@@ -919,6 +921,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -1020,25 +1023,17 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		5242D8411E40A20F00BF6FEE /* ShellScript */ = {
+		520C4283227D79480099FFC5 /* Set build number */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "git=`sh /etc/profile; which git`\nappBuild=`$git rev-list --all |wc -l`\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $appBuild\" \"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\necho \"Updated ${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"";
-		};
-		5244C03F1BC38D4400D57F28 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+			inputFileListPaths = (
 			);
 			inputPaths = (
+			);
+			name = "Set build number";
+			outputFileListPaths = (
 			);
 			outputPaths = (
 			);
@@ -1046,70 +1041,123 @@
 			shellPath = /bin/sh;
 			shellScript = "git=`sh /etc/profile; which git`\nappBuild=`$git rev-list --all |wc -l`\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $appBuild\" \"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\necho \"Updated ${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\n";
 		};
-		5244C0401BC38D5300D57F28 /* ShellScript */ = {
+		520C4284227D7CF10099FFC5 /* Update Google Ads ID */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/daysleft/Settings.plist",
+			);
+			name = "Update Google Ads ID";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Read the Google Ads ID from your Settings.plist\nPATH_TO_SETTINGS_FILE=$SCRIPT_INPUT_FILE_0\nGOOGLE_ADS_ID=$(/usr/libexec/PlistBuddy -c \"Print :GoogleAdsID\" \"$PATH_TO_SETTINGS_FILE\")\n\n# Update the GADApplicationIdentifier in the main Info.plist\n/usr/libexec/PlistBuddy -c \"Set :GADApplicationIdentifier $GOOGLE_ADS_ID\" \"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\n\necho \"Updated GADApplicationIdentifier to ${GOOGLE_ADS_ID}\"\n";
+		};
+		5242D8411E40A20F00BF6FEE /* Setup build number */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = "Setup build number";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "git=`sh /etc/profile; which git`\nappBuild=`$git rev-list --all |wc -l`\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $appBuild\" \"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\necho \"Updated ${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\n";
+		};
+		5244C03F1BC38D4400D57F28 /* Setup build number */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Setup build number";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "git=`sh /etc/profile; which git`\nappBuild=`$git rev-list --all |wc -l`\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $appBuild\" \"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\necho \"Updated ${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\n";
+		};
+		5244C0401BC38D5300D57F28 /* Setup build number */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Setup build number";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "git=`sh /etc/profile; which git`\nappBuild=`$git rev-list --all |wc -l`\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $appBuild\" \"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\necho \"Updated ${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\n\n";
 		};
-		5244C0411BC38D5C00D57F28 /* ShellScript */ = {
+		5244C0411BC38D5C00D57F28 /* Setup build number */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = "Setup build number";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "git=`sh /etc/profile; which git`\nappBuild=`$git rev-list --all |wc -l`\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $appBuild\" \"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\necho \"Updated ${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\n\n";
 		};
-		5295EE1F1A9A0084007EF7E7 /* ShellScript */ = {
+		5295EE1F1A9A0084007EF7E7 /* Setup Fabric */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = "Setup Fabric";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "git=`sh /etc/profile; which git`\nappBuild=`$git rev-list --all |wc -l`\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $appBuild\" \"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\necho \"Updated ${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\n\n\"${PODS_ROOT}/Fabric/run\" de20d03a9cd3af9832860083836d12964a8b11f5 0a8628bec808495065a9f124e4fd6d79b5f2e0e69b63845d0544c96c777ae566\n\necho \"Updated Fabric\"\n";
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" de20d03a9cd3af9832860083836d12964a8b11f5 0a8628bec808495065a9f124e4fd6d79b5f2e0e69b63845d0544c96c777ae566\n\necho \"Updated Fabric\"\n";
 		};
-		52AC69592154DE1900E6C833 /* ShellScript */ = {
+		52AC69592154DE1900E6C833 /* Setup build number */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
+			name = "Setup build number";
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "git=`sh /etc/profile; which git`\nappBuild=`$git rev-list --all |wc -l`\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $appBuild\" \"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\necho \"Updated ${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\n";
 		};
-		52AC695A2154DE2600E6C833 /* ShellScript */ = {
+		52AC695A2154DE2600E6C833 /* Setup build number */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
+			name = "Setup build number";
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "git=`sh /etc/profile; which git`\nappBuild=`$git rev-list --all |wc -l`\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $appBuild\" \"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\necho \"Updated ${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\n";
 		};
-		52B78E051D982AA900AB629D /* ShellScript */ = {
+		52B78E051D982AA900AB629D /* Setup build number */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = "Setup build number";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1783,7 +1831,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
-				SHARED_VERSION_NUMBER = 3.0.2;
+				SHARED_VERSION_NUMBER = 3.0.3;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1833,7 +1881,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SHARED_VERSION_NUMBER = 3.0.2;
+				SHARED_VERSION_NUMBER = 3.0.3;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;

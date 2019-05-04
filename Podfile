@@ -1,6 +1,7 @@
 source 'https://github.com/cocoapods/specs.git'
 platform :ios, '9.3'
 use_frameworks!
+inhibit_all_warnings!
 
 target 'daysleft' do
     pod 'Fabric'
@@ -11,12 +12,3 @@ target 'daysleft' do
     pod 'Font-Awesome-Swift'
 end
 
-post_install do |installer|
-    installer.pods_project.build_configurations.each do |config|
-        if config.name == 'Release'
-            config.build_settings['SWIFT_OPTIMIZATION_LEVEL'] = '-Owholemodule'
-            else
-            config.build_settings['SWIFT_OPTIMIZATION_LEVEL'] = '-Onone'
-        end
-    end
-end
