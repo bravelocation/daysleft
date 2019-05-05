@@ -117,7 +117,7 @@ open class DaysLeftModel: BLUserSettings
         // If the current date is before the start, return the length
         let startComparison = startCurrentDate.compare(self.start)
         
-        if (startComparison == ComparisonResult.orderedAscending) || (startComparison == ComparisonResult.orderedSame)  {
+        if (startComparison == ComparisonResult.orderedAscending)   {
             return self.DaysLength
         }
         
@@ -139,8 +139,8 @@ open class DaysLeftModel: BLUserSettings
         
         let startComparison = startCurrentDate.compare(self.start)
         
-        // If the current date is before or on the start, return 0
-        if (startComparison == ComparisonResult.orderedAscending) || (startComparison == ComparisonResult.orderedSame) {
+        // If the current date is before the start (not weekdays only), return 0
+        if (startComparison == ComparisonResult.orderedAscending && self.weekdaysOnly == false) {
             return 0
         }
         
@@ -150,7 +150,7 @@ open class DaysLeftModel: BLUserSettings
         }
         
         // Otherwise, return the actual difference
-        return self.DaysDifference(self.start, endDate: startCurrentDate) + 1 // Inclusive so add 1
+        return self.DaysDifference(self.start, endDate: currentDate, currentDate: currentDate) + 1 // Inclusive so add 1
     }
     
     open func initialRun() {
@@ -184,7 +184,7 @@ open class DaysLeftModel: BLUserSettings
         }
     }
     
-    fileprivate func DaysDifference(_ startDate: Date, endDate: Date) -> Int {
+    fileprivate func DaysDifference(_ startDate: Date, endDate: Date, currentDate: Date? = nil) -> Int {
         let globalCalendar: Calendar = Calendar.autoupdatingCurrent
 
         let startOfStartDate = self.StartOfDay(startDate)
@@ -211,6 +211,17 @@ open class DaysLeftModel: BLUserSettings
         } else if (startDayOfWeek == 1) {
             // Sunday
             adjustedStartDate = self.AddDays(startOfStartDate, daysToAdd: 1)
+        }
+        
+        // If there is a current date, and the adjusted start date is after it, return -1) we haven't started yet)
+        if let currentDate = currentDate {
+            let startOfCurrentDate = self.StartOfDay(currentDate)
+
+            let startComparison = startOfCurrentDate.compare(adjustedStartDate)
+            
+            if (startComparison == ComparisonResult.orderedAscending) {
+                return -1
+            }
         }
             
         // If end is a weekend, move it back to Friday
