@@ -113,7 +113,7 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
         if (self.showAds()) {
             let request = GADRequest()
             
-            #if DEBUG
+            #if targetEnvironment(simulator)
                 request.testDevices = [kGADSimulatorID]
             #endif
             
