@@ -15,8 +15,8 @@ I've also added a nice widget for the Today notification screen, for quick acces
 
 If you want to build this app yourself, you'll need to provide some API settings:
 
-- Settings.plist that contains your Google Ads ID
 - GoogleService-Info.plist that contains your Firebase details
+- Fabric.plist that contains your Fabric configuration
 
 
 # License #
