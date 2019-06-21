@@ -67,7 +67,7 @@
 		52D25F3C1BCB8595002E4C76 /* ComplicationsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D25F3B1BCB8595002E4C76 /* ComplicationsDataSource.swift */; };
 		52DC9EB31FC97A3200AE02F6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52DC9EB21FC97A3200AE02F6 /* GoogleService-Info.plist */; };
 		52DC9EB51FC97A9200AE02F6 /* FirebaseNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DC9EB41FC97A9200AE02F6 /* FirebaseNotifications.swift */; };
-		52EE20E32158CED600B46ACF /* Settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52EE20E22158CED600B46ACF /* Settings.plist */; };
+		52EE20E32158CED600B46ACF /* Fabric.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52EE20E22158CED600B46ACF /* Fabric.plist */; };
 		52EE20E52158CF5000B46ACF /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EE20E42158CF5000B46ACF /* SettingsManager.swift */; };
 		52FAB11C1A9240490039691E /* DefaultPreferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52FAB11B1A9240490039691E /* DefaultPreferences.plist */; };
 		52FAB11E1A9381B70039691E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FAB11D1A9381B70039691E /* SettingsViewController.swift */; };
@@ -256,7 +256,7 @@
 		52D937391BBFCEF200B215BC /* WatchDaysLeftModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WatchDaysLeftModel.swift; path = ../daysleftlibrary/WatchDaysLeftModel.swift; sourceTree = "<group>"; };
 		52DC9EB21FC97A3200AE02F6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		52DC9EB41FC97A9200AE02F6 /* FirebaseNotifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseNotifications.swift; sourceTree = "<group>"; };
-		52EE20E22158CED600B46ACF /* Settings.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Settings.plist; sourceTree = "<group>"; };
+		52EE20E22158CED600B46ACF /* Fabric.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Fabric.plist; sourceTree = "<group>"; };
 		52EE20E42158CF5000B46ACF /* SettingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsManager.swift; sourceTree = "<group>"; };
 		52FAB1181A9231970039691E /* BLUserSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BLUserSettings.swift; path = ../daysleft/BLUserSettings.swift; sourceTree = "<group>"; };
 		52FAB11A1A923F500039691E /* daysleft.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = daysleft.entitlements; sourceTree = "<group>"; };
@@ -583,7 +583,7 @@
 				52DC9EB21FC97A3200AE02F6 /* GoogleService-Info.plist */,
 				52CFBEFC1A8B631B005234FB /* Info.plist */,
 				52AC69522154DAFB00E6C833 /* Intents.intentdefinition */,
-				52EE20E22158CED600B46ACF /* Settings.plist */,
+				52EE20E22158CED600B46ACF /* Fabric.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -773,7 +773,7 @@
 				52CFBEF61A8B631B005234FB /* Resources */,
 				5295EDE81A94AE53007EF7E7 /* Embed Frameworks */,
 				5295EE091A94B398007EF7E7 /* Embed App Extensions */,
-				520C4284227D7CF10099FFC5 /* Update Google Ads ID */,
+				520C4284227D7CF10099FFC5 /* Merge Fabric settings into main Info.plist */,
 				520C4283227D79480099FFC5 /* Set build number */,
 				5295EE1F1A9A0084007EF7E7 /* Setup Fabric */,
 				523443681BBAFBEF00E95BA4 /* Embed Watch Content */,
@@ -1010,7 +1010,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				527E15401D83F80300D81B15 /* gallery.ckcomplication in Resources */,
-				52EE20E32158CED600B46ACF /* Settings.plist in Resources */,
+				52EE20E32158CED600B46ACF /* Fabric.plist in Resources */,
 				527AD75E1E94EB2800F8637B /* PurchaseViewController.xib in Resources */,
 				52CFBF031A8B631B005234FB /* Main.storyboard in Resources */,
 				527BE7A61FB0FEE600455FE9 /* LaunchScreen.storyboard in Resources */,
@@ -1041,7 +1041,7 @@
 			shellPath = /bin/sh;
 			shellScript = "git=`sh /etc/profile; which git`\nappBuild=`$git rev-list --all |wc -l`\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $appBuild\" \"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\necho \"Updated ${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\n";
 		};
-		520C4284227D7CF10099FFC5 /* Update Google Ads ID */ = {
+		520C4284227D7CF10099FFC5 /* Merge Fabric settings into main Info.plist */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1049,16 +1049,16 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/daysleft/Settings.plist",
+				"$(SRCROOT)/daysleft/Fabric.plist",
 			);
-			name = "Update Google Ads ID";
+			name = "Merge Fabric settings into main Info.plist";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Read the Google Ads ID from your Settings.plist\nPATH_TO_SETTINGS_FILE=$SCRIPT_INPUT_FILE_0\nGOOGLE_ADS_ID=$(/usr/libexec/PlistBuddy -c \"Print :GoogleAdsID\" \"$PATH_TO_SETTINGS_FILE\")\n\n# Update the GADApplicationIdentifier in the main Info.plist\n/usr/libexec/PlistBuddy -c \"Set :GADApplicationIdentifier $GOOGLE_ADS_ID\" \"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\n\necho \"Updated GADApplicationIdentifier to ${GOOGLE_ADS_ID}\"\n";
+			shellScript = "# Merge the Fabric settings from the Settings.plist\nPATH_TO_SETTINGS_FILE=$SCRIPT_INPUT_FILE_0\n\n# Merge the Fabric settings in the main Info.plist\n/usr/libexec/PlistBuddy -c \"Merge '$PATH_TO_SETTINGS_FILE' ':Fabric'\" \"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\n\necho \"Updated Fabric settings into ${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\n";
 		};
 		5242D8411E40A20F00BF6FEE /* Setup build number */ = {
 			isa = PBXShellScriptBuildPhase;

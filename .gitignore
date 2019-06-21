@@ -31,5 +31,5 @@ Pods/
 ._*
 
 # App settings
-daysleft/Settings.plist
+daysleft/Fabric.plist
 daysleft/GoogleService-Info.plist
