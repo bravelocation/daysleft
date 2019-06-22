@@ -4,8 +4,6 @@ use_frameworks!
 inhibit_all_warnings!
 
 target 'daysleft' do
-    pod 'Fabric'
-    pod 'Crashlytics'
     pod 'Firebase/Core'
     pod 'Firebase/AdMob'
     pod 'Firebase/Messaging'
