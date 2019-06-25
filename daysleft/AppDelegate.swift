@@ -130,4 +130,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.updateBadge()
     }
 }
-
