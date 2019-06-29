@@ -7,6 +7,5 @@ target 'daysleft' do
     pod 'Firebase/Core'
     pod 'Firebase/AdMob'
     pod 'Firebase/Messaging'
-    pod 'Font-Awesome-Swift'
 end
 
