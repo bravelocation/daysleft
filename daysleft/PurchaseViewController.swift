@@ -27,7 +27,7 @@ class PurchaseViewController: UIViewController, SKProductsRequestDelegate, SKPay
     var transactionInProgress:Bool = false
     var model:AppDaysLeftModel?
     var backItem:UIBarButtonItem?
-    let appGreen = UIColor(red: 53/255, green: 79/255, blue: 0/255, alpha: 1.0)
+    let appGreen = UIColor(named: "MainAppColor")!
     
     override func viewDidLoad() {
         super.viewDidLoad()

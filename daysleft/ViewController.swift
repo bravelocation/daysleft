@@ -53,7 +53,7 @@ class ViewController: UIViewController {
                 
         // Customise the nav bar
         let navBar = self.navigationController?.navigationBar
-        navBar!.barTintColor = UIColor(red: 53/255, green: 79/255, blue: 0/255, alpha: 1.0)
+        navBar!.barTintColor = UIColor(named: "MainAppColor")
         navBar!.tintColor = UIColor.white
         navBar!.isTranslucent = false
         navBar!.titleTextAttributes = [.foregroundColor: UIColor.white]
