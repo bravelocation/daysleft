@@ -13,7 +13,7 @@ import Intents
 
 class ViewController: UIViewController {
 
-    // MARK:- Properties
+    // MARK: - Properties
     @IBOutlet weak var labelDaysLeft: UILabel!
     @IBOutlet weak var labelTitle: UILabel!
     @IBOutlet weak var counterView: CounterView!
@@ -25,8 +25,8 @@ class ViewController: UIViewController {
     var dayChangeTimer: Timer!
     var shareButton: UIBarButtonItem!
 
-    // MARK:- Initialisation
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)   {
+    // MARK: - Initialisation
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         self.setupNotificationHandlers()
     }
@@ -42,10 +42,10 @@ class ViewController: UIViewController {
     
     func setupNotificationHandlers() {
         NotificationCenter.default.addObserver(self, selector: #selector(ViewController.iCloudSettingsUpdated(_:)), name: NSNotification.Name(rawValue: AppDaysLeftModel.iCloudSettingsNotification), object: nil)
-        NotificationCenter.default.addObserver(self, selector:#selector(ViewController.appEntersForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.appEntersForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
     }
     
-    // MARK:- View event handlers
+    // MARK: - View event handlers
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -64,7 +64,7 @@ class ViewController: UIViewController {
         self.navigationItem.leftBarButtonItem = shareButton
         
         // Add a swipe recogniser
-        let swipeLeft : UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(ViewController.swipeLeft(_:)))
+        let swipeLeft: UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(ViewController.swipeLeft(_:)))
         swipeLeft.direction = UISwipeGestureRecognizer.Direction.left
         self.view.addGestureRecognizer(swipeLeft)
         
@@ -85,9 +85,9 @@ class ViewController: UIViewController {
         self.updateViewFromModel()
         
         // Show request review every 10 times the user opend the app
-        let reviewPromptFrequency = 10;
+        let reviewPromptFrequency = 10
         
-        let appOpened = self.modelData().appOpenCount;
+        let appOpened = self.modelData().appOpenCount
         print("App opened \(appOpened) times")
 
         if (appOpened >= reviewPromptFrequency && (appOpened % reviewPromptFrequency) == 0) {
@@ -95,11 +95,11 @@ class ViewController: UIViewController {
         }
     }
     
-    // MARK:- Handle rotations
+    // MARK: - Handle rotations
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
 
-        coordinator.animate(alongsideTransition: nil, completion:{ context in self.counterView.updateControl() })
+        coordinator.animate(alongsideTransition: nil, completion: { _ in self.counterView.updateControl() })
     }
 
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
@@ -115,7 +115,7 @@ class ViewController: UIViewController {
         }
     }
     
-    // MARK:- Event handlers
+    // MARK: - Event handlers
     @objc
     func dayChangedTimerFired(_ timer: Timer) {
         self.updateViewFromModel()
@@ -134,7 +134,7 @@ class ViewController: UIViewController {
         let activityViewController = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
         
         if (activityViewController.popoverPresentationController != nil) {
-            activityViewController.popoverPresentationController!.barButtonItem = self.shareButton;
+            activityViewController.popoverPresentationController!.barButtonItem = self.shareButton
         }
         
         self.present(activityViewController, animated: true, completion: nil)
@@ -161,7 +161,7 @@ class ViewController: UIViewController {
         }
     }
     
-    // MARK:- Helper functions
+    // MARK: - Helper functions
     func updateViewFromModel() {
         NSLog("updateViewFromModel started")
         let model = self.modelData()
@@ -179,10 +179,9 @@ class ViewController: UIViewController {
         
         if (model.daysLength == 0) {
             self.labelPercentageDone.text = ""
-        }
-        else {
+        } else {
             let percentageDone: Float = (Float(model.daysGone(now)) * 100.0) / Float(model.daysLength)
-            self.labelPercentageDone.text = String(format:"%3.0f%% done", percentageDone)
+            self.labelPercentageDone.text = String(format: "%3.0f%% done", percentageDone)
         }
         
         self.counterView.counter = model.daysGone(now)
@@ -196,13 +195,12 @@ class ViewController: UIViewController {
         NSLog("updateViewFromModel completed")
     }
 
-    
     func modelData() -> AppDaysLeftModel {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         return appDelegate.model
     }
     
-    // MARK:- User Activity functions
+    // MARK: - User Activity functions
     private func donateInteraction() {
         if #available(iOS 12.0, *) {
             let intent = DaysLeftIntent()
@@ -224,7 +222,7 @@ class ViewController: UIViewController {
             }
             
             // Donate relevant daily shortcut
-            var relevantShortcuts:[INRelevantShortcut] = []
+            var relevantShortcuts: [INRelevantShortcut] = []
             
             if let shortcut = INShortcut(intent: intent) {
                 
@@ -270,4 +268,3 @@ class ViewController: UIViewController {
         self.userActivity?.becomeCurrent()
     }
 }
-

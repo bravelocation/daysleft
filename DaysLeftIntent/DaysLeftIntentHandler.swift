@@ -19,7 +19,7 @@ class DaysLeftIntentHandler: NSObject, DaysLeftIntentHandling {
         let model = DaysLeftModel()
         let now = Date()
         
-        let daysleft:NSNumber = NSNumber(value: model.daysLeft(now))
+        let daysleft: NSNumber = NSNumber(value: model.daysLeft(now))
         let daysType = model.weekdaysOnly ? "weekdays" : "days"
         let title = model.title
         

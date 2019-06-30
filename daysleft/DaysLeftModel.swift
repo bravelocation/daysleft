@@ -9,8 +9,7 @@
 import Foundation
 import WatchConnectivity
 
-open class DaysLeftModel: BLUserSettings
-{
+open class DaysLeftModel: BLUserSettings {
     public let currentFirstRun: Int = 1
     
     public init() {
@@ -117,7 +116,7 @@ open class DaysLeftModel: BLUserSettings
         // If the current date is before the start, return the length
         let startComparison = startCurrentDate.compare(self.start)
         
-        if (startComparison == ComparisonResult.orderedAscending)   {
+        if (startComparison == ComparisonResult.orderedAscending) {
             return self.daysLength
         }
         
@@ -134,7 +133,7 @@ open class DaysLeftModel: BLUserSettings
     ///
     /// param: currentDate The current date
     /// returns: The number of days from the start to the current date
-    open func daysGone(_ currentDate: Date) -> Int  {
+    open func daysGone(_ currentDate: Date) -> Int {
         let startCurrentDate = self.startOfDay(currentDate)
         
         let startComparison = startCurrentDate.compare(self.start)
@@ -154,8 +153,7 @@ open class DaysLeftModel: BLUserSettings
     }
     
     open func initialRun() {
-        if (self.firstRun < self.currentFirstRun)
-        {
+        if (self.firstRun < self.currentFirstRun) {
             // If it is first run, initialise the model data to Christmas
             let todayComponents = (Calendar.current as NSCalendar).components([NSCalendar.Unit.year, NSCalendar.Unit.month, NSCalendar.Unit.day], from: Date())
             let todayDate = Calendar.current.date(from: todayComponents)!
@@ -167,8 +165,7 @@ open class DaysLeftModel: BLUserSettings
             
             var xmasDate: Date = Calendar.current.date(from: xmasComponents)!
             
-            if (self.daysDifference(todayDate, endDate: xmasDate) <= 0)
-            {
+            if (self.daysDifference(todayDate, endDate: xmasDate) <= 0) {
                 // If we're past Xmas in the year, set it to next year
                 xmasComponents.year = xmasComponents.year! + 1
                 xmasDate = Calendar.current.date(from: xmasComponents)!
@@ -271,7 +268,7 @@ open class DaysLeftModel: BLUserSettings
         updatedSettings["title"] = self.title as AnyObject?
         updatedSettings["weekdaysOnly"] = self.weekdaysOnly as AnyObject?
 
-        return updatedSettings;
+        return updatedSettings
     }
     
     open func fullDescription(_ currentDate: Date) -> String {        

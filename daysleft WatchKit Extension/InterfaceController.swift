@@ -15,8 +15,8 @@ class InterfaceController: WKInterfaceController {
     @IBOutlet weak var labelPercentDone: WKInterfaceLabel!
     @IBOutlet weak var imageProgress: WKInterfaceImage!
     
-    var currentDaysLeft: Int = -1;
-    var currentWeekdaysOnly = false;
+    var currentDaysLeft: Int = -1
+    var currentWeekdaysOnly = false
     var currentTitle = ""
     
     override init() {
@@ -47,13 +47,13 @@ class InterfaceController: WKInterfaceController {
         let model = appDelegate.model
         
         // Do we need to update the view?
-        let daysLeft = model.daysLeft(now);
+        let daysLeft = model.daysLeft(now)
         let weekdaysOnly = model.weekdaysOnly
         let title = model.title
         
         if (daysLeft == self.currentDaysLeft && currentWeekdaysOnly == weekdaysOnly && currentTitle.compare(title) == ComparisonResult.orderedSame) {
             NSLog("View unchanged")
-            return;
+            return
         }
         
         self.currentDaysLeft = daysLeft
@@ -63,12 +63,12 @@ class InterfaceController: WKInterfaceController {
         self.labelTitle.setText(model.fullDescription(now))
         
         let percentageDone: Float = (Float(model.daysGone(now)) * 100.0) / Float(model.daysLength)
-        self.labelPercentDone.setText(String(format:"%3.0f%% done", percentageDone))
+        self.labelPercentDone.setText(String(format: "%3.0f%% done", percentageDone))
         
         // Set the progress image set
         let intPercentageDone: Int = Int(percentageDone)
         self.imageProgress.setImageNamed("progress")
-        self.imageProgress.startAnimatingWithImages(in: NSRange(location:0, length: intPercentageDone), duration: 0.5, repeatCount: 1)
+        self.imageProgress.startAnimatingWithImages(in: NSRange(location: 0, length: intPercentageDone), duration: 0.5, repeatCount: 1)
         NSLog("View updated")
         
         // Let's also update the complications if the data has changed

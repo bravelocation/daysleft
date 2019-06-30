@@ -42,8 +42,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     func widgetActiveDisplayModeDidChange(_ activeDisplayMode: NCWidgetDisplayMode, withMaximumSize maxSize: CGSize) {
         if (activeDisplayMode == NCWidgetDisplayMode.compact) {
             self.preferredContentSize = maxSize
-        }
-        else {
+        } else {
             self.preferredContentSize = CGSize(width: maxSize.width, height: 140)
         }
         
@@ -72,7 +71,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         self.labelNumberTitle.text = model.fullDescription(now)
  
         let percentageDone: Float = (Float(model.daysGone(now)) * 100.0) / Float(model.daysLength)
-        self.labelPercentDone.text = String(format:"%3.0f%% done", percentageDone)
+        self.labelPercentDone.text = String(format: "%3.0f%% done", percentageDone)
 
         self.counterView.counter = model.daysGone(now)
         self.counterView.maximumValue = model.daysLength

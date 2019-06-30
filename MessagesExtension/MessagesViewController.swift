@@ -11,10 +11,8 @@ import Messages
 
 class MessagesViewController: MSMessagesAppViewController {
     
-    
     @IBOutlet weak var imageProgress: UIImageView!
     @IBOutlet weak var labelTitle: UILabel!
-    //@IBOutlet weak var labelPercentDone: UILabel!
     @IBOutlet weak var buttonSendMessage: UIButton!
     
     override func viewDidLoad() {
@@ -41,7 +39,7 @@ class MessagesViewController: MSMessagesAppViewController {
             let percentageDone: Float = (Float(model.daysGone(now)) * 100.0) / Float(model.daysLength)
             let intPercentageDone: Int = Int(percentageDone)            
             let imageName = String(format: "progress%d", intPercentageDone)
-            layout.image = UIImage(named:imageName)
+            layout.image = UIImage(named: imageName)
             
             let message = MSMessage()
             message.layout = layout
@@ -64,7 +62,7 @@ class MessagesViewController: MSMessagesAppViewController {
         // Update image
         let intPercentageDone: Int = Int(percentageDone)
         let imageName = String(format: "progress%d", intPercentageDone)
-        self.imageProgress!.image = UIImage(named:imageName)
+        self.imageProgress!.image = UIImage(named: imageName)
         
         NSLog("View updated!")
     }

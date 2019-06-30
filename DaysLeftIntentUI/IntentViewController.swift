@@ -52,7 +52,7 @@ class IntentViewController: UIViewController, INUIHostedViewControlling {
         self.titleLabel.text = model.fullDescription(now)
         
         let percentageDone: Float = (Float(model.daysGone(now)) * 100.0) / Float(model.daysLength)
-        self.percentLabel.text = String(format:"%3.0f%% done", percentageDone)
+        self.percentLabel.text = String(format: "%3.0f%% done", percentageDone)
         
         self.counterView.counter = model.daysGone(now)
         self.counterView.maximumValue = model.daysLength

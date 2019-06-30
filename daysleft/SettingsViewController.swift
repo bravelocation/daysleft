@@ -34,8 +34,8 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
     @IBOutlet weak var privacyCell: UITableViewCell!
     
     var dateFormatter: DateFormatter = DateFormatter()
-    let startDatePicker : UIDatePicker = UIDatePicker();
-    let endDatePicker : UIDatePicker = UIDatePicker();
+    let startDatePicker: UIDatePicker = UIDatePicker()
+    let endDatePicker: UIDatePicker = UIDatePicker()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -184,18 +184,15 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
         self.view.endEditing(true)
         
         if (indexPath.section == 4) {
-            var url: URL? = nil;
+            var url: URL? = nil
             
             if (indexPath.row == 0) {
                 url = URL(string: "https://bravelocation.com/privacy/daysleft")!
-            }
-            else if (indexPath.row == 1) {
+            } else if (indexPath.row == 1) {
                 url = URL(string: "https://bravelocation.com/countthedaysleft")!
-            }
-            else if (indexPath.row == 2) {
+            } else if (indexPath.row == 2) {
                 url = URL(string: "http://github.com/bravelocation/daysleft")!
-            }
-            else if (indexPath.row == 3) {
+            } else if (indexPath.row == 3) {
                 url = URL(string: "https://bravelocation.com/apps")!
             }
             
@@ -213,10 +210,8 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
         }
     }
     
-    override func tableView( _ tableView : UITableView,  titleForHeaderInSection section: Int)->String
-    {
-        switch(section)
-        {
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String {
+        switch(section) {
         case 0:
             return "What are you counting down to?"
         case 1:
@@ -240,8 +235,8 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
     
     // Hides the keyboard if return is pressed
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.view.endEditing(true);
-        return false;
+        self.view.endEditing(true)
+        return false
     }
     
     func validateAndSaveModel() {
@@ -281,11 +276,9 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
     }
     
     // MARK: - SFSafariViewControllerDelegate methods
-    func safariViewControllerDidFinish(_ controller: SFSafariViewController)
-    {
+    func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
         controller.dismiss(animated: true, completion: nil)
     }
-    
     
     // MARK: - Siri handling
     @objc
@@ -302,7 +295,7 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
             }
         } else {
             // Show an alert
-            let alert = UIAlertController(title:"Not Supported", message:"Add to Siri is only supported on iOS 12 and above", preferredStyle:.alert)
+            let alert = UIAlertController(title: "Not Supported", message: "Add to Siri is only supported on iOS 12 and above", preferredStyle: .alert)
             
             let defaultAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
             alert.addAction(defaultAction)
@@ -311,7 +304,7 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
         }
     }
     
-    // MARK:- INUIAddVoiceShortcutViewControllerDelegate
+    // MARK: - INUIAddVoiceShortcutViewControllerDelegate
     @available(iOS 12.0, *)
     func addVoiceShortcutViewController(_ controller: INUIAddVoiceShortcutViewController, didFinishWith voiceShortcut: INVoiceShortcut?, error: Error?) {
         print("Added shortcut")
@@ -324,4 +317,3 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
         controller.dismiss(animated: true, completion: nil)
     }
 }
-

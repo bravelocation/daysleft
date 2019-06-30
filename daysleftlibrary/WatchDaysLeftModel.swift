@@ -10,8 +10,7 @@ import Foundation
 import WatchConnectivity
 import ClockKit
 
-open class WatchDaysLeftModel: DaysLeftModel
-{
+open class WatchDaysLeftModel: DaysLeftModel {
     public override init() {
         super.init()
         self.updateComplications()
@@ -32,12 +31,12 @@ open class WatchDaysLeftModel: DaysLeftModel
         // Don't send settings to watch when on watch!
     }
         
-    open override func session(_ session: WCSession, didReceiveUserInfo userInfo: [String : Any]) {
+    open override func session(_ session: WCSession, didReceiveUserInfo userInfo: [String: Any]) {
         super.session(session, didReceiveUserInfo: userInfo)
         self.updateComplications()
     }
 
-    open override func session(_ session: WCSession, didReceiveUpdate receivedApplicationContext: [String : AnyObject]) {
+    open override func session(_ session: WCSession, didReceiveUpdate receivedApplicationContext: [String: AnyObject]) {
         super.session(session, didReceiveUpdate: receivedApplicationContext)
         self.updateComplications()
     }

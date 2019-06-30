@@ -10,7 +10,7 @@ import WatchKit
 
 class ExtensionDelegate: NSObject, WKExtensionDelegate {
     
-    lazy var model:WatchDaysLeftModel = WatchDaysLeftModel()
+    lazy var model: WatchDaysLeftModel = WatchDaysLeftModel()
         
     func applicationDidBecomeActive() {
         NSLog("applicationDidBecomeActive started")

@@ -22,11 +22,11 @@ class PurchaseViewController: UIViewController, SKProductsRequestDelegate, SKPay
     @IBOutlet weak var buttonTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var betweenButtonConstraint: NSLayoutConstraint!
     
-    var productRequest:SKProductsRequest?
-    var product:SKProduct?
-    var transactionInProgress:Bool = false
-    var model:AppDaysLeftModel?
-    var backItem:UIBarButtonItem?
+    var productRequest: SKProductsRequest?
+    var product: SKProduct?
+    var transactionInProgress: Bool = false
+    var model: AppDaysLeftModel?
+    var backItem: UIBarButtonItem?
     let appGreen = UIColor(named: "MainAppColor")!
     
     override func viewDidLoad() {
@@ -74,7 +74,7 @@ class PurchaseViewController: UIViewController, SKProductsRequestDelegate, SKPay
         
         // Check if already ads free
         if (self.showAds() == false) {
-            self.statusChange(status:"You're already Ads Free - thanks!", enableActivityMonitor:false)
+            self.statusChange(status: "You're already Ads Free - thanks!", enableActivityMonitor: false)
         } else {
             // Look for product information
             self.requestProductInfo()
@@ -93,7 +93,7 @@ class PurchaseViewController: UIViewController, SKProductsRequestDelegate, SKPay
         }
     }
     
-    func statusChange(status:String, enableActivityMonitor:Bool) {
+    func statusChange(status: String, enableActivityMonitor: Bool) {
         self.labelStatus.text = status
         
         if (enableActivityMonitor) {
@@ -105,7 +105,7 @@ class PurchaseViewController: UIViewController, SKProductsRequestDelegate, SKPay
         print("Status change:", status)
     }
     
-    func actionButtonChange(message:String, enable:Bool) {
+    func actionButtonChange(message: String, enable: Bool) {
         if (enable == false || self.showAds() == false) {
             self.buttonAction.setTitle("", for: UIControl.State.normal)
             self.buttonAction.layer.borderColor = UIColor.clear.cgColor
@@ -170,8 +170,6 @@ class PurchaseViewController: UIViewController, SKProductsRequestDelegate, SKPay
                     self.actionButtonChange(message: "", enable: false)
                 }
             }
-            
-            
         } else {
             print("Cannot find product in store")
             self.statusChange(status: "A problem occurred :(", enableActivityMonitor: false)
@@ -184,25 +182,20 @@ class PurchaseViewController: UIViewController, SKProductsRequestDelegate, SKPay
             switch transaction.transactionState {
             case .purchasing:
                 self.statusChange(status: "Purchasing Ads Free ...", enableActivityMonitor: true)
-                break
             case .deferred:
                 self.statusChange(status: "Waiting ...", enableActivityMonitor: true)
-                break
             case .failed:
                 if (self.transactionInProgress) {
                     self.statusChange(status: "Purchase of Ads Free failed", enableActivityMonitor: false)
                     print("Purchase failed", transaction.error.debugDescription)
                     self.transactionInProgress = false
                 }
-                break
             case .purchased:
                 self.statusChange(status: "You are now Ads Free! Thanks!", enableActivityMonitor: false)
                 self.successfulPayment()
-                break
             case .restored:
                 self.statusChange(status: "Ads Free successfully restored!", enableActivityMonitor: false)
                 self.successfulPayment()
-                break
             
             @unknown default:
                 self.statusChange(status: "Purchase of Ads Free failed", enableActivityMonitor: false)
@@ -223,21 +216,20 @@ class PurchaseViewController: UIViewController, SKProductsRequestDelegate, SKPay
             self.transactionInProgress = true
             self.actionButtonChange(message: "", enable: false)
             
-            let payment:SKMutablePayment = SKMutablePayment(product: self.product!)
+            let payment: SKMutablePayment = SKMutablePayment(product: self.product!)
             payment.quantity = 1
             
-            self.statusChange(status:"Buying Ads Free from App Store ...", enableActivityMonitor:true)
+            self.statusChange(status: "Buying Ads Free from App Store ...", enableActivityMonitor: true)
             SKPaymentQueue.default().add(payment)
         }
     }
  
-
     @IBAction func buttonRestorePurchaseClicked(_ sender: Any) {
         if (self.transactionInProgress == false) {
             self.transactionInProgress = true
             self.actionButtonChange(message: "", enable: false)
             
-            self.statusChange(status:"Restoring Ads Free from App Store ...", enableActivityMonitor:true)
+            self.statusChange(status: "Restoring Ads Free from App Store ...", enableActivityMonitor: true)
             SKPaymentQueue.default().restoreCompletedTransactions()
         }
     }

@@ -10,13 +10,13 @@ import Foundation
 
 public class SettingsManager {
     fileprivate static let sharedInstance = SettingsManager()
-    class var instance:SettingsManager {
+    class var instance: SettingsManager {
         get {
             return sharedInstance
         }
     }
     
-    private var settings:NSDictionary
+    private var settings: NSDictionary
     
     init() {
         if let path = Bundle.main.path(forResource: "Settings", ofType: "plist") {
@@ -26,7 +26,7 @@ public class SettingsManager {
         }
     }
     
-    public func getSetting(_ key:String) -> Any? {
+    public func getSetting(_ key: String) -> Any? {
         return self.settings[key]
     }
 }

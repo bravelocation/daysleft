@@ -12,7 +12,7 @@ import FirebaseMessaging
 
 open class FirebaseNotifications: NSObject, MessagingDelegate {
 
-    var topicName:String? = nil
+    var topicName: String? = nil
     
     let defaults = UserDefaults.standard
     
@@ -31,7 +31,7 @@ open class FirebaseNotifications: NSObject, MessagingDelegate {
     
     func setupNotifications(_ forceSetup: Bool) {
         if (forceSetup || self.enabled) {
-            UNUserNotificationCenter.current().requestAuthorization(options: [.badge]) { (granted, error) in
+            UNUserNotificationCenter.current().requestAuthorization(options: [.badge]) { (granted, _) in
                 if (granted) {
                     DispatchQueue.main.async {
                         UIApplication.shared.registerForRemoteNotifications()

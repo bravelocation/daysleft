@@ -27,7 +27,6 @@ class AppDaysLeftModel: DaysLeftModel {
         store.synchronize()
     }
     
-    
     /// Used in the selector to handle incoming notifications of changes from the cloud
     ///
     /// param: notification The incoming notification
@@ -45,10 +44,10 @@ class AppDaysLeftModel: DaysLeftModel {
             if ((reason == NSUbiquitousKeyValueStoreServerChange) || (reason == NSUbiquitousKeyValueStoreInitialSyncChange)) {
                 // If something is changing externally, get the changes and update the corresponding keys locally.
                 let changedKeys = userInfo.object(forKey: NSUbiquitousKeyValueStoreChangedKeysKey) as! [String]
-                let store: NSUbiquitousKeyValueStore = NSUbiquitousKeyValueStore.default;
+                let store: NSUbiquitousKeyValueStore = NSUbiquitousKeyValueStore.default
                 
                 // This loop assumes you are using the same key names in both the user defaults database and the iCloud key-value store
-                for key:String in changedKeys {
+                for key: String in changedKeys {
                     let settingValue: AnyObject? = store.object(forKey: key) as AnyObject?
                     self.writeObjectToStore(settingValue!, key: key)
                 }
@@ -56,7 +55,7 @@ class AppDaysLeftModel: DaysLeftModel {
                 store.synchronize()
                 
                 // Finally send a notification for the view controllers to refresh
-                NotificationCenter.default.post(name: Notification.Name(rawValue: AppDaysLeftModel.iCloudSettingsNotification), object:nil, userInfo:nil)
+                NotificationCenter.default.post(name: Notification.Name(rawValue: AppDaysLeftModel.iCloudSettingsNotification), object: nil, userInfo: nil)
                 NSLog("Sent notification for iCloud change")
             }
         } else {
