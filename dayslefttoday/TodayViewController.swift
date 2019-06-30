@@ -36,14 +36,9 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         self.counterView.addGestureRecognizer(tapGesture)
         self.view.addGestureRecognizer(tapGesture)
         
-        if #available(iOSApplicationExtension 10.0, *) {
-            self.extensionContext?.widgetLargestAvailableDisplayMode = NCWidgetDisplayMode.expanded
-        } else {
-            // Fallback on earlier versions
-        }
+        self.extensionContext?.widgetLargestAvailableDisplayMode = NCWidgetDisplayMode.expanded
     }
     
-    @available(iOSApplicationExtension 10.0, *)
     func widgetActiveDisplayModeDidChange(_ activeDisplayMode: NCWidgetDisplayMode, withMaximumSize maxSize: CGSize) {
         if (activeDisplayMode == NCWidgetDisplayMode.compact) {
             self.preferredContentSize = maxSize
