@@ -71,7 +71,7 @@ class ViewController: UIViewController {
         // Add timer in case runs over a day change
         let now = Date()
         let secondsInADay: Double = 60 * 60 * 24
-        let startOfTomorrow = model.AddDays(model.StartOfDay(now), daysToAdd: 1)
+        let startOfTomorrow = model.addDays(model.startOfDay(now), daysToAdd: 1)
         self.dayChangeTimer = Timer(fireAt: startOfTomorrow, interval: secondsInADay, target: self, selector: #selector(ViewController.dayChangedTimerFired), userInfo: nil, repeats: false)
         
         // Setup user intents
@@ -128,7 +128,7 @@ class ViewController: UIViewController {
     
     @objc
     func shareButtonTouchUp() {
-        let modelText = self.modelData().FullDescription(Date())
+        let modelText = self.modelData().fullDescription(Date())
         let objectsToShare = [modelText]
         
         let activityViewController = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
@@ -168,8 +168,8 @@ class ViewController: UIViewController {
         
         let now: Date = Date()
 
-        self.labelDaysLeft.text = String(format: "%d", model.DaysLeft(now))
-        self.labelTitle.text = model.Description(now)
+        self.labelDaysLeft.text = String(format: "%d", model.daysLeft(now))
+        self.labelTitle.text = model.description(now)
 
         let shortDateFormatter = DateFormatter()
         shortDateFormatter.dateFormat = "EEE d MMM"
@@ -177,16 +177,16 @@ class ViewController: UIViewController {
         self.labelStartDate.text = String(format: "%@", shortDateFormatter.string(from: model.start))
         self.labelEndDate.text = String(format: "%@", shortDateFormatter.string(from: model.end))
         
-        if (model.DaysLength == 0) {
+        if (model.daysLength == 0) {
             self.labelPercentageDone.text = ""
         }
         else {
-            let percentageDone: Float = (Float(model.DaysGone(now)) * 100.0) / Float(model.DaysLength)
+            let percentageDone: Float = (Float(model.daysGone(now)) * 100.0) / Float(model.daysLength)
             self.labelPercentageDone.text = String(format:"%3.0f%% done", percentageDone)
         }
         
-        self.counterView.counter = model.DaysGone(now)
-        self.counterView.maximumValue = model.DaysLength
+        self.counterView.counter = model.daysGone(now)
+        self.counterView.maximumValue = model.daysLength
         self.counterView.updateControl()
         
         // Update the badge too

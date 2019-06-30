@@ -51,7 +51,7 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
         
         self.textStart.text = String(format: "%@", self.dateFormatter.string(from: model.start))
         self.textEnd.text = String(format: "%@", self.dateFormatter.string(from: model.end))
-        self.labelDaysLength.text = model.DaysLeftDescription(model.start)
+        self.labelDaysLength.text = model.daysLeftDescription(model.start)
         
         // Setup the date pickers as editors for text fields
         self.startDatePicker.date = model.start
@@ -256,7 +256,7 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
         // Update the text fields
         self.textStart.text = String(format: "%@", self.dateFormatter.string(from: model.start))
         self.textEnd.text = String(format: "%@", self.dateFormatter.string(from: model.end))
-        self.labelDaysLength.text = model.DaysLeftDescription(model.start)
+        self.labelDaysLength.text = model.daysLeftDescription(model.start)
         
         // Update the date restrictions too
         self.startDatePicker.maximumDate = model.end

@@ -42,7 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.firebaseNotifications.setupNotifications(false)
 
         // Increment the number of times app opened
-        self.model.appOpenCount = self.model.appOpenCount + 1;
+        self.model.appOpenCount += 1
 
         return true
     }
@@ -105,7 +105,7 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
             if settings.badgeSetting == .enabled {
                 DispatchQueue.main.async {
                     let now: Date = Date()
-                    UIApplication.shared.applicationIconBadgeNumber = self.model.DaysLeft(now)
+                    UIApplication.shared.applicationIconBadgeNumber = self.model.daysLeft(now)
                     print("Updated app badge")
                 }
             }

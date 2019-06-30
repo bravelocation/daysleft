@@ -47,7 +47,7 @@ class InterfaceController: WKInterfaceController {
         let model = appDelegate.model
         
         // Do we need to update the view?
-        let daysLeft = model.DaysLeft(now);
+        let daysLeft = model.daysLeft(now);
         let weekdaysOnly = model.weekdaysOnly
         let title = model.title
         
@@ -60,9 +60,9 @@ class InterfaceController: WKInterfaceController {
         self.currentWeekdaysOnly = weekdaysOnly
         self.currentTitle = title
         
-        self.labelTitle.setText(model.FullDescription(now))
+        self.labelTitle.setText(model.fullDescription(now))
         
-        let percentageDone: Float = (Float(model.DaysGone(now)) * 100.0) / Float(model.DaysLength)
+        let percentageDone: Float = (Float(model.daysGone(now)) * 100.0) / Float(model.daysLength)
         self.labelPercentDone.setText(String(format:"%3.0f%% done", percentageDone))
         
         // Set the progress image set

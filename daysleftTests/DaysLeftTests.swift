@@ -10,7 +10,7 @@ import UIKit
 import XCTest
 import daysleftlibrary
 
-class daysleftTests: XCTestCase {
+class DaysLeftTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
@@ -127,9 +127,9 @@ class daysleftTests: XCTestCase {
         model.end = Calendar.autoupdatingCurrent.date(from: endComponents)!
         let currentDate: Date = Calendar.autoupdatingCurrent.date(from: currentComponents)!
         
-        XCTAssertEqual(expectedLength, model.DaysLength, "DaysLength is incorrect")
-        XCTAssertEqual(expectedGone, model.DaysGone(currentDate), "DaysGone is incorrect")
-        XCTAssertEqual(expectedLeft, model.DaysLeft(currentDate), "DaysLeft is incorrect")
+        XCTAssertEqual(expectedLength, model.daysLength, "DaysLength is incorrect")
+        XCTAssertEqual(expectedGone, model.daysGone(currentDate), "DaysGone is incorrect")
+        XCTAssertEqual(expectedLeft, model.daysLeft(currentDate), "DaysLeft is incorrect")
         
     }
 }

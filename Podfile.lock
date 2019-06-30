@@ -68,11 +68,13 @@ PODS:
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
   - Protobuf (3.8.0)
+  - SwiftLint (0.33.0)
 
 DEPENDENCIES:
   - Firebase/AdMob
   - Firebase/Core
   - Firebase/Messaging
+  - SwiftLint
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -87,6 +89,7 @@ SPEC REPOS:
     - GoogleUtilities
     - nanopb
     - Protobuf
+    - SwiftLint
 
 SPEC CHECKSUMS:
   Firebase: 8432d732974498afd5987e9001a05f90f1a3d625
@@ -100,7 +103,8 @@ SPEC CHECKSUMS:
   GoogleUtilities: c7a0b08bda3bf808be823ed151f0e28ac6866e71
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   Protobuf: 3f617b9a6e73605565086864c9bc26b2bf2dd5a3
+  SwiftLint: fed9c66336e41fc74dc48a73678380718f0c8b0e
 
-PODFILE CHECKSUM: 76d7bbf588ad3ceda6d4c5bd3e13571b3a8d1c5a
+PODFILE CHECKSUM: d9382da88930c4bcfc5f3e7a103956c449985312
 
 COCOAPODS: 1.6.1

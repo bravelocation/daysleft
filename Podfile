@@ -7,5 +7,7 @@ target 'daysleft' do
     pod 'Firebase/Core'
     pod 'Firebase/AdMob'
     pod 'Firebase/Messaging'
+    
+    pod 'SwiftLint'
 end
 

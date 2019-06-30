@@ -17,7 +17,7 @@
 		527E15401D83F80300D81B15 /* gallery.ckcomplication in Resources */ = {isa = PBXBuildFile; fileRef = 527E153F1D83F80300D81B15 /* gallery.ckcomplication */; };
 		5285E6751FACC9A6001547CD /* AppDaysLeftModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5285E6741FACC9A6001547CD /* AppDaysLeftModel.swift */; };
 		5295EDDB1A94AE53007EF7E7 /* daysleftlibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5295EDD01A94AE53007EF7E7 /* daysleftlibrary.framework */; };
-		5295EDF01A94AF83007EF7E7 /* daysleftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CFBF131A8B631B005234FB /* daysleftTests.swift */; };
+		5295EDF01A94AF83007EF7E7 /* DaysLeftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CFBF131A8B631B005234FB /* DaysLeftTests.swift */; };
 		5295EDF11A94AFA7007EF7E7 /* DaysLeftModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CFBF1D1A8B642C005234FB /* DaysLeftModel.swift */; };
 		5295EDF21A94AFA7007EF7E7 /* BLUserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FAB1181A9231970039691E /* BLUserSettings.swift */; };
 		5295EDFB1A94B398007EF7E7 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5295EDFA1A94B398007EF7E7 /* NotificationCenter.framework */; };
@@ -249,7 +249,7 @@
 		52CFBF021A8B631B005234FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		52CFBF041A8B631B005234FB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		52CFBF121A8B631B005234FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		52CFBF131A8B631B005234FB /* daysleftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = daysleftTests.swift; path = ../daysleftTests/daysleftTests.swift; sourceTree = "<group>"; };
+		52CFBF131A8B631B005234FB /* DaysLeftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DaysLeftTests.swift; path = ../daysleftTests/DaysLeftTests.swift; sourceTree = "<group>"; };
 		52CFBF1D1A8B642C005234FB /* DaysLeftModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DaysLeftModel.swift; path = ../daysleft/DaysLeftModel.swift; sourceTree = "<group>"; };
 		52D25F3B1BCB8595002E4C76 /* ComplicationsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComplicationsDataSource.swift; sourceTree = "<group>"; };
 		52D937391BBFCEF200B215BC /* WatchDaysLeftModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WatchDaysLeftModel.swift; path = ../daysleftlibrary/WatchDaysLeftModel.swift; sourceTree = "<group>"; };
@@ -377,7 +377,7 @@
 		5295EDE01A94AE53007EF7E7 /* daysleftlibraryTests */ = {
 			isa = PBXGroup;
 			children = (
-				52CFBF131A8B631B005234FB /* daysleftTests.swift */,
+				52CFBF131A8B631B005234FB /* DaysLeftTests.swift */,
 				5295EDE11A94AE53007EF7E7 /* Supporting Files */,
 			);
 			path = daysleftlibraryTests;
@@ -771,6 +771,7 @@
 				5295EDE81A94AE53007EF7E7 /* Embed Frameworks */,
 				5295EE091A94B398007EF7E7 /* Embed App Extensions */,
 				520C4283227D79480099FFC5 /* Set build number */,
+				521B9C4022C8E0B300185CF4 /* Swift Lint */,
 				523443681BBAFBEF00E95BA4 /* Embed Watch Content */,
 				B5DD2F40EF96F21BD22B4C7C /* [CP] Embed Pods Frameworks */,
 			);
@@ -1037,6 +1038,24 @@
 			shellPath = /bin/sh;
 			shellScript = "git=`sh /etc/profile; which git`\nappBuild=`$git rev-list --all |wc -l`\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $appBuild\" \"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\necho \"Updated ${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\n";
 		};
+		521B9C4022C8E0B300185CF4 /* Swift Lint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Swift Lint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\" --path . --config ./swiftlint.yml\n";
+		};
 		5242D8411E40A20F00BF6FEE /* Setup build number */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1184,7 +1203,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5295EDF01A94AF83007EF7E7 /* daysleftTests.swift in Sources */,
+				5295EDF01A94AF83007EF7E7 /* DaysLeftTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -55,13 +55,13 @@ open class DaysLeftModel: BLUserSettings
     /// Property to get and set the start date
     open var start: Date {
         get { return self.readObjectFromStore("start") as! Date }
-        set { self.writeObjectToStore(self.StartOfDay(newValue) as AnyObject, key: "start") }
+        set { self.writeObjectToStore(self.startOfDay(newValue) as AnyObject, key: "start") }
     }
     
     /// Property to get and set the end date
     open var end: Date {
         get { return self.readObjectFromStore("end") as! Date }
-        set { self.writeObjectToStore(self.StartOfDay(newValue) as AnyObject, key: "end") }
+        set { self.writeObjectToStore(self.startOfDay(newValue) as AnyObject, key: "end") }
     }
 
     /// Property to get and set the title
@@ -83,9 +83,9 @@ open class DaysLeftModel: BLUserSettings
     }
     
     /// Property to get the number of days between the start and the end
-    open var DaysLength: Int {
+    open var daysLength: Int {
         get {
-            return self.DaysDifference(self.start, endDate: self.end) + 1 // Inclusive so add one
+            return self.daysDifference(self.start, endDate: self.end) + 1 // Inclusive so add one
         }
     }
     
@@ -111,14 +111,14 @@ open class DaysLeftModel: BLUserSettings
     ///
     /// param: currentDate The current date
     /// returns: The number of days to the end from the current date
-    open func DaysLeft(_ currentDate: Date) -> Int {
-        let startCurrentDate = self.StartOfDay(currentDate)
+    open func daysLeft(_ currentDate: Date) -> Int {
+        let startCurrentDate = self.startOfDay(currentDate)
         
         // If the current date is before the start, return the length
         let startComparison = startCurrentDate.compare(self.start)
         
         if (startComparison == ComparisonResult.orderedAscending)   {
-            return self.DaysLength
+            return self.daysLength
         }
         
         // If the current date is after the end, return 0
@@ -127,15 +127,15 @@ open class DaysLeftModel: BLUserSettings
         }
         
         // Otherwise, return the actual difference
-        return self.DaysLength - self.DaysGone(startCurrentDate)
+        return self.daysLength - self.daysGone(startCurrentDate)
     }
     
     /// Finds the number of days from the start of the period from the current date
     ///
     /// param: currentDate The current date
     /// returns: The number of days from the start to the current date
-    open func DaysGone(_ currentDate: Date) -> Int  {
-        let startCurrentDate = self.StartOfDay(currentDate)
+    open func daysGone(_ currentDate: Date) -> Int  {
+        let startCurrentDate = self.startOfDay(currentDate)
         
         let startComparison = startCurrentDate.compare(self.start)
         
@@ -146,11 +146,11 @@ open class DaysLeftModel: BLUserSettings
         
         // If the current date is after the end, return the length
         if (startCurrentDate.compare(self.end) == ComparisonResult.orderedDescending) {
-            return self.DaysLength
+            return self.daysLength
         }
         
         // Otherwise, return the actual difference
-        return self.DaysDifference(self.start, endDate: currentDate, currentDate: currentDate) + 1 // Inclusive so add 1
+        return self.daysDifference(self.start, endDate: currentDate, currentDate: currentDate) + 1 // Inclusive so add 1
     }
     
     open func initialRun() {
@@ -167,7 +167,7 @@ open class DaysLeftModel: BLUserSettings
             
             var xmasDate: Date = Calendar.current.date(from: xmasComponents)!
             
-            if (self.DaysDifference(todayDate, endDate: xmasDate) <= 0)
+            if (self.daysDifference(todayDate, endDate: xmasDate) <= 0)
             {
                 // If we're past Xmas in the year, set it to next year
                 xmasComponents.year = xmasComponents.year! + 1
@@ -184,11 +184,11 @@ open class DaysLeftModel: BLUserSettings
         }
     }
     
-    fileprivate func DaysDifference(_ startDate: Date, endDate: Date, currentDate: Date? = nil) -> Int {
+    fileprivate func daysDifference(_ startDate: Date, endDate: Date, currentDate: Date? = nil) -> Int {
         let globalCalendar: Calendar = Calendar.autoupdatingCurrent
 
-        let startOfStartDate = self.StartOfDay(startDate)
-        let startOfEndDate = self.StartOfDay(endDate)
+        let startOfStartDate = self.startOfDay(startDate)
+        let startOfEndDate = self.startOfDay(endDate)
 
         // If want all days, just calculate the days difference and return it
         if (!self.weekdaysOnly) {
@@ -207,15 +207,15 @@ open class DaysLeftModel: BLUserSettings
         // If start is a weekend, adjust to Monday
         if (startDayOfWeek == 7) {
             // Saturday
-            adjustedStartDate = self.AddDays(startOfStartDate, daysToAdd: 2)
+            adjustedStartDate = self.addDays(startOfStartDate, daysToAdd: 2)
         } else if (startDayOfWeek == 1) {
             // Sunday
-            adjustedStartDate = self.AddDays(startOfStartDate, daysToAdd: 1)
+            adjustedStartDate = self.addDays(startOfStartDate, daysToAdd: 1)
         }
         
         // If there is a current date, and the adjusted start date is after it, return -1) we haven't started yet)
         if let currentDate = currentDate {
-            let startOfCurrentDate = self.StartOfDay(currentDate)
+            let startOfCurrentDate = self.startOfDay(currentDate)
 
             let startComparison = startOfCurrentDate.compare(adjustedStartDate)
             
@@ -227,10 +227,10 @@ open class DaysLeftModel: BLUserSettings
         // If end is a weekend, move it back to Friday
         if (endDayOfWeek == 7) {
             // Saturday
-            adjustedEndDate = self.AddDays(startOfEndDate, daysToAdd: -1)
+            adjustedEndDate = self.addDays(startOfEndDate, daysToAdd: -1)
         } else if (endDayOfWeek == 1) {
             // Sunday
-            adjustedEndDate = self.AddDays(startOfEndDate, daysToAdd: -2)
+            adjustedEndDate = self.addDays(startOfEndDate, daysToAdd: -2)
         }
             
         let adjustedComponents: DateComponents = (globalCalendar as NSCalendar).components(NSCalendar.Unit.day, from: adjustedStartDate, to: adjustedEndDate, options: NSCalendar.Options.wrapComponents)
@@ -251,14 +251,14 @@ open class DaysLeftModel: BLUserSettings
         return (fullWeeks * 5) + daysOfWeekDifference
     }
     
-    open func StartOfDay(_ fullDate: Date) -> Date {
+    open func startOfDay(_ fullDate: Date) -> Date {
 
         let startOfDayComponents =  (Calendar.current as NSCalendar).components([NSCalendar.Unit.year, NSCalendar.Unit.month, NSCalendar.Unit.day], from: fullDate)
         
         return Calendar.current.date(from: startOfDayComponents)!
     }
     
-    open func AddDays(_ originalDate: Date, daysToAdd: Int) -> Date {
+    open func addDays(_ originalDate: Date, daysToAdd: Int) -> Date {
         var dateComponents: DateComponents = DateComponents()
          dateComponents.day = daysToAdd
          return (Calendar.current as NSCalendar).date(byAdding: dateComponents, to: originalDate, options: [])!
@@ -274,12 +274,12 @@ open class DaysLeftModel: BLUserSettings
         return updatedSettings;
     }
     
-    open func FullDescription(_ currentDate: Date) -> String {        
-        return String(format: "%d %@", self.DaysLeft(currentDate), self.Description(currentDate))
+    open func fullDescription(_ currentDate: Date) -> String {        
+        return String(format: "%d %@", self.daysLeft(currentDate), self.description(currentDate))
     }
     
-    open func Description(_ currentDate: Date) -> String {
-        let daysLeft: Int = self.DaysLeft(currentDate)
+    open func description(_ currentDate: Date) -> String {
+        let daysLeft: Int = self.daysLeft(currentDate)
         
         var titleSuffix = "left"
         var titleDays = ""
@@ -297,8 +297,8 @@ open class DaysLeftModel: BLUserSettings
         return String(format: "%@ %@", titleDays, titleSuffix)
     }
     
-    open func DaysLeftDescription(_ currentDate: Date) -> String {
-        let daysLeft: Int = self.DaysLeft(currentDate)
+    open func daysLeftDescription(_ currentDate: Date) -> String {
+        let daysLeft: Int = self.daysLeft(currentDate)
         
         var titleDays = ""
         

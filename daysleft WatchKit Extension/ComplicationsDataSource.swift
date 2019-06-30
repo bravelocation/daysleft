@@ -20,7 +20,7 @@ class ComplicationsDataSource : NSObject, CLKComplicationDataSource {
     func getNextRequestedUpdateDate(handler: @escaping (Date?) -> Void) {
         // Update at the start of tomorrow
         let model = modelData()
-        let nextUpdate = model.StartOfDay(model.AddDays(Date(), daysToAdd: 1))
+        let nextUpdate = model.startOfDay(model.addDays(Date(), daysToAdd: 1))
         
         print("Setting next extension update to be at \(nextUpdate)")
         
@@ -196,8 +196,8 @@ class ComplicationsDataSource : NSObject, CLKComplicationDataSource {
     fileprivate func createTimeLineEntry(_ family: CLKComplicationFamily, date: Date) -> CLKComplicationTimelineEntry? {
 
         let model = modelData()
-        let currentDaysLeft: Int = model.DaysLeft(date)
-        let percentageDone: Float = Float(model.DaysGone(date)) / Float(model.DaysLength)
+        let currentDaysLeft: Int = model.daysLeft(date)
+        let percentageDone: Float = Float(model.daysGone(date)) / Float(model.daysLength)
         let displayPercentageDone: Int = (Int) (percentageDone * 100)
         let appTintColor = UIColor(red: 203/255, green: 237/255, blue: 142/255, alpha: 1.0)
         
