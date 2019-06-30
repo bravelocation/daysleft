@@ -56,14 +56,14 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
         // Setup the date pickers as editors for text fields
         self.startDatePicker.date = model.start
         self.startDatePicker.maximumDate = model.end
-        self.startDatePicker.datePickerMode = UIDatePickerMode.date
-        self.startDatePicker.addTarget(self, action: #selector(SettingsViewController.dateChanged(_:)), for: UIControlEvents.valueChanged)
+        self.startDatePicker.datePickerMode = UIDatePicker.Mode.date
+        self.startDatePicker.addTarget(self, action: #selector(SettingsViewController.dateChanged(_:)), for: UIControl.Event.valueChanged)
         self.textStart.inputView = self.startDatePicker
         
         self.endDatePicker.date = model.end
         self.endDatePicker.minimumDate = model.start
-        self.endDatePicker.datePickerMode = UIDatePickerMode.date
-        self.endDatePicker.addTarget(self, action: #selector(SettingsViewController.dateChanged(_:)), for: UIControlEvents.valueChanged)
+        self.endDatePicker.datePickerMode = UIDatePicker.Mode.date
+        self.endDatePicker.addTarget(self, action: #selector(SettingsViewController.dateChanged(_:)), for: UIControl.Event.valueChanged)
         self.textEnd.inputView = self.endDatePicker
 
         // Set up the delegate of text field for handling return below
@@ -304,7 +304,7 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
             // Show an alert
             let alert = UIAlertController(title:"Not Supported", message:"Add to Siri is only supported on iOS 12 and above", preferredStyle:.alert)
             
-            let defaultAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil)
+            let defaultAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
             alert.addAction(defaultAction)
             
             self.present(alert, animated: true, completion: nil)

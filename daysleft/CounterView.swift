@@ -111,7 +111,7 @@ open class CounterView: UIView {
         animation.isRemovedOnCompletion = true
         animation.fromValue = 0
         animation.toValue = 1
-        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+        animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)
         self.progressSubView?.add(animation, forKey: "drawProgressAnimation")
     }
 }

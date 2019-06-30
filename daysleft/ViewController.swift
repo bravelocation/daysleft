@@ -42,7 +42,7 @@ class ViewController: UIViewController {
     
     func setupNotificationHandlers() {
         NotificationCenter.default.addObserver(self, selector: #selector(ViewController.iCloudSettingsUpdated(_:)), name: NSNotification.Name(rawValue: AppDaysLeftModel.iCloudSettingsNotification), object: nil)
-        NotificationCenter.default.addObserver(self, selector:#selector(ViewController.appEntersForeground), name: NSNotification.Name.UIApplicationWillEnterForeground, object: nil)
+        NotificationCenter.default.addObserver(self, selector:#selector(ViewController.appEntersForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
     }
     
     // MARK:- View event handlers
@@ -65,7 +65,7 @@ class ViewController: UIViewController {
         
         // Add a swipe recogniser
         let swipeLeft : UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(ViewController.swipeLeft(_:)))
-        swipeLeft.direction = UISwipeGestureRecognizerDirection.left
+        swipeLeft.direction = UISwipeGestureRecognizer.Direction.left
         self.view.addGestureRecognizer(swipeLeft)
         
         // Add timer in case runs over a day change

@@ -107,7 +107,7 @@ class PurchaseViewController: UIViewController, SKProductsRequestDelegate, SKPay
     
     func actionButtonChange(message:String, enable:Bool) {
         if (enable == false || self.showAds() == false) {
-            self.buttonAction.setTitle("", for: UIControlState.normal)
+            self.buttonAction.setTitle("", for: UIControl.State.normal)
             self.buttonAction.layer.borderColor = UIColor.clear.cgColor
             self.buttonAction.tintColor = UIColor.clear
             self.buttonAction.isEnabled = false
@@ -116,7 +116,7 @@ class PurchaseViewController: UIViewController, SKProductsRequestDelegate, SKPay
             self.buttonRestorePurchase.isHidden = true
             self.betweenButtonConstraint.constant = 0.0
         } else {
-            self.buttonAction.setTitle(message, for: UIControlState.normal)
+            self.buttonAction.setTitle(message, for: UIControl.State.normal)
             self.buttonAction.layer.borderColor = self.appGreen.cgColor
             self.buttonAction.tintColor = self.appGreen
             self.buttonAction.isEnabled = true
@@ -203,6 +203,11 @@ class PurchaseViewController: UIViewController, SKProductsRequestDelegate, SKPay
                 self.statusChange(status: "Ads Free successfully restored!", enableActivityMonitor: false)
                 self.successfulPayment()
                 break
+            
+            @unknown default:
+                self.statusChange(status: "Purchase of Ads Free failed", enableActivityMonitor: false)
+                print("Purchase failed", transaction.error.debugDescription)
+                self.transactionInProgress = false
             }
         }
     }
