@@ -92,7 +92,5 @@
 	</dict>
 	<key>GADIsAdManagerApp</key>
 	<true/>
-	<key>Fabric</key>
-	<dict/>
 </dict>
 </plist>

@@ -31,11 +31,13 @@ open class FirebaseNotifications: NSObject, MessagingDelegate {
     
     func setupNotifications(_ forceSetup: Bool) {
         if (forceSetup || self.enabled) {
-            let application = UIApplication.shared
-            
-            let settings: UIUserNotificationSettings = UIUserNotificationSettings(types: [.alert, .sound, .badge], categories: nil)
-            application.registerUserNotificationSettings(settings)
-            application.registerForRemoteNotifications()
+            UNUserNotificationCenter.current().requestAuthorization(options: [.badge]) { (granted, error) in
+                if (granted) {
+                    DispatchQueue.main.async {
+                        UIApplication.shared.registerForRemoteNotifications()
+                    }
+                }
+            }
         }
     }
     

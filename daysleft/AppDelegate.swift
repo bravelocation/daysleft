@@ -38,6 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print("Configured Google Ads")
         
         // Setup push notifications (if required) to ensure the badge gets updated
+        UNUserNotificationCenter.current().delegate = self
         self.firebaseNotifications.setupNotifications(false)
 
         // Increment the number of times app opened
@@ -56,17 +57,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print(error.localizedDescription)
     }
     
-    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any]) {
-        self.messageReceived(application, userInfo: userInfo)
-    }
-    
-    func application(_ application: UIApplication,
-                     didReceiveRemoteNotification userInfo: [AnyHashable: Any],
-                                                  fetchCompletionHandler handler: @escaping (UIBackgroundFetchResult) -> Void) {
-        self.messageReceived(application, userInfo: userInfo)
-        handler(UIBackgroundFetchResult.newData);
-    }
-    
     func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([Any]?) -> Void) -> Bool {
         if let window = self.window {
             window.rootViewController?.restoreUserActivityState(userActivity)
@@ -75,16 +65,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
-    func messageReceived(_ application: UIApplication,
-                         userInfo: [AnyHashable: Any]) {
-        // Print message
-        print("Notification received ...")
+    @objc
+    fileprivate func iCloudSettingsUpdated(_ notification: Notification) {
+        print("Received iCloudSettingsUpdated notification")
         
-        Messaging.messaging().appDidReceiveMessage(userInfo)
-
         // Push latest settings and update badge
         self.model.pushAllSettingsToWatch()
         self.updateBadge()
+    }
+}
+
+extension AppDelegate : UNUserNotificationCenterDelegate {
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        // Print message
+        print("Notification received ...")
+        
+        Messaging.messaging().appDidReceiveMessage(response.notification.request.content.userInfo)
+        
+        // Push latest settings and update badge
+        self.model.pushAllSettingsToWatch()
+        self.updateBadge()
+        
+        completionHandler()
     }
     
     func registerForNotifications() {
@@ -99,34 +101,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return
         }
         
-        let application: UIApplication = UIApplication.shared
-        
-        let badgePermission: Bool = (application.currentUserNotificationSettings?.types.contains(UIUserNotificationType.badge))!
-        if (badgePermission)
-        {
-            let now: Date = Date()
-            application.applicationIconBadgeNumber = self.model.DaysLeft(now)
-            print("Updated app badge")
+        UNUserNotificationCenter.current().getNotificationSettings() {settings in
+            if settings.badgeSetting == .enabled {
+                DispatchQueue.main.async {
+                    let now: Date = Date()
+                    UIApplication.shared.applicationIconBadgeNumber = self.model.DaysLeft(now)
+                    print("Updated app badge")
+                }
+            }
         }
     }
     
     func clearBadge() {
-        let application: UIApplication = UIApplication.shared
-        
-        let badgePermission: Bool = (application.currentUserNotificationSettings?.types.contains(UIUserNotificationType.badge))!
-        if (badgePermission)
-        {
-            application.applicationIconBadgeNumber = 0
-            print("Cleared app badge")
+        UNUserNotificationCenter.current().getNotificationSettings() {settings in
+            if settings.badgeSetting == .enabled {
+                DispatchQueue.main.async {
+                    UIApplication.shared.applicationIconBadgeNumber = 0
+                    print("Cleared app badge")
+                }
+            }
         }
-    }
-    
-    @objc
-    fileprivate func iCloudSettingsUpdated(_ notification: Notification) {
-        print("Received iCloudSettingsUpdated notification")
-        
-        // Push latest settings and update badge
-        self.model.pushAllSettingsToWatch()
-        self.updateBadge()
     }
 }
