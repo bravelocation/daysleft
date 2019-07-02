@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     lazy var model = AppDaysLeftModel()
-    let firebaseNotifications = FirebaseNotifications()
+    var firebaseNotifications: FirebaseNotifications?
 
     override init() {
         super.init()
@@ -30,16 +30,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
+ 
+        GADMobileAds.sharedInstance().start(completionHandler: nil)
+        print("Configured Google Ads")
+
         // Use Firebase library to configure APIs
         FirebaseApp.configure()
         
-        GADMobileAds.sharedInstance().start(completionHandler: nil)
-        print("Configured Google Ads")
-        
+        // Must be done after FirebaseApp.configure() according to https://github.com/firebase/firebase-ios-sdk/issues/2240
+        self.firebaseNotifications = FirebaseNotifications()
+
         // Setup push notifications (if required) to ensure the badge gets updated
         UNUserNotificationCenter.current().delegate = self
-        self.firebaseNotifications.setupNotifications(false)
+        self.firebaseNotifications?.setupNotifications(false)
 
         // Increment the number of times app opened
         self.model.appOpenCount += 1
@@ -49,7 +52,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication,
                      didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        self.firebaseNotifications.register(deviceToken)
+        self.firebaseNotifications?.register(deviceToken)
     }
     
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
@@ -91,7 +94,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     
     func registerForNotifications() {
         print("Registering notification settings")
-        self.firebaseNotifications.setupNotifications(true)
+        self.firebaseNotifications?.setupNotifications(true)
         self.updateBadge()
     }
     
