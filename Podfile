@@ -1,5 +1,5 @@
 source 'https://github.com/cocoapods/specs.git'
-platform :ios, '11.4'
+platform :ios, '11.0'
 use_frameworks!
 inhibit_all_warnings!
 
