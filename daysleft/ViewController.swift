@@ -268,3 +268,27 @@ class ViewController: UIViewController {
         self.userActivity?.becomeCurrent()
     }
 }
+
+// MARK: - Keyboard options
+
+extension ViewController {
+    override var keyCommands: [UIKeyCommand]? {
+        return [
+            UIKeyCommand(input: "E", modifierFlags: .command, action: #selector(ViewController.keyboardSelectTab), discoverabilityTitle: "Edit"),
+            UIKeyCommand(input: "S", modifierFlags: [.command, .shift], action: #selector(ViewController.keyboardSelectTab), discoverabilityTitle: "Share")
+        ]
+    }
+    
+    @objc func keyboardSelectTab(sender: UIKeyCommand) {
+        if let input = sender.input {
+            switch input {
+            case "E":
+                self.performSegue(withIdentifier: "segueShowSettings", sender: self)
+            case "S":
+                self.shareButtonTouchUp()
+            default:
+                break
+            }
+        }
+    }
+}
