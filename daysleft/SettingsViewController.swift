@@ -81,7 +81,13 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
         
         // Setup Add to Siri button
         if #available(iOS 12.0, *) {
-            let button = INUIAddVoiceShortcutButton(style: .whiteOutline)
+            var buttonStyle: INUIAddVoiceShortcutButtonStyle = .whiteOutline
+            
+            if #available(iOS 13.0, *) {
+                buttonStyle = .automaticOutline
+            }
+            
+            let button = INUIAddVoiceShortcutButton(style: buttonStyle)
             button.translatesAutoresizingMaskIntoConstraints = false
             
             self.addToSiriCell.addSubview(button)
@@ -129,7 +135,7 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
         
         // Set the about cell logos
         self.setCellImage(imageName: "Privacy", color: UIColor(named: "MainAppColor"), cell: self.privacyCell)
-        self.setCellImage(imageName: "GitHubLogo", color: UIColor.black, cell: self.gitHubCell)
+        self.setCellImage(imageName: "GitHubLogo", color: UIColor(named: "MainAppColor"), cell: self.gitHubCell)
         self.setCellImage(imageName: "ReadHow", color: UIColor(named: "MainAppColor"), cell: self.appMadeCell)
         self.setCellImage(imageName: "BraveLocation", color: UIColor(named: "BraveLocationColor"), cell: self.moreAppsCell)
     }
@@ -161,17 +167,6 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
 
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.registerForNotifications()
-    }
-    
-    @IBAction func buttonStartTodayTouchUp(_ sender: AnyObject) {
-        let model = self.modelData()
-
-        model.weekdaysOnly = false
-        self.switchWeekdaysOnly.isOn = false
-        
-        self.startDatePicker.date = Date()
-        self.endDatePicker.date = (Calendar.current as NSCalendar).date(byAdding: NSCalendar.Unit.day, value: 29, to: Date(), options: [])!
-        self.validateAndSaveModel()
     }
     
     // Hides the keyboard if touch anywhere outside text box
