@@ -134,9 +134,9 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
         }
         
         // Set the about cell logos
-        self.setCellImage(imageName: "Privacy", color: UIColor(named: "MainAppColor"), cell: self.privacyCell)
-        self.setCellImage(imageName: "GitHubLogo", color: UIColor(named: "MainAppColor"), cell: self.gitHubCell)
-        self.setCellImage(imageName: "ReadHow", color: UIColor(named: "MainAppColor"), cell: self.appMadeCell)
+        self.setCellImage(imageName: "Privacy", color: UIColor(named: "SettingsIconTint"), cell: self.privacyCell)
+        self.setCellImage(imageName: "GitHubLogo", color: UIColor(named: "SettingsIconTint"), cell: self.gitHubCell)
+        self.setCellImage(imageName: "ReadHow", color: UIColor(named: "SettingsIconTint"), cell: self.appMadeCell)
         self.setCellImage(imageName: "BraveLocation", color: UIColor(named: "BraveLocationColor"), cell: self.moreAppsCell)
     }
     
