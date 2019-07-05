@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14835.7" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14790.5"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+        <capability name="iOS 13.0 system colors" minToolsVersion="11.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -20,10 +18,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="bex-l5-yn4">
-                                <rect key="frame" x="97.5" y="243.5" width="180" height="180"/>
+                                <rect key="frame" x="80" y="226" width="215" height="215"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="180" id="6Rp-7m-hgR"/>
-                                    <constraint firstAttribute="height" constant="180" id="GKv-QN-1zb"/>
+                                    <constraint firstAttribute="width" secondItem="bex-l5-yn4" secondAttribute="height" multiplier="1:1" id="36i-TL-lKg"/>
+                                    <constraint firstAttribute="width" constant="215" id="6Rp-7m-hgR"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Another Brave Location App" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WFw-yU-WMU">
@@ -32,28 +30,16 @@
                                     <constraint firstAttribute="height" constant="21" id="EAq-If-nBS"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
-                                <color key="textColor" name="MainAppColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Count The Days Left" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LcE-RU-9Rl">
-                                <rect key="frame" x="16" y="205.5" width="343" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="e7X-qN-Tqm"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                <color key="textColor" name="MainAppColor"/>
+                                <color key="textColor" cocoaTouchSystemColor="secondaryLabelColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Bcu-3y-fUS" firstAttribute="trailing" secondItem="WFw-yU-WMU" secondAttribute="trailing" constant="16" id="5az-hg-q20"/>
                             <constraint firstItem="bex-l5-yn4" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="DN1-gY-uiR"/>
-                            <constraint firstItem="bex-l5-yn4" firstAttribute="top" secondItem="LcE-RU-9Rl" secondAttribute="bottom" constant="8" id="Y1z-nb-EZd"/>
                             <constraint firstItem="WFw-yU-WMU" firstAttribute="leading" secondItem="Bcu-3y-fUS" secondAttribute="leading" constant="16" id="fx4-bh-K7E"/>
                             <constraint firstItem="Bcu-3y-fUS" firstAttribute="bottom" secondItem="WFw-yU-WMU" secondAttribute="bottom" constant="16" id="imj-RQ-uJn"/>
-                            <constraint firstItem="LcE-RU-9Rl" firstAttribute="leading" secondItem="Bcu-3y-fUS" secondAttribute="leading" constant="16" id="ltB-eo-Ani"/>
-                            <constraint firstItem="Bcu-3y-fUS" firstAttribute="trailing" secondItem="LcE-RU-9Rl" secondAttribute="trailing" constant="16" id="m5F-ED-Pj2"/>
                             <constraint firstItem="bex-l5-yn4" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="xxR-LP-1Kv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Bcu-3y-fUS"/>
@@ -66,8 +52,5 @@
     </scenes>
     <resources>
         <image name="Logo" width="180" height="180"/>
-        <namedColor name="MainAppColor">
-            <color red="0.21568627450980393" green="0.30980392156862746" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
     </resources>
 </document>
