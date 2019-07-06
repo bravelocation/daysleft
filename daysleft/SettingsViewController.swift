@@ -134,20 +134,25 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
         }
         
         // Set the about cell logos
-        self.setCellImage(imageName: "Privacy", color: UIColor(named: "SettingsIconTint"), cell: self.privacyCell)
-        self.setCellImage(imageName: "GitHubLogo", color: UIColor(named: "SettingsIconTint"), cell: self.gitHubCell)
-        self.setCellImage(imageName: "ReadHow", color: UIColor(named: "SettingsIconTint"), cell: self.appMadeCell)
-        self.setCellImage(imageName: "BraveLocation", color: UIColor(named: "BraveLocationColor"), cell: self.moreAppsCell)
+        self.setCellImage(imageName: "Privacy", systemName: "lock.fill", color: UIColor(named: "SettingsIconTint"), cell: self.privacyCell)
+        self.setCellImage(imageName: "ReadHow", systemName: "doc.richtext", color: UIColor(named: "SettingsIconTint"), cell: self.appMadeCell)
+        self.setCellImage(imageName: "GitHubLogo", systemName: "chevron.left.slash.chevron.right", color: UIColor(named: "SettingsIconTint"), cell: self.gitHubCell)
+        self.setCellImage(imageName: "BraveLocation", systemName: "app.badge", color: UIColor(named: "SettingsIconTint"), cell: self.moreAppsCell)
     }
     
-    private func setCellImage(imageName: String, color: UIColor?, cell: UITableViewCell) {
-        if let assetImage = UIImage(named: imageName), let imageView = cell.imageView {
-            let tintableImage = assetImage.withRenderingMode(.alwaysTemplate)
+    private func setCellImage(imageName: String, systemName: String?, color: UIColor?, cell: UITableViewCell) {
+        var assetImage = UIImage(named: imageName)
+        if #available(iOS 13.0, *), let name = systemName {
+            assetImage = UIImage(systemName: name)
+        }
+        
+        if let image = assetImage, let imageView = cell.imageView {
+            let tintableImage = image.withRenderingMode(.alwaysTemplate)
             imageView.image = tintableImage
             imageView.tintColor = color
         }
     }
-
+    
     @IBAction func textTitleChanged(_ sender: AnyObject) {
         self.validateAndSaveModel()
     }
