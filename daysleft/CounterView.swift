@@ -112,5 +112,9 @@ open class CounterView: UIView {
         animation.toValue = 1
         animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)
         self.progressSubView?.add(animation, forKey: "drawProgressAnimation")
+        
+        // Finally set accessibility details
+        let percentageDone = (Float(counter) * 100.0) / Float(maximumValue)
+        self.accessibilityLabel = String(format: "%3.0f%% done", percentageDone)
     }
 }
