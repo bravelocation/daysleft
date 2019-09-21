@@ -34,8 +34,8 @@ class IntentViewController: UIViewController, INUIHostedViewControlling {
         self.counterView.backgroundColor = backgroundColor
         
         self.view.backgroundColor = backgroundColor
-        self.titleLabel.textColor = darkGreen
-        self.percentLabel.textColor = darkGreen
+        self.titleLabel.textColor = UIColor(named: "IntentTextColor")
+        self.percentLabel.textColor = UIColor(named: "IntentTextColor")
     }
         
     // MARK: - INUIHostedViewControlling
