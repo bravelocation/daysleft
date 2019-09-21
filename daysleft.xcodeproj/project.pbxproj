@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		39A194FFE9D0B3DE5A8D321B /* Pods_daysleft.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA7BBD7977F821A8A87B182E /* Pods_daysleft.framework */; };
-		520F20BF2336200400B1F73F /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 520F20BE2336200400B1F73F /* Media.xcassets */; };
-		520F20C12336260B00B1F73F /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 520F20C02336260B00B1F73F /* Media.xcassets */; };
+		520F20C2233631E400B1F73F /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52CFBF041A8B631B005234FB /* Media.xcassets */; };
+		520F20C3233631E800B1F73F /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52CFBF041A8B631B005234FB /* Media.xcassets */; };
 		523443631BBAFBEF00E95BA4 /* daysleft WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 52B7E8771ABEDE9300E1949C /* daysleft WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		523443661BBAFBEF00E95BA4 /* daysleft WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 52B7E8811ABEDE9300E1949C /* daysleft WatchKit App.app */; };
 		5234436D1BBB181C00E95BA4 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5234436C1BBB181C00E95BA4 /* ExtensionDelegate.swift */; };
@@ -61,7 +61,7 @@
 		52CFBEFE1A8B631B005234FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CFBEFD1A8B631B005234FB /* AppDelegate.swift */; };
 		52CFBF001A8B631B005234FB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CFBEFF1A8B631B005234FB /* ViewController.swift */; };
 		52CFBF031A8B631B005234FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52CFBF011A8B631B005234FB /* Main.storyboard */; };
-		52CFBF051A8B631B005234FB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52CFBF041A8B631B005234FB /* Images.xcassets */; };
+		52CFBF051A8B631B005234FB /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52CFBF041A8B631B005234FB /* Media.xcassets */; };
 		52D18D611BC4E91500DB7E3A /* daysleftlibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5295EDD01A94AE53007EF7E7 /* daysleftlibrary.framework */; };
 		52D18D701BC8281200DB7E3A /* WatchDaysLeftModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D937391BBFCEF200B215BC /* WatchDaysLeftModel.swift */; };
 		52D18D711BC8282A00DB7E3A /* DaysLeftModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CFBF1D1A8B642C005234FB /* DaysLeftModel.swift */; };
@@ -189,8 +189,6 @@
 		20D7C2776D16B97A9237DC10 /* Pods-daysleft.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-daysleft.release.xcconfig"; path = "Pods/Target Support Files/Pods-daysleft/Pods-daysleft.release.xcconfig"; sourceTree = "<group>"; };
 		37942D6E74C88723CC5E5442 /* libPods-daysleft WatchKit Extension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-daysleft WatchKit Extension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		39638B2E57648DB9142D4833 /* Pods-daysleft.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-daysleft.debug.xcconfig"; path = "Pods/Target Support Files/Pods-daysleft/Pods-daysleft.debug.xcconfig"; sourceTree = "<group>"; };
-		520F20BE2336200400B1F73F /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
-		520F20C02336260B00B1F73F /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		523443691BBAFCCF00E95BA4 /* daysleftwatchlibrary-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "daysleftwatchlibrary-Info.plist"; path = "daysleft/daysleftwatchlibrary-Info.plist"; sourceTree = SOURCE_ROOT; };
 		5234436B1BBB00B800E95BA4 /* daysleft WatchKit App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "daysleft WatchKit App.entitlements"; sourceTree = "<group>"; };
 		5234436C1BBB181C00E95BA4 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
@@ -252,7 +250,7 @@
 		52CFBEFD1A8B631B005234FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52CFBEFF1A8B631B005234FB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		52CFBF021A8B631B005234FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		52CFBF041A8B631B005234FB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		52CFBF041A8B631B005234FB /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		52CFBF121A8B631B005234FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52CFBF131A8B631B005234FB /* DaysLeftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DaysLeftTests.swift; path = ../daysleftTests/DaysLeftTests.swift; sourceTree = "<group>"; };
 		52CFBF1D1A8B642C005234FB /* DaysLeftModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DaysLeftModel.swift; path = ../daysleft/DaysLeftModel.swift; sourceTree = "<group>"; };
@@ -425,7 +423,6 @@
 				5295EDFF1A94B398007EF7E7 /* TodayViewController.swift */,
 				5295EE011A94B398007EF7E7 /* MainInterface.storyboard */,
 				5295EDFD1A94B398007EF7E7 /* Supporting Files */,
-				520F20BE2336200400B1F73F /* Media.xcassets */,
 			);
 			path = dayslefttoday;
 			sourceTree = "<group>";
@@ -456,7 +453,6 @@
 				52AC69402154DA7E00E6C833 /* IntentViewController.swift */,
 				52AC69422154DA7E00E6C833 /* MainInterface.storyboard */,
 				52AC69452154DA7F00E6C833 /* Info.plist */,
-				520F20C02336260B00B1F73F /* Media.xcassets */,
 			);
 			path = DaysLeftIntentUI;
 			sourceTree = "<group>";
@@ -570,7 +566,7 @@
 				52790F781D056F500025AF10 /* daysleft-Bridging-Header.h */,
 				52FAB11B1A9240490039691E /* DefaultPreferences.plist */,
 				52DC9EB41FC97A9200AE02F6 /* FirebaseNotifications.swift */,
-				52CFBF041A8B631B005234FB /* Images.xcassets */,
+				52CFBF041A8B631B005234FB /* Media.xcassets */,
 				527BE7A51FB0FEE500455FE9 /* LaunchScreen.storyboard */,
 				52CFBF011A8B631B005234FB /* Main.storyboard */,
 				527AD75B1E94EB2800F8637B /* PurchaseViewController.swift */,
@@ -962,7 +958,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5295EE0B1A94B4C7007EF7E7 /* DefaultPreferences.plist in Resources */,
-				520F20BF2336200400B1F73F /* Media.xcassets in Resources */,
+				520F20C2233631E400B1F73F /* Media.xcassets in Resources */,
 				5295EE021A94B398007EF7E7 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -980,7 +976,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				52AC69442154DA7E00E6C833 /* MainInterface.storyboard in Resources */,
-				520F20C12336260B00B1F73F /* Media.xcassets in Resources */,
+				520F20C3233631E800B1F73F /* Media.xcassets in Resources */,
 				52AC695E2154E42F00E6C833 /* DefaultPreferences.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1022,7 +1018,7 @@
 				52CFBF031A8B631B005234FB /* Main.storyboard in Resources */,
 				527BE7A61FB0FEE600455FE9 /* LaunchScreen.storyboard in Resources */,
 				52FAB11C1A9240490039691E /* DefaultPreferences.plist in Resources */,
-				52CFBF051A8B631B005234FB /* Images.xcassets in Resources */,
+				52CFBF051A8B631B005234FB /* Media.xcassets in Resources */,
 				52DC9EB31FC97A3200AE02F6 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
