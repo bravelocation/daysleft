@@ -79,7 +79,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         
         // Set widget colors
         self.view.backgroundColor = UIColor.clear
-        self.labelNumberTitle.textColor = UIColor.black
-        self.labelPercentDone.textColor = UIColor.black
+        self.labelNumberTitle.textColor = UIColor(named: "TodayTextColor")
+        self.labelPercentDone.textColor = UIColor(named: "TodayTextColor")
     }
 }

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		39A194FFE9D0B3DE5A8D321B /* Pods_daysleft.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA7BBD7977F821A8A87B182E /* Pods_daysleft.framework */; };
+		520F20BF2336200400B1F73F /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 520F20BE2336200400B1F73F /* Media.xcassets */; };
 		523443631BBAFBEF00E95BA4 /* daysleft WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 52B7E8771ABEDE9300E1949C /* daysleft WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		523443661BBAFBEF00E95BA4 /* daysleft WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 52B7E8811ABEDE9300E1949C /* daysleft WatchKit App.app */; };
 		5234436D1BBB181C00E95BA4 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5234436C1BBB181C00E95BA4 /* ExtensionDelegate.swift */; };
@@ -187,6 +188,7 @@
 		20D7C2776D16B97A9237DC10 /* Pods-daysleft.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-daysleft.release.xcconfig"; path = "Pods/Target Support Files/Pods-daysleft/Pods-daysleft.release.xcconfig"; sourceTree = "<group>"; };
 		37942D6E74C88723CC5E5442 /* libPods-daysleft WatchKit Extension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-daysleft WatchKit Extension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		39638B2E57648DB9142D4833 /* Pods-daysleft.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-daysleft.debug.xcconfig"; path = "Pods/Target Support Files/Pods-daysleft/Pods-daysleft.debug.xcconfig"; sourceTree = "<group>"; };
+		520F20BE2336200400B1F73F /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		523443691BBAFCCF00E95BA4 /* daysleftwatchlibrary-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "daysleftwatchlibrary-Info.plist"; path = "daysleft/daysleftwatchlibrary-Info.plist"; sourceTree = SOURCE_ROOT; };
 		5234436B1BBB00B800E95BA4 /* daysleft WatchKit App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "daysleft WatchKit App.entitlements"; sourceTree = "<group>"; };
 		5234436C1BBB181C00E95BA4 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
@@ -421,6 +423,7 @@
 				5295EDFF1A94B398007EF7E7 /* TodayViewController.swift */,
 				5295EE011A94B398007EF7E7 /* MainInterface.storyboard */,
 				5295EDFD1A94B398007EF7E7 /* Supporting Files */,
+				520F20BE2336200400B1F73F /* Media.xcassets */,
 			);
 			path = dayslefttoday;
 			sourceTree = "<group>";
@@ -956,6 +959,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5295EE0B1A94B4C7007EF7E7 /* DefaultPreferences.plist in Resources */,
+				520F20BF2336200400B1F73F /* Media.xcassets in Resources */,
 				5295EE021A94B398007EF7E7 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
