@@ -11,7 +11,6 @@ import SafariServices
 import daysleftlibrary
 import GoogleMobileAds
 import Firebase
-import Font_Awesome_Swift
 import Intents
 import IntentsUI
 
@@ -35,8 +34,8 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
     @IBOutlet weak var privacyCell: UITableViewCell!
     
     var dateFormatter: DateFormatter = DateFormatter()
-    let startDatePicker : UIDatePicker = UIDatePicker();
-    let endDatePicker : UIDatePicker = UIDatePicker();
+    let startDatePicker: UIDatePicker = UIDatePicker()
+    let endDatePicker: UIDatePicker = UIDatePicker()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,19 +51,19 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
         
         self.textStart.text = String(format: "%@", self.dateFormatter.string(from: model.start))
         self.textEnd.text = String(format: "%@", self.dateFormatter.string(from: model.end))
-        self.labelDaysLength.text = model.DaysLeftDescription(model.start)
+        self.labelDaysLength.text = model.daysLeftDescription(model.start)
         
         // Setup the date pickers as editors for text fields
         self.startDatePicker.date = model.start
         self.startDatePicker.maximumDate = model.end
-        self.startDatePicker.datePickerMode = UIDatePickerMode.date
-        self.startDatePicker.addTarget(self, action: #selector(SettingsViewController.dateChanged(_:)), for: UIControlEvents.valueChanged)
+        self.startDatePicker.datePickerMode = UIDatePicker.Mode.date
+        self.startDatePicker.addTarget(self, action: #selector(SettingsViewController.dateChanged(_:)), for: UIControl.Event.valueChanged)
         self.textStart.inputView = self.startDatePicker
         
         self.endDatePicker.date = model.end
         self.endDatePicker.minimumDate = model.start
-        self.endDatePicker.datePickerMode = UIDatePickerMode.date
-        self.endDatePicker.addTarget(self, action: #selector(SettingsViewController.dateChanged(_:)), for: UIControlEvents.valueChanged)
+        self.endDatePicker.datePickerMode = UIDatePicker.Mode.date
+        self.endDatePicker.addTarget(self, action: #selector(SettingsViewController.dateChanged(_:)), for: UIControl.Event.valueChanged)
         self.textEnd.inputView = self.endDatePicker
 
         // Set up the delegate of text field for handling return below
@@ -82,7 +81,13 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
         
         // Setup Add to Siri button
         if #available(iOS 12.0, *) {
-            let button = INUIAddVoiceShortcutButton(style: .whiteOutline)
+            var buttonStyle: INUIAddVoiceShortcutButtonStyle = .whiteOutline
+            
+            if #available(iOS 13.0, *) {
+                buttonStyle = .automaticOutline
+            }
+            
+            let button = INUIAddVoiceShortcutButton(style: buttonStyle)
             button.translatesAutoresizingMaskIntoConstraints = false
             
             self.addToSiriCell.addSubview(button)
@@ -129,22 +134,25 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
         }
         
         // Set the about cell logos
-        let logoDimension = 48
-        
-        let appMadeColor = UIColor(red: 44.0/255.0, green: 94.0/255.0, blue: 22.0/255.0, alpha: 1.0)
-        self.appMadeCell.imageView?.image = UIImage(icon: FAType.FANewspaperO, size: CGSize(width: logoDimension, height: logoDimension), textColor: appMadeColor, backgroundColor: UIColor.clear)
-        
-        let gitHubColor = UIColor.black
-        self.gitHubCell.imageView?.image = UIImage(icon: FAType.FAGithub, size: CGSize(width: logoDimension, height: logoDimension), textColor: gitHubColor, backgroundColor: UIColor.clear)
-
-        let braveLocationRedColor = UIColor(red: 170.0/255.0, green: 60.0/255.0, blue: 79.0/255.0, alpha: 1.0)
-        self.moreAppsCell.imageView?.image = UIImage(icon: FAType.FAMapMarker, size: CGSize(width: logoDimension, height: logoDimension), textColor: braveLocationRedColor, backgroundColor: UIColor.clear)
-        
-        let privacyColor = UIColor(red: 44.0/255.0, green: 94.0/255.0, blue: 22.0/255.0, alpha: 1.0)
-        self.privacyCell.imageView?.image = UIImage(icon: FAType.FAUserSecret, size: CGSize(width: logoDimension, height: logoDimension), textColor: privacyColor, backgroundColor: UIColor.clear)
-
+        self.setCellImage(imageName: "Privacy", systemName: "lock.fill", color: UIColor(named: "SettingsIconTint"), cell: self.privacyCell)
+        self.setCellImage(imageName: "ReadHow", systemName: "doc.richtext", color: UIColor(named: "SettingsIconTint"), cell: self.appMadeCell)
+        self.setCellImage(imageName: "GitHubLogo", systemName: "chevron.left.slash.chevron.right", color: UIColor(named: "SettingsIconTint"), cell: self.gitHubCell)
+        self.setCellImage(imageName: "BraveLocation", systemName: "app.badge", color: UIColor(named: "SettingsIconTint"), cell: self.moreAppsCell)
     }
-
+    
+    private func setCellImage(imageName: String, systemName: String?, color: UIColor?, cell: UITableViewCell) {
+        var assetImage = UIImage(named: imageName)
+        if #available(iOS 13.0, *), let name = systemName {
+            assetImage = UIImage(systemName: name)
+        }
+        
+        if let image = assetImage, let imageView = cell.imageView {
+            let tintableImage = image.withRenderingMode(.alwaysTemplate)
+            imageView.image = tintableImage
+            imageView.tintColor = color
+        }
+    }
+    
     @IBAction func textTitleChanged(_ sender: AnyObject) {
         self.validateAndSaveModel()
     }
@@ -166,17 +174,6 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
         appDelegate.registerForNotifications()
     }
     
-    @IBAction func buttonStartTodayTouchUp(_ sender: AnyObject) {
-        let model = self.modelData()
-
-        model.weekdaysOnly = false
-        self.switchWeekdaysOnly.isOn = false
-        
-        self.startDatePicker.date = Date()
-        self.endDatePicker.date = (Calendar.current as NSCalendar).date(byAdding: NSCalendar.Unit.day, value: 29, to: Date(), options: [])!
-        self.validateAndSaveModel()
-    }
-    
     // Hides the keyboard if touch anywhere outside text box
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
@@ -187,18 +184,15 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
         self.view.endEditing(true)
         
         if (indexPath.section == 4) {
-            var url: URL? = nil;
+            var url: URL? = nil
             
             if (indexPath.row == 0) {
                 url = URL(string: "https://bravelocation.com/privacy/daysleft")!
-            }
-            else if (indexPath.row == 1) {
+            } else if (indexPath.row == 1) {
                 url = URL(string: "https://bravelocation.com/countthedaysleft")!
-            }
-            else if (indexPath.row == 2) {
+            } else if (indexPath.row == 2) {
                 url = URL(string: "http://github.com/bravelocation/daysleft")!
-            }
-            else if (indexPath.row == 3) {
+            } else if (indexPath.row == 3) {
                 url = URL(string: "https://bravelocation.com/apps")!
             }
             
@@ -216,10 +210,8 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
         }
     }
     
-    override func tableView( _ tableView : UITableView,  titleForHeaderInSection section: Int)->String
-    {
-        switch(section)
-        {
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String {
+        switch(section) {
         case 0:
             return "What are you counting down to?"
         case 1:
@@ -243,8 +235,8 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
     
     // Hides the keyboard if return is pressed
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.view.endEditing(true);
-        return false;
+        self.view.endEditing(true)
+        return false
     }
     
     func validateAndSaveModel() {
@@ -259,7 +251,7 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
         // Update the text fields
         self.textStart.text = String(format: "%@", self.dateFormatter.string(from: model.start))
         self.textEnd.text = String(format: "%@", self.dateFormatter.string(from: model.end))
-        self.labelDaysLength.text = model.DaysLeftDescription(model.start)
+        self.labelDaysLength.text = model.daysLeftDescription(model.start)
         
         // Update the date restrictions too
         self.startDatePicker.maximumDate = model.end
@@ -284,11 +276,9 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
     }
     
     // MARK: - SFSafariViewControllerDelegate methods
-    func safariViewControllerDidFinish(_ controller: SFSafariViewController)
-    {
+    func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
         controller.dismiss(animated: true, completion: nil)
     }
-    
     
     // MARK: - Siri handling
     @objc
@@ -305,16 +295,16 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
             }
         } else {
             // Show an alert
-            let alert = UIAlertController(title:"Not Supported", message:"Add to Siri is only supported on iOS 12 and above", preferredStyle:.alert)
+            let alert = UIAlertController(title: "Not Supported", message: "Add to Siri is only supported on iOS 12 and above", preferredStyle: .alert)
             
-            let defaultAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil)
+            let defaultAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
             alert.addAction(defaultAction)
             
             self.present(alert, animated: true, completion: nil)
         }
     }
     
-    // MARK:- INUIAddVoiceShortcutViewControllerDelegate
+    // MARK: - INUIAddVoiceShortcutViewControllerDelegate
     @available(iOS 12.0, *)
     func addVoiceShortcutViewController(_ controller: INUIAddVoiceShortcutViewController, didFinishWith voiceShortcut: INVoiceShortcut?, error: Error?) {
         print("Added shortcut")
@@ -327,4 +317,3 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
         controller.dismiss(animated: true, completion: nil)
     }
 }
-

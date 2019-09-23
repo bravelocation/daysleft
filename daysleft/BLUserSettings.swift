@@ -26,10 +26,10 @@ open class BLUserSettings: NSObject, WCSessionDelegate {
         
         // Setup the default preferences
         let defaultPrefsFile: URL? = Bundle.main.url(forResource: defaultPreferencesName, withExtension: "plist")
-        let defaultPrefs: NSDictionary? = NSDictionary(contentsOf:defaultPrefsFile!)
+        let defaultPrefs: NSDictionary? = NSDictionary(contentsOf: defaultPrefsFile!)
         
         self.appStandardUserDefaults = UserDefaults(suiteName: suiteName)!
-        self.appStandardUserDefaults!.register(defaults: defaultPrefs as! [String: AnyObject]);
+        self.appStandardUserDefaults!.register(defaults: defaultPrefs as! [String: AnyObject])
     }
     
     /// Destructor
@@ -41,12 +41,12 @@ open class BLUserSettings: NSObject, WCSessionDelegate {
     ///
     /// param: key The key for the setting
     /// returns: An AnyObject? value retrieved from the settings store
-    open func readObjectFromStore(_ key: String) -> Any?{
+    open func readObjectFromStore(_ key: String) -> Any? {
         // First try the local cache
         let cachedValue = self.settingsCache[key]
         
         if (cachedValue != nil) {
-            return cachedValue;
+            return cachedValue
         }
         
         // Otherwise try the user details
@@ -68,13 +68,12 @@ open class BLUserSettings: NSObject, WCSessionDelegate {
         
         // Then write to local user settings
         if let settings = self.appStandardUserDefaults {
-            settings.set(value, forKey:key)
+            settings.set(value, forKey: key)
             settings.synchronize()
         } else {
             NSLog("Couldn't get settings defaults")
         }
     }
-    
     
     open func initialiseWatchSession() {
         if (self.watchSessionInitialised) {
@@ -88,7 +87,7 @@ open class BLUserSettings: NSObject, WCSessionDelegate {
         // Set up watch setting if appropriate
         if (WCSession.isSupported()) {
             NSLog("Setting up watch session")
-            let session: WCSession = WCSession.default;
+            let session: WCSession = WCSession.default
             session.delegate = self
             session.activate()
             NSLog("Watch session activated")
@@ -98,7 +97,7 @@ open class BLUserSettings: NSObject, WCSessionDelegate {
     }
     
     /// WCSessionDelegate implementation - update local settings when transfered from phone
-    open func session(_ session: WCSession, didReceiveUserInfo userInfo: [String : Any]) {
+    open func session(_ session: WCSession, didReceiveUserInfo userInfo: [String: Any]) {
         print("New user info transfer data received on watch")
         
         for (key, value) in userInfo {
@@ -106,11 +105,11 @@ open class BLUserSettings: NSObject, WCSessionDelegate {
         }
         
         // Finally send a notification for the view controllers to refresh
-        NotificationCenter.default.post(name: Notification.Name(rawValue: BLUserSettings.UpdateSettingsNotification), object:nil, userInfo:nil)
+        NotificationCenter.default.post(name: Notification.Name(rawValue: BLUserSettings.UpdateSettingsNotification), object: nil, userInfo: nil)
         NSLog("Sent UpdateSettingsNotification")
     }
     
-    @nonobjc open func session(_ session: WCSession, didReceiveUpdate receivedApplicationContext: [String : AnyObject]) {
+    @nonobjc open func session(_ session: WCSession, didReceiveUpdate receivedApplicationContext: [String: AnyObject]) {
         NSLog("New context transfer data received on watch")
         
         for (key, value) in receivedApplicationContext {
@@ -118,7 +117,7 @@ open class BLUserSettings: NSObject, WCSessionDelegate {
         }
         
         // Finally send a notification for the view controllers to refresh
-        NotificationCenter.default.post(name: Notification.Name(rawValue: DaysLeftModel.UpdateSettingsNotification), object:nil, userInfo:nil)
+        NotificationCenter.default.post(name: Notification.Name(rawValue: DaysLeftModel.UpdateSettingsNotification), object: nil, userInfo: nil)
         NSLog("Sent UpdateSettingsNotification")
     }
     

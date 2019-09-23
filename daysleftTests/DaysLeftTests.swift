@@ -10,41 +10,31 @@ import UIKit
 import XCTest
 import daysleftlibrary
 
-class daysleftTests: XCTestCase {
-    
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
+class DaysLeftTests: XCTestCase {
     
     func testAllDaysCalculations() {
         // It's 5 days from the 1st to the 5th, and if we are on the 4th there is 1 day left (so 4 gone)
-        self.actualTestRun(startDay:1, endDay:5, currentDay:4, weekdaysOnly:false, expectedLength:5, expectedGone:4, expectedLeft:1)
+        self.actualTestRun(startDay: 1, endDay: 5, currentDay: 4, weekdaysOnly: false, expectedLength: 5, expectedGone: 4, expectedLeft: 1)
     }
     
     func testAllDaysOnLastDay() {
         // On the last day, all the days have gone
-        self.actualTestRun(startDay:1, endDay:15, currentDay:15, weekdaysOnly:false, expectedLength:15, expectedGone:15, expectedLeft:0)
+        self.actualTestRun(startDay: 1, endDay: 15, currentDay: 15, weekdaysOnly: false, expectedLength: 15, expectedGone: 15, expectedLeft: 0)
     }
     
     func testAllDaysAfterLastDay() {
         // After the last day, so all the days have gone
-        self.actualTestRun(startDay:1, endDay:15, currentDay:16, weekdaysOnly:false, expectedLength:15, expectedGone:15, expectedLeft:0)
+        self.actualTestRun(startDay: 1, endDay: 15, currentDay: 16, weekdaysOnly: false, expectedLength: 15, expectedGone: 15, expectedLeft: 0)
     }
 
     func testAllDaysOnFirstDay() {
         // On the first day, so one day has gone
-        self.actualTestRun(startDay:10, endDay:15, currentDay:10, weekdaysOnly:false, expectedLength:6, expectedGone:1, expectedLeft:5)
+        self.actualTestRun(startDay: 10, endDay: 15, currentDay: 10, weekdaysOnly: false, expectedLength: 6, expectedGone: 1, expectedLeft: 5)
     }
 
     func testAllDaysBeforeFirstDay() {
         // Before the start, so all the days are left
-        self.actualTestRun(startDay:10, endDay:15, currentDay:8, weekdaysOnly:false, expectedLength:6, expectedGone:0, expectedLeft:6)
+        self.actualTestRun(startDay: 10, endDay: 15, currentDay: 8, weekdaysOnly: false, expectedLength: 6, expectedGone: 0, expectedLeft: 6)
     }
     
     func testWeekdaysCalculations() {
@@ -52,7 +42,7 @@ class daysleftTests: XCTestCase {
         // 12th of Jan is a Monday
         // So that's 8 weekdays in length (T,F,M,T,W,T,F,M)
         // If today is Wednesday 7th, that's 5 days gone (T,F,M,T,W), 3 days to go (T,F,M)
-        self.actualTestRun(startDay:1, endDay:12, currentDay:7, weekdaysOnly:true, expectedLength:8, expectedGone:5, expectedLeft:3)
+        self.actualTestRun(startDay: 1, endDay: 12, currentDay: 7, weekdaysOnly: true, expectedLength: 8, expectedGone: 5, expectedLeft: 3)
     }
 
     func testWeekdaysOnMiddleWeekendCalculations() {
@@ -60,7 +50,7 @@ class daysleftTests: XCTestCase {
         // 16th of Jan is a Friday
         // So that's 10 weekdays in length
         // If today is Sunday 11th, that's 5 days gone, 5 days to go
-        self.actualTestRun(startDay:5, endDay:16, currentDay:11, weekdaysOnly:true, expectedLength:10, expectedGone:5, expectedLeft:5)
+        self.actualTestRun(startDay: 5, endDay: 16, currentDay: 11, weekdaysOnly: true, expectedLength: 10, expectedGone: 5, expectedLeft: 5)
     }
     
     func testWeekdaysStartOnSaturdayEndOnMonday() {
@@ -68,7 +58,7 @@ class daysleftTests: XCTestCase {
         // 12th of Jan is a Monday
         // So that's 6 weekdays in length
         // If today is Wednesday 7th, that's 3 days gone (Mon, Tue, Wed), 3 days to go (Wed, Thu, Fri)
-        self.actualTestRun(startDay:3, endDay:12, currentDay:7, weekdaysOnly:true, expectedLength:6, expectedGone:3, expectedLeft:3)
+        self.actualTestRun(startDay: 3, endDay: 12, currentDay: 7, weekdaysOnly: true, expectedLength: 6, expectedGone: 3, expectedLeft: 3)
     }
     
     func testWeekdaysStartOnSundayEndOnMonday() {
@@ -76,7 +66,7 @@ class daysleftTests: XCTestCase {
         // 12th of Jan is a Monday
         // So that's 6 weekdays in length
         // If today is Wednesday 7th, that's 3 days gone (Mon, Tue, Wed), 3 days to go (Thu, Fri, Mon)
-        self.actualTestRun(startDay:4, endDay:12, currentDay:7, weekdaysOnly:true, expectedLength:6, expectedGone:3, expectedLeft:3)
+        self.actualTestRun(startDay: 4, endDay: 12, currentDay: 7, weekdaysOnly: true, expectedLength: 6, expectedGone: 3, expectedLeft: 3)
     }
     
     func testWeekdaysStartOnTuesdayEndOnSunday() {
@@ -84,7 +74,7 @@ class daysleftTests: XCTestCase {
         // 11th of Jan is a Sunday
         // So that's 4 weekdays in length
         // If today is Wednesday 7th, that's 2 days gone (Tue, Wed), 2 days to go (Wed, Thu)
-        self.actualTestRun(startDay:6, endDay:11, currentDay:7, weekdaysOnly:true, expectedLength:4, expectedGone:2, expectedLeft:2)
+        self.actualTestRun(startDay: 6, endDay: 11, currentDay: 7, weekdaysOnly: true, expectedLength: 4, expectedGone: 2, expectedLeft: 2)
     }
     
     func testWeekdaysStartOnSaturdayEndOnSunday() {
@@ -92,7 +82,7 @@ class daysleftTests: XCTestCase {
         // 11th of Jan is a Sunday
         // So that's 5 weekdays in length
         // If today is Wednesday 7th, that's 3 days gone (Mon, Tue, Wed), 2 days to go (Thur, Thu)
-        self.actualTestRun(startDay:3, endDay:11, currentDay:7, weekdaysOnly:true, expectedLength:5, expectedGone:3, expectedLeft:2)
+        self.actualTestRun(startDay: 3, endDay: 11, currentDay: 7, weekdaysOnly: true, expectedLength: 5, expectedGone: 3, expectedLeft: 2)
     }
     
     func testWeekdaysStartOnCurrentWeekendDayEndOnMonday() {
@@ -100,7 +90,7 @@ class daysleftTests: XCTestCase {
         // 12th of Jan is a Monday
         // So that's 6 weekdays in length
         // If today is Sunday 4th, that's 0 days gone, 6 days to go
-        self.actualTestRun(startDay:4, endDay:12, currentDay:4, weekdaysOnly:true, expectedLength:6, expectedGone:0, expectedLeft:6)
+        self.actualTestRun(startDay: 4, endDay: 12, currentDay: 4, weekdaysOnly: true, expectedLength: 6, expectedGone: 0, expectedLeft: 6)
     }
     
     // Helper method for running tests
@@ -108,28 +98,28 @@ class daysleftTests: XCTestCase {
         let model: DaysLeftModel = DaysLeftModel()
         model.weekdaysOnly = weekdaysOnly
         
-        var startComponents: DateComponents = DateComponents();
-        startComponents.year = 2015;
-        startComponents.month = 1;
-        startComponents.day = startDay;
+        var startComponents: DateComponents = DateComponents()
+        startComponents.year = 2015
+        startComponents.month = 1
+        startComponents.day = startDay
         
-        var endComponents: DateComponents = DateComponents();
-        endComponents.year = 2015;
-        endComponents.month = 1;
-        endComponents.day = endDay;
+        var endComponents: DateComponents = DateComponents()
+        endComponents.year = 2015
+        endComponents.month = 1
+        endComponents.day = endDay
         
-        var currentComponents: DateComponents = DateComponents();
-        currentComponents.year = 2015;
-        currentComponents.month = 1;
-        currentComponents.day = currentDay;
+        var currentComponents: DateComponents = DateComponents()
+        currentComponents.year = 2015
+        currentComponents.month = 1
+        currentComponents.day = currentDay
         
         model.start = Calendar.autoupdatingCurrent.date(from: startComponents)!
         model.end = Calendar.autoupdatingCurrent.date(from: endComponents)!
         let currentDate: Date = Calendar.autoupdatingCurrent.date(from: currentComponents)!
         
-        XCTAssertEqual(expectedLength, model.DaysLength, "DaysLength is incorrect")
-        XCTAssertEqual(expectedGone, model.DaysGone(currentDate), "DaysGone is incorrect")
-        XCTAssertEqual(expectedLeft, model.DaysLeft(currentDate), "DaysLeft is incorrect")
+        XCTAssertEqual(expectedLength, model.daysLength, "DaysLength is incorrect")
+        XCTAssertEqual(expectedGone, model.daysGone(currentDate), "DaysGone is incorrect")
+        XCTAssertEqual(expectedLeft, model.daysLeft(currentDate), "DaysLeft is incorrect")
         
     }
 }

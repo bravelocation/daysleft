@@ -36,19 +36,13 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         self.counterView.addGestureRecognizer(tapGesture)
         self.view.addGestureRecognizer(tapGesture)
         
-        if #available(iOSApplicationExtension 10.0, *) {
-            self.extensionContext?.widgetLargestAvailableDisplayMode = NCWidgetDisplayMode.expanded
-        } else {
-            // Fallback on earlier versions
-        }
+        self.extensionContext?.widgetLargestAvailableDisplayMode = NCWidgetDisplayMode.expanded
     }
     
-    @available(iOSApplicationExtension 10.0, *)
     func widgetActiveDisplayModeDidChange(_ activeDisplayMode: NCWidgetDisplayMode, withMaximumSize maxSize: CGSize) {
         if (activeDisplayMode == NCWidgetDisplayMode.compact) {
             self.preferredContentSize = maxSize
-        }
-        else {
+        } else {
             self.preferredContentSize = CGSize(width: maxSize.width, height: 140)
         }
         
@@ -61,7 +55,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     }
     
     func widgetMarginInsets(forProposedMarginInsets defaultMarginInsets: UIEdgeInsets) -> UIEdgeInsets {
-        return UIEdgeInsetsMake(0, 0, 0, 0)
+        return UIEdgeInsets.init(top: 0, left: 0, bottom: 0, right: 0)
     }
     
     @objc
@@ -74,18 +68,18 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         let now: Date = Date()
         let model: DaysLeftModel = DaysLeftModel()
         
-        self.labelNumberTitle.text = model.FullDescription(now)
+        self.labelNumberTitle.text = model.fullDescription(now)
  
-        let percentageDone: Float = (Float(model.DaysGone(now)) * 100.0) / Float(model.DaysLength)
-        self.labelPercentDone.text = String(format:"%3.0f%% done", percentageDone)
+        let percentageDone: Float = (Float(model.daysGone(now)) * 100.0) / Float(model.daysLength)
+        self.labelPercentDone.text = String(format: "%3.0f%% done", percentageDone)
 
-        self.counterView.counter = model.DaysGone(now)
-        self.counterView.maximumValue = model.DaysLength
+        self.counterView.counter = model.daysGone(now)
+        self.counterView.maximumValue = model.daysLength
         self.counterView.updateControl()
         
         // Set widget colors
         self.view.backgroundColor = UIColor.clear
-        self.labelNumberTitle.textColor = UIColor.black
-        self.labelPercentDone.textColor = UIColor.black
+        self.labelNumberTitle.textColor = UIColor(named: "TodayTextColor")
+        self.labelPercentDone.textColor = UIColor(named: "TodayTextColor")
     }
 }

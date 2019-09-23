@@ -13,7 +13,7 @@ import Intents
 
 class ViewController: UIViewController {
 
-    // MARK:- Properties
+    // MARK: - Properties
     @IBOutlet weak var labelDaysLeft: UILabel!
     @IBOutlet weak var labelTitle: UILabel!
     @IBOutlet weak var counterView: CounterView!
@@ -25,8 +25,8 @@ class ViewController: UIViewController {
     var dayChangeTimer: Timer!
     var shareButton: UIBarButtonItem!
 
-    // MARK:- Initialisation
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)   {
+    // MARK: - Initialisation
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         self.setupNotificationHandlers()
     }
@@ -42,10 +42,10 @@ class ViewController: UIViewController {
     
     func setupNotificationHandlers() {
         NotificationCenter.default.addObserver(self, selector: #selector(ViewController.iCloudSettingsUpdated(_:)), name: NSNotification.Name(rawValue: AppDaysLeftModel.iCloudSettingsNotification), object: nil)
-        NotificationCenter.default.addObserver(self, selector:#selector(ViewController.appEntersForeground), name: NSNotification.Name.UIApplicationWillEnterForeground, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.appEntersForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
     }
     
-    // MARK:- View event handlers
+    // MARK: - View event handlers
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -53,7 +53,7 @@ class ViewController: UIViewController {
                 
         // Customise the nav bar
         let navBar = self.navigationController?.navigationBar
-        navBar!.barTintColor = UIColor(red: 53/255, green: 79/255, blue: 0/255, alpha: 1.0)
+        navBar!.barTintColor = UIColor(named: "MainAppColor")
         navBar!.tintColor = UIColor.white
         navBar!.isTranslucent = false
         navBar!.titleTextAttributes = [.foregroundColor: UIColor.white]
@@ -64,14 +64,14 @@ class ViewController: UIViewController {
         self.navigationItem.leftBarButtonItem = shareButton
         
         // Add a swipe recogniser
-        let swipeLeft : UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(ViewController.swipeLeft(_:)))
-        swipeLeft.direction = UISwipeGestureRecognizerDirection.left
+        let swipeLeft: UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(ViewController.swipeLeft(_:)))
+        swipeLeft.direction = UISwipeGestureRecognizer.Direction.left
         self.view.addGestureRecognizer(swipeLeft)
         
         // Add timer in case runs over a day change
         let now = Date()
         let secondsInADay: Double = 60 * 60 * 24
-        let startOfTomorrow = model.AddDays(model.StartOfDay(now), daysToAdd: 1)
+        let startOfTomorrow = model.addDays(model.startOfDay(now), daysToAdd: 1)
         self.dayChangeTimer = Timer(fireAt: startOfTomorrow, interval: secondsInADay, target: self, selector: #selector(ViewController.dayChangedTimerFired), userInfo: nil, repeats: false)
         
         // Setup user intents
@@ -85,23 +85,21 @@ class ViewController: UIViewController {
         self.updateViewFromModel()
         
         // Show request review every 10 times the user opend the app
-        if #available(iOS 10.3, *) {
-            let reviewPromptFrequency = 10;
-            
-            let appOpened = self.modelData().appOpenCount;
-            print("App opened \(appOpened) times")
+        let reviewPromptFrequency = 10
+        
+        let appOpened = self.modelData().appOpenCount
+        print("App opened \(appOpened) times")
 
-            if (appOpened >= reviewPromptFrequency && (appOpened % reviewPromptFrequency) == 0) {
-                SKStoreReviewController.requestReview()
-            }
+        if (appOpened >= reviewPromptFrequency && (appOpened % reviewPromptFrequency) == 0) {
+            SKStoreReviewController.requestReview()
         }
     }
     
-    // MARK:- Handle rotations
+    // MARK: - Handle rotations
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
 
-        coordinator.animate(alongsideTransition: nil, completion:{ context in self.counterView.updateControl() })
+        coordinator.animate(alongsideTransition: nil, completion: { _ in self.counterView.updateControl() })
     }
 
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
@@ -117,7 +115,7 @@ class ViewController: UIViewController {
         }
     }
     
-    // MARK:- Event handlers
+    // MARK: - Event handlers
     @objc
     func dayChangedTimerFired(_ timer: Timer) {
         self.updateViewFromModel()
@@ -130,13 +128,13 @@ class ViewController: UIViewController {
     
     @objc
     func shareButtonTouchUp() {
-        let modelText = self.modelData().FullDescription(Date())
+        let modelText = self.modelData().fullDescription(Date())
         let objectsToShare = [modelText]
         
         let activityViewController = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
         
         if (activityViewController.popoverPresentationController != nil) {
-            activityViewController.popoverPresentationController!.barButtonItem = self.shareButton;
+            activityViewController.popoverPresentationController!.barButtonItem = self.shareButton
         }
         
         self.present(activityViewController, animated: true, completion: nil)
@@ -163,15 +161,15 @@ class ViewController: UIViewController {
         }
     }
     
-    // MARK:- Helper functions
+    // MARK: - Helper functions
     func updateViewFromModel() {
         NSLog("updateViewFromModel started")
         let model = self.modelData()
         
         let now: Date = Date()
 
-        self.labelDaysLeft.text = String(format: "%d", model.DaysLeft(now))
-        self.labelTitle.text = model.Description(now)
+        self.labelDaysLeft.text = String(format: "%d", model.daysLeft(now))
+        self.labelTitle.text = model.description(now)
 
         let shortDateFormatter = DateFormatter()
         shortDateFormatter.dateFormat = "EEE d MMM"
@@ -179,16 +177,15 @@ class ViewController: UIViewController {
         self.labelStartDate.text = String(format: "%@", shortDateFormatter.string(from: model.start))
         self.labelEndDate.text = String(format: "%@", shortDateFormatter.string(from: model.end))
         
-        if (model.DaysLength == 0) {
+        if (model.daysLength == 0) {
             self.labelPercentageDone.text = ""
-        }
-        else {
-            let percentageDone: Float = (Float(model.DaysGone(now)) * 100.0) / Float(model.DaysLength)
-            self.labelPercentageDone.text = String(format:"%3.0f%% done", percentageDone)
+        } else {
+            let percentageDone: Float = (Float(model.daysGone(now)) * 100.0) / Float(model.daysLength)
+            self.labelPercentageDone.text = String(format: "%3.0f%% done", percentageDone)
         }
         
-        self.counterView.counter = model.DaysGone(now)
-        self.counterView.maximumValue = model.DaysLength
+        self.counterView.counter = model.daysGone(now)
+        self.counterView.maximumValue = model.daysLength
         self.counterView.updateControl()
         
         // Update the badge too
@@ -198,13 +195,12 @@ class ViewController: UIViewController {
         NSLog("updateViewFromModel completed")
     }
 
-    
     func modelData() -> AppDaysLeftModel {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         return appDelegate.model
     }
     
-    // MARK:- User Activity functions
+    // MARK: - User Activity functions
     private func donateInteraction() {
         if #available(iOS 12.0, *) {
             let intent = DaysLeftIntent()
@@ -226,7 +222,7 @@ class ViewController: UIViewController {
             }
             
             // Donate relevant daily shortcut
-            var relevantShortcuts:[INRelevantShortcut] = []
+            var relevantShortcuts: [INRelevantShortcut] = []
             
             if let shortcut = INShortcut(intent: intent) {
                 
@@ -273,3 +269,26 @@ class ViewController: UIViewController {
     }
 }
 
+// MARK: - Keyboard options
+
+extension ViewController {
+    override var keyCommands: [UIKeyCommand]? {
+        return [
+            UIKeyCommand(input: "E", modifierFlags: .command, action: #selector(ViewController.keyboardSelectTab), discoverabilityTitle: "Edit"),
+            UIKeyCommand(input: "S", modifierFlags: [.command, .shift], action: #selector(ViewController.keyboardSelectTab), discoverabilityTitle: "Share")
+        ]
+    }
+    
+    @objc func keyboardSelectTab(sender: UIKeyCommand) {
+        if let input = sender.input {
+            switch input {
+            case "E":
+                self.performSegue(withIdentifier: "segueShowSettings", sender: self)
+            case "S":
+                self.shareButtonTouchUp()
+            default:
+                break
+            }
+        }
+    }
+}

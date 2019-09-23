@@ -5,24 +5,40 @@
 	<key>INEnums</key>
 	<array/>
 	<key>INIntentDefinitionModelVersion</key>
-	<string>1.0</string>
+	<string>1.1</string>
+	<key>INIntentDefinitionNamespace</key>
+	<string>kybKCT</string>
 	<key>INIntentDefinitionSystemVersion</key>
-	<string>17G65</string>
+	<string>18F132</string>
 	<key>INIntentDefinitionToolsBuildVersion</key>
-	<string>10A255</string>
+	<string>11M362v</string>
 	<key>INIntentDefinitionToolsVersion</key>
-	<string>10.0</string>
+	<string>11.0</string>
 	<key>INIntents</key>
 	<array>
 		<dict>
 			<key>INIntentCategory</key>
 			<string>information</string>
+			<key>INIntentConfigurable</key>
+			<true/>
 			<key>INIntentDescription</key>
 			<string>How many days left?</string>
 			<key>INIntentDescriptionID</key>
 			<string>I6TLKl</string>
-			<key>INIntentLastParameterTag</key>
-			<integer>0</integer>
+			<key>INIntentManagedParameterCombinations</key>
+			<dict>
+				<key></key>
+				<dict>
+					<key>INIntentParameterCombinationSupportsBackgroundExecution</key>
+					<true/>
+					<key>INIntentParameterCombinationTitle</key>
+					<string>Days Left</string>
+					<key>INIntentParameterCombinationTitleID</key>
+					<string>84pKuM</string>
+					<key>INIntentParameterCombinationUpdatesLinked</key>
+					<true/>
+				</dict>
+			</dict>
 			<key>INIntentName</key>
 			<string>DaysLeft</string>
 			<key>INIntentParameterCombinations</key>
@@ -43,22 +59,10 @@
 					<string>zgsobd</string>
 				</dict>
 			</dict>
-			<key>INIntentParameters</key>
-			<array/>
 			<key>INIntentResponse</key>
 			<dict>
 				<key>INIntentResponseCodes</key>
 				<array>
-					<dict>
-						<key>INIntentResponseCodeFormatString</key>
-						<string>Something went wrong</string>
-						<key>INIntentResponseCodeFormatStringID</key>
-						<string>KEj4hC</string>
-						<key>INIntentResponseCodeName</key>
-						<string>failure</string>
-						<key>INIntentResponseCodeSuccess</key>
-						<false/>
-					</dict>
 					<dict>
 						<key>INIntentResponseCodeFormatString</key>
 						<string>There are ${daysLeft} ${daysType} until ${title}</string>
@@ -69,98 +73,76 @@
 						<key>INIntentResponseCodeSuccess</key>
 						<true/>
 					</dict>
+					<dict>
+						<key>INIntentResponseCodeFormatString</key>
+						<string>Something went wrong</string>
+						<key>INIntentResponseCodeFormatStringID</key>
+						<string>KEj4hC</string>
+						<key>INIntentResponseCodeName</key>
+						<string>failure</string>
+					</dict>
 				</array>
 				<key>INIntentResponseLastParameterTag</key>
 				<integer>8</integer>
+				<key>INIntentResponseOutput</key>
+				<string>daysLeft</string>
 				<key>INIntentResponseParameters</key>
 				<array>
 					<dict>
+						<key>INIntentResponseParameterDisplayName</key>
+						<string>Title</string>
+						<key>INIntentResponseParameterDisplayNameID</key>
+						<string>fjDUOh</string>
 						<key>INIntentResponseParameterDisplayPriority</key>
 						<integer>1</integer>
 						<key>INIntentResponseParameterName</key>
 						<string>title</string>
-						<key>INIntentResponseParameterSupportsMultipleValues</key>
-						<false/>
 						<key>INIntentResponseParameterTag</key>
 						<integer>1</integer>
 						<key>INIntentResponseParameterType</key>
 						<string>String</string>
 					</dict>
 					<dict>
+						<key>INIntentResponseParameterDisplayName</key>
+						<string>Days Left</string>
+						<key>INIntentResponseParameterDisplayNameID</key>
+						<string>6KqMzk</string>
 						<key>INIntentResponseParameterDisplayPriority</key>
 						<integer>2</integer>
 						<key>INIntentResponseParameterName</key>
 						<string>daysLeft</string>
-						<key>INIntentResponseParameterSupportsMultipleValues</key>
-						<false/>
 						<key>INIntentResponseParameterTag</key>
 						<integer>3</integer>
 						<key>INIntentResponseParameterType</key>
 						<string>Integer</string>
 					</dict>
 					<dict>
+						<key>INIntentResponseParameterDisplayName</key>
+						<string>Count Type</string>
+						<key>INIntentResponseParameterDisplayNameID</key>
+						<string>dXoRNU</string>
 						<key>INIntentResponseParameterDisplayPriority</key>
 						<integer>3</integer>
 						<key>INIntentResponseParameterName</key>
 						<string>daysType</string>
-						<key>INIntentResponseParameterSupportsMultipleValues</key>
-						<false/>
 						<key>INIntentResponseParameterTag</key>
 						<integer>4</integer>
-						<key>INIntentResponseParameterType</key>
-						<string>String</string>
-					</dict>
-					<dict>
-						<key>INIntentResponseParameterDisplayPriority</key>
-						<integer>4</integer>
-						<key>INIntentResponseParameterName</key>
-						<string>percentageDone</string>
-						<key>INIntentResponseParameterSupportsMultipleValues</key>
-						<false/>
-						<key>INIntentResponseParameterTag</key>
-						<integer>6</integer>
-						<key>INIntentResponseParameterType</key>
-						<string>Decimal</string>
-					</dict>
-					<dict>
-						<key>INIntentResponseParameterDisplayPriority</key>
-						<integer>5</integer>
-						<key>INIntentResponseParameterName</key>
-						<string>start</string>
-						<key>INIntentResponseParameterSupportsMultipleValues</key>
-						<false/>
-						<key>INIntentResponseParameterTag</key>
-						<integer>7</integer>
-						<key>INIntentResponseParameterType</key>
-						<string>String</string>
-					</dict>
-					<dict>
-						<key>INIntentResponseParameterDisplayPriority</key>
-						<integer>6</integer>
-						<key>INIntentResponseParameterName</key>
-						<string>end</string>
-						<key>INIntentResponseParameterSupportsMultipleValues</key>
-						<false/>
-						<key>INIntentResponseParameterTag</key>
-						<integer>8</integer>
 						<key>INIntentResponseParameterType</key>
 						<string>String</string>
 					</dict>
 				</array>
 			</dict>
-			<key>INIntentRestrictions</key>
-			<integer>0</integer>
 			<key>INIntentTitle</key>
 			<string>Days Left</string>
 			<key>INIntentTitleID</key>
 			<string>sS62qt</string>
 			<key>INIntentType</key>
 			<string>Custom</string>
-			<key>INIntentUserConfirmationRequired</key>
-			<false/>
 			<key>INIntentVerb</key>
 			<string>View</string>
 		</dict>
 	</array>
+	<key>INTypes</key>
+	<array/>
 </dict>
 </plist>

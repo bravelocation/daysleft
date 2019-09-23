@@ -14,10 +14,12 @@ import Firebase
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    // MARK: Class properties
     var window: UIWindow?
     lazy var model = AppDaysLeftModel()
-    let firebaseNotifications = FirebaseNotifications()
+    var firebaseNotifications: FirebaseNotifications?
 
+    // MARK: Initialisation
     override init() {
         super.init()
         
@@ -29,26 +31,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         NotificationCenter.default.removeObserver(self)
     }
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        
+    // MARK: UIApplicationDelegate functions
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+ 
+        GADMobileAds.sharedInstance().start(completionHandler: nil)
+        print("Configured Google Ads")
+
         // Use Firebase library to configure APIs
         FirebaseApp.configure()
         
-        GADMobileAds.sharedInstance().start(completionHandler: nil)
-        print("Configured Google Ads")
-        
+        // Must be done after FirebaseApp.configure() according to https://github.com/firebase/firebase-ios-sdk/issues/2240
+        self.firebaseNotifications = FirebaseNotifications()
+
         // Setup push notifications (if required) to ensure the badge gets updated
-        self.firebaseNotifications.setupNotifications(false)
+        UNUserNotificationCenter.current().delegate = self
+        self.firebaseNotifications?.setupNotifications(false)
 
         // Increment the number of times app opened
-        self.model.appOpenCount = self.model.appOpenCount + 1;
+        self.model.appOpenCount += 1
 
         return true
     }
     
     func application(_ application: UIApplication,
                      didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        self.firebaseNotifications.register(deviceToken)
+        self.firebaseNotifications?.register(deviceToken)
     }
     
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
@@ -56,18 +63,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print(error.localizedDescription)
     }
     
-    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any]) {
-        self.messageReceived(application, userInfo: userInfo)
-    }
-    
-    func application(_ application: UIApplication,
-                     didReceiveRemoteNotification userInfo: [AnyHashable: Any],
-                                                  fetchCompletionHandler handler: @escaping (UIBackgroundFetchResult) -> Void) {
-        self.messageReceived(application, userInfo: userInfo)
-        handler(UIBackgroundFetchResult.newData);
-    }
-    
-    func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([Any]?) -> Void) -> Bool {
+    func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
         if let window = self.window {
             window.rootViewController?.restoreUserActivityState(userActivity)
         }
@@ -75,52 +71,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
-    func messageReceived(_ application: UIApplication,
-                         userInfo: [AnyHashable: Any]) {
-        // Print message
-        print("Notification received ...")
-        
-        Messaging.messaging().appDidReceiveMessage(userInfo)
-
-        // Push latest settings and update badge
-        self.model.pushAllSettingsToWatch()
-        self.updateBadge()
+    // MARK: UISceneSession Lifecycle
+    
+    @available(iOS 13.0, *)
+    func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
+        // Called when a new scene session is being created.
+        // Use this method to select a configuration to create the new scene with.
+        return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
     }
     
-    func registerForNotifications() {
-        print("Registering notification settings")
-        self.firebaseNotifications.setupNotifications(true)
-        self.updateBadge()
+    @available(iOS 13.0, *)
+    func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
+        // Called when the user discards a scene session.
+        // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
+        // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
     
-    func updateBadge() {
-        if (self.model.showBadge == false) {
-            clearBadge()
-            return
-        }
-        
-        let application: UIApplication = UIApplication.shared
-        
-        let badgePermission: Bool = (application.currentUserNotificationSettings?.types.contains(UIUserNotificationType.badge))!
-        if (badgePermission)
-        {
-            let now: Date = Date()
-            application.applicationIconBadgeNumber = self.model.DaysLeft(now)
-            print("Updated app badge")
-        }
-    }
-    
-    func clearBadge() {
-        let application: UIApplication = UIApplication.shared
-        
-        let badgePermission: Bool = (application.currentUserNotificationSettings?.types.contains(UIUserNotificationType.badge))!
-        if (badgePermission)
-        {
-            application.applicationIconBadgeNumber = 0
-            print("Cleared app badge")
-        }
-    }
-    
+    // MARK: Event handlers
     @objc
     fileprivate func iCloudSettingsUpdated(_ notification: Notification) {
         print("Received iCloudSettingsUpdated notification")
@@ -128,5 +95,56 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Push latest settings and update badge
         self.model.pushAllSettingsToWatch()
         self.updateBadge()
+    }
+}
+
+// MARK: - User notifications
+extension AppDelegate: UNUserNotificationCenterDelegate {
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        // Print message
+        print("Notification received ...")
+        
+        Messaging.messaging().appDidReceiveMessage(response.notification.request.content.userInfo)
+        
+        // Push latest settings and update badge
+        self.model.pushAllSettingsToWatch()
+        self.updateBadge()
+        
+        completionHandler()
+    }
+    
+    func registerForNotifications() {
+        print("Registering notification settings")
+        self.firebaseNotifications?.setupNotifications(true)
+        self.updateBadge()
+    }
+    
+    // MARK: Badge functions
+    func updateBadge() {
+        if (self.model.showBadge == false) {
+            clearBadge()
+            return
+        }
+        
+        UNUserNotificationCenter.current().getNotificationSettings() {settings in
+            if settings.badgeSetting == .enabled {
+                DispatchQueue.main.async {
+                    let now: Date = Date()
+                    UIApplication.shared.applicationIconBadgeNumber = self.model.daysLeft(now)
+                    print("Updated app badge")
+                }
+            }
+        }
+    }
+    
+    func clearBadge() {
+        UNUserNotificationCenter.current().getNotificationSettings() {settings in
+            if settings.badgeSetting == .enabled {
+                DispatchQueue.main.async {
+                    UIApplication.shared.applicationIconBadgeNumber = 0
+                    print("Cleared app badge")
+                }
+            }
+        }
     }
 }

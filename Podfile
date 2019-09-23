@@ -1,5 +1,5 @@
 source 'https://github.com/cocoapods/specs.git'
-platform :ios, '9.3'
+platform :ios, '11.0'
 use_frameworks!
 inhibit_all_warnings!
 
@@ -7,6 +7,7 @@ target 'daysleft' do
     pod 'Firebase/Core'
     pod 'Firebase/AdMob'
     pod 'Firebase/Messaging'
-    pod 'Font-Awesome-Swift'
+    
+    pod 'SwiftLint'
 end
 

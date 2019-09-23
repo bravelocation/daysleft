@@ -8,7 +8,7 @@
 
 import UIKit
 
-let π:CGFloat = CGFloat(Double.pi)
+let π: CGFloat = CGFloat(Double.pi)
 
 open class CounterView: UIView {
     
@@ -47,9 +47,9 @@ open class CounterView: UIView {
     
     open func updateControl() {
         self.clearControl()
-        self.arcWidth = bounds.width / 3.0;
+        self.arcWidth = bounds.width / 3.0
 
-        let center = CGPoint(x:bounds.width/2, y: bounds.height/2)
+        let center = CGPoint(x: bounds.width/2, y: bounds.height/2)
                 
         // Define the start and end angles for the arc
         let startAngle: CGFloat = 3 * π / 4
@@ -59,7 +59,6 @@ open class CounterView: UIView {
 
         if (self.circleSubView == nil) {
             self.circleSubView = CAShapeLayer(layer: self.layer)
-        
         
             // Create a path based on the center point, radius, and angles you just defined
             let path = UIBezierPath(arcCenter: center,
@@ -111,7 +110,11 @@ open class CounterView: UIView {
         animation.isRemovedOnCompletion = true
         animation.fromValue = 0
         animation.toValue = 1
-        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+        animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)
         self.progressSubView?.add(animation, forKey: "drawProgressAnimation")
+        
+        // Finally set accessibility details
+        let percentageDone = (Float(counter) * 100.0) / Float(maximumValue)
+        self.accessibilityLabel = String(format: "%3.0f%% done", percentageDone)
     }
 }

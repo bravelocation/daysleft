@@ -22,12 +22,12 @@ class PurchaseViewController: UIViewController, SKProductsRequestDelegate, SKPay
     @IBOutlet weak var buttonTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var betweenButtonConstraint: NSLayoutConstraint!
     
-    var productRequest:SKProductsRequest?
-    var product:SKProduct?
-    var transactionInProgress:Bool = false
-    var model:AppDaysLeftModel?
-    var backItem:UIBarButtonItem?
-    let appGreen = UIColor(red: 53/255, green: 79/255, blue: 0/255, alpha: 1.0)
+    var productRequest: SKProductsRequest?
+    var product: SKProduct?
+    var transactionInProgress: Bool = false
+    var model: AppDaysLeftModel?
+    var backItem: UIBarButtonItem?
+    let appGreen = UIColor(named: "MainAppColor")!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,7 +74,7 @@ class PurchaseViewController: UIViewController, SKProductsRequestDelegate, SKPay
         
         // Check if already ads free
         if (self.showAds() == false) {
-            self.statusChange(status:"You're already Ads Free - thanks!", enableActivityMonitor:false)
+            self.statusChange(status: "You're already Ads Free - thanks!", enableActivityMonitor: false)
         } else {
             // Look for product information
             self.requestProductInfo()
@@ -93,48 +93,54 @@ class PurchaseViewController: UIViewController, SKProductsRequestDelegate, SKPay
         }
     }
     
-    func statusChange(status:String, enableActivityMonitor:Bool) {
-        self.labelStatus.text = status
-        
-        if (enableActivityMonitor) {
-            self.activitySpinner.startAnimating()
-        } else {
-            self.activitySpinner.stopAnimating()
+    func statusChange(status: String, enableActivityMonitor: Bool) {
+        DispatchQueue.main.async {
+            self.labelStatus.text = status
+            
+            if (enableActivityMonitor) {
+                self.activitySpinner.startAnimating()
+            } else {
+                self.activitySpinner.stopAnimating()
+            }
+            
+            print("Status change:", status)
         }
-        
-        print("Status change:", status)
     }
     
-    func actionButtonChange(message:String, enable:Bool) {
-        if (enable == false || self.showAds() == false) {
-            self.buttonAction.setTitle("", for: UIControlState.normal)
-            self.buttonAction.layer.borderColor = UIColor.clear.cgColor
-            self.buttonAction.tintColor = UIColor.clear
-            self.buttonAction.isEnabled = false
-            
-            self.buttonRestorePurchase.isEnabled = false
-            self.buttonRestorePurchase.isHidden = true
-            self.betweenButtonConstraint.constant = 0.0
-        } else {
-            self.buttonAction.setTitle(message, for: UIControlState.normal)
-            self.buttonAction.layer.borderColor = self.appGreen.cgColor
-            self.buttonAction.tintColor = self.appGreen
-            self.buttonAction.isEnabled = true
-            
-            self.buttonRestorePurchase.isEnabled = true
-            self.buttonRestorePurchase.isHidden = false
-            self.betweenButtonConstraint.constant = 8.0
+    func actionButtonChange(message: String, enable: Bool) {
+        DispatchQueue.main.async {
+            if (enable == false || self.showAds() == false) {
+                self.buttonAction.setTitle("", for: UIControl.State.normal)
+                self.buttonAction.layer.borderColor = UIColor.clear.cgColor
+                self.buttonAction.tintColor = UIColor.clear
+                self.buttonAction.isEnabled = false
+                
+                self.buttonRestorePurchase.isEnabled = false
+                self.buttonRestorePurchase.isHidden = true
+                self.betweenButtonConstraint.constant = 0.0
+            } else {
+                self.buttonAction.setTitle(message, for: UIControl.State.normal)
+                self.buttonAction.layer.borderColor = self.appGreen.cgColor
+                self.buttonAction.tintColor = self.appGreen
+                self.buttonAction.isEnabled = true
+                
+                self.buttonRestorePurchase.isEnabled = true
+                self.buttonRestorePurchase.isHidden = false
+                self.betweenButtonConstraint.constant = 8.0
+            }
         }
     }
     
     func successfulPayment() {
-        self.model?.adsFree = true
-        self.actionButtonChange(message: "", enable: false)
-        
-        // Hide the restore button
-        self.buttonRestorePurchase.isEnabled = false
-        self.buttonRestorePurchase.isHidden = true
-        self.betweenButtonConstraint.constant = 0.0
+        DispatchQueue.main.async {
+            self.model?.adsFree = true
+            self.actionButtonChange(message: "", enable: false)
+            
+            // Hide the restore button
+            self.buttonRestorePurchase.isEnabled = false
+            self.buttonRestorePurchase.isHidden = true
+            self.betweenButtonConstraint.constant = 0.0
+        }
     }
     
     func showAds() -> Bool {
@@ -150,28 +156,28 @@ class PurchaseViewController: UIViewController, SKProductsRequestDelegate, SKPay
             } else {
                 self.product = response.products[0]
                 
-                 // If we've not already restored
-                if (self.showAds()) {
-                    self.statusChange(status: "", enableActivityMonitor: false)
-                    self.labelProductDetails.text = self.product?.localizedDescription
-                    
-                    // Format the price
-                    let numberFormatter = NumberFormatter()
-                    numberFormatter.formatterBehavior = .behavior10_4
-                    numberFormatter.numberStyle = .currency
-                    numberFormatter.locale = self.product?.priceLocale
-                    let formattedPrice = numberFormatter.string(from: (self.product?.price)!)
-                    let buttonTextWithPrice = String.init(format: "Go Ads Free for %@", arguments: [formattedPrice!])
-                    self.actionButtonChange(message: buttonTextWithPrice, enable: true)
-                    
-                } else {
-                    print("Already Ads Free")
-                    self.statusChange(status: "Already Ads Free", enableActivityMonitor: false)
-                    self.actionButtonChange(message: "", enable: false)
+                // If we've not already restored
+                DispatchQueue.main.async {
+                    if (self.showAds()) {
+                        self.statusChange(status: "", enableActivityMonitor: false)
+                        self.labelProductDetails.text = self.product?.localizedDescription
+                        
+                        // Format the price
+                        let numberFormatter = NumberFormatter()
+                        numberFormatter.formatterBehavior = .behavior10_4
+                        numberFormatter.numberStyle = .currency
+                        numberFormatter.locale = self.product?.priceLocale
+                        let formattedPrice = numberFormatter.string(from: (self.product?.price)!)
+                        let buttonTextWithPrice = String.init(format: "Go Ads Free for %@", arguments: [formattedPrice!])
+                        self.actionButtonChange(message: buttonTextWithPrice, enable: true)
+                        
+                    } else {
+                        print("Already Ads Free")
+                        self.statusChange(status: "Already Ads Free", enableActivityMonitor: false)
+                        self.actionButtonChange(message: "", enable: false)
+                    }
                 }
             }
-            
-            
         } else {
             print("Cannot find product in store")
             self.statusChange(status: "A problem occurred :(", enableActivityMonitor: false)
@@ -184,25 +190,25 @@ class PurchaseViewController: UIViewController, SKProductsRequestDelegate, SKPay
             switch transaction.transactionState {
             case .purchasing:
                 self.statusChange(status: "Purchasing Ads Free ...", enableActivityMonitor: true)
-                break
             case .deferred:
                 self.statusChange(status: "Waiting ...", enableActivityMonitor: true)
-                break
             case .failed:
                 if (self.transactionInProgress) {
                     self.statusChange(status: "Purchase of Ads Free failed", enableActivityMonitor: false)
                     print("Purchase failed", transaction.error.debugDescription)
                     self.transactionInProgress = false
                 }
-                break
             case .purchased:
                 self.statusChange(status: "You are now Ads Free! Thanks!", enableActivityMonitor: false)
                 self.successfulPayment()
-                break
             case .restored:
                 self.statusChange(status: "Ads Free successfully restored!", enableActivityMonitor: false)
                 self.successfulPayment()
-                break
+            
+            @unknown default:
+                self.statusChange(status: "Purchase of Ads Free failed", enableActivityMonitor: false)
+                print("Purchase failed", transaction.error.debugDescription)
+                self.transactionInProgress = false
             }
         }
     }
@@ -218,21 +224,20 @@ class PurchaseViewController: UIViewController, SKProductsRequestDelegate, SKPay
             self.transactionInProgress = true
             self.actionButtonChange(message: "", enable: false)
             
-            let payment:SKMutablePayment = SKMutablePayment(product: self.product!)
+            let payment: SKMutablePayment = SKMutablePayment(product: self.product!)
             payment.quantity = 1
             
-            self.statusChange(status:"Buying Ads Free from App Store ...", enableActivityMonitor:true)
+            self.statusChange(status: "Buying Ads Free from App Store ...", enableActivityMonitor: true)
             SKPaymentQueue.default().add(payment)
         }
     }
  
-
     @IBAction func buttonRestorePurchaseClicked(_ sender: Any) {
         if (self.transactionInProgress == false) {
             self.transactionInProgress = true
             self.actionButtonChange(message: "", enable: false)
             
-            self.statusChange(status:"Restoring Ads Free from App Store ...", enableActivityMonitor:true)
+            self.statusChange(status: "Restoring Ads Free from App Store ...", enableActivityMonitor: true)
             SKPaymentQueue.default().restoreCompletedTransactions()
         }
     }

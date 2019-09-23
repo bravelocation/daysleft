@@ -10,23 +10,24 @@ import Foundation
 import WatchKit
 import ClockKit
 
-class ComplicationsDataSource : NSObject, CLKComplicationDataSource {
+class ComplicationsDataSource: NSObject, CLKComplicationDataSource {
     
     func getCurrentTimelineEntry(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTimelineEntry?) -> Void) {
-        let entry = self.createTimeLineEntry(complication.family, date:Date())
+        let entry = self.createTimeLineEntry(complication.family, date: Date())
         handler(entry)
     }
     
     func getNextRequestedUpdateDate(handler: @escaping (Date?) -> Void) {
         // Update at the start of tomorrow
         let model = modelData()
-        let nextUpdate = model.StartOfDay(model.AddDays(Date(), daysToAdd: 1))
+        let nextUpdate = model.startOfDay(model.addDays(Date(), daysToAdd: 1))
         
         print("Setting next extension update to be at \(nextUpdate)")
         
         handler(nextUpdate)
     }
     
+    //swiftlint:disable:next cyclomatic_complexity
     func getLocalizableSampleTemplate(for complication: CLKComplication,
                                       withHandler handler: @escaping (CLKComplicationTemplate?) -> Void) {
         let appTintColor = UIColor(red: 203/255, green: 237/255, blue: 142/255, alpha: 1.0)
@@ -71,7 +72,7 @@ class ComplicationsDataSource : NSObject, CLKComplicationDataSource {
             template.body2TextProvider = CLKSimpleTextProvider(text: "10% done")
             handler(template)
         case .graphicBezel:
-            if #available(watchOS 5,*) {
+            if #available(watchOS 5, *) {
                 let template = CLKComplicationTemplateGraphicBezelCircularText()
                 template.tintColor = appTintColor
                 
@@ -87,9 +88,8 @@ class ComplicationsDataSource : NSObject, CLKComplicationDataSource {
                 
                 handler(template)
             }
-            break
         case .graphicCorner:
-            if #available(watchOS 5,*) {
+            if #available(watchOS 5, *) {
                 let template = CLKComplicationTemplateGraphicCornerGaugeText()
                 template.outerTextProvider = CLKSimpleTextProvider(text: "20 days")
                 
@@ -99,9 +99,8 @@ class ComplicationsDataSource : NSObject, CLKComplicationDataSource {
                 template.tintColor = appTintColor
                 handler(template)
             }
-            break
         case .graphicCircular:
-            if #available(watchOS 5,*) {
+            if #available(watchOS 5, *) {
                 let template = CLKComplicationTemplateGraphicCircularOpenGaugeSimpleText()
                 template.centerTextProvider = CLKSimpleTextProvider(text: "20")
                 template.bottomTextProvider = CLKSimpleTextProvider(text: String(format: "%d%%", 10))
@@ -112,9 +111,8 @@ class ComplicationsDataSource : NSObject, CLKComplicationDataSource {
                 template.tintColor = appTintColor
                 handler(template)
             }
-            break
         case .graphicRectangular:
-            if #available(watchOS 5,*) {
+            if #available(watchOS 5, *) {
                 let template = CLKComplicationTemplateGraphicRectangularStandardBody()
                 template.headerTextProvider = CLKSimpleTextProvider(text: "Christmas")
                 template.body1TextProvider = CLKSimpleTextProvider(text: "20 days")
@@ -123,7 +121,6 @@ class ComplicationsDataSource : NSObject, CLKComplicationDataSource {
                 
                 handler(template)
             }
-            break
         default:
             handler(nil)
         }
@@ -139,12 +136,12 @@ class ComplicationsDataSource : NSObject, CLKComplicationDataSource {
     func getTimelineEntries(for complication: CLKComplication, before date: Date, limit: Int, withHandler handler: @escaping ([CLKComplicationTimelineEntry]?) -> Void) {
         print("Getting timeline: \(limit) before \(date)")
 
-        var entries: [CLKComplicationTimelineEntry] = [];
+        var entries: [CLKComplicationTimelineEntry] = []
         
         for i in (1...limit).reversed() {
             // Calculate the entry i * 5 mins ago (in chronological order)
             let previousDate = date.addingTimeInterval(-1*60*5*Double(i))
-            let entry = self.createTimeLineEntry(complication.family, date:previousDate);
+            let entry = self.createTimeLineEntry(complication.family, date: previousDate)
             if (entry != nil) {
                 entries.append(entry!)
             }
@@ -156,12 +153,12 @@ class ComplicationsDataSource : NSObject, CLKComplicationDataSource {
     func getTimelineEntries(for complication: CLKComplication, after date: Date, limit: Int, withHandler handler: @escaping ([CLKComplicationTimelineEntry]?) -> Void) {
         print("Getting timeline: \(limit) before \(date)")
 
-        var entries: [CLKComplicationTimelineEntry] = [];
+        var entries: [CLKComplicationTimelineEntry] = []
         
         for i in 1...limit {
             // Calculate the entry i x 5 mins ahead
             let previousDate = date.addingTimeInterval(60*5*Double(i))
-            let entry = self.createTimeLineEntry(complication.family, date:previousDate);
+            let entry = self.createTimeLineEntry(complication.family, date: previousDate)
             if (entry != nil) {
                 entries.append(entry!)
             }
@@ -183,7 +180,7 @@ class ComplicationsDataSource : NSObject, CLKComplicationDataSource {
     }
     
     func getTimelineAnimationBehavior(for complication: CLKComplication,
-        withHandler handler: @escaping (CLKComplicationTimelineAnimationBehavior) -> Void) {
+                                      withHandler handler: @escaping (CLKComplicationTimelineAnimationBehavior) -> Void) {
             handler(CLKComplicationTimelineAnimationBehavior.always)
     }
     
@@ -193,120 +190,117 @@ class ComplicationsDataSource : NSObject, CLKComplicationDataSource {
         return appDelegate.model
     }
     
+    //swiftlint:disable:next cyclomatic_complexity
     fileprivate func createTimeLineEntry(_ family: CLKComplicationFamily, date: Date) -> CLKComplicationTimelineEntry? {
 
         let model = modelData()
-        let currentDaysLeft: Int = model.DaysLeft(date)
-        let percentageDone: Float = Float(model.DaysGone(date)) / Float(model.DaysLength)
+        let currentDaysLeft: Int = model.daysLeft(date)
+        let percentageDone: Float = Float(model.daysGone(date)) / Float(model.daysLength)
         let displayPercentageDone: Int = (Int) (percentageDone * 100)
         let appTintColor = UIColor(red: 203/255, green: 237/255, blue: 142/255, alpha: 1.0)
         
-        var entry : CLKComplicationTimelineEntry?
+        var entry: CLKComplicationTimelineEntry?
 
         switch family {
-            case .circularSmall:
-                let template = CLKComplicationTemplateCircularSmallRingText()
-                template.textProvider = CLKSimpleTextProvider(text: String(currentDaysLeft))
-                template.fillFraction = percentageDone
-                template.ringStyle = CLKComplicationRingStyle.open
+        case .circularSmall:
+            let template = CLKComplicationTemplateCircularSmallRingText()
+            template.textProvider = CLKSimpleTextProvider(text: String(currentDaysLeft))
+            template.fillFraction = percentageDone
+            template.ringStyle = CLKComplicationRingStyle.open
+            template.tintColor = appTintColor
+            entry = CLKComplicationTimelineEntry(date: date, complicationTemplate: template)
+        case .modularSmall:
+            let template = CLKComplicationTemplateModularSmallRingText()
+            template.textProvider = CLKSimpleTextProvider(text: String(currentDaysLeft))
+            template.fillFraction = percentageDone
+            template.ringStyle = CLKComplicationRingStyle.open
+            template.tintColor = appTintColor
+            entry = CLKComplicationTimelineEntry(date: date, complicationTemplate: template)
+        case .utilitarianSmall:
+            let template = CLKComplicationTemplateUtilitarianSmallRingText()
+            template.textProvider = CLKSimpleTextProvider(text: String(currentDaysLeft))
+            template.fillFraction = percentageDone
+            template.ringStyle = CLKComplicationRingStyle.open
+            template.tintColor = appTintColor
+            entry = CLKComplicationTimelineEntry(date: date, complicationTemplate: template)
+        case .utilitarianSmallFlat:
+            let template = CLKComplicationTemplateUtilitarianSmallFlat()
+            template.textProvider = CLKSimpleTextProvider(text: String(currentDaysLeft))
+            template.tintColor = appTintColor
+            entry = CLKComplicationTimelineEntry(date: date, complicationTemplate: template)
+        case .utilitarianLarge:
+            let template = CLKComplicationTemplateUtilitarianLargeFlat()
+            template.textProvider = CLKSimpleTextProvider(text: String(currentDaysLeft))
+            template.tintColor = appTintColor
+            entry = CLKComplicationTimelineEntry(date: date, complicationTemplate: template)
+        case .extraLarge:
+            let template = CLKComplicationTemplateExtraLargeRingText()
+            template.textProvider = CLKSimpleTextProvider(text: String(currentDaysLeft))
+            template.fillFraction = percentageDone
+            template.ringStyle = CLKComplicationRingStyle.open
+            template.tintColor = appTintColor
+            entry = CLKComplicationTimelineEntry(date: date, complicationTemplate: template)
+        case .modularLarge:
+            let template = CLKComplicationTemplateModularLargeStandardBody()
+            template.headerTextProvider = CLKSimpleTextProvider(text: model.title)
+            template.body1TextProvider = CLKSimpleTextProvider(text: String(format: "%d days", currentDaysLeft))
+            template.body2TextProvider = CLKSimpleTextProvider(text: String(format: "%d%% done", displayPercentageDone))
+            template.tintColor = appTintColor
+            entry = CLKComplicationTimelineEntry(date: date, complicationTemplate: template)
+        case .graphicBezel:
+            if #available(watchOS 5, *) {
+                let template = CLKComplicationTemplateGraphicBezelCircularText()
+                template.tintColor = appTintColor
+                
+                let longDesc = String(format: "%d %@ until %@", currentDaysLeft, model.weekdaysOnly ? "weekdays" : "days", model.title)
+                template.textProvider = CLKSimpleTextProvider(text: longDesc)
+                
+                let gaugeProvider = CLKComplicationTemplateGraphicCircularOpenGaugeSimpleText()
+                gaugeProvider.centerTextProvider = CLKSimpleTextProvider(text: String(currentDaysLeft))
+                gaugeProvider.bottomTextProvider = CLKSimpleTextProvider(text: String(format: "%d%%", displayPercentageDone))
+                
+                let gauge = CLKSimpleGaugeProvider(style: .fill, gaugeColor: appTintColor, fillFraction: percentageDone)
+                gaugeProvider.gaugeProvider = gauge
+                template.circularTemplate = gaugeProvider
+                
+                entry = CLKComplicationTimelineEntry(date: date, complicationTemplate: template)
+            }
+        case .graphicCorner:
+            if #available(watchOS 5, *) {
+                let template = CLKComplicationTemplateGraphicCornerGaugeText()
+                let daysDesc = String(format: "%d days", currentDaysLeft)
+                template.outerTextProvider = CLKSimpleTextProvider(text: daysDesc)
+                
+                let gauge = CLKSimpleGaugeProvider(style: .fill, gaugeColor: appTintColor, fillFraction: percentageDone)
+                template.gaugeProvider = gauge
+
                 template.tintColor = appTintColor
                 entry = CLKComplicationTimelineEntry(date: date, complicationTemplate: template)
-            case .modularSmall:
-                let template = CLKComplicationTemplateModularSmallRingText()
-                template.textProvider = CLKSimpleTextProvider(text: String(currentDaysLeft))
-                template.fillFraction = percentageDone
-                template.ringStyle = CLKComplicationRingStyle.open
+            }
+        case .graphicCircular:
+            if #available(watchOS 5, *) {
+                let template = CLKComplicationTemplateGraphicCircularOpenGaugeSimpleText()
+                template.centerTextProvider = CLKSimpleTextProvider(text: String(currentDaysLeft))
+                template.bottomTextProvider = CLKSimpleTextProvider(text: String(format: "%d%%", displayPercentageDone))
+                
+                let gauge = CLKSimpleGaugeProvider(style: .fill, gaugeColor: appTintColor, fillFraction: percentageDone)
+                template.gaugeProvider = gauge
+                
                 template.tintColor = appTintColor
                 entry = CLKComplicationTimelineEntry(date: date, complicationTemplate: template)
-            case .utilitarianSmall:
-                let template = CLKComplicationTemplateUtilitarianSmallRingText()
-                template.textProvider = CLKSimpleTextProvider(text: String(currentDaysLeft))
-                template.fillFraction = percentageDone
-                template.ringStyle = CLKComplicationRingStyle.open
-                template.tintColor = appTintColor
-                entry = CLKComplicationTimelineEntry(date: date, complicationTemplate: template)
-            case .utilitarianSmallFlat:
-                let template = CLKComplicationTemplateUtilitarianSmallFlat()
-                template.textProvider = CLKSimpleTextProvider(text: String(currentDaysLeft))
-                template.tintColor = appTintColor
-                entry = CLKComplicationTimelineEntry(date: date, complicationTemplate: template)
-            case .utilitarianLarge:
-                let template = CLKComplicationTemplateUtilitarianLargeFlat()
-                template.textProvider = CLKSimpleTextProvider(text: String(currentDaysLeft))
-                template.tintColor = appTintColor
-                entry = CLKComplicationTimelineEntry(date: date, complicationTemplate: template)
-            case .extraLarge:
-                let template = CLKComplicationTemplateExtraLargeRingText()
-                template.textProvider = CLKSimpleTextProvider(text: String(currentDaysLeft))
-                template.fillFraction = percentageDone
-                template.ringStyle = CLKComplicationRingStyle.open
-                template.tintColor = appTintColor
-                entry = CLKComplicationTimelineEntry(date: date, complicationTemplate: template)
-            case .modularLarge:
-                let template = CLKComplicationTemplateModularLargeStandardBody()
+            }
+        case .graphicRectangular:
+            if #available(watchOS 5, *) {
+                let template = CLKComplicationTemplateGraphicRectangularStandardBody()
                 template.headerTextProvider = CLKSimpleTextProvider(text: model.title)
                 template.body1TextProvider = CLKSimpleTextProvider(text: String(format: "%d days", currentDaysLeft))
                 template.body2TextProvider = CLKSimpleTextProvider(text: String(format: "%d%% done", displayPercentageDone))
                 template.tintColor = appTintColor
+                
                 entry = CLKComplicationTimelineEntry(date: date, complicationTemplate: template)
-            case .graphicBezel:
-                if #available(watchOS 5,*) {
-                    let template = CLKComplicationTemplateGraphicBezelCircularText()
-                    template.tintColor = appTintColor
-                    
-                    let longDesc = String(format: "%d %@ until %@", currentDaysLeft, model.weekdaysOnly ? "weekdays" : "days", model.title)
-                    template.textProvider = CLKSimpleTextProvider(text: longDesc)
-                    
-                    let gaugeProvider = CLKComplicationTemplateGraphicCircularOpenGaugeSimpleText()
-                    gaugeProvider.centerTextProvider = CLKSimpleTextProvider(text: String(currentDaysLeft))
-                    gaugeProvider.bottomTextProvider = CLKSimpleTextProvider(text: String(format: "%d%%", displayPercentageDone))
-                    
-                    let gauge = CLKSimpleGaugeProvider(style: .fill, gaugeColor: appTintColor, fillFraction: percentageDone)
-                    gaugeProvider.gaugeProvider = gauge
-                    template.circularTemplate = gaugeProvider
-                    
-                    entry = CLKComplicationTimelineEntry(date: date, complicationTemplate: template)
-                }
-                break
-            case .graphicCorner:
-                if #available(watchOS 5,*) {
-                    let template = CLKComplicationTemplateGraphicCornerGaugeText()
-                    let daysDesc = String(format: "%d days", currentDaysLeft)
-                    template.outerTextProvider = CLKSimpleTextProvider(text: daysDesc)
-                    
-                    let gauge = CLKSimpleGaugeProvider(style: .fill, gaugeColor: appTintColor, fillFraction: percentageDone)
-                    template.gaugeProvider = gauge
-
-                    template.tintColor = appTintColor
-                    entry = CLKComplicationTimelineEntry(date: date, complicationTemplate: template)
-                }
-                break
-            case .graphicCircular:
-                if #available(watchOS 5,*) {
-                    let template = CLKComplicationTemplateGraphicCircularOpenGaugeSimpleText()
-                    template.centerTextProvider = CLKSimpleTextProvider(text: String(currentDaysLeft))
-                    template.bottomTextProvider = CLKSimpleTextProvider(text: String(format: "%d%%", displayPercentageDone))
-                    
-                    let gauge = CLKSimpleGaugeProvider(style: .fill, gaugeColor: appTintColor, fillFraction: percentageDone)
-                    template.gaugeProvider = gauge
-                    
-                    template.tintColor = appTintColor
-                    entry = CLKComplicationTimelineEntry(date: date, complicationTemplate: template)
-                }
-                break
-            case .graphicRectangular:
-                if #available(watchOS 5,*) {
-                    let template = CLKComplicationTemplateGraphicRectangularStandardBody()
-                    template.headerTextProvider = CLKSimpleTextProvider(text: model.title)
-                    template.body1TextProvider = CLKSimpleTextProvider(text: String(format: "%d days", currentDaysLeft))
-                    template.body2TextProvider = CLKSimpleTextProvider(text: String(format: "%d%% done", displayPercentageDone))
-                    template.tintColor = appTintColor
-                    
-                    entry = CLKComplicationTimelineEntry(date: date, complicationTemplate: template)
-                }
-                break
-            default:
-                break
+            }
+        default:
+            break
         }
         
         return(entry)

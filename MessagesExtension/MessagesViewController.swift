@@ -11,10 +11,8 @@ import Messages
 
 class MessagesViewController: MSMessagesAppViewController {
     
-    
     @IBOutlet weak var imageProgress: UIImageView!
     @IBOutlet weak var labelTitle: UILabel!
-    //@IBOutlet weak var labelPercentDone: UILabel!
     @IBOutlet weak var buttonSendMessage: UIButton!
     
     override func viewDidLoad() {
@@ -36,12 +34,12 @@ class MessagesViewController: MSMessagesAppViewController {
             let now: Date = Date()
             let model: DaysLeftModel = DaysLeftModel()
             
-            layout.caption = model.FullDescription(now)
+            layout.caption = model.fullDescription(now)
             
-            let percentageDone: Float = (Float(model.DaysGone(now)) * 100.0) / Float(model.DaysLength)
+            let percentageDone: Float = (Float(model.daysGone(now)) * 100.0) / Float(model.daysLength)
             let intPercentageDone: Int = Int(percentageDone)            
             let imageName = String(format: "progress%d", intPercentageDone)
-            layout.image = UIImage(named:imageName)
+            layout.image = UIImage(named: imageName)
             
             let message = MSMessage()
             message.layout = layout
@@ -56,15 +54,15 @@ class MessagesViewController: MSMessagesAppViewController {
         let now: Date = Date()
         let model: DaysLeftModel = DaysLeftModel()
         
-        self.labelTitle.text = model.FullDescription(now)
+        self.labelTitle.text = model.fullDescription(now)
         
-        let percentageDone: Float = (Float(model.DaysGone(now)) * 100.0) / Float(model.DaysLength)
+        let percentageDone: Float = (Float(model.daysGone(now)) * 100.0) / Float(model.daysLength)
         //self.labelPercentDone.text = String(format:"%3.0f%% done", percentageDone)
         
         // Update image
         let intPercentageDone: Int = Int(percentageDone)
         let imageName = String(format: "progress%d", intPercentageDone)
-        self.imageProgress!.image = UIImage(named:imageName)
+        self.imageProgress!.image = UIImage(named: imageName)
         
         NSLog("View updated!")
     }

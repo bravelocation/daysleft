@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14835.7" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14790.5"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,30 +17,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="bex-l5-yn4">
-                                <rect key="frame" x="97" y="243" width="180" height="180"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="180" id="6Rp-7m-hgR"/>
-                                    <constraint firstAttribute="height" constant="180" id="GKv-QN-1zb"/>
-                                </constraints>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Another Brave Location App" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WFw-yU-WMU">
                                 <rect key="frame" x="16" y="630" width="343" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="EAq-If-nBS"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" name="BraveLocationColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Count The Days Left" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fCD-BC-bCn">
+                                <rect key="frame" x="16" y="593.5" width="343" height="20.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <color key="textColor" name="SettingsIconTint"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Bcu-3y-fUS" firstAttribute="trailing" secondItem="WFw-yU-WMU" secondAttribute="trailing" constant="16" id="5az-hg-q20"/>
-                            <constraint firstItem="bex-l5-yn4" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="DN1-gY-uiR"/>
+                            <constraint firstItem="fCD-BC-bCn" firstAttribute="leading" secondItem="Bcu-3y-fUS" secondAttribute="leading" constant="16" id="73E-ar-XXu"/>
                             <constraint firstItem="WFw-yU-WMU" firstAttribute="leading" secondItem="Bcu-3y-fUS" secondAttribute="leading" constant="16" id="fx4-bh-K7E"/>
                             <constraint firstItem="Bcu-3y-fUS" firstAttribute="bottom" secondItem="WFw-yU-WMU" secondAttribute="bottom" constant="16" id="imj-RQ-uJn"/>
-                            <constraint firstItem="bex-l5-yn4" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="xxR-LP-1Kv"/>
+                            <constraint firstItem="WFw-yU-WMU" firstAttribute="top" secondItem="fCD-BC-bCn" secondAttribute="bottom" constant="16" id="lcs-wm-rU6"/>
+                            <constraint firstItem="Bcu-3y-fUS" firstAttribute="trailing" secondItem="fCD-BC-bCn" secondAttribute="trailing" constant="16" id="vvz-ID-t2R"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Bcu-3y-fUS"/>
                     </view>
@@ -52,6 +51,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Logo" width="180" height="180"/>
+        <namedColor name="BraveLocationColor">
+            <color red="0.66666666666666663" green="0.23529411764705882" blue="0.30980392156862746" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="SettingsIconTint">
+            <color red="0.21568627450980393" green="0.30980392156862746" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

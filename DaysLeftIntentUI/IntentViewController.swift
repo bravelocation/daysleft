@@ -34,8 +34,8 @@ class IntentViewController: UIViewController, INUIHostedViewControlling {
         self.counterView.backgroundColor = backgroundColor
         
         self.view.backgroundColor = backgroundColor
-        self.titleLabel.textColor = darkGreen
-        self.percentLabel.textColor = darkGreen
+        self.titleLabel.textColor = UIColor(named: "IntentTextColor")
+        self.percentLabel.textColor = UIColor(named: "IntentTextColor")
     }
         
     // MARK: - INUIHostedViewControlling
@@ -49,13 +49,13 @@ class IntentViewController: UIViewController, INUIHostedViewControlling {
         let now: Date = Date()
         let model: DaysLeftModel = DaysLeftModel()
         
-        self.titleLabel.text = model.FullDescription(now)
+        self.titleLabel.text = model.fullDescription(now)
         
-        let percentageDone: Float = (Float(model.DaysGone(now)) * 100.0) / Float(model.DaysLength)
-        self.percentLabel.text = String(format:"%3.0f%% done", percentageDone)
+        let percentageDone: Float = (Float(model.daysGone(now)) * 100.0) / Float(model.daysLength)
+        self.percentLabel.text = String(format: "%3.0f%% done", percentageDone)
         
-        self.counterView.counter = model.DaysGone(now)
-        self.counterView.maximumValue = model.DaysLength
+        self.counterView.counter = model.daysGone(now)
+        self.counterView.maximumValue = model.daysLength
         self.counterView.updateControl()
         
         completion(true, parameters, self.desiredSize)

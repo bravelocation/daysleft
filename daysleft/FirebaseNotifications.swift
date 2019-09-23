@@ -10,9 +10,9 @@ import UIKit
 import Firebase
 import FirebaseMessaging
 
-open class FirebaseNotifications: NSObject, MessagingDelegate {
+class FirebaseNotifications: NSObject, MessagingDelegate {
 
-    var topicName:String? = nil
+    var topicName: String? = nil
     
     let defaults = UserDefaults.standard
     
@@ -26,37 +26,42 @@ open class FirebaseNotifications: NSObject, MessagingDelegate {
         super.init()
         
         self.topicName = "dataupdates"
+
+        // Must be done after FirebaseApp.configure() according to https://github.com/firebase/firebase-ios-sdk/issues/2240
         Messaging.messaging().delegate = self
     }
     
     func setupNotifications(_ forceSetup: Bool) {
         if (forceSetup || self.enabled) {
-            let application = UIApplication.shared
-            
-            let settings: UIUserNotificationSettings = UIUserNotificationSettings(types: [.alert, .sound, .badge], categories: nil)
-            application.registerUserNotificationSettings(settings)
-            application.registerForRemoteNotifications()
+            UNUserNotificationCenter.current().requestAuthorization(options: [.badge]) { (granted, _) in
+                if (granted) {
+                    DispatchQueue.main.async {
+                        UIApplication.shared.registerForRemoteNotifications()
+                    }
+                }
+            }
         }
     }
     
     func register(_ deviceToken: Data) {
         // Register with Firebase Hub
+        print("Remote device token received")
         Messaging.messaging().apnsToken = deviceToken
-        
-        let fullTopic = "/topics/" + self.topicName!
-        
-        if (self.enabled) {
-            Messaging.messaging().subscribe(toTopic: fullTopic)
-            print("Registered with Firebase: \(fullTopic)")
-        } else {
-            Messaging.messaging().unsubscribe(fromTopic: fullTopic)
-            print("Unregistered with firebase \(fullTopic)")
-        }
     }
     
     // MARK: - MessagingDelegate
-    public func messaging(_ messaging: Messaging, didRefreshRegistrationToken fcmToken: String) {
+    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
         print("Firebase registration token: \(fcmToken)")
+        
+        if let fullTopic = self.topicName {
+            if self.enabled {
+                Messaging.messaging().subscribe(toTopic: fullTopic)
+                print("Registered with Firebase: \(fullTopic)")
+            } else {
+                Messaging.messaging().unsubscribe(fromTopic: fullTopic)
+                print("Unregistered with firebase \(fullTopic)")
+            }
+        }
     }
     
     func modelData() -> AppDaysLeftModel {
