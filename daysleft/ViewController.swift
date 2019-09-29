@@ -205,22 +205,7 @@ class ViewController: UIViewController {
         if #available(iOS 12.0, *) {
             let intent = DaysLeftIntent()
             intent.suggestedInvocationPhrase = "How Many Days Left"
-            
-            // Assumes setupHandoff() has already been called
-            let intentResponse = INIntentResponse()
-            intentResponse.userActivity = self.userActivity
-            
-            let interaction = INInteraction(intent: intent, response: intentResponse)
-            interaction.donate { (error) in
-                if error != nil {
-                    if let error = error as NSError? {
-                        print("Interaction donation failed: %@", error)
-                    }
-                } else {
-                    print("Successfully donated interaction")
-                }
-            }
-            
+                        
             // Donate relevant daily shortcut
             var relevantShortcuts: [INRelevantShortcut] = []
             
