@@ -195,7 +195,7 @@ class ComplicationsDataSource: NSObject, CLKComplicationDataSource {
 
         let model = modelData()
         let currentDaysLeft: Int = model.daysLeft(date)
-        let percentageDone: Float = Float(model.daysGone(date)) / Float(model.daysLength)
+        let percentageDone: Float = (Float(model.daysGone(date)) / Float(model.daysLength)).clamped(to: 0.0...1.0)
         let displayPercentageDone: Int = (Int) (percentageDone * 100)
         let appTintColor = UIColor(red: 203/255, green: 237/255, blue: 142/255, alpha: 1.0)
         
@@ -304,5 +304,11 @@ class ComplicationsDataSource: NSObject, CLKComplicationDataSource {
         }
         
         return(entry)
+    }
+}
+
+extension Comparable {
+    func clamped(to limits: ClosedRange<Self>) -> Self {
+        return min(max(self, limits.lowerBound), limits.upperBound)
     }
 }
