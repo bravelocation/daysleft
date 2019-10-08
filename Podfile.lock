@@ -89,7 +89,7 @@ DEPENDENCIES:
   - SwiftLint
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - Firebase
     - FirebaseAnalytics
     - FirebaseAnalyticsInterop
@@ -127,4 +127,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: a5aecb071a32164c637eab978a52691ab94a30c2
 
-COCOAPODS: 1.6.1
+COCOAPODS: 1.8.3
