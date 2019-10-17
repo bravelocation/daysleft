@@ -167,6 +167,11 @@ class ViewController: UIViewController {
         let model = self.modelData()
         
         let now: Date = Date()
+        
+        // Check we're not getting a rogue update in the background
+        if self.labelDaysLeft == nil {
+            return
+        }
 
         self.labelDaysLeft.text = String(format: "%d", model.daysLeft(now))
         self.labelTitle.text = model.description(now)
