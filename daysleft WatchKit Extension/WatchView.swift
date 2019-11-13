@@ -34,7 +34,7 @@ struct WatchView: View {
         if (screenSize.width > screenSize.height) {
             return screenSize.height - 80
         } else {
-            return screenSize.width - 60
+            return screenSize.width - 80
         }
     }
 }
