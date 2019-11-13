@@ -118,10 +118,6 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
         if (self.showAds()) {
             let request = GADRequest()
             
-            #if targetEnvironment(simulator)
-                request.testDevices = [kGADSimulatorID]
-            #endif
-            
             self.bannerView.load(request)
             
             self.bannerView.isHidden = false
