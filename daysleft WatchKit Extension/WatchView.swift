@@ -19,12 +19,12 @@ struct WatchView: View {
                 Text(self.model.currentTitle)
                     .lineLimit(2)
                     .multilineTextAlignment(.center)
-                ProgressControl(foregroundColor: Color("LightAppColor"),
+                ProgressControl(progress: self.model.percentageDone,
+                                foregroundColor: Color("LightAppColor"),
                                 backgroundColor: Color("MainAppColor"),
-                                progress: self.model.percentageDone,
-                                width: 20.0)
-                    .frame(width: self.progressDimensions(geo.size),
-                           height: self.progressDimensions(geo.size))
+                                lineWidth: 20.0,
+                                frameSize: self.progressDimensions(geo.size))
+
                 Text(self.model.currentPercentageLeft).font(.footnote)
             }
         }

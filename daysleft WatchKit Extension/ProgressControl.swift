@@ -10,66 +10,65 @@ import Foundation
 import SwiftUI
 
 struct Arc: Shape, InsettableShape {
-    var startAngle: Angle
-    var endAngle: Angle
-    var clockwise: Bool
+    var progress: Double = 0.0
     
-    var insetAmount: CGFloat = 0
+    var animatableData: Double {
+        get { progress }
+        set { self.progress = newValue }
+    }
 
     func path(in rect: CGRect) -> Path {
         let rotationAdjustment = Angle.degrees(90)
-        let modifiedStart = startAngle - rotationAdjustment
-        let modifiedEnd = endAngle - rotationAdjustment
+        let modifiedStart = .degrees(-135) - rotationAdjustment
+        
+        let progressAngle: Double = (135 * 2) / 100
+        let endAngle: Double = -135 + (progressAngle * self.progress)
+
+        let modifiedEnd = .degrees(endAngle) - rotationAdjustment
 
         var path = Path()
-        path.addArc(center: CGPoint(x: rect.midX, y: rect.midY), radius: rect.width / 2 - insetAmount, startAngle: modifiedStart, endAngle: modifiedEnd, clockwise: !clockwise)
+        path.addArc(center: CGPoint(x: rect.midX, y: rect.midY), radius: rect.width / 2, startAngle: modifiedStart, endAngle: modifiedEnd, clockwise: false)
 
         return path
     }
     
     func inset(by amount: CGFloat) -> some InsettableShape {
-        var arc = self
-        arc.insetAmount += amount
-        return arc
-    }
-}
-
-struct ProgressArc: View {
-    var color: Color
-    var progress: Double
-    var width: CGFloat
-    
-    var body: some View {
-        let progressAngle: Double = (135 * 2) / 100
-        let endAngle: Double = -135 + (progressAngle * self.progress)
-        
-        return Arc(startAngle: .degrees(-135), endAngle: .degrees(endAngle), clockwise: true)
-            .strokeBorder(self.color, lineWidth: self.width)
+        return self
     }
 }
 
 struct ProgressControl: View {
+    @State private var animationProgress: Double = 0.0
+    
+    var progress: Double = 0.0
     var foregroundColor: Color
     var backgroundColor: Color
-    var progress: Double = 0.0
-    var width: CGFloat = 50.0
+
+    var lineWidth: CGFloat = 50.0
+    var frameSize: CGFloat = 100
+    var duration: Double = 2.0
 
     var body: some View {
         ZStack {
-            ProgressArc(color: self.backgroundColor,
-                        progress: 100.0,
-                        width: self.width)
-            ProgressArc(color: self.foregroundColor,
-                        progress: self.progress,
-                        width: self.width)
+            Arc(progress: 100.0)
+                .strokeBorder(self.backgroundColor, lineWidth: self.lineWidth)
+                .frame(width: self.frameSize, height: self.frameSize)
+
+            Arc(progress: self.animationProgress)
+                .strokeBorder(self.foregroundColor, lineWidth: self.lineWidth)
+                .frame(width: self.frameSize, height: self.frameSize)
+                .onAppear {
+                    withAnimation(.easeInOut(duration: self.duration)) {
+                        self.animationProgress = self.progress
+                    }
+                }
         }
     }
 }
 
 struct ProgressControl_Previews: PreviewProvider {
     static var previews: some View {
-        ProgressControl(foregroundColor: Color.blue,
-                        backgroundColor: Color.green,
-                        progress: 78.5)
+        ProgressControl(progress: 78.5, foregroundColor: Color.blue,
+                        backgroundColor: Color.green)
     }
 }
