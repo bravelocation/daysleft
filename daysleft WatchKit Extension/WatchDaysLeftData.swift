@@ -14,6 +14,7 @@ class WatchDaysLeftData: ObservableObject {
     
     @Published var currentPercentageLeft: String = ""
     @Published var currentTitle: String = ""
+    @Published var currentSubTitle: String = ""
     @Published var percentageDone: Double = 0.0
     
     init() {
@@ -35,8 +36,9 @@ class WatchDaysLeftData: ObservableObject {
         let appDelegate = WKExtension.shared().delegate as! ExtensionDelegate
         let model = appDelegate.model
         
-        self.currentTitle = model.fullDescription(now)
-        
+        self.currentTitle = "\(model.daysLeftDescription(now)) until"
+        self.currentSubTitle = model.title
+
         let percentageDone: Double = (Double(model.daysGone(now)) * 100.0) / Double(model.daysLength)
         self.percentageDone = percentageDone
         self.currentPercentageLeft = String(format: "%3.0f%% done", percentageDone)

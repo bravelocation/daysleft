@@ -17,14 +17,17 @@ struct WatchView: View {
         GeometryReader { geo in
             VStack {
                 Text(self.model.currentTitle)
-                    .lineLimit(2)
+                    .lineLimit(nil)
+                    .multilineTextAlignment(.center)
+                Text(self.model.currentSubTitle)
+                    .lineLimit(nil)
                     .multilineTextAlignment(.center)
                 ProgressControl(progress: self.model.percentageDone,
                                 foregroundColor: Color("LightAppColor"),
                                 backgroundColor: Color("MainAppColor"),
                                 lineWidth: 20.0,
                                 frameSize: self.progressDimensions(geo.size))
-
+                    .padding()
                 Text(self.model.currentPercentageLeft).font(.footnote)
             }
         }
@@ -32,9 +35,9 @@ struct WatchView: View {
     
     func progressDimensions(_ screenSize: CGSize) -> CGFloat {
         if (screenSize.width > screenSize.height) {
-            return screenSize.height - 80
+            return screenSize.height - 100
         } else {
-            return screenSize.width - 80
+            return screenSize.width - 100
         }
     }
 }
