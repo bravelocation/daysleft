@@ -12,6 +12,8 @@ import SwiftUI
 class InterfaceHostController: WKHostingController<WatchView> {
 
     override var body: WatchView {
-        return WatchView()
+        let appDelegate = WKExtension.shared().delegate as! ExtensionDelegate
+        
+        return WatchView(model: appDelegate.dataModel)
     }
 }

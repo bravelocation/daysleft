@@ -40,13 +40,13 @@ struct Arc: Shape, InsettableShape {
 struct ProgressControl: View {
     @State private var animationProgress: Double = 0.0
     
-    var progress: Double = 0.0
     var foregroundColor: Color
     var backgroundColor: Color
+    @ObservedObject var model: WatchDaysLeftData
 
     var lineWidth: CGFloat = 50.0
     var frameSize: CGFloat = 100
-    var duration: Double = 2.0
+    var duration: Double = 0.5
 
     var body: some View {
         ZStack {
@@ -59,16 +59,21 @@ struct ProgressControl: View {
                 .frame(width: self.frameSize, height: self.frameSize)
                 .onAppear {
                     withAnimation(.easeInOut(duration: self.duration)) {
-                        self.animationProgress = self.progress
+                        self.animationProgress = self.model.percentageDone
                     }
-                }
+                }.onReceive(model.modelChanged, perform: { _ in
+                    withAnimation(.easeInOut(duration: self.duration)) {
+                        self.animationProgress = self.model.percentageDone
+                    }
+                })
         }
     }
 }
 
 struct ProgressControl_Previews: PreviewProvider {
     static var previews: some View {
-        ProgressControl(progress: 78.5, foregroundColor: Color.blue,
-                        backgroundColor: Color.green)
+        ProgressControl(foregroundColor: Color.blue,
+                        backgroundColor: Color.green,
+                        model: WatchDaysLeftData())
     }
 }

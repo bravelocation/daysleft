@@ -17,6 +17,8 @@ class WatchDaysLeftData: ObservableObject {
     @Published var currentSubTitle: String = ""
     @Published var percentageDone: Double = 0.0
     
+    let modelChanged = PassthroughSubject<(), Never>()
+    
     init() {
         //Add notification handler for updating on updated fixtures
         NotificationCenter.default.addObserver(self, selector: #selector(WatchDaysLeftData.userSettingsUpdated(_:)), name: NSNotification.Name(rawValue: BLUserSettings.UpdateSettingsNotification), object: nil)
@@ -28,8 +30,12 @@ class WatchDaysLeftData: ObservableObject {
         NotificationCenter.default.removeObserver(self)
     }
     
-    fileprivate func updateViewData() {
+    func updateViewData() {
         NSLog("Updating view data...")
+        
+        // Reset the percentage done to 0.0
+        self.percentageDone = 0.0
+        self.modelChanged.send(())
         
         // Set the published properties based on the model
         let now: Date = Date()
@@ -42,6 +48,7 @@ class WatchDaysLeftData: ObservableObject {
         let percentageDone: Double = (Double(model.daysGone(now)) * 100.0) / Double(model.daysLength)
         self.percentageDone = percentageDone
         self.currentPercentageLeft = String(format: "%3.0f%% done", percentageDone)
+        self.modelChanged.send(())
         
         // Let's also update the complications if the data has changed
         model.updateComplications()
