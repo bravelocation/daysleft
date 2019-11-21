@@ -11,12 +11,16 @@ import WatchKit
 class ExtensionDelegate: NSObject, WKExtensionDelegate {
     
     lazy var model: WatchDaysLeftModel = WatchDaysLeftModel()
-        
+    lazy var dataModel: WatchDaysLeftData = WatchDaysLeftData()
+
     func applicationDidBecomeActive() {
         NSLog("applicationDidBecomeActive started")
                 
         // Initialise the watch session
         self.model.initialiseWatchSession()
+        
+        // Update the data model
+        self.dataModel.updateViewData()
         
         // Setup background refresh
         self.setupBackgroundRefresh()
@@ -34,6 +38,9 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
                 
                 // Simply update the complications on a background task being triggered
                 self.model.updateComplications()
+                
+                // Also update the data model
+                self.dataModel.updateViewData()
                 
                 // Setup new refresh for tomorrow
                 self.setupBackgroundRefresh()

@@ -52,11 +52,14 @@
 		52B78E101D983A2300AB629D /* BLUserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FAB1181A9231970039691E /* BLUserSettings.swift */; };
 		52B78E111D983A6000AB629D /* DefaultPreferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52FAB11B1A9240490039691E /* DefaultPreferences.plist */; };
 		52B78E151D9904AD00AB629D /* MessagesExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 52B78DEF1D982A6D00AB629D /* MessagesExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		52B7E87C1ABEDE9300E1949C /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B7E87B1ABEDE9300E1949C /* InterfaceController.swift */; };
-		52B7E87E1ABEDE9300E1949C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52B7E87D1ABEDE9300E1949C /* Images.xcassets */; };
+		52B7E87E1ABEDE9300E1949C /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52B7E87D1ABEDE9300E1949C /* Media.xcassets */; };
 		52B7E88A1ABEDE9300E1949C /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52B7E8881ABEDE9300E1949C /* Interface.storyboard */; };
 		52B7E88C1ABEDE9300E1949C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52B7E88B1ABEDE9300E1949C /* Images.xcassets */; };
 		52B7E8991ABEEA2200E1949C /* DefaultPreferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52B7E8981ABEEA2200E1949C /* DefaultPreferences.plist */; };
+		52BC1119237C45BC005EC3F7 /* InterfaceHostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BC1118237C45BC005EC3F7 /* InterfaceHostController.swift */; };
+		52BC111B237C461C005EC3F7 /* WatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BC111A237C461C005EC3F7 /* WatchView.swift */; };
+		52BC111D237C464A005EC3F7 /* ProgressControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BC111C237C464A005EC3F7 /* ProgressControl.swift */; };
+		52BC111F237C4AD0005EC3F7 /* WatchDaysLeftData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BC111E237C4AD0005EC3F7 /* WatchDaysLeftData.swift */; };
 		52C595311E952667006C5269 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52C595301E952667006C5269 /* StoreKit.framework */; };
 		52CFBEFE1A8B631B005234FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CFBEFD1A8B631B005234FB /* AppDelegate.swift */; };
 		52CFBF001A8B631B005234FB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CFBEFF1A8B631B005234FB /* ViewController.swift */; };
@@ -236,14 +239,17 @@
 		52B78E0B1D9838B800AB629D /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = System/Library/Frameworks/WatchConnectivity.framework; sourceTree = SDKROOT; };
 		52B7E8771ABEDE9300E1949C /* daysleft WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "daysleft WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52B7E87A1ABEDE9300E1949C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		52B7E87B1ABEDE9300E1949C /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
-		52B7E87D1ABEDE9300E1949C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		52B7E87D1ABEDE9300E1949C /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		52B7E8811ABEDE9300E1949C /* daysleft WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "daysleft WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52B7E8871ABEDE9300E1949C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52B7E8891ABEDE9300E1949C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		52B7E88B1ABEDE9300E1949C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		52B7E8961ABEDEDE00E1949C /* daysleft WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "daysleft WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		52B7E8981ABEEA2200E1949C /* DefaultPreferences.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DefaultPreferences.plist; sourceTree = "<group>"; };
+		52BC1118237C45BC005EC3F7 /* InterfaceHostController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceHostController.swift; sourceTree = "<group>"; };
+		52BC111A237C461C005EC3F7 /* WatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchView.swift; sourceTree = "<group>"; };
+		52BC111C237C464A005EC3F7 /* ProgressControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressControl.swift; sourceTree = "<group>"; };
+		52BC111E237C4AD0005EC3F7 /* WatchDaysLeftData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchDaysLeftData.swift; sourceTree = "<group>"; };
 		52C595301E952667006C5269 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		52CFBEF81A8B631B005234FB /* daysleft.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = daysleft.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52CFBEFC1A8B631B005234FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -485,9 +491,12 @@
 				52D25F3B1BCB8595002E4C76 /* ComplicationsDataSource.swift */,
 				52B7E8981ABEEA2200E1949C /* DefaultPreferences.plist */,
 				5234436C1BBB181C00E95BA4 /* ExtensionDelegate.swift */,
-				52B7E87D1ABEDE9300E1949C /* Images.xcassets */,
-				52B7E87B1ABEDE9300E1949C /* InterfaceController.swift */,
+				52B7E87D1ABEDE9300E1949C /* Media.xcassets */,
+				52BC1118237C45BC005EC3F7 /* InterfaceHostController.swift */,
+				52BC111C237C464A005EC3F7 /* ProgressControl.swift */,
+				52BC111E237C4AD0005EC3F7 /* WatchDaysLeftData.swift */,
 				52D937391BBFCEF200B215BC /* WatchDaysLeftModel.swift */,
+				52BC111A237C461C005EC3F7 /* WatchView.swift */,
 				52B7E8791ABEDE9300E1949C /* Supporting Files */,
 			);
 			path = "daysleft WatchKit Extension";
@@ -995,7 +1004,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52B7E87E1ABEDE9300E1949C /* Images.xcassets in Resources */,
+				52B7E87E1ABEDE9300E1949C /* Media.xcassets in Resources */,
 				52B7E8991ABEEA2200E1949C /* DefaultPreferences.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1251,10 +1260,13 @@
 			files = (
 				52D18D721BC8283300DB7E3A /* BLUserSettings.swift in Sources */,
 				52D18D711BC8282A00DB7E3A /* DaysLeftModel.swift in Sources */,
+				52BC1119237C45BC005EC3F7 /* InterfaceHostController.swift in Sources */,
+				52BC111D237C464A005EC3F7 /* ProgressControl.swift in Sources */,
 				52D25F3C1BCB8595002E4C76 /* ComplicationsDataSource.swift in Sources */,
+				52BC111B237C461C005EC3F7 /* WatchView.swift in Sources */,
 				52D18D701BC8281200DB7E3A /* WatchDaysLeftModel.swift in Sources */,
 				5234436D1BBB181C00E95BA4 /* ExtensionDelegate.swift in Sources */,
-				52B7E87C1ABEDE9300E1949C /* InterfaceController.swift in Sources */,
+				52BC111F237C4AD0005EC3F7 /* WatchDaysLeftData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1721,7 +1733,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 4.0;
+				WATCHOS_DEPLOYMENT_TARGET = 6.0;
 			};
 			name = Debug;
 		};
@@ -1745,7 +1757,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 4.0;
+				WATCHOS_DEPLOYMENT_TARGET = 6.0;
 			};
 			name = Release;
 		};
@@ -1771,7 +1783,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 4.0;
+				WATCHOS_DEPLOYMENT_TARGET = 6.0;
 			};
 			name = Debug;
 		};
@@ -1793,7 +1805,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 4.0;
+				WATCHOS_DEPLOYMENT_TARGET = 6.0;
 			};
 			name = Release;
 		};
@@ -1850,7 +1862,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
-				SHARED_VERSION_NUMBER = 4.0.2;
+				SHARED_VERSION_NUMBER = 4.1.0;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1901,7 +1913,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SHARED_VERSION_NUMBER = 4.0.2;
+				SHARED_VERSION_NUMBER = 4.1.0;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				TARGETED_DEVICE_FAMILY = "1,2";

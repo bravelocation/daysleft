@@ -1,31 +1,15 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="15400" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="8092"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="15400"/>
     </dependencies>
     <scenes>
         <!--MainInterfaceController-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller identifier="MainInterfaceController" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="daysleft_WatchKit_Extension">
-                    <items>
-                        <label alignment="center" textAlignment="center" numberOfLines="2" id="KUj-Gc-2DT">
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <fontDescription key="font" style="UICTFontTextStyleBody"/>
-                        </label>
-                        <imageView width="75" height="75" alignment="center" verticalAlignment="center" id="PVN-ca-kV0"/>
-                        <label alignment="center" verticalAlignment="bottom" textAlignment="center" id="ozf-ge-NQR">
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <fontDescription key="font" style="UICTFontTextStyleBody"/>
-                        </label>
-                    </items>
-                    <connections>
-                        <outlet property="imageProgress" destination="PVN-ca-kV0" id="6y6-6n-4A4"/>
-                        <outlet property="labelPercentDone" destination="ozf-ge-NQR" id="94V-fv-6Ei"/>
-                        <outlet property="labelTitle" destination="KUj-Gc-2DT" id="aZ9-e4-qTc"/>
-                    </connections>
-                </controller>
+                <controller identifier="MainInterfaceController" id="AgC-eL-Hgc" customClass="InterfaceHostController" customModule="daysleft_WatchKit_Extension"/>
             </objects>
             <point key="canvasLocation" x="272" y="56"/>
         </scene>
