@@ -457,7 +457,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Ad (to help pay the bills)" id="Fwq-hG-hz6">
+                            <tableViewSection headerTitle="Become a supporter" id="Fwq-hG-hz6">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="QSx-Qd-NhG" rowHeight="51" style="IBUITableViewCellStyleDefault" id="ghp-sC-awT">
                                         <rect key="frame" x="16" y="879.5" width="343" height="51"/>
