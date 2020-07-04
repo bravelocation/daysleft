@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14835.7" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14790.5"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -32,11 +32,20 @@
                                 <color key="textColor" name="SettingsIconTint"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LoadingImage" translatesAutoresizingMaskIntoConstraints="NO" id="HkW-ty-gKb">
+                                <rect key="frame" x="80" y="226" width="215" height="215"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="HkW-ty-gKb" secondAttribute="height" multiplier="1:1" id="1DS-UV-SeB"/>
+                                    <constraint firstAttribute="width" constant="215" id="dcF-6x-AxK"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Bcu-3y-fUS" firstAttribute="trailing" secondItem="WFw-yU-WMU" secondAttribute="trailing" constant="16" id="5az-hg-q20"/>
                             <constraint firstItem="fCD-BC-bCn" firstAttribute="leading" secondItem="Bcu-3y-fUS" secondAttribute="leading" constant="16" id="73E-ar-XXu"/>
+                            <constraint firstItem="HkW-ty-gKb" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="FiU-xm-HE9"/>
+                            <constraint firstItem="HkW-ty-gKb" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="J61-kH-rjw"/>
                             <constraint firstItem="WFw-yU-WMU" firstAttribute="leading" secondItem="Bcu-3y-fUS" secondAttribute="leading" constant="16" id="fx4-bh-K7E"/>
                             <constraint firstItem="Bcu-3y-fUS" firstAttribute="bottom" secondItem="WFw-yU-WMU" secondAttribute="bottom" constant="16" id="imj-RQ-uJn"/>
                             <constraint firstItem="WFw-yU-WMU" firstAttribute="top" secondItem="fCD-BC-bCn" secondAttribute="bottom" constant="16" id="lcs-wm-rU6"/>
@@ -51,6 +60,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="LoadingImage" width="200" height="200"/>
         <namedColor name="BraveLocationColor">
             <color red="0.66666666666666663" green="0.23529411764705882" blue="0.30980392156862746" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
