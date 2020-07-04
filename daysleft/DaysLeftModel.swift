@@ -95,7 +95,7 @@ open class DaysLeftModel: BLUserSettings {
     }
     
     /// Property to get and set the adsfree flag
-    open var adsFree: Bool {
+    open var isASupporter: Bool {
         get { return self.readObjectFromStore("adsFree") as! Bool }
         set { self.writeObjectToStore(newValue as AnyObject, key: "adsFree") }
     }

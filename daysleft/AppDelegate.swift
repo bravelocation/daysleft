@@ -8,7 +8,6 @@
 
 import UIKit
 import daysleftlibrary
-import GoogleMobileAds
 import Firebase
 
 @UIApplicationMain
@@ -33,9 +32,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // MARK: UIApplicationDelegate functions
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
- 
-        GADMobileAds.sharedInstance().start(completionHandler: nil)
-        print("Configured Google Ads")
 
         // Use Firebase library to configure APIs
         FirebaseApp.configure()
