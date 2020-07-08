@@ -89,8 +89,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print("Received iCloudSettingsUpdated notification")
         
         // Push latest settings and update badge
-        self.model.pushAllSettingsToWatch()
         self.updateBadge()
+        self.model.pushAllSettingsToWatch()
     }
 }
 
@@ -103,8 +103,8 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         Messaging.messaging().appDidReceiveMessage(response.notification.request.content.userInfo)
         
         // Push latest settings and update badge
-        self.model.pushAllSettingsToWatch()
         self.updateBadge()
+        self.model.pushAllSettingsToWatch()
         
         completionHandler()
     }
