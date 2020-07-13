@@ -457,40 +457,17 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Ad (to help pay the bills)" id="Fwq-hG-hz6">
+                            <tableViewSection headerTitle="Become a supporter" id="Fwq-hG-hz6">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="51" id="mvP-EY-vJX">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="QSx-Qd-NhG" rowHeight="51" style="IBUITableViewCellStyleDefault" id="ghp-sC-awT">
                                         <rect key="frame" x="16" y="879.5" width="343" height="51"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mvP-EY-vJX" id="lVe-PJ-TkG">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="51"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tuX-nY-n9F" customClass="GADBannerView">
-                                                    <rect key="frame" x="0.0" y="0.0" width="343" height="50"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="50" id="OgA-Wr-ELS"/>
-                                                    </constraints>
-                                                </view>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="tuX-nY-n9F" firstAttribute="top" secondItem="lVe-PJ-TkG" secondAttribute="top" id="aie-1I-Zse"/>
-                                                <constraint firstAttribute="trailing" secondItem="tuX-nY-n9F" secondAttribute="trailing" id="ca4-sV-hP4"/>
-                                                <constraint firstItem="tuX-nY-n9F" firstAttribute="leading" secondItem="lVe-PJ-TkG" secondAttribute="leading" id="z3M-Ef-DfL"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="QSx-Qd-NhG" rowHeight="51" style="IBUITableViewCellStyleDefault" id="ghp-sC-awT">
-                                        <rect key="frame" x="16" y="930.5" width="343" height="51"/>
-                                        <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ghp-sC-awT" id="3uA-Ci-3h0">
-                                            <rect key="frame" x="0.0" y="0.0" width="324" height="51"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="317" height="51"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Remove Ads (and support the app)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" id="QSx-Qd-NhG">
-                                                    <rect key="frame" x="15" y="0.0" width="301" height="51"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Support the app" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" id="QSx-Qd-NhG">
+                                                    <rect key="frame" x="15" y="0.0" width="294" height="51"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <nil key="textColor"/>
@@ -509,16 +486,14 @@
                         </connections>
                     </tableView>
                     <connections>
-                        <outlet property="adCell" destination="mvP-EY-vJX" id="NWf-Hd-3Dr"/>
                         <outlet property="addToSiriCell" destination="5dY-J8-Z8f" id="M7U-O5-aUb"/>
                         <outlet property="appMadeCell" destination="9sZ-6a-5sj" id="KAB-t9-n2h"/>
-                        <outlet property="bannerView" destination="tuX-nY-n9F" id="154-7S-fb5"/>
+                        <outlet property="becomeASupporterCell" destination="ghp-sC-awT" id="kDM-WU-vsU"/>
                         <outlet property="gitHubCell" destination="I9v-Ds-Pit" id="H2W-eF-kzV"/>
                         <outlet property="labelDaysLength" destination="zZH-Bf-1Ed" id="zxW-pP-bnD"/>
                         <outlet property="labelVersion" destination="B0F-JM-ow0" id="W7u-Kt-d3X"/>
                         <outlet property="moreAppsCell" destination="Dub-25-YGm" id="RWf-GF-IMD"/>
                         <outlet property="privacyCell" destination="kgV-XU-Q9X" id="X0m-Fn-bTq"/>
-                        <outlet property="removeAdsCell" destination="ghp-sC-awT" id="kDM-WU-vsU"/>
                         <outlet property="switchShowBadge" destination="Gc0-ce-bIi" id="d4Y-BY-mf6"/>
                         <outlet property="switchWeekdaysOnly" destination="cmn-B6-O7N" id="0ON-yG-GGR"/>
                         <outlet property="textEnd" destination="P4l-WT-96r" id="Jcc-cF-alp"/>

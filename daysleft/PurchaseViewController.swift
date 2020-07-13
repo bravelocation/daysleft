@@ -64,7 +64,7 @@ class PurchaseViewController: UIViewController, SKProductsRequestDelegate, SKPay
         navBar!.isTranslucent = false
         navBar!.titleTextAttributes = [.foregroundColor: UIColor.white]
         
-        self.title = "Go Ads Free"
+        self.title = "Become a supporter"
         
         // Set product details
         self.productRequest = SKProductsRequest(productIdentifiers: ["com.bravelocation.daysleft.adsfree"])
@@ -72,9 +72,9 @@ class PurchaseViewController: UIViewController, SKProductsRequestDelegate, SKPay
         
         self.transactionInProgress = false
         
-        // Check if already ads free
-        if (self.showAds() == false) {
-            self.statusChange(status: "You're already Ads Free - thanks!", enableActivityMonitor: false)
+        // Check if already a supporter
+        if (self.isNotASupporter() == false) {
+            self.statusChange(status: "You're already a supporter - thanks!", enableActivityMonitor: false)
         } else {
             // Look for product information
             self.requestProductInfo()
@@ -109,7 +109,7 @@ class PurchaseViewController: UIViewController, SKProductsRequestDelegate, SKPay
     
     func actionButtonChange(message: String, enable: Bool) {
         DispatchQueue.main.async {
-            if (enable == false || self.showAds() == false) {
+            if (enable == false || self.isNotASupporter() == false) {
                 self.buttonAction.setTitle("", for: UIControl.State.normal)
                 self.buttonAction.layer.borderColor = UIColor.clear.cgColor
                 self.buttonAction.tintColor = UIColor.clear
@@ -133,7 +133,7 @@ class PurchaseViewController: UIViewController, SKProductsRequestDelegate, SKPay
     
     func successfulPayment() {
         DispatchQueue.main.async {
-            self.model?.adsFree = true
+            self.model?.isASupporter = true
             self.actionButtonChange(message: "", enable: false)
             
             // Hide the restore button
@@ -143,8 +143,8 @@ class PurchaseViewController: UIViewController, SKProductsRequestDelegate, SKPay
         }
     }
     
-    func showAds() -> Bool {
-        return self.model?.adsFree == false
+    func isNotASupporter() -> Bool {
+        return self.model?.isASupporter == false
     }
     
     // MARK: - SKProductsRequestDelegate
@@ -158,7 +158,7 @@ class PurchaseViewController: UIViewController, SKProductsRequestDelegate, SKPay
                 
                 // If we've not already restored
                 DispatchQueue.main.async {
-                    if (self.showAds()) {
+                    if (self.isNotASupporter()) {
                         self.statusChange(status: "", enableActivityMonitor: false)
                         self.labelProductDetails.text = self.product?.localizedDescription
                         
@@ -168,12 +168,12 @@ class PurchaseViewController: UIViewController, SKProductsRequestDelegate, SKPay
                         numberFormatter.numberStyle = .currency
                         numberFormatter.locale = self.product?.priceLocale
                         let formattedPrice = numberFormatter.string(from: (self.product?.price)!)
-                        let buttonTextWithPrice = String.init(format: "Go Ads Free for %@", arguments: [formattedPrice!])
+                        let buttonTextWithPrice = String.init(format: "Support us for %@", arguments: [formattedPrice!])
                         self.actionButtonChange(message: buttonTextWithPrice, enable: true)
                         
                     } else {
-                        print("Already Ads Free")
-                        self.statusChange(status: "Already Ads Free", enableActivityMonitor: false)
+                        print("Already a supporter")
+                        self.statusChange(status: "Already a supporter", enableActivityMonitor: false)
                         self.actionButtonChange(message: "", enable: false)
                     }
                 }
@@ -189,24 +189,24 @@ class PurchaseViewController: UIViewController, SKProductsRequestDelegate, SKPay
         for transaction in transactions {
             switch transaction.transactionState {
             case .purchasing:
-                self.statusChange(status: "Purchasing Ads Free ...", enableActivityMonitor: true)
+                self.statusChange(status: "Purchasing becoming a supporter ...", enableActivityMonitor: true)
             case .deferred:
                 self.statusChange(status: "Waiting ...", enableActivityMonitor: true)
             case .failed:
                 if (self.transactionInProgress) {
-                    self.statusChange(status: "Purchase of Ads Free failed", enableActivityMonitor: false)
+                    self.statusChange(status: "Purchase of becoming a supporter failed", enableActivityMonitor: false)
                     print("Purchase failed", transaction.error.debugDescription)
                     self.transactionInProgress = false
                 }
             case .purchased:
-                self.statusChange(status: "You are now Ads Free! Thanks!", enableActivityMonitor: false)
+                self.statusChange(status: "You are now a supporter! Thanks!", enableActivityMonitor: false)
                 self.successfulPayment()
             case .restored:
-                self.statusChange(status: "Ads Free successfully restored!", enableActivityMonitor: false)
+                self.statusChange(status: "Being a supporter successfully restored!", enableActivityMonitor: false)
                 self.successfulPayment()
             
             @unknown default:
-                self.statusChange(status: "Purchase of Ads Free failed", enableActivityMonitor: false)
+                self.statusChange(status: "Purchase of becoming a supporter failed", enableActivityMonitor: false)
                 print("Purchase failed", transaction.error.debugDescription)
                 self.transactionInProgress = false
             }
@@ -214,7 +214,7 @@ class PurchaseViewController: UIViewController, SKProductsRequestDelegate, SKPay
     }
     
     func paymentQueueRestoreCompletedTransactionsFinished(_ queue: SKPaymentQueue) {
-        self.statusChange(status: "Ads Free successfully restored!", enableActivityMonitor: false)
+        self.statusChange(status: "Being a supporter successfully restored!", enableActivityMonitor: false)
         self.successfulPayment()
     }
 
@@ -227,7 +227,7 @@ class PurchaseViewController: UIViewController, SKProductsRequestDelegate, SKPay
             let payment: SKMutablePayment = SKMutablePayment(product: self.product!)
             payment.quantity = 1
             
-            self.statusChange(status: "Buying Ads Free from App Store ...", enableActivityMonitor: true)
+            self.statusChange(status: "Buying becoming a supporter from App Store ...", enableActivityMonitor: true)
             SKPaymentQueue.default().add(payment)
         }
     }
@@ -237,7 +237,7 @@ class PurchaseViewController: UIViewController, SKProductsRequestDelegate, SKPay
             self.transactionInProgress = true
             self.actionButtonChange(message: "", enable: false)
             
-            self.statusChange(status: "Restoring Ads Free from App Store ...", enableActivityMonitor: true)
+            self.statusChange(status: "Restoring being a supporter from App Store ...", enableActivityMonitor: true)
             SKPaymentQueue.default().restoreCompletedTransactions()
         }
     }

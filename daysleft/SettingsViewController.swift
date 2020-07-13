@@ -9,8 +9,6 @@
 import UIKit
 import SafariServices
 import daysleftlibrary
-import GoogleMobileAds
-import Firebase
 import Intents
 import IntentsUI
 
@@ -24,9 +22,7 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
     @IBOutlet weak var labelDaysLength: UILabel!
     @IBOutlet weak var labelVersion: UILabel!
     @IBOutlet weak var switchShowBadge: UISwitch!
-    @IBOutlet weak var bannerView: GADBannerView!
-    @IBOutlet weak var adCell: UITableViewCell!
-    @IBOutlet weak var removeAdsCell: UITableViewCell!
+    @IBOutlet weak var becomeASupporterCell: UITableViewCell!
     @IBOutlet weak var addToSiriCell: UITableViewCell!
     @IBOutlet weak var gitHubCell: UITableViewCell!
     @IBOutlet weak var appMadeCell: UITableViewCell!
@@ -69,10 +65,6 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
         // Set up the delegate of text field for handling return below
         self.textTitle.delegate = self
         
-        // Setup ads
-        self.bannerView.adUnitID = "ca-app-pub-6795405439060738/6923889836"
-        self.bannerView.rootViewController = self
-        
         // Add version number
         let infoDictionary = Bundle.main
         let version = infoDictionary.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
@@ -114,19 +106,11 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        // Show the ads if not hidden
-        if (self.showAds()) {
-            let request = GADRequest()
-            
-            self.bannerView.load(request)
-            
-            self.bannerView.isHidden = false
-            self.adCell.isHidden = false
-            self.removeAdsCell.isHidden = false
+        // Show the become a supporter cell if not hidden
+        if (self.isNotASupporter()) {
+            self.becomeASupporterCell.isHidden = false
         } else {
-            self.bannerView.isHidden = true
-            self.adCell.isHidden = true
-            self.removeAdsCell.isHidden = true
+            self.becomeASupporterCell.isHidden = true
         }
         
         // Set the about cell logos
@@ -198,10 +182,12 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
                 self.present(svc, animated: true, completion: nil)
             }
         } else if (indexPath.section == 5) {
-            if (indexPath.row == 1) {
-                // Open the purchase controller
-                let purchaseViewController = PurchaseViewController(nibName: "PurchaseViewController", bundle: nil)
-                self.navigationController?.pushViewController(purchaseViewController, animated: true)
+            if (indexPath.row == 0) {
+                // Open the purchase controller if we can become a support
+                if (self.isNotASupporter()) {
+                    let purchaseViewController = PurchaseViewController(nibName: "PurchaseViewController", bundle: nil)
+                    self.navigationController?.pushViewController(purchaseViewController, animated: true)
+                }
             }
         }
     }
@@ -219,10 +205,10 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
         case 4:
             return "About"
         case 5:
-            if (self.showAds()) {
-                return "Ad (To help pay the bills)"
+            if (self.isNotASupporter()) {
+                return "Become a supporter"
             } else {
-                return "No Ads for you - thanks!"
+                return "Thanks for being a supporter!"
             }
         default:
             return "Other"
@@ -266,9 +252,9 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
         return appDelegate.model
     }
     
-    func showAds() -> Bool {
+    func isNotASupporter() -> Bool {
         let model = self.modelData()
-        return model.adsFree == false
+        return model.isASupporter == false
     }
     
     // MARK: - SFSafariViewControllerDelegate methods
