@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,7 +11,7 @@
 		520F20C2233631E400B1F73F /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52CFBF041A8B631B005234FB /* Media.xcassets */; };
 		520F20C3233631E800B1F73F /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52CFBF041A8B631B005234FB /* Media.xcassets */; };
 		523443631BBAFBEF00E95BA4 /* daysleft WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 52B7E8771ABEDE9300E1949C /* daysleft WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		523443661BBAFBEF00E95BA4 /* daysleft WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 52B7E8811ABEDE9300E1949C /* daysleft WatchKit App.app */; };
+		523443661BBAFBEF00E95BA4 /* daysleft WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 52B7E8811ABEDE9300E1949C /* daysleft WatchKit App.app */; platformFilter = ios; };
 		5234436D1BBB181C00E95BA4 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5234436C1BBB181C00E95BA4 /* ExtensionDelegate.swift */; };
 		527AD75D1E94EB2800F8637B /* PurchaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527AD75B1E94EB2800F8637B /* PurchaseViewController.swift */; };
 		527AD75E1E94EB2800F8637B /* PurchaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 527AD75C1E94EB2800F8637B /* PurchaseViewController.xib */; };
@@ -25,7 +25,7 @@
 		5295EDFB1A94B398007EF7E7 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5295EDFA1A94B398007EF7E7 /* NotificationCenter.framework */; };
 		5295EE001A94B398007EF7E7 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5295EDFF1A94B398007EF7E7 /* TodayViewController.swift */; };
 		5295EE021A94B398007EF7E7 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5295EE011A94B398007EF7E7 /* MainInterface.storyboard */; };
-		5295EE051A94B398007EF7E7 /* dayslefttoday.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5295EDF81A94B398007EF7E7 /* dayslefttoday.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5295EE051A94B398007EF7E7 /* dayslefttoday.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5295EDF81A94B398007EF7E7 /* dayslefttoday.appex */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		5295EE0A1A94B3AA007EF7E7 /* daysleftlibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5295EDD01A94AE53007EF7E7 /* daysleftlibrary.framework */; };
 		5295EE0B1A94B4C7007EF7E7 /* DefaultPreferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52FAB11B1A9240490039691E /* DefaultPreferences.plist */; };
 		5295EE1D1A961A77007EF7E7 /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5295EE0D1A95E647007EF7E7 /* CounterView.swift */; };
@@ -33,8 +33,8 @@
 		52AC693E2154DA7E00E6C833 /* IntentsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52AC693D2154DA7E00E6C833 /* IntentsUI.framework */; };
 		52AC69412154DA7E00E6C833 /* IntentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AC69402154DA7E00E6C833 /* IntentViewController.swift */; };
 		52AC69442154DA7E00E6C833 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52AC69422154DA7E00E6C833 /* MainInterface.storyboard */; };
-		52AC69482154DA7F00E6C833 /* DaysLeftIntentUI.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 52AC693C2154DA7E00E6C833 /* DaysLeftIntentUI.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		52AC694B2154DA7F00E6C833 /* DaysLeftIntent.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 52AC69332154DA7E00E6C833 /* DaysLeftIntent.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		52AC69482154DA7F00E6C833 /* DaysLeftIntentUI.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 52AC693C2154DA7E00E6C833 /* DaysLeftIntentUI.appex */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		52AC694B2154DA7F00E6C833 /* DaysLeftIntent.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 52AC69332154DA7E00E6C833 /* DaysLeftIntent.appex */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		52AC69532154DAFB00E6C833 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 52AC69522154DAFB00E6C833 /* Intents.intentdefinition */; settings = {ATTRIBUTES = (codegen, ); }; };
 		52AC69542154DC3000E6C833 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 52AC69522154DAFB00E6C833 /* Intents.intentdefinition */; settings = {ATTRIBUTES = (codegen, ); }; };
 		52AC69552154DC3600E6C833 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 52AC69522154DAFB00E6C833 /* Intents.intentdefinition */; settings = {ATTRIBUTES = (codegen, ); }; };
@@ -51,7 +51,7 @@
 		52B78E0F1D983A1B00AB629D /* DaysLeftModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CFBF1D1A8B642C005234FB /* DaysLeftModel.swift */; };
 		52B78E101D983A2300AB629D /* BLUserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FAB1181A9231970039691E /* BLUserSettings.swift */; };
 		52B78E111D983A6000AB629D /* DefaultPreferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52FAB11B1A9240490039691E /* DefaultPreferences.plist */; };
-		52B78E151D9904AD00AB629D /* MessagesExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 52B78DEF1D982A6D00AB629D /* MessagesExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		52B78E151D9904AD00AB629D /* MessagesExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 52B78DEF1D982A6D00AB629D /* MessagesExtension.appex */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		52B7E87E1ABEDE9300E1949C /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52B7E87D1ABEDE9300E1949C /* Media.xcassets */; };
 		52B7E88A1ABEDE9300E1949C /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52B7E8881ABEDE9300E1949C /* Interface.storyboard */; };
 		52B7E88C1ABEDE9300E1949C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52B7E88B1ABEDE9300E1949C /* Images.xcassets */; };
@@ -1296,6 +1296,7 @@
 		};
 		523443651BBAFBEF00E95BA4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
+			platformFilter = ios;
 			target = 52B7E8801ABEDE9300E1949C /* daysleft WatchKit App */;
 			targetProxy = 523443641BBAFBEF00E95BA4 /* PBXContainerItemProxy */;
 		};
@@ -1311,21 +1312,25 @@
 		};
 		5295EE041A94B398007EF7E7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
+			platformFilter = ios;
 			target = 5295EDF71A94B398007EF7E7 /* dayslefttoday */;
 			targetProxy = 5295EE031A94B398007EF7E7 /* PBXContainerItemProxy */;
 		};
 		52AC69472154DA7F00E6C833 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
+			platformFilter = ios;
 			target = 52AC693B2154DA7E00E6C833 /* DaysLeftIntentUI */;
 			targetProxy = 52AC69462154DA7F00E6C833 /* PBXContainerItemProxy */;
 		};
 		52AC694A2154DA7F00E6C833 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
+			platformFilter = ios;
 			target = 52AC69322154DA7E00E6C833 /* DaysLeftIntent */;
 			targetProxy = 52AC69492154DA7F00E6C833 /* PBXContainerItemProxy */;
 		};
 		52B78E171D9904AD00AB629D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
+			platformFilter = ios;
 			target = 52B78DEE1D982A6D00AB629D /* MessagesExtension */;
 			targetProxy = 52B78E161D9904AD00AB629D /* PBXContainerItemProxy */;
 		};
@@ -1499,6 +1504,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1523,6 +1529,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1555,6 +1562,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.bravelocation.daysleft.DaysLeftIntentUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1587,6 +1595,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.bravelocation.daysleft.DaysLeftIntentUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1619,6 +1628,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.bravelocation.daysleft.DaysLeftIntent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1651,6 +1661,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.bravelocation.daysleft.DaysLeftIntent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1678,6 +1689,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_VERSION = 5.0;
 			};
@@ -1705,6 +1717,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -1858,7 +1871,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1910,7 +1923,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SHARED_VERSION_NUMBER = 4.2.0;
@@ -1948,6 +1961,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "./daysleft/daysleft-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1980,6 +1994,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "./daysleft/daysleft-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
