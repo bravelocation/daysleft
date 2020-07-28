@@ -264,8 +264,8 @@ class ViewController: UIViewController {
 extension ViewController {
     override var keyCommands: [UIKeyCommand]? {
         return [
-            UIKeyCommand(input: "E", modifierFlags: .command, action: #selector(ViewController.keyboardSelectTab), discoverabilityTitle: "Edit"),
-            UIKeyCommand(input: "S", modifierFlags: [.command, .shift], action: #selector(ViewController.keyboardSelectTab), discoverabilityTitle: "Share")
+            UIKeyCommand(title: "Edit", action: #selector(ViewController.keyboardSelectTab), input: "E", modifierFlags: .command),
+            UIKeyCommand(title: "Share", action: #selector(ViewController.keyboardSelectTab), input: "S", modifierFlags: [.command, .shift])
         ]
     }
     
