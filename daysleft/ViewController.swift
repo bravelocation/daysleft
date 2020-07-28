@@ -263,10 +263,17 @@ class ViewController: UIViewController {
 
 extension ViewController {
     override var keyCommands: [UIKeyCommand]? {
-        return [
-            UIKeyCommand(input: "E", modifierFlags: .command, action: #selector(ViewController.keyboardSelectTab), discoverabilityTitle: "Edit"),
-            UIKeyCommand(input: "S", modifierFlags: [.command, .shift], action: #selector(ViewController.keyboardSelectTab), discoverabilityTitle: "Share")
-        ]
+        if #available(iOS 13.0, *) {
+            return [
+                UIKeyCommand(title: "Edit", action: #selector(ViewController.keyboardSelectTab), input: "E", modifierFlags: .command),
+                UIKeyCommand(title: "Share", action: #selector(ViewController.keyboardSelectTab), input: "S", modifierFlags: [.command, .shift])
+            ]
+        } else {
+            return [
+                UIKeyCommand(input: "E", modifierFlags: .command, action: #selector(ViewController.keyboardSelectTab), discoverabilityTitle: "Edit"),
+                UIKeyCommand(input: "S", modifierFlags: [.command, .shift], action: #selector(ViewController.keyboardSelectTab), discoverabilityTitle: "Share")
+            ]
+        }
     }
     
     @objc func keyboardSelectTab(sender: UIKeyCommand) {
