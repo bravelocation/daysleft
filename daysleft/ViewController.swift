@@ -10,6 +10,7 @@ import UIKit
 import StoreKit
 import daysleftlibrary
 import Intents
+import Combine
 
 class ViewController: UIViewController {
 
@@ -24,6 +25,9 @@ class ViewController: UIViewController {
     
     var dayChangeTimer: Timer!
     var shareButton: UIBarButtonItem!
+    
+    @available(iOS 13.0, *)
+    private lazy var menuSubscriber: AnyCancellable? = nil
 
     // MARK: - Initialisation
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -77,6 +81,9 @@ class ViewController: UIViewController {
         // Setup user intents
         self.setupHandoff()
         self.donateInteraction()
+        
+        // Setup menu command handler
+        self.setupMenuCommandHandler()
     }
  
     override func viewDidAppear(_ animated: Bool) {
@@ -262,10 +269,23 @@ class ViewController: UIViewController {
 // MARK: - Keyboard options
 
 extension ViewController {
+    
+    func setupMenuCommandHandler() {
+        if #available(iOS 13.0, *) {
+            self.menuSubscriber = NotificationCenter.default.publisher(for: .menuCommand)
+                .receive(on: RunLoop.main)
+                .sink(receiveValue: { notification in
+                    if let command = notification.object as? UIKeyCommand {
+                        self.keyboardSelectTab(sender: command)
+                    }
+                })
+        }
+    }
+    
     override var keyCommands: [UIKeyCommand]? {
         if #available(iOS 13.0, *) {
             return [
-                UIKeyCommand(title: "Edit", action: #selector(ViewController.keyboardSelectTab), input: "E", modifierFlags: .command),
+                UIKeyCommand(title: "Edit Settings", action: #selector(ViewController.keyboardSelectTab), input: "E", modifierFlags: .command),
                 UIKeyCommand(title: "Share", action: #selector(ViewController.keyboardSelectTab), input: "S", modifierFlags: [.command, .shift])
             ]
         } else {
