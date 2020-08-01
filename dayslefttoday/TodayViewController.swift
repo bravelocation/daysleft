@@ -8,7 +8,7 @@
 
 import UIKit
 import NotificationCenter
-import daysleftlibrary
+import DaysLeftLibrary
 
 class TodayViewController: UIViewController, NCWidgetProviding {
         

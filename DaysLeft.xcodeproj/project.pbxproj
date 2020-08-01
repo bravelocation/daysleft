@@ -7,26 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		39A194FFE9D0B3DE5A8D321B /* Pods_daysleft.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA7BBD7977F821A8A87B182E /* Pods_daysleft.framework */; };
 		520F20C2233631E400B1F73F /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52CFBF041A8B631B005234FB /* Media.xcassets */; };
 		520F20C3233631E800B1F73F /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52CFBF041A8B631B005234FB /* Media.xcassets */; };
-		523443631BBAFBEF00E95BA4 /* daysleft WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 52B7E8771ABEDE9300E1949C /* daysleft WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		523443661BBAFBEF00E95BA4 /* daysleft WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 52B7E8811ABEDE9300E1949C /* daysleft WatchKit App.app */; platformFilter = ios; };
+		523443631BBAFBEF00E95BA4 /* DaysLeft WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 52B7E8771ABEDE9300E1949C /* DaysLeft WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		523443661BBAFBEF00E95BA4 /* DaysLeft WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 52B7E8811ABEDE9300E1949C /* DaysLeft WatchKit App.app */; platformFilter = ios; };
 		5234436D1BBB181C00E95BA4 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5234436C1BBB181C00E95BA4 /* ExtensionDelegate.swift */; };
 		527AD75D1E94EB2800F8637B /* PurchaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527AD75B1E94EB2800F8637B /* PurchaseViewController.swift */; };
 		527AD75E1E94EB2800F8637B /* PurchaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 527AD75C1E94EB2800F8637B /* PurchaseViewController.xib */; };
 		527BE7A61FB0FEE600455FE9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 527BE7A51FB0FEE500455FE9 /* LaunchScreen.storyboard */; };
 		527E15401D83F80300D81B15 /* gallery.ckcomplication in Resources */ = {isa = PBXBuildFile; fileRef = 527E153F1D83F80300D81B15 /* gallery.ckcomplication */; };
 		5285E6751FACC9A6001547CD /* AppDaysLeftModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5285E6741FACC9A6001547CD /* AppDaysLeftModel.swift */; };
-		5295EDDB1A94AE53007EF7E7 /* daysleftlibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5295EDD01A94AE53007EF7E7 /* daysleftlibrary.framework */; };
+		5295EDDB1A94AE53007EF7E7 /* DaysLeftLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5295EDD01A94AE53007EF7E7 /* DaysLeftLibrary.framework */; };
 		5295EDF01A94AF83007EF7E7 /* DaysLeftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CFBF131A8B631B005234FB /* DaysLeftTests.swift */; };
 		5295EDF11A94AFA7007EF7E7 /* DaysLeftModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CFBF1D1A8B642C005234FB /* DaysLeftModel.swift */; };
 		5295EDF21A94AFA7007EF7E7 /* BLUserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FAB1181A9231970039691E /* BLUserSettings.swift */; };
 		5295EDFB1A94B398007EF7E7 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5295EDFA1A94B398007EF7E7 /* NotificationCenter.framework */; };
 		5295EE001A94B398007EF7E7 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5295EDFF1A94B398007EF7E7 /* TodayViewController.swift */; };
 		5295EE021A94B398007EF7E7 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5295EE011A94B398007EF7E7 /* MainInterface.storyboard */; };
-		5295EE051A94B398007EF7E7 /* dayslefttoday.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5295EDF81A94B398007EF7E7 /* dayslefttoday.appex */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		5295EE0A1A94B3AA007EF7E7 /* daysleftlibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5295EDD01A94AE53007EF7E7 /* daysleftlibrary.framework */; };
+		5295EE051A94B398007EF7E7 /* DaysLeftToday.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5295EDF81A94B398007EF7E7 /* DaysLeftToday.appex */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5295EE0A1A94B3AA007EF7E7 /* DaysLeftLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5295EDD01A94AE53007EF7E7 /* DaysLeftLibrary.framework */; };
 		5295EE0B1A94B4C7007EF7E7 /* DefaultPreferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52FAB11B1A9240490039691E /* DefaultPreferences.plist */; };
 		5295EE1D1A961A77007EF7E7 /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5295EE0D1A95E647007EF7E7 /* CounterView.swift */; };
 		52AC69362154DA7E00E6C833 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AC69352154DA7E00E6C833 /* IntentHandler.swift */; };
@@ -38,8 +37,8 @@
 		52AC69532154DAFB00E6C833 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 52AC69522154DAFB00E6C833 /* Intents.intentdefinition */; settings = {ATTRIBUTES = (codegen, ); }; };
 		52AC69542154DC3000E6C833 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 52AC69522154DAFB00E6C833 /* Intents.intentdefinition */; settings = {ATTRIBUTES = (codegen, ); }; };
 		52AC69552154DC3600E6C833 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 52AC69522154DAFB00E6C833 /* Intents.intentdefinition */; settings = {ATTRIBUTES = (codegen, ); }; };
-		52AC69572154DDF100E6C833 /* daysleftlibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5295EDD01A94AE53007EF7E7 /* daysleftlibrary.framework */; };
-		52AC69582154DDF900E6C833 /* daysleftlibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5295EDD01A94AE53007EF7E7 /* daysleftlibrary.framework */; };
+		52AC69572154DDF100E6C833 /* DaysLeftLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5295EDD01A94AE53007EF7E7 /* DaysLeftLibrary.framework */; };
+		52AC69582154DDF900E6C833 /* DaysLeftLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5295EDD01A94AE53007EF7E7 /* DaysLeftLibrary.framework */; };
 		52AC695C2154DEB700E6C833 /* DaysLeftIntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AC695B2154DEB700E6C833 /* DaysLeftIntentHandler.swift */; };
 		52AC695D2154E42F00E6C833 /* DefaultPreferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52FAB11B1A9240490039691E /* DefaultPreferences.plist */; };
 		52AC695E2154E42F00E6C833 /* DefaultPreferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52FAB11B1A9240490039691E /* DefaultPreferences.plist */; };
@@ -65,7 +64,7 @@
 		52CFBF001A8B631B005234FB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CFBEFF1A8B631B005234FB /* ViewController.swift */; };
 		52CFBF031A8B631B005234FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52CFBF011A8B631B005234FB /* Main.storyboard */; };
 		52CFBF051A8B631B005234FB /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52CFBF041A8B631B005234FB /* Media.xcassets */; };
-		52D18D611BC4E91500DB7E3A /* daysleftlibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5295EDD01A94AE53007EF7E7 /* daysleftlibrary.framework */; };
+		52D18D611BC4E91500DB7E3A /* DaysLeftLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5295EDD01A94AE53007EF7E7 /* DaysLeftLibrary.framework */; };
 		52D18D701BC8281200DB7E3A /* WatchDaysLeftModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D937391BBFCEF200B215BC /* WatchDaysLeftModel.swift */; };
 		52D18D711BC8282A00DB7E3A /* DaysLeftModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CFBF1D1A8B642C005234FB /* DaysLeftModel.swift */; };
 		52D18D721BC8283300DB7E3A /* BLUserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FAB1181A9231970039691E /* BLUserSettings.swift */; };
@@ -77,7 +76,8 @@
 		52F9CDAC22D63D1900E0FFE8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F9CDAB22D63D1900E0FFE8 /* SceneDelegate.swift */; };
 		52FAB11C1A9240490039691E /* DefaultPreferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52FAB11B1A9240490039691E /* DefaultPreferences.plist */; };
 		52FAB11E1A9381B70039691E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FAB11D1A9381B70039691E /* SettingsViewController.swift */; };
-		52FBB73C1BC92D5300B426C0 /* daysleftlibrary.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5295EDD01A94AE53007EF7E7 /* daysleftlibrary.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		52FBB73C1BC92D5300B426C0 /* DaysLeftLibrary.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5295EDD01A94AE53007EF7E7 /* DaysLeftLibrary.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8FC7BA8021940C1AD1ED1AA3 /* Pods_DaysLeft.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28322F417B34BFC83817F808 /* Pods_DaysLeft.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -146,7 +146,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				523443631BBAFBEF00E95BA4 /* daysleft WatchKit Extension.appex in Embed App Extensions */,
+				523443631BBAFBEF00E95BA4 /* DaysLeft WatchKit Extension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -157,7 +157,7 @@
 			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
 			dstSubfolderSpec = 16;
 			files = (
-				523443661BBAFBEF00E95BA4 /* daysleft WatchKit App.app in Embed Watch Content */,
+				523443661BBAFBEF00E95BA4 /* DaysLeft WatchKit App.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -168,7 +168,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				52FBB73C1BC92D5300B426C0 /* daysleftlibrary.framework in Embed Frameworks */,
+				52FBB73C1BC92D5300B426C0 /* DaysLeftLibrary.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -182,7 +182,7 @@
 				52B78E151D9904AD00AB629D /* MessagesExtension.appex in Embed App Extensions */,
 				52AC69482154DA7F00E6C833 /* DaysLeftIntentUI.appex in Embed App Extensions */,
 				52AC694B2154DA7F00E6C833 /* DaysLeftIntent.appex in Embed App Extensions */,
-				5295EE051A94B398007EF7E7 /* dayslefttoday.appex in Embed App Extensions */,
+				5295EE051A94B398007EF7E7 /* DaysLeftToday.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -191,8 +191,10 @@
 
 /* Begin PBXFileReference section */
 		20D7C2776D16B97A9237DC10 /* Pods-daysleft.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-daysleft.release.xcconfig"; path = "Pods/Target Support Files/Pods-daysleft/Pods-daysleft.release.xcconfig"; sourceTree = "<group>"; };
+		28322F417B34BFC83817F808 /* Pods_DaysLeft.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DaysLeft.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		37942D6E74C88723CC5E5442 /* libPods-daysleft WatchKit Extension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-daysleft WatchKit Extension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		39638B2E57648DB9142D4833 /* Pods-daysleft.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-daysleft.debug.xcconfig"; path = "Pods/Target Support Files/Pods-daysleft/Pods-daysleft.debug.xcconfig"; sourceTree = "<group>"; };
+		4B1E7CD7547BF202242D3CD7 /* Pods-DaysLeft.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DaysLeft.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DaysLeft/Pods-DaysLeft.debug.xcconfig"; sourceTree = "<group>"; };
 		523443691BBAFCCF00E95BA4 /* daysleftwatchlibrary-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "daysleftwatchlibrary-Info.plist"; path = "daysleft/daysleftwatchlibrary-Info.plist"; sourceTree = SOURCE_ROOT; };
 		5234436B1BBB00B800E95BA4 /* daysleft WatchKit App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "daysleft WatchKit App.entitlements"; sourceTree = "<group>"; };
 		5234436C1BBB181C00E95BA4 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
@@ -204,11 +206,11 @@
 		527BE7A51FB0FEE500455FE9 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		527E153F1D83F80300D81B15 /* gallery.ckcomplication */ = {isa = PBXFileReference; lastKnownFileType = folder; path = gallery.ckcomplication; sourceTree = "<group>"; };
 		5285E6741FACC9A6001547CD /* AppDaysLeftModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDaysLeftModel.swift; sourceTree = "<group>"; };
-		5295EDD01A94AE53007EF7E7 /* daysleftlibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = daysleftlibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5295EDD01A94AE53007EF7E7 /* DaysLeftLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DaysLeftLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5295EDD31A94AE53007EF7E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5295EDDA1A94AE53007EF7E7 /* daysleftlibraryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = daysleftlibraryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5295EDDA1A94AE53007EF7E7 /* DaysLeftLibraryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DaysLeftLibraryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5295EDE21A94AE53007EF7E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5295EDF81A94B398007EF7E7 /* dayslefttoday.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = dayslefttoday.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		5295EDF81A94B398007EF7E7 /* DaysLeftToday.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = DaysLeftToday.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		5295EDFA1A94B398007EF7E7 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		5295EDFE1A94B398007EF7E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5295EDFF1A94B398007EF7E7 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
@@ -238,10 +240,10 @@
 		52B78E071D9834C500AB629D /* MessagesExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MessagesExtension.entitlements; sourceTree = "<group>"; };
 		52B78E091D98388D00AB629D /* WatchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchKit.framework; path = System/Library/Frameworks/WatchKit.framework; sourceTree = SDKROOT; };
 		52B78E0B1D9838B800AB629D /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = System/Library/Frameworks/WatchConnectivity.framework; sourceTree = SDKROOT; };
-		52B7E8771ABEDE9300E1949C /* daysleft WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "daysleft WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		52B7E8771ABEDE9300E1949C /* DaysLeft WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "DaysLeft WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52B7E87A1ABEDE9300E1949C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52B7E87D1ABEDE9300E1949C /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
-		52B7E8811ABEDE9300E1949C /* daysleft WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "daysleft WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		52B7E8811ABEDE9300E1949C /* DaysLeft WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DaysLeft WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52B7E8871ABEDE9300E1949C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52B7E8891ABEDE9300E1949C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		52B7E88B1ABEDE9300E1949C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -252,7 +254,7 @@
 		52BC111C237C464A005EC3F7 /* ProgressControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressControl.swift; sourceTree = "<group>"; };
 		52BC111E237C4AD0005EC3F7 /* WatchDaysLeftData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchDaysLeftData.swift; sourceTree = "<group>"; };
 		52C595301E952667006C5269 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
-		52CFBEF81A8B631B005234FB /* daysleft.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = daysleft.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		52CFBEF81A8B631B005234FB /* DaysLeft.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DaysLeft.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52CFBEFC1A8B631B005234FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52CFBEFD1A8B631B005234FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52CFBEFF1A8B631B005234FB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -275,7 +277,7 @@
 		89AB9E2F84FC728A8A76AC47 /* libPods-MessagesExtension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MessagesExtension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9516F4FE66EFC74E057B4165 /* libPods-daysleft WatchKit App.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-daysleft WatchKit App.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9617E6CA9F2A12BF2299ABAE /* libPods-dayslefttoday.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-dayslefttoday.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		BA7BBD7977F821A8A87B182E /* Pods_daysleft.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_daysleft.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9ABA72A744E15DFE44414810 /* Pods-DaysLeft.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DaysLeft.release.xcconfig"; path = "Pods/Target Support Files/Pods-DaysLeft/Pods-DaysLeft.release.xcconfig"; sourceTree = "<group>"; };
 		F6956DABE3A7AE4B317EC535 /* libPods-daysleftlibrary.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-daysleftlibrary.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -299,7 +301,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5295EDDB1A94AE53007EF7E7 /* daysleftlibrary.framework in Frameworks */,
+				5295EDDB1A94AE53007EF7E7 /* DaysLeftLibrary.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,7 +309,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5295EE0A1A94B3AA007EF7E7 /* daysleftlibrary.framework in Frameworks */,
+				5295EE0A1A94B3AA007EF7E7 /* DaysLeftLibrary.framework in Frameworks */,
 				5295EDFB1A94B398007EF7E7 /* NotificationCenter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -316,7 +318,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52AC69572154DDF100E6C833 /* daysleftlibrary.framework in Frameworks */,
+				52AC69572154DDF100E6C833 /* DaysLeftLibrary.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,7 +326,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52AC69582154DDF900E6C833 /* daysleftlibrary.framework in Frameworks */,
+				52AC69582154DDF900E6C833 /* DaysLeftLibrary.framework in Frameworks */,
 				52AC693E2154DA7E00E6C833 /* IntentsUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -348,9 +350,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52D18D611BC4E91500DB7E3A /* daysleftlibrary.framework in Frameworks */,
+				52D18D611BC4E91500DB7E3A /* DaysLeftLibrary.framework in Frameworks */,
 				52C595311E952667006C5269 /* StoreKit.framework in Frameworks */,
-				39A194FFE9D0B3DE5A8D321B /* Pods_daysleft.framework in Frameworks */,
+				8FC7BA8021940C1AD1ED1AA3 /* Pods_DaysLeft.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,6 +364,8 @@
 			children = (
 				39638B2E57648DB9142D4833 /* Pods-daysleft.debug.xcconfig */,
 				20D7C2776D16B97A9237DC10 /* Pods-daysleft.release.xcconfig */,
+				4B1E7CD7547BF202242D3CD7 /* Pods-DaysLeft.debug.xcconfig */,
+				9ABA72A744E15DFE44414810 /* Pods-DaysLeft.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -418,8 +422,8 @@
 				37942D6E74C88723CC5E5442 /* libPods-daysleft WatchKit Extension.a */,
 				F6956DABE3A7AE4B317EC535 /* libPods-daysleftlibrary.a */,
 				9617E6CA9F2A12BF2299ABAE /* libPods-dayslefttoday.a */,
-				BA7BBD7977F821A8A87B182E /* Pods_daysleft.framework */,
 				52AC693D2154DA7E00E6C833 /* IntentsUI.framework */,
+				28322F417B34BFC83817F808 /* Pods_DaysLeft.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -554,12 +558,12 @@
 		52CFBEF91A8B631B005234FB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				52CFBEF81A8B631B005234FB /* daysleft.app */,
-				5295EDD01A94AE53007EF7E7 /* daysleftlibrary.framework */,
-				5295EDDA1A94AE53007EF7E7 /* daysleftlibraryTests.xctest */,
-				5295EDF81A94B398007EF7E7 /* dayslefttoday.appex */,
-				52B7E8771ABEDE9300E1949C /* daysleft WatchKit Extension.appex */,
-				52B7E8811ABEDE9300E1949C /* daysleft WatchKit App.app */,
+				52CFBEF81A8B631B005234FB /* DaysLeft.app */,
+				5295EDD01A94AE53007EF7E7 /* DaysLeftLibrary.framework */,
+				5295EDDA1A94AE53007EF7E7 /* DaysLeftLibraryTests.xctest */,
+				5295EDF81A94B398007EF7E7 /* DaysLeftToday.appex */,
+				52B7E8771ABEDE9300E1949C /* DaysLeft WatchKit Extension.appex */,
+				52B7E8811ABEDE9300E1949C /* DaysLeft WatchKit App.app */,
 				52B78DEF1D982A6D00AB629D /* MessagesExtension.appex */,
 				52AC69332154DA7E00E6C833 /* DaysLeftIntent.appex */,
 				52AC693C2154DA7E00E6C833 /* DaysLeftIntentUI.appex */,
@@ -631,9 +635,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		5295EDCF1A94AE53007EF7E7 /* daysleftlibrary */ = {
+		5295EDCF1A94AE53007EF7E7 /* DaysLeftLibrary */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5295EDEE1A94AE53007EF7E7 /* Build configuration list for PBXNativeTarget "daysleftlibrary" */;
+			buildConfigurationList = 5295EDEE1A94AE53007EF7E7 /* Build configuration list for PBXNativeTarget "DaysLeftLibrary" */;
 			buildPhases = (
 				5295EDCB1A94AE53007EF7E7 /* Sources */,
 				5295EDCC1A94AE53007EF7E7 /* Frameworks */,
@@ -644,14 +648,14 @@
 			);
 			dependencies = (
 			);
-			name = daysleftlibrary;
+			name = DaysLeftLibrary;
 			productName = daysleftlibrary;
-			productReference = 5295EDD01A94AE53007EF7E7 /* daysleftlibrary.framework */;
+			productReference = 5295EDD01A94AE53007EF7E7 /* DaysLeftLibrary.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		5295EDD91A94AE53007EF7E7 /* daysleftlibraryTests */ = {
+		5295EDD91A94AE53007EF7E7 /* DaysLeftLibraryTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5295EDEF1A94AE53007EF7E7 /* Build configuration list for PBXNativeTarget "daysleftlibraryTests" */;
+			buildConfigurationList = 5295EDEF1A94AE53007EF7E7 /* Build configuration list for PBXNativeTarget "DaysLeftLibraryTests" */;
 			buildPhases = (
 				5295EDD61A94AE53007EF7E7 /* Sources */,
 				5295EDD71A94AE53007EF7E7 /* Frameworks */,
@@ -663,14 +667,14 @@
 				5295EDDD1A94AE53007EF7E7 /* PBXTargetDependency */,
 				5295EDDF1A94AE53007EF7E7 /* PBXTargetDependency */,
 			);
-			name = daysleftlibraryTests;
+			name = DaysLeftLibraryTests;
 			productName = daysleftlibraryTests;
-			productReference = 5295EDDA1A94AE53007EF7E7 /* daysleftlibraryTests.xctest */;
+			productReference = 5295EDDA1A94AE53007EF7E7 /* DaysLeftLibraryTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		5295EDF71A94B398007EF7E7 /* dayslefttoday */ = {
+		5295EDF71A94B398007EF7E7 /* DaysLeftToday */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5295EE061A94B398007EF7E7 /* Build configuration list for PBXNativeTarget "dayslefttoday" */;
+			buildConfigurationList = 5295EE061A94B398007EF7E7 /* Build configuration list for PBXNativeTarget "DaysLeftToday" */;
 			buildPhases = (
 				5295EDF41A94B398007EF7E7 /* Sources */,
 				5295EDF51A94B398007EF7E7 /* Frameworks */,
@@ -681,9 +685,9 @@
 			);
 			dependencies = (
 			);
-			name = dayslefttoday;
+			name = DaysLeftToday;
 			productName = dayslefttoday;
-			productReference = 5295EDF81A94B398007EF7E7 /* dayslefttoday.appex */;
+			productReference = 5295EDF81A94B398007EF7E7 /* DaysLeftToday.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 		52AC69322154DA7E00E6C833 /* DaysLeftIntent */ = {
@@ -740,9 +744,9 @@
 			productReference = 52B78DEF1D982A6D00AB629D /* MessagesExtension.appex */;
 			productType = "com.apple.product-type.app-extension.messages";
 		};
-		52B7E8761ABEDE9300E1949C /* daysleft WatchKit Extension */ = {
+		52B7E8761ABEDE9300E1949C /* DaysLeft WatchKit Extension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 52B7E8951ABEDE9300E1949C /* Build configuration list for PBXNativeTarget "daysleft WatchKit Extension" */;
+			buildConfigurationList = 52B7E8951ABEDE9300E1949C /* Build configuration list for PBXNativeTarget "DaysLeft WatchKit Extension" */;
 			buildPhases = (
 				52B7E8731ABEDE9300E1949C /* Sources */,
 				52B7E8741ABEDE9300E1949C /* Frameworks */,
@@ -753,14 +757,14 @@
 			);
 			dependencies = (
 			);
-			name = "daysleft WatchKit Extension";
+			name = "DaysLeft WatchKit Extension";
 			productName = "daysleft WatchKit Extension";
-			productReference = 52B7E8771ABEDE9300E1949C /* daysleft WatchKit Extension.appex */;
+			productReference = 52B7E8771ABEDE9300E1949C /* DaysLeft WatchKit Extension.appex */;
 			productType = "com.apple.product-type.watchkit2-extension";
 		};
-		52B7E8801ABEDE9300E1949C /* daysleft WatchKit App */ = {
+		52B7E8801ABEDE9300E1949C /* DaysLeft WatchKit App */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 52B7E8941ABEDE9300E1949C /* Build configuration list for PBXNativeTarget "daysleft WatchKit App" */;
+			buildConfigurationList = 52B7E8941ABEDE9300E1949C /* Build configuration list for PBXNativeTarget "DaysLeft WatchKit App" */;
 			buildPhases = (
 				52B7E87F1ABEDE9300E1949C /* Resources */,
 				523443671BBAFBEF00E95BA4 /* Embed App Extensions */,
@@ -772,14 +776,14 @@
 			dependencies = (
 				523443621BBAFBEF00E95BA4 /* PBXTargetDependency */,
 			);
-			name = "daysleft WatchKit App";
+			name = "DaysLeft WatchKit App";
 			productName = "daysleft WatchKit App";
-			productReference = 52B7E8811ABEDE9300E1949C /* daysleft WatchKit App.app */;
+			productReference = 52B7E8811ABEDE9300E1949C /* DaysLeft WatchKit App.app */;
 			productType = "com.apple.product-type.application.watchapp2";
 		};
-		52CFBEF71A8B631B005234FB /* daysleft */ = {
+		52CFBEF71A8B631B005234FB /* DaysLeft */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 52CFBF171A8B631B005234FB /* Build configuration list for PBXNativeTarget "daysleft" */;
+			buildConfigurationList = 52CFBF171A8B631B005234FB /* Build configuration list for PBXNativeTarget "DaysLeft" */;
 			buildPhases = (
 				E355ED4EB90C75625C166EE8 /* [CP] Check Pods Manifest.lock */,
 				52CFBEF41A8B631B005234FB /* Sources */,
@@ -801,9 +805,9 @@
 				52AC69472154DA7F00E6C833 /* PBXTargetDependency */,
 				52AC694A2154DA7F00E6C833 /* PBXTargetDependency */,
 			);
-			name = daysleft;
+			name = DaysLeft;
 			productName = daysleft;
-			productReference = 52CFBEF81A8B631B005234FB /* daysleft.app */;
+			productReference = 52CFBEF81A8B631B005234FB /* DaysLeft.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -931,7 +935,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 52CFBEF31A8B631B005234FB /* Build configuration list for PBXProject "daysleft" */;
+			buildConfigurationList = 52CFBEF31A8B631B005234FB /* Build configuration list for PBXProject "DaysLeft" */;
 			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -944,12 +948,12 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				52CFBEF71A8B631B005234FB /* daysleft */,
-				5295EDCF1A94AE53007EF7E7 /* daysleftlibrary */,
-				5295EDD91A94AE53007EF7E7 /* daysleftlibraryTests */,
-				5295EDF71A94B398007EF7E7 /* dayslefttoday */,
-				52B7E8761ABEDE9300E1949C /* daysleft WatchKit Extension */,
-				52B7E8801ABEDE9300E1949C /* daysleft WatchKit App */,
+				52CFBEF71A8B631B005234FB /* DaysLeft */,
+				5295EDCF1A94AE53007EF7E7 /* DaysLeftLibrary */,
+				5295EDD91A94AE53007EF7E7 /* DaysLeftLibraryTests */,
+				5295EDF71A94B398007EF7E7 /* DaysLeftToday */,
+				52B7E8761ABEDE9300E1949C /* DaysLeft WatchKit Extension */,
+				52B7E8801ABEDE9300E1949C /* DaysLeft WatchKit App */,
 				52B78DEE1D982A6D00AB629D /* MessagesExtension */,
 				52AC69322154DA7E00E6C833 /* DaysLeftIntent */,
 				52AC693B2154DA7E00E6C833 /* DaysLeftIntentUI */,
@@ -1170,15 +1174,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-daysleft/Pods-daysleft-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-DaysLeft/Pods-DaysLeft-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-daysleft/Pods-daysleft-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-DaysLeft/Pods-DaysLeft-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-daysleft/Pods-daysleft-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DaysLeft/Pods-DaysLeft-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E355ED4EB90C75625C166EE8 /* [CP] Check Pods Manifest.lock */ = {
@@ -1192,7 +1196,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-daysleft-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-DaysLeft-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1295,29 +1299,29 @@
 /* Begin PBXTargetDependency section */
 		523443621BBAFBEF00E95BA4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 52B7E8761ABEDE9300E1949C /* daysleft WatchKit Extension */;
+			target = 52B7E8761ABEDE9300E1949C /* DaysLeft WatchKit Extension */;
 			targetProxy = 523443611BBAFBEF00E95BA4 /* PBXContainerItemProxy */;
 		};
 		523443651BBAFBEF00E95BA4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			platformFilter = ios;
-			target = 52B7E8801ABEDE9300E1949C /* daysleft WatchKit App */;
+			target = 52B7E8801ABEDE9300E1949C /* DaysLeft WatchKit App */;
 			targetProxy = 523443641BBAFBEF00E95BA4 /* PBXContainerItemProxy */;
 		};
 		5295EDDD1A94AE53007EF7E7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 5295EDCF1A94AE53007EF7E7 /* daysleftlibrary */;
+			target = 5295EDCF1A94AE53007EF7E7 /* DaysLeftLibrary */;
 			targetProxy = 5295EDDC1A94AE53007EF7E7 /* PBXContainerItemProxy */;
 		};
 		5295EDDF1A94AE53007EF7E7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 52CFBEF71A8B631B005234FB /* daysleft */;
+			target = 52CFBEF71A8B631B005234FB /* DaysLeft */;
 			targetProxy = 5295EDDE1A94AE53007EF7E7 /* PBXContainerItemProxy */;
 		};
 		5295EE041A94B398007EF7E7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			platformFilter = ios;
-			target = 5295EDF71A94B398007EF7E7 /* dayslefttoday */;
+			target = 5295EDF71A94B398007EF7E7 /* DaysLeftToday */;
 			targetProxy = 5295EE031A94B398007EF7E7 /* PBXContainerItemProxy */;
 		};
 		52AC69472154DA7F00E6C833 /* PBXTargetDependency */ = {
@@ -1401,8 +1405,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.bravelocation.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bravelocation.daysleftlibrary;
+				PRODUCT_NAME = DaysLeftLibrary;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1430,8 +1434,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.bravelocation.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bravelocation.daysleftlibrary;
+				PRODUCT_NAME = DaysLeftLibrary;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1460,7 +1464,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/daysleft.app/daysleft";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DaysLeft.app/DaysLeft";
 			};
 			name = Debug;
 		};
@@ -1481,7 +1485,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/daysleft.app/daysleft";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DaysLeft.app/DaysLeft";
 			};
 			name = Release;
 		};
@@ -1504,7 +1508,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.bravelocation.daysleft.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bravelocation.daysleft.dayslefttoday;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
@@ -1529,7 +1533,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.bravelocation.daysleft.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bravelocation.daysleft.dayslefttoday;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
@@ -1940,7 +1944,7 @@
 		};
 		52CFBF181A8B631B005234FB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 39638B2E57648DB9142D4833 /* Pods-daysleft.debug.xcconfig */;
+			baseConfigurationReference = 4B1E7CD7547BF202242D3CD7 /* Pods-DaysLeft.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = daysleft/daysleft.entitlements;
@@ -1961,7 +1965,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.bravelocation.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bravelocation.daysleft;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1974,7 +1978,7 @@
 		};
 		52CFBF191A8B631B005234FB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 20D7C2776D16B97A9237DC10 /* Pods-daysleft.release.xcconfig */;
+			baseConfigurationReference = 9ABA72A744E15DFE44414810 /* Pods-DaysLeft.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = daysleft/daysleft.entitlements;
@@ -1994,7 +1998,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.bravelocation.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bravelocation.daysleft;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2008,7 +2012,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		5295EDEE1A94AE53007EF7E7 /* Build configuration list for PBXNativeTarget "daysleftlibrary" */ = {
+		5295EDEE1A94AE53007EF7E7 /* Build configuration list for PBXNativeTarget "DaysLeftLibrary" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5295EDEA1A94AE53007EF7E7 /* Debug */,
@@ -2017,7 +2021,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5295EDEF1A94AE53007EF7E7 /* Build configuration list for PBXNativeTarget "daysleftlibraryTests" */ = {
+		5295EDEF1A94AE53007EF7E7 /* Build configuration list for PBXNativeTarget "DaysLeftLibraryTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5295EDEC1A94AE53007EF7E7 /* Debug */,
@@ -2026,7 +2030,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5295EE061A94B398007EF7E7 /* Build configuration list for PBXNativeTarget "dayslefttoday" */ = {
+		5295EE061A94B398007EF7E7 /* Build configuration list for PBXNativeTarget "DaysLeftToday" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5295EE071A94B398007EF7E7 /* Debug */,
@@ -2062,7 +2066,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		52B7E8941ABEDE9300E1949C /* Build configuration list for PBXNativeTarget "daysleft WatchKit App" */ = {
+		52B7E8941ABEDE9300E1949C /* Build configuration list for PBXNativeTarget "DaysLeft WatchKit App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				52B7E8921ABEDE9300E1949C /* Debug */,
@@ -2071,7 +2075,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		52B7E8951ABEDE9300E1949C /* Build configuration list for PBXNativeTarget "daysleft WatchKit Extension" */ = {
+		52B7E8951ABEDE9300E1949C /* Build configuration list for PBXNativeTarget "DaysLeft WatchKit Extension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				52B7E8901ABEDE9300E1949C /* Debug */,
@@ -2080,7 +2084,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		52CFBEF31A8B631B005234FB /* Build configuration list for PBXProject "daysleft" */ = {
+		52CFBEF31A8B631B005234FB /* Build configuration list for PBXProject "DaysLeft" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				52CFBF151A8B631B005234FB /* Debug */,
@@ -2089,7 +2093,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		52CFBF171A8B631B005234FB /* Build configuration list for PBXNativeTarget "daysleft" */ = {
+		52CFBF171A8B631B005234FB /* Build configuration list for PBXNativeTarget "DaysLeft" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				52CFBF181A8B631B005234FB /* Debug */,

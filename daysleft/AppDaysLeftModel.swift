@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import daysleftlibrary
+import DaysLeftLibrary
 
 class AppDaysLeftModel: DaysLeftModel {
 
