@@ -138,13 +138,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="Count The Days Left" id="GgR-KT-7FI">
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="zK2-rI-cSr">
-                            <connections>
-                                <segue destination="l0H-Z7-pvf" kind="show" identifier="segueShowSettings" id="0X6-PC-jXy"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Count The Days Left" id="GgR-KT-7FI"/>
                     <connections>
                         <outlet property="counterView" destination="6ap-MQ-ZgB" id="j0q-x7-bj6"/>
                         <outlet property="counterWidth" destination="Vn5-tj-SnF" id="fsO-Rm-ccw"/>
@@ -153,6 +147,7 @@
                         <outlet property="labelPercentageDone" destination="Tik-NR-YWh" id="4wM-MZ-l8k"/>
                         <outlet property="labelStartDate" destination="e4s-jj-SxE" id="RFp-dV-9EV"/>
                         <outlet property="labelTitle" destination="B5u-71-7aF" id="F0s-ex-nay"/>
+                        <segue destination="l0H-Z7-pvf" kind="show" identifier="segueShowSettings" id="lGK-mM-7tp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -485,6 +480,7 @@
                             <outlet property="delegate" destination="l0H-Z7-pvf" id="bzH-5V-qdi"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="uEP-fc-noe"/>
                     <connections>
                         <outlet property="addToSiriCell" destination="5dY-J8-Z8f" id="M7U-O5-aUb"/>
                         <outlet property="appMadeCell" destination="9sZ-6a-5sj" id="KAB-t9-n2h"/>

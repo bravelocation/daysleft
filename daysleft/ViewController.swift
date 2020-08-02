@@ -25,6 +25,7 @@ class ViewController: UIViewController {
     
     var dayChangeTimer: Timer!
     var shareButton: UIBarButtonItem!
+    var editButton: UIBarButtonItem!
     
     @available(iOS 13.0, *)
     private lazy var menuSubscriber: AnyCancellable? = nil
@@ -62,10 +63,12 @@ class ViewController: UIViewController {
         navBar!.isTranslucent = false
         navBar!.titleTextAttributes = [.foregroundColor: UIColor.white]
         
-        // Add a share button
+        // Add a nav bar buttons
         self.shareButton = UIBarButtonItem.init(barButtonSystemItem: .action, target: self, action: #selector(ViewController.shareButtonTouchUp))
+        self.editButton = UIBarButtonItem.init(barButtonSystemItem: .edit, target: self, action: #selector(ViewController.editButtonTouchUp))
         
-        self.navigationItem.leftBarButtonItem = shareButton
+        self.navigationItem.leftBarButtonItems = [shareButton]
+        self.navigationItem.rightBarButtonItems = [editButton]
         
         // Add a swipe recogniser
         let swipeLeft: UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(ViewController.swipeLeft(_:)))
@@ -142,6 +145,11 @@ class ViewController: UIViewController {
         activityViewController.popoverPresentationController?.barButtonItem = self.shareButton
         
         self.present(activityViewController, animated: true, completion: nil)
+    }
+    
+    @objc
+    func editButtonTouchUp() {
+        self.performSegue(withIdentifier: "segueShowSettings", sender: self)
     }
     
     @objc
@@ -297,7 +305,7 @@ extension ViewController {
         if let input = sender.input {
             switch input {
             case "E":
-                self.performSegue(withIdentifier: "segueShowSettings", sender: self)
+                self.editButtonTouchUp()
             case "S":
                 self.shareButtonTouchUp()
             default:
