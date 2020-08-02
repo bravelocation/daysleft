@@ -9,7 +9,8 @@
 import UIKit
 
 extension Notification.Name {
-    static let menuCommand = Notification.Name("com.bravelocation.daysleft.menu")
+    static let editCommand = Notification.Name("com.bravelocation.daysleft.edit")
+    static let shareCommand = Notification.Name("com.bravelocation.daysleft.share")
 }
 
 @available(iOS 13.0, *)
@@ -29,15 +30,11 @@ extension AppDelegate {
     
     @objc
     func editSettingsMenuCalled(_ sender: UIKeyCommand) {
-        self.sendMenuNotification(sender)
+        NotificationCenter.default.post(name: .editCommand, object: nil)
     }
     
     @objc
     func shareMenuCalled(_ sender: UIKeyCommand) {
-        self.sendMenuNotification(sender)
-    }
-    
-    func sendMenuNotification(_ sender: UIKeyCommand) {
-       NotificationCenter.default.post(name: .menuCommand, object: sender)
+        NotificationCenter.default.post(name: .shareCommand, object: nil)
     }
 }

@@ -28,7 +28,10 @@ class ViewController: UIViewController {
     var editButton: UIBarButtonItem!
     
     @available(iOS 13.0, *)
-    private lazy var menuSubscriber: AnyCancellable? = nil
+    private lazy var editSubscriber: AnyCancellable? = nil
+    
+    @available(iOS 13.0, *)
+    private lazy var shareSubscriber: AnyCancellable? = nil
 
     // MARK: - Initialisation
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -274,19 +277,6 @@ class ViewController: UIViewController {
 // MARK: - Keyboard options
 
 extension ViewController {
-    
-    func setupMenuCommandHandler() {
-        if #available(iOS 13.0, *) {
-            self.menuSubscriber = NotificationCenter.default.publisher(for: .menuCommand)
-                .receive(on: RunLoop.main)
-                .sink(receiveValue: { notification in
-                    if let command = notification.object as? UIKeyCommand {
-                        self.keyboardSelectTab(sender: command)
-                    }
-                })
-        }
-    }
-    
     override var keyCommands: [UIKeyCommand]? {
         if #available(iOS 13.0, *) {
             return [
@@ -311,6 +301,26 @@ extension ViewController {
             default:
                 break
             }
+        }
+    }
+}
+
+// MARK: - Menu options
+
+extension ViewController {
+    func setupMenuCommandHandler() {
+        if #available(iOS 13.0, *) {
+            self.editSubscriber = NotificationCenter.default.publisher(for: .editCommand)
+                .receive(on: RunLoop.main)
+                .sink(receiveValue: { _ in
+                    self.editButtonTouchUp()
+                })
+            
+            self.shareSubscriber = NotificationCenter.default.publisher(for: .shareCommand)
+                .receive(on: RunLoop.main)
+                .sink(receiveValue: { _ in
+                    self.shareButtonTouchUp()
+                })
         }
     }
 }
