@@ -139,10 +139,7 @@ class ViewController: UIViewController {
         let objectsToShare = [modelText]
         
         let activityViewController = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
-        
-        if (activityViewController.popoverPresentationController != nil) {
-            activityViewController.popoverPresentationController!.barButtonItem = self.shareButton
-        }
+        activityViewController.popoverPresentationController?.barButtonItem = self.shareButton
         
         self.present(activityViewController, animated: true, completion: nil)
     }
