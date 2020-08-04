@@ -8,7 +8,7 @@
 
 import UIKit
 import SafariServices
-import daysleftlibrary
+import DaysLeftLibrary
 import Intents
 import IntentsUI
 

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import daysleftlibrary
+import DaysLeftLibrary
 import Firebase
 
 @UIApplicationMain

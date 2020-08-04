@@ -8,8 +8,9 @@
 
 import UIKit
 import StoreKit
-import daysleftlibrary
+import DaysLeftLibrary
 import Intents
+import Combine
 
 class ViewController: UIViewController {
 
@@ -24,6 +25,13 @@ class ViewController: UIViewController {
     
     var dayChangeTimer: Timer!
     var shareButton: UIBarButtonItem!
+    var editButton: UIBarButtonItem!
+    
+    @available(iOS 13.0, *)
+    private lazy var editSubscriber: AnyCancellable? = nil
+    
+    @available(iOS 13.0, *)
+    private lazy var shareSubscriber: AnyCancellable? = nil
 
     // MARK: - Initialisation
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -58,10 +66,12 @@ class ViewController: UIViewController {
         navBar!.isTranslucent = false
         navBar!.titleTextAttributes = [.foregroundColor: UIColor.white]
         
-        // Add a share button
+        // Add a nav bar buttons
         self.shareButton = UIBarButtonItem.init(barButtonSystemItem: .action, target: self, action: #selector(ViewController.shareButtonTouchUp))
+        self.editButton = UIBarButtonItem.init(barButtonSystemItem: .edit, target: self, action: #selector(ViewController.editButtonTouchUp))
         
-        self.navigationItem.leftBarButtonItem = shareButton
+        self.navigationItem.leftBarButtonItems = [shareButton]
+        self.navigationItem.rightBarButtonItems = [editButton]
         
         // Add a swipe recogniser
         let swipeLeft: UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(ViewController.swipeLeft(_:)))
@@ -77,6 +87,9 @@ class ViewController: UIViewController {
         // Setup user intents
         self.setupHandoff()
         self.donateInteraction()
+        
+        // Setup menu command handler
+        self.setupMenuCommandHandler()
     }
  
     override func viewDidAppear(_ animated: Bool) {
@@ -132,12 +145,14 @@ class ViewController: UIViewController {
         let objectsToShare = [modelText]
         
         let activityViewController = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
-        
-        if (activityViewController.popoverPresentationController != nil) {
-            activityViewController.popoverPresentationController!.barButtonItem = self.shareButton
-        }
+        activityViewController.popoverPresentationController?.barButtonItem = self.shareButton
         
         self.present(activityViewController, animated: true, completion: nil)
+    }
+    
+    @objc
+    func editButtonTouchUp() {
+        self.performSegue(withIdentifier: "segueShowSettings", sender: self)
     }
     
     @objc
@@ -263,22 +278,49 @@ class ViewController: UIViewController {
 
 extension ViewController {
     override var keyCommands: [UIKeyCommand]? {
-        return [
-            UIKeyCommand(input: "E", modifierFlags: .command, action: #selector(ViewController.keyboardSelectTab), discoverabilityTitle: "Edit"),
-            UIKeyCommand(input: "S", modifierFlags: [.command, .shift], action: #selector(ViewController.keyboardSelectTab), discoverabilityTitle: "Share")
-        ]
+        if #available(iOS 13.0, *) {
+            return [
+                UIKeyCommand(title: "Edit Settings", action: #selector(ViewController.keyboardSelectTab), input: "E", modifierFlags: .command),
+                UIKeyCommand(title: "Share", action: #selector(ViewController.keyboardSelectTab), input: "S", modifierFlags: [.command, .shift])
+            ]
+        } else {
+            return [
+                UIKeyCommand(input: "E", modifierFlags: .command, action: #selector(ViewController.keyboardSelectTab), discoverabilityTitle: "Edit"),
+                UIKeyCommand(input: "S", modifierFlags: [.command, .shift], action: #selector(ViewController.keyboardSelectTab), discoverabilityTitle: "Share")
+            ]
+        }
     }
     
     @objc func keyboardSelectTab(sender: UIKeyCommand) {
         if let input = sender.input {
             switch input {
             case "E":
-                self.performSegue(withIdentifier: "segueShowSettings", sender: self)
+                self.editButtonTouchUp()
             case "S":
                 self.shareButtonTouchUp()
             default:
                 break
             }
+        }
+    }
+}
+
+// MARK: - Menu options
+
+extension ViewController {
+    func setupMenuCommandHandler() {
+        if #available(iOS 13.0, *) {
+            self.editSubscriber = NotificationCenter.default.publisher(for: .editCommand)
+                .receive(on: RunLoop.main)
+                .sink(receiveValue: { _ in
+                    self.editButtonTouchUp()
+                })
+            
+            self.shareSubscriber = NotificationCenter.default.publisher(for: .shareCommand)
+                .receive(on: RunLoop.main)
+                .sink(receiveValue: { _ in
+                    self.shareButtonTouchUp()
+                })
         }
     }
 }

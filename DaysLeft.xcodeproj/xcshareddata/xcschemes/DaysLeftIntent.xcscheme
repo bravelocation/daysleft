@@ -30,8 +30,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "52CFBEF71A8B631B005234FB"
-               BuildableName = "daysleft.app"
-               BlueprintName = "daysleft"
+               BuildableName = "DaysLeft.app"
+               BlueprintName = "DaysLeft"
                ReferencedContainer = "container:daysleft.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -61,8 +61,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "52CFBEF71A8B631B005234FB"
-            BuildableName = "daysleft.app"
-            BlueprintName = "daysleft"
+            BuildableName = "DaysLeft.app"
+            BlueprintName = "DaysLeft"
             ReferencedContainer = "container:daysleft.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -80,8 +80,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "52CFBEF71A8B631B005234FB"
-            BuildableName = "daysleft.app"
-            BlueprintName = "daysleft"
+            BuildableName = "DaysLeft.app"
+            BlueprintName = "DaysLeft"
             ReferencedContainer = "container:daysleft.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

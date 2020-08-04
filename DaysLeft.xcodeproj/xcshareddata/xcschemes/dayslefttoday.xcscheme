@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
    LastUpgradeVersion = "1100"
-   version = "1.3">
+   wasCreatedForAppExtension = "YES"
+   version = "2.0">
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
@@ -14,9 +15,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "52B7E8801ABEDE9300E1949C"
-               BuildableName = "daysleft WatchKit App.app"
-               BlueprintName = "daysleft WatchKit App"
+               BlueprintIdentifier = "5295EDF71A94B398007EF7E7"
+               BuildableName = "DaysLeftToday.appex"
+               BlueprintName = "DaysLeftToday"
                ReferencedContainer = "container:daysleft.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -29,8 +30,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "52CFBEF71A8B631B005234FB"
-               BuildableName = "daysleft.app"
-               BlueprintName = "daysleft"
+               BuildableName = "DaysLeft.app"
+               BlueprintName = "DaysLeft"
                ReferencedContainer = "container:daysleft.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -46,54 +47,44 @@
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
-      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      selectedDebuggerIdentifier = ""
+      selectedLauncherIdentifier = "Xcode.IDEFoundation.Launcher.PosixSpawn"
       launchStyle = "0"
+      askForAppToLaunch = "Yes"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
-      allowLocationSimulation = "YES">
-      <RemoteRunnable
-         runnableDebuggingMode = "2"
-         BundleIdentifier = "com.apple.Carousel"
-         RemotePath = "/Count The Days Left">
+      allowLocationSimulation = "YES"
+      launchAutomaticallySubstyle = "2">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "52B7E8801ABEDE9300E1949C"
-            BuildableName = "daysleft WatchKit App.app"
-            BlueprintName = "daysleft WatchKit App"
+            BlueprintIdentifier = "52CFBEF71A8B631B005234FB"
+            BuildableName = "DaysLeft.app"
+            BlueprintName = "DaysLeft"
             ReferencedContainer = "container:daysleft.xcodeproj">
          </BuildableReference>
-      </RemoteRunnable>
+      </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
       shouldUseLaunchSchemeArgsEnv = "YES"
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
-      debugDocumentVersioning = "YES">
-      <RemoteRunnable
-         runnableDebuggingMode = "2"
-         BundleIdentifier = "com.apple.Carousel"
-         RemotePath = "/Count The Days Left">
+      debugDocumentVersioning = "YES"
+      launchAutomaticallySubstyle = "2">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "52B7E8801ABEDE9300E1949C"
-            BuildableName = "daysleft WatchKit App.app"
-            BlueprintName = "daysleft WatchKit App"
+            BlueprintIdentifier = "52CFBEF71A8B631B005234FB"
+            BuildableName = "DaysLeft.app"
+            BlueprintName = "DaysLeft"
             ReferencedContainer = "container:daysleft.xcodeproj">
          </BuildableReference>
-      </RemoteRunnable>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "52B7E8801ABEDE9300E1949C"
-            BuildableName = "daysleft WatchKit App.app"
-            BlueprintName = "daysleft WatchKit App"
-            ReferencedContainer = "container:daysleft.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

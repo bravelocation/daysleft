@@ -7,7 +7,7 @@
 //
 
 import Intents
-import daysleftlibrary
+import DaysLeftLibrary
 
 class IntentHandler: INExtension {
     
