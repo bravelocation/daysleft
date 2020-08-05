@@ -17,7 +17,7 @@
                BlueprintIdentifier = "52B7E8801ABEDE9300E1949C"
                BuildableName = "DaysLeft WatchKit App.app"
                BlueprintName = "DaysLeft WatchKit App"
-               ReferencedContainer = "container:daysleft.xcodeproj">
+               ReferencedContainer = "container:DaysLeft.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -31,7 +31,7 @@
                BlueprintIdentifier = "52CFBEF71A8B631B005234FB"
                BuildableName = "DaysLeft.app"
                BlueprintName = "DaysLeft"
-               ReferencedContainer = "container:daysleft.xcodeproj">
+               ReferencedContainer = "container:DaysLeft.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -63,7 +63,7 @@
             BlueprintIdentifier = "52B7E8801ABEDE9300E1949C"
             BuildableName = "DaysLeft WatchKit App.app"
             BlueprintName = "DaysLeft WatchKit App"
-            ReferencedContainer = "container:daysleft.xcodeproj">
+            ReferencedContainer = "container:DaysLeft.xcodeproj">
          </BuildableReference>
       </RemoteRunnable>
    </LaunchAction>
@@ -82,7 +82,7 @@
             BlueprintIdentifier = "52B7E8801ABEDE9300E1949C"
             BuildableName = "DaysLeft WatchKit App.app"
             BlueprintName = "DaysLeft WatchKit App"
-            ReferencedContainer = "container:daysleft.xcodeproj">
+            ReferencedContainer = "container:DaysLeft.xcodeproj">
          </BuildableReference>
       </RemoteRunnable>
       <MacroExpansion>
@@ -91,7 +91,7 @@
             BlueprintIdentifier = "52B7E8801ABEDE9300E1949C"
             BuildableName = "DaysLeft WatchKit App.app"
             BlueprintName = "DaysLeft WatchKit App"
-            ReferencedContainer = "container:daysleft.xcodeproj">
+            ReferencedContainer = "container:DaysLeft.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>
