@@ -198,31 +198,27 @@
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Id6-jh-0di">
+                                                    <rect key="frame" x="140" y="5" width="180" height="34"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="180" id="2WX-wF-OMh"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start from ..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Anz-8T-J6u">
-                                                    <rect key="frame" x="23" y="12" width="124" height="20.5"/>
+                                                    <rect key="frame" x="23" y="12" width="109" height="20.5"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dwn-ao-1Dw">
-                                                    <rect key="frame" x="155" y="5.5" width="180" height="33"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="180" id="i46-51-Dez"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                    <state key="normal" title="May 1st 2020">
-                                                        <color key="titleColor" name="SettingsIconTint"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="startDateButtonTouchUp:" destination="l0H-Z7-pvf" eventType="touchUpInside" id="Re3-Fa-5pV"/>
-                                                    </connections>
-                                                </button>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="Id6-jh-0di" firstAttribute="trailing" secondItem="ahV-b2-f12" secondAttribute="trailingMargin" constant="-8" id="98X-0C-bfE"/>
                                                 <constraint firstItem="Anz-8T-J6u" firstAttribute="leading" secondItem="ahV-b2-f12" secondAttribute="leadingMargin" constant="8" id="Afq-y4-B0X"/>
-                                                <constraint firstAttribute="trailing" secondItem="Dwn-ao-1Dw" secondAttribute="trailing" constant="8" id="Wsz-zI-dRm"/>
-                                                <constraint firstItem="Dwn-ao-1Dw" firstAttribute="leading" secondItem="Anz-8T-J6u" secondAttribute="trailing" constant="8" id="Zf5-Tj-8aP"/>
+                                                <constraint firstAttribute="centerY" secondItem="Id6-jh-0di" secondAttribute="centerY" id="RG2-Ia-z9h"/>
+                                                <constraint firstAttribute="centerY" secondItem="Id6-jh-0di" secondAttribute="centerY" id="esy-sp-eHf"/>
+                                                <constraint firstItem="Id6-jh-0di" firstAttribute="leading" secondItem="Anz-8T-J6u" secondAttribute="trailing" constant="8" id="evZ-Tx-8ZF"/>
                                                 <constraint firstAttribute="centerY" secondItem="Anz-8T-J6u" secondAttribute="centerY" id="ge4-9Z-Vj1"/>
-                                                <constraint firstItem="Dwn-ao-1Dw" firstAttribute="centerY" secondItem="Anz-8T-J6u" secondAttribute="centerY" id="y6K-qQ-KRx"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -234,30 +230,25 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="... to" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k8N-oH-UmX">
-                                                    <rect key="frame" x="23" y="12" width="124" height="20.5"/>
+                                                    <rect key="frame" x="23" y="12" width="109" height="20.5"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0uO-ik-HDp">
-                                                    <rect key="frame" x="155" y="5.5" width="180" height="33"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P4l-WT-96r">
+                                                    <rect key="frame" x="140" y="5" width="180" height="34"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="180" id="dPl-IM-Vdv"/>
+                                                        <constraint firstAttribute="width" constant="180" id="nOV-vl-LwO"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                    <state key="normal" title="May 1st 2020">
-                                                        <color key="titleColor" name="SettingsIconTint"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="endDateButtonTouchUp:" destination="l0H-Z7-pvf" eventType="touchUpInside" id="kwx-xT-CZ8"/>
-                                                    </connections>
-                                                </button>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="0uO-ik-HDp" firstAttribute="centerY" secondItem="k8N-oH-UmX" secondAttribute="centerY" id="4da-wj-OeT"/>
+                                                <constraint firstAttribute="centerY" secondItem="P4l-WT-96r" secondAttribute="centerY" id="Dlu-SL-pvZ"/>
+                                                <constraint firstItem="P4l-WT-96r" firstAttribute="leading" secondItem="k8N-oH-UmX" secondAttribute="trailing" constant="8" id="LNT-K3-dpj"/>
                                                 <constraint firstItem="k8N-oH-UmX" firstAttribute="leading" secondItem="dRr-Vo-MK4" secondAttribute="leadingMargin" constant="8" id="PuJ-WU-5Jk"/>
-                                                <constraint firstAttribute="trailing" secondItem="0uO-ik-HDp" secondAttribute="trailing" constant="8" id="scn-Ya-Zgt"/>
-                                                <constraint firstItem="0uO-ik-HDp" firstAttribute="leading" secondItem="k8N-oH-UmX" secondAttribute="trailing" constant="8" id="xOv-z0-c3I"/>
+                                                <constraint firstItem="P4l-WT-96r" firstAttribute="trailing" secondItem="dRr-Vo-MK4" secondAttribute="trailingMargin" constant="-8" id="pFq-BW-rIS"/>
                                                 <constraint firstAttribute="centerY" secondItem="k8N-oH-UmX" secondAttribute="centerY" id="zym-fV-tFY"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -494,15 +485,15 @@
                         <outlet property="addToSiriCell" destination="5dY-J8-Z8f" id="M7U-O5-aUb"/>
                         <outlet property="appMadeCell" destination="9sZ-6a-5sj" id="KAB-t9-n2h"/>
                         <outlet property="becomeASupporterCell" destination="ghp-sC-awT" id="kDM-WU-vsU"/>
-                        <outlet property="endDateButton" destination="0uO-ik-HDp" id="f5m-cQ-Uqa"/>
                         <outlet property="gitHubCell" destination="I9v-Ds-Pit" id="H2W-eF-kzV"/>
                         <outlet property="labelDaysLength" destination="zZH-Bf-1Ed" id="zxW-pP-bnD"/>
                         <outlet property="labelVersion" destination="B0F-JM-ow0" id="W7u-Kt-d3X"/>
                         <outlet property="moreAppsCell" destination="Dub-25-YGm" id="RWf-GF-IMD"/>
                         <outlet property="privacyCell" destination="kgV-XU-Q9X" id="X0m-Fn-bTq"/>
-                        <outlet property="startDateButton" destination="Dwn-ao-1Dw" id="7lk-Zi-TE3"/>
                         <outlet property="switchShowBadge" destination="Gc0-ce-bIi" id="d4Y-BY-mf6"/>
                         <outlet property="switchWeekdaysOnly" destination="cmn-B6-O7N" id="0ON-yG-GGR"/>
+                        <outlet property="textEnd" destination="P4l-WT-96r" id="Jcc-cF-alp"/>
+                        <outlet property="textStart" destination="Id6-jh-0di" id="sKj-u4-C9R"/>
                         <outlet property="textTitle" destination="kjs-Wh-y3e" id="1Fw-6h-wzT"/>
                     </connections>
                 </tableViewController>
