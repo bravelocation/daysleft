@@ -215,23 +215,28 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="44" id="bnH-K0-kUa">
-                                        <rect key="frame" x="0.0" y="199.5" width="375" height="44"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="88" id="bnH-K0-kUa">
+                                        <rect key="frame" x="0.0" y="199.5" width="375" height="88"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bnH-K0-kUa" id="kHe-O8-0lX">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="88"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="8Jy-Xb-Zqz">
-                                                    <rect key="frame" x="0.0" y="-87" width="375" height="216"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="8Jy-Xb-Zqz">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="88"/>
                                                 </datePicker>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="8Jy-Xb-Zqz" firstAttribute="leading" secondItem="kHe-O8-0lX" secondAttribute="leading" id="Gq6-u1-lqv"/>
+                                                <constraint firstAttribute="trailing" secondItem="8Jy-Xb-Zqz" secondAttribute="trailing" id="HEw-SF-ARc"/>
+                                                <constraint firstAttribute="bottom" secondItem="8Jy-Xb-Zqz" secondAttribute="bottom" id="PsO-uB-sNg"/>
+                                                <constraint firstItem="8Jy-Xb-Zqz" firstAttribute="top" secondItem="kHe-O8-0lX" secondAttribute="top" id="dLR-6e-EUQ"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="44" id="UqI-De-np0">
-                                        <rect key="frame" x="0.0" y="243.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="287.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UqI-De-np0" id="dRr-Vo-MK4">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -252,23 +257,28 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="44" id="h3h-Ah-M1C">
-                                        <rect key="frame" x="0.0" y="287.5" width="375" height="44"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="88" id="h3h-Ah-M1C">
+                                        <rect key="frame" x="0.0" y="331.5" width="375" height="88"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="h3h-Ah-M1C" id="9rn-cL-QZB">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="88"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="Cmz-wi-4i2">
-                                                    <rect key="frame" x="0.0" y="-87" width="375" height="216"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="Cmz-wi-4i2">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="88"/>
                                                 </datePicker>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Cmz-wi-4i2" firstAttribute="leading" secondItem="9rn-cL-QZB" secondAttribute="leading" id="2OF-Mq-tCy"/>
+                                                <constraint firstItem="Cmz-wi-4i2" firstAttribute="top" secondItem="9rn-cL-QZB" secondAttribute="top" id="Gkj-63-Rz3"/>
+                                                <constraint firstAttribute="trailing" secondItem="Cmz-wi-4i2" secondAttribute="trailing" id="VfU-fi-MoH"/>
+                                                <constraint firstAttribute="bottom" secondItem="Cmz-wi-4i2" secondAttribute="bottom" id="jca-6f-eyt"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="44" id="tgZ-Fk-p4D">
-                                        <rect key="frame" x="0.0" y="331.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="419.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tgZ-Fk-p4D" id="k3O-sG-RVz">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -300,7 +310,7 @@
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="44" id="Ko7-k5-b9W">
-                                        <rect key="frame" x="0.0" y="375.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="463.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ko7-k5-b9W" id="URx-cc-ok8">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -326,7 +336,7 @@
                             <tableViewSection headerTitle="Shortcuts" id="w7t-Pk-drw">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="60" id="5dY-J8-Z8f">
-                                        <rect key="frame" x="0.0" y="475.5" width="375" height="60"/>
+                                        <rect key="frame" x="0.0" y="563.5" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5dY-J8-Z8f" id="pJZ-6C-Rob">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
@@ -339,7 +349,7 @@
                             <tableViewSection headerTitle="Settings" id="72o-o8-5Pr">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="44" id="4wJ-JO-Aft">
-                                        <rect key="frame" x="0.0" y="591.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="679.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4wJ-JO-Aft" id="8gi-OW-a2n">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -380,7 +390,7 @@
                             <tableViewSection headerTitle="About" id="gqv-8x-hy5">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="5KC-H9-xvV" rowHeight="44" style="IBUITableViewCellStyleDefault" id="kgV-XU-Q9X">
-                                        <rect key="frame" x="0.0" y="691.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="779.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kgV-XU-Q9X" id="0mY-Td-DFS">
                                             <rect key="frame" x="0.0" y="0.0" width="348" height="44"/>
@@ -398,7 +408,7 @@
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="aMR-tr-2dx" rowHeight="44" style="IBUITableViewCellStyleDefault" id="9sZ-6a-5sj">
-                                        <rect key="frame" x="0.0" y="735.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="823.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9sZ-6a-5sj" id="DuA-aW-ocJ">
                                             <rect key="frame" x="0.0" y="0.0" width="348" height="44"/>
@@ -416,14 +426,14 @@
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="bvO-ZU-Npa" rowHeight="44" style="IBUITableViewCellStyleDefault" id="I9v-Ds-Pit">
-                                        <rect key="frame" x="0.0" y="779.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="867.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="I9v-Ds-Pit" id="GMz-3i-UT2">
-                                            <rect key="frame" x="0.0" y="0.0" width="348" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="356" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="See the code on GitHub" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bvO-ZU-Npa">
-                                                    <rect key="frame" x="16" y="0.0" width="324" height="44"/>
+                                                    <rect key="frame" x="15" y="0.0" width="333" height="44"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <nil key="textColor"/>
@@ -434,7 +444,7 @@
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="ns0-rs-Ik7" rowHeight="44" style="IBUITableViewCellStyleDefault" id="Dub-25-YGm">
-                                        <rect key="frame" x="0.0" y="823.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="911.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Dub-25-YGm" id="3rb-gL-wap">
                                             <rect key="frame" x="0.0" y="0.0" width="356" height="44"/>
@@ -452,7 +462,7 @@
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="44" id="Baf-hb-KOY">
-                                        <rect key="frame" x="0.0" y="867.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="955.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Baf-hb-KOY" id="Mcn-Gh-dSm">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -478,7 +488,7 @@
                             <tableViewSection headerTitle="Become a supporter" id="Fwq-hG-hz6">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="QSx-Qd-NhG" rowHeight="51" style="IBUITableViewCellStyleDefault" id="ghp-sC-awT">
-                                        <rect key="frame" x="0.0" y="967.5" width="375" height="51"/>
+                                        <rect key="frame" x="0.0" y="1055.5" width="375" height="51"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ghp-sC-awT" id="3uA-Ci-3h0">
                                             <rect key="frame" x="0.0" y="0.0" width="356" height="51"/>
