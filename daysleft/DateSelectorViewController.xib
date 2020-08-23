@@ -22,17 +22,14 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QXj-8z-9cg">
-                    <rect key="frame" x="16" y="52" width="382" height="21"/>
+                    <rect key="frame" x="16" y="60" width="382" height="21"/>
                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="KOw-93-JML">
-                    <rect key="frame" x="0.0" y="89" width="414" height="216"/>
-                </datePicker>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uV9-Rv-7p1">
-                    <rect key="frame" x="16" y="313" width="175" height="33"/>
-                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                    <rect key="frame" x="16" y="813" width="175" height="33"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <state key="normal" title="Cancel">
                         <color key="titleColor" name="MainAppColor"/>
                     </state>
@@ -41,8 +38,8 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5DA-mh-PdS">
-                    <rect key="frame" x="223" y="313" width="175" height="33"/>
-                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                    <rect key="frame" x="223" y="813" width="175" height="33"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                     <state key="normal" title="OK">
                         <color key="titleColor" name="MainAppColor"/>
                     </state>
@@ -50,21 +47,25 @@
                         <action selector="okButtonTouchUp:" destination="-1" eventType="touchUpInside" id="75k-IC-it4"/>
                     </connections>
                 </button>
+                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="KOw-93-JML">
+                    <rect key="frame" x="0.0" y="340" width="414" height="216"/>
+                </datePicker>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
-                <constraint firstItem="uV9-Rv-7p1" firstAttribute="top" secondItem="KOw-93-JML" secondAttribute="bottom" constant="8" id="9sD-uR-aPh"/>
+                <constraint firstItem="KOw-93-JML" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="25l-sE-VNg"/>
                 <constraint firstItem="5DA-mh-PdS" firstAttribute="leading" secondItem="uV9-Rv-7p1" secondAttribute="trailing" constant="32" id="BQv-IB-EeV"/>
-                <constraint firstItem="KOw-93-JML" firstAttribute="top" secondItem="QXj-8z-9cg" secondAttribute="bottom" constant="16" id="ICy-ip-CgL"/>
-                <constraint firstItem="KOw-93-JML" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="LgB-c2-8Xd"/>
-                <constraint firstItem="KOw-93-JML" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="PA5-Dy-3DR"/>
+                <constraint firstItem="KOw-93-JML" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="GUH-OJ-msP"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="5DA-mh-PdS" secondAttribute="trailing" constant="16" id="Pf8-tp-IJf"/>
                 <constraint firstItem="5DA-mh-PdS" firstAttribute="width" secondItem="uV9-Rv-7p1" secondAttribute="width" id="Psv-Hc-1gm"/>
-                <constraint firstItem="5DA-mh-PdS" firstAttribute="top" secondItem="KOw-93-JML" secondAttribute="bottom" constant="8" id="SaJ-rY-Pij"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="uV9-Rv-7p1" secondAttribute="bottom" constant="16" id="V47-cg-SeS"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="KOw-93-JML" secondAttribute="trailing" id="ahP-mS-W0J"/>
+                <constraint firstItem="uV9-Rv-7p1" firstAttribute="centerY" secondItem="5DA-mh-PdS" secondAttribute="centerY" id="ap3-AU-Shz"/>
                 <constraint firstItem="QXj-8z-9cg" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="cCh-rz-az7"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="QXj-8z-9cg" secondAttribute="trailing" constant="16" id="dQv-az-hqq"/>
-                <constraint firstItem="QXj-8z-9cg" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="8" id="oyl-0a-Lja"/>
+                <constraint firstItem="QXj-8z-9cg" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="oyl-0a-Lja"/>
                 <constraint firstItem="uV9-Rv-7p1" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="plb-Gv-qV2"/>
+                <constraint firstItem="KOw-93-JML" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="rv1-xd-5v3"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="128" y="169"/>

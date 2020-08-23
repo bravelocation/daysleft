@@ -42,6 +42,16 @@ class DateSelectorViewController: UIViewController {
             self.datePicker.minimumDate = model.start
         }
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        let contentSize = self.view.systemLayoutSizeFitting(
+            UIView.layoutFittingCompressedSize
+        )
+        self.preferredContentSize = contentSize
+        self.popoverPresentationController?
+            .presentedViewController
+            .preferredContentSize = contentSize
+    }
 
     @IBAction func cancelButtonTouchUp(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)

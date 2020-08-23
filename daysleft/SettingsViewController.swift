@@ -134,22 +134,23 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
     }
     
     @IBAction func startDateButtonTouchUp(_ sender: UIView) {
-        self.showDateSelector(isStartDate: true)
+        self.showDateSelector(isStartDate: true, sender: self.startDateButton)
     }
     
-    @IBAction func endDateButtonTouchUp(_ sender: Any) {
-        self.showDateSelector(isStartDate: false)
+    @IBAction func endDateButtonTouchUp(_ sender: UIView) {
+        self.showDateSelector(isStartDate: false, sender: self.endDateButton)
     }
     
-    func showDateSelector(isStartDate: Bool) {
+    func showDateSelector(isStartDate: Bool, sender: UIView) {
         let vc = DateSelectorViewController(model: self.modelData(), isStartDate: isStartDate) {
             DispatchQueue.main.async {
                 self.validateAndSaveModel()
             }
         }
         
-        vc.modalPresentationStyle = .formSheet
-        vc.modalTransitionStyle = .crossDissolve
+        vc.modalPresentationStyle = .popover
+        vc.popoverPresentationController?.sourceView = sender
+
         self.present(vc, animated: true, completion: nil)
     }
     
