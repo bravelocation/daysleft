@@ -70,6 +70,8 @@
 		52D18D721BC8283300DB7E3A /* BLUserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FAB1181A9231970039691E /* BLUserSettings.swift */; };
 		52D25F3C1BCB8595002E4C76 /* ComplicationsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D25F3B1BCB8595002E4C76 /* ComplicationsDataSource.swift */; };
 		52D617B124D06F9000465F4C /* MenuBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D617B024D06F9000465F4C /* MenuBuilder.swift */; };
+		52D760D624F25537002BF59D /* DateSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D760D424F25537002BF59D /* DateSelectorViewController.swift */; };
+		52D760D724F25537002BF59D /* DateSelectorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52D760D524F25537002BF59D /* DateSelectorViewController.xib */; };
 		52DC9EB31FC97A3200AE02F6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52DC9EB21FC97A3200AE02F6 /* GoogleService-Info.plist */; };
 		52DC9EB51FC97A9200AE02F6 /* FirebaseNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DC9EB41FC97A9200AE02F6 /* FirebaseNotifications.swift */; };
 		52EE20E52158CF5000B46ACF /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EE20E42158CF5000B46ACF /* SettingsManager.swift */; };
@@ -265,6 +267,8 @@
 		52CFBF1D1A8B642C005234FB /* DaysLeftModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DaysLeftModel.swift; path = ../daysleft/DaysLeftModel.swift; sourceTree = "<group>"; };
 		52D25F3B1BCB8595002E4C76 /* ComplicationsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComplicationsDataSource.swift; sourceTree = "<group>"; };
 		52D617B024D06F9000465F4C /* MenuBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBuilder.swift; sourceTree = "<group>"; };
+		52D760D424F25537002BF59D /* DateSelectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSelectorViewController.swift; sourceTree = "<group>"; };
+		52D760D524F25537002BF59D /* DateSelectorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DateSelectorViewController.xib; sourceTree = "<group>"; };
 		52D937391BBFCEF200B215BC /* WatchDaysLeftModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WatchDaysLeftModel.swift; path = ../daysleftlibrary/WatchDaysLeftModel.swift; sourceTree = "<group>"; };
 		52DC9EB21FC97A3200AE02F6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		52DC9EB41FC97A9200AE02F6 /* FirebaseNotifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseNotifications.swift; sourceTree = "<group>"; };
@@ -579,6 +583,8 @@
 				52CFBEFD1A8B631B005234FB /* AppDelegate.swift */,
 				5285E6741FACC9A6001547CD /* AppDaysLeftModel.swift */,
 				52790F781D056F500025AF10 /* daysleft-Bridging-Header.h */,
+				52D760D424F25537002BF59D /* DateSelectorViewController.swift */,
+				52D760D524F25537002BF59D /* DateSelectorViewController.xib */,
 				52FAB11B1A9240490039691E /* DefaultPreferences.plist */,
 				52DC9EB41FC97A9200AE02F6 /* FirebaseNotifications.swift */,
 				52CFBF041A8B631B005234FB /* Media.xcassets */,
@@ -1034,6 +1040,7 @@
 				52CFBF031A8B631B005234FB /* Main.storyboard in Resources */,
 				527BE7A61FB0FEE600455FE9 /* LaunchScreen.storyboard in Resources */,
 				52FAB11C1A9240490039691E /* DefaultPreferences.plist in Resources */,
+				52D760D724F25537002BF59D /* DateSelectorViewController.xib in Resources */,
 				52CFBF051A8B631B005234FB /* Media.xcassets in Resources */,
 				52DC9EB31FC97A3200AE02F6 /* GoogleService-Info.plist in Resources */,
 			);
@@ -1289,6 +1296,7 @@
 				52EE20E52158CF5000B46ACF /* SettingsManager.swift in Sources */,
 				52D617B124D06F9000465F4C /* MenuBuilder.swift in Sources */,
 				52FAB11E1A9381B70039691E /* SettingsViewController.swift in Sources */,
+				52D760D624F25537002BF59D /* DateSelectorViewController.swift in Sources */,
 				52DC9EB51FC97A9200AE02F6 /* FirebaseNotifications.swift in Sources */,
 				5285E6751FACC9A6001547CD /* AppDaysLeftModel.swift in Sources */,
 			);
