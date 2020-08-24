@@ -15,10 +15,7 @@ import IntentsUI
 class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafariViewControllerDelegate, INUIAddVoiceShortcutViewControllerDelegate {
     
     @IBOutlet weak var textTitle: UITextField!
-    @IBOutlet weak var textStart: UITextField!
-    @IBOutlet weak var textEnd: UITextField!
     @IBOutlet weak var switchWeekdaysOnly: UISwitch!
-    @IBOutlet weak var buttonStartToday: UIButton!
     @IBOutlet weak var labelDaysLength: UILabel!
     @IBOutlet weak var labelVersion: UILabel!
     @IBOutlet weak var switchShowBadge: UISwitch!
@@ -28,10 +25,11 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
     @IBOutlet weak var appMadeCell: UITableViewCell!
     @IBOutlet weak var moreAppsCell: UITableViewCell!
     @IBOutlet weak var privacyCell: UITableViewCell!
+
+    @IBOutlet weak var startDatePicker: UIDatePicker!
+    @IBOutlet weak var endDatePicker: UIDatePicker!
     
     var dateFormatter: DateFormatter = DateFormatter()
-    let startDatePicker: UIDatePicker = UIDatePicker()
-    let endDatePicker: UIDatePicker = UIDatePicker()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,8 +43,6 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
         // Setup date formatter
         self.dateFormatter.dateFormat = "EEE d MMM YYYY"
         
-        self.textStart.text = String(format: "%@", self.dateFormatter.string(from: model.start))
-        self.textEnd.text = String(format: "%@", self.dateFormatter.string(from: model.end))
         self.labelDaysLength.text = model.daysLeftDescription(model.start)
         
         // Setup the date pickers as editors for text fields
@@ -54,13 +50,11 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
         self.startDatePicker.maximumDate = model.end
         self.startDatePicker.datePickerMode = UIDatePicker.Mode.date
         self.startDatePicker.addTarget(self, action: #selector(SettingsViewController.dateChanged(_:)), for: UIControl.Event.valueChanged)
-        self.textStart.inputView = self.startDatePicker
         
         self.endDatePicker.date = model.end
         self.endDatePicker.minimumDate = model.start
         self.endDatePicker.datePickerMode = UIDatePicker.Mode.date
         self.endDatePicker.addTarget(self, action: #selector(SettingsViewController.dateChanged(_:)), for: UIControl.Event.valueChanged)
-        self.textEnd.inputView = self.endDatePicker
 
         // Set up the delegate of text field for handling return below
         self.textTitle.delegate = self
@@ -231,8 +225,6 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
         model.title = self.textTitle!.text!
         
         // Update the text fields
-        self.textStart.text = String(format: "%@", self.dateFormatter.string(from: model.start))
-        self.textEnd.text = String(format: "%@", self.dateFormatter.string(from: model.end))
         self.labelDaysLength.text = model.daysLeftDescription(model.start)
         
         // Update the date restrictions too

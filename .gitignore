@@ -33,3 +33,4 @@ Pods/
 # App settings
 daysleft/Fabric.plist
 daysleft/GoogleService-Info.plist
+daysleft/.DS_Store
