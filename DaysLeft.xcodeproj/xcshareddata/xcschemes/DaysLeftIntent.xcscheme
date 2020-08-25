@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1100"
+   LastUpgradeVersion = "1200"
    wasCreatedForAppExtension = "YES"
    version = "1.7">
    <BuildAction
@@ -18,7 +18,7 @@
                BlueprintIdentifier = "52AC69322154DA7E00E6C833"
                BuildableName = "DaysLeftIntent.appex"
                BlueprintName = "DaysLeftIntent"
-               ReferencedContainer = "container:daysleft.xcodeproj">
+               ReferencedContainer = "container:DaysLeft.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -32,7 +32,7 @@
                BlueprintIdentifier = "52CFBEF71A8B631B005234FB"
                BuildableName = "DaysLeft.app"
                BlueprintName = "DaysLeft"
-               ReferencedContainer = "container:daysleft.xcodeproj">
+               ReferencedContainer = "container:DaysLeft.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -63,7 +63,7 @@
             BlueprintIdentifier = "52CFBEF71A8B631B005234FB"
             BuildableName = "DaysLeft.app"
             BlueprintName = "DaysLeft"
-            ReferencedContainer = "container:daysleft.xcodeproj">
+            ReferencedContainer = "container:DaysLeft.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -82,7 +82,7 @@
             BlueprintIdentifier = "52CFBEF71A8B631B005234FB"
             BuildableName = "DaysLeft.app"
             BlueprintName = "DaysLeft"
-            ReferencedContainer = "container:daysleft.xcodeproj">
+            ReferencedContainer = "container:DaysLeft.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
