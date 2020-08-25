@@ -31,11 +31,6 @@ open class BLUserSettings: NSObject, WCSessionDelegate {
         self.appStandardUserDefaults = UserDefaults(suiteName: suiteName)!
         self.appStandardUserDefaults!.register(defaults: defaultPrefs as! [String: AnyObject])
     }
-    
-    /// Destructor
-    deinit {
-        NotificationCenter.default.removeObserver(self)
-    }
  
     /// Used to read an object setting from the user setting store
     ///

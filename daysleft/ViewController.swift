@@ -43,10 +43,6 @@ class ViewController: UIViewController {
         super.init(coder: aDecoder)!
         self.setupNotificationHandlers()
     }
-        
-    deinit {
-        NotificationCenter.default.removeObserver(self)
-    }
     
     func setupNotificationHandlers() {
         NotificationCenter.default.addObserver(self, selector: #selector(ViewController.iCloudSettingsUpdated(_:)), name: NSNotification.Name(rawValue: AppDaysLeftModel.iCloudSettingsNotification), object: nil)
