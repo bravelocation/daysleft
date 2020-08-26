@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="15400" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="17154" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
     <device id="watch38"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="15400"/>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17124"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="17034"/>
     </dependencies>
     <scenes>
         <!--MainInterfaceController-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller identifier="MainInterfaceController" id="AgC-eL-Hgc" customClass="InterfaceHostController" customModule="daysleft_WatchKit_Extension"/>
+                <controller identifier="MainInterfaceController" id="AgC-eL-Hgc" customClass="InterfaceHostController" customModule="DaysLeft_WatchKit_Extension"/>
             </objects>
             <point key="canvasLocation" x="272" y="56"/>
         </scene>
