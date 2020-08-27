@@ -72,51 +72,57 @@ class ComplicationsDataSource: NSObject, CLKComplicationDataSource {
             template.body2TextProvider = CLKSimpleTextProvider(text: "10% done")
             handler(template)
         case .graphicBezel:
-            if #available(watchOS 5, *) {
-                let template = CLKComplicationTemplateGraphicBezelCircularText()
-                template.tintColor = appTintColor
-                
-                template.textProvider = CLKSimpleTextProvider(text: "20 days until Christmas")
-                
-                let gaugeProvider = CLKComplicationTemplateGraphicCircularOpenGaugeSimpleText()
-                gaugeProvider.centerTextProvider = CLKSimpleTextProvider(text: String("20"))
-                gaugeProvider.bottomTextProvider = CLKSimpleTextProvider(text: String(format: "%d%%", 10))
-                
-                let gauge = CLKSimpleGaugeProvider(style: .fill, gaugeColor: appTintColor, fillFraction: 0.1)
-                gaugeProvider.gaugeProvider = gauge
-                template.circularTemplate = gaugeProvider
-                
-                handler(template)
-            }
+            let template = CLKComplicationTemplateGraphicBezelCircularText()
+            template.tintColor = appTintColor
+            
+            template.textProvider = CLKSimpleTextProvider(text: "20 days until Christmas")
+            
+            let gaugeProvider = CLKComplicationTemplateGraphicCircularOpenGaugeSimpleText()
+            gaugeProvider.centerTextProvider = CLKSimpleTextProvider(text: String("20"))
+            gaugeProvider.bottomTextProvider = CLKSimpleTextProvider(text: String(format: "%d%%", 10))
+            
+            let gauge = CLKSimpleGaugeProvider(style: .fill, gaugeColor: appTintColor, fillFraction: 0.1)
+            gaugeProvider.gaugeProvider = gauge
+            template.circularTemplate = gaugeProvider
+            
+            handler(template)
         case .graphicCorner:
-            if #available(watchOS 5, *) {
-                let template = CLKComplicationTemplateGraphicCornerGaugeText()
-                template.outerTextProvider = CLKSimpleTextProvider(text: "20 days")
-                
-                let gauge = CLKSimpleGaugeProvider(style: .fill, gaugeColor: appTintColor, fillFraction: 0.1)
-                template.gaugeProvider = gauge
-                
-                template.tintColor = appTintColor
-                handler(template)
-            }
+            let template = CLKComplicationTemplateGraphicCornerGaugeText()
+            template.outerTextProvider = CLKSimpleTextProvider(text: "20 days")
+            
+            let gauge = CLKSimpleGaugeProvider(style: .fill, gaugeColor: appTintColor, fillFraction: 0.1)
+            template.gaugeProvider = gauge
+            
+            template.tintColor = appTintColor
+            handler(template)
         case .graphicCircular:
-            if #available(watchOS 5, *) {
-                let template = CLKComplicationTemplateGraphicCircularOpenGaugeSimpleText()
-                template.centerTextProvider = CLKSimpleTextProvider(text: "20")
-                template.bottomTextProvider = CLKSimpleTextProvider(text: String(format: "%d%%", 10))
-                
-                let gauge = CLKSimpleGaugeProvider(style: .fill, gaugeColor: appTintColor, fillFraction: 0.1)
-                template.gaugeProvider = gauge
-                
-                template.tintColor = appTintColor
-                handler(template)
-            }
+            let template = CLKComplicationTemplateGraphicCircularOpenGaugeSimpleText()
+            template.centerTextProvider = CLKSimpleTextProvider(text: "20")
+            template.bottomTextProvider = CLKSimpleTextProvider(text: String(format: "%d%%", 10))
+            
+            let gauge = CLKSimpleGaugeProvider(style: .fill, gaugeColor: appTintColor, fillFraction: 0.1)
+            template.gaugeProvider = gauge
+            
+            template.tintColor = appTintColor
+            handler(template)
         case .graphicRectangular:
-            if #available(watchOS 5, *) {
                 let template = CLKComplicationTemplateGraphicRectangularStandardBody()
                 template.headerTextProvider = CLKSimpleTextProvider(text: "Christmas")
                 template.body1TextProvider = CLKSimpleTextProvider(text: "20 days")
                 template.body2TextProvider = CLKSimpleTextProvider(text: String(format: "%d%% done", 0.1))
+                template.tintColor = appTintColor
+                
+                handler(template)
+        case .graphicExtraLarge:
+            if #available(watchOS 7, *) {
+                let template = CLKComplicationTemplateGraphicExtraLargeCircularOpenGaugeRangeText()
+                template.centerTextProvider = CLKSimpleTextProvider(text: "20")
+                template.leadingTextProvider = CLKSimpleTextProvider(text: "")
+                template.trailingTextProvider = CLKSimpleTextProvider(text: "")
+
+                let gauge = CLKSimpleGaugeProvider(style: .fill, gaugeColor: appTintColor, fillFraction: 0.1)
+                template.gaugeProvider = gauge
+                
                 template.tintColor = appTintColor
                 
                 handler(template)
@@ -248,53 +254,59 @@ class ComplicationsDataSource: NSObject, CLKComplicationDataSource {
             template.tintColor = appTintColor
             entry = CLKComplicationTimelineEntry(date: date, complicationTemplate: template)
         case .graphicBezel:
-            if #available(watchOS 5, *) {
-                let template = CLKComplicationTemplateGraphicBezelCircularText()
-                template.tintColor = appTintColor
-                
-                let longDesc = String(format: "%d %@ until %@", currentDaysLeft, model.weekdaysOnly ? "weekdays" : "days", model.title)
-                template.textProvider = CLKSimpleTextProvider(text: longDesc)
-                
-                let gaugeProvider = CLKComplicationTemplateGraphicCircularOpenGaugeSimpleText()
-                gaugeProvider.centerTextProvider = CLKSimpleTextProvider(text: String(currentDaysLeft))
-                gaugeProvider.bottomTextProvider = CLKSimpleTextProvider(text: String(format: "%d%%", displayPercentageDone))
-                
-                let gauge = CLKSimpleGaugeProvider(style: .fill, gaugeColor: appTintColor, fillFraction: percentageDone)
-                gaugeProvider.gaugeProvider = gauge
-                template.circularTemplate = gaugeProvider
-                
-                entry = CLKComplicationTimelineEntry(date: date, complicationTemplate: template)
-            }
+            let template = CLKComplicationTemplateGraphicBezelCircularText()
+            template.tintColor = appTintColor
+            
+            let longDesc = String(format: "%d %@ until %@", currentDaysLeft, model.weekdaysOnly ? "weekdays" : "days", model.title)
+            template.textProvider = CLKSimpleTextProvider(text: longDesc)
+            
+            let gaugeProvider = CLKComplicationTemplateGraphicCircularOpenGaugeSimpleText()
+            gaugeProvider.centerTextProvider = CLKSimpleTextProvider(text: String(currentDaysLeft))
+            gaugeProvider.bottomTextProvider = CLKSimpleTextProvider(text: String(format: "%d%%", displayPercentageDone))
+            
+            let gauge = CLKSimpleGaugeProvider(style: .fill, gaugeColor: appTintColor, fillFraction: percentageDone)
+            gaugeProvider.gaugeProvider = gauge
+            template.circularTemplate = gaugeProvider
+            
+            entry = CLKComplicationTimelineEntry(date: date, complicationTemplate: template)
         case .graphicCorner:
-            if #available(watchOS 5, *) {
-                let template = CLKComplicationTemplateGraphicCornerGaugeText()
-                let daysDesc = String(format: "%d days", currentDaysLeft)
-                template.outerTextProvider = CLKSimpleTextProvider(text: daysDesc)
-                
-                let gauge = CLKSimpleGaugeProvider(style: .fill, gaugeColor: appTintColor, fillFraction: percentageDone)
-                template.gaugeProvider = gauge
+            let template = CLKComplicationTemplateGraphicCornerGaugeText()
+            let daysDesc = String(format: "%d days", currentDaysLeft)
+            template.outerTextProvider = CLKSimpleTextProvider(text: daysDesc)
+            
+            let gauge = CLKSimpleGaugeProvider(style: .fill, gaugeColor: appTintColor, fillFraction: percentageDone)
+            template.gaugeProvider = gauge
 
-                template.tintColor = appTintColor
-                entry = CLKComplicationTimelineEntry(date: date, complicationTemplate: template)
-            }
+            template.tintColor = appTintColor
+            entry = CLKComplicationTimelineEntry(date: date, complicationTemplate: template)
         case .graphicCircular:
-            if #available(watchOS 5, *) {
-                let template = CLKComplicationTemplateGraphicCircularOpenGaugeSimpleText()
-                template.centerTextProvider = CLKSimpleTextProvider(text: String(currentDaysLeft))
-                template.bottomTextProvider = CLKSimpleTextProvider(text: String(format: "%d%%", displayPercentageDone))
-                
-                let gauge = CLKSimpleGaugeProvider(style: .fill, gaugeColor: appTintColor, fillFraction: percentageDone)
+            let template = CLKComplicationTemplateGraphicCircularOpenGaugeSimpleText()
+            template.centerTextProvider = CLKSimpleTextProvider(text: String(currentDaysLeft))
+            template.bottomTextProvider = CLKSimpleTextProvider(text: String(format: "%d%%", displayPercentageDone))
+            
+            let gauge = CLKSimpleGaugeProvider(style: .fill, gaugeColor: appTintColor, fillFraction: percentageDone)
+            template.gaugeProvider = gauge
+            
+            template.tintColor = appTintColor
+            entry = CLKComplicationTimelineEntry(date: date, complicationTemplate: template)
+        case .graphicRectangular:
+            let template = CLKComplicationTemplateGraphicRectangularStandardBody()
+            template.headerTextProvider = CLKSimpleTextProvider(text: model.title)
+            template.body1TextProvider = CLKSimpleTextProvider(text: String(format: "%d days", currentDaysLeft))
+            template.body2TextProvider = CLKSimpleTextProvider(text: String(format: "%d%% done", displayPercentageDone))
+            template.tintColor = appTintColor
+            
+            entry = CLKComplicationTimelineEntry(date: date, complicationTemplate: template)
+        case .graphicExtraLarge:
+            if #available(watchOS 7, *) {
+                let template = CLKComplicationTemplateGraphicExtraLargeCircularOpenGaugeRangeText()
+                template.centerTextProvider = CLKSimpleTextProvider(text: String(format: "%d", currentDaysLeft))
+                template.leadingTextProvider = CLKSimpleTextProvider(text: "")
+                template.trailingTextProvider = CLKSimpleTextProvider(text: "")
+
+                let gauge = CLKSimpleGaugeProvider(style: .fill, gaugeColor: appTintColor, fillFraction: 0.1)
                 template.gaugeProvider = gauge
                 
-                template.tintColor = appTintColor
-                entry = CLKComplicationTimelineEntry(date: date, complicationTemplate: template)
-            }
-        case .graphicRectangular:
-            if #available(watchOS 5, *) {
-                let template = CLKComplicationTemplateGraphicRectangularStandardBody()
-                template.headerTextProvider = CLKSimpleTextProvider(text: model.title)
-                template.body1TextProvider = CLKSimpleTextProvider(text: String(format: "%d days", currentDaysLeft))
-                template.body2TextProvider = CLKSimpleTextProvider(text: String(format: "%d%% done", displayPercentageDone))
                 template.tintColor = appTintColor
                 
                 entry = CLKComplicationTimelineEntry(date: date, complicationTemplate: template)
