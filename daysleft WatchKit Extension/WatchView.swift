@@ -15,7 +15,7 @@ struct WatchView: View {
     
     var body: some View {
         GeometryReader { geo in
-            VStack {
+            VStack(alignment: .center) {
                 Text(self.model.currentTitle)
                     .lineLimit(nil)
                     .multilineTextAlignment(.center)
@@ -29,7 +29,7 @@ struct WatchView: View {
                                 frameSize: self.progressDimensions(geo.size))
                     .padding()
                 Text(self.model.currentPercentageLeft).font(.footnote)
-            }
+            }.frame(width: geo.size.width, height: geo.size.height, alignment: .center)
         }
     }
     
