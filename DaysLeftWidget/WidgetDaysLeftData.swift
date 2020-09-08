@@ -13,6 +13,9 @@ import WidgetKit
 
 class WidgetDaysLeftData: ObservableObject, TimelineEntry {
     var date: Date
+    var relevance: TimelineEntryRelevance? {
+        return TimelineEntryRelevance(score: Float(self.percentageDone))
+    }
     
     var currentPercentageLeft: String = ""
     var currentTitle: String = ""
