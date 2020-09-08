@@ -44,6 +44,18 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <TestPlans>
       </TestPlans>
+      <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "5295EDD91A94AE53007EF7E7"
+               BuildableName = "DaysLeftLibraryTests.xctest"
+               BlueprintName = "DaysLeftLibraryTests"
+               ReferencedContainer = "container:DaysLeft.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+      </Testables>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
