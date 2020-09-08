@@ -9,36 +9,14 @@
 import WidgetKit
 import SwiftUI
 
-struct Provider: TimelineProvider {
-    func placeholder(in context: Context) -> WidgetDaysLeftData {
-        return WidgetDaysLeftData(date: Date())
-    }
-
-    func getSnapshot(in context: Context, completion: @escaping (WidgetDaysLeftData) -> Void) {
-        let entry = WidgetDaysLeftData(date: Date())
-        completion(entry)
-    }
-
-    func getTimeline(in context: Context, completion: @escaping (Timeline<WidgetDaysLeftData>) -> Void) {
-        var entries: [WidgetDaysLeftData] = []
-
-        // Set expiry date to be start of tomorrow???
-        let entry = WidgetDaysLeftData(date: Date())
-        entries.append(entry)
-
-        // Set expiry date to be start of tomorrow
-        let entryDate = Calendar.current.startOfDay(for: Date()).addingTimeInterval(60*60*24)
-        let timeline = Timeline(entries: entries, policy: .after(entryDate))
-        completion(timeline)
-    }
-}
-
 @main
 struct DaysLeftWidget: Widget {
     let kind: String = "DaysLeftWidget"
 
     var body: some WidgetConfiguration {
-        StaticConfiguration(kind: kind, provider: Provider()) { entry in
+        StaticConfiguration(
+            kind: kind,
+            provider: WidgetTimelineProvider()) { entry in
             WidgetView(model: entry)
         }
         .supportedFamilies([.systemSmall, .systemMedium])

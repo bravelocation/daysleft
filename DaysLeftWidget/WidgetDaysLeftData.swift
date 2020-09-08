@@ -28,7 +28,7 @@ class WidgetDaysLeftData: ObservableObject, TimelineEntry {
         // Set the published properties based on the model
         let model = DaysLeftModel()
         
-        self.currentTitle = "\(model.daysLeftDescription(self.date)) until"
+        self.currentTitle = "\(model.daysLeftDescription(self.date)) to"
         self.currentSubTitle = model.title
 
         let percentageDone: Double = (Double(model.daysGone(self.date)) * 100.0) / Double(model.daysLength)

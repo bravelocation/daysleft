@@ -84,6 +84,7 @@
 		52E048BA25077F87009A2169 /* WidgetProgressControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E048B925077F87009A2169 /* WidgetProgressControl.swift */; };
 		52E048BC250787F0009A2169 /* DefaultPreferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52FAB11B1A9240490039691E /* DefaultPreferences.plist */; };
 		52E048BD2507883A009A2169 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52CFBF041A8B631B005234FB /* Media.xcassets */; };
+		52E048BF2507A57E009A2169 /* WidgetTimelineProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E048BE2507A57E009A2169 /* WidgetTimelineProvider.swift */; };
 		52EE20E52158CF5000B46ACF /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EE20E42158CF5000B46ACF /* SettingsManager.swift */; };
 		52F9CDAC22D63D1900E0FFE8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F9CDAB22D63D1900E0FFE8 /* SceneDelegate.swift */; };
 		52FAB11C1A9240490039691E /* DefaultPreferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52FAB11B1A9240490039691E /* DefaultPreferences.plist */; };
@@ -298,6 +299,7 @@
 		52E048B225077E1C009A2169 /* WidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetView.swift; sourceTree = "<group>"; };
 		52E048B425077E6A009A2169 /* WidgetDaysLeftData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetDaysLeftData.swift; sourceTree = "<group>"; };
 		52E048B925077F87009A2169 /* WidgetProgressControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetProgressControl.swift; sourceTree = "<group>"; };
+		52E048BE2507A57E009A2169 /* WidgetTimelineProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetTimelineProvider.swift; sourceTree = "<group>"; };
 		52EE20E42158CF5000B46ACF /* SettingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsManager.swift; sourceTree = "<group>"; };
 		52F9CDAB22D63D1900E0FFE8 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		52FAB1181A9231970039691E /* BLUserSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BLUserSettings.swift; path = ../daysleft/BLUserSettings.swift; sourceTree = "<group>"; };
@@ -675,6 +677,7 @@
 				52E048B225077E1C009A2169 /* WidgetView.swift */,
 				52E048B425077E6A009A2169 /* WidgetDaysLeftData.swift */,
 				52E048B925077F87009A2169 /* WidgetProgressControl.swift */,
+				52E048BE2507A57E009A2169 /* WidgetTimelineProvider.swift */,
 			);
 			path = DaysLeftWidget;
 			sourceTree = "<group>";
@@ -1408,6 +1411,7 @@
 			files = (
 				52E048B325077E1C009A2169 /* WidgetView.swift in Sources */,
 				52E048A725077AFB009A2169 /* DaysLeftWidget.swift in Sources */,
+				52E048BF2507A57E009A2169 /* WidgetTimelineProvider.swift in Sources */,
 				52E048B525077E6A009A2169 /* WidgetDaysLeftData.swift in Sources */,
 				52E048B625077EC1009A2169 /* DaysLeftModel.swift in Sources */,
 				52E048BA25077F87009A2169 /* WidgetProgressControl.swift in Sources */,

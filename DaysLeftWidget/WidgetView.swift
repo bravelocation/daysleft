@@ -45,11 +45,7 @@ struct WidgetView: View {
     }
     
     func progressDimensions(_ screenSize: CGSize) -> CGFloat {
-        if (screenSize.width > screenSize.height) {
-            return screenSize.height - 100
-        } else {
-            return screenSize.width - 100
-        }
+        return screenSize.height / 4.0
     }
 }
 
