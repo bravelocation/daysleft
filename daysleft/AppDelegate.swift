@@ -9,6 +9,7 @@
 import UIKit
 import DaysLeftLibrary
 import Firebase
+import WidgetKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -138,5 +139,10 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
                 }
             }
         }
+    }
+    
+    // MARK: Widget functions
+    func updateWidgets() {
+        WidgetCenter.shared.reloadAllTimelines()
     }
 }

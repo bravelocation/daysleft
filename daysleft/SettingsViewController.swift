@@ -231,9 +231,10 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
         self.startDatePicker.maximumDate = model.end
         self.endDatePicker.minimumDate = model.start
         
-        // Update the badge too
+        // Update the badge and widgets too
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.updateBadge()
+        appDelegate.updateWidgets()
         
         // Push any changes to watch
         model.pushAllSettingsToWatch()
