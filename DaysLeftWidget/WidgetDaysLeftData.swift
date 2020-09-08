@@ -20,8 +20,6 @@ class WidgetDaysLeftData: ObservableObject, TimelineEntry {
     var percentageDone: Double = 0.0
     
     init(date: Date) {
-        NSLog("Updating view data...")
-        
         self.date = date
         
         // Reset the percentage done to 0.0

@@ -23,11 +23,12 @@ struct Provider: TimelineProvider {
         var entries: [WidgetDaysLeftData] = []
 
         // Set expiry date to be start of tomorrow???
-        let entryDate = Calendar.current.startOfDay(for: Date()).addingTimeInterval(60*60*24)
-        let entry = WidgetDaysLeftData(date: entryDate)
+        let entry = WidgetDaysLeftData(date: Date())
         entries.append(entry)
 
-        let timeline = Timeline(entries: entries, policy: .atEnd)
+        // Set expiry date to be start of tomorrow
+        let entryDate = Calendar.current.startOfDay(for: Date()).addingTimeInterval(60*60*24)
+        let timeline = Timeline(entries: entries, policy: .after(entryDate))
         completion(timeline)
     }
 }
@@ -40,6 +41,7 @@ struct DaysLeftWidget: Widget {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
             WidgetView(model: entry)
         }
+        .supportedFamilies([.systemSmall, .systemMedium])
         .configurationDisplayName("Days Left")
         .description("Count The Days Left")
     }
@@ -47,7 +49,11 @@ struct DaysLeftWidget: Widget {
 
 struct DaysLeftWidget_Previews: PreviewProvider {
     static var previews: some View {
-        WidgetView(model: WidgetDaysLeftData(date: Date()))
-            .previewContext(WidgetPreviewContext(family: .systemSmall))
+        Group {
+            WidgetView(model: WidgetDaysLeftData(date: Date()))
+                .previewContext(WidgetPreviewContext(family: .systemSmall))
+            WidgetView(model: WidgetDaysLeftData(date: Date()))
+                .previewContext(WidgetPreviewContext(family: .systemMedium))
+        }
     }
 }

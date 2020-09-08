@@ -8,6 +8,7 @@
 
 import Foundation
 import SwiftUI
+import WidgetKit
 
 struct Arc: Shape, InsettableShape {
     var progress: Double = 0.0
@@ -37,9 +38,8 @@ struct WidgetProgressControl: View {
     var backgroundColor: Color
     @ObservedObject var model: WidgetDaysLeftData
 
-    var lineWidth: CGFloat = 50.0
+    var lineWidth: CGFloat = 20.0
     var frameSize: CGFloat = 100
-    var duration: Double = 0.5
 
     var body: some View {
         ZStack {
@@ -56,8 +56,16 @@ struct WidgetProgressControl: View {
 
 struct WidgetProgressControl_Previews: PreviewProvider {
     static var previews: some View {
-        WidgetProgressControl(foregroundColor: Color.blue,
-                        backgroundColor: Color.green,
-                        model: WidgetDaysLeftData(date: Date()))
+        Group {
+            WidgetProgressControl(foregroundColor: Color.blue,
+                            backgroundColor: Color.green,
+                            model: WidgetDaysLeftData(date: Date()))
+                .previewContext(WidgetPreviewContext(family: .systemSmall))
+            WidgetProgressControl(foregroundColor: Color.blue,
+                            backgroundColor: Color.green,
+                            model: WidgetDaysLeftData(date: Date()))
+                .previewContext(WidgetPreviewContext(family: .systemMedium))
+        }
+
     }
 }
