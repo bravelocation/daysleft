@@ -22,8 +22,8 @@ struct WatchView: View {
                 Text(self.model.currentSubTitle)
                     .lineLimit(nil)
                     .multilineTextAlignment(.center)
-                ProgressControl(foregroundColor: Color("LightAppColor"),
-                                backgroundColor: Color("MainAppColor"),
+                ProgressControl(foregroundColor: Color("MainAppColor"),
+                                backgroundColor: Color("LightAppColor"),
                                 model: self.model,
                                 lineWidth: 20.0,
                                 frameSize: self.progressDimensions(geo.size))

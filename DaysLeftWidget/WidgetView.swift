@@ -26,11 +26,12 @@ struct WidgetView: View {
                     .lineLimit(nil)
                     .multilineTextAlignment(.center)
                     .foregroundColor(Color.primary)
-                WidgetProgressControl(foregroundColor: Color("LightAppColor"),
-                                backgroundColor: Color("MainAppColor"),
-                                model: self.model,
-                                lineWidth: 20.0,
-                                frameSize: self.progressDimensions(geo.size))
+                WidgetProgressControl(
+                    foregroundColor: Color("MainAppColor"),
+                    backgroundColor: Color("LightAppColor"),
+                    model: self.model,
+                    lineWidth: 20.0,
+                    frameSize: self.progressDimensions(geo.size))
                     .padding()
                 Text(self.model.currentPercentageLeft)
                     .font(.footnote)
