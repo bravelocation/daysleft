@@ -19,12 +19,11 @@ struct WidgetView: View {
         GeometryReader { geo in
             VStack(alignment: .center) {
                 Text(self.model.currentTitle)
-                    .lineLimit(nil)
+                    .lineLimit(2)
+                    .allowsTightening(true)
+                    .minimumScaleFactor(0.5)
                     .multilineTextAlignment(.center)
-                    .foregroundColor(Color.primary)
-                Text(self.model.currentSubTitle)
-                    .lineLimit(nil)
-                    .multilineTextAlignment(.center)
+                    .fixedSize(horizontal: false, vertical: true)
                     .foregroundColor(Color.primary)
                 WidgetProgressControl(
                     foregroundColor: Color("MainAppColor"),
