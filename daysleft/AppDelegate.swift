@@ -143,6 +143,8 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     
     // MARK: Widget functions
     func updateWidgets() {
-        WidgetCenter.shared.reloadAllTimelines()
+        if #available(iOS 14.0, *) {
+            WidgetCenter.shared.reloadAllTimelines()
+        }
     }
 }
