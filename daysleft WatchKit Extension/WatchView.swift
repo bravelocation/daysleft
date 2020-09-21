@@ -15,21 +15,21 @@ struct WatchView: View {
     
     var body: some View {
         GeometryReader { geo in
-            VStack {
+            VStack(alignment: .center) {
                 Text(self.model.currentTitle)
                     .lineLimit(nil)
                     .multilineTextAlignment(.center)
                 Text(self.model.currentSubTitle)
                     .lineLimit(nil)
                     .multilineTextAlignment(.center)
-                ProgressControl(foregroundColor: Color("LightAppColor"),
-                                backgroundColor: Color("MainAppColor"),
+                ProgressControl(foregroundColor: Color("MainAppColor"),
+                                backgroundColor: Color("LightAppColor"),
                                 model: self.model,
                                 lineWidth: 20.0,
                                 frameSize: self.progressDimensions(geo.size))
                     .padding()
                 Text(self.model.currentPercentageLeft).font(.footnote)
-            }
+            }.frame(width: geo.size.width, height: geo.size.height, alignment: .center)
         }
     }
     

@@ -9,6 +9,9 @@
 import UIKit
 import DaysLeftLibrary
 import Firebase
+#if !targetEnvironment(macCatalyst)
+import WidgetKit
+#endif
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -24,10 +27,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Setup listener for iCloud setting change
         NotificationCenter.default.addObserver(self, selector: #selector(AppDelegate.iCloudSettingsUpdated(_:)), name: NSNotification.Name(rawValue: AppDaysLeftModel.iCloudSettingsNotification), object: nil)
-    }
-    
-    deinit {
-        NotificationCenter.default.removeObserver(self)
     }
     
     // MARK: UIApplicationDelegate functions
@@ -142,5 +141,14 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
                 }
             }
         }
+    }
+    
+    // MARK: Widget functions
+    func updateWidgets() {
+        #if !targetEnvironment(macCatalyst)
+        if #available(iOS 14.0, *) {
+            WidgetCenter.shared.reloadAllTimelines()
+        }
+        #endif
     }
 }

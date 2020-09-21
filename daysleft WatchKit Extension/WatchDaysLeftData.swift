@@ -26,10 +26,6 @@ class WatchDaysLeftData: ObservableObject {
         self.updateViewData()
     }
     
-    deinit {
-        NotificationCenter.default.removeObserver(self)
-    }
-    
     func updateViewData() {
         NSLog("Updating view data...")
         

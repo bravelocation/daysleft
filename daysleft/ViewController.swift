@@ -43,10 +43,6 @@ class ViewController: UIViewController {
         super.init(coder: aDecoder)!
         self.setupNotificationHandlers()
     }
-        
-    deinit {
-        NotificationCenter.default.removeObserver(self)
-    }
     
     func setupNotificationHandlers() {
         NotificationCenter.default.addObserver(self, selector: #selector(ViewController.iCloudSettingsUpdated(_:)), name: NSNotification.Name(rawValue: AppDaysLeftModel.iCloudSettingsNotification), object: nil)
@@ -208,9 +204,10 @@ class ViewController: UIViewController {
         self.counterView.maximumValue = model.daysLength
         self.counterView.updateControl()
         
-        // Update the badge too
+        // Update the badge and widgets too
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.updateBadge()
+        appDelegate.updateWidgets()
         
         NSLog("updateViewFromModel completed")
     }

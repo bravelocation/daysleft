@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1100"
+   LastUpgradeVersion = "1200"
    wasCreatedForAppExtension = "YES"
    version = "2.0">
    <BuildAction
@@ -18,7 +18,7 @@
                BlueprintIdentifier = "5295EDF71A94B398007EF7E7"
                BuildableName = "DaysLeftToday.appex"
                BlueprintName = "DaysLeftToday"
-               ReferencedContainer = "container:daysleft.xcodeproj">
+               ReferencedContainer = "container:DaysLeft.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -32,7 +32,7 @@
                BlueprintIdentifier = "52CFBEF71A8B631B005234FB"
                BuildableName = "DaysLeft.app"
                BlueprintName = "DaysLeft"
-               ReferencedContainer = "container:daysleft.xcodeproj">
+               ReferencedContainer = "container:DaysLeft.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -43,6 +43,16 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "5295EDD91A94AE53007EF7E7"
+               BuildableName = "DaysLeftLibraryTests.xctest"
+               BlueprintName = "DaysLeftLibraryTests"
+               ReferencedContainer = "container:DaysLeft.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
@@ -64,7 +74,7 @@
             BlueprintIdentifier = "52CFBEF71A8B631B005234FB"
             BuildableName = "DaysLeft.app"
             BlueprintName = "DaysLeft"
-            ReferencedContainer = "container:daysleft.xcodeproj">
+            ReferencedContainer = "container:DaysLeft.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -82,7 +92,7 @@
             BlueprintIdentifier = "52CFBEF71A8B631B005234FB"
             BuildableName = "DaysLeft.app"
             BlueprintName = "DaysLeft"
-            ReferencedContainer = "container:daysleft.xcodeproj">
+            ReferencedContainer = "container:DaysLeft.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

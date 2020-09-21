@@ -72,6 +72,19 @@
 		52D617B124D06F9000465F4C /* MenuBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D617B024D06F9000465F4C /* MenuBuilder.swift */; };
 		52DC9EB31FC97A3200AE02F6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52DC9EB21FC97A3200AE02F6 /* GoogleService-Info.plist */; };
 		52DC9EB51FC97A9200AE02F6 /* FirebaseNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DC9EB41FC97A9200AE02F6 /* FirebaseNotifications.swift */; };
+		52E048A225077AFB009A2169 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52E048A125077AFB009A2169 /* WidgetKit.framework */; platformFilter = ios; };
+		52E048A425077AFB009A2169 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52E048A325077AFB009A2169 /* SwiftUI.framework */; };
+		52E048A725077AFB009A2169 /* DaysLeftWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E048A625077AFB009A2169 /* DaysLeftWidget.swift */; };
+		52E048A925077AFE009A2169 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52E048A825077AFE009A2169 /* Assets.xcassets */; };
+		52E048AD25077AFE009A2169 /* DaysLeftWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 52E048A025077AFB009A2169 /* DaysLeftWidgetExtension.appex */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		52E048B325077E1C009A2169 /* WidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E048B225077E1C009A2169 /* WidgetView.swift */; };
+		52E048B525077E6A009A2169 /* WidgetDaysLeftData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E048B425077E6A009A2169 /* WidgetDaysLeftData.swift */; };
+		52E048B625077EC1009A2169 /* DaysLeftModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CFBF1D1A8B642C005234FB /* DaysLeftModel.swift */; };
+		52E048B725077EFA009A2169 /* BLUserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FAB1181A9231970039691E /* BLUserSettings.swift */; };
+		52E048BA25077F87009A2169 /* WidgetProgressControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E048B925077F87009A2169 /* WidgetProgressControl.swift */; };
+		52E048BC250787F0009A2169 /* DefaultPreferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52FAB11B1A9240490039691E /* DefaultPreferences.plist */; };
+		52E048BD2507883A009A2169 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52CFBF041A8B631B005234FB /* Media.xcassets */; };
+		52E048BF2507A57E009A2169 /* WidgetTimelineProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E048BE2507A57E009A2169 /* WidgetTimelineProvider.swift */; };
 		52EE20E52158CF5000B46ACF /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EE20E42158CF5000B46ACF /* SettingsManager.swift */; };
 		52F9CDAC22D63D1900E0FFE8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F9CDAB22D63D1900E0FFE8 /* SceneDelegate.swift */; };
 		52FAB11C1A9240490039691E /* DefaultPreferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52FAB11B1A9240490039691E /* DefaultPreferences.plist */; };
@@ -137,6 +150,13 @@
 			remoteGlobalIDString = 52B78DEE1D982A6D00AB629D;
 			remoteInfo = MessagesExtension;
 		};
+		52E048AB25077AFE009A2169 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 52CFBEF01A8B631B005234FB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 52E0489F25077AFB009A2169;
+			remoteInfo = DaysLeftWidgetExtension;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -182,6 +202,7 @@
 				52B78E151D9904AD00AB629D /* MessagesExtension.appex in Embed App Extensions */,
 				52AC69482154DA7F00E6C833 /* DaysLeftIntentUI.appex in Embed App Extensions */,
 				52AC694B2154DA7F00E6C833 /* DaysLeftIntent.appex in Embed App Extensions */,
+				52E048AD25077AFE009A2169 /* DaysLeftWidgetExtension.appex in Embed App Extensions */,
 				5295EE051A94B398007EF7E7 /* DaysLeftToday.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
@@ -268,6 +289,17 @@
 		52D937391BBFCEF200B215BC /* WatchDaysLeftModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WatchDaysLeftModel.swift; path = ../daysleftlibrary/WatchDaysLeftModel.swift; sourceTree = "<group>"; };
 		52DC9EB21FC97A3200AE02F6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		52DC9EB41FC97A9200AE02F6 /* FirebaseNotifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseNotifications.swift; sourceTree = "<group>"; };
+		52E048A025077AFB009A2169 /* DaysLeftWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = DaysLeftWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		52E048A125077AFB009A2169 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		52E048A325077AFB009A2169 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		52E048A625077AFB009A2169 /* DaysLeftWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysLeftWidget.swift; sourceTree = "<group>"; };
+		52E048A825077AFE009A2169 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		52E048AA25077AFE009A2169 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52E048AE25077AFF009A2169 /* DaysLeftWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DaysLeftWidgetExtension.entitlements; sourceTree = "<group>"; };
+		52E048B225077E1C009A2169 /* WidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetView.swift; sourceTree = "<group>"; };
+		52E048B425077E6A009A2169 /* WidgetDaysLeftData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetDaysLeftData.swift; sourceTree = "<group>"; };
+		52E048B925077F87009A2169 /* WidgetProgressControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetProgressControl.swift; sourceTree = "<group>"; };
+		52E048BE2507A57E009A2169 /* WidgetTimelineProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetTimelineProvider.swift; sourceTree = "<group>"; };
 		52EE20E42158CF5000B46ACF /* SettingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsManager.swift; sourceTree = "<group>"; };
 		52F9CDAB22D63D1900E0FFE8 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		52FAB1181A9231970039691E /* BLUserSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BLUserSettings.swift; path = ../daysleft/BLUserSettings.swift; sourceTree = "<group>"; };
@@ -356,6 +388,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		52E0489D25077AFB009A2169 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52E048A425077AFB009A2169 /* SwiftUI.framework in Frameworks */,
+				52E048A225077AFB009A2169 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -424,6 +465,8 @@
 				9617E6CA9F2A12BF2299ABAE /* libPods-dayslefttoday.a */,
 				52AC693D2154DA7E00E6C833 /* IntentsUI.framework */,
 				28322F417B34BFC83817F808 /* Pods_DaysLeft.framework */,
+				52E048A125077AFB009A2169 /* WidgetKit.framework */,
+				52E048A325077AFB009A2169 /* SwiftUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -538,6 +581,7 @@
 		52CFBEEF1A8B631B005234FB = {
 			isa = PBXGroup;
 			children = (
+				52E048AE25077AFF009A2169 /* DaysLeftWidgetExtension.entitlements */,
 				52CFBEFA1A8B631B005234FB /* daysleft */,
 				52CFBF101A8B631B005234FB /* daysleftTests */,
 				5295EDD11A94AE53007EF7E7 /* daysleftlibrary */,
@@ -549,6 +593,7 @@
 				52B78DF51D982A6E00AB629D /* MessagesExtension */,
 				52AC69342154DA7E00E6C833 /* DaysLeftIntent */,
 				52AC693F2154DA7E00E6C833 /* DaysLeftIntentUI */,
+				52E048A525077AFB009A2169 /* DaysLeftWidget */,
 				5295EDF91A94B398007EF7E7 /* Frameworks */,
 				52CFBEF91A8B631B005234FB /* Products */,
 				47ED22519B5BD25FB1149268 /* Pods */,
@@ -567,6 +612,7 @@
 				52B78DEF1D982A6D00AB629D /* MessagesExtension.appex */,
 				52AC69332154DA7E00E6C833 /* DaysLeftIntent.appex */,
 				52AC693C2154DA7E00E6C833 /* DaysLeftIntentUI.appex */,
+				52E048A025077AFB009A2169 /* DaysLeftWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -620,6 +666,20 @@
 				52CFBF121A8B631B005234FB /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		52E048A525077AFB009A2169 /* DaysLeftWidget */ = {
+			isa = PBXGroup;
+			children = (
+				52E048A625077AFB009A2169 /* DaysLeftWidget.swift */,
+				52E048A825077AFE009A2169 /* Assets.xcassets */,
+				52E048AA25077AFE009A2169 /* Info.plist */,
+				52E048B225077E1C009A2169 /* WidgetView.swift */,
+				52E048B425077E6A009A2169 /* WidgetDaysLeftData.swift */,
+				52E048B925077F87009A2169 /* WidgetProgressControl.swift */,
+				52E048BE2507A57E009A2169 /* WidgetTimelineProvider.swift */,
+			);
+			path = DaysLeftWidget;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -804,11 +864,30 @@
 				52B78E171D9904AD00AB629D /* PBXTargetDependency */,
 				52AC69472154DA7F00E6C833 /* PBXTargetDependency */,
 				52AC694A2154DA7F00E6C833 /* PBXTargetDependency */,
+				52E048AC25077AFE009A2169 /* PBXTargetDependency */,
 			);
 			name = DaysLeft;
 			productName = daysleft;
 			productReference = 52CFBEF81A8B631B005234FB /* DaysLeft.app */;
 			productType = "com.apple.product-type.application";
+		};
+		52E0489F25077AFB009A2169 /* DaysLeftWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52E048B125077AFF009A2169 /* Build configuration list for PBXNativeTarget "DaysLeftWidgetExtension" */;
+			buildPhases = (
+				52E0489C25077AFB009A2169 /* Sources */,
+				52E0489D25077AFB009A2169 /* Frameworks */,
+				52E0489E25077AFB009A2169 /* Resources */,
+				52E048BB25078084009A2169 /* Set build number */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DaysLeftWidgetExtension;
+			productName = DaysLeftWidgetExtension;
+			productReference = 52E048A025077AFB009A2169 /* DaysLeftWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -816,8 +895,8 @@
 		52CFBEF01A8B631B005234FB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1000;
-				LastUpgradeCheck = 1100;
+				LastSwiftUpdateCheck = 1200;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "Brave Location Software";
 				TargetAttributes = {
 					5295EDCF1A94AE53007EF7E7 = {
@@ -933,6 +1012,9 @@
 							};
 						};
 					};
+					52E0489F25077AFB009A2169 = {
+						CreatedOnToolsVersion = 12.0;
+					};
 				};
 			};
 			buildConfigurationList = 52CFBEF31A8B631B005234FB /* Build configuration list for PBXProject "DaysLeft" */;
@@ -957,6 +1039,7 @@
 				52B78DEE1D982A6D00AB629D /* MessagesExtension */,
 				52AC69322154DA7E00E6C833 /* DaysLeftIntent */,
 				52AC693B2154DA7E00E6C833 /* DaysLeftIntentUI */,
+				52E0489F25077AFB009A2169 /* DaysLeftWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -1036,6 +1119,16 @@
 				52FAB11C1A9240490039691E /* DefaultPreferences.plist in Resources */,
 				52CFBF051A8B631B005234FB /* Media.xcassets in Resources */,
 				52DC9EB31FC97A3200AE02F6 /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52E0489E25077AFB009A2169 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52E048A925077AFE009A2169 /* Assets.xcassets in Resources */,
+				52E048BD2507883A009A2169 /* Media.xcassets in Resources */,
+				52E048BC250787F0009A2169 /* DefaultPreferences.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1168,6 +1261,24 @@
 			shellPath = /bin/sh;
 			shellScript = "git=`sh /etc/profile; which git`\nappBuild=`$git rev-list --all |wc -l`\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $appBuild\" \"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\necho \"Updated ${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\n";
 		};
+		52E048BB25078084009A2169 /* Set build number */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Set build number";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "git=`sh /etc/profile; which git`\nappBuild=`$git rev-list --all |wc -l`\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $appBuild\" \"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\necho \"Updated ${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\n";
+		};
 		B5DD2F40EF96F21BD22B4C7C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1294,6 +1405,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		52E0489C25077AFB009A2169 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52E048B325077E1C009A2169 /* WidgetView.swift in Sources */,
+				52E048A725077AFB009A2169 /* DaysLeftWidget.swift in Sources */,
+				52E048BF2507A57E009A2169 /* WidgetTimelineProvider.swift in Sources */,
+				52E048B525077E6A009A2169 /* WidgetDaysLeftData.swift in Sources */,
+				52E048B625077EC1009A2169 /* DaysLeftModel.swift in Sources */,
+				52E048BA25077F87009A2169 /* WidgetProgressControl.swift in Sources */,
+				52E048B725077EFA009A2169 /* BLUserSettings.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1341,6 +1466,12 @@
 			platformFilter = ios;
 			target = 52B78DEE1D982A6D00AB629D /* MessagesExtension */;
 			targetProxy = 52B78E161D9904AD00AB629D /* PBXContainerItemProxy */;
+		};
+		52E048AC25077AFE009A2169 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			platformFilter = ios;
+			target = 52E0489F25077AFB009A2169 /* DaysLeftWidgetExtension */;
+			targetProxy = 52E048AB25077AFE009A2169 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1400,7 +1531,7 @@
 				);
 				INFOPLIST_FILE = daysleftlibrary/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1429,7 +1560,7 @@
 				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = daysleftlibrary/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1454,7 +1585,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = daysleftlibraryTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1475,7 +1606,7 @@
 				DEVELOPMENT_TEAM = W8B3V597R9;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = daysleftlibraryTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1502,7 +1633,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = dayslefttoday/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1527,7 +1658,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = dayslefttoday/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1687,7 +1818,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = W8B3V597R9;
 				INFOPLIST_FILE = MessagesExtension/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1715,7 +1846,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = W8B3V597R9;
 				INFOPLIST_FILE = MessagesExtension/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1853,6 +1984,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -1879,7 +2011,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1912,6 +2044,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -1931,7 +2064,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SHARED_VERSION_NUMBER = 4.3.0;
@@ -1946,6 +2079,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4B1E7CD7547BF202242D3CD7 /* Pods-DaysLeft.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = daysleft/daysleft.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1960,7 +2094,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = daysleft/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1973,7 +2107,7 @@
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "./daysleft/daysleft-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,6";
 			};
 			name = Debug;
 		};
@@ -1981,6 +2115,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9ABA72A744E15DFE44414810 /* Pods-DaysLeft.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = daysleft/daysleft.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1994,7 +2129,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = daysleft/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2006,6 +2141,76 @@
 				SHARED_VERSION_NUMBER = 4.3.0;
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "./daysleft/daysleft-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,6";
+			};
+			name = Release;
+		};
+		52E048AF25077AFF009A2169 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = DaysLeftWidgetExtension.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W8B3V597R9;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = DaysLeftWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bravelocation.daysleft.DaysLeftWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		52E048B025077AFF009A2169 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = DaysLeftWidgetExtension.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W8B3V597R9;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = DaysLeftWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bravelocation.daysleft.DaysLeftWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -2100,6 +2305,15 @@
 			buildConfigurations = (
 				52CFBF181A8B631B005234FB /* Debug */,
 				52CFBF191A8B631B005234FB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		52E048B125077AFF009A2169 /* Build configuration list for PBXNativeTarget "DaysLeftWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52E048AF25077AFF009A2169 /* Debug */,
+				52E048B025077AFF009A2169 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

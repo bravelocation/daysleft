@@ -29,6 +29,9 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
     @IBOutlet weak var startDatePicker: UIDatePicker!
     @IBOutlet weak var endDatePicker: UIDatePicker!
     
+    @IBOutlet weak var startDayOfWeek: UILabel!
+    @IBOutlet weak var endDayOfWeek: UILabel!
+
     var dateFormatter: DateFormatter = DateFormatter()
     
     override func viewDidLoad() {
@@ -45,16 +48,18 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
         
         self.labelDaysLength.text = model.daysLeftDescription(model.start)
         
-        // Setup the date pickers as editors for text fields
+        // Setup the date pickers
         self.startDatePicker.date = model.start
         self.startDatePicker.maximumDate = model.end
         self.startDatePicker.datePickerMode = UIDatePicker.Mode.date
         self.startDatePicker.addTarget(self, action: #selector(SettingsViewController.dateChanged(_:)), for: UIControl.Event.valueChanged)
+        self.startDayOfWeek.text = self.startDatePicker.date.weekdayName
         
         self.endDatePicker.date = model.end
         self.endDatePicker.minimumDate = model.start
         self.endDatePicker.datePickerMode = UIDatePicker.Mode.date
         self.endDatePicker.addTarget(self, action: #selector(SettingsViewController.dateChanged(_:)), for: UIControl.Event.valueChanged)
+        self.endDayOfWeek.text = self.endDatePicker.date.weekdayName
 
         // Set up the delegate of text field for handling return below
         self.textTitle.delegate = self
@@ -226,14 +231,17 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
         
         // Update the text fields
         self.labelDaysLength.text = model.daysLeftDescription(model.start)
+        self.startDayOfWeek.text = model.start.weekdayName
+        self.endDayOfWeek.text = model.end.weekdayName
         
         // Update the date restrictions too
         self.startDatePicker.maximumDate = model.end
         self.endDatePicker.minimumDate = model.start
         
-        // Update the badge too
+        // Update the badge and widgets too
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.updateBadge()
+        appDelegate.updateWidgets()
         
         // Push any changes to watch
         model.pushAllSettingsToWatch()
@@ -289,5 +297,14 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
     func addVoiceShortcutViewControllerDidCancel(_ controller: INUIAddVoiceShortcutViewController) {
         print("Cancelled shortcut")
         controller.dismiss(animated: true, completion: nil)
+    }
+}
+
+extension Date {
+    var weekdayName: String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "EEEE"
+        
+        return formatter.string(from: self)
     }
 }
