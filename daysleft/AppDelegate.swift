@@ -9,7 +9,9 @@
 import UIKit
 import DaysLeftLibrary
 import Firebase
+#if !targetEnvironment(macCatalyst)
 import WidgetKit
+#endif
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -143,8 +145,10 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     
     // MARK: Widget functions
     func updateWidgets() {
+        #if !targetEnvironment(macCatalyst)
         if #available(iOS 14.0, *) {
             WidgetCenter.shared.reloadAllTimelines()
         }
+        #endif
     }
 }

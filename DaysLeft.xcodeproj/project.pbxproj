@@ -72,11 +72,11 @@
 		52D617B124D06F9000465F4C /* MenuBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D617B024D06F9000465F4C /* MenuBuilder.swift */; };
 		52DC9EB31FC97A3200AE02F6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52DC9EB21FC97A3200AE02F6 /* GoogleService-Info.plist */; };
 		52DC9EB51FC97A9200AE02F6 /* FirebaseNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DC9EB41FC97A9200AE02F6 /* FirebaseNotifications.swift */; };
-		52E048A225077AFB009A2169 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52E048A125077AFB009A2169 /* WidgetKit.framework */; };
+		52E048A225077AFB009A2169 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52E048A125077AFB009A2169 /* WidgetKit.framework */; platformFilter = ios; };
 		52E048A425077AFB009A2169 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52E048A325077AFB009A2169 /* SwiftUI.framework */; };
 		52E048A725077AFB009A2169 /* DaysLeftWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E048A625077AFB009A2169 /* DaysLeftWidget.swift */; };
 		52E048A925077AFE009A2169 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52E048A825077AFE009A2169 /* Assets.xcassets */; };
-		52E048AD25077AFE009A2169 /* DaysLeftWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 52E048A025077AFB009A2169 /* DaysLeftWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		52E048AD25077AFE009A2169 /* DaysLeftWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 52E048A025077AFB009A2169 /* DaysLeftWidgetExtension.appex */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		52E048B325077E1C009A2169 /* WidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E048B225077E1C009A2169 /* WidgetView.swift */; };
 		52E048B525077E6A009A2169 /* WidgetDaysLeftData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E048B425077E6A009A2169 /* WidgetDaysLeftData.swift */; };
 		52E048B625077EC1009A2169 /* DaysLeftModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CFBF1D1A8B642C005234FB /* DaysLeftModel.swift */; };
@@ -1469,6 +1469,7 @@
 		};
 		52E048AC25077AFE009A2169 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
+			platformFilter = ios;
 			target = 52E0489F25077AFB009A2169 /* DaysLeftWidgetExtension */;
 			targetProxy = 52E048AB25077AFE009A2169 /* PBXContainerItemProxy */;
 		};
@@ -2174,7 +2175,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.bravelocation.daysleft.DaysLeftWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2209,7 +2210,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.bravelocation.daysleft.DaysLeftWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
