@@ -20,7 +20,7 @@ class WatchDaysLeftData: ObservableObject {
     let modelChanged = PassthroughSubject<(), Never>()
     
     init() {
-        //Add notification handler for updating on updated fixtures
+        // Add notification handler for updating on updated fixtures
         NotificationCenter.default.addObserver(self, selector: #selector(WatchDaysLeftData.userSettingsUpdated(_:)), name: NSNotification.Name(rawValue: BLUserSettings.UpdateSettingsNotification), object: nil)
         
         self.updateViewData()
