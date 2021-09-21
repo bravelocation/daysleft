@@ -26,9 +26,14 @@ struct WidgetTimelineProvider: TimelineProvider {
         let entry = WidgetDaysLeftData(date: Date())
         entries.append(entry)
 
-        // Set expiry date to be start of tomorrow
-        let entryDate = Calendar.current.startOfDay(for: Date()).addingTimeInterval(60*60*24)
+        // Update the widget every hour
+        var entryDate = Date().addingTimeInterval(60*60)
         
+        // If the expiry time is tomorrow, set it to be start of tomorrow
+        if Calendar.current.component(.hour, from: entryDate) == 0 {
+            entryDate = Calendar.current.startOfDay(for: Date()).addingTimeInterval(60*60*24)
+        }
+
         let timeline = Timeline(entries: entries, policy: .after(entryDate))
         completion(timeline)
     }

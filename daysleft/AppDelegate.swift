@@ -66,6 +66,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
+    func application(_ application: UIApplication,
+                     didReceiveRemoteNotification userInfo: [AnyHashable: Any],
+                     fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult)
+                       -> Void) {
+        Messaging.messaging().appDidReceiveMessage(userInfo)
+
+        // Push latest settings and update badge
+        self.updateBadge()
+        self.model.pushAllSettingsToWatch()
+
+        completionHandler(UIBackgroundFetchResult.newData)
+    }
+    
     // MARK: UISceneSession Lifecycle
     
     @available(iOS 13.0, *)

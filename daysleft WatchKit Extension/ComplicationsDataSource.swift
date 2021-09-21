@@ -27,7 +27,7 @@ class ComplicationsDataSource: NSObject, CLKComplicationDataSource {
         handler(nextUpdate)
     }
     
-    //swiftlint:disable:next cyclomatic_complexity
+    // swiftlint:disable:next cyclomatic_complexity
     func getLocalizableSampleTemplate(for complication: CLKComplication,
                                       withHandler handler: @escaping (CLKComplicationTemplate?) -> Void) {
         let appTintColor = UIColor(red: 203/255, green: 237/255, blue: 142/255, alpha: 1.0)
@@ -196,7 +196,7 @@ class ComplicationsDataSource: NSObject, CLKComplicationDataSource {
         return appDelegate.model
     }
     
-    //swiftlint:disable:next cyclomatic_complexity
+    // swiftlint:disable:next cyclomatic_complexity
     fileprivate func createTimeLineEntry(_ family: CLKComplicationFamily, date: Date) -> CLKComplicationTimelineEntry? {
 
         let model = modelData()

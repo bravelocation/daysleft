@@ -50,8 +50,8 @@ class FirebaseNotifications: NSObject, MessagingDelegate {
     }
     
     // MARK: - MessagingDelegate
-    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
-        print("Firebase registration token: \(fcmToken)")
+    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
+        print("Firebase registration token: \(String(describing: fcmToken))")
         
         if let fullTopic = self.topicName {
             if self.enabled {

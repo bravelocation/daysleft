@@ -20,8 +20,8 @@ disabled_rules: # rule identifiers to exclude from running
 # - trailing_comma
 # - trailing_newline
 # - trailing_semicolon
- # - for_where
- # - identifier_name
+# - for_where
+# - identifier_name
  - todo
  - trailing_whitespace
  - empty_count
@@ -46,7 +46,7 @@ disabled_rules: # rule identifiers to exclude from running
  - private_unit_test
  - syntactic_sugar
  - type_body_length
- - valid_docs
+ # - valid_docs
  - valid_ibinspectable
  - large_tuple
  - class_delegate_protocol

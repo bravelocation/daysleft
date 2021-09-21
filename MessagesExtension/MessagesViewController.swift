@@ -57,7 +57,6 @@ class MessagesViewController: MSMessagesAppViewController {
         self.labelTitle.text = model.fullDescription(now)
         
         let percentageDone: Float = (Float(model.daysGone(now)) * 100.0) / Float(model.daysLength)
-        //self.labelPercentDone.text = String(format:"%3.0f%% done", percentageDone)
         
         // Update image
         let intPercentageDone: Int = Int(percentageDone)
