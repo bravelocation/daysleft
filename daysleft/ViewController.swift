@@ -56,11 +56,20 @@ class ViewController: UIViewController {
         let model = self.modelData()
                 
         // Customise the nav bar
-        let navBar = self.navigationController?.navigationBar
-        navBar!.barTintColor = UIColor(named: "MainAppColor")
-        navBar!.tintColor = UIColor.white
-        navBar!.isTranslucent = false
-        navBar!.titleTextAttributes = [.foregroundColor: UIColor.white]
+        if #available(iOS 13.0, *) {
+            let appearance = UINavigationBarAppearance()
+            appearance.configureWithOpaqueBackground()
+            appearance.backgroundColor = UIColor(named: "MainAppColor")
+            appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+            
+            self.navigationController?.navigationBar.standardAppearance = appearance
+            self.navigationController?.navigationBar.scrollEdgeAppearance = self.navigationController?.navigationBar.standardAppearance
+        } else {
+            self.navigationController?.navigationBar.barTintColor = UIColor(named: "MainAppColor")
+            self.navigationController?.navigationBar.tintColor = UIColor.white
+            self.navigationController?.navigationBar.isTranslucent = false
+            self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
+        }
         
         // Add a nav bar buttons
         self.shareButton = UIBarButtonItem.init(barButtonSystemItem: .action, target: self, action: #selector(ViewController.shareButtonTouchUp))
