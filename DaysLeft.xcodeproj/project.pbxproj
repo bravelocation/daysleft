@@ -90,7 +90,7 @@
 		52FAB11C1A9240490039691E /* DefaultPreferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52FAB11B1A9240490039691E /* DefaultPreferences.plist */; };
 		52FAB11E1A9381B70039691E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FAB11D1A9381B70039691E /* SettingsViewController.swift */; };
 		52FBB73C1BC92D5300B426C0 /* DaysLeftLibrary.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5295EDD01A94AE53007EF7E7 /* DaysLeftLibrary.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		8FC7BA8021940C1AD1ED1AA3 /* Pods_DaysLeft.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28322F417B34BFC83817F808 /* Pods_DaysLeft.framework */; };
+		52FC400D27AA8B1B005DAD8C /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 52FC400C27AA8B1B005DAD8C /* FirebaseMessaging */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -211,11 +211,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		20D7C2776D16B97A9237DC10 /* Pods-daysleft.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-daysleft.release.xcconfig"; path = "Pods/Target Support Files/Pods-daysleft/Pods-daysleft.release.xcconfig"; sourceTree = "<group>"; };
-		28322F417B34BFC83817F808 /* Pods_DaysLeft.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DaysLeft.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		37942D6E74C88723CC5E5442 /* libPods-daysleft WatchKit Extension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-daysleft WatchKit Extension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		39638B2E57648DB9142D4833 /* Pods-daysleft.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-daysleft.debug.xcconfig"; path = "Pods/Target Support Files/Pods-daysleft/Pods-daysleft.debug.xcconfig"; sourceTree = "<group>"; };
-		4B1E7CD7547BF202242D3CD7 /* Pods-DaysLeft.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DaysLeft.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DaysLeft/Pods-DaysLeft.debug.xcconfig"; sourceTree = "<group>"; };
 		523443691BBAFCCF00E95BA4 /* daysleftwatchlibrary-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "daysleftwatchlibrary-Info.plist"; path = "daysleft/daysleftwatchlibrary-Info.plist"; sourceTree = SOURCE_ROOT; };
 		5234436B1BBB00B800E95BA4 /* daysleft WatchKit App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "daysleft WatchKit App.entitlements"; sourceTree = "<group>"; };
 		5234436C1BBB181C00E95BA4 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
@@ -306,11 +301,6 @@
 		52FAB11A1A923F500039691E /* daysleft.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = daysleft.entitlements; sourceTree = "<group>"; };
 		52FAB11B1A9240490039691E /* DefaultPreferences.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DefaultPreferences.plist; sourceTree = "<group>"; };
 		52FAB11D1A9381B70039691E /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		89AB9E2F84FC728A8A76AC47 /* libPods-MessagesExtension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MessagesExtension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9516F4FE66EFC74E057B4165 /* libPods-daysleft WatchKit App.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-daysleft WatchKit App.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9617E6CA9F2A12BF2299ABAE /* libPods-dayslefttoday.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-dayslefttoday.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9ABA72A744E15DFE44414810 /* Pods-DaysLeft.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DaysLeft.release.xcconfig"; path = "Pods/Target Support Files/Pods-DaysLeft/Pods-DaysLeft.release.xcconfig"; sourceTree = "<group>"; };
-		F6956DABE3A7AE4B317EC535 /* libPods-daysleftlibrary.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-daysleftlibrary.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -382,9 +372,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52FC400D27AA8B1B005DAD8C /* FirebaseMessaging in Frameworks */,
 				52D18D611BC4E91500DB7E3A /* DaysLeftLibrary.framework in Frameworks */,
 				52C595311E952667006C5269 /* StoreKit.framework in Frameworks */,
-				8FC7BA8021940C1AD1ED1AA3 /* Pods_DaysLeft.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,17 +390,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		47ED22519B5BD25FB1149268 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				39638B2E57648DB9142D4833 /* Pods-daysleft.debug.xcconfig */,
-				20D7C2776D16B97A9237DC10 /* Pods-daysleft.release.xcconfig */,
-				4B1E7CD7547BF202242D3CD7 /* Pods-DaysLeft.debug.xcconfig */,
-				9ABA72A744E15DFE44414810 /* Pods-DaysLeft.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		5295EDD11A94AE53007EF7E7 /* daysleftlibrary */ = {
 			isa = PBXGroup;
 			children = (
@@ -458,13 +437,7 @@
 				5244C04B1BC4383F00D57F28 /* daysleftlibrary.h */,
 				5295EDFA1A94B398007EF7E7 /* NotificationCenter.framework */,
 				52B78DF31D982A6E00AB629D /* Messages.framework */,
-				89AB9E2F84FC728A8A76AC47 /* libPods-MessagesExtension.a */,
-				9516F4FE66EFC74E057B4165 /* libPods-daysleft WatchKit App.a */,
-				37942D6E74C88723CC5E5442 /* libPods-daysleft WatchKit Extension.a */,
-				F6956DABE3A7AE4B317EC535 /* libPods-daysleftlibrary.a */,
-				9617E6CA9F2A12BF2299ABAE /* libPods-dayslefttoday.a */,
 				52AC693D2154DA7E00E6C833 /* IntentsUI.framework */,
-				28322F417B34BFC83817F808 /* Pods_DaysLeft.framework */,
 				52E048A125077AFB009A2169 /* WidgetKit.framework */,
 				52E048A325077AFB009A2169 /* SwiftUI.framework */,
 			);
@@ -596,7 +569,6 @@
 				52E048A525077AFB009A2169 /* DaysLeftWidget */,
 				5295EDF91A94B398007EF7E7 /* Frameworks */,
 				52CFBEF91A8B631B005234FB /* Products */,
-				47ED22519B5BD25FB1149268 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -845,7 +817,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 52CFBF171A8B631B005234FB /* Build configuration list for PBXNativeTarget "DaysLeft" */;
 			buildPhases = (
-				E355ED4EB90C75625C166EE8 /* [CP] Check Pods Manifest.lock */,
 				52CFBEF41A8B631B005234FB /* Sources */,
 				52CFBEF51A8B631B005234FB /* Frameworks */,
 				52CFBEF61A8B631B005234FB /* Resources */,
@@ -854,7 +825,6 @@
 				520C4283227D79480099FFC5 /* Set build number */,
 				521B9C4022C8E0B300185CF4 /* Swift Lint */,
 				523443681BBAFBEF00E95BA4 /* Embed Watch Content */,
-				B5DD2F40EF96F21BD22B4C7C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -867,6 +837,9 @@
 				52E048AC25077AFE009A2169 /* PBXTargetDependency */,
 			);
 			name = DaysLeft;
+			packageProductDependencies = (
+				52FC400C27AA8B1B005DAD8C /* FirebaseMessaging */,
+			);
 			productName = daysleft;
 			productReference = 52CFBEF81A8B631B005234FB /* DaysLeft.app */;
 			productType = "com.apple.product-type.application";
@@ -1026,6 +999,9 @@
 				Base,
 			);
 			mainGroup = 52CFBEEF1A8B631B005234FB;
+			packageReferences = (
+				52FC400B27AA8B1B005DAD8C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 52CFBEF91A8B631B005234FB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1169,7 +1145,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\" --path . --config ./swiftlint.yml\n";
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\n\nif which swiftlint >/dev/null; then\n  swiftlint --path . --config ./swiftlint.yml\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 		5242D8411E40A20F00BF6FEE /* Setup build number */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1279,41 +1255,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "git=`sh /etc/profile; which git`\nappBuild=`$git rev-list --all |wc -l`\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $appBuild\" \"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\necho \"Updated ${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\n";
-		};
-		B5DD2F40EF96F21BD22B4C7C /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DaysLeft/Pods-DaysLeft-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DaysLeft/Pods-DaysLeft-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DaysLeft/Pods-DaysLeft-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E355ED4EB90C75625C166EE8 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-DaysLeft-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -2078,7 +2019,6 @@
 		};
 		52CFBF181A8B631B005234FB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4B1E7CD7547BF202242D3CD7 /* Pods-DaysLeft.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -2113,7 +2053,6 @@
 		};
 		52CFBF191A8B631B005234FB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9ABA72A744E15DFE44414810 /* Pods-DaysLeft.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -2318,6 +2257,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		52FC400B27AA8B1B005DAD8C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		52FC400C27AA8B1B005DAD8C /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 52FC400B27AA8B1B005DAD8C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 52CFBEF01A8B631B005234FB /* Project object */;
 }
