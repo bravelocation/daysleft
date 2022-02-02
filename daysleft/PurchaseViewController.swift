@@ -81,6 +81,12 @@ class PurchaseViewController: UIViewController, SKProductsRequestDelegate, SKPay
         }
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        AnalyticsManager.shared.logScreenView(screenName: "Purchase Screen")
+    }
+    
     deinit {
         SKPaymentQueue.default().remove(self)
     }

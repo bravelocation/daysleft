@@ -111,6 +111,8 @@ class ViewController: UIViewController {
         if (appOpened >= reviewPromptFrequency && (appOpened % reviewPromptFrequency) == 0) {
             SKStoreReviewController.requestReview()
         }
+        
+        AnalyticsManager.shared.logScreenView(screenName: "Main Screen")
     }
     
     // MARK: - Handle rotations

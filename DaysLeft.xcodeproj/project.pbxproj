@@ -93,6 +93,7 @@
 		52FC400D27AA8B1B005DAD8C /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 52FC400C27AA8B1B005DAD8C /* FirebaseMessaging */; };
 		52FC400F27AA8EFC005DAD8C /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 52FC400E27AA8EFC005DAD8C /* FirebaseAnalyticsWithoutAdIdSupport */; };
 		52FC401127AA8F04005DAD8C /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 52FC401027AA8F04005DAD8C /* FirebaseCrashlytics */; };
+		52FC401427AABAD9005DAD8C /* AnalyticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FC401327AABAD9005DAD8C /* AnalyticsManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -303,6 +304,7 @@
 		52FAB11A1A923F500039691E /* daysleft.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = daysleft.entitlements; sourceTree = "<group>"; };
 		52FAB11B1A9240490039691E /* DefaultPreferences.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DefaultPreferences.plist; sourceTree = "<group>"; };
 		52FAB11D1A9381B70039691E /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		52FC401327AABAD9005DAD8C /* AnalyticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -614,6 +616,7 @@
 				52FAB11D1A9381B70039691E /* SettingsViewController.swift */,
 				52CFBEFF1A8B631B005234FB /* ViewController.swift */,
 				52CFBEFB1A8B631B005234FB /* Supporting Files */,
+				52FC401327AABAD9005DAD8C /* AnalyticsManager.swift */,
 			);
 			path = daysleft;
 			sourceTree = "<group>";
@@ -1367,6 +1370,7 @@
 				52EE20E52158CF5000B46ACF /* SettingsManager.swift in Sources */,
 				52D617B124D06F9000465F4C /* MenuBuilder.swift in Sources */,
 				52FAB11E1A9381B70039691E /* SettingsViewController.swift in Sources */,
+				52FC401427AABAD9005DAD8C /* AnalyticsManager.swift in Sources */,
 				52DC9EB51FC97A9200AE02F6 /* FirebaseNotifications.swift in Sources */,
 				5285E6751FACC9A6001547CD /* AppDaysLeftModel.swift in Sources */,
 			);
