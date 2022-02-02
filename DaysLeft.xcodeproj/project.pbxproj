@@ -91,6 +91,9 @@
 		52FAB11E1A9381B70039691E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FAB11D1A9381B70039691E /* SettingsViewController.swift */; };
 		52FBB73C1BC92D5300B426C0 /* DaysLeftLibrary.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5295EDD01A94AE53007EF7E7 /* DaysLeftLibrary.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		52FC400D27AA8B1B005DAD8C /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 52FC400C27AA8B1B005DAD8C /* FirebaseMessaging */; };
+		52FC400F27AA8EFC005DAD8C /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 52FC400E27AA8EFC005DAD8C /* FirebaseAnalyticsWithoutAdIdSupport */; };
+		52FC401127AA8F04005DAD8C /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 52FC401027AA8F04005DAD8C /* FirebaseCrashlytics */; };
+		52FC401427AABAD9005DAD8C /* AnalyticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FC401327AABAD9005DAD8C /* AnalyticsManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -301,6 +304,7 @@
 		52FAB11A1A923F500039691E /* daysleft.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = daysleft.entitlements; sourceTree = "<group>"; };
 		52FAB11B1A9240490039691E /* DefaultPreferences.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DefaultPreferences.plist; sourceTree = "<group>"; };
 		52FAB11D1A9381B70039691E /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		52FC401327AABAD9005DAD8C /* AnalyticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -374,7 +378,9 @@
 			files = (
 				52FC400D27AA8B1B005DAD8C /* FirebaseMessaging in Frameworks */,
 				52D18D611BC4E91500DB7E3A /* DaysLeftLibrary.framework in Frameworks */,
+				52FC401127AA8F04005DAD8C /* FirebaseCrashlytics in Frameworks */,
 				52C595311E952667006C5269 /* StoreKit.framework in Frameworks */,
+				52FC400F27AA8EFC005DAD8C /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -610,6 +616,7 @@
 				52FAB11D1A9381B70039691E /* SettingsViewController.swift */,
 				52CFBEFF1A8B631B005234FB /* ViewController.swift */,
 				52CFBEFB1A8B631B005234FB /* Supporting Files */,
+				52FC401327AABAD9005DAD8C /* AnalyticsManager.swift */,
 			);
 			path = daysleft;
 			sourceTree = "<group>";
@@ -825,6 +832,7 @@
 				520C4283227D79480099FFC5 /* Set build number */,
 				521B9C4022C8E0B300185CF4 /* Swift Lint */,
 				523443681BBAFBEF00E95BA4 /* Embed Watch Content */,
+				52FC401227AA97EE005DAD8C /* Upload dSYM files to Crashlytics */,
 			);
 			buildRules = (
 			);
@@ -839,6 +847,8 @@
 			name = DaysLeft;
 			packageProductDependencies = (
 				52FC400C27AA8B1B005DAD8C /* FirebaseMessaging */,
+				52FC400E27AA8EFC005DAD8C /* FirebaseAnalyticsWithoutAdIdSupport */,
+				52FC401027AA8F04005DAD8C /* FirebaseCrashlytics */,
 			);
 			productName = daysleft;
 			productReference = 52CFBEF81A8B631B005234FB /* DaysLeft.app */;
@@ -1256,6 +1266,24 @@
 			shellPath = /bin/sh;
 			shellScript = "git=`sh /etc/profile; which git`\nappBuild=`$git rev-list --all |wc -l`\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $appBuild\" \"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\necho \"Updated ${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\n";
 		};
+		52FC401227AA97EE005DAD8C /* Upload dSYM files to Crashlytics */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Upload dSYM files to Crashlytics";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${BUILD_DIR%/Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\"\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -1342,6 +1370,7 @@
 				52EE20E52158CF5000B46ACF /* SettingsManager.swift in Sources */,
 				52D617B124D06F9000465F4C /* MenuBuilder.swift in Sources */,
 				52FAB11E1A9381B70039691E /* SettingsViewController.swift in Sources */,
+				52FC401427AABAD9005DAD8C /* AnalyticsManager.swift in Sources */,
 				52DC9EB51FC97A9200AE02F6 /* FirebaseNotifications.swift in Sources */,
 				5285E6751FACC9A6001547CD /* AppDaysLeftModel.swift in Sources */,
 			);
@@ -1957,7 +1986,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
-				SHARED_VERSION_NUMBER = 4.3.2;
+				SHARED_VERSION_NUMBER = 4.4.0;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -2009,7 +2038,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SHARED_VERSION_NUMBER = 4.3.2;
+				SHARED_VERSION_NUMBER = 4.4.0;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2274,6 +2303,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 52FC400B27AA8B1B005DAD8C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseMessaging;
+		};
+		52FC400E27AA8EFC005DAD8C /* FirebaseAnalyticsWithoutAdIdSupport */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 52FC400B27AA8B1B005DAD8C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsWithoutAdIdSupport;
+		};
+		52FC401027AA8F04005DAD8C /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 52FC400B27AA8B1B005DAD8C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

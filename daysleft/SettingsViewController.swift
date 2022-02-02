@@ -119,6 +119,12 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
         self.setCellImage(imageName: "BraveLocation", systemName: "app.badge", color: UIColor(named: "SettingsIconTint"), cell: self.moreAppsCell)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        AnalyticsManager.shared.logScreenView(screenName: "Settings Screen")
+    }
+    
     private func setCellImage(imageName: String, systemName: String?, color: UIColor?, cell: UITableViewCell) {
         var assetImage = UIImage(named: imageName)
         if #available(iOS 13.0, *), let name = systemName {
