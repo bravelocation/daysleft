@@ -399,9 +399,9 @@
 		5295EDD11A94AE53007EF7E7 /* daysleftlibrary */ = {
 			isa = PBXGroup;
 			children = (
+				52FAB1181A9231970039691E /* BLUserSettings.swift */,
 				5295EE0D1A95E647007EF7E7 /* CounterView.swift */,
 				52CFBF1D1A8B642C005234FB /* DaysLeftModel.swift */,
-				52FAB1181A9231970039691E /* BLUserSettings.swift */,
 				5295EDD21A94AE53007EF7E7 /* Supporting Files */,
 			);
 			path = daysleftlibrary;
@@ -436,16 +436,16 @@
 		5295EDF91A94B398007EF7E7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				52C595301E952667006C5269 /* StoreKit.framework */,
-				52B78E0B1D9838B800AB629D /* WatchConnectivity.framework */,
-				52B78E091D98388D00AB629D /* WatchKit.framework */,
 				5244C04D1BC438DE00D57F28 /* daysleftlibrary.framework */,
 				5244C04B1BC4383F00D57F28 /* daysleftlibrary.h */,
-				5295EDFA1A94B398007EF7E7 /* NotificationCenter.framework */,
-				52B78DF31D982A6E00AB629D /* Messages.framework */,
 				52AC693D2154DA7E00E6C833 /* IntentsUI.framework */,
-				52E048A125077AFB009A2169 /* WidgetKit.framework */,
+				52B78DF31D982A6E00AB629D /* Messages.framework */,
+				5295EDFA1A94B398007EF7E7 /* NotificationCenter.framework */,
+				52C595301E952667006C5269 /* StoreKit.framework */,
 				52E048A325077AFB009A2169 /* SwiftUI.framework */,
+				52B78E0B1D9838B800AB629D /* WatchConnectivity.framework */,
+				52B78E091D98388D00AB629D /* WatchKit.framework */,
+				52E048A125077AFB009A2169 /* WidgetKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -454,9 +454,9 @@
 			isa = PBXGroup;
 			children = (
 				5295EE0C1A94B527007EF7E7 /* dayslefttoday.entitlements */,
-				5295EDFF1A94B398007EF7E7 /* TodayViewController.swift */,
 				5295EE011A94B398007EF7E7 /* MainInterface.storyboard */,
 				5295EDFD1A94B398007EF7E7 /* Supporting Files */,
+				5295EDFF1A94B398007EF7E7 /* TodayViewController.swift */,
 			);
 			path = dayslefttoday;
 			sourceTree = "<group>";
@@ -473,9 +473,9 @@
 			isa = PBXGroup;
 			children = (
 				52AC695F2154E4A300E6C833 /* DaysLeftIntent.entitlements */,
-				52AC69352154DA7E00E6C833 /* IntentHandler.swift */,
-				52AC69372154DA7E00E6C833 /* Info.plist */,
 				52AC695B2154DEB700E6C833 /* DaysLeftIntentHandler.swift */,
+				52AC69372154DA7E00E6C833 /* Info.plist */,
+				52AC69352154DA7E00E6C833 /* IntentHandler.swift */,
 			);
 			path = DaysLeftIntent;
 			sourceTree = "<group>";
@@ -484,9 +484,9 @@
 			isa = PBXGroup;
 			children = (
 				52AC69602154E4AB00E6C833 /* DaysLeftIntentUI.entitlements */,
+				52AC69452154DA7F00E6C833 /* Info.plist */,
 				52AC69402154DA7E00E6C833 /* IntentViewController.swift */,
 				52AC69422154DA7E00E6C833 /* MainInterface.storyboard */,
-				52AC69452154DA7F00E6C833 /* Info.plist */,
 			);
 			path = DaysLeftIntentUI;
 			sourceTree = "<group>";
@@ -503,11 +503,11 @@
 		52B78DF51D982A6E00AB629D /* MessagesExtension */ = {
 			isa = PBXGroup;
 			children = (
-				52B78E071D9834C500AB629D /* MessagesExtension.entitlements */,
-				52B78DF61D982A6E00AB629D /* MessagesViewController.swift */,
-				52B78DF81D982A6E00AB629D /* MainInterface.storyboard */,
 				52B78DFB1D982A6E00AB629D /* Assets.xcassets */,
 				52B78DFD1D982A6E00AB629D /* Info.plist */,
+				52B78DF81D982A6E00AB629D /* MainInterface.storyboard */,
+				52B78E071D9834C500AB629D /* MessagesExtension.entitlements */,
+				52B78DF61D982A6E00AB629D /* MessagesViewController.swift */,
 			);
 			path = MessagesExtension;
 			sourceTree = "<group>";
@@ -515,17 +515,17 @@
 		52B7E8781ABEDE9300E1949C /* daysleft WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				52B7E8961ABEDEDE00E1949C /* daysleft WatchKit Extension.entitlements */,
 				52D25F3B1BCB8595002E4C76 /* ComplicationsDataSource.swift */,
+				52B7E8961ABEDEDE00E1949C /* daysleft WatchKit Extension.entitlements */,
 				52B7E8981ABEEA2200E1949C /* DefaultPreferences.plist */,
 				5234436C1BBB181C00E95BA4 /* ExtensionDelegate.swift */,
-				52B7E87D1ABEDE9300E1949C /* Media.xcassets */,
 				52BC1118237C45BC005EC3F7 /* InterfaceHostController.swift */,
+				52B7E87D1ABEDE9300E1949C /* Media.xcassets */,
 				52BC111C237C464A005EC3F7 /* ProgressControl.swift */,
+				52B7E8791ABEDE9300E1949C /* Supporting Files */,
 				52BC111E237C4AD0005EC3F7 /* WatchDaysLeftData.swift */,
 				52D937391BBFCEF200B215BC /* WatchDaysLeftModel.swift */,
 				52BC111A237C461C005EC3F7 /* WatchView.swift */,
-				52B7E8791ABEDE9300E1949C /* Supporting Files */,
 			);
 			path = "daysleft WatchKit Extension";
 			sourceTree = "<group>";
@@ -560,20 +560,20 @@
 		52CFBEEF1A8B631B005234FB = {
 			isa = PBXGroup;
 			children = (
-				52E048AE25077AFF009A2169 /* DaysLeftWidgetExtension.entitlements */,
 				52CFBEFA1A8B631B005234FB /* daysleft */,
-				52CFBF101A8B631B005234FB /* daysleftTests */,
-				5295EDD11A94AE53007EF7E7 /* daysleftlibrary */,
-				5295EDE01A94AE53007EF7E7 /* daysleftlibraryTests */,
-				5295EDFC1A94B398007EF7E7 /* dayslefttoday */,
-				52B7E8781ABEDE9300E1949C /* daysleft WatchKit Extension */,
-				52B7E8851ABEDE9300E1949C /* daysleft WatchKit App */,
 				52B78DE71D982A6D00AB629D /* daysleft iMessage */,
-				52B78DF51D982A6E00AB629D /* MessagesExtension */,
+				52B7E8851ABEDE9300E1949C /* daysleft WatchKit App */,
+				52B7E8781ABEDE9300E1949C /* daysleft WatchKit Extension */,
 				52AC69342154DA7E00E6C833 /* DaysLeftIntent */,
 				52AC693F2154DA7E00E6C833 /* DaysLeftIntentUI */,
+				5295EDD11A94AE53007EF7E7 /* daysleftlibrary */,
+				5295EDE01A94AE53007EF7E7 /* daysleftlibraryTests */,
+				52CFBF101A8B631B005234FB /* daysleftTests */,
+				5295EDFC1A94B398007EF7E7 /* dayslefttoday */,
 				52E048A525077AFB009A2169 /* DaysLeftWidget */,
+				52E048AE25077AFF009A2169 /* DaysLeftWidgetExtension.entitlements */,
 				5295EDF91A94B398007EF7E7 /* Frameworks */,
+				52B78DF51D982A6E00AB629D /* MessagesExtension */,
 				52CFBEF91A8B631B005234FB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -598,25 +598,25 @@
 		52CFBEFA1A8B631B005234FB /* daysleft */ = {
 			isa = PBXGroup;
 			children = (
-				527E153F1D83F80300D81B15 /* gallery.ckcomplication */,
-				52FAB11A1A923F500039691E /* daysleft.entitlements */,
-				52CFBEFD1A8B631B005234FB /* AppDelegate.swift */,
+				52FC401327AABAD9005DAD8C /* AnalyticsManager.swift */,
 				5285E6741FACC9A6001547CD /* AppDaysLeftModel.swift */,
+				52CFBEFD1A8B631B005234FB /* AppDelegate.swift */,
 				52790F781D056F500025AF10 /* daysleft-Bridging-Header.h */,
+				52FAB11A1A923F500039691E /* daysleft.entitlements */,
 				52FAB11B1A9240490039691E /* DefaultPreferences.plist */,
 				52DC9EB41FC97A9200AE02F6 /* FirebaseNotifications.swift */,
-				52CFBF041A8B631B005234FB /* Media.xcassets */,
+				527E153F1D83F80300D81B15 /* gallery.ckcomplication */,
 				527BE7A51FB0FEE500455FE9 /* LaunchScreen.storyboard */,
 				52CFBF011A8B631B005234FB /* Main.storyboard */,
+				52CFBF041A8B631B005234FB /* Media.xcassets */,
 				52D617B024D06F9000465F4C /* MenuBuilder.swift */,
 				527AD75B1E94EB2800F8637B /* PurchaseViewController.swift */,
 				527AD75C1E94EB2800F8637B /* PurchaseViewController.xib */,
 				52F9CDAB22D63D1900E0FFE8 /* SceneDelegate.swift */,
 				52EE20E42158CF5000B46ACF /* SettingsManager.swift */,
 				52FAB11D1A9381B70039691E /* SettingsViewController.swift */,
-				52CFBEFF1A8B631B005234FB /* ViewController.swift */,
 				52CFBEFB1A8B631B005234FB /* Supporting Files */,
-				52FC401327AABAD9005DAD8C /* AnalyticsManager.swift */,
+				52CFBEFF1A8B631B005234FB /* ViewController.swift */,
 			);
 			path = daysleft;
 			sourceTree = "<group>";
@@ -650,13 +650,13 @@
 		52E048A525077AFB009A2169 /* DaysLeftWidget */ = {
 			isa = PBXGroup;
 			children = (
-				52E048A625077AFB009A2169 /* DaysLeftWidget.swift */,
 				52E048A825077AFE009A2169 /* Assets.xcassets */,
+				52E048A625077AFB009A2169 /* DaysLeftWidget.swift */,
 				52E048AA25077AFE009A2169 /* Info.plist */,
-				52E048B225077E1C009A2169 /* WidgetView.swift */,
 				52E048B425077E6A009A2169 /* WidgetDaysLeftData.swift */,
 				52E048B925077F87009A2169 /* WidgetProgressControl.swift */,
 				52E048BE2507A57E009A2169 /* WidgetTimelineProvider.swift */,
+				52E048B225077E1C009A2169 /* WidgetView.swift */,
 			);
 			path = DaysLeftWidget;
 			sourceTree = "<group>";
