@@ -71,35 +71,15 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
         self.labelVersion.text = String(format: "v%@.%@", version, build)
         
         // Setup Add to Siri button
-        if #available(iOS 12.0, *) {
-            var buttonStyle: INUIAddVoiceShortcutButtonStyle = .whiteOutline
-            
-            if #available(iOS 13.0, *) {
-                buttonStyle = .automaticOutline
-            }
-            
-            let button = INUIAddVoiceShortcutButton(style: buttonStyle)
-            button.translatesAutoresizingMaskIntoConstraints = false
-            
-            self.addToSiriCell.addSubview(button)
-            button.addTarget(self, action: #selector(addToSiri(_:)), for: .touchUpInside)
-            
-            self.addToSiriCell.centerXAnchor.constraint(equalTo: button.centerXAnchor).isActive = true
-            self.addToSiriCell.centerYAnchor.constraint(equalTo: button.centerYAnchor).isActive = true
-        } else {
-            let label = UILabel()
-            label.translatesAutoresizingMaskIntoConstraints = false
-
-            label.text = "Add to Siri only available on iOS 12+"
-            label.textColor = UIColor.lightGray
-            label.textAlignment = .center
-            label.adjustsFontSizeToFitWidth = true
-            
-            self.addToSiriCell.addSubview(label)
-            self.addToSiriCell.leftAnchor.constraint(equalTo: label.leftAnchor, constant: 8.0).isActive = true
-            self.addToSiriCell.rightAnchor.constraint(equalTo: label.rightAnchor, constant: 8.0).isActive = true
-            self.addToSiriCell.centerYAnchor.constraint(equalTo: label.centerYAnchor).isActive = true
-        }
+        let buttonStyle: INUIAddVoiceShortcutButtonStyle = .automaticOutline
+        let button = INUIAddVoiceShortcutButton(style: buttonStyle)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        
+        self.addToSiriCell.addSubview(button)
+        button.addTarget(self, action: #selector(addToSiri(_:)), for: .touchUpInside)
+        
+        self.addToSiriCell.centerXAnchor.constraint(equalTo: button.centerXAnchor).isActive = true
+        self.addToSiriCell.centerYAnchor.constraint(equalTo: button.centerYAnchor).isActive = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -127,7 +107,7 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
     
     private func setCellImage(imageName: String, systemName: String?, color: UIColor?, cell: UITableViewCell) {
         var assetImage = UIImage(named: imageName)
-        if #available(iOS 13.0, *), let name = systemName {
+        if let name = systemName {
             assetImage = UIImage(systemName: name)
         }
         
@@ -271,35 +251,23 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
     // MARK: - Siri handling
     @objc
     func addToSiri(_ sender: Any) {
-        if #available(iOS 12.0, *) {
-            let intent = DaysLeftIntent()
-            intent.suggestedInvocationPhrase = "How Many Days Left"
-            
-            if let shortcut = INShortcut(intent: intent) {
-                let viewController = INUIAddVoiceShortcutViewController(shortcut: shortcut)
-                viewController.modalPresentationStyle = .formSheet
-                viewController.delegate = self
-                self.present(viewController, animated: true, completion: nil)
-            }
-        } else {
-            // Show an alert
-            let alert = UIAlertController(title: "Not Supported", message: "Add to Siri is only supported on iOS 12 and above", preferredStyle: .alert)
-            
-            let defaultAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
-            alert.addAction(defaultAction)
-            
-            self.present(alert, animated: true, completion: nil)
+        let intent = DaysLeftIntent()
+        intent.suggestedInvocationPhrase = "How Many Days Left"
+        
+        if let shortcut = INShortcut(intent: intent) {
+            let viewController = INUIAddVoiceShortcutViewController(shortcut: shortcut)
+            viewController.modalPresentationStyle = .formSheet
+            viewController.delegate = self
+            self.present(viewController, animated: true, completion: nil)
         }
     }
     
     // MARK: - INUIAddVoiceShortcutViewControllerDelegate
-    @available(iOS 12.0, *)
     func addVoiceShortcutViewController(_ controller: INUIAddVoiceShortcutViewController, didFinishWith voiceShortcut: INVoiceShortcut?, error: Error?) {
         print("Added shortcut")
         controller.dismiss(animated: true, completion: nil)
     }
     
-    @available(iOS 12.0, *)
     func addVoiceShortcutViewControllerDidCancel(_ controller: INUIAddVoiceShortcutViewController) {
         print("Cancelled shortcut")
         controller.dismiss(animated: true, completion: nil)
