@@ -13,7 +13,6 @@ extension Notification.Name {
     static let shareCommand = Notification.Name("com.bravelocation.daysleft.share")
 }
 
-@available(iOS 13.0, *)
 extension AppDelegate {
     override func buildMenu(with builder: UIMenuBuilder) {
         super.buildMenu(with: builder)

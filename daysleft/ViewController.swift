@@ -27,10 +27,8 @@ class ViewController: UIViewController {
     var shareButton: UIBarButtonItem!
     var editButton: UIBarButtonItem!
     
-    @available(iOS 13.0, *)
     private lazy var editSubscriber: AnyCancellable? = nil
     
-    @available(iOS 13.0, *)
     private lazy var shareSubscriber: AnyCancellable? = nil
 
     // MARK: - Initialisation
@@ -56,21 +54,14 @@ class ViewController: UIViewController {
         let model = self.modelData()
                 
         // Customise the nav bar
-        if #available(iOS 13.0, *) {
-            let appearance = UINavigationBarAppearance()
-            appearance.configureWithOpaqueBackground()
-            appearance.backgroundColor = UIColor(named: "MainAppColor")
-            appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
-            
-            self.navigationController?.navigationBar.standardAppearance = appearance
-            self.navigationController?.navigationBar.scrollEdgeAppearance = self.navigationController?.navigationBar.standardAppearance
-        } else {
-            self.navigationController?.navigationBar.barTintColor = UIColor(named: "MainAppColor")
-            self.navigationController?.navigationBar.tintColor = UIColor.white
-            self.navigationController?.navigationBar.isTranslucent = false
-            self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
-        }
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = UIColor(named: "MainAppColor")
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
         
+        self.navigationController?.navigationBar.standardAppearance = appearance
+        self.navigationController?.navigationBar.scrollEdgeAppearance = self.navigationController?.navigationBar.standardAppearance
+
         // Add a nav bar buttons
         self.shareButton = UIBarButtonItem.init(barButtonSystemItem: .action, target: self, action: #selector(ViewController.shareButtonTouchUp))
         self.editButton = UIBarButtonItem.init(barButtonSystemItem: .edit, target: self, action: #selector(ViewController.editButtonTouchUp))
@@ -230,39 +221,37 @@ class ViewController: UIViewController {
     
     // MARK: - User Activity functions
     private func donateInteraction() {
-        if #available(iOS 12.0, *) {
-            let intent = DaysLeftIntent()
-            intent.suggestedInvocationPhrase = "How Many Days Left"
-                        
-            // Donate relevant daily shortcut
-            var relevantShortcuts: [INRelevantShortcut] = []
+        let intent = DaysLeftIntent()
+        intent.suggestedInvocationPhrase = "How Many Days Left"
+                    
+        // Donate relevant daily shortcut
+        var relevantShortcuts: [INRelevantShortcut] = []
+        
+        if let shortcut = INShortcut(intent: intent) {
             
-            if let shortcut = INShortcut(intent: intent) {
-                
-                let relevantShortcut = INRelevantShortcut(shortcut: shortcut)
-                relevantShortcut.shortcutRole = INRelevantShortcutRole.action
-                
-                let dailyProvider = INDailyRoutineRelevanceProvider(situation: .morning)
-                relevantShortcut.relevanceProviders = [dailyProvider]
-                
-                // Set template for displaying on Watch face
-                let model = self.modelData()
-                let templateTitle = model.weekdaysOnly ? "Weekdays until" : "Days until"
-                let templateSubTitle = model.title
+            let relevantShortcut = INRelevantShortcut(shortcut: shortcut)
+            relevantShortcut.shortcutRole = INRelevantShortcutRole.action
+            
+            let dailyProvider = INDailyRoutineRelevanceProvider(situation: .morning)
+            relevantShortcut.relevanceProviders = [dailyProvider]
+            
+            // Set template for displaying on Watch face
+            let model = self.modelData()
+            let templateTitle = model.weekdaysOnly ? "Weekdays until" : "Days until"
+            let templateSubTitle = model.title
 
-                let template = INDefaultCardTemplate(title: templateTitle)
-                template.subtitle = templateSubTitle
-                relevantShortcut.watchTemplate = template
-                
-                relevantShortcuts.append(relevantShortcut)
-            }
+            let template = INDefaultCardTemplate(title: templateTitle)
+            template.subtitle = templateSubTitle
+            relevantShortcut.watchTemplate = template
             
-            INRelevantShortcutStore.default.setRelevantShortcuts(relevantShortcuts) { (error) in
-                if let error = error {
-                    print("Failed to set relevant shortcuts. \(error))")
-                } else {
-                    print("Relevant shortcuts set.")
-                }
+            relevantShortcuts.append(relevantShortcut)
+        }
+        
+        INRelevantShortcutStore.default.setRelevantShortcuts(relevantShortcuts) { (error) in
+            if let error = error {
+                print("Failed to set relevant shortcuts. \(error))")
+            } else {
+                print("Relevant shortcuts set.")
             }
         }
     }
@@ -286,17 +275,10 @@ class ViewController: UIViewController {
 
 extension ViewController {
     override var keyCommands: [UIKeyCommand]? {
-        if #available(iOS 13.0, *) {
-            return [
-                UIKeyCommand(title: "Edit Settings", action: #selector(ViewController.keyboardSelectTab), input: "E", modifierFlags: .command),
-                UIKeyCommand(title: "Share", action: #selector(ViewController.keyboardSelectTab), input: "S", modifierFlags: [.command, .shift])
-            ]
-        } else {
-            return [
-                UIKeyCommand(input: "E", modifierFlags: .command, action: #selector(ViewController.keyboardSelectTab), discoverabilityTitle: "Edit"),
-                UIKeyCommand(input: "S", modifierFlags: [.command, .shift], action: #selector(ViewController.keyboardSelectTab), discoverabilityTitle: "Share")
-            ]
-        }
+        return [
+            UIKeyCommand(title: "Edit Settings", action: #selector(ViewController.keyboardSelectTab), input: "E", modifierFlags: .command),
+            UIKeyCommand(title: "Share", action: #selector(ViewController.keyboardSelectTab), input: "S", modifierFlags: [.command, .shift])
+        ]
     }
     
     @objc func keyboardSelectTab(sender: UIKeyCommand) {
@@ -317,18 +299,16 @@ extension ViewController {
 
 extension ViewController {
     func setupMenuCommandHandler() {
-        if #available(iOS 13.0, *) {
-            self.editSubscriber = NotificationCenter.default.publisher(for: .editCommand)
-                .receive(on: RunLoop.main)
-                .sink(receiveValue: { _ in
-                    self.editButtonTouchUp()
-                })
-            
-            self.shareSubscriber = NotificationCenter.default.publisher(for: .shareCommand)
-                .receive(on: RunLoop.main)
-                .sink(receiveValue: { _ in
-                    self.shareButtonTouchUp()
-                })
-        }
+        self.editSubscriber = NotificationCenter.default.publisher(for: .editCommand)
+            .receive(on: RunLoop.main)
+            .sink(receiveValue: { _ in
+                self.editButtonTouchUp()
+            })
+        
+        self.shareSubscriber = NotificationCenter.default.publisher(for: .shareCommand)
+            .receive(on: RunLoop.main)
+            .sink(receiveValue: { _ in
+                self.shareButtonTouchUp()
+            })
     }
 }
