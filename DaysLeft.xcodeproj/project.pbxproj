@@ -72,7 +72,6 @@
 		52E048BC250787F0009A2169 /* DefaultPreferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52FAB11B1A9240490039691E /* DefaultPreferences.plist */; };
 		52E048BD2507883A009A2169 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52CFBF041A8B631B005234FB /* Media.xcassets */; };
 		52E048BF2507A57E009A2169 /* WidgetTimelineProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E048BE2507A57E009A2169 /* WidgetTimelineProvider.swift */; };
-		52EE20E52158CF5000B46ACF /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EE20E42158CF5000B46ACF /* SettingsManager.swift */; };
 		52F9CDAC22D63D1900E0FFE8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F9CDAB22D63D1900E0FFE8 /* SceneDelegate.swift */; };
 		52FAB11C1A9240490039691E /* DefaultPreferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52FAB11B1A9240490039691E /* DefaultPreferences.plist */; };
 		52FAB11E1A9381B70039691E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FAB11D1A9381B70039691E /* SettingsViewController.swift */; };
@@ -240,7 +239,6 @@
 		52E048B425077E6A009A2169 /* WidgetDaysLeftData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetDaysLeftData.swift; sourceTree = "<group>"; };
 		52E048B925077F87009A2169 /* WidgetProgressControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetProgressControl.swift; sourceTree = "<group>"; };
 		52E048BE2507A57E009A2169 /* WidgetTimelineProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetTimelineProvider.swift; sourceTree = "<group>"; };
-		52EE20E42158CF5000B46ACF /* SettingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsManager.swift; sourceTree = "<group>"; };
 		52F9CDAB22D63D1900E0FFE8 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		52FAB1181A9231970039691E /* BLUserSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BLUserSettings.swift; sourceTree = "<group>"; };
 		52FAB11A1A923F500039691E /* daysleft.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = daysleft.entitlements; sourceTree = "<group>"; };
@@ -314,7 +312,6 @@
 			children = (
 				52FC401327AABAD9005DAD8C /* AnalyticsManager.swift */,
 				52DC9EB41FC97A9200AE02F6 /* FirebaseNotifications.swift */,
-				52EE20E42158CF5000B46ACF /* SettingsManager.swift */,
 			);
 			path = "Data Managers";
 			sourceTree = "<group>";
@@ -1004,7 +1001,6 @@
 				52F9CDAC22D63D1900E0FFE8 /* SceneDelegate.swift in Sources */,
 				52CFBF001A8B631B005234FB /* ViewController.swift in Sources */,
 				52CFBEFE1A8B631B005234FB /* AppDelegate.swift in Sources */,
-				52EE20E52158CF5000B46ACF /* SettingsManager.swift in Sources */,
 				52D617B124D06F9000465F4C /* MenuBuilder.swift in Sources */,
 				52FAB11E1A9381B70039691E /* SettingsViewController.swift in Sources */,
 				5208B83A28D8733D007BB75C /* CounterView.swift in Sources */,
