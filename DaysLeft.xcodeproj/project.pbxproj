@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -183,7 +183,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		523443691BBAFCCF00E95BA4 /* daysleftwatchlibrary-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "daysleftwatchlibrary-Info.plist"; path = "daysleft/daysleftwatchlibrary-Info.plist"; sourceTree = SOURCE_ROOT; };
 		5234436B1BBB00B800E95BA4 /* daysleft WatchKit App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "daysleft WatchKit App.entitlements"; sourceTree = "<group>"; };
 		5234436C1BBB181C00E95BA4 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		5244C04B1BC4383F00D57F28 /* daysleftlibrary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = daysleftlibrary.h; path = daysleftlibrary/daysleftlibrary.h; sourceTree = "<group>"; };
@@ -349,7 +348,6 @@
 		5295EDD21A94AE53007EF7E7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				523443691BBAFCCF00E95BA4 /* daysleftwatchlibrary-Info.plist */,
 				5295EDD31A94AE53007EF7E7 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -575,7 +573,6 @@
 				5295EDCB1A94AE53007EF7E7 /* Sources */,
 				5295EDCC1A94AE53007EF7E7 /* Frameworks */,
 				5295EDCD1A94AE53007EF7E7 /* Headers */,
-				5244C03F1BC38D4400D57F28 /* Setup build number */,
 			);
 			buildRules = (
 			);
@@ -612,7 +609,6 @@
 				52AC692F2154DA7E00E6C833 /* Sources */,
 				52AC69302154DA7E00E6C833 /* Frameworks */,
 				52AC69312154DA7E00E6C833 /* Resources */,
-				52AC69592154DE1900E6C833 /* Setup build number */,
 			);
 			buildRules = (
 			);
@@ -630,7 +626,6 @@
 				52AC69382154DA7E00E6C833 /* Sources */,
 				52AC69392154DA7E00E6C833 /* Frameworks */,
 				52AC693A2154DA7E00E6C833 /* Resources */,
-				52AC695A2154DE2600E6C833 /* Setup build number */,
 			);
 			buildRules = (
 			);
@@ -648,7 +643,6 @@
 				52B7E8731ABEDE9300E1949C /* Sources */,
 				52B7E8741ABEDE9300E1949C /* Frameworks */,
 				52B7E8751ABEDE9300E1949C /* Resources */,
-				5244C0411BC38D5C00D57F28 /* Setup build number */,
 			);
 			buildRules = (
 			);
@@ -666,7 +660,6 @@
 				52B7E87F1ABEDE9300E1949C /* Resources */,
 				523443671BBAFBEF00E95BA4 /* Embed App Extensions */,
 				20118CCB11B59DAA0A7CA7B7 /* Frameworks */,
-				5242D8411E40A20F00BF6FEE /* Setup build number */,
 			);
 			buildRules = (
 			);
@@ -687,7 +680,6 @@
 				52CFBEF61A8B631B005234FB /* Resources */,
 				5295EDE81A94AE53007EF7E7 /* Embed Frameworks */,
 				5295EE091A94B398007EF7E7 /* Embed App Extensions */,
-				520C4283227D79480099FFC5 /* Set build number */,
 				521B9C4022C8E0B300185CF4 /* Swift Lint */,
 				523443681BBAFBEF00E95BA4 /* Embed Watch Content */,
 				52FC401227AA97EE005DAD8C /* Upload dSYM files to Crashlytics */,
@@ -717,7 +709,6 @@
 				52E0489C25077AFB009A2169 /* Sources */,
 				52E0489D25077AFB009A2169 /* Frameworks */,
 				52E0489E25077AFB009A2169 /* Resources */,
-				52E048BB25078084009A2169 /* Set build number */,
 			);
 			buildRules = (
 			);
@@ -925,24 +916,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		520C4283227D79480099FFC5 /* Set build number */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Set build number";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "git=`sh /etc/profile; which git`\nappBuild=`$git rev-list --all |wc -l`\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $appBuild\" \"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\necho \"Updated ${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\n";
-		};
 		521B9C4022C8E0B300185CF4 /* Swift Lint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -960,87 +933,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\n\nif which swiftlint >/dev/null; then\n  swiftlint --path . --config ./swiftlint.yml\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
-		};
-		5242D8411E40A20F00BF6FEE /* Setup build number */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Setup build number";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "git=`sh /etc/profile; which git`\nappBuild=`$git rev-list --all |wc -l`\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $appBuild\" \"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\necho \"Updated watch app ${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\n";
-		};
-		5244C03F1BC38D4400D57F28 /* Setup build number */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Setup build number";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "git=`sh /etc/profile; which git`\nappBuild=`$git rev-list --all |wc -l`\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $appBuild\" \"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\necho \"Updated ${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\n";
-		};
-		5244C0411BC38D5C00D57F28 /* Setup build number */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Setup build number";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "git=`sh /etc/profile; which git`\nappBuild=`$git rev-list --all |wc -l`\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $appBuild\" \"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\necho \"Updated ${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\n\n";
-		};
-		52AC69592154DE1900E6C833 /* Setup build number */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			name = "Setup build number";
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "git=`sh /etc/profile; which git`\nappBuild=`$git rev-list --all |wc -l`\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $appBuild\" \"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\necho \"Updated ${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\n";
-		};
-		52AC695A2154DE2600E6C833 /* Setup build number */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			name = "Setup build number";
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "git=`sh /etc/profile; which git`\nappBuild=`$git rev-list --all |wc -l`\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $appBuild\" \"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\necho \"Updated ${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\n";
-		};
-		52E048BB25078084009A2169 /* Set build number */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Set build number";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "git=`sh /etc/profile; which git`\nappBuild=`$git rev-list --all |wc -l`\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $appBuild\" \"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\necho \"Updated ${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\n";
 		};
 		52FC401227AA97EE005DAD8C /* Upload dSYM files to Crashlytics */ = {
 			isa = PBXShellScriptBuildPhase;
