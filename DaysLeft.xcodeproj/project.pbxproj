@@ -25,7 +25,6 @@
 		5234436D1BBB181C00E95BA4 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5234436C1BBB181C00E95BA4 /* ExtensionDelegate.swift */; };
 		527AD75D1E94EB2800F8637B /* PurchaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527AD75B1E94EB2800F8637B /* PurchaseViewController.swift */; };
 		527AD75E1E94EB2800F8637B /* PurchaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 527AD75C1E94EB2800F8637B /* PurchaseViewController.xib */; };
-		527BE7A61FB0FEE600455FE9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 527BE7A51FB0FEE500455FE9 /* LaunchScreen.storyboard */; };
 		527E15401D83F80300D81B15 /* gallery.ckcomplication in Resources */ = {isa = PBXBuildFile; fileRef = 527E153F1D83F80300D81B15 /* gallery.ckcomplication */; };
 		5285E6751FACC9A6001547CD /* AppDaysLeftModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5285E6741FACC9A6001547CD /* AppDaysLeftModel.swift */; };
 		5295EDF01A94AF83007EF7E7 /* DaysLeftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CFBF131A8B631B005234FB /* DaysLeftTests.swift */; };
@@ -184,7 +183,6 @@
 		52790F781D056F500025AF10 /* daysleft-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "daysleft-Bridging-Header.h"; sourceTree = "<group>"; };
 		527AD75B1E94EB2800F8637B /* PurchaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurchaseViewController.swift; sourceTree = "<group>"; };
 		527AD75C1E94EB2800F8637B /* PurchaseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PurchaseViewController.xib; sourceTree = "<group>"; };
-		527BE7A51FB0FEE500455FE9 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		527E153F1D83F80300D81B15 /* gallery.ckcomplication */ = {isa = PBXFileReference; lastKnownFileType = folder; path = gallery.ckcomplication; sourceTree = "<group>"; };
 		5285E6741FACC9A6001547CD /* AppDaysLeftModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDaysLeftModel.swift; sourceTree = "<group>"; };
 		5295EDDA1A94AE53007EF7E7 /* DaysLeftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DaysLeftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -339,7 +337,6 @@
 		5208B83328D87199007BB75C /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				527BE7A51FB0FEE500455FE9 /* LaunchScreen.storyboard */,
 				52CFBF011A8B631B005234FB /* Main.storyboard */,
 				527AD75B1E94EB2800F8637B /* PurchaseViewController.swift */,
 				527AD75C1E94EB2800F8637B /* PurchaseViewController.xib */,
@@ -889,7 +886,6 @@
 				527E15401D83F80300D81B15 /* gallery.ckcomplication in Resources */,
 				527AD75E1E94EB2800F8637B /* PurchaseViewController.xib in Resources */,
 				52CFBF031A8B631B005234FB /* Main.storyboard in Resources */,
-				527BE7A61FB0FEE600455FE9 /* LaunchScreen.storyboard in Resources */,
 				52FAB11C1A9240490039691E /* DefaultPreferences.plist in Resources */,
 				52CFBF051A8B631B005234FB /* Media.xcassets in Resources */,
 				52DC9EB31FC97A3200AE02F6 /* GoogleService-Info.plist in Resources */,
