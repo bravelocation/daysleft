@@ -35,15 +35,7 @@
 		52AC695C2154DEB700E6C833 /* DaysLeftIntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AC695B2154DEB700E6C833 /* DaysLeftIntentHandler.swift */; };
 		52AC695D2154E42F00E6C833 /* DefaultPreferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52FAB11B1A9240490039691E /* DefaultPreferences.plist */; };
 		52AC695E2154E42F00E6C833 /* DefaultPreferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52FAB11B1A9240490039691E /* DefaultPreferences.plist */; };
-		52B78DF41D982A6E00AB629D /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52B78DF31D982A6E00AB629D /* Messages.framework */; };
-		52B78DF71D982A6E00AB629D /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B78DF61D982A6E00AB629D /* MessagesViewController.swift */; };
-		52B78DFA1D982A6E00AB629D /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52B78DF81D982A6E00AB629D /* MainInterface.storyboard */; };
-		52B78DFC1D982A6E00AB629D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52B78DFB1D982A6E00AB629D /* Assets.xcassets */; };
 		52B78E0E1D983A0400AB629D /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52B78E0B1D9838B800AB629D /* WatchConnectivity.framework */; };
-		52B78E0F1D983A1B00AB629D /* DaysLeftModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CFBF1D1A8B642C005234FB /* DaysLeftModel.swift */; };
-		52B78E101D983A2300AB629D /* BLUserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FAB1181A9231970039691E /* BLUserSettings.swift */; };
-		52B78E111D983A6000AB629D /* DefaultPreferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52FAB11B1A9240490039691E /* DefaultPreferences.plist */; };
-		52B78E151D9904AD00AB629D /* MessagesExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 52B78DEF1D982A6D00AB629D /* MessagesExtension.appex */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		52B7E87E1ABEDE9300E1949C /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52B7E87D1ABEDE9300E1949C /* Media.xcassets */; };
 		52B7E88A1ABEDE9300E1949C /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52B7E8881ABEDE9300E1949C /* Interface.storyboard */; };
 		52B7E88C1ABEDE9300E1949C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52B7E88B1ABEDE9300E1949C /* Images.xcassets */; };
@@ -132,13 +124,6 @@
 			remoteGlobalIDString = 52AC69322154DA7E00E6C833;
 			remoteInfo = DaysLeftIntent;
 		};
-		52B78E161D9904AD00AB629D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 52CFBEF01A8B631B005234FB /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 52B78DEE1D982A6D00AB629D;
-			remoteInfo = MessagesExtension;
-		};
 		52E048AB25077AFE009A2169 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 52CFBEF01A8B631B005234FB /* Project object */;
@@ -188,7 +173,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				52B78E151D9904AD00AB629D /* MessagesExtension.appex in Embed App Extensions */,
 				52AC69482154DA7F00E6C833 /* DaysLeftIntentUI.appex in Embed App Extensions */,
 				52AC694B2154DA7F00E6C833 /* DaysLeftIntent.appex in Embed App Extensions */,
 				52E048AD25077AFE009A2169 /* DaysLeftWidgetExtension.appex in Embed App Extensions */,
@@ -228,15 +212,7 @@
 		52AC695B2154DEB700E6C833 /* DaysLeftIntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysLeftIntentHandler.swift; sourceTree = "<group>"; };
 		52AC695F2154E4A300E6C833 /* DaysLeftIntent.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DaysLeftIntent.entitlements; sourceTree = "<group>"; };
 		52AC69602154E4AB00E6C833 /* DaysLeftIntentUI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DaysLeftIntentUI.entitlements; sourceTree = "<group>"; };
-		52B78DE81D982A6D00AB629D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		52B78DEA1D982A6D00AB629D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		52B78DEF1D982A6D00AB629D /* MessagesExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MessagesExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		52B78DF31D982A6E00AB629D /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
-		52B78DF61D982A6E00AB629D /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
-		52B78DF91D982A6E00AB629D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
-		52B78DFB1D982A6E00AB629D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		52B78DFD1D982A6E00AB629D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		52B78E071D9834C500AB629D /* MessagesExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MessagesExtension.entitlements; sourceTree = "<group>"; };
 		52B78E091D98388D00AB629D /* WatchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchKit.framework; path = System/Library/Frameworks/WatchKit.framework; sourceTree = SDKROOT; };
 		52B78E0B1D9838B800AB629D /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = System/Library/Frameworks/WatchConnectivity.framework; sourceTree = SDKROOT; };
 		52B7E8771ABEDE9300E1949C /* DaysLeft WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "DaysLeft WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -325,14 +301,6 @@
 			files = (
 				52AC69582154DDF900E6C833 /* DaysLeftLibrary.framework in Frameworks */,
 				52AC693E2154DA7E00E6C833 /* IntentsUI.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		52B78DEC1D982A6D00AB629D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				52B78DF41D982A6E00AB629D /* Messages.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -443,27 +411,6 @@
 			path = DaysLeftIntentUI;
 			sourceTree = "<group>";
 		};
-		52B78DE71D982A6D00AB629D /* daysleft iMessage */ = {
-			isa = PBXGroup;
-			children = (
-				52B78DE81D982A6D00AB629D /* Assets.xcassets */,
-				52B78DEA1D982A6D00AB629D /* Info.plist */,
-			);
-			path = "daysleft iMessage";
-			sourceTree = "<group>";
-		};
-		52B78DF51D982A6E00AB629D /* MessagesExtension */ = {
-			isa = PBXGroup;
-			children = (
-				52B78DFB1D982A6E00AB629D /* Assets.xcassets */,
-				52B78DFD1D982A6E00AB629D /* Info.plist */,
-				52B78DF81D982A6E00AB629D /* MainInterface.storyboard */,
-				52B78E071D9834C500AB629D /* MessagesExtension.entitlements */,
-				52B78DF61D982A6E00AB629D /* MessagesViewController.swift */,
-			);
-			path = MessagesExtension;
-			sourceTree = "<group>";
-		};
 		52B7E8781ABEDE9300E1949C /* daysleft WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -513,7 +460,6 @@
 			isa = PBXGroup;
 			children = (
 				52CFBEFA1A8B631B005234FB /* daysleft */,
-				52B78DE71D982A6D00AB629D /* daysleft iMessage */,
 				52B7E8851ABEDE9300E1949C /* daysleft WatchKit App */,
 				52B7E8781ABEDE9300E1949C /* daysleft WatchKit Extension */,
 				52AC69342154DA7E00E6C833 /* DaysLeftIntent */,
@@ -524,7 +470,6 @@
 				52E048A525077AFB009A2169 /* DaysLeftWidget */,
 				52E048AE25077AFF009A2169 /* DaysLeftWidgetExtension.entitlements */,
 				5295EDF91A94B398007EF7E7 /* Frameworks */,
-				52B78DF51D982A6E00AB629D /* MessagesExtension */,
 				52CFBEF91A8B631B005234FB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -537,7 +482,6 @@
 				5295EDDA1A94AE53007EF7E7 /* DaysLeftLibraryTests.xctest */,
 				52B7E8771ABEDE9300E1949C /* DaysLeft WatchKit Extension.appex */,
 				52B7E8811ABEDE9300E1949C /* DaysLeft WatchKit App.app */,
-				52B78DEF1D982A6D00AB629D /* MessagesExtension.appex */,
 				52AC69332154DA7E00E6C833 /* DaysLeftIntent.appex */,
 				52AC693C2154DA7E00E6C833 /* DaysLeftIntentUI.appex */,
 				52E048A025077AFB009A2169 /* DaysLeftWidgetExtension.appex */,
@@ -697,24 +641,6 @@
 			productReference = 52AC693C2154DA7E00E6C833 /* DaysLeftIntentUI.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
-		52B78DEE1D982A6D00AB629D /* MessagesExtension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 52B78DFE1D982A6E00AB629D /* Build configuration list for PBXNativeTarget "MessagesExtension" */;
-			buildPhases = (
-				52B78DEB1D982A6D00AB629D /* Sources */,
-				52B78DEC1D982A6D00AB629D /* Frameworks */,
-				52B78DED1D982A6D00AB629D /* Resources */,
-				52B78E051D982AA900AB629D /* Setup build number */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = MessagesExtension;
-			productName = MessagesExtension;
-			productReference = 52B78DEF1D982A6D00AB629D /* MessagesExtension.appex */;
-			productType = "com.apple.product-type.app-extension.messages";
-		};
 		52B7E8761ABEDE9300E1949C /* DaysLeft WatchKit Extension */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 52B7E8951ABEDE9300E1949C /* Build configuration list for PBXNativeTarget "DaysLeft WatchKit Extension" */;
@@ -770,7 +696,6 @@
 			);
 			dependencies = (
 				523443651BBAFBEF00E95BA4 /* PBXTargetDependency */,
-				52B78E171D9904AD00AB629D /* PBXTargetDependency */,
 				52AC69472154DA7F00E6C833 /* PBXTargetDependency */,
 				52AC694A2154DA7F00E6C833 /* PBXTargetDependency */,
 				52E048AC25077AFE009A2169 /* PBXTargetDependency */,
@@ -843,23 +768,6 @@
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
-								enabled = 1;
-							};
-						};
-					};
-					52B78DEE1D982A6D00AB629D = {
-						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = W8B3V597R9;
-						LastSwiftMigration = 1020;
-						ProvisioningStyle = Automatic;
-						SystemCapabilities = {
-							com.apple.ApplicationGroups.iOS = {
-								enabled = 1;
-							};
-							com.apple.InAppPurchase = {
-								enabled = 0;
-							};
-							com.apple.iCloud = {
 								enabled = 1;
 							};
 						};
@@ -939,7 +847,6 @@
 				5295EDD91A94AE53007EF7E7 /* DaysLeftLibraryTests */,
 				52B7E8761ABEDE9300E1949C /* DaysLeft WatchKit Extension */,
 				52B7E8801ABEDE9300E1949C /* DaysLeft WatchKit App */,
-				52B78DEE1D982A6D00AB629D /* MessagesExtension */,
 				52AC69322154DA7E00E6C833 /* DaysLeftIntent */,
 				52AC693B2154DA7E00E6C833 /* DaysLeftIntentUI */,
 				52E0489F25077AFB009A2169 /* DaysLeftWidgetExtension */,
@@ -970,16 +877,6 @@
 				52AC69442154DA7E00E6C833 /* MainInterface.storyboard in Resources */,
 				520F20C3233631E800B1F73F /* Media.xcassets in Resources */,
 				52AC695E2154E42F00E6C833 /* DefaultPreferences.plist in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		52B78DED1D982A6D00AB629D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				52B78E111D983A6000AB629D /* DefaultPreferences.plist in Resources */,
-				52B78DFC1D982A6E00AB629D /* Assets.xcassets in Resources */,
-				52B78DFA1D982A6E00AB629D /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1127,20 +1024,6 @@
 			shellPath = /bin/sh;
 			shellScript = "git=`sh /etc/profile; which git`\nappBuild=`$git rev-list --all |wc -l`\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $appBuild\" \"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\necho \"Updated ${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\n";
 		};
-		52B78E051D982AA900AB629D /* Setup build number */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Setup build number";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "git=`sh /etc/profile; which git`\nappBuild=`$git rev-list --all |wc -l`\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $appBuild\" \"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\necho \"Updated ${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\n";
-		};
 		52E048BB25078084009A2169 /* Set build number */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1214,16 +1097,6 @@
 			files = (
 				52AC69552154DC3600E6C833 /* Intents.intentdefinition in Sources */,
 				52AC69412154DA7E00E6C833 /* IntentViewController.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		52B78DEB1D982A6D00AB629D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				52B78E101D983A2300AB629D /* BLUserSettings.swift in Sources */,
-				52B78DF71D982A6E00AB629D /* MessagesViewController.swift in Sources */,
-				52B78E0F1D983A1B00AB629D /* DaysLeftModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1311,12 +1184,6 @@
 			target = 52AC69322154DA7E00E6C833 /* DaysLeftIntent */;
 			targetProxy = 52AC69492154DA7F00E6C833 /* PBXContainerItemProxy */;
 		};
-		52B78E171D9904AD00AB629D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			platformFilter = ios;
-			target = 52B78DEE1D982A6D00AB629D /* MessagesExtension */;
-			targetProxy = 52B78E161D9904AD00AB629D /* PBXContainerItemProxy */;
-		};
 		52E048AC25077AFE009A2169 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			platformFilter = ios;
@@ -1330,14 +1197,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				52AC69432154DA7E00E6C833 /* Base */,
-			);
-			name = MainInterface.storyboard;
-			sourceTree = "<group>";
-		};
-		52B78DF81D982A6E00AB629D /* MainInterface.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				52B78DF91D982A6E00AB629D /* Base */,
 			);
 			name = MainInterface.storyboard;
 			sourceTree = "<group>";
@@ -1599,61 +1458,6 @@
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		52B78DFF1D982A6E00AB629D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_SUSPICIOUS_MOVES = YES;
-				CODE_SIGN_ENTITLEMENTS = MessagesExtension/MessagesExtension.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = W8B3V597R9;
-				INFOPLIST_FILE = MessagesExtension/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.bravelocation.daysleft.MessagesExtension;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Debug;
-		};
-		52B78E001D982A6E00AB629D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_SUSPICIOUS_MOVES = YES;
-				CODE_SIGN_ENTITLEMENTS = MessagesExtension/MessagesExtension.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = W8B3V597R9;
-				INFOPLIST_FILE = MessagesExtension/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.bravelocation.daysleft.MessagesExtension;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
-				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -2051,15 +1855,6 @@
 			buildConfigurations = (
 				52AC69502154DA7F00E6C833 /* Debug */,
 				52AC69512154DA7F00E6C833 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		52B78DFE1D982A6E00AB629D /* Build configuration list for PBXNativeTarget "MessagesExtension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				52B78DFF1D982A6E00AB629D /* Debug */,
-				52B78E001D982A6E00AB629D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
