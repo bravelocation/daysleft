@@ -334,6 +334,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5208B83128D870BF007BB75C /* Data Providers */ = {
+			isa = PBXGroup;
+			children = (
+				52FC401327AABAD9005DAD8C /* AnalyticsManager.swift */,
+				52EE20E42158CF5000B46ACF /* SettingsManager.swift */,
+			);
+			path = "Data Providers";
+			sourceTree = "<group>";
+		};
 		5295EDD11A94AE53007EF7E7 /* daysleftlibrary */ = {
 			isa = PBXGroup;
 			children = (
@@ -490,7 +499,7 @@
 		52CFBEFA1A8B631B005234FB /* daysleft */ = {
 			isa = PBXGroup;
 			children = (
-				52FC401327AABAD9005DAD8C /* AnalyticsManager.swift */,
+				5208B83128D870BF007BB75C /* Data Providers */,
 				5285E6741FACC9A6001547CD /* AppDaysLeftModel.swift */,
 				52CFBEFD1A8B631B005234FB /* AppDelegate.swift */,
 				52790F781D056F500025AF10 /* daysleft-Bridging-Header.h */,
@@ -505,7 +514,6 @@
 				527AD75B1E94EB2800F8637B /* PurchaseViewController.swift */,
 				527AD75C1E94EB2800F8637B /* PurchaseViewController.xib */,
 				52F9CDAB22D63D1900E0FFE8 /* SceneDelegate.swift */,
-				52EE20E42158CF5000B46ACF /* SettingsManager.swift */,
 				52FAB11D1A9381B70039691E /* SettingsViewController.swift */,
 				52CFBEFB1A8B631B005234FB /* Supporting Files */,
 				52CFBEFF1A8B631B005234FB /* ViewController.swift */,
