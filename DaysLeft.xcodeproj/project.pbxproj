@@ -338,6 +338,7 @@
 			isa = PBXGroup;
 			children = (
 				52FC401327AABAD9005DAD8C /* AnalyticsManager.swift */,
+				52DC9EB41FC97A9200AE02F6 /* FirebaseNotifications.swift */,
 				52EE20E42158CF5000B46ACF /* SettingsManager.swift */,
 			);
 			path = "Data Providers";
@@ -356,6 +357,44 @@
 				52CFBF041A8B631B005234FB /* Media.xcassets */,
 			);
 			name = Assets;
+			sourceTree = "<group>";
+		};
+		5208B83328D87199007BB75C /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				527BE7A51FB0FEE500455FE9 /* LaunchScreen.storyboard */,
+				52CFBF011A8B631B005234FB /* Main.storyboard */,
+				527AD75B1E94EB2800F8637B /* PurchaseViewController.swift */,
+				527AD75C1E94EB2800F8637B /* PurchaseViewController.xib */,
+				52FAB11D1A9381B70039691E /* SettingsViewController.swift */,
+				52CFBEFF1A8B631B005234FB /* ViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		5208B83428D871E6007BB75C /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				5285E6741FACC9A6001547CD /* AppDaysLeftModel.swift */,
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		5208B83528D871F4007BB75C /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				52CFBEFD1A8B631B005234FB /* AppDelegate.swift */,
+				52F9CDAB22D63D1900E0FFE8 /* SceneDelegate.swift */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		5208B83628D87203007BB75C /* Mac */ = {
+			isa = PBXGroup;
+			children = (
+				52D617B024D06F9000465F4C /* MenuBuilder.swift */,
+			);
+			path = Mac;
 			sourceTree = "<group>";
 		};
 		5295EDD11A94AE53007EF7E7 /* daysleftlibrary */ = {
@@ -516,17 +555,10 @@
 			children = (
 				5208B83228D870F8007BB75C /* Assets */,
 				5208B83128D870BF007BB75C /* Data Providers */,
-				5285E6741FACC9A6001547CD /* AppDaysLeftModel.swift */,
-				52CFBEFD1A8B631B005234FB /* AppDelegate.swift */,
-				52DC9EB41FC97A9200AE02F6 /* FirebaseNotifications.swift */,
-				527BE7A51FB0FEE500455FE9 /* LaunchScreen.storyboard */,
-				52CFBF011A8B631B005234FB /* Main.storyboard */,
-				52D617B024D06F9000465F4C /* MenuBuilder.swift */,
-				527AD75B1E94EB2800F8637B /* PurchaseViewController.swift */,
-				527AD75C1E94EB2800F8637B /* PurchaseViewController.xib */,
-				52F9CDAB22D63D1900E0FFE8 /* SceneDelegate.swift */,
-				52FAB11D1A9381B70039691E /* SettingsViewController.swift */,
-				52CFBEFF1A8B631B005234FB /* ViewController.swift */,
+				5208B83528D871F4007BB75C /* iOS */,
+				5208B83628D87203007BB75C /* Mac */,
+				5208B83328D87199007BB75C /* View Controllers */,
+				5208B83428D871E6007BB75C /* View Models */,
 			);
 			path = daysleft;
 			sourceTree = "<group>";
