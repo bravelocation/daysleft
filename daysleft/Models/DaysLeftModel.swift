@@ -54,13 +54,13 @@ open class DaysLeftModel: BLUserSettings {
     /// Property to get and set the start date
     open var start: Date {
         get { return self.readObjectFromStore("start") as! Date }
-        set { self.writeObjectToStore(self.startOfDay(newValue) as AnyObject, key: "start") }
+        set { self.writeObjectToStore(newValue.startOfDay as AnyObject, key: "start") }
     }
     
     /// Property to get and set the end date
     open var end: Date {
         get { return self.readObjectFromStore("end") as! Date }
-        set { self.writeObjectToStore(self.startOfDay(newValue) as AnyObject, key: "end") }
+        set { self.writeObjectToStore(newValue.startOfDay as AnyObject, key: "end") }
     }
 
     /// Property to get and set the title
@@ -84,7 +84,7 @@ open class DaysLeftModel: BLUserSettings {
     /// Property to get the number of days between the start and the end
     open var daysLength: Int {
         get {
-            return self.daysDifference(self.start, endDate: self.end) + 1 // Inclusive so add one
+            return Date.daysDifference(self.start, endDate: self.end, weekdaysOnly: self.weekdaysOnly) + 1 // Inclusive so add one
         }
     }
     
@@ -111,7 +111,7 @@ open class DaysLeftModel: BLUserSettings {
     /// param: currentDate The current date
     /// returns: The number of days to the end from the current date
     open func daysLeft(_ currentDate: Date) -> Int {
-        let startCurrentDate = self.startOfDay(currentDate)
+        let startCurrentDate = currentDate.startOfDay
         
         // If the current date is before the start, return the length
         let startComparison = startCurrentDate.compare(self.start)
@@ -134,7 +134,7 @@ open class DaysLeftModel: BLUserSettings {
     /// param: currentDate The current date
     /// returns: The number of days from the start to the current date
     open func daysGone(_ currentDate: Date) -> Int {
-        let startCurrentDate = self.startOfDay(currentDate)
+        let startCurrentDate = currentDate.startOfDay
         
         let startComparison = startCurrentDate.compare(self.start)
         
@@ -149,13 +149,13 @@ open class DaysLeftModel: BLUserSettings {
         }
         
         // Otherwise, return the actual difference
-        return self.daysDifference(self.start, endDate: currentDate, currentDate: currentDate) + 1 // Inclusive so add 1
+        return Date.daysDifference(self.start, endDate: currentDate, currentDate: currentDate, weekdaysOnly: self.weekdaysOnly) + 1 // Inclusive so add 1
     }
     
     open func initialRun() {
         if (self.firstRun < self.currentFirstRun) {
             // If it is first run, initialise the model data to Christmas
-            let todayComponents = (Calendar.current as NSCalendar).components([NSCalendar.Unit.year, NSCalendar.Unit.month, NSCalendar.Unit.day], from: Date())
+            let todayComponents = Calendar.current.dateComponents([.year, .month, .day], from: Date())
             let todayDate = Calendar.current.date(from: todayComponents)!
             
             var xmasComponents = DateComponents()
@@ -165,7 +165,7 @@ open class DaysLeftModel: BLUserSettings {
             
             var xmasDate: Date = Calendar.current.date(from: xmasComponents)!
             
-            if (self.daysDifference(todayDate, endDate: xmasDate) <= 0) {
+            if (Date.daysDifference(todayDate, endDate: xmasDate, weekdaysOnly: self.weekdaysOnly) <= 0) {
                 // If we're past Xmas in the year, set it to next year
                 xmasComponents.year = xmasComponents.year! + 1
                 xmasDate = Calendar.current.date(from: xmasComponents)!
@@ -179,86 +179,6 @@ open class DaysLeftModel: BLUserSettings {
             // Save the first run once working
             self.firstRun = self.currentFirstRun
         }
-    }
-    
-    fileprivate func daysDifference(_ startDate: Date, endDate: Date, currentDate: Date? = nil) -> Int {
-        let globalCalendar: Calendar = Calendar.autoupdatingCurrent
-
-        let startOfStartDate = self.startOfDay(startDate)
-        let startOfEndDate = self.startOfDay(endDate)
-
-        // If want all days, just calculate the days difference and return it
-        if (!self.weekdaysOnly) {
-            let components: DateComponents = (globalCalendar as NSCalendar).components(NSCalendar.Unit.day, from: startOfStartDate, to: startOfEndDate, options: NSCalendar.Options.wrapComponents)
-            
-            return components.day!
-        }
-        
-        // If we are calculating weekdays only, first adjust the start or end date if on a weekend
-        var startDayOfWeek: Int = (globalCalendar as NSCalendar).component(NSCalendar.Unit.weekday, from: startOfStartDate)
-        var endDayOfWeek: Int = (globalCalendar as NSCalendar).component(NSCalendar.Unit.weekday, from: startOfEndDate)
-            
-        var adjustedStartDate = startOfStartDate
-        var adjustedEndDate = startOfEndDate
-            
-        // If start is a weekend, adjust to Monday
-        if (startDayOfWeek == 7) {
-            // Saturday
-            adjustedStartDate = self.addDays(startOfStartDate, daysToAdd: 2)
-        } else if (startDayOfWeek == 1) {
-            // Sunday
-            adjustedStartDate = self.addDays(startOfStartDate, daysToAdd: 1)
-        }
-        
-        // If there is a current date, and the adjusted start date is after it, return -1) we haven't started yet)
-        if let currentDate = currentDate {
-            let startOfCurrentDate = self.startOfDay(currentDate)
-
-            let startComparison = startOfCurrentDate.compare(adjustedStartDate)
-            
-            if (startComparison == ComparisonResult.orderedAscending) {
-                return -1
-            }
-        }
-            
-        // If end is a weekend, move it back to Friday
-        if (endDayOfWeek == 7) {
-            // Saturday
-            adjustedEndDate = self.addDays(startOfEndDate, daysToAdd: -1)
-        } else if (endDayOfWeek == 1) {
-            // Sunday
-            adjustedEndDate = self.addDays(startOfEndDate, daysToAdd: -2)
-        }
-            
-        let adjustedComponents: DateComponents = (globalCalendar as NSCalendar).components(NSCalendar.Unit.day, from: adjustedStartDate, to: adjustedEndDate, options: NSCalendar.Options.wrapComponents)
-            
-        let adjustedTotalDays: Int = adjustedComponents.day!
-        let fullWeeks: Int = adjustedTotalDays / 7
-        
-        // Now we need to take into account if the day of the start date is before or after the day of the end date
-        startDayOfWeek = (globalCalendar as NSCalendar).component(NSCalendar.Unit.weekday, from: adjustedStartDate)
-        endDayOfWeek = (globalCalendar as NSCalendar).component(NSCalendar.Unit.weekday, from: adjustedEndDate)
-        
-        var daysOfWeekDifference = endDayOfWeek - startDayOfWeek
-        if (daysOfWeekDifference < 0) {
-            daysOfWeekDifference += 5
-        }
-
-        // Finally return the number of weekdays
-        return (fullWeeks * 5) + daysOfWeekDifference
-    }
-    
-    open func startOfDay(_ fullDate: Date) -> Date {
-
-        let startOfDayComponents =  (Calendar.current as NSCalendar).components([NSCalendar.Unit.year, NSCalendar.Unit.month, NSCalendar.Unit.day], from: fullDate)
-        
-        return Calendar.current.date(from: startOfDayComponents)!
-    }
-    
-    open func addDays(_ originalDate: Date, daysToAdd: Int) -> Date {
-        var dateComponents: DateComponents = DateComponents()
-         dateComponents.day = daysToAdd
-         return (Calendar.current as NSCalendar).date(byAdding: dateComponents, to: originalDate, options: [])!
     }
     
     fileprivate func allCurrentSettings() -> Dictionary<String, AnyObject> {

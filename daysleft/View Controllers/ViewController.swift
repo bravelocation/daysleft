@@ -49,8 +49,6 @@ class ViewController: UIViewController {
     // MARK: - View event handlers
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let model = self.modelData()
                 
         // Customise the nav bar
         let appearance = UINavigationBarAppearance()
@@ -76,7 +74,7 @@ class ViewController: UIViewController {
         // Add timer in case runs over a day change
         let now = Date()
         let secondsInADay: Double = 60 * 60 * 24
-        let startOfTomorrow = model.addDays(model.startOfDay(now), daysToAdd: 1)
+        let startOfTomorrow = now.startOfDay.addDays(1)
         self.dayChangeTimer = Timer(fireAt: startOfTomorrow, interval: secondsInADay, target: self, selector: #selector(ViewController.dayChangedTimerFired), userInfo: nil, repeats: false)
         
         // Setup user intents

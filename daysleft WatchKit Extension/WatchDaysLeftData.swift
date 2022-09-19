@@ -52,7 +52,7 @@ class WatchDaysLeftData: ObservableObject {
         // Let's update the snapshot if the view changed
         print("Scheduling snapshot")
         
-        let soon =  (Calendar.autoupdatingCurrent as NSCalendar).date(byAdding: .second, value: 5, to: Date(), options: [])
+        let soon =  Calendar.current.date(byAdding: .second, value: 5, to: Date())
         WKExtension.shared().scheduleSnapshotRefresh(withPreferredDate: soon!, userInfo: nil, scheduledCompletion: { (error: Error?) in
             if let error = error {
                 print("Error occurred while scheduling snapshot: \(error.localizedDescription)")

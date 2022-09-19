@@ -19,8 +19,7 @@ class ComplicationsDataSource: NSObject, CLKComplicationDataSource {
     
     func getNextRequestedUpdateDate(handler: @escaping (Date?) -> Void) {
         // Update at the start of tomorrow
-        let model = modelData()
-        let nextUpdate = model.startOfDay(model.addDays(Date(), daysToAdd: 1))
+        let nextUpdate = Date().addDays(1).startOfDay
         
         print("Setting next extension update to be at \(nextUpdate)")
         
