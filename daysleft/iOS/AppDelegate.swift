@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import DaysLeftLibrary
 import Firebase
 import WidgetKit
 

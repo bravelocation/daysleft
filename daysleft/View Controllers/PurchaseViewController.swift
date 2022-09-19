@@ -8,7 +8,6 @@
 
 import UIKit
 import StoreKit
-import DaysLeftLibrary
 
 class PurchaseViewController: UIViewController, SKProductsRequestDelegate, SKPaymentTransactionObserver {
 

@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import DaysLeftLibrary
 
 class DaysLeftIntentHandler: NSObject, DaysLeftIntentHandling {
     

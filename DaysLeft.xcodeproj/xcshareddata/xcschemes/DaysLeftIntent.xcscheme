@@ -50,8 +50,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "5295EDD91A94AE53007EF7E7"
-               BuildableName = "DaysLeftLibraryTests.xctest"
-               BlueprintName = "DaysLeftLibraryTests"
+               BuildableName = "DaysLeftTests.xctest"
+               BlueprintName = "DaysLeftTests"
                ReferencedContainer = "container:DaysLeft.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -86,6 +86,7 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES"
+      askForAppToLaunch = "Yes"
       launchAutomaticallySubstyle = "2">
       <BuildableProductRunnable
          runnableDebuggingMode = "0">
