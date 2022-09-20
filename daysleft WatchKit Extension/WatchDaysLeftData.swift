@@ -36,10 +36,7 @@ class WatchDaysLeftData: ObservableObject {
         
         // Set the published properties based on the model
         let now: Date = Date()
-        let appDelegate = WKExtension.shared().delegate as! ExtensionDelegate
-        let model = appDelegate.model
-        
-        let appSettings = model.appSettings
+        let appSettings = AppSettingsDataManager().appSettings
         
         self.currentTitle = "\(appSettings.daysLeftDescription(now)) until"
         self.currentSubTitle = appSettings.title
@@ -48,16 +45,6 @@ class WatchDaysLeftData: ObservableObject {
         self.percentageDone = percentageDone
         self.currentPercentageLeft = String(format: "%3.0f%% done", percentageDone)
         self.modelChanged.send(())
-        
-        // Let's also update the complications if the data has changed
-        let complicationServer = CLKComplicationServer.sharedInstance()
-        let activeComplications = complicationServer.activeComplications
-        
-        if (activeComplications != nil) {
-            for complication in activeComplications! {
-                complicationServer.reloadTimeline(for: complication)
-            }
-        }
         
         // Let's update the snapshot if the view changed
         print("Scheduling snapshot")
@@ -76,6 +63,16 @@ class WatchDaysLeftData: ObservableObject {
         // Update view data on main thread
         DispatchQueue.main.async {
             self.updateViewData()
+        }
+        
+        // Let's also update the complications if the data has changed
+        let complicationServer = CLKComplicationServer.sharedInstance()
+        let activeComplications = complicationServer.activeComplications
+        
+        if (activeComplications != nil) {
+            for complication in activeComplications! {
+                complicationServer.reloadTimeline(for: complication)
+            }
         }
     }
 }
