@@ -18,7 +18,7 @@ struct WidgetView: View {
     var body: some View {
         GeometryReader { geo in
             VStack(alignment: .center) {
-                Text(self.model.currentTitle)
+                Text(self.model.appSettings.fullTitle(date: model.date))
                     .lineLimit(2)
                     .allowsTightening(true)
                     .minimumScaleFactor(0.5)
@@ -32,7 +32,7 @@ struct WidgetView: View {
                     lineWidth: 20.0,
                     frameSize: self.progressDimensions(geo.size))
                     .padding()
-                Text(self.model.currentPercentageLeft)
+                Text(self.model.appSettings.currentPercentageLeft(date: model.date))
                     .font(.footnote)
                     .foregroundColor(Color.primary)
             }.frame(
