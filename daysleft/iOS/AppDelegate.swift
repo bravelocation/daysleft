@@ -40,10 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.firebaseNotifications?.setupNotifications(false)
 
         // Increment the number of times app opened
-        self.model.appControlSettings = AppControlSettings(firstRun: self.model.appControlSettings.firstRun,
-                                                           showBadge: self.model.appControlSettings.showBadge,
-                                                           isASupporter: self.model.appControlSettings.isASupporter,
-                                                           appOpenCount: self.model.appControlSettings.appOpenCount + 1)
+        self.model.incrementAppOpenCount()
 
         return true
     }

@@ -139,10 +139,7 @@ class PurchaseViewController: UIViewController, SKProductsRequestDelegate, SKPay
     func successfulPayment() {
         DispatchQueue.main.async {
             if let model = self.model {
-                model.appControlSettings = AppControlSettings(firstRun: model.appControlSettings.firstRun,
-                                                                   showBadge: model.appControlSettings.showBadge,
-                                                                   isASupporter: true,
-                                                                   appOpenCount: model.appControlSettings.appOpenCount)
+                model.updateIsASupporter(true)
             }
             
             self.actionButtonChange(message: "", enable: false)

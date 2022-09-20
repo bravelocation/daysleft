@@ -30,11 +30,7 @@ class AppSettingsDataManager {
 
         self.dataProvider = dataProvider
         
-        self.initialRun()
-    }
-    
-    /// Initial setting up of data on first run of the app
-    func initialRun() {
+        // Setup some of the settings if first run of the app
         if (self.firstRun < self.currentFirstRun) {
             // If it is first run, initialise the model data to Christmas
             self.start = Date().startOfDay
@@ -57,12 +53,6 @@ class AppSettingsDataManager {
                                title: self.title,
                                weekdaysOnly: self.weekdaysOnly)
         }
-        set {
-            self.start = newValue.start
-            self.end = newValue.end
-            self.title = newValue.title
-            self.weekdaysOnly = newValue.weekdaysOnly
-        }
     }
     
     /// App control settings
@@ -73,13 +63,35 @@ class AppSettingsDataManager {
                                       isASupporter: self.isASupporter,
                                       appOpenCount: self.appOpenCount)
         }
-        set {
-            self.firstRun = newValue.firstRun
-            self.showBadge = newValue.showBadge
-            self.isASupporter = newValue.isASupporter
-            self.appOpenCount = newValue.appOpenCount
-        }
     }
+    
+    // MARK: - Data updating methods
+    /// Update the app settings
+    /// - Parameters:
+    ///   - start: Start date
+    ///   - end: End date
+    ///   - title: Title
+    ///   - weekdaysOnly: Weekdays only?
+    func updateAppSettings(start: Date, end: Date, title: String, weekdaysOnly: Bool) {
+        self.start = start
+        self.end = end
+        self.title = title
+        self.weekdaysOnly = weekdaysOnly
+    }
+    
+    func incrementAppOpenCount() {
+        self.appOpenCount += 1
+    }
+    
+    func updateIsASupporter(_ value: Bool) {
+        self.isASupporter = value
+    }
+
+    func updateShowBadge(_ value: Bool) {
+        self.showBadge = value
+    }
+    
+    // MARK: - Property getters and setters
     
     /// Property to get and set the start date
     private var start: Date {
