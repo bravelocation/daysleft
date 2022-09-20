@@ -133,7 +133,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
             if settings.badgeSetting == .enabled {
                 DispatchQueue.main.async {
                     let now: Date = Date()
-                    UIApplication.shared.applicationIconBadgeNumber = self.model.daysLeft(now)
+                    UIApplication.shared.applicationIconBadgeNumber = self.model.appSettings.daysLeft(now)
                     print("Updated app badge")
                 }
             }

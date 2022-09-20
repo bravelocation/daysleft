@@ -47,14 +47,15 @@ class IntentViewController: UIViewController, INUIHostedViewControlling {
         
         let now: Date = Date()
         let dataManager = AppSettingsDataManager()
+        let appSettings = dataManager.appSettings
         
-        self.titleLabel.text = dataManager.fullDescription(now)
+        self.titleLabel.text = appSettings.fullDescription(now)
         
-        let percentageDone: Float = (Float(dataManager.daysGone(now)) * 100.0) / Float(dataManager.daysLength)
+        let percentageDone: Float = (Float(appSettings.daysGone(now)) * 100.0) / Float(appSettings.daysLength)
         self.percentLabel.text = String(format: "%3.0f%% done", percentageDone)
         
-        self.counterView.counter = dataManager.daysGone(now)
-        self.counterView.maximumValue = dataManager.daysLength
+        self.counterView.counter = appSettings.daysGone(now)
+        self.counterView.maximumValue = appSettings.daysLength
         self.counterView.updateControl()
         
         completion(true, parameters, self.desiredSize)

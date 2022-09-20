@@ -26,6 +26,11 @@
 		5240F1E728D9B6CB00B95FE5 /* AppSettingsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5240F1E428D9B6CB00B95FE5 /* AppSettingsDataManager.swift */; };
 		5240F1E828D9B6CB00B95FE5 /* AppSettingsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5240F1E428D9B6CB00B95FE5 /* AppSettingsDataManager.swift */; };
 		5240F1E928D9B6CB00B95FE5 /* AppSettingsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5240F1E428D9B6CB00B95FE5 /* AppSettingsDataManager.swift */; };
+		5240F1EB28D9BE1A00B95FE5 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5240F1EA28D9BE1A00B95FE5 /* AppSettings.swift */; };
+		5240F1EC28D9BE1A00B95FE5 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5240F1EA28D9BE1A00B95FE5 /* AppSettings.swift */; };
+		5240F1ED28D9BE1A00B95FE5 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5240F1EA28D9BE1A00B95FE5 /* AppSettings.swift */; };
+		5240F1EE28D9BE1A00B95FE5 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5240F1EA28D9BE1A00B95FE5 /* AppSettings.swift */; };
+		5240F1EF28D9BE1A00B95FE5 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5240F1EA28D9BE1A00B95FE5 /* AppSettings.swift */; };
 		527AD75D1E94EB2800F8637B /* PurchaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527AD75B1E94EB2800F8637B /* PurchaseViewController.swift */; };
 		527AD75E1E94EB2800F8637B /* PurchaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 527AD75C1E94EB2800F8637B /* PurchaseViewController.xib */; };
 		527E15401D83F80300D81B15 /* gallery.ckcomplication in Resources */ = {isa = PBXBuildFile; fileRef = 527E153F1D83F80300D81B15 /* gallery.ckcomplication */; };
@@ -180,6 +185,7 @@
 		5234436C1BBB181C00E95BA4 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		5240F1CF28D8C1BC00B95FE5 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		5240F1E428D9B6CB00B95FE5 /* AppSettingsDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsDataManager.swift; sourceTree = "<group>"; };
+		5240F1EA28D9BE1A00B95FE5 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 		52790F781D056F500025AF10 /* daysleft-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "daysleft-Bridging-Header.h"; sourceTree = "<group>"; };
 		527AD75B1E94EB2800F8637B /* PurchaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurchaseViewController.swift; sourceTree = "<group>"; };
 		527AD75C1E94EB2800F8637B /* PurchaseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PurchaseViewController.xib; sourceTree = "<group>"; };
@@ -371,6 +377,7 @@
 		5208B83728D872F9007BB75C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				5240F1EA28D9BE1A00B95FE5 /* AppSettings.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -963,6 +970,7 @@
 			files = (
 				52AC69542154DC3000E6C833 /* Intents.intentdefinition in Sources */,
 				5240F1D328D8C1BC00B95FE5 /* Date+Extensions.swift in Sources */,
+				5240F1ED28D9BE1A00B95FE5 /* AppSettings.swift in Sources */,
 				52AC695C2154DEB700E6C833 /* DaysLeftIntentHandler.swift in Sources */,
 				52AC69362154DA7E00E6C833 /* IntentHandler.swift in Sources */,
 				5240F1E728D9B6CB00B95FE5 /* AppSettingsDataManager.swift in Sources */,
@@ -976,6 +984,7 @@
 			files = (
 				52AC69552154DC3600E6C833 /* Intents.intentdefinition in Sources */,
 				52AC69412154DA7E00E6C833 /* IntentViewController.swift in Sources */,
+				5240F1EE28D9BE1A00B95FE5 /* AppSettings.swift in Sources */,
 				5240F1D428D8C1BC00B95FE5 /* Date+Extensions.swift in Sources */,
 				5208B83D28D87450007BB75C /* CounterView.swift in Sources */,
 				5240F1E828D9B6CB00B95FE5 /* AppSettingsDataManager.swift in Sources */,
@@ -994,6 +1003,7 @@
 				52BC111B237C461C005EC3F7 /* WatchView.swift in Sources */,
 				5240F1E628D9B6CB00B95FE5 /* AppSettingsDataManager.swift in Sources */,
 				5234436D1BBB181C00E95BA4 /* ExtensionDelegate.swift in Sources */,
+				5240F1EC28D9BE1A00B95FE5 /* AppSettings.swift in Sources */,
 				52BC111F237C4AD0005EC3F7 /* WatchDaysLeftData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1004,6 +1014,7 @@
 			files = (
 				52AC69532154DAFB00E6C833 /* Intents.intentdefinition in Sources */,
 				527AD75D1E94EB2800F8637B /* PurchaseViewController.swift in Sources */,
+				5240F1EB28D9BE1A00B95FE5 /* AppSettings.swift in Sources */,
 				52F9CDAC22D63D1900E0FFE8 /* SceneDelegate.swift in Sources */,
 				52CFBF001A8B631B005234FB /* ViewController.swift in Sources */,
 				52CFBEFE1A8B631B005234FB /* AppDelegate.swift in Sources */,
@@ -1028,6 +1039,7 @@
 				52E048BF2507A57E009A2169 /* WidgetTimelineProvider.swift in Sources */,
 				52E048B525077E6A009A2169 /* WidgetDaysLeftData.swift in Sources */,
 				52E048BA25077F87009A2169 /* WidgetProgressControl.swift in Sources */,
+				5240F1EF28D9BE1A00B95FE5 /* AppSettings.swift in Sources */,
 				5240F1E928D9B6CB00B95FE5 /* AppSettingsDataManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

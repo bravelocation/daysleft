@@ -177,11 +177,11 @@ class ComplicationsDataSource: NSObject, CLKComplicationDataSource {
     }
     
     func getTimelineStartDate(for complication: CLKComplication, withHandler handler: @escaping (Date?) -> Void) {
-        handler(modelData().start as Date)
+        handler(modelData().appSettings.start as Date)
     }
     
     func getTimelineEndDate(for complication: CLKComplication, withHandler handler: @escaping (Date?) -> Void) {
-        handler(modelData().end as Date)
+        handler(modelData().appSettings.end as Date)
     }
     
     func getTimelineAnimationBehavior(for complication: CLKComplication,
@@ -199,8 +199,8 @@ class ComplicationsDataSource: NSObject, CLKComplicationDataSource {
     fileprivate func createTimeLineEntry(_ family: CLKComplicationFamily, date: Date) -> CLKComplicationTimelineEntry? {
 
         let model = modelData()
-        let currentDaysLeft: Int = model.daysLeft(date)
-        let percentageDone: Float = (Float(model.daysGone(date)) / Float(model.daysLength)).clamped(to: 0.0...1.0)
+        let currentDaysLeft: Int = model.appSettings.daysLeft(date)
+        let percentageDone: Float = (Float(model.appSettings.daysGone(date)) / Float(model.appSettings.daysLength)).clamped(to: 0.0...1.0)
         let displayPercentageDone: Int = (Int) (percentageDone * 100)
         let appTintColor = UIColor(red: 203/255, green: 237/255, blue: 142/255, alpha: 1.0)
         
@@ -247,7 +247,7 @@ class ComplicationsDataSource: NSObject, CLKComplicationDataSource {
             entry = CLKComplicationTimelineEntry(date: date, complicationTemplate: template)
         case .modularLarge:
             let template = CLKComplicationTemplateModularLargeStandardBody()
-            template.headerTextProvider = CLKSimpleTextProvider(text: model.title)
+            template.headerTextProvider = CLKSimpleTextProvider(text: model.appSettings.title)
             template.body1TextProvider = CLKSimpleTextProvider(text: String(format: "%d days", currentDaysLeft))
             template.body2TextProvider = CLKSimpleTextProvider(text: String(format: "%d%% done", displayPercentageDone))
             template.tintColor = appTintColor
@@ -256,7 +256,7 @@ class ComplicationsDataSource: NSObject, CLKComplicationDataSource {
             let template = CLKComplicationTemplateGraphicBezelCircularText()
             template.tintColor = appTintColor
             
-            let longDesc = String(format: "%d %@ until %@", currentDaysLeft, model.weekdaysOnly ? "weekdays" : "days", model.title)
+            let longDesc = String(format: "%d %@ until %@", currentDaysLeft, model.appSettings.weekdaysOnly ? "weekdays" : "days", model.appSettings.title)
             template.textProvider = CLKSimpleTextProvider(text: longDesc)
             
             let gaugeProvider = CLKComplicationTemplateGraphicCircularOpenGaugeSimpleText()
@@ -290,7 +290,7 @@ class ComplicationsDataSource: NSObject, CLKComplicationDataSource {
             entry = CLKComplicationTimelineEntry(date: date, complicationTemplate: template)
         case .graphicRectangular:
             let template = CLKComplicationTemplateGraphicRectangularStandardBody()
-            template.headerTextProvider = CLKSimpleTextProvider(text: model.title)
+            template.headerTextProvider = CLKSimpleTextProvider(text: model.appSettings.title)
             template.body1TextProvider = CLKSimpleTextProvider(text: String(format: "%d days", currentDaysLeft))
             template.body2TextProvider = CLKSimpleTextProvider(text: String(format: "%d%% done", displayPercentageDone))
             template.tintColor = appTintColor
