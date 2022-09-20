@@ -36,7 +36,7 @@ struct Arc: Shape, InsettableShape {
 struct WidgetProgressControl: View {
     var foregroundColor: Color
     var backgroundColor: Color
-    @ObservedObject var model: WidgetDaysLeftData
+    var model: WidgetDaysLeftData
 
     var lineWidth: CGFloat = 20.0
     var frameSize: CGFloat = 100
@@ -55,15 +55,17 @@ struct WidgetProgressControl: View {
 }
 
 struct WidgetProgressControl_Previews: PreviewProvider {
+    static var appSettings = AppSettingsDataManager(dataProvider: InMemoryDataProvider()).appSettings
+    
     static var previews: some View {
         Group {
             WidgetProgressControl(foregroundColor: Color.blue,
                             backgroundColor: Color.green,
-                            model: WidgetDaysLeftData(date: Date()))
+                            model: WidgetDaysLeftData(date: Date(), appSettings: appSettings))
                 .previewContext(WidgetPreviewContext(family: .systemSmall))
             WidgetProgressControl(foregroundColor: Color.blue,
                             backgroundColor: Color.green,
-                            model: WidgetDaysLeftData(date: Date()))
+                            model: WidgetDaysLeftData(date: Date(), appSettings: appSettings))
                 .previewContext(WidgetPreviewContext(family: .systemMedium))
         }
 

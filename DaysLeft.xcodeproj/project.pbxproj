@@ -76,6 +76,7 @@
 		52CBC7A928D9E2E200C89F20 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5240F1EA28D9BE1A00B95FE5 /* AppSettings.swift */; };
 		52CBC7AA28D9E2E400C89F20 /* AppControlSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5240F1F028D9C25700B95FE5 /* AppControlSettings.swift */; };
 		52CBC7AB28D9E39300C89F20 /* CloudKeyValueDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CBC79928D9DF1000C89F20 /* CloudKeyValueDataProvider.swift */; };
+		52CBC7AC28D9EA2D00C89F20 /* InMemoryDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CBC7A528D9E1F000C89F20 /* InMemoryDataProvider.swift */; };
 		52CFBEFE1A8B631B005234FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CFBEFD1A8B631B005234FB /* AppDelegate.swift */; };
 		52CFBF001A8B631B005234FB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CFBEFF1A8B631B005234FB /* ViewController.swift */; };
 		52CFBF031A8B631B005234FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52CFBF011A8B631B005234FB /* Main.storyboard */; };
@@ -1081,6 +1082,7 @@
 				5240F1EF28D9BE1A00B95FE5 /* AppSettings.swift in Sources */,
 				5240F1E928D9B6CB00B95FE5 /* AppSettingsDataManager.swift in Sources */,
 				52CBC79E28D9DF1000C89F20 /* CloudKeyValueDataProvider.swift in Sources */,
+				52CBC7AC28D9EA2D00C89F20 /* InMemoryDataProvider.swift in Sources */,
 				5240F1F528D9C25700B95FE5 /* AppControlSettings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
