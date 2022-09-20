@@ -84,4 +84,25 @@ extension Date {
         // Finally return the number of weekdays
         return (fullWeeks * 5) + daysOfWeekDifference
     }
+    
+    static func nextXmas() -> Date {
+        // If it is first run, initialise the model data to Christmas
+        let todayComponents = Calendar.current.dateComponents([.year, .month, .day], from: Date())
+        let todayDate = Calendar.current.date(from: todayComponents)!
+        
+        var xmasComponents = DateComponents()
+        xmasComponents.day = 25
+        xmasComponents.month = 12
+        xmasComponents.year = todayComponents.year
+        
+        var xmasDate: Date = Calendar.current.date(from: xmasComponents)!
+        
+        if (Date.daysDifference(todayDate, endDate: xmasDate, weekdaysOnly: false) <= 0) {
+            // If we're past Xmas in the year, set it to next year
+            xmasComponents.year = xmasComponents.year! + 1
+            xmasDate = Calendar.current.date(from: xmasComponents)!
+        }
+        
+        return xmasDate
+    }
 }
