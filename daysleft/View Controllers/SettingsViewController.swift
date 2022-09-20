@@ -41,7 +41,7 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
 
         self.textTitle.text = appSettings.title
         self.switchWeekdaysOnly.isOn = appSettings.weekdaysOnly
-        self.switchShowBadge.isOn = model.showBadge
+        self.switchShowBadge.isOn = model.appControlSettings.showBadge
         
         // Setup date formatter
         self.dateFormatter.dateFormat = "EEE d MMM YYYY"
@@ -133,8 +133,12 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
  
     @IBAction func switchShowBadgeChanged(_ sender: AnyObject) {
         let model = self.modelData()
-        model.showBadge = self.switchShowBadge.isOn
-
+        
+        model.appControlSettings = AppControlSettings(firstRun: model.appControlSettings.firstRun,
+                                                           showBadge: switchShowBadge.isOn,
+                                                           isASupporter: model.appControlSettings.isASupporter,
+                                                           appOpenCount: model.appControlSettings.appOpenCount + 1)
+        
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.registerForNotifications()
     }
@@ -241,7 +245,8 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
     
     func isNotASupporter() -> Bool {
         let model = self.modelData()
-        return model.isASupporter == false
+        
+        return model.appControlSettings.isASupporter == false
     }
     
     // MARK: - SFSafariViewControllerDelegate methods

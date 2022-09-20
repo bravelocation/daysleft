@@ -131,6 +131,7 @@ class AppSettingsDataManager: NSObject, WCSessionDelegate {
     
     // MARK: - Settings values
     
+    /// Main app settings
     var appSettings: AppSettings {
         get {
             return AppSettings(start: self.start,
@@ -143,6 +144,22 @@ class AppSettingsDataManager: NSObject, WCSessionDelegate {
             self.end = newValue.end
             self.title = newValue.title
             self.weekdaysOnly = newValue.weekdaysOnly
+        }
+    }
+    
+    /// App control settings
+    var appControlSettings: AppControlSettings {
+        get {
+            return AppControlSettings(firstRun: self.firstRun,
+                                      showBadge: self.showBadge,
+                                      isASupporter: self.isASupporter,
+                                      appOpenCount: self.appOpenCount)
+        }
+        set {
+            self.firstRun = newValue.firstRun
+            self.showBadge = newValue.showBadge
+            self.isASupporter = newValue.isASupporter
+            self.appOpenCount = newValue.appOpenCount
         }
     }
     
@@ -171,25 +188,25 @@ class AppSettingsDataManager: NSObject, WCSessionDelegate {
     }
     
     /// Property to get and set the firstRun value
-    var firstRun: Int {
+    private var firstRun: Int {
         get { return self.readObjectFromStore("firstRun") as! Int }
         set { self.writeObjectToStore(newValue as AnyObject, key: "firstRun") }
     }
     
     /// Property to get and set the show badge flag
-    var showBadge: Bool {
+    private var showBadge: Bool {
         get { return self.readObjectFromStore("showBadge") as! Bool }
         set { self.writeObjectToStore(newValue as AnyObject, key: "showBadge") }
     }
     
     /// Property to get and set the is a supporter flag (called adsFree because of legacy usage)
-    var isASupporter: Bool {
+    private var isASupporter: Bool {
         get { return self.readObjectFromStore("adsFree") as! Bool }
         set { self.writeObjectToStore(newValue as AnyObject, key: "adsFree") }
     }
 
     /// Property to get and set the number of times the app has been opened
-    var appOpenCount: Int {
+    private var appOpenCount: Int {
         get { return self.readObjectFromStore("appOpenCount") as! Int }
         set { self.writeObjectToStore(newValue as AnyObject, key: "appOpenCount") }
     }

@@ -138,7 +138,13 @@ class PurchaseViewController: UIViewController, SKProductsRequestDelegate, SKPay
     
     func successfulPayment() {
         DispatchQueue.main.async {
-            self.model?.isASupporter = true
+            if let model = self.model {
+                model.appControlSettings = AppControlSettings(firstRun: model.appControlSettings.firstRun,
+                                                                   showBadge: model.appControlSettings.showBadge,
+                                                                   isASupporter: true,
+                                                                   appOpenCount: model.appControlSettings.appOpenCount)
+            }
+            
             self.actionButtonChange(message: "", enable: false)
             
             // Hide the restore button
@@ -149,7 +155,7 @@ class PurchaseViewController: UIViewController, SKProductsRequestDelegate, SKPay
     }
     
     func isNotASupporter() -> Bool {
-        return self.model?.isASupporter == false
+        return self.model?.appControlSettings.isASupporter == false
     }
     
     // MARK: - SKProductsRequestDelegate

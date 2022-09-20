@@ -31,6 +31,11 @@
 		5240F1ED28D9BE1A00B95FE5 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5240F1EA28D9BE1A00B95FE5 /* AppSettings.swift */; };
 		5240F1EE28D9BE1A00B95FE5 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5240F1EA28D9BE1A00B95FE5 /* AppSettings.swift */; };
 		5240F1EF28D9BE1A00B95FE5 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5240F1EA28D9BE1A00B95FE5 /* AppSettings.swift */; };
+		5240F1F128D9C25700B95FE5 /* AppControlSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5240F1F028D9C25700B95FE5 /* AppControlSettings.swift */; };
+		5240F1F228D9C25700B95FE5 /* AppControlSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5240F1F028D9C25700B95FE5 /* AppControlSettings.swift */; };
+		5240F1F328D9C25700B95FE5 /* AppControlSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5240F1F028D9C25700B95FE5 /* AppControlSettings.swift */; };
+		5240F1F428D9C25700B95FE5 /* AppControlSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5240F1F028D9C25700B95FE5 /* AppControlSettings.swift */; };
+		5240F1F528D9C25700B95FE5 /* AppControlSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5240F1F028D9C25700B95FE5 /* AppControlSettings.swift */; };
 		527AD75D1E94EB2800F8637B /* PurchaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527AD75B1E94EB2800F8637B /* PurchaseViewController.swift */; };
 		527AD75E1E94EB2800F8637B /* PurchaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 527AD75C1E94EB2800F8637B /* PurchaseViewController.xib */; };
 		527E15401D83F80300D81B15 /* gallery.ckcomplication in Resources */ = {isa = PBXBuildFile; fileRef = 527E153F1D83F80300D81B15 /* gallery.ckcomplication */; };
@@ -186,6 +191,7 @@
 		5240F1CF28D8C1BC00B95FE5 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		5240F1E428D9B6CB00B95FE5 /* AppSettingsDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsDataManager.swift; sourceTree = "<group>"; };
 		5240F1EA28D9BE1A00B95FE5 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
+		5240F1F028D9C25700B95FE5 /* AppControlSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppControlSettings.swift; sourceTree = "<group>"; };
 		52790F781D056F500025AF10 /* daysleft-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "daysleft-Bridging-Header.h"; sourceTree = "<group>"; };
 		527AD75B1E94EB2800F8637B /* PurchaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurchaseViewController.swift; sourceTree = "<group>"; };
 		527AD75C1E94EB2800F8637B /* PurchaseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PurchaseViewController.xib; sourceTree = "<group>"; };
@@ -378,6 +384,7 @@
 			isa = PBXGroup;
 			children = (
 				5240F1EA28D9BE1A00B95FE5 /* AppSettings.swift */,
+				5240F1F028D9C25700B95FE5 /* AppControlSettings.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -974,6 +981,7 @@
 				52AC695C2154DEB700E6C833 /* DaysLeftIntentHandler.swift in Sources */,
 				52AC69362154DA7E00E6C833 /* IntentHandler.swift in Sources */,
 				5240F1E728D9B6CB00B95FE5 /* AppSettingsDataManager.swift in Sources */,
+				5240F1F328D9C25700B95FE5 /* AppControlSettings.swift in Sources */,
 				5208B83E28D87453007BB75C /* CounterView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -987,6 +995,7 @@
 				5240F1EE28D9BE1A00B95FE5 /* AppSettings.swift in Sources */,
 				5240F1D428D8C1BC00B95FE5 /* Date+Extensions.swift in Sources */,
 				5208B83D28D87450007BB75C /* CounterView.swift in Sources */,
+				5240F1F428D9C25700B95FE5 /* AppControlSettings.swift in Sources */,
 				5240F1E828D9B6CB00B95FE5 /* AppSettingsDataManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1002,6 +1011,7 @@
 				5208B84628D8761E007BB75C /* WatchDaysLeftModel.swift in Sources */,
 				52BC111B237C461C005EC3F7 /* WatchView.swift in Sources */,
 				5240F1E628D9B6CB00B95FE5 /* AppSettingsDataManager.swift in Sources */,
+				5240F1F228D9C25700B95FE5 /* AppControlSettings.swift in Sources */,
 				5234436D1BBB181C00E95BA4 /* ExtensionDelegate.swift in Sources */,
 				5240F1EC28D9BE1A00B95FE5 /* AppSettings.swift in Sources */,
 				52BC111F237C4AD0005EC3F7 /* WatchDaysLeftData.swift in Sources */,
@@ -1017,6 +1027,7 @@
 				5240F1EB28D9BE1A00B95FE5 /* AppSettings.swift in Sources */,
 				52F9CDAC22D63D1900E0FFE8 /* SceneDelegate.swift in Sources */,
 				52CFBF001A8B631B005234FB /* ViewController.swift in Sources */,
+				5240F1F128D9C25700B95FE5 /* AppControlSettings.swift in Sources */,
 				52CFBEFE1A8B631B005234FB /* AppDelegate.swift in Sources */,
 				5240F1E528D9B6CB00B95FE5 /* AppSettingsDataManager.swift in Sources */,
 				52D617B124D06F9000465F4C /* MenuBuilder.swift in Sources */,
@@ -1041,6 +1052,7 @@
 				52E048BA25077F87009A2169 /* WidgetProgressControl.swift in Sources */,
 				5240F1EF28D9BE1A00B95FE5 /* AppSettings.swift in Sources */,
 				5240F1E928D9B6CB00B95FE5 /* AppSettingsDataManager.swift in Sources */,
+				5240F1F528D9C25700B95FE5 /* AppControlSettings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1515,7 +1527,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = W8B3V597R9;
-				ENABLE_BITCODE = YES;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1552,7 +1564,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = W8B3V597R9;
-				ENABLE_BITCODE = YES;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",

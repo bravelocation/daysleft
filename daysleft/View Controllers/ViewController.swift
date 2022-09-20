@@ -93,7 +93,7 @@ class ViewController: UIViewController {
         // Show request review every 10 times the user opend the app
         let reviewPromptFrequency = 10
         
-        let appOpened = self.modelData().appOpenCount
+        let appOpened = self.modelData().appControlSettings.appOpenCount
         print("App opened \(appOpened) times")
 
         if (appOpened >= reviewPromptFrequency && (appOpened % reviewPromptFrequency) == 0) {
