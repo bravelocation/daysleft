@@ -70,6 +70,6 @@ struct ProgressControl_Previews: PreviewProvider {
     static var previews: some View {
         ProgressControl(foregroundColor: Color.blue,
                         backgroundColor: Color.green,
-                        model: WatchDaysLeftViewModel())
+                        model: WatchDaysLeftViewModel(dataManager: AppSettingsDataManager(dataProvider: InMemoryDataProvider())))
     }
 }

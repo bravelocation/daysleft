@@ -44,6 +44,6 @@ struct WatchView: View {
 
 struct WatchView_Previews: PreviewProvider {
     static var previews: some View {
-        WatchView(model: WatchDaysLeftViewModel())
+        WatchView(model: WatchDaysLeftViewModel(dataManager: AppSettingsDataManager(dataProvider: InMemoryDataProvider())))
     }
 }

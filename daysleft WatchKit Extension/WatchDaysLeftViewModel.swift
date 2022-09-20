@@ -14,7 +14,7 @@ import ClockKit
 class WatchDaysLeftViewModel: ObservableObject {
     
     /// Current app settings
-    @Published var appSettings: AppSettings = AppSettingsDataManager.default.appSettings
+    @Published var appSettings: AppSettings
     
     /// Percentage done
     @Published var percentageDone: Double = 0.0
@@ -22,7 +22,13 @@ class WatchDaysLeftViewModel: ObservableObject {
     /// Subscribers to change events
     private var cancellables = Array<AnyCancellable>()
     
-    init() {
+    /// Data manager
+    let dataManager: AppSettingsDataManager
+    
+    init(dataManager: AppSettingsDataManager) {
+        self.dataManager = dataManager
+        self.appSettings = self.dataManager.appSettings
+        
         // Setup listener for iCloud setting change
         let keyValueChangeSubscriber = NotificationCenter.default
             .publisher(for: .AppSettingsUpdated)
@@ -40,7 +46,7 @@ class WatchDaysLeftViewModel: ObservableObject {
         print("Updating view data...")
         
         // Set the published properties based on the model
-        self.appSettings = AppSettingsDataManager.default.appSettings
+        self.appSettings = self.dataManager.appSettings
         self.percentageDone = self.appSettings.percentageDone(date: Date())
     }
     

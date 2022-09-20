@@ -89,6 +89,7 @@
 		52CBC7B828D9FBE000C89F20 /* AppSettings+DayCalculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CBC7B428D9FBE000C89F20 /* AppSettings+DayCalculations.swift */; };
 		52CBC7B928D9FBE000C89F20 /* AppSettings+DayCalculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CBC7B428D9FBE000C89F20 /* AppSettings+DayCalculations.swift */; };
 		52CBC7BA28D9FBE000C89F20 /* AppSettings+DayCalculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CBC7B428D9FBE000C89F20 /* AppSettings+DayCalculations.swift */; };
+		52CBC7BB28DA1A4200C89F20 /* InMemoryDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CBC7A528D9E1F000C89F20 /* InMemoryDataProvider.swift */; };
 		52CFBEFE1A8B631B005234FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CFBEFD1A8B631B005234FB /* AppDelegate.swift */; };
 		52CFBF001A8B631B005234FB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CFBEFF1A8B631B005234FB /* ViewController.swift */; };
 		52CFBF031A8B631B005234FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52CFBF011A8B631B005234FB /* Main.storyboard */; };
@@ -569,14 +570,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		52CBC79828D9DEE700C89F20 /* DataProviders */ = {
+		52CBC79828D9DEE700C89F20 /* Data Providers */ = {
 			isa = PBXGroup;
 			children = (
 				52CBC79928D9DF1000C89F20 /* CloudKeyValueDataProvider.swift */,
 				52CBC79F28D9E01700C89F20 /* DataProviderProtocol.swift */,
 				52CBC7A528D9E1F000C89F20 /* InMemoryDataProvider.swift */,
 			);
-			path = DataProviders;
+			path = "Data Providers";
 			sourceTree = "<group>";
 		};
 		52CFBEEF1A8B631B005234FB = {
@@ -613,7 +614,7 @@
 			children = (
 				5208B83228D870F8007BB75C /* Assets */,
 				5208B83128D870BF007BB75C /* Data Managers */,
-				52CBC79828D9DEE700C89F20 /* DataProviders */,
+				52CBC79828D9DEE700C89F20 /* Data Providers */,
 				5208B83528D871F4007BB75C /* iOS */,
 				5208B83628D87203007BB75C /* Mac */,
 				5240F1CE28D8C19E00B95FE5 /* Model Extensions */,
@@ -1062,6 +1063,7 @@
 				5240F1E628D9B6CB00B95FE5 /* AppSettingsDataManager.swift in Sources */,
 				5240F1F228D9C25700B95FE5 /* AppControlSettings.swift in Sources */,
 				5234436D1BBB181C00E95BA4 /* ExtensionDelegate.swift in Sources */,
+				52CBC7BB28DA1A4200C89F20 /* InMemoryDataProvider.swift in Sources */,
 				52CBC7B028D9EE6700C89F20 /* AppSettings+Text.swift in Sources */,
 				52CBC7B728D9FBE000C89F20 /* AppSettings+DayCalculations.swift in Sources */,
 				5240F1EC28D9BE1A00B95FE5 /* AppSettings.swift in Sources */,

@@ -11,7 +11,7 @@ import ClockKit
 
 class ExtensionDelegate: NSObject, WKExtensionDelegate {
     
-    var dataModel = WatchDaysLeftViewModel()
+    var dataModel = WatchDaysLeftViewModel(dataManager: AppSettingsDataManager.default)
 
     func applicationDidBecomeActive() {
         print("applicationDidBecomeActive started")
