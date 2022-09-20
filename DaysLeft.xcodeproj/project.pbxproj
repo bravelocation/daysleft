@@ -83,6 +83,12 @@
 		52CBC7B128D9EE6700C89F20 /* AppSettings+Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CBC7AD28D9EE6700C89F20 /* AppSettings+Text.swift */; };
 		52CBC7B228D9EE6700C89F20 /* AppSettings+Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CBC7AD28D9EE6700C89F20 /* AppSettings+Text.swift */; };
 		52CBC7B328D9EE6700C89F20 /* AppSettings+Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CBC7AD28D9EE6700C89F20 /* AppSettings+Text.swift */; };
+		52CBC7B528D9FBE000C89F20 /* AppSettings+DayCalculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CBC7B428D9FBE000C89F20 /* AppSettings+DayCalculations.swift */; };
+		52CBC7B628D9FBE000C89F20 /* AppSettings+DayCalculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CBC7B428D9FBE000C89F20 /* AppSettings+DayCalculations.swift */; };
+		52CBC7B728D9FBE000C89F20 /* AppSettings+DayCalculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CBC7B428D9FBE000C89F20 /* AppSettings+DayCalculations.swift */; };
+		52CBC7B828D9FBE000C89F20 /* AppSettings+DayCalculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CBC7B428D9FBE000C89F20 /* AppSettings+DayCalculations.swift */; };
+		52CBC7B928D9FBE000C89F20 /* AppSettings+DayCalculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CBC7B428D9FBE000C89F20 /* AppSettings+DayCalculations.swift */; };
+		52CBC7BA28D9FBE000C89F20 /* AppSettings+DayCalculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CBC7B428D9FBE000C89F20 /* AppSettings+DayCalculations.swift */; };
 		52CFBEFE1A8B631B005234FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CFBEFD1A8B631B005234FB /* AppDelegate.swift */; };
 		52CFBF001A8B631B005234FB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CFBEFF1A8B631B005234FB /* ViewController.swift */; };
 		52CFBF031A8B631B005234FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52CFBF011A8B631B005234FB /* Main.storyboard */; };
@@ -252,6 +258,7 @@
 		52CBC79F28D9E01700C89F20 /* DataProviderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProviderProtocol.swift; sourceTree = "<group>"; };
 		52CBC7A528D9E1F000C89F20 /* InMemoryDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryDataProvider.swift; sourceTree = "<group>"; };
 		52CBC7AD28D9EE6700C89F20 /* AppSettings+Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppSettings+Text.swift"; sourceTree = "<group>"; };
+		52CBC7B428D9FBE000C89F20 /* AppSettings+DayCalculations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppSettings+DayCalculations.swift"; sourceTree = "<group>"; };
 		52CFBEF81A8B631B005234FB /* DaysLeft.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DaysLeft.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52CFBEFC1A8B631B005234FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52CFBEFD1A8B631B005234FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -486,8 +493,9 @@
 		5240F1CE28D8C19E00B95FE5 /* Model Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				5240F1CF28D8C1BC00B95FE5 /* Date+Helpers.swift */,
+				52CBC7B428D9FBE000C89F20 /* AppSettings+DayCalculations.swift */,
 				52CBC7AD28D9EE6700C89F20 /* AppSettings+Text.swift */,
+				5240F1CF28D8C1BC00B95FE5 /* Date+Helpers.swift */,
 			);
 			path = "Model Extensions";
 			sourceTree = "<group>";
@@ -995,6 +1003,7 @@
 				52CBC7AF28D9EE6700C89F20 /* AppSettings+Text.swift in Sources */,
 				52CBC7A928D9E2E200C89F20 /* AppSettings.swift in Sources */,
 				5295EDF01A94AF83007EF7E7 /* DaysLeftTests.swift in Sources */,
+				52CBC7B628D9FBE000C89F20 /* AppSettings+DayCalculations.swift in Sources */,
 				52CBC7AB28D9E39300C89F20 /* CloudKeyValueDataProvider.swift in Sources */,
 				52CBC7A628D9E1F000C89F20 /* InMemoryDataProvider.swift in Sources */,
 				52CBC7AA28D9E2E400C89F20 /* AppControlSettings.swift in Sources */,
@@ -1017,6 +1026,7 @@
 				5240F1F328D9C25700B95FE5 /* AppControlSettings.swift in Sources */,
 				52CBC7A228D9E01700C89F20 /* DataProviderProtocol.swift in Sources */,
 				5208B83E28D87453007BB75C /* CounterView.swift in Sources */,
+				52CBC7B828D9FBE000C89F20 /* AppSettings+DayCalculations.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1028,6 +1038,7 @@
 				52AC69412154DA7E00E6C833 /* IntentViewController.swift in Sources */,
 				5240F1EE28D9BE1A00B95FE5 /* AppSettings.swift in Sources */,
 				5240F1D428D8C1BC00B95FE5 /* Date+Helpers.swift in Sources */,
+				52CBC7B928D9FBE000C89F20 /* AppSettings+DayCalculations.swift in Sources */,
 				52CBC7A328D9E01700C89F20 /* DataProviderProtocol.swift in Sources */,
 				52CBC7B228D9EE6700C89F20 /* AppSettings+Text.swift in Sources */,
 				52CBC79D28D9DF1000C89F20 /* CloudKeyValueDataProvider.swift in Sources */,
@@ -1052,6 +1063,7 @@
 				5240F1F228D9C25700B95FE5 /* AppControlSettings.swift in Sources */,
 				5234436D1BBB181C00E95BA4 /* ExtensionDelegate.swift in Sources */,
 				52CBC7B028D9EE6700C89F20 /* AppSettings+Text.swift in Sources */,
+				52CBC7B728D9FBE000C89F20 /* AppSettings+DayCalculations.swift in Sources */,
 				5240F1EC28D9BE1A00B95FE5 /* AppSettings.swift in Sources */,
 				52BC111F237C4AD0005EC3F7 /* WatchDaysLeftViewModel.swift in Sources */,
 			);
@@ -1078,6 +1090,7 @@
 				5208B83A28D8733D007BB75C /* CounterView.swift in Sources */,
 				52FC401427AABAD9005DAD8C /* AnalyticsManager.swift in Sources */,
 				52DC9EB51FC97A9200AE02F6 /* FirebaseNotifications.swift in Sources */,
+				52CBC7B528D9FBE000C89F20 /* AppSettings+DayCalculations.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1096,6 +1109,7 @@
 				5240F1E928D9B6CB00B95FE5 /* AppSettingsDataManager.swift in Sources */,
 				52CBC79E28D9DF1000C89F20 /* CloudKeyValueDataProvider.swift in Sources */,
 				52CBC7B328D9EE6700C89F20 /* AppSettings+Text.swift in Sources */,
+				52CBC7BA28D9FBE000C89F20 /* AppSettings+DayCalculations.swift in Sources */,
 				52CBC7AC28D9EA2D00C89F20 /* InMemoryDataProvider.swift in Sources */,
 				5240F1F528D9C25700B95FE5 /* AppControlSettings.swift in Sources */,
 			);

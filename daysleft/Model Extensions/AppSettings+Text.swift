@@ -9,6 +9,43 @@
 import Foundation
 
 extension AppSettings {
+    func fullDescription(_ currentDate: Date) -> String {
+        return String(format: "%d %@", self.daysLeft(currentDate), self.description(currentDate))
+    }
+    
+    func description(_ currentDate: Date) -> String {
+        let daysLeft: Int = self.daysLeft(currentDate)
+        
+        var titleSuffix = "left"
+        var titleDays = ""
+        
+        if (self.title.count > 0) {
+            titleSuffix = "until " + self.title
+        }
+        
+        if (self.weekdaysOnly) {
+            titleDays = (daysLeft == 1) ? "weekday" : "weekdays"
+        } else {
+            titleDays = (daysLeft == 1) ? "day" : "days"
+        }
+        
+        return String(format: "%@ %@", titleDays, titleSuffix)
+    }
+    
+    func daysLeftDescription(_ currentDate: Date) -> String {
+        let daysLeft: Int = self.daysLeft(currentDate)
+        
+        var titleDays = ""
+        
+        if (self.weekdaysOnly) {
+            titleDays = (daysLeft == 1) ? "weekday" : "weekdays"
+        } else {
+            titleDays = (daysLeft == 1) ? "day" : "days"
+        }
+        
+        return String(format: "%d %@", daysLeft, titleDays)
+    }
+    
     func fullTitle(date: Date) -> String {
         return "\(self.daysLeftDescription(date)) to \(self.title)"
     }
