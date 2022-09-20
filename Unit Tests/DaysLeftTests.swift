@@ -111,7 +111,7 @@ class DaysLeftTests: XCTestCase {
         currentComponents.month = 1
         currentComponents.day = currentDay
         
-        model.appSettings = AppSettings(start: Calendar.current.date(from: startComponents)!,
+        model.updateAppSettings(start: Calendar.current.date(from: startComponents)!,
                                         end: Calendar.current.date(from: endComponents)!,
                                         title: "Test",
                                         weekdaysOnly: weekdaysOnly)
