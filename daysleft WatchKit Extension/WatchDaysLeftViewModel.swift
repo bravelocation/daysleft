@@ -14,7 +14,7 @@ import ClockKit
 class WatchDaysLeftViewModel: ObservableObject {
     
     /// Current app settings
-    @Published var appSettings: AppSettings = AppSettingsDataManager().appSettings
+    @Published var appSettings: AppSettings = AppSettingsDataManager.default.appSettings
     
     /// Percentage done
     @Published var percentageDone: Double = 0.0
@@ -40,11 +40,8 @@ class WatchDaysLeftViewModel: ObservableObject {
         print("Updating view data...")
         
         // Set the published properties based on the model
-        self.appSettings = AppSettingsDataManager().appSettings
+        self.appSettings = AppSettingsDataManager.default.appSettings
         self.percentageDone = self.appSettings.percentageDone(date: Date())
-        
-        // Let's update the snapshot if the view changed
-        self.scheduleSnapshot()
     }
     
     /// Event handler for data update
@@ -58,18 +55,6 @@ class WatchDaysLeftViewModel: ObservableObject {
         
         // Let's also update the complications if the data has changed
         self.updateComplications()
-    }
-    
-    /// Schedule a snapshot of the screen
-    private func scheduleSnapshot() {
-        print("Scheduling snapshot")
-        
-        let soon =  Calendar.current.date(byAdding: .second, value: 5, to: Date())
-        WKExtension.shared().scheduleSnapshotRefresh(withPreferredDate: soon!, userInfo: nil) { (error: Error?) in
-            if let error = error {
-                print("Error occurred while scheduling snapshot: \(error.localizedDescription)")
-            }
-        }
     }
     
     /// Update any added complications

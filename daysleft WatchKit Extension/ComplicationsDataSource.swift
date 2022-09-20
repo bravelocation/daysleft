@@ -12,7 +12,7 @@ import ClockKit
 
 class ComplicationsDataSource: NSObject, CLKComplicationDataSource {
     
-    let appSettings = AppSettingsDataManager().appSettings
+    let appSettings = AppSettingsDataManager.default.appSettings
     
     func getCurrentTimelineEntry(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTimelineEntry?) -> Void) {
         let entry = self.createTimeLineEntry(complication.family, date: Date())
@@ -179,11 +179,11 @@ class ComplicationsDataSource: NSObject, CLKComplicationDataSource {
     }
     
     func getTimelineStartDate(for complication: CLKComplication, withHandler handler: @escaping (Date?) -> Void) {
-        handler(AppSettingsDataManager().appSettings.start as Date)
+        handler(AppSettingsDataManager.default.appSettings.start as Date)
     }
     
     func getTimelineEndDate(for complication: CLKComplication, withHandler handler: @escaping (Date?) -> Void) {
-        handler(AppSettingsDataManager().appSettings.end as Date)
+        handler(AppSettingsDataManager.default.appSettings.end as Date)
     }
     
     func getTimelineAnimationBehavior(for complication: CLKComplication,

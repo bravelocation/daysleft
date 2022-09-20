@@ -15,8 +15,7 @@ class DaysLeftIntentHandler: NSObject, DaysLeftIntentHandling {
     }
     
     func handle(intent: DaysLeftIntent, completion: @escaping (DaysLeftIntentResponse) -> Void) {
-        let dataManager = AppSettingsDataManager()
-        let appSettings = dataManager.appSettings
+        let appSettings = AppSettingsDataManager.default.appSettings
         let now = Date()
         
         let daysleft: NSNumber = NSNumber(value: appSettings.daysLeft(now))

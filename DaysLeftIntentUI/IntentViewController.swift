@@ -46,8 +46,7 @@ class IntentViewController: UIViewController, INUIHostedViewControlling {
         }
         
         let now: Date = Date()
-        let dataManager = AppSettingsDataManager()
-        let appSettings = dataManager.appSettings
+        let appSettings = AppSettingsDataManager.default.appSettings
         
         self.titleLabel.text = appSettings.fullDescription(now)
         

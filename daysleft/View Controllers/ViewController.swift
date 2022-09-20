@@ -107,7 +107,7 @@ class ViewController: UIViewController {
         // Show request review every 10 times the user opend the app
         let reviewPromptFrequency = 10
         
-        let appOpened = self.modelData().appControlSettings.appOpenCount
+        let appOpened = AppSettingsDataManager.default.appControlSettings.appOpenCount
         print("App opened \(appOpened) times")
 
         if (appOpened >= reviewPromptFrequency && (appOpened % reviewPromptFrequency) == 0) {
@@ -150,7 +150,7 @@ class ViewController: UIViewController {
     
     @objc
     func shareButtonTouchUp() {
-        let modelText = self.modelData().appSettings.fullDescription(Date())
+        let modelText = AppSettingsDataManager.default.appSettings.fullDescription(Date())
         let objectsToShare = [modelText]
         
         let activityViewController = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
@@ -188,7 +188,7 @@ class ViewController: UIViewController {
     // MARK: - Helper functions
     func updateViewFromModel() {
         print("updateViewFromModel started")
-        let appSettings = self.modelData().appSettings
+        let appSettings = AppSettingsDataManager.default.appSettings
 
         let now: Date = Date()
         
@@ -224,11 +224,6 @@ class ViewController: UIViewController {
         
         print("updateViewFromModel completed")
     }
-
-    func modelData() -> AppSettingsDataManager {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        return appDelegate.model
-    }
     
     // MARK: - User Activity functions
     private func donateInteraction() {
@@ -247,7 +242,7 @@ class ViewController: UIViewController {
             relevantShortcut.relevanceProviders = [dailyProvider]
             
             // Set template for displaying on Watch face
-            let appSettings = self.modelData().appSettings
+            let appSettings = AppSettingsDataManager.default.appSettings
             let templateTitle = appSettings.weekdaysOnly ? "Weekdays until" : "Days until"
             let templateSubTitle = appSettings.title
 

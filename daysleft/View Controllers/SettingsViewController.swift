@@ -36,12 +36,11 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let model = self.modelData()
-        let appSettings = model.appSettings
+        let appSettings = AppSettingsDataManager.default.appSettings
 
         self.textTitle.text = appSettings.title
         self.switchWeekdaysOnly.isOn = appSettings.weekdaysOnly
-        self.switchShowBadge.isOn = model.appControlSettings.showBadge
+        self.switchShowBadge.isOn = AppSettingsDataManager.default.appControlSettings.showBadge
         
         // Setup date formatter
         self.dateFormatter.dateFormat = "EEE d MMM YYYY"
@@ -132,9 +131,7 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
     }
  
     @IBAction func switchShowBadgeChanged(_ sender: AnyObject) {
-        let model = self.modelData()
-        
-        model.updateShowBadge(switchShowBadge.isOn)
+        AppSettingsDataManager.default.updateShowBadge(switchShowBadge.isOn)
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.registerForNotifications()
@@ -209,13 +206,13 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
     
     func validateAndSaveModel() {
         // Update the model
-        self.modelData().updateAppSettings(start: self.startDatePicker.date,
+        AppSettingsDataManager.default.updateAppSettings(start: self.startDatePicker.date,
                                 end: self.endDatePicker.date,
                                 title: self.textTitle!.text!,
                                 weekdaysOnly: self.switchWeekdaysOnly.isOn)
         
         // Update the text fields
-        let updatedAddSettings = self.modelData().appSettings
+        let updatedAddSettings = AppSettingsDataManager.default.appSettings
         
         self.labelDaysLength.text = updatedAddSettings.daysLeftDescription(updatedAddSettings.start)
         self.startDayOfWeek.text = updatedAddSettings.start.weekdayName
@@ -231,15 +228,8 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
         appDelegate.updateWidgets()
     }
     
-    func modelData() -> AppSettingsDataManager {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        return appDelegate.model
-    }
-    
     func isNotASupporter() -> Bool {
-        let model = self.modelData()
-        
-        return model.appControlSettings.isASupporter == false
+        return AppSettingsDataManager.default.appControlSettings.isASupporter == false
     }
     
     // MARK: - SFSafariViewControllerDelegate methods

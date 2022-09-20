@@ -18,7 +18,7 @@ class FirebaseNotifications: NSObject, MessagingDelegate {
     
     var enabled: Bool {
         get {
-            return self.modelData().appControlSettings.showBadge
+            return AppSettingsDataManager.default.appControlSettings.showBadge
         }
     }
     
@@ -62,10 +62,5 @@ class FirebaseNotifications: NSObject, MessagingDelegate {
                 print("Unregistered with firebase \(fullTopic)")
             }
         }
-    }
-    
-    func modelData() -> AppSettingsDataManager {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        return appDelegate.model
     }
 }

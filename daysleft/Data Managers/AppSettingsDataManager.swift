@@ -22,6 +22,15 @@ class AppSettingsDataManager {
     /// Is this the current first run (integer not boolean for legacy reasons)
     let currentFirstRun: Int = 1
     
+    // MARK: - Shared setup
+    private static let sharedInstance = AppSettingsDataManager()
+                                    
+    static var `default`: AppSettingsDataManager {
+        get {
+            return sharedInstance
+        }
+    }
+    
     // MARK: - Initialisation functions
     
     /// Default initialiser for the class

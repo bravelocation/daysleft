@@ -24,15 +24,14 @@ class PurchaseViewController: UIViewController, SKProductsRequestDelegate, SKPay
     var productRequest: SKProductsRequest?
     var product: SKProduct?
     var transactionInProgress: Bool = false
-    var model: AppSettingsDataManager?
+    var model: AppSettingsDataManager!
     var backItem: UIBarButtonItem?
     let appGreen = UIColor(named: "MainAppColor")!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        self.model = appDelegate.model
+        self.model = AppSettingsDataManager.default
 
         // Initialise elements
         self.labelTitle.text = "\u{1F596}"
