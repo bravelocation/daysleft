@@ -115,8 +115,8 @@ class CloudKeyValueDataProvider: DataProviderProtocol {
         print("Detected iCloud key-value storage change")
         
         // Get the list of keys that changed
-        let userInfo: NSDictionary = notification.userInfo! as NSDictionary
-        let reasonForChange: AnyObject? = userInfo.object(forKey: NSUbiquitousKeyValueStoreChangeReasonKey) as AnyObject?
+        let userInfo = notification.userInfo! as NSDictionary
+        let reasonForChange = userInfo.object(forKey: NSUbiquitousKeyValueStoreChangeReasonKey) as AnyObject?
         
         // Assuming we have a valid reason for the change
         if let downcastedReason = reasonForChange as? NSNumber {
@@ -135,7 +135,7 @@ class CloudKeyValueDataProvider: DataProviderProtocol {
                 store.synchronize()
                 
                 // Finally send a notification for the view controllers to refresh
-                NotificationCenter.default.post(name: Notification.Name(rawValue: AppSettingsDataManager.UpdateSettingsNotification), object: nil, userInfo: nil)
+                NotificationCenter.default.post(name: .AppSettingsUpdated, object: nil)
                 print("Sent notification for iCloud change")
             }
         } else {

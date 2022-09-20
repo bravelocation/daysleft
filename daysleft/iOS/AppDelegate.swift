@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import WidgetKit
+import Combine
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,13 +18,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     lazy var model = AppSettingsDataManager()
     var firebaseNotifications: FirebaseNotifications?
+    
+    /// Subscribers to change events
+    private var cancellables = Array<AnyCancellable>()
 
     // MARK: Initialisation
     override init() {
         super.init()
         
         // Setup listener for iCloud setting change
-        NotificationCenter.default.addObserver(self, selector: #selector(AppDelegate.iCloudSettingsUpdated(_:)), name: NSNotification.Name(rawValue: AppSettingsDataManager.UpdateSettingsNotification), object: nil)
+        let keyValueChangeSubscriber = NotificationCenter.default
+            .publisher(for: .AppSettingsUpdated)
+            .sink { _ in
+                self.iCloudSettingsUpdated()
+            }
+        
+        self.cancellables.append(keyValueChangeSubscriber)
     }
     
     // MARK: UIApplicationDelegate functions
@@ -92,7 +102,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // MARK: Event handlers
     @objc
-    fileprivate func iCloudSettingsUpdated(_ notification: Notification) {
+    fileprivate func iCloudSettingsUpdated() {
         print("Received iCloudSettingsUpdated notification")
         
         // Update badge and widgets

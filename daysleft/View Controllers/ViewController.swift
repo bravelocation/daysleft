@@ -26,9 +26,8 @@ class ViewController: UIViewController {
     var shareButton: UIBarButtonItem!
     var editButton: UIBarButtonItem!
     
-    private lazy var editSubscriber: AnyCancellable? = nil
-    
-    private lazy var shareSubscriber: AnyCancellable? = nil
+    /// Subscribers to change events
+    private var cancellables = Array<AnyCancellable>()
 
     // MARK: - Initialisation
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -42,8 +41,23 @@ class ViewController: UIViewController {
     }
     
     func setupNotificationHandlers() {
-        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.iCloudSettingsUpdated(_:)), name: NSNotification.Name(rawValue: AppSettingsDataManager.UpdateSettingsNotification), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.appEntersForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
+        // Setup listener for iCloud setting change
+        let keyValueChangeSubscriber = NotificationCenter.default
+            .publisher(for: .AppSettingsUpdated)
+            .sink { _ in
+                self.iCloudSettingsUpdated()
+            }
+        
+        self.cancellables.append(keyValueChangeSubscriber)
+        
+        // Setup listener for entering foreground change
+        let foregroundSubscriber = NotificationCenter.default
+            .publisher(for: UIApplication.willEnterForegroundNotification)
+            .sink { _ in
+                self.appEntersForeground()
+            }
+        
+        self.cancellables.append(foregroundSubscriber)
     }
     
     // MARK: - View event handlers
@@ -151,7 +165,7 @@ class ViewController: UIViewController {
     }
     
     @objc
-    fileprivate func iCloudSettingsUpdated(_ notification: Notification) {
+    fileprivate func iCloudSettingsUpdated() {
         print("Received iCloud settings update notification in main view controller")
         
         // Update view data on main thread
@@ -296,16 +310,19 @@ extension ViewController {
 
 extension ViewController {
     func setupMenuCommandHandler() {
-        self.editSubscriber = NotificationCenter.default.publisher(for: .editCommand)
+        let editSubscriber = NotificationCenter.default.publisher(for: .editCommand)
             .receive(on: RunLoop.main)
             .sink(receiveValue: { _ in
                 self.editButtonTouchUp()
             })
+        self.cancellables.append(editSubscriber)
         
-        self.shareSubscriber = NotificationCenter.default.publisher(for: .shareCommand)
+        let shareSubscriber = NotificationCenter.default.publisher(for: .shareCommand)
             .receive(on: RunLoop.main)
             .sink(receiveValue: { _ in
                 self.shareButtonTouchUp()
             })
+        
+        self.cancellables.append(shareSubscriber)
     }
 }

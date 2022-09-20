@@ -22,12 +22,18 @@ class WatchDaysLeftViewModel: ObservableObject {
     /// Combine subject to trigger of model has changed
     let modelChanged = PassthroughSubject<(), Never>()
     
+    /// Subscribers to change events
+    private var cancellables = Array<AnyCancellable>()
+    
     init() {
-        // Add notification handler for updating on updated fixtures
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(WatchDaysLeftViewModel.userSettingsUpdated(_:)),
-                                               name: NSNotification.Name(rawValue: AppSettingsDataManager.UpdateSettingsNotification),
-                                               object: nil)
+        // Setup listener for iCloud setting change
+        let keyValueChangeSubscriber = NotificationCenter.default
+            .publisher(for: .AppSettingsUpdated)
+            .sink { _ in
+                self.userSettingsUpdated()
+            }
+        
+        self.cancellables.append(keyValueChangeSubscriber)
         
         self.updateViewData()
     }
@@ -49,10 +55,8 @@ class WatchDaysLeftViewModel: ObservableObject {
         self.scheduleSnapshot()
     }
     
-    @objc
     /// Event handler for data update
-    /// - Parameter notification: Update notification received
-    private func userSettingsUpdated(_ notification: Notification) {
+    private func userSettingsUpdated() {
         print("Received UserSettingsUpdated notification")
         
         // Update view data on main thread
