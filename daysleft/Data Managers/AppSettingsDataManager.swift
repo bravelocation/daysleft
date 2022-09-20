@@ -7,9 +7,8 @@
 //
 
 import Foundation
-import WatchConnectivity
 
-class AppSettingsDataManager: NSObject, WCSessionDelegate {
+class AppSettingsDataManager {
     
     // MARK: - Properties
 
@@ -34,10 +33,7 @@ class AppSettingsDataManager: NSObject, WCSessionDelegate {
     ///
     /// param: defaultPreferencesName The name of the plist file containing the default preferences
     public init(defaultPreferencesName: String = "DefaultPreferences", suiteName: String = "group.bravelocation.daysleft") {
-        
-        // Need to inherit from NSObject, so call super.init()
-        super.init()
-        
+
         // Setup the default preferences
         guard let defaultPrefsFile = Bundle.main.url(forResource: defaultPreferencesName, withExtension: "plist") else {
             print("Can't find default preferences plist")
@@ -77,56 +73,58 @@ class AppSettingsDataManager: NSObject, WCSessionDelegate {
         }
     }
     
-    /// Initialise watch session if required
-    func initialiseWatchSession() {
-        if (self.watchSessionInitialised) {
-            print("Watch session already initialised")
-            return
-        } else {
-            self.watchSessionInitialised = true
-            print("Watch session starting initialisation...")
-        }
+    // MARK: - iCloud functions
+    
+    /// Send updated settings to watch
+    private func initialiseiCloudSettings() {
+        print("Initialising iCloud Settings")
+        let store: NSUbiquitousKeyValueStore = NSUbiquitousKeyValueStore.default
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(AppSettingsDataManager.updateKVStoreItems(_:)),
+                                               name: NSUbiquitousKeyValueStore.didChangeExternallyNotification, object: store)
+        store.synchronize()
+    }
+    
+    private func writeSettingToiCloudStore(_ value: AnyObject, key: String) {
+        let store: NSUbiquitousKeyValueStore = NSUbiquitousKeyValueStore.default
+        store.set(value, forKey: key)
+        store.synchronize()
+    }
+    
+    /// Used in the selector to handle incoming notifications of changes from the cloud
+    ///
+    /// param: notification The incoming notification
+    @objc
+    private func updateKVStoreItems(_ notification: Notification) {
+        print("Detected iCloud key-value storage change")
         
-        // Set up watch setting if appropriate
-        if (WCSession.isSupported()) {
-            print("Setting up watch session")
-            let session: WCSession = WCSession.default
-            session.delegate = self
-            session.activate()
-            print("Watch session activated")
-        } else {
-            print("No watch session set up")
-        }
-    }
-    
-    // MARK: - Watch synchronisation functions
-    
-    /// Send initial settings to watch
-    func pushAllSettingsToWatch() {
-        self.initialiseWatchSession()
+        // Get the list of keys that changed
+        let userInfo: NSDictionary = notification.userInfo! as NSDictionary
+        let reasonForChange: AnyObject? = userInfo.object(forKey: NSUbiquitousKeyValueStoreChangeReasonKey) as AnyObject?
         
-        if (WCSession.isSupported()) {
-            let session = WCSession.default
-            
-            var updatedSettings = Dictionary<String, Any>()
-            updatedSettings["start"] = self.start
-            updatedSettings["end"] = self.end
-            updatedSettings["title"] = self.title
-            updatedSettings["weekdaysOnly"] = self.weekdaysOnly
-            
-            session.transferUserInfo(updatedSettings)
-            print("Settings pushed to watch")
+        // Assuming we have a valid reason for the change
+        if let downcastedReason = reasonForChange as? NSNumber {
+            let reason: NSInteger = downcastedReason.intValue
+            if ((reason == NSUbiquitousKeyValueStoreServerChange) || (reason == NSUbiquitousKeyValueStoreInitialSyncChange)) {
+                // If something is changing externally, get the changes and update the corresponding keys locally.
+                let changedKeys = userInfo.object(forKey: NSUbiquitousKeyValueStoreChangedKeysKey) as! [String]
+                let store: NSUbiquitousKeyValueStore = NSUbiquitousKeyValueStore.default
+                
+                // This loop assumes you are using the same key names in both the user defaults database and the iCloud key-value store
+                for key: String in changedKeys {
+                    let settingValue: AnyObject? = store.object(forKey: key) as AnyObject?
+                    self.writeObjectToStore(settingValue!, key: key)
+                }
+                
+                store.synchronize()
+                
+                // Finally send a notification for the view controllers to refresh
+                NotificationCenter.default.post(name: Notification.Name(rawValue: AppSettingsDataManager.UpdateSettingsNotification), object: nil, userInfo: nil)
+                print("Sent notification for iCloud change")
+            }
+        } else {
+            print("Unknown iCloud KV reason for change")
         }
-    }
-    
-    // MARK: - iCloud placeholder functions
-    
-    /// Do nothing by default, can be overriden in child classes
-    func initialiseiCloudSettings() {
-    }
-    
-    /// Write settings to iCloud store
-    func writeSettingToiCloudStore(_ value: AnyObject, key: String) {
     }
     
     // MARK: - Settings values
@@ -217,7 +215,7 @@ class AppSettingsDataManager: NSObject, WCSessionDelegate {
     ///
     /// param: key The key for the setting
     /// returns: An AnyObject? value retrieved from the settings store
-    func readObjectFromStore(_ key: String) -> Any? {
+    private func readObjectFromStore(_ key: String) -> Any? {
         // First try the local cache
         let cachedValue = self.settingsCache[key]
         
@@ -238,7 +236,7 @@ class AppSettingsDataManager: NSObject, WCSessionDelegate {
     ///
     /// param: value The value for the setting
     /// param: key The key for the setting
-    func writeObjectToStore(_ value: AnyObject, key: String) {
+    private func writeObjectToStore(_ value: AnyObject, key: String) {
         // First write to local store
         self.settingsCache[key] = value
         
@@ -253,42 +251,4 @@ class AppSettingsDataManager: NSObject, WCSessionDelegate {
         // The write to iCloud store (if needed)
         self.writeSettingToiCloudStore(value, key: key)
     }
-    
-    // MARK: - WCSessionDelegate functions
-    
-    /// WCSessionDelegate implementation - update local settings when transfered from phone
-    func session(_ session: WCSession, didReceiveUserInfo userInfo: [String: Any]) {
-        print("New user info transfer data received on watch")
-        
-        for (key, value) in userInfo {
-            self.writeObjectToStore(value as AnyObject, key: key)
-        }
-        
-        // Finally send a notification for the view controllers to refresh
-        NotificationCenter.default.post(name: Notification.Name(rawValue: AppSettingsDataManager.UpdateSettingsNotification), object: nil, userInfo: nil)
-        print("Sent UpdateSettingsNotification")
-    }
-    
-    @nonobjc func session(_ session: WCSession, didReceiveUpdate receivedApplicationContext: [String: AnyObject]) {
-        print("New context transfer data received on watch")
-        
-        for (key, value) in receivedApplicationContext {
-            self.writeObjectToStore(value, key: key)
-        }
-        
-        // Finally send a notification for the view controllers to refresh
-        NotificationCenter.default.post(name: Notification.Name(rawValue: AppSettingsDataManager.UpdateSettingsNotification), object: nil, userInfo: nil)
-        print("Sent UpdateSettingsNotification")
-    }
-    
-    func session(_ session: WCSession,
-                 activationDidCompleteWith activationState: WCSessionActivationState,
-                 error: Error?) {}
-    
-    #if os(iOS)
-    public func sessionDidBecomeInactive(_ session: WCSession) { }
-    public func sessionDidDeactivate(_ session: WCSession) {
-        session.activate()
-    }
-    #endif
 }

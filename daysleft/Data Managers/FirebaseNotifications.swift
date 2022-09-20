@@ -64,7 +64,7 @@ class FirebaseNotifications: NSObject, MessagingDelegate {
         }
     }
     
-    func modelData() -> AppDaysLeftModel {
+    func modelData() -> AppSettingsDataManager {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         return appDelegate.model
     }

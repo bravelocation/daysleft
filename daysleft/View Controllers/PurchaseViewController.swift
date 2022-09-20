@@ -24,7 +24,7 @@ class PurchaseViewController: UIViewController, SKProductsRequestDelegate, SKPay
     var productRequest: SKProductsRequest?
     var product: SKProduct?
     var transactionInProgress: Bool = false
-    var model: AppDaysLeftModel?
+    var model: AppSettingsDataManager?
     var backItem: UIBarButtonItem?
     let appGreen = UIColor(named: "MainAppColor")!
     

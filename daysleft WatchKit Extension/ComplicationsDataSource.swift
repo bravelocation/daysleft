@@ -190,7 +190,7 @@ class ComplicationsDataSource: NSObject, CLKComplicationDataSource {
     }
     
     // Internal helper methods
-    fileprivate func modelData() -> WatchDaysLeftModel {
+    fileprivate func modelData() -> AppSettingsDataManager {
         let appDelegate = WKExtension.shared().delegate as! ExtensionDelegate
         return appDelegate.model
     }
