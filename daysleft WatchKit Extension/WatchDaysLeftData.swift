@@ -21,7 +21,7 @@ class WatchDaysLeftData: ObservableObject {
     
     init() {
         // Add notification handler for updating on updated fixtures
-        NotificationCenter.default.addObserver(self, selector: #selector(WatchDaysLeftData.userSettingsUpdated(_:)), name: NSNotification.Name(rawValue: BLUserSettings.UpdateSettingsNotification), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(WatchDaysLeftData.userSettingsUpdated(_:)), name: NSNotification.Name(rawValue: AppSettingsDataManager.UpdateSettingsNotification), object: nil)
         
         self.updateViewData()
     }
@@ -38,10 +38,12 @@ class WatchDaysLeftData: ObservableObject {
         let appDelegate = WKExtension.shared().delegate as! ExtensionDelegate
         let model = appDelegate.model
         
-        self.currentTitle = "\(model.daysLeftDescription(now)) until"
-        self.currentSubTitle = model.title
+        let appSettings = model.appSettings
+        
+        self.currentTitle = "\(appSettings.daysLeftDescription(now)) until"
+        self.currentSubTitle = appSettings.title
 
-        let percentageDone: Double = (Double(model.daysGone(now)) * 100.0) / Double(model.daysLength)
+        let percentageDone: Double = (Double(appSettings.daysGone(now)) * 100.0) / Double(appSettings.daysLength)
         self.percentageDone = percentageDone
         self.currentPercentageLeft = String(format: "%3.0f%% done", percentageDone)
         self.modelChanged.send(())
@@ -61,7 +63,7 @@ class WatchDaysLeftData: ObservableObject {
     
     @objc
     fileprivate func userSettingsUpdated(_ notification: Notification) {
-        print("Received BLUserSettingsUpdated notification")
+        print("Received UserSettingsUpdated notification")
         
         // Update view data on main thread
         DispatchQueue.main.async {

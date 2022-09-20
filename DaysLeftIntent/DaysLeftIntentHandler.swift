@@ -15,12 +15,13 @@ class DaysLeftIntentHandler: NSObject, DaysLeftIntentHandling {
     }
     
     func handle(intent: DaysLeftIntent, completion: @escaping (DaysLeftIntentResponse) -> Void) {
-        let model = DaysLeftModel()
+        let dataManager = AppSettingsDataManager()
+        let appSettings = dataManager.appSettings
         let now = Date()
         
-        let daysleft: NSNumber = NSNumber(value: model.daysLeft(now))
-        let daysType = model.weekdaysOnly ? "weekdays" : "days"
-        let title = model.title
+        let daysleft: NSNumber = NSNumber(value: appSettings.daysLeft(now))
+        let daysType = appSettings.weekdaysOnly ? "weekdays" : "days"
+        let title = appSettings.title
         
         completion(DaysLeftIntentResponse.success(daysLeft: daysleft,
                                                   daysType: daysType,

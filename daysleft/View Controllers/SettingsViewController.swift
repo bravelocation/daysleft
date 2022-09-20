@@ -37,25 +37,26 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
         super.viewDidLoad()
 
         let model = self.modelData()
+        let appSettings = model.appSettings
 
-        self.textTitle.text = model.title
-        self.switchWeekdaysOnly.isOn = model.weekdaysOnly
-        self.switchShowBadge.isOn = model.showBadge
+        self.textTitle.text = appSettings.title
+        self.switchWeekdaysOnly.isOn = appSettings.weekdaysOnly
+        self.switchShowBadge.isOn = model.appControlSettings.showBadge
         
         // Setup date formatter
         self.dateFormatter.dateFormat = "EEE d MMM YYYY"
         
-        self.labelDaysLength.text = model.daysLeftDescription(model.start)
+        self.labelDaysLength.text = appSettings.daysLeftDescription(appSettings.start)
         
         // Setup the date pickers
-        self.startDatePicker.date = model.start
-        self.startDatePicker.maximumDate = model.end
+        self.startDatePicker.date = appSettings.start
+        self.startDatePicker.maximumDate = appSettings.end
         self.startDatePicker.datePickerMode = UIDatePicker.Mode.date
         self.startDatePicker.addTarget(self, action: #selector(SettingsViewController.dateChanged(_:)), for: UIControl.Event.valueChanged)
         self.startDayOfWeek.text = self.startDatePicker.date.weekdayName
         
-        self.endDatePicker.date = model.end
-        self.endDatePicker.minimumDate = model.start
+        self.endDatePicker.date = appSettings.end
+        self.endDatePicker.minimumDate = appSettings.start
         self.endDatePicker.datePickerMode = UIDatePicker.Mode.date
         self.endDatePicker.addTarget(self, action: #selector(SettingsViewController.dateChanged(_:)), for: UIControl.Event.valueChanged)
         self.endDayOfWeek.text = self.endDatePicker.date.weekdayName
@@ -132,8 +133,12 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
  
     @IBAction func switchShowBadgeChanged(_ sender: AnyObject) {
         let model = self.modelData()
-        model.showBadge = self.switchShowBadge.isOn
-
+        
+        model.appControlSettings = AppControlSettings(firstRun: model.appControlSettings.firstRun,
+                                                           showBadge: switchShowBadge.isOn,
+                                                           isASupporter: model.appControlSettings.isASupporter,
+                                                           appOpenCount: model.appControlSettings.appOpenCount + 1)
+        
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.registerForNotifications()
     }
@@ -208,20 +213,21 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
     func validateAndSaveModel() {
         // Update the model
         let model = self.modelData()
+        let updatedAppSettings = AppSettings(start: self.startDatePicker.date,
+                                             end: self.endDatePicker.date,
+                                             title: self.textTitle!.text!,
+                                             weekdaysOnly: self.switchWeekdaysOnly.isOn)
 
-        model.start = self.startDatePicker.date
-        model.end = self.endDatePicker.date
-        model.weekdaysOnly = self.switchWeekdaysOnly.isOn
-        model.title = self.textTitle!.text!
+        model.appSettings = updatedAppSettings
         
         // Update the text fields
-        self.labelDaysLength.text = model.daysLeftDescription(model.start)
-        self.startDayOfWeek.text = model.start.weekdayName
-        self.endDayOfWeek.text = model.end.weekdayName
+        self.labelDaysLength.text = model.appSettings.daysLeftDescription(model.appSettings.start)
+        self.startDayOfWeek.text = model.appSettings.start.weekdayName
+        self.endDayOfWeek.text = model.appSettings.end.weekdayName
         
         // Update the date restrictions too
-        self.startDatePicker.maximumDate = model.end
-        self.endDatePicker.minimumDate = model.start
+        self.startDatePicker.maximumDate = model.appSettings.end
+        self.endDatePicker.minimumDate = model.appSettings.start
         
         // Update the badge and widgets too
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -239,7 +245,8 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
     
     func isNotASupporter() -> Bool {
         let model = self.modelData()
-        return model.isASupporter == false
+        
+        return model.appControlSettings.isASupporter == false
     }
     
     // MARK: - SFSafariViewControllerDelegate methods

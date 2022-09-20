@@ -93,7 +93,7 @@ class ViewController: UIViewController {
         // Show request review every 10 times the user opend the app
         let reviewPromptFrequency = 10
         
-        let appOpened = self.modelData().appOpenCount
+        let appOpened = self.modelData().appControlSettings.appOpenCount
         print("App opened \(appOpened) times")
 
         if (appOpened >= reviewPromptFrequency && (appOpened % reviewPromptFrequency) == 0) {
@@ -136,7 +136,7 @@ class ViewController: UIViewController {
     
     @objc
     func shareButtonTouchUp() {
-        let modelText = self.modelData().fullDescription(Date())
+        let modelText = self.modelData().appSettings.fullDescription(Date())
         let objectsToShare = [modelText]
         
         let activityViewController = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
@@ -174,8 +174,8 @@ class ViewController: UIViewController {
     // MARK: - Helper functions
     func updateViewFromModel() {
         print("updateViewFromModel started")
-        let model = self.modelData()
-        
+        let appSettings = self.modelData().appSettings
+
         let now: Date = Date()
         
         // Check we're not getting a rogue update in the background
@@ -183,24 +183,24 @@ class ViewController: UIViewController {
             return
         }
 
-        self.labelDaysLeft.text = String(format: "%d", model.daysLeft(now))
-        self.labelTitle.text = model.description(now)
+        self.labelDaysLeft.text = String(format: "%d", appSettings.daysLeft(now))
+        self.labelTitle.text = appSettings.description(now)
 
         let shortDateFormatter = DateFormatter()
         shortDateFormatter.dateFormat = "EEE d MMM"
         
-        self.labelStartDate.text = String(format: "%@", shortDateFormatter.string(from: model.start))
-        self.labelEndDate.text = String(format: "%@", shortDateFormatter.string(from: model.end))
+        self.labelStartDate.text = String(format: "%@", shortDateFormatter.string(from: appSettings.start))
+        self.labelEndDate.text = String(format: "%@", shortDateFormatter.string(from: appSettings.end))
         
-        if (model.daysLength == 0) {
+        if (appSettings.daysLength == 0) {
             self.labelPercentageDone.text = ""
         } else {
-            let percentageDone: Float = (Float(model.daysGone(now)) * 100.0) / Float(model.daysLength)
+            let percentageDone: Float = (Float(appSettings.daysGone(now)) * 100.0) / Float(appSettings.daysLength)
             self.labelPercentageDone.text = String(format: "%3.0f%% done", percentageDone)
         }
         
-        self.counterView.counter = model.daysGone(now)
-        self.counterView.maximumValue = model.daysLength
+        self.counterView.counter = appSettings.daysGone(now)
+        self.counterView.maximumValue = appSettings.daysLength
         self.counterView.updateControl()
         
         // Update the badge and widgets too
@@ -233,9 +233,9 @@ class ViewController: UIViewController {
             relevantShortcut.relevanceProviders = [dailyProvider]
             
             // Set template for displaying on Watch face
-            let model = self.modelData()
-            let templateTitle = model.weekdaysOnly ? "Weekdays until" : "Days until"
-            let templateSubTitle = model.title
+            let appSettings = self.modelData().appSettings
+            let templateTitle = appSettings.weekdaysOnly ? "Weekdays until" : "Days until"
+            let templateSubTitle = appSettings.title
 
             let template = INDefaultCardTemplate(title: templateTitle)
             template.subtitle = templateSubTitle

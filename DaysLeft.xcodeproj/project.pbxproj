@@ -7,20 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5208B83828D87314007BB75C /* BLUserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FAB1181A9231970039691E /* BLUserSettings.swift */; };
 		5208B83A28D8733D007BB75C /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5295EE0D1A95E647007EF7E7 /* CounterView.swift */; };
-		5208B83B28D8734F007BB75C /* DaysLeftModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CFBF1D1A8B642C005234FB /* DaysLeftModel.swift */; };
-		5208B83C28D87416007BB75C /* DaysLeftModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CFBF1D1A8B642C005234FB /* DaysLeftModel.swift */; };
 		5208B83D28D87450007BB75C /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5295EE0D1A95E647007EF7E7 /* CounterView.swift */; };
 		5208B83E28D87453007BB75C /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5295EE0D1A95E647007EF7E7 /* CounterView.swift */; };
-		5208B83F28D87465007BB75C /* DaysLeftModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CFBF1D1A8B642C005234FB /* DaysLeftModel.swift */; };
-		5208B84028D87466007BB75C /* DaysLeftModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CFBF1D1A8B642C005234FB /* DaysLeftModel.swift */; };
-		5208B84128D87473007BB75C /* BLUserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FAB1181A9231970039691E /* BLUserSettings.swift */; };
-		5208B84228D87474007BB75C /* BLUserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FAB1181A9231970039691E /* BLUserSettings.swift */; };
-		5208B84328D87476007BB75C /* BLUserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FAB1181A9231970039691E /* BLUserSettings.swift */; };
 		5208B84628D8761E007BB75C /* WatchDaysLeftModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5208B84528D8761D007BB75C /* WatchDaysLeftModel.swift */; };
 		520F20C3233631E800B1F73F /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52CFBF041A8B631B005234FB /* Media.xcassets */; };
-		523443631BBAFBEF00E95BA4 /* DaysLeft WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 52B7E8771ABEDE9300E1949C /* DaysLeft WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		523443631BBAFBEF00E95BA4 /* DaysLeft WatchKit Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 52B7E8771ABEDE9300E1949C /* DaysLeft WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		523443661BBAFBEF00E95BA4 /* DaysLeft WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 52B7E8811ABEDE9300E1949C /* DaysLeft WatchKit App.app */; platformFilter = ios; };
 		5234436D1BBB181C00E95BA4 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5234436C1BBB181C00E95BA4 /* ExtensionDelegate.swift */; };
 		5240F1D028D8C1BC00B95FE5 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5240F1CF28D8C1BC00B95FE5 /* Date+Extensions.swift */; };
@@ -29,6 +21,21 @@
 		5240F1D328D8C1BC00B95FE5 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5240F1CF28D8C1BC00B95FE5 /* Date+Extensions.swift */; };
 		5240F1D428D8C1BC00B95FE5 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5240F1CF28D8C1BC00B95FE5 /* Date+Extensions.swift */; };
 		5240F1D528D8C1BC00B95FE5 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5240F1CF28D8C1BC00B95FE5 /* Date+Extensions.swift */; };
+		5240F1E528D9B6CB00B95FE5 /* AppSettingsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5240F1E428D9B6CB00B95FE5 /* AppSettingsDataManager.swift */; };
+		5240F1E628D9B6CB00B95FE5 /* AppSettingsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5240F1E428D9B6CB00B95FE5 /* AppSettingsDataManager.swift */; };
+		5240F1E728D9B6CB00B95FE5 /* AppSettingsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5240F1E428D9B6CB00B95FE5 /* AppSettingsDataManager.swift */; };
+		5240F1E828D9B6CB00B95FE5 /* AppSettingsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5240F1E428D9B6CB00B95FE5 /* AppSettingsDataManager.swift */; };
+		5240F1E928D9B6CB00B95FE5 /* AppSettingsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5240F1E428D9B6CB00B95FE5 /* AppSettingsDataManager.swift */; };
+		5240F1EB28D9BE1A00B95FE5 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5240F1EA28D9BE1A00B95FE5 /* AppSettings.swift */; };
+		5240F1EC28D9BE1A00B95FE5 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5240F1EA28D9BE1A00B95FE5 /* AppSettings.swift */; };
+		5240F1ED28D9BE1A00B95FE5 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5240F1EA28D9BE1A00B95FE5 /* AppSettings.swift */; };
+		5240F1EE28D9BE1A00B95FE5 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5240F1EA28D9BE1A00B95FE5 /* AppSettings.swift */; };
+		5240F1EF28D9BE1A00B95FE5 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5240F1EA28D9BE1A00B95FE5 /* AppSettings.swift */; };
+		5240F1F128D9C25700B95FE5 /* AppControlSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5240F1F028D9C25700B95FE5 /* AppControlSettings.swift */; };
+		5240F1F228D9C25700B95FE5 /* AppControlSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5240F1F028D9C25700B95FE5 /* AppControlSettings.swift */; };
+		5240F1F328D9C25700B95FE5 /* AppControlSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5240F1F028D9C25700B95FE5 /* AppControlSettings.swift */; };
+		5240F1F428D9C25700B95FE5 /* AppControlSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5240F1F028D9C25700B95FE5 /* AppControlSettings.swift */; };
+		5240F1F528D9C25700B95FE5 /* AppControlSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5240F1F028D9C25700B95FE5 /* AppControlSettings.swift */; };
 		527AD75D1E94EB2800F8637B /* PurchaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527AD75B1E94EB2800F8637B /* PurchaseViewController.swift */; };
 		527AD75E1E94EB2800F8637B /* PurchaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 527AD75C1E94EB2800F8637B /* PurchaseViewController.xib */; };
 		527E15401D83F80300D81B15 /* gallery.ckcomplication in Resources */ = {isa = PBXBuildFile; fileRef = 527E153F1D83F80300D81B15 /* gallery.ckcomplication */; };
@@ -38,8 +45,8 @@
 		52AC693E2154DA7E00E6C833 /* IntentsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52AC693D2154DA7E00E6C833 /* IntentsUI.framework */; };
 		52AC69412154DA7E00E6C833 /* IntentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AC69402154DA7E00E6C833 /* IntentViewController.swift */; };
 		52AC69442154DA7E00E6C833 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52AC69422154DA7E00E6C833 /* MainInterface.storyboard */; };
-		52AC69482154DA7F00E6C833 /* DaysLeftIntentUI.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 52AC693C2154DA7E00E6C833 /* DaysLeftIntentUI.appex */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		52AC694B2154DA7F00E6C833 /* DaysLeftIntent.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 52AC69332154DA7E00E6C833 /* DaysLeftIntent.appex */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		52AC69482154DA7F00E6C833 /* DaysLeftIntentUI.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 52AC693C2154DA7E00E6C833 /* DaysLeftIntentUI.appex */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		52AC694B2154DA7F00E6C833 /* DaysLeftIntent.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 52AC69332154DA7E00E6C833 /* DaysLeftIntent.appex */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		52AC69532154DAFB00E6C833 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 52AC69522154DAFB00E6C833 /* Intents.intentdefinition */; settings = {ATTRIBUTES = (codegen, ); }; };
 		52AC69542154DC3000E6C833 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 52AC69522154DAFB00E6C833 /* Intents.intentdefinition */; settings = {ATTRIBUTES = (codegen, ); }; };
 		52AC69552154DC3600E6C833 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 52AC69522154DAFB00E6C833 /* Intents.intentdefinition */; settings = {ATTRIBUTES = (codegen, ); }; };
@@ -59,8 +66,6 @@
 		52CFBF001A8B631B005234FB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CFBEFF1A8B631B005234FB /* ViewController.swift */; };
 		52CFBF031A8B631B005234FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52CFBF011A8B631B005234FB /* Main.storyboard */; };
 		52CFBF051A8B631B005234FB /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52CFBF041A8B631B005234FB /* Media.xcassets */; };
-		52D18D711BC8282A00DB7E3A /* DaysLeftModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CFBF1D1A8B642C005234FB /* DaysLeftModel.swift */; };
-		52D18D721BC8283300DB7E3A /* BLUserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FAB1181A9231970039691E /* BLUserSettings.swift */; };
 		52D25F3C1BCB8595002E4C76 /* ComplicationsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D25F3B1BCB8595002E4C76 /* ComplicationsDataSource.swift */; };
 		52D617B124D06F9000465F4C /* MenuBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D617B024D06F9000465F4C /* MenuBuilder.swift */; };
 		52DC9EB31FC97A3200AE02F6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52DC9EB21FC97A3200AE02F6 /* GoogleService-Info.plist */; };
@@ -69,11 +74,9 @@
 		52E048A425077AFB009A2169 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52E048A325077AFB009A2169 /* SwiftUI.framework */; };
 		52E048A725077AFB009A2169 /* DaysLeftWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E048A625077AFB009A2169 /* DaysLeftWidget.swift */; };
 		52E048A925077AFE009A2169 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52E048A825077AFE009A2169 /* Assets.xcassets */; };
-		52E048AD25077AFE009A2169 /* DaysLeftWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 52E048A025077AFB009A2169 /* DaysLeftWidgetExtension.appex */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		52E048AD25077AFE009A2169 /* DaysLeftWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 52E048A025077AFB009A2169 /* DaysLeftWidgetExtension.appex */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		52E048B325077E1C009A2169 /* WidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E048B225077E1C009A2169 /* WidgetView.swift */; };
 		52E048B525077E6A009A2169 /* WidgetDaysLeftData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E048B425077E6A009A2169 /* WidgetDaysLeftData.swift */; };
-		52E048B625077EC1009A2169 /* DaysLeftModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CFBF1D1A8B642C005234FB /* DaysLeftModel.swift */; };
-		52E048B725077EFA009A2169 /* BLUserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FAB1181A9231970039691E /* BLUserSettings.swift */; };
 		52E048BA25077F87009A2169 /* WidgetProgressControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E048B925077F87009A2169 /* WidgetProgressControl.swift */; };
 		52E048BC250787F0009A2169 /* DefaultPreferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52FAB11B1A9240490039691E /* DefaultPreferences.plist */; };
 		52E048BD2507883A009A2169 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52CFBF041A8B631B005234FB /* Media.xcassets */; };
@@ -133,15 +136,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		523443671BBAFBEF00E95BA4 /* Embed App Extensions */ = {
+		523443671BBAFBEF00E95BA4 /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				523443631BBAFBEF00E95BA4 /* DaysLeft WatchKit Extension.appex in Embed App Extensions */,
+				523443631BBAFBEF00E95BA4 /* DaysLeft WatchKit Extension.appex in Embed Foundation Extensions */,
 			);
-			name = "Embed App Extensions";
+			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		523443681BBAFBEF00E95BA4 /* Embed Watch Content */ = {
@@ -165,17 +168,17 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5295EE091A94B398007EF7E7 /* Embed App Extensions */ = {
+		5295EE091A94B398007EF7E7 /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				52AC69482154DA7F00E6C833 /* DaysLeftIntentUI.appex in Embed App Extensions */,
-				52AC694B2154DA7F00E6C833 /* DaysLeftIntent.appex in Embed App Extensions */,
-				52E048AD25077AFE009A2169 /* DaysLeftWidgetExtension.appex in Embed App Extensions */,
+				52AC69482154DA7F00E6C833 /* DaysLeftIntentUI.appex in Embed Foundation Extensions */,
+				52AC694B2154DA7F00E6C833 /* DaysLeftIntent.appex in Embed Foundation Extensions */,
+				52E048AD25077AFE009A2169 /* DaysLeftWidgetExtension.appex in Embed Foundation Extensions */,
 			);
-			name = "Embed App Extensions";
+			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -186,6 +189,9 @@
 		5234436B1BBB00B800E95BA4 /* daysleft WatchKit App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "daysleft WatchKit App.entitlements"; sourceTree = "<group>"; };
 		5234436C1BBB181C00E95BA4 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		5240F1CF28D8C1BC00B95FE5 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
+		5240F1E428D9B6CB00B95FE5 /* AppSettingsDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsDataManager.swift; sourceTree = "<group>"; };
+		5240F1EA28D9BE1A00B95FE5 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
+		5240F1F028D9C25700B95FE5 /* AppControlSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppControlSettings.swift; sourceTree = "<group>"; };
 		52790F781D056F500025AF10 /* daysleft-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "daysleft-Bridging-Header.h"; sourceTree = "<group>"; };
 		527AD75B1E94EB2800F8637B /* PurchaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurchaseViewController.swift; sourceTree = "<group>"; };
 		527AD75C1E94EB2800F8637B /* PurchaseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PurchaseViewController.xib; sourceTree = "<group>"; };
@@ -230,7 +236,6 @@
 		52CFBF021A8B631B005234FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		52CFBF041A8B631B005234FB /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		52CFBF131A8B631B005234FB /* DaysLeftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysLeftTests.swift; sourceTree = "<group>"; };
-		52CFBF1D1A8B642C005234FB /* DaysLeftModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DaysLeftModel.swift; sourceTree = "<group>"; };
 		52D25F3B1BCB8595002E4C76 /* ComplicationsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComplicationsDataSource.swift; sourceTree = "<group>"; };
 		52D617B024D06F9000465F4C /* MenuBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBuilder.swift; sourceTree = "<group>"; };
 		52DC9EB21FC97A3200AE02F6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -247,7 +252,6 @@
 		52E048B925077F87009A2169 /* WidgetProgressControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetProgressControl.swift; sourceTree = "<group>"; };
 		52E048BE2507A57E009A2169 /* WidgetTimelineProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetTimelineProvider.swift; sourceTree = "<group>"; };
 		52F9CDAB22D63D1900E0FFE8 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		52FAB1181A9231970039691E /* BLUserSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BLUserSettings.swift; sourceTree = "<group>"; };
 		52FAB11A1A923F500039691E /* daysleft.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = daysleft.entitlements; sourceTree = "<group>"; };
 		52FAB11B1A9240490039691E /* DefaultPreferences.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DefaultPreferences.plist; sourceTree = "<group>"; };
 		52FAB11D1A9381B70039691E /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -318,6 +322,7 @@
 			isa = PBXGroup;
 			children = (
 				52FC401327AABAD9005DAD8C /* AnalyticsManager.swift */,
+				5240F1E428D9B6CB00B95FE5 /* AppSettingsDataManager.swift */,
 				52DC9EB41FC97A9200AE02F6 /* FirebaseNotifications.swift */,
 			);
 			path = "Data Managers";
@@ -378,8 +383,8 @@
 		5208B83728D872F9007BB75C /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				52FAB1181A9231970039691E /* BLUserSettings.swift */,
-				52CFBF1D1A8B642C005234FB /* DaysLeftModel.swift */,
+				5240F1EA28D9BE1A00B95FE5 /* AppSettings.swift */,
+				5240F1F028D9C25700B95FE5 /* AppControlSettings.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -675,7 +680,7 @@
 			buildConfigurationList = 52B7E8941ABEDE9300E1949C /* Build configuration list for PBXNativeTarget "DaysLeft WatchKit App" */;
 			buildPhases = (
 				52B7E87F1ABEDE9300E1949C /* Resources */,
-				523443671BBAFBEF00E95BA4 /* Embed App Extensions */,
+				523443671BBAFBEF00E95BA4 /* Embed Foundation Extensions */,
 				20118CCB11B59DAA0A7CA7B7 /* Frameworks */,
 			);
 			buildRules = (
@@ -696,7 +701,7 @@
 				52CFBEF51A8B631B005234FB /* Frameworks */,
 				52CFBEF61A8B631B005234FB /* Resources */,
 				5295EDE81A94AE53007EF7E7 /* Embed Frameworks */,
-				5295EE091A94B398007EF7E7 /* Embed App Extensions */,
+				5295EE091A94B398007EF7E7 /* Embed Foundation Extensions */,
 				521B9C4022C8E0B300185CF4 /* Swift Lint */,
 				523443681BBAFBEF00E95BA4 /* Embed Watch Content */,
 				52FC401227AA97EE005DAD8C /* Upload dSYM files to Crashlytics */,
@@ -743,7 +748,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1200;
-				LastUpgradeCheck = 1200;
+				LastUpgradeCheck = 1400;
 				ORGANIZATIONNAME = "Brave Location Software";
 				TargetAttributes = {
 					5295EDD91A94AE53007EF7E7 = {
@@ -961,10 +966,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5208B84328D87476007BB75C /* BLUserSettings.swift in Sources */,
 				5295EDF01A94AF83007EF7E7 /* DaysLeftTests.swift in Sources */,
 				5240F1D128D8C1BC00B95FE5 /* Date+Extensions.swift in Sources */,
-				5208B83C28D87416007BB75C /* DaysLeftModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -974,10 +977,11 @@
 			files = (
 				52AC69542154DC3000E6C833 /* Intents.intentdefinition in Sources */,
 				5240F1D328D8C1BC00B95FE5 /* Date+Extensions.swift in Sources */,
-				5208B84028D87466007BB75C /* DaysLeftModel.swift in Sources */,
+				5240F1ED28D9BE1A00B95FE5 /* AppSettings.swift in Sources */,
 				52AC695C2154DEB700E6C833 /* DaysLeftIntentHandler.swift in Sources */,
-				5208B84228D87474007BB75C /* BLUserSettings.swift in Sources */,
 				52AC69362154DA7E00E6C833 /* IntentHandler.swift in Sources */,
+				5240F1E728D9B6CB00B95FE5 /* AppSettingsDataManager.swift in Sources */,
+				5240F1F328D9C25700B95FE5 /* AppControlSettings.swift in Sources */,
 				5208B83E28D87453007BB75C /* CounterView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -988,10 +992,11 @@
 			files = (
 				52AC69552154DC3600E6C833 /* Intents.intentdefinition in Sources */,
 				52AC69412154DA7E00E6C833 /* IntentViewController.swift in Sources */,
+				5240F1EE28D9BE1A00B95FE5 /* AppSettings.swift in Sources */,
 				5240F1D428D8C1BC00B95FE5 /* Date+Extensions.swift in Sources */,
 				5208B83D28D87450007BB75C /* CounterView.swift in Sources */,
-				5208B83F28D87465007BB75C /* DaysLeftModel.swift in Sources */,
-				5208B84128D87473007BB75C /* BLUserSettings.swift in Sources */,
+				5240F1F428D9C25700B95FE5 /* AppControlSettings.swift in Sources */,
+				5240F1E828D9B6CB00B95FE5 /* AppSettingsDataManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -999,15 +1004,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52D18D721BC8283300DB7E3A /* BLUserSettings.swift in Sources */,
 				5240F1D228D8C1BC00B95FE5 /* Date+Extensions.swift in Sources */,
-				52D18D711BC8282A00DB7E3A /* DaysLeftModel.swift in Sources */,
 				52BC1119237C45BC005EC3F7 /* InterfaceHostController.swift in Sources */,
 				52BC111D237C464A005EC3F7 /* ProgressControl.swift in Sources */,
 				52D25F3C1BCB8595002E4C76 /* ComplicationsDataSource.swift in Sources */,
 				5208B84628D8761E007BB75C /* WatchDaysLeftModel.swift in Sources */,
 				52BC111B237C461C005EC3F7 /* WatchView.swift in Sources */,
+				5240F1E628D9B6CB00B95FE5 /* AppSettingsDataManager.swift in Sources */,
+				5240F1F228D9C25700B95FE5 /* AppControlSettings.swift in Sources */,
 				5234436D1BBB181C00E95BA4 /* ExtensionDelegate.swift in Sources */,
+				5240F1EC28D9BE1A00B95FE5 /* AppSettings.swift in Sources */,
 				52BC111F237C4AD0005EC3F7 /* WatchDaysLeftData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1018,16 +1024,17 @@
 			files = (
 				52AC69532154DAFB00E6C833 /* Intents.intentdefinition in Sources */,
 				527AD75D1E94EB2800F8637B /* PurchaseViewController.swift in Sources */,
+				5240F1EB28D9BE1A00B95FE5 /* AppSettings.swift in Sources */,
 				52F9CDAC22D63D1900E0FFE8 /* SceneDelegate.swift in Sources */,
 				52CFBF001A8B631B005234FB /* ViewController.swift in Sources */,
+				5240F1F128D9C25700B95FE5 /* AppControlSettings.swift in Sources */,
 				52CFBEFE1A8B631B005234FB /* AppDelegate.swift in Sources */,
+				5240F1E528D9B6CB00B95FE5 /* AppSettingsDataManager.swift in Sources */,
 				52D617B124D06F9000465F4C /* MenuBuilder.swift in Sources */,
 				52FAB11E1A9381B70039691E /* SettingsViewController.swift in Sources */,
 				5240F1D028D8C1BC00B95FE5 /* Date+Extensions.swift in Sources */,
 				5208B83A28D8733D007BB75C /* CounterView.swift in Sources */,
 				52FC401427AABAD9005DAD8C /* AnalyticsManager.swift in Sources */,
-				5208B83828D87314007BB75C /* BLUserSettings.swift in Sources */,
-				5208B83B28D8734F007BB75C /* DaysLeftModel.swift in Sources */,
 				52DC9EB51FC97A9200AE02F6 /* FirebaseNotifications.swift in Sources */,
 				5285E6751FACC9A6001547CD /* AppDaysLeftModel.swift in Sources */,
 			);
@@ -1042,9 +1049,10 @@
 				5240F1D528D8C1BC00B95FE5 /* Date+Extensions.swift in Sources */,
 				52E048BF2507A57E009A2169 /* WidgetTimelineProvider.swift in Sources */,
 				52E048B525077E6A009A2169 /* WidgetDaysLeftData.swift in Sources */,
-				52E048B625077EC1009A2169 /* DaysLeftModel.swift in Sources */,
 				52E048BA25077F87009A2169 /* WidgetProgressControl.swift in Sources */,
-				52E048B725077EFA009A2169 /* BLUserSettings.swift in Sources */,
+				5240F1EF28D9BE1A00B95FE5 /* AppSettings.swift in Sources */,
+				5240F1E928D9B6CB00B95FE5 /* AppSettingsDataManager.swift in Sources */,
+				5240F1F528D9C25700B95FE5 /* AppControlSettings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1519,7 +1527,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = W8B3V597R9;
-				ENABLE_BITCODE = YES;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1556,7 +1564,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = W8B3V597R9;
-				ENABLE_BITCODE = YES;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",

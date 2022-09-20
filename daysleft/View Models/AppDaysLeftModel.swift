@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AppDaysLeftModel: DaysLeftModel {
+class AppDaysLeftModel: AppSettingsDataManager {
 
     public static let iCloudSettingsNotification = "kBLiCloudSettingsNotification"
 
