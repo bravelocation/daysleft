@@ -19,9 +19,6 @@ class WatchDaysLeftViewModel: ObservableObject {
     /// Percentage done
     @Published var percentageDone: Double = 0.0
     
-    /// Combine subject to trigger of model has changed
-    let modelChanged = PassthroughSubject<(), Never>()
-    
     /// Subscribers to change events
     private var cancellables = Array<AnyCancellable>()
     
@@ -42,14 +39,9 @@ class WatchDaysLeftViewModel: ObservableObject {
     func updateViewData() {
         print("Updating view data...")
         
-        // Reset the percentage done to 0.0 (to trigger some animation)
-        self.percentageDone = 0.0
-        self.modelChanged.send(())
-        
         // Set the published properties based on the model
         self.appSettings = AppSettingsDataManager().appSettings
         self.percentageDone = self.appSettings.percentageDone(date: Date())
-        self.modelChanged.send(())
         
         // Let's update the snapshot if the view changed
         self.scheduleSnapshot()

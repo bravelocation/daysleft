@@ -61,11 +61,7 @@ struct ProgressControl: View {
                     withAnimation(.easeInOut(duration: self.duration)) {
                         self.animationProgress = self.model.percentageDone
                     }
-                }.onReceive(model.modelChanged, perform: { _ in
-                    withAnimation(.easeInOut(duration: self.duration)) {
-                        self.animationProgress = self.model.percentageDone
-                    }
-                })
+                }
         }
     }
 }
