@@ -21,7 +21,7 @@ class WatchDaysLeftData: ObservableObject {
     
     init() {
         // Add notification handler for updating on updated fixtures
-        NotificationCenter.default.addObserver(self, selector: #selector(WatchDaysLeftData.userSettingsUpdated(_:)), name: NSNotification.Name(rawValue: BLUserSettings.UpdateSettingsNotification), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(WatchDaysLeftData.userSettingsUpdated(_:)), name: NSNotification.Name(rawValue: AppSettingsDataManager.UpdateSettingsNotification), object: nil)
         
         self.updateViewData()
     }
@@ -61,7 +61,7 @@ class WatchDaysLeftData: ObservableObject {
     
     @objc
     fileprivate func userSettingsUpdated(_ notification: Notification) {
-        print("Received BLUserSettingsUpdated notification")
+        print("Received UserSettingsUpdated notification")
         
         // Update view data on main thread
         DispatchQueue.main.async {

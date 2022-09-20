@@ -10,8 +10,8 @@ import Foundation
 import WatchConnectivity
 import ClockKit
 
-class WatchDaysLeftModel: DaysLeftModel {
-    public override init() {
+class WatchDaysLeftModel: AppSettingsDataManager {
+    public init() {
         super.init()
         self.updateComplications()
     }
