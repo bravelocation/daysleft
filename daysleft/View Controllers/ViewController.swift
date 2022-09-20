@@ -104,16 +104,6 @@ class ViewController: UIViewController {
         self.counterView.clearControl()
         self.updateViewFromModel()
         
-        // Show request review every 10 times the user opend the app
-        let reviewPromptFrequency = 10
-        
-        let appOpened = AppSettingsDataManager.default.appControlSettings.appOpenCount
-        print("App opened \(appOpened) times")
-
-        if (appOpened >= reviewPromptFrequency && (appOpened % reviewPromptFrequency) == 0) {
-            SKStoreReviewController.requestReview()
-        }
-        
         AnalyticsManager.shared.logScreenView(screenName: "Main Screen")
     }
     
@@ -145,7 +135,9 @@ class ViewController: UIViewController {
     
     @objc
     func swipeLeft(_ gesture: UISwipeGestureRecognizer) {
-        self.performSegue(withIdentifier: "segueShowSettings", sender: self)
+        let settingsViewController = UIStoryboard(name: "Main", bundle: nil)
+            .instantiateViewController(withIdentifier: "SettingsViewController")
+        self.navigationController?.pushViewController(settingsViewController, animated: true)
     }
     
     @objc
@@ -161,7 +153,9 @@ class ViewController: UIViewController {
     
     @objc
     func editButtonTouchUp() {
-        self.performSegue(withIdentifier: "segueShowSettings", sender: self)
+        let settingsViewController = UIStoryboard(name: "Main", bundle: nil)
+            .instantiateViewController(withIdentifier: "SettingsViewController")
+        self.navigationController?.pushViewController(settingsViewController, animated: true)
     }
     
     @objc

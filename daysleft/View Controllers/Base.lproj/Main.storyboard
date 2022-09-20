@@ -148,7 +148,6 @@
                         <outlet property="labelPercentageDone" destination="Tik-NR-YWh" id="4wM-MZ-l8k"/>
                         <outlet property="labelStartDate" destination="e4s-jj-SxE" id="RFp-dV-9EV"/>
                         <outlet property="labelTitle" destination="B5u-71-7aF" id="F0s-ex-nay"/>
-                        <segue destination="l0H-Z7-pvf" kind="show" identifier="segueShowSettings" id="lGK-mM-7tp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -158,7 +157,7 @@
         <!--Settings View Controller-->
         <scene sceneID="x8v-1w-SPI">
             <objects>
-                <tableViewController clearsSelectionOnViewWillAppear="NO" id="l0H-Z7-pvf" customClass="SettingsViewController" customModule="DaysLeft" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="SettingsViewController" clearsSelectionOnViewWillAppear="NO" id="l0H-Z7-pvf" customClass="SettingsViewController" customModule="DaysLeft" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="static" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="vig-tJ-o6Q">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
