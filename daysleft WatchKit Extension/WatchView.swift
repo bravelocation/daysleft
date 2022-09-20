@@ -11,7 +11,7 @@ import SwiftUI
 
 struct WatchView: View {
     
-    @ObservedObject var model: WatchDaysLeftData
+    @ObservedObject var model: WatchDaysLeftViewModel
     
     var body: some View {
         GeometryReader { geo in
@@ -44,6 +44,6 @@ struct WatchView: View {
 
 struct WatchView_Previews: PreviewProvider {
     static var previews: some View {
-        WatchView(model: WatchDaysLeftData())
+        WatchView(model: WatchDaysLeftViewModel())
     }
 }

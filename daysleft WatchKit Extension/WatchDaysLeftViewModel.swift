@@ -11,7 +11,7 @@ import SwiftUI
 import Combine
 import ClockKit
 
-class WatchDaysLeftData: ObservableObject {
+class WatchDaysLeftViewModel: ObservableObject {
     
     /// Current app settings
     @Published var appSettings: AppSettings = AppSettingsDataManager().appSettings
@@ -24,7 +24,10 @@ class WatchDaysLeftData: ObservableObject {
     
     init() {
         // Add notification handler for updating on updated fixtures
-        NotificationCenter.default.addObserver(self, selector: #selector(WatchDaysLeftData.userSettingsUpdated(_:)), name: NSNotification.Name(rawValue: AppSettingsDataManager.UpdateSettingsNotification), object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(WatchDaysLeftViewModel.userSettingsUpdated(_:)),
+                                               name: NSNotification.Name(rawValue: AppSettingsDataManager.UpdateSettingsNotification),
+                                               object: nil)
         
         self.updateViewData()
     }
