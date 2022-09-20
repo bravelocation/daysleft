@@ -42,7 +42,7 @@ class ViewController: UIViewController {
     }
     
     func setupNotificationHandlers() {
-        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.iCloudSettingsUpdated(_:)), name: NSNotification.Name(rawValue: AppDaysLeftModel.iCloudSettingsNotification), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.iCloudSettingsUpdated(_:)), name: NSNotification.Name(rawValue: AppSettingsDataManager.UpdateSettingsNotification), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(ViewController.appEntersForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
     }
     
@@ -211,7 +211,7 @@ class ViewController: UIViewController {
         print("updateViewFromModel completed")
     }
 
-    func modelData() -> AppDaysLeftModel {
+    func modelData() -> AppSettingsDataManager {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         return appDelegate.model
     }

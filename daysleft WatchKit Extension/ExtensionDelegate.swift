@@ -7,17 +7,15 @@
 //
 
 import WatchKit
+import ClockKit
 
 class ExtensionDelegate: NSObject, WKExtensionDelegate {
     
-    lazy var model: WatchDaysLeftModel = WatchDaysLeftModel()
-    lazy var dataModel: WatchDaysLeftData = WatchDaysLeftData()
+    lazy var model = AppSettingsDataManager()
+    lazy var dataModel = WatchDaysLeftData()
 
     func applicationDidBecomeActive() {
         print("applicationDidBecomeActive started")
-                
-        // Initialise the watch session
-        self.model.initialiseWatchSession()
         
         // Update the data model
         self.dataModel.updateViewData()
@@ -37,7 +35,14 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
             if (task is WKApplicationRefreshBackgroundTask) {
                 
                 // Simply update the complications on a background task being triggered
-                self.model.updateComplications()
+                let complicationServer = CLKComplicationServer.sharedInstance()
+                let activeComplications = complicationServer.activeComplications
+                
+                if (activeComplications != nil) {
+                    for complication in activeComplications! {
+                        complicationServer.reloadTimeline(for: complication)
+                    }
+                }
                 
                 // Also update the data model
                 self.dataModel.updateViewData()

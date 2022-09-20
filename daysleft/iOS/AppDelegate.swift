@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     // MARK: Class properties
     var window: UIWindow?
-    lazy var model = AppDaysLeftModel()
+    lazy var model = AppSettingsDataManager()
     var firebaseNotifications: FirebaseNotifications?
 
     // MARK: Initialisation
@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         super.init()
         
         // Setup listener for iCloud setting change
-        NotificationCenter.default.addObserver(self, selector: #selector(AppDelegate.iCloudSettingsUpdated(_:)), name: NSNotification.Name(rawValue: AppDaysLeftModel.iCloudSettingsNotification), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(AppDelegate.iCloudSettingsUpdated(_:)), name: NSNotification.Name(rawValue: AppSettingsDataManager.UpdateSettingsNotification), object: nil)
     }
     
     // MARK: UIApplicationDelegate functions
@@ -72,9 +72,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                        -> Void) {
         Messaging.messaging().appDidReceiveMessage(userInfo)
 
-        // Push latest settings and update badge
+        // Update badge and widgets
         self.updateBadge()
-        self.model.pushAllSettingsToWatch()
+        self.updateWidgets()
 
         completionHandler(UIBackgroundFetchResult.newData)
     }
@@ -98,9 +98,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     fileprivate func iCloudSettingsUpdated(_ notification: Notification) {
         print("Received iCloudSettingsUpdated notification")
         
-        // Push latest settings and update badge
+        // Update badge and widgets
         self.updateBadge()
-        self.model.pushAllSettingsToWatch()
+        self.updateWidgets()
     }
 }
 
@@ -112,9 +112,9 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         
         Messaging.messaging().appDidReceiveMessage(response.notification.request.content.userInfo)
         
-        // Push latest settings and update badge
+        // Update badge and widgets
         self.updateBadge()
-        self.model.pushAllSettingsToWatch()
+        self.updateWidgets()
         
         completionHandler()
     }

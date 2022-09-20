@@ -10,7 +10,6 @@
 		5208B83A28D8733D007BB75C /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5295EE0D1A95E647007EF7E7 /* CounterView.swift */; };
 		5208B83D28D87450007BB75C /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5295EE0D1A95E647007EF7E7 /* CounterView.swift */; };
 		5208B83E28D87453007BB75C /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5295EE0D1A95E647007EF7E7 /* CounterView.swift */; };
-		5208B84628D8761E007BB75C /* WatchDaysLeftModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5208B84528D8761D007BB75C /* WatchDaysLeftModel.swift */; };
 		520F20C3233631E800B1F73F /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52CFBF041A8B631B005234FB /* Media.xcassets */; };
 		523443631BBAFBEF00E95BA4 /* DaysLeft WatchKit Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 52B7E8771ABEDE9300E1949C /* DaysLeft WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		523443661BBAFBEF00E95BA4 /* DaysLeft WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 52B7E8811ABEDE9300E1949C /* DaysLeft WatchKit App.app */; platformFilter = ios; };
@@ -39,7 +38,6 @@
 		527AD75D1E94EB2800F8637B /* PurchaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527AD75B1E94EB2800F8637B /* PurchaseViewController.swift */; };
 		527AD75E1E94EB2800F8637B /* PurchaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 527AD75C1E94EB2800F8637B /* PurchaseViewController.xib */; };
 		527E15401D83F80300D81B15 /* gallery.ckcomplication in Resources */ = {isa = PBXBuildFile; fileRef = 527E153F1D83F80300D81B15 /* gallery.ckcomplication */; };
-		5285E6751FACC9A6001547CD /* AppDaysLeftModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5285E6741FACC9A6001547CD /* AppDaysLeftModel.swift */; };
 		5295EDF01A94AF83007EF7E7 /* DaysLeftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CFBF131A8B631B005234FB /* DaysLeftTests.swift */; };
 		52AC69362154DA7E00E6C833 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AC69352154DA7E00E6C833 /* IntentHandler.swift */; };
 		52AC693E2154DA7E00E6C833 /* IntentsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52AC693D2154DA7E00E6C833 /* IntentsUI.framework */; };
@@ -184,7 +182,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		5208B84528D8761D007BB75C /* WatchDaysLeftModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WatchDaysLeftModel.swift; path = "daysleft WatchKit Extension/WatchDaysLeftModel.swift"; sourceTree = SOURCE_ROOT; };
 		5208B84728D87679007BB75C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5234436B1BBB00B800E95BA4 /* daysleft WatchKit App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "daysleft WatchKit App.entitlements"; sourceTree = "<group>"; };
 		5234436C1BBB181C00E95BA4 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
@@ -196,7 +193,6 @@
 		527AD75B1E94EB2800F8637B /* PurchaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurchaseViewController.swift; sourceTree = "<group>"; };
 		527AD75C1E94EB2800F8637B /* PurchaseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PurchaseViewController.xib; sourceTree = "<group>"; };
 		527E153F1D83F80300D81B15 /* gallery.ckcomplication */ = {isa = PBXFileReference; lastKnownFileType = folder; path = gallery.ckcomplication; sourceTree = "<group>"; };
-		5285E6741FACC9A6001547CD /* AppDaysLeftModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDaysLeftModel.swift; sourceTree = "<group>"; };
 		5295EDDA1A94AE53007EF7E7 /* DaysLeftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DaysLeftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5295EDFA1A94B398007EF7E7 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		5295EE0D1A95E647007EF7E7 /* CounterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CounterView.swift; sourceTree = "<group>"; };
@@ -358,7 +354,6 @@
 		5208B83428D871E6007BB75C /* View Models */ = {
 			isa = PBXGroup;
 			children = (
-				5285E6741FACC9A6001547CD /* AppDaysLeftModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -404,14 +399,6 @@
 				5208B84728D87679007BB75C /* Info.plist */,
 			);
 			path = "Unit Tests";
-			sourceTree = "<group>";
-		};
-		5208B84928D87924007BB75C /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				5208B84528D8761D007BB75C /* WatchDaysLeftModel.swift */,
-			);
-			name = Models;
 			sourceTree = "<group>";
 		};
 		5208B84A28D87933007BB75C /* Views */ = {
@@ -521,7 +508,6 @@
 				52D25F3B1BCB8595002E4C76 /* ComplicationsDataSource.swift */,
 				5234436C1BBB181C00E95BA4 /* ExtensionDelegate.swift */,
 				5208B84B28D8794E007BB75C /* Host Controllers */,
-				5208B84928D87924007BB75C /* Models */,
 				5208B84C28D87975007BB75C /* View Models */,
 				5208B84A28D87933007BB75C /* Views */,
 			);
@@ -1008,7 +994,6 @@
 				52BC1119237C45BC005EC3F7 /* InterfaceHostController.swift in Sources */,
 				52BC111D237C464A005EC3F7 /* ProgressControl.swift in Sources */,
 				52D25F3C1BCB8595002E4C76 /* ComplicationsDataSource.swift in Sources */,
-				5208B84628D8761E007BB75C /* WatchDaysLeftModel.swift in Sources */,
 				52BC111B237C461C005EC3F7 /* WatchView.swift in Sources */,
 				5240F1E628D9B6CB00B95FE5 /* AppSettingsDataManager.swift in Sources */,
 				5240F1F228D9C25700B95FE5 /* AppControlSettings.swift in Sources */,
@@ -1036,7 +1021,6 @@
 				5208B83A28D8733D007BB75C /* CounterView.swift in Sources */,
 				52FC401427AABAD9005DAD8C /* AnalyticsManager.swift in Sources */,
 				52DC9EB51FC97A9200AE02F6 /* FirebaseNotifications.swift in Sources */,
-				5285E6751FACC9A6001547CD /* AppDaysLeftModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1325,7 +1309,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 6.0;
+				WATCHOS_DEPLOYMENT_TARGET = 9.0;
 			};
 			name = Debug;
 		};
@@ -1349,7 +1333,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 6.0;
+				WATCHOS_DEPLOYMENT_TARGET = 9.0;
 			};
 			name = Release;
 		};
@@ -1375,7 +1359,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 6.0;
+				WATCHOS_DEPLOYMENT_TARGET = 9.0;
 			};
 			name = Debug;
 		};
@@ -1397,7 +1381,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 6.0;
+				WATCHOS_DEPLOYMENT_TARGET = 9.0;
 			};
 			name = Release;
 		};

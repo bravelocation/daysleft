@@ -9,6 +9,7 @@
 import Foundation
 import SwiftUI
 import Combine
+import ClockKit
 
 class WatchDaysLeftData: ObservableObject {
     
@@ -49,7 +50,14 @@ class WatchDaysLeftData: ObservableObject {
         self.modelChanged.send(())
         
         // Let's also update the complications if the data has changed
-        model.updateComplications()
+        let complicationServer = CLKComplicationServer.sharedInstance()
+        let activeComplications = complicationServer.activeComplications
+        
+        if (activeComplications != nil) {
+            for complication in activeComplications! {
+                complicationServer.reloadTimeline(for: complication)
+            }
+        }
         
         // Let's update the snapshot if the view changed
         print("Scheduling snapshot")
