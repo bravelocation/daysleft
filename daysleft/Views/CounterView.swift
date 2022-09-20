@@ -10,13 +10,13 @@ import UIKit
 
 let π: CGFloat = CGFloat(Double.pi)
 
-open class CounterView: UIView {
+class CounterView: UIView {
     
-    @IBInspectable open var counter: Int = 5
-    @IBInspectable open var maximumValue: Int = 8
-    @IBInspectable open var arcWidth: CGFloat = 76
-    @IBInspectable open var outlineColor: UIColor = UIColor.blue
-    @IBInspectable open var counterColor: UIColor = UIColor.orange
+    @IBInspectable var counter: Int = 5
+    @IBInspectable var maximumValue: Int = 8
+    @IBInspectable var arcWidth: CGFloat = 76
+    @IBInspectable var outlineColor: UIColor = UIColor.blue
+    @IBInspectable var counterColor: UIColor = UIColor.orange
     
     fileprivate var circleSubView: CAShapeLayer? = nil
     fileprivate var progressSubView: CAShapeLayer? = nil
@@ -31,7 +31,7 @@ open class CounterView: UIView {
         self.clearControl()
     }
     
-    open func clearControl() {
+    func clearControl() {
         // First clear circle view
         if self.circleSubView != nil {
             self.circleSubView?.removeFromSuperlayer()
@@ -45,7 +45,7 @@ open class CounterView: UIView {
         }
     }
     
-    open func updateControl() {
+    func updateControl() {
         self.clearControl()
         self.arcWidth = bounds.width / 3.0
 

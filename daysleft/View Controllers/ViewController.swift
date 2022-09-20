@@ -49,8 +49,6 @@ class ViewController: UIViewController {
     // MARK: - View event handlers
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let model = self.modelData()
                 
         // Customise the nav bar
         let appearance = UINavigationBarAppearance()
@@ -76,7 +74,7 @@ class ViewController: UIViewController {
         // Add timer in case runs over a day change
         let now = Date()
         let secondsInADay: Double = 60 * 60 * 24
-        let startOfTomorrow = model.addDays(model.startOfDay(now), daysToAdd: 1)
+        let startOfTomorrow = now.startOfDay.addDays(1)
         self.dayChangeTimer = Timer(fireAt: startOfTomorrow, interval: secondsInADay, target: self, selector: #selector(ViewController.dayChangedTimerFired), userInfo: nil, repeats: false)
         
         // Setup user intents
@@ -154,7 +152,7 @@ class ViewController: UIViewController {
     
     @objc
     fileprivate func iCloudSettingsUpdated(_ notification: Notification) {
-        NSLog("Received iCloud settings update notification in main view controller")
+        print("Received iCloud settings update notification in main view controller")
         
         // Update view data on main thread
         DispatchQueue.main.async {
@@ -164,7 +162,7 @@ class ViewController: UIViewController {
     
     @objc
     fileprivate func appEntersForeground() {
-        NSLog("App enters foreground in main view controller")
+        print("App enters foreground in main view controller")
         
         // Update view data on main thread
         DispatchQueue.main.async {
@@ -175,7 +173,7 @@ class ViewController: UIViewController {
     
     // MARK: - Helper functions
     func updateViewFromModel() {
-        NSLog("updateViewFromModel started")
+        print("updateViewFromModel started")
         let model = self.modelData()
         
         let now: Date = Date()
@@ -210,7 +208,7 @@ class ViewController: UIViewController {
         appDelegate.updateBadge()
         appDelegate.updateWidgets()
         
-        NSLog("updateViewFromModel completed")
+        print("updateViewFromModel completed")
     }
 
     func modelData() -> AppDaysLeftModel {

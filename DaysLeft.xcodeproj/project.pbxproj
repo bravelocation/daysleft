@@ -23,6 +23,12 @@
 		523443631BBAFBEF00E95BA4 /* DaysLeft WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 52B7E8771ABEDE9300E1949C /* DaysLeft WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		523443661BBAFBEF00E95BA4 /* DaysLeft WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 52B7E8811ABEDE9300E1949C /* DaysLeft WatchKit App.app */; platformFilter = ios; };
 		5234436D1BBB181C00E95BA4 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5234436C1BBB181C00E95BA4 /* ExtensionDelegate.swift */; };
+		5240F1D028D8C1BC00B95FE5 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5240F1CF28D8C1BC00B95FE5 /* Date+Extensions.swift */; };
+		5240F1D128D8C1BC00B95FE5 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5240F1CF28D8C1BC00B95FE5 /* Date+Extensions.swift */; };
+		5240F1D228D8C1BC00B95FE5 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5240F1CF28D8C1BC00B95FE5 /* Date+Extensions.swift */; };
+		5240F1D328D8C1BC00B95FE5 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5240F1CF28D8C1BC00B95FE5 /* Date+Extensions.swift */; };
+		5240F1D428D8C1BC00B95FE5 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5240F1CF28D8C1BC00B95FE5 /* Date+Extensions.swift */; };
+		5240F1D528D8C1BC00B95FE5 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5240F1CF28D8C1BC00B95FE5 /* Date+Extensions.swift */; };
 		527AD75D1E94EB2800F8637B /* PurchaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527AD75B1E94EB2800F8637B /* PurchaseViewController.swift */; };
 		527AD75E1E94EB2800F8637B /* PurchaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 527AD75C1E94EB2800F8637B /* PurchaseViewController.xib */; };
 		527E15401D83F80300D81B15 /* gallery.ckcomplication in Resources */ = {isa = PBXBuildFile; fileRef = 527E153F1D83F80300D81B15 /* gallery.ckcomplication */; };
@@ -179,6 +185,7 @@
 		5208B84728D87679007BB75C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5234436B1BBB00B800E95BA4 /* daysleft WatchKit App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "daysleft WatchKit App.entitlements"; sourceTree = "<group>"; };
 		5234436C1BBB181C00E95BA4 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		5240F1CF28D8C1BC00B95FE5 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		52790F781D056F500025AF10 /* daysleft-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "daysleft-Bridging-Header.h"; sourceTree = "<group>"; };
 		527AD75B1E94EB2800F8637B /* PurchaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurchaseViewController.swift; sourceTree = "<group>"; };
 		527AD75C1E94EB2800F8637B /* PurchaseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PurchaseViewController.xib; sourceTree = "<group>"; };
@@ -457,6 +464,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		5240F1CE28D8C19E00B95FE5 /* Model Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5240F1CF28D8C1BC00B95FE5 /* Date+Extensions.swift */,
+			);
+			path = "Model Extensions";
+			sourceTree = "<group>";
+		};
 		5295EDF91A94B398007EF7E7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -559,6 +574,7 @@
 		52CFBEFA1A8B631B005234FB /* daysleft */ = {
 			isa = PBXGroup;
 			children = (
+				5240F1CE28D8C19E00B95FE5 /* Model Extensions */,
 				5208B83228D870F8007BB75C /* Assets */,
 				5208B83128D870BF007BB75C /* Data Managers */,
 				5208B83528D871F4007BB75C /* iOS */,
@@ -947,6 +963,7 @@
 			files = (
 				5208B84328D87476007BB75C /* BLUserSettings.swift in Sources */,
 				5295EDF01A94AF83007EF7E7 /* DaysLeftTests.swift in Sources */,
+				5240F1D128D8C1BC00B95FE5 /* Date+Extensions.swift in Sources */,
 				5208B83C28D87416007BB75C /* DaysLeftModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -956,6 +973,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				52AC69542154DC3000E6C833 /* Intents.intentdefinition in Sources */,
+				5240F1D328D8C1BC00B95FE5 /* Date+Extensions.swift in Sources */,
 				5208B84028D87466007BB75C /* DaysLeftModel.swift in Sources */,
 				52AC695C2154DEB700E6C833 /* DaysLeftIntentHandler.swift in Sources */,
 				5208B84228D87474007BB75C /* BLUserSettings.swift in Sources */,
@@ -970,6 +988,7 @@
 			files = (
 				52AC69552154DC3600E6C833 /* Intents.intentdefinition in Sources */,
 				52AC69412154DA7E00E6C833 /* IntentViewController.swift in Sources */,
+				5240F1D428D8C1BC00B95FE5 /* Date+Extensions.swift in Sources */,
 				5208B83D28D87450007BB75C /* CounterView.swift in Sources */,
 				5208B83F28D87465007BB75C /* DaysLeftModel.swift in Sources */,
 				5208B84128D87473007BB75C /* BLUserSettings.swift in Sources */,
@@ -981,6 +1000,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				52D18D721BC8283300DB7E3A /* BLUserSettings.swift in Sources */,
+				5240F1D228D8C1BC00B95FE5 /* Date+Extensions.swift in Sources */,
 				52D18D711BC8282A00DB7E3A /* DaysLeftModel.swift in Sources */,
 				52BC1119237C45BC005EC3F7 /* InterfaceHostController.swift in Sources */,
 				52BC111D237C464A005EC3F7 /* ProgressControl.swift in Sources */,
@@ -1003,6 +1023,7 @@
 				52CFBEFE1A8B631B005234FB /* AppDelegate.swift in Sources */,
 				52D617B124D06F9000465F4C /* MenuBuilder.swift in Sources */,
 				52FAB11E1A9381B70039691E /* SettingsViewController.swift in Sources */,
+				5240F1D028D8C1BC00B95FE5 /* Date+Extensions.swift in Sources */,
 				5208B83A28D8733D007BB75C /* CounterView.swift in Sources */,
 				52FC401427AABAD9005DAD8C /* AnalyticsManager.swift in Sources */,
 				5208B83828D87314007BB75C /* BLUserSettings.swift in Sources */,
@@ -1018,6 +1039,7 @@
 			files = (
 				52E048B325077E1C009A2169 /* WidgetView.swift in Sources */,
 				52E048A725077AFB009A2169 /* DaysLeftWidget.swift in Sources */,
+				5240F1D528D8C1BC00B95FE5 /* Date+Extensions.swift in Sources */,
 				52E048BF2507A57E009A2169 /* WidgetTimelineProvider.swift in Sources */,
 				52E048B525077E6A009A2169 /* WidgetDaysLeftData.swift in Sources */,
 				52E048B625077EC1009A2169 /* DaysLeftModel.swift in Sources */,

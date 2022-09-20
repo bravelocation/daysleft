@@ -14,7 +14,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
     lazy var dataModel: WatchDaysLeftData = WatchDaysLeftData()
 
     func applicationDidBecomeActive() {
-        NSLog("applicationDidBecomeActive started")
+        print("applicationDidBecomeActive started")
                 
         // Initialise the watch session
         self.model.initialiseWatchSession()
@@ -25,7 +25,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
         // Setup background refresh
         self.setupBackgroundRefresh()
         
-        NSLog("applicationDidBecomeActive completed")
+        print("applicationDidBecomeActive completed")
     }
     
     func handle(_ backgroundTasks: Set<WKRefreshBackgroundTask>) {
@@ -57,8 +57,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
     
     private func setupBackgroundRefresh() {
         // Setup a background refresh for 0100 tomorrow
-        let globalCalendar = Calendar.autoupdatingCurrent
-        let twoHoursTime = (globalCalendar as NSCalendar).date(byAdding: .hour, value: 2, to: Date(), options: [])
+        let twoHoursTime = Calendar.current.date(byAdding: .hour, value: 2, to: Date())
         
         WKExtension.shared().scheduleBackgroundRefresh(withPreferredDate: twoHoursTime!, userInfo: nil, scheduledCompletion: { (error: Error?) in
             if let error = error {

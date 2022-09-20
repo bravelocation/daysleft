@@ -27,7 +27,7 @@ class WatchDaysLeftData: ObservableObject {
     }
     
     func updateViewData() {
-        NSLog("Updating view data...")
+        print("Updating view data...")
         
         // Reset the percentage done to 0.0
         self.percentageDone = 0.0
@@ -52,7 +52,7 @@ class WatchDaysLeftData: ObservableObject {
         // Let's update the snapshot if the view changed
         print("Scheduling snapshot")
         
-        let soon =  (Calendar.autoupdatingCurrent as NSCalendar).date(byAdding: .second, value: 5, to: Date(), options: [])
+        let soon =  Calendar.current.date(byAdding: .second, value: 5, to: Date())
         WKExtension.shared().scheduleSnapshotRefresh(withPreferredDate: soon!, userInfo: nil, scheduledCompletion: { (error: Error?) in
             if let error = error {
                 print("Error occurred while scheduling snapshot: \(error.localizedDescription)")
@@ -61,7 +61,7 @@ class WatchDaysLeftData: ObservableObject {
     
     @objc
     fileprivate func userSettingsUpdated(_ notification: Notification) {
-        NSLog("Received BLUserSettingsUpdated notification")
+        print("Received BLUserSettingsUpdated notification")
         
         // Update view data on main thread
         DispatchQueue.main.async {

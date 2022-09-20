@@ -13,14 +13,14 @@ class AppDaysLeftModel: DaysLeftModel {
     public static let iCloudSettingsNotification = "kBLiCloudSettingsNotification"
 
     /// Send updated settings to watch
-    open override func initialiseiCloudSettings() {
-        NSLog("Initialising iCloud Settings")
+    override func initialiseiCloudSettings() {
+        print("Initialising iCloud Settings")
         let store: NSUbiquitousKeyValueStore = NSUbiquitousKeyValueStore.default
         NotificationCenter.default.addObserver(self, selector: #selector(AppDaysLeftModel.updateKVStoreItems(_:)), name: NSUbiquitousKeyValueStore.didChangeExternallyNotification, object: store)
         store.synchronize()
     }
     
-    open override func writeSettingToiCloudStore(_ value: AnyObject, key: String) {
+    override func writeSettingToiCloudStore(_ value: AnyObject, key: String) {
         let store: NSUbiquitousKeyValueStore = NSUbiquitousKeyValueStore.default
         store.set(value, forKey: key)
         store.synchronize()
@@ -31,7 +31,7 @@ class AppDaysLeftModel: DaysLeftModel {
     /// param: notification The incoming notification
     @objc
     fileprivate func updateKVStoreItems(_ notification: Notification) {
-        NSLog("Detected iCloud key-value storage change")
+        print("Detected iCloud key-value storage change")
         
         // Get the list of keys that changed
         let userInfo: NSDictionary = notification.userInfo! as NSDictionary
@@ -55,10 +55,10 @@ class AppDaysLeftModel: DaysLeftModel {
                 
                 // Finally send a notification for the view controllers to refresh
                 NotificationCenter.default.post(name: Notification.Name(rawValue: AppDaysLeftModel.iCloudSettingsNotification), object: nil, userInfo: nil)
-                NSLog("Sent notification for iCloud change")
+                print("Sent notification for iCloud change")
             }
         } else {
-            NSLog("Unknown iCloud KV reason for change")
+            print("Unknown iCloud KV reason for change")
         }
     }
 }
