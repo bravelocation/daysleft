@@ -47,7 +47,7 @@ struct WidgetProgressControl: View {
                 .strokeBorder(self.backgroundColor, lineWidth: self.lineWidth)
                 .frame(width: self.frameSize, height: self.frameSize)
 
-            Arc(progress: self.model.percentageDone)
+            Arc(progress: self.model.appSettings.percentageDone(date: self.model.date))
                 .strokeBorder(self.foregroundColor, lineWidth: self.lineWidth)
                 .frame(width: self.frameSize, height: self.frameSize)
         }

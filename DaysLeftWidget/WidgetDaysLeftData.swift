@@ -12,20 +12,15 @@ import Combine
 import WidgetKit
 
 class WidgetDaysLeftData: TimelineEntry {
-    var date: Date
-    var relevance: TimelineEntryRelevance? {
-        return TimelineEntryRelevance(score: Float(self.percentageDone))
-    }
+    let date: Date
+    let appSettings: AppSettings
     
-    let currentPercentageLeft: String
-    let currentTitle: String
-    let percentageDone: Double
+    var relevance: TimelineEntryRelevance? {
+        return TimelineEntryRelevance(score: Float(self.appSettings.percentageDone(date: self.date)))
+    }
     
     init(date: Date, appSettings: AppSettings) {
         self.date = date
-        
-        self.currentTitle = "\(appSettings.daysLeftDescription(self.date)) to \(appSettings.title)"
-        self.percentageDone = (Double(appSettings.daysGone(self.date)) * 100.0) / Double(appSettings.daysLength)
-        self.currentPercentageLeft = String(format: "%3.0f%% done", percentageDone)
+        self.appSettings = appSettings
     }
 }

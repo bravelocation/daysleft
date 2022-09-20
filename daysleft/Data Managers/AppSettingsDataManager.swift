@@ -8,12 +8,13 @@
 
 import Foundation
 
+extension Notification.Name {
+    static let AppSettingsUpdated = Notification.Name(rawValue: "UpdateSettingsNotification")
+}
+
 class AppSettingsDataManager {
     
     // MARK: - Properties
-
-    /// Notification name for when the data has been updated
-    public static let UpdateSettingsNotification = "UpdateSettingsNotification"
     
     /// Data provider
     private let dataProvider: DataProviderProtocol

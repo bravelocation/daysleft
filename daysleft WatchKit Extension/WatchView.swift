@@ -11,15 +11,15 @@ import SwiftUI
 
 struct WatchView: View {
     
-    @ObservedObject var model: WatchDaysLeftData
+    @ObservedObject var model: WatchDaysLeftViewModel
     
     var body: some View {
         GeometryReader { geo in
             VStack(alignment: .center) {
-                Text(self.model.currentTitle)
+                Text(self.model.appSettings.watchDurationTitle(date: Date()))
                     .lineLimit(nil)
                     .multilineTextAlignment(.center)
-                Text(self.model.currentSubTitle)
+                Text(self.model.appSettings.title)
                     .lineLimit(nil)
                     .multilineTextAlignment(.center)
                 ProgressControl(foregroundColor: Color("MainAppColor"),
@@ -28,7 +28,7 @@ struct WatchView: View {
                                 lineWidth: 20.0,
                                 frameSize: self.progressDimensions(geo.size))
                     .padding()
-                Text(self.model.currentPercentageLeft).font(.footnote)
+                Text(self.model.appSettings.currentPercentageLeft(date: Date())).font(.footnote)
             }.frame(width: geo.size.width, height: geo.size.height, alignment: .center)
         }
     }
@@ -44,6 +44,6 @@ struct WatchView: View {
 
 struct WatchView_Previews: PreviewProvider {
     static var previews: some View {
-        WatchView(model: WatchDaysLeftData())
+        WatchView(model: WatchDaysLeftViewModel())
     }
 }

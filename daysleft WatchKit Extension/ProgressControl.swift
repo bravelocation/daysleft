@@ -42,7 +42,7 @@ struct ProgressControl: View {
     
     var foregroundColor: Color
     var backgroundColor: Color
-    @ObservedObject var model: WatchDaysLeftData
+    @ObservedObject var model: WatchDaysLeftViewModel
 
     var lineWidth: CGFloat = 50.0
     var frameSize: CGFloat = 100
@@ -74,6 +74,6 @@ struct ProgressControl_Previews: PreviewProvider {
     static var previews: some View {
         ProgressControl(foregroundColor: Color.blue,
                         backgroundColor: Color.green,
-                        model: WatchDaysLeftData())
+                        model: WatchDaysLeftViewModel())
     }
 }
