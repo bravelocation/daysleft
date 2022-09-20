@@ -42,7 +42,8 @@ open class WatchDaysLeftModel: DaysLeftModel {
     }
     
     func updateComplications() {
-        NSLog("Updating complications...")
+        print("Updating complications...")
+        
         let complicationServer = CLKComplicationServer.sharedInstance()
         let activeComplications = complicationServer.activeComplications
         

@@ -16,7 +16,7 @@ open class DaysLeftModel: BLUserSettings {
         super.init()
         
         // Preload cache
-        NSLog("Preloading settings cache...")
+        print("Preloading settings cache...")
         self.settingsCache["start"] = self.appStandardUserDefaults!.value(forKey: "start")
         self.settingsCache["end"] = self.appStandardUserDefaults!.value(forKey: "end")
         self.settingsCache["title"] = self.appStandardUserDefaults!.value(forKey: "title")
@@ -37,7 +37,7 @@ open class DaysLeftModel: BLUserSettings {
         if (WCSession.isSupported()) {
             let session = WCSession.default
             session.transferUserInfo(self.allCurrentSettings())
-            NSLog("Settings pushed to watch")
+            print("Settings pushed to watch")
         }
     }
     
@@ -165,12 +165,12 @@ open class DaysLeftModel: BLUserSettings {
         }
     }
     
-    fileprivate func allCurrentSettings() -> Dictionary<String, AnyObject> {
-        var updatedSettings = Dictionary<String, AnyObject>()
-        updatedSettings["start"] = self.start as AnyObject?
-        updatedSettings["end"] = self.end as AnyObject?
-        updatedSettings["title"] = self.title as AnyObject?
-        updatedSettings["weekdaysOnly"] = self.weekdaysOnly as AnyObject?
+    fileprivate func allCurrentSettings() -> Dictionary<String, Any> {
+        var updatedSettings = Dictionary<String, Any>()
+        updatedSettings["start"] = self.start
+        updatedSettings["end"] = self.end
+        updatedSettings["title"] = self.title
+        updatedSettings["weekdaysOnly"] = self.weekdaysOnly
 
         return updatedSettings
     }

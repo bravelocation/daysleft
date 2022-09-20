@@ -27,7 +27,7 @@ class WatchDaysLeftData: ObservableObject {
     }
     
     func updateViewData() {
-        NSLog("Updating view data...")
+        print("Updating view data...")
         
         // Reset the percentage done to 0.0
         self.percentageDone = 0.0
@@ -61,7 +61,7 @@ class WatchDaysLeftData: ObservableObject {
     
     @objc
     fileprivate func userSettingsUpdated(_ notification: Notification) {
-        NSLog("Received BLUserSettingsUpdated notification")
+        print("Received BLUserSettingsUpdated notification")
         
         // Update view data on main thread
         DispatchQueue.main.async {

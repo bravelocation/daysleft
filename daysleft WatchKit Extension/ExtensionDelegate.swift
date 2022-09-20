@@ -14,7 +14,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
     lazy var dataModel: WatchDaysLeftData = WatchDaysLeftData()
 
     func applicationDidBecomeActive() {
-        NSLog("applicationDidBecomeActive started")
+        print("applicationDidBecomeActive started")
                 
         // Initialise the watch session
         self.model.initialiseWatchSession()
@@ -25,7 +25,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
         // Setup background refresh
         self.setupBackgroundRefresh()
         
-        NSLog("applicationDidBecomeActive completed")
+        print("applicationDidBecomeActive completed")
     }
     
     func handle(_ backgroundTasks: Set<WKRefreshBackgroundTask>) {

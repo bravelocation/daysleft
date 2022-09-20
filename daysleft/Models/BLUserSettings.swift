@@ -66,28 +66,28 @@ open class BLUserSettings: NSObject, WCSessionDelegate {
             settings.set(value, forKey: key)
             settings.synchronize()
         } else {
-            NSLog("Couldn't get settings defaults")
+            print("Couldn't get settings defaults")
         }
     }
     
     open func initialiseWatchSession() {
         if (self.watchSessionInitialised) {
-            NSLog("Watch session already initialised")
+            print("Watch session already initialised")
             return
         } else {
             self.watchSessionInitialised = true
-            NSLog("Watch session starting initialisation...")
+            print("Watch session starting initialisation...")
         }
         
         // Set up watch setting if appropriate
         if (WCSession.isSupported()) {
-            NSLog("Setting up watch session")
+            print("Setting up watch session")
             let session: WCSession = WCSession.default
             session.delegate = self
             session.activate()
-            NSLog("Watch session activated")
+            print("Watch session activated")
         } else {
-            NSLog("No watch session set up")
+            print("No watch session set up")
         }
     }
     
@@ -101,11 +101,11 @@ open class BLUserSettings: NSObject, WCSessionDelegate {
         
         // Finally send a notification for the view controllers to refresh
         NotificationCenter.default.post(name: Notification.Name(rawValue: BLUserSettings.UpdateSettingsNotification), object: nil, userInfo: nil)
-        NSLog("Sent UpdateSettingsNotification")
+        print("Sent UpdateSettingsNotification")
     }
     
     @nonobjc open func session(_ session: WCSession, didReceiveUpdate receivedApplicationContext: [String: AnyObject]) {
-        NSLog("New context transfer data received on watch")
+        print("New context transfer data received on watch")
         
         for (key, value) in receivedApplicationContext {
             self.writeObjectToStore(value, key: key)
@@ -113,7 +113,7 @@ open class BLUserSettings: NSObject, WCSessionDelegate {
         
         // Finally send a notification for the view controllers to refresh
         NotificationCenter.default.post(name: Notification.Name(rawValue: DaysLeftModel.UpdateSettingsNotification), object: nil, userInfo: nil)
-        NSLog("Sent UpdateSettingsNotification")
+        print("Sent UpdateSettingsNotification")
     }
     
     open func session(_ session: WCSession,

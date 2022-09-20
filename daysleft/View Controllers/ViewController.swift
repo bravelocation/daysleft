@@ -152,7 +152,7 @@ class ViewController: UIViewController {
     
     @objc
     fileprivate func iCloudSettingsUpdated(_ notification: Notification) {
-        NSLog("Received iCloud settings update notification in main view controller")
+        print("Received iCloud settings update notification in main view controller")
         
         // Update view data on main thread
         DispatchQueue.main.async {
@@ -162,7 +162,7 @@ class ViewController: UIViewController {
     
     @objc
     fileprivate func appEntersForeground() {
-        NSLog("App enters foreground in main view controller")
+        print("App enters foreground in main view controller")
         
         // Update view data on main thread
         DispatchQueue.main.async {
@@ -173,7 +173,7 @@ class ViewController: UIViewController {
     
     // MARK: - Helper functions
     func updateViewFromModel() {
-        NSLog("updateViewFromModel started")
+        print("updateViewFromModel started")
         let model = self.modelData()
         
         let now: Date = Date()
@@ -208,7 +208,7 @@ class ViewController: UIViewController {
         appDelegate.updateBadge()
         appDelegate.updateWidgets()
         
-        NSLog("updateViewFromModel completed")
+        print("updateViewFromModel completed")
     }
 
     func modelData() -> AppDaysLeftModel {
