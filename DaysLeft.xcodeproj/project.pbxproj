@@ -60,6 +60,16 @@
 		52BC111D237C464A005EC3F7 /* ProgressControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BC111C237C464A005EC3F7 /* ProgressControl.swift */; };
 		52BC111F237C4AD0005EC3F7 /* WatchDaysLeftData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BC111E237C4AD0005EC3F7 /* WatchDaysLeftData.swift */; };
 		52C595311E952667006C5269 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52C595301E952667006C5269 /* StoreKit.framework */; };
+		52CBC79A28D9DF1000C89F20 /* iCloudKeyValueDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CBC79928D9DF1000C89F20 /* iCloudKeyValueDataProvider.swift */; };
+		52CBC79B28D9DF1000C89F20 /* iCloudKeyValueDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CBC79928D9DF1000C89F20 /* iCloudKeyValueDataProvider.swift */; };
+		52CBC79C28D9DF1000C89F20 /* iCloudKeyValueDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CBC79928D9DF1000C89F20 /* iCloudKeyValueDataProvider.swift */; };
+		52CBC79D28D9DF1000C89F20 /* iCloudKeyValueDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CBC79928D9DF1000C89F20 /* iCloudKeyValueDataProvider.swift */; };
+		52CBC79E28D9DF1000C89F20 /* iCloudKeyValueDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CBC79928D9DF1000C89F20 /* iCloudKeyValueDataProvider.swift */; };
+		52CBC7A028D9E01700C89F20 /* DataProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CBC79F28D9E01700C89F20 /* DataProviderProtocol.swift */; };
+		52CBC7A128D9E01700C89F20 /* DataProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CBC79F28D9E01700C89F20 /* DataProviderProtocol.swift */; };
+		52CBC7A228D9E01700C89F20 /* DataProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CBC79F28D9E01700C89F20 /* DataProviderProtocol.swift */; };
+		52CBC7A328D9E01700C89F20 /* DataProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CBC79F28D9E01700C89F20 /* DataProviderProtocol.swift */; };
+		52CBC7A428D9E01700C89F20 /* DataProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CBC79F28D9E01700C89F20 /* DataProviderProtocol.swift */; };
 		52CFBEFE1A8B631B005234FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CFBEFD1A8B631B005234FB /* AppDelegate.swift */; };
 		52CFBF001A8B631B005234FB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CFBEFF1A8B631B005234FB /* ViewController.swift */; };
 		52CFBF031A8B631B005234FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52CFBF011A8B631B005234FB /* Main.storyboard */; };
@@ -225,6 +235,8 @@
 		52BC111C237C464A005EC3F7 /* ProgressControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressControl.swift; sourceTree = "<group>"; };
 		52BC111E237C4AD0005EC3F7 /* WatchDaysLeftData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchDaysLeftData.swift; sourceTree = "<group>"; };
 		52C595301E952667006C5269 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		52CBC79928D9DF1000C89F20 /* iCloudKeyValueDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iCloudKeyValueDataProvider.swift; sourceTree = "<group>"; };
+		52CBC79F28D9E01700C89F20 /* DataProviderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProviderProtocol.swift; sourceTree = "<group>"; };
 		52CFBEF81A8B631B005234FB /* DaysLeft.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DaysLeft.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52CFBEFC1A8B631B005234FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52CFBEFD1A8B631B005234FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -533,6 +545,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		52CBC79828D9DEE700C89F20 /* DataProviders */ = {
+			isa = PBXGroup;
+			children = (
+				52CBC79F28D9E01700C89F20 /* DataProviderProtocol.swift */,
+				52CBC79928D9DF1000C89F20 /* iCloudKeyValueDataProvider.swift */,
+			);
+			path = DataProviders;
+			sourceTree = "<group>";
+		};
 		52CFBEEF1A8B631B005234FB = {
 			isa = PBXGroup;
 			children = (
@@ -565,11 +586,12 @@
 		52CFBEFA1A8B631B005234FB /* daysleft */ = {
 			isa = PBXGroup;
 			children = (
-				5240F1CE28D8C19E00B95FE5 /* Model Extensions */,
 				5208B83228D870F8007BB75C /* Assets */,
 				5208B83128D870BF007BB75C /* Data Managers */,
+				52CBC79828D9DEE700C89F20 /* DataProviders */,
 				5208B83528D871F4007BB75C /* iOS */,
 				5208B83628D87203007BB75C /* Mac */,
+				5240F1CE28D8C19E00B95FE5 /* Model Extensions */,
 				5208B83728D872F9007BB75C /* Models */,
 				5208B83328D87199007BB75C /* View Controllers */,
 				5208B83428D871E6007BB75C /* View Models */,
@@ -960,6 +982,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52CBC79C28D9DF1000C89F20 /* iCloudKeyValueDataProvider.swift in Sources */,
 				52AC69542154DC3000E6C833 /* Intents.intentdefinition in Sources */,
 				5240F1D328D8C1BC00B95FE5 /* Date+Extensions.swift in Sources */,
 				5240F1ED28D9BE1A00B95FE5 /* AppSettings.swift in Sources */,
@@ -967,6 +990,7 @@
 				52AC69362154DA7E00E6C833 /* IntentHandler.swift in Sources */,
 				5240F1E728D9B6CB00B95FE5 /* AppSettingsDataManager.swift in Sources */,
 				5240F1F328D9C25700B95FE5 /* AppControlSettings.swift in Sources */,
+				52CBC7A228D9E01700C89F20 /* DataProviderProtocol.swift in Sources */,
 				5208B83E28D87453007BB75C /* CounterView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -979,6 +1003,8 @@
 				52AC69412154DA7E00E6C833 /* IntentViewController.swift in Sources */,
 				5240F1EE28D9BE1A00B95FE5 /* AppSettings.swift in Sources */,
 				5240F1D428D8C1BC00B95FE5 /* Date+Extensions.swift in Sources */,
+				52CBC7A328D9E01700C89F20 /* DataProviderProtocol.swift in Sources */,
+				52CBC79D28D9DF1000C89F20 /* iCloudKeyValueDataProvider.swift in Sources */,
 				5208B83D28D87450007BB75C /* CounterView.swift in Sources */,
 				5240F1F428D9C25700B95FE5 /* AppControlSettings.swift in Sources */,
 				5240F1E828D9B6CB00B95FE5 /* AppSettingsDataManager.swift in Sources */,
@@ -993,6 +1019,8 @@
 				52BC1119237C45BC005EC3F7 /* InterfaceHostController.swift in Sources */,
 				52BC111D237C464A005EC3F7 /* ProgressControl.swift in Sources */,
 				52D25F3C1BCB8595002E4C76 /* ComplicationsDataSource.swift in Sources */,
+				52CBC7A128D9E01700C89F20 /* DataProviderProtocol.swift in Sources */,
+				52CBC79B28D9DF1000C89F20 /* iCloudKeyValueDataProvider.swift in Sources */,
 				52BC111B237C461C005EC3F7 /* WatchView.swift in Sources */,
 				5240F1E628D9B6CB00B95FE5 /* AppSettingsDataManager.swift in Sources */,
 				5240F1F228D9C25700B95FE5 /* AppControlSettings.swift in Sources */,
@@ -1009,6 +1037,7 @@
 				52AC69532154DAFB00E6C833 /* Intents.intentdefinition in Sources */,
 				527AD75D1E94EB2800F8637B /* PurchaseViewController.swift in Sources */,
 				5240F1EB28D9BE1A00B95FE5 /* AppSettings.swift in Sources */,
+				52CBC79A28D9DF1000C89F20 /* iCloudKeyValueDataProvider.swift in Sources */,
 				52F9CDAC22D63D1900E0FFE8 /* SceneDelegate.swift in Sources */,
 				52CFBF001A8B631B005234FB /* ViewController.swift in Sources */,
 				5240F1F128D9C25700B95FE5 /* AppControlSettings.swift in Sources */,
@@ -1017,6 +1046,7 @@
 				52D617B124D06F9000465F4C /* MenuBuilder.swift in Sources */,
 				52FAB11E1A9381B70039691E /* SettingsViewController.swift in Sources */,
 				5240F1D028D8C1BC00B95FE5 /* Date+Extensions.swift in Sources */,
+				52CBC7A028D9E01700C89F20 /* DataProviderProtocol.swift in Sources */,
 				5208B83A28D8733D007BB75C /* CounterView.swift in Sources */,
 				52FC401427AABAD9005DAD8C /* AnalyticsManager.swift in Sources */,
 				52DC9EB51FC97A9200AE02F6 /* FirebaseNotifications.swift in Sources */,
@@ -1032,9 +1062,11 @@
 				5240F1D528D8C1BC00B95FE5 /* Date+Extensions.swift in Sources */,
 				52E048BF2507A57E009A2169 /* WidgetTimelineProvider.swift in Sources */,
 				52E048B525077E6A009A2169 /* WidgetDaysLeftData.swift in Sources */,
+				52CBC7A428D9E01700C89F20 /* DataProviderProtocol.swift in Sources */,
 				52E048BA25077F87009A2169 /* WidgetProgressControl.swift in Sources */,
 				5240F1EF28D9BE1A00B95FE5 /* AppSettings.swift in Sources */,
 				5240F1E928D9B6CB00B95FE5 /* AppSettingsDataManager.swift in Sources */,
+				52CBC79E28D9DF1000C89F20 /* iCloudKeyValueDataProvider.swift in Sources */,
 				5240F1F528D9C25700B95FE5 /* AppControlSettings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
