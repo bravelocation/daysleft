@@ -13,11 +13,13 @@ import ClockKit
 
 class WatchDaysLeftData: ObservableObject {
     
-    @Published var currentPercentageLeft: String = ""
-    @Published var currentTitle: String = ""
-    @Published var currentSubTitle: String = ""
+    /// Current app settings
+    @Published var appSettings: AppSettings = AppSettingsDataManager().appSettings
+    
+    /// Percentage done
     @Published var percentageDone: Double = 0.0
     
+    /// Combine subject to trigger of model has changed
     let modelChanged = PassthroughSubject<(), Never>()
     
     init() {
@@ -27,37 +29,27 @@ class WatchDaysLeftData: ObservableObject {
         self.updateViewData()
     }
     
+    /// Update the view data on initialisation, or on a data update
     func updateViewData() {
         print("Updating view data...")
         
-        // Reset the percentage done to 0.0
+        // Reset the percentage done to 0.0 (to trigger some animation)
         self.percentageDone = 0.0
         self.modelChanged.send(())
         
         // Set the published properties based on the model
-        let now: Date = Date()
-        let appSettings = AppSettingsDataManager().appSettings
-        
-        self.currentTitle = "\(appSettings.daysLeftDescription(now)) until"
-        self.currentSubTitle = appSettings.title
-
-        let percentageDone: Double = (Double(appSettings.daysGone(now)) * 100.0) / Double(appSettings.daysLength)
-        self.percentageDone = percentageDone
-        self.currentPercentageLeft = String(format: "%3.0f%% done", percentageDone)
+        self.appSettings = AppSettingsDataManager().appSettings
+        self.percentageDone = self.appSettings.percentageDone(date: Date())
         self.modelChanged.send(())
         
         // Let's update the snapshot if the view changed
-        print("Scheduling snapshot")
-        
-        let soon =  Calendar.current.date(byAdding: .second, value: 5, to: Date())
-        WKExtension.shared().scheduleSnapshotRefresh(withPreferredDate: soon!, userInfo: nil, scheduledCompletion: { (error: Error?) in
-            if let error = error {
-                print("Error occurred while scheduling snapshot: \(error.localizedDescription)")
-            }})
+        self.scheduleSnapshot()
     }
     
     @objc
-    fileprivate func userSettingsUpdated(_ notification: Notification) {
+    /// Event handler for data update
+    /// - Parameter notification: Update notification received
+    private func userSettingsUpdated(_ notification: Notification) {
         print("Received UserSettingsUpdated notification")
         
         // Update view data on main thread
@@ -66,6 +58,23 @@ class WatchDaysLeftData: ObservableObject {
         }
         
         // Let's also update the complications if the data has changed
+        self.updateComplications()
+    }
+    
+    /// Schedule a snapshot of the screen
+    private func scheduleSnapshot() {
+        print("Scheduling snapshot")
+        
+        let soon =  Calendar.current.date(byAdding: .second, value: 5, to: Date())
+        WKExtension.shared().scheduleSnapshotRefresh(withPreferredDate: soon!, userInfo: nil) { (error: Error?) in
+            if let error = error {
+                print("Error occurred while scheduling snapshot: \(error.localizedDescription)")
+            }
+        }
+    }
+    
+    /// Update any added complications
+    private func updateComplications() {
         let complicationServer = CLKComplicationServer.sharedInstance()
         let activeComplications = complicationServer.activeComplications
         
