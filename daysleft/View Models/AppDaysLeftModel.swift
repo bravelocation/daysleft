@@ -13,14 +13,14 @@ class AppDaysLeftModel: DaysLeftModel {
     public static let iCloudSettingsNotification = "kBLiCloudSettingsNotification"
 
     /// Send updated settings to watch
-    open override func initialiseiCloudSettings() {
+    override func initialiseiCloudSettings() {
         print("Initialising iCloud Settings")
         let store: NSUbiquitousKeyValueStore = NSUbiquitousKeyValueStore.default
         NotificationCenter.default.addObserver(self, selector: #selector(AppDaysLeftModel.updateKVStoreItems(_:)), name: NSUbiquitousKeyValueStore.didChangeExternallyNotification, object: store)
         store.synchronize()
     }
     
-    open override func writeSettingToiCloudStore(_ value: AnyObject, key: String) {
+    override func writeSettingToiCloudStore(_ value: AnyObject, key: String) {
         let store: NSUbiquitousKeyValueStore = NSUbiquitousKeyValueStore.default
         store.set(value, forKey: key)
         store.synchronize()

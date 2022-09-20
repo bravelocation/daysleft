@@ -9,12 +9,12 @@
 import Foundation
 import WatchConnectivity
 
-open class BLUserSettings: NSObject, WCSessionDelegate {
+class BLUserSettings: NSObject, WCSessionDelegate {
 
     public static let UpdateSettingsNotification = "kBLUserSettingsNotification"
-    open var appStandardUserDefaults: UserDefaults?
-    open var settingsCache = Dictionary<String, Any>()
-    open var watchSessionInitialised: Bool = false
+    var appStandardUserDefaults: UserDefaults?
+    var settingsCache = Dictionary<String, Any>()
+    var watchSessionInitialised: Bool = false
     
     /// Default initialiser for the class
     ///
@@ -36,7 +36,7 @@ open class BLUserSettings: NSObject, WCSessionDelegate {
     ///
     /// param: key The key for the setting
     /// returns: An AnyObject? value retrieved from the settings store
-    open func readObjectFromStore(_ key: String) -> Any? {
+    func readObjectFromStore(_ key: String) -> Any? {
         // First try the local cache
         let cachedValue = self.settingsCache[key]
         
@@ -57,7 +57,7 @@ open class BLUserSettings: NSObject, WCSessionDelegate {
     ///
     /// param: value The value for the setting
     /// param: key The key for the setting
-    open func writeObjectToStore(_ value: AnyObject, key: String) {
+    func writeObjectToStore(_ value: AnyObject, key: String) {
         // First write to local store
         self.settingsCache[key] = value
         
@@ -70,7 +70,7 @@ open class BLUserSettings: NSObject, WCSessionDelegate {
         }
     }
     
-    open func initialiseWatchSession() {
+    func initialiseWatchSession() {
         if (self.watchSessionInitialised) {
             print("Watch session already initialised")
             return
@@ -92,7 +92,7 @@ open class BLUserSettings: NSObject, WCSessionDelegate {
     }
     
     /// WCSessionDelegate implementation - update local settings when transfered from phone
-    open func session(_ session: WCSession, didReceiveUserInfo userInfo: [String: Any]) {
+    func session(_ session: WCSession, didReceiveUserInfo userInfo: [String: Any]) {
         print("New user info transfer data received on watch")
         
         for (key, value) in userInfo {
@@ -104,7 +104,7 @@ open class BLUserSettings: NSObject, WCSessionDelegate {
         print("Sent UpdateSettingsNotification")
     }
     
-    @nonobjc open func session(_ session: WCSession, didReceiveUpdate receivedApplicationContext: [String: AnyObject]) {
+    @nonobjc func session(_ session: WCSession, didReceiveUpdate receivedApplicationContext: [String: AnyObject]) {
         print("New context transfer data received on watch")
         
         for (key, value) in receivedApplicationContext {
@@ -116,9 +116,9 @@ open class BLUserSettings: NSObject, WCSessionDelegate {
         print("Sent UpdateSettingsNotification")
     }
     
-    open func session(_ session: WCSession,
-                      activationDidCompleteWith activationState: WCSessionActivationState,
-                      error: Error?) {}
+    func session(_ session: WCSession,
+                 activationDidCompleteWith activationState: WCSessionActivationState,
+                 error: Error?) {}
     
     #if os(iOS)
     public func sessionDidBecomeInactive(_ session: WCSession) { }
