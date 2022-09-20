@@ -11,29 +11,21 @@ import SwiftUI
 import Combine
 import WidgetKit
 
-class WidgetDaysLeftData: ObservableObject, TimelineEntry {
+class WidgetDaysLeftData: TimelineEntry {
     var date: Date
     var relevance: TimelineEntryRelevance? {
         return TimelineEntryRelevance(score: Float(self.percentageDone))
     }
     
-    var currentPercentageLeft: String = ""
-    var currentTitle: String = ""
-    var percentageDone: Double = 0.0
+    let currentPercentageLeft: String
+    let currentTitle: String
+    let percentageDone: Double
     
-    init(date: Date) {
+    init(date: Date, appSettings: AppSettings) {
         self.date = date
         
-        // Reset the percentage done to 0.0
-        self.percentageDone = 0.0
-        
-        // Set the published properties based on the model
-        let appSettings = AppSettingsDataManager().appSettings
-        
         self.currentTitle = "\(appSettings.daysLeftDescription(self.date)) to \(appSettings.title)"
-
-        let percentageDone: Double = (Double(appSettings.daysGone(self.date)) * 100.0) / Double(appSettings.daysLength)
-        self.percentageDone = percentageDone
+        self.percentageDone = (Double(appSettings.daysGone(self.date)) * 100.0) / Double(appSettings.daysLength)
         self.currentPercentageLeft = String(format: "%3.0f%% done", percentageDone)
     }
 }

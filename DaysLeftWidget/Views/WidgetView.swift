@@ -12,7 +12,7 @@ import WidgetKit
 
 struct WidgetView: View {
     
-    @ObservedObject var model: WidgetDaysLeftData
+    var model: WidgetDaysLeftData
     @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
@@ -50,17 +50,19 @@ struct WidgetView: View {
 }
 
 struct WidgetView_Previews: PreviewProvider {
+    static var appSettings = AppSettingsDataManager(dataProvider: InMemoryDataProvider()).appSettings
+    
     static var previews: some View {
         Group {
-            WidgetView(model: WidgetDaysLeftData(date: Date()))
+            WidgetView(model: WidgetDaysLeftData(date: Date(), appSettings: appSettings))
                 .previewContext(WidgetPreviewContext(family: .systemSmall))
-            WidgetView(model: WidgetDaysLeftData(date: Date()))
+            WidgetView(model: WidgetDaysLeftData(date: Date(), appSettings: appSettings))
                 .previewContext(WidgetPreviewContext(family: .systemMedium))
         
-            WidgetView(model: WidgetDaysLeftData(date: Date()))
+            WidgetView(model: WidgetDaysLeftData(date: Date(), appSettings: appSettings))
                 .previewContext(WidgetPreviewContext(family: .systemSmall))
                 .environment(\.colorScheme, .dark)
-            WidgetView(model: WidgetDaysLeftData(date: Date()))
+            WidgetView(model: WidgetDaysLeftData(date: Date(), appSettings: appSettings))
                 .previewContext(WidgetPreviewContext(family: .systemMedium))
                 .environment(\.colorScheme, .dark)
         }

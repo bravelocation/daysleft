@@ -26,11 +26,13 @@ struct DaysLeftWidget: Widget {
 }
 
 struct DaysLeftWidget_Previews: PreviewProvider {
+    static var appSettings = AppSettingsDataManager(dataProvider: InMemoryDataProvider()).appSettings
+    
     static var previews: some View {
         Group {
-            WidgetView(model: WidgetDaysLeftData(date: Date()))
+            WidgetView(model: WidgetDaysLeftData(date: Date(), appSettings: appSettings))
                 .previewContext(WidgetPreviewContext(family: .systemSmall))
-            WidgetView(model: WidgetDaysLeftData(date: Date()))
+            WidgetView(model: WidgetDaysLeftData(date: Date(), appSettings: appSettings))
                 .previewContext(WidgetPreviewContext(family: .systemMedium))
         }
     }

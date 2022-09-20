@@ -134,10 +134,7 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
     @IBAction func switchShowBadgeChanged(_ sender: AnyObject) {
         let model = self.modelData()
         
-        model.appControlSettings = AppControlSettings(firstRun: model.appControlSettings.firstRun,
-                                                           showBadge: switchShowBadge.isOn,
-                                                           isASupporter: model.appControlSettings.isASupporter,
-                                                           appOpenCount: model.appControlSettings.appOpenCount + 1)
+        model.updateShowBadge(switchShowBadge.isOn)
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.registerForNotifications()
@@ -212,22 +209,21 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, SFSafa
     
     func validateAndSaveModel() {
         // Update the model
-        let model = self.modelData()
-        let updatedAppSettings = AppSettings(start: self.startDatePicker.date,
-                                             end: self.endDatePicker.date,
-                                             title: self.textTitle!.text!,
-                                             weekdaysOnly: self.switchWeekdaysOnly.isOn)
-
-        model.appSettings = updatedAppSettings
+        self.modelData().updateAppSettings(start: self.startDatePicker.date,
+                                end: self.endDatePicker.date,
+                                title: self.textTitle!.text!,
+                                weekdaysOnly: self.switchWeekdaysOnly.isOn)
         
         // Update the text fields
-        self.labelDaysLength.text = model.appSettings.daysLeftDescription(model.appSettings.start)
-        self.startDayOfWeek.text = model.appSettings.start.weekdayName
-        self.endDayOfWeek.text = model.appSettings.end.weekdayName
+        let updatedAddSettings = self.modelData().appSettings
+        
+        self.labelDaysLength.text = updatedAddSettings.daysLeftDescription(updatedAddSettings.start)
+        self.startDayOfWeek.text = updatedAddSettings.start.weekdayName
+        self.endDayOfWeek.text = updatedAddSettings.end.weekdayName
         
         // Update the date restrictions too
-        self.startDatePicker.maximumDate = model.appSettings.end
-        self.endDatePicker.minimumDate = model.appSettings.start
+        self.startDatePicker.maximumDate = updatedAddSettings.end
+        self.endDatePicker.minimumDate = updatedAddSettings.start
         
         // Update the badge and widgets too
         let appDelegate = UIApplication.shared.delegate as! AppDelegate

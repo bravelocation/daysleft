@@ -94,8 +94,7 @@ class DaysLeftTests: XCTestCase {
     
     // Helper method for running tests
     func actualTestRun(startDay: Int, endDay: Int, currentDay: Int, weekdaysOnly: Bool, expectedLength: Int, expectedGone: Int, expectedLeft: Int) {
-        let model: DaysLeftModel = DaysLeftModel()
-        model.weekdaysOnly = weekdaysOnly
+        let model = AppSettingsDataManager(dataProvider: InMemoryDataProvider())
         
         var startComponents: DateComponents = DateComponents()
         startComponents.year = 2015
@@ -112,13 +111,14 @@ class DaysLeftTests: XCTestCase {
         currentComponents.month = 1
         currentComponents.day = currentDay
         
-        model.start = Calendar.autoupdatingCurrent.date(from: startComponents)!
-        model.end = Calendar.autoupdatingCurrent.date(from: endComponents)!
+        model.appSettings = AppSettings(start: Calendar.current.date(from: startComponents)!,
+                                        end: Calendar.current.date(from: endComponents)!,
+                                        title: "Test",
+                                        weekdaysOnly: weekdaysOnly)
+        
         let currentDate: Date = Calendar.autoupdatingCurrent.date(from: currentComponents)!
-        
-        XCTAssertEqual(expectedLength, model.daysLength, "DaysLength is incorrect")
-        XCTAssertEqual(expectedGone, model.daysGone(currentDate), "DaysGone is incorrect")
-        XCTAssertEqual(expectedLeft, model.daysLeft(currentDate), "DaysLeft is incorrect")
-        
+        XCTAssertEqual(expectedLength, model.appSettings.daysLength, "DaysLength is incorrect")
+        XCTAssertEqual(expectedGone, model.appSettings.daysGone(currentDate), "DaysGone is incorrect")
+        XCTAssertEqual(expectedLeft, model.appSettings.daysLeft(currentDate), "DaysLeft is incorrect")
     }
 }
