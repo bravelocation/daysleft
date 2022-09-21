@@ -67,19 +67,6 @@ class AppSettingsDataManager {
     }
     
     // MARK: - Data updating methods
-    /// Update the app settings
-    /// - Parameters:
-    ///   - start: Start date
-    ///   - end: End date
-    ///   - title: Title
-    ///   - weekdaysOnly: Weekdays only?
-    func updateAppSettings(start: Date, end: Date, title: String, weekdaysOnly: Bool) {
-        self.updateStartDate(start)
-        self.updateEndDate(end)
-        self.updateTitle(title)
-        self.updateWeekdaysOnly(weekdaysOnly)
-    }
-    
     /// Update start date
     /// - Parameter date: New date
     func updateStartDate(_ date: Date) {

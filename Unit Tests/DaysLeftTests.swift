@@ -100,23 +100,24 @@ class DaysLeftTests: XCTestCase {
         startComponents.year = 2015
         startComponents.month = 1
         startComponents.day = startDay
+        model.updateStartDate(Calendar.current.date(from: startComponents)!)
         
         var endComponents: DateComponents = DateComponents()
         endComponents.year = 2015
         endComponents.month = 1
         endComponents.day = endDay
+        model.updateEndDate(Calendar.current.date(from: endComponents)!)
+        
+        model.updateTitle("Test")
+        model.updateWeekdaysOnly(weekdaysOnly)
         
         var currentComponents: DateComponents = DateComponents()
         currentComponents.year = 2015
         currentComponents.month = 1
         currentComponents.day = currentDay
         
-        model.updateAppSettings(start: Calendar.current.date(from: startComponents)!,
-                                        end: Calendar.current.date(from: endComponents)!,
-                                        title: "Test",
-                                        weekdaysOnly: weekdaysOnly)
+        let currentDate: Date = Calendar.current.date(from: currentComponents)!
         
-        let currentDate: Date = Calendar.autoupdatingCurrent.date(from: currentComponents)!
         XCTAssertEqual(expectedLength, model.appSettings.daysLength, "DaysLength is incorrect")
         XCTAssertEqual(expectedGone, model.appSettings.daysGone(currentDate), "DaysGone is incorrect")
         XCTAssertEqual(expectedLeft, model.appSettings.daysLeft(currentDate), "DaysLeft is incorrect")
