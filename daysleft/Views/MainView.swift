@@ -26,7 +26,31 @@ struct MainView: View {
             .padding([.top, .bottom], 16.0)
             
             Text(self.model.appSettings.currentPercentageLeft(date: Date())).font(.footnote)
-        }.padding()
+        }
+        .padding()
+        .navigationBarTitleDisplayMode(.inline)
+        .navigationBarTitle(Text("Count The Days Left"))
+        .navigationBarItems(leading:
+                                Button(
+                                    action: {
+                                        self.model.share()
+                                    },
+                                    label: {
+                                        Image(systemName: "square.and.arrow.up")
+                                            .foregroundColor(Color.white)
+                                    })
+                                    .buttonStyle(PlainButtonStyle()),
+                            trailing: Button(
+                                action: {
+                                    self.model.edit()
+                                },
+                                label: {
+                                    Text("Edit")
+                                        .foregroundColor(Color.white)
+                                })
+                                .buttonStyle(PlainButtonStyle())
+                            
+        )
     }
 }
 

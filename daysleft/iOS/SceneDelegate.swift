@@ -19,7 +19,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Make a main view hosting controller window
         let window = UIWindow(windowScene: windowScene)
         let mainViewController = MainViewHostingController<AnyView>()
-        window.rootViewController = mainViewController
+        
+        let navController = UINavigationController()
+        navController.viewControllers = [mainViewController]
+        window.rootViewController = navController
         
         // Hode toolbar for Mac
         #if targetEnvironment(macCatalyst)
