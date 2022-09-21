@@ -95,10 +95,12 @@
 		52CBC7C828DB0D0900C89F20 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CBC7C728DB0D0900C89F20 /* MainView.swift */; };
 		52CBC7C928DB101600C89F20 /* InMemoryDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CBC7A528D9E1F000C89F20 /* InMemoryDataProvider.swift */; };
 		52CFBEFE1A8B631B005234FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CFBEFD1A8B631B005234FB /* AppDelegate.swift */; };
-		52CFBF031A8B631B005234FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52CFBF011A8B631B005234FB /* Main.storyboard */; };
 		52CFBF051A8B631B005234FB /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52CFBF041A8B631B005234FB /* Media.xcassets */; };
 		52D25F3C1BCB8595002E4C76 /* ComplicationsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D25F3B1BCB8595002E4C76 /* ComplicationsDataSource.swift */; };
 		52D617B124D06F9000465F4C /* MenuBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D617B024D06F9000465F4C /* MenuBuilder.swift */; };
+		52DC5AD028DB3EE300AFF24D /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DC5ACF28DB3EE300AFF24D /* SettingsViewModel.swift */; };
+		52DC5AD228DB431900AFF24D /* SettingsViewHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DC5AD128DB431900AFF24D /* SettingsViewHostingController.swift */; };
+		52DC5AD428DB43CE00AFF24D /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DC5AD328DB43CE00AFF24D /* SettingsView.swift */; };
 		52DC9EB31FC97A3200AE02F6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52DC9EB21FC97A3200AE02F6 /* GoogleService-Info.plist */; };
 		52DC9EB51FC97A9200AE02F6 /* FirebaseNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DC9EB41FC97A9200AE02F6 /* FirebaseNotifications.swift */; };
 		52E048A225077AFB009A2169 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52E048A125077AFB009A2169 /* WidgetKit.framework */; platformFilter = ios; };
@@ -114,7 +116,6 @@
 		52E048BF2507A57E009A2169 /* WidgetTimelineProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E048BE2507A57E009A2169 /* WidgetTimelineProvider.swift */; };
 		52F9CDAC22D63D1900E0FFE8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F9CDAB22D63D1900E0FFE8 /* SceneDelegate.swift */; };
 		52FAB11C1A9240490039691E /* DefaultPreferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52FAB11B1A9240490039691E /* DefaultPreferences.plist */; };
-		52FAB11E1A9381B70039691E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FAB11D1A9381B70039691E /* SettingsViewController.swift */; };
 		52FC400D27AA8B1B005DAD8C /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 52FC400C27AA8B1B005DAD8C /* FirebaseMessaging */; };
 		52FC400F27AA8EFC005DAD8C /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 52FC400E27AA8EFC005DAD8C /* FirebaseAnalyticsWithoutAdIdSupport */; };
 		52FC401127AA8F04005DAD8C /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 52FC401027AA8F04005DAD8C /* FirebaseCrashlytics */; };
@@ -268,11 +269,13 @@
 		52CFBEF81A8B631B005234FB /* DaysLeft.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DaysLeft.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52CFBEFC1A8B631B005234FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52CFBEFD1A8B631B005234FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		52CFBF021A8B631B005234FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		52CFBF041A8B631B005234FB /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		52CFBF131A8B631B005234FB /* DaysLeftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysLeftTests.swift; sourceTree = "<group>"; };
 		52D25F3B1BCB8595002E4C76 /* ComplicationsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComplicationsDataSource.swift; sourceTree = "<group>"; };
 		52D617B024D06F9000465F4C /* MenuBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBuilder.swift; sourceTree = "<group>"; };
+		52DC5ACF28DB3EE300AFF24D /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		52DC5AD128DB431900AFF24D /* SettingsViewHostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewHostingController.swift; sourceTree = "<group>"; };
+		52DC5AD328DB43CE00AFF24D /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		52DC9EB21FC97A3200AE02F6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		52DC9EB41FC97A9200AE02F6 /* FirebaseNotifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseNotifications.swift; sourceTree = "<group>"; };
 		52E048A025077AFB009A2169 /* DaysLeftWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = DaysLeftWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -289,7 +292,6 @@
 		52F9CDAB22D63D1900E0FFE8 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		52FAB11A1A923F500039691E /* daysleft.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = daysleft.entitlements; sourceTree = "<group>"; };
 		52FAB11B1A9240490039691E /* DefaultPreferences.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DefaultPreferences.plist; sourceTree = "<group>"; };
-		52FAB11D1A9381B70039691E /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		52FC401327AABAD9005DAD8C /* AnalyticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -391,6 +393,7 @@
 			isa = PBXGroup;
 			children = (
 				52BC111E237C4AD0005EC3F7 /* DaysLeftViewModel.swift */,
+				52DC5ACF28DB3EE300AFF24D /* SettingsViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -426,6 +429,7 @@
 			children = (
 				52CBC7BD28DAF84500C89F20 /* CircularProgressView.swift */,
 				52CBC7C728DB0D0900C89F20 /* MainView.swift */,
+				52DC5AD328DB43CE00AFF24D /* SettingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -577,10 +581,8 @@
 		52CBC7C328DB0C4D00C89F20 /* Legacy */ = {
 			isa = PBXGroup;
 			children = (
-				52CFBF011A8B631B005234FB /* Main.storyboard */,
 				527AD75B1E94EB2800F8637B /* PurchaseViewController.swift */,
 				527AD75C1E94EB2800F8637B /* PurchaseViewController.xib */,
-				52FAB11D1A9381B70039691E /* SettingsViewController.swift */,
 			);
 			path = Legacy;
 			sourceTree = "<group>";
@@ -589,6 +591,7 @@
 			isa = PBXGroup;
 			children = (
 				52CBC7C528DB0CA300C89F20 /* MainViewHostingController.swift */,
+				52DC5AD128DB431900AFF24D /* SettingsViewHostingController.swift */,
 			);
 			path = Hosting;
 			sourceTree = "<group>";
@@ -949,7 +952,6 @@
 			files = (
 				527E15401D83F80300D81B15 /* gallery.ckcomplication in Resources */,
 				527AD75E1E94EB2800F8637B /* PurchaseViewController.xib in Resources */,
-				52CFBF031A8B631B005234FB /* Main.storyboard in Resources */,
 				52FAB11C1A9240490039691E /* DefaultPreferences.plist in Resources */,
 				52CFBF051A8B631B005234FB /* Media.xcassets in Resources */,
 				52DC9EB31FC97A3200AE02F6 /* GoogleService-Info.plist in Resources */,
@@ -1096,16 +1098,18 @@
 				52CBC7AE28D9EE6700C89F20 /* AppSettings+Text.swift in Sources */,
 				52CBC7C828DB0D0900C89F20 /* MainView.swift in Sources */,
 				52CBC79A28D9DF1000C89F20 /* CloudKeyValueDataProvider.swift in Sources */,
+				52DC5AD428DB43CE00AFF24D /* SettingsView.swift in Sources */,
 				52F9CDAC22D63D1900E0FFE8 /* SceneDelegate.swift in Sources */,
 				5240F1F128D9C25700B95FE5 /* AppControlSettings.swift in Sources */,
 				52CFBEFE1A8B631B005234FB /* AppDelegate.swift in Sources */,
 				5240F1E528D9B6CB00B95FE5 /* AppSettingsDataManager.swift in Sources */,
 				52CBC7C928DB101600C89F20 /* InMemoryDataProvider.swift in Sources */,
 				52D617B124D06F9000465F4C /* MenuBuilder.swift in Sources */,
-				52FAB11E1A9381B70039691E /* SettingsViewController.swift in Sources */,
 				5240F1D028D8C1BC00B95FE5 /* Date+Helpers.swift in Sources */,
+				52DC5AD228DB431900AFF24D /* SettingsViewHostingController.swift in Sources */,
 				52CBC7A028D9E01700C89F20 /* DataProviderProtocol.swift in Sources */,
 				52FC401427AABAD9005DAD8C /* AnalyticsManager.swift in Sources */,
+				52DC5AD028DB3EE300AFF24D /* SettingsViewModel.swift in Sources */,
 				52DC9EB51FC97A9200AE02F6 /* FirebaseNotifications.swift in Sources */,
 				52CBC7B528D9FBE000C89F20 /* AppSettings+DayCalculations.swift in Sources */,
 			);
@@ -1187,14 +1191,6 @@
 				52B7E8891ABEDE9300E1949C /* Base */,
 			);
 			name = Interface.storyboard;
-			sourceTree = "<group>";
-		};
-		52CFBF011A8B631B005234FB /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				52CFBF021A8B631B005234FB /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
