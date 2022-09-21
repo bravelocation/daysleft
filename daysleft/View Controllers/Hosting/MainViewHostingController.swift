@@ -113,7 +113,7 @@ class MainViewHostingController<Content: View>: UIHostingController<Content>, Vi
     
     /// Called to load the settings screen
     func edit() {
-        let settingsViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SettingsViewController")
+        let settingsViewController = SettingsViewHostingController<AnyView>()
         self.navigationController?.pushViewController(settingsViewController, animated: true)
     }
 
