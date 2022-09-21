@@ -22,6 +22,7 @@ struct SettingsView: View {
             Section {
                 Text("What are you counting down to?")
                     .font(.headline)
+                    .foregroundColor(Color("SettingsIconTint"))
                     .listRowSeparator(.hidden)
 
                 TextField("Enter your title", text: self.$title)
@@ -32,8 +33,7 @@ struct SettingsView: View {
                     }
 
                 DatePicker(selection: $start, in: ...end, displayedComponents: .date) {
-                    Text("Start counting from:")
-                        .font(.subheadline)
+                    Text("From")
                 }
                 .listRowSeparator(.hidden)
                 .onChange(of: start) { newValue in
@@ -41,8 +41,7 @@ struct SettingsView: View {
                 }
 
                 DatePicker(selection: $end, in: start..., displayedComponents: .date) {
-                    Text("to:")
-                        .font(.subheadline)
+                    Text("To")
                 }
                 .listRowSeparator(.hidden)
                 .onChange(of: end) { newValue in
@@ -50,8 +49,8 @@ struct SettingsView: View {
                 }
 
                 Toggle("Weekdays only?", isOn: $weekdaysOnly)
-                    .font(.subheadline)
                     .listRowSeparator(.hidden)
+                    .tint(Color("SettingsIconTint"))
                     .onChange(of: weekdaysOnly) { newValue in
                         self.model.updateWeekdaysOnly(newValue)
                     }
@@ -60,11 +59,12 @@ struct SettingsView: View {
             Section {
                 Text("Settings")
                     .font(.headline)
+                    .foregroundColor(Color("SettingsIconTint"))
                     .listRowSeparator(.hidden)
 
                 Toggle("Show days left on app badge", isOn: $showBadge)
-                    .font(.subheadline)
                     .listRowSeparator(.hidden)
+                    .tint(Color("SettingsIconTint"))
                     .onChange(of: showBadge) { newValue in
                         self.model.updateShowBadge(newValue)
                     }
@@ -73,6 +73,7 @@ struct SettingsView: View {
             Section(footer: Text(self.model.versionNumber)) {
                 Text("About")
                     .font(.headline)
+                    .foregroundColor(Color("SettingsIconTint"))
                     .listRowSeparator(.hidden)
                 
                 SettingsLinkView(model: self.model,
@@ -86,7 +87,7 @@ struct SettingsView: View {
                                  url: "https://bravelocation.com/countthedaysleft")
                 
                 SettingsLinkView(model: self.model,
-                                 iconName: "chevron.left.slash.chevron.right",
+                                 iconName: "curlybraces",
                                  title: "See the code on GitHub",
                                  url: "http://github.com/bravelocation/daysleft")
                 
@@ -108,9 +109,11 @@ struct SettingsLinkView: View {
     var body: some View {
         HStack {
             Image(systemName: iconName)
+                .foregroundColor(Color("SettingsIconTint"))
             Text(title)
             Spacer()
             Image(systemName: "chevron.right")
+                .foregroundColor(Color(uiColor: UIColor.tertiaryLabel))
         }.onTapGesture {
             self.model.openExternalUrl(url)
         }
