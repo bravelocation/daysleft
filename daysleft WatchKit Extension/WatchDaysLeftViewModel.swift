@@ -9,7 +9,6 @@
 import Foundation
 import SwiftUI
 import Combine
-import ClockKit
 
 class WatchDaysLeftViewModel: ObservableObject {
     
@@ -57,21 +56,6 @@ class WatchDaysLeftViewModel: ObservableObject {
         // Update view data on main thread
         DispatchQueue.main.async {
             self.updateViewData()
-        }
-        
-        // Let's also update the complications if the data has changed
-        self.updateComplications()
-    }
-    
-    /// Update any added complications
-    private func updateComplications() {
-        let complicationServer = CLKComplicationServer.sharedInstance()
-        let activeComplications = complicationServer.activeComplications
-        
-        if (activeComplications != nil) {
-            for complication in activeComplications! {
-                complicationServer.reloadTimeline(for: complication)
-            }
         }
     }
 }

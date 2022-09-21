@@ -7,11 +7,30 @@
 //
 
 import WatchKit
+import Combine
 import ClockKit
 
 class ExtensionDelegate: NSObject, WKExtensionDelegate {
     
+    /// View model for app
     var dataModel = WatchDaysLeftViewModel(dataManager: AppSettingsDataManager())
+    
+    /// Subscribers to change events
+    private var cancellables = Array<AnyCancellable>()
+    
+    // MARK: Initialisation
+    override init() {
+        super.init()
+        
+        // Setup listener for iCloud setting change
+        let keyValueChangeSubscriber = NotificationCenter.default
+            .publisher(for: .AppSettingsUpdated)
+            .sink { _ in
+                self.iCloudSettingsUpdated()
+            }
+        
+        self.cancellables.append(keyValueChangeSubscriber)
+    }
 
     func applicationDidBecomeActive() {
         print("applicationDidBecomeActive started")
@@ -59,6 +78,16 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
         // Not sure what to do here
     }
     
+    
+    // MARK: Event handlers
+    @objc
+    fileprivate func iCloudSettingsUpdated() {
+        print("Received iCloudSettingsUpdated notification")
+        
+        // Update complications
+        self.updateComplications()
+    }
+    
     private func setupBackgroundRefresh() {
         // Setup a background refresh for 0100 tomorrow
         let twoHoursTime = Calendar.current.date(byAdding: .hour, value: 2, to: Date())
@@ -70,5 +99,17 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
         })
         
         print("Setup background task for \(String(describing: twoHoursTime))")
+    }
+    
+    /// Update any added complications
+    private func updateComplications() {
+        let complicationServer = CLKComplicationServer.sharedInstance()
+        let activeComplications = complicationServer.activeComplications
+        
+        if (activeComplications != nil) {
+            for complication in activeComplications! {
+                complicationServer.reloadTimeline(for: complication)
+            }
+        }
     }
 }
