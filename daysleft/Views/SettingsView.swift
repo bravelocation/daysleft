@@ -92,9 +92,9 @@ struct SettingsView: View {
                                  url: "http://github.com/bravelocation/daysleft")
                 
                 SettingsLinkView(model: self.model,
-                                 iconName: "app.badge",
-                                 title: "More apps from Bravelocation Software",
-                                 url: "https://bravelocation.com/apps")
+                                 iconName: "info.circle",
+                                 title: "Bravelocation Software",
+                                 url: "https://bravelocation.com")
             }
         }
     }
