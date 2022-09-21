@@ -12,23 +12,36 @@ import UIKit
 
 protocol SettingsActionDelegate {
     func badgeChanged()
+    func becomeASupporter()
 }
 
 /// Settings view model
 class SettingsViewModel: ObservableObject {
-    var appSettings: AppSettings
+    /// Current app settings
+    private(set) var appSettings: AppSettings
     
+    /// Current app control settings
+    private(set) var appControlSettings: AppControlSettings
+
     /// Delegate for view actions
     var delegate: SettingsActionDelegate? = nil
     
     /// Data manager
     private let dataManager: AppSettingsDataManager
     
+    var versionNumber: String {
+        let infoDictionary = Bundle.main
+        let version = infoDictionary.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
+        let build = infoDictionary.object(forInfoDictionaryKey: "CFBundleVersion") as! String
+        return "v\(version).\(build)"
+    }
+    
     /// Initialiser
     /// - Parameter dataManager: Data manager
     init(dataManager: AppSettingsDataManager) {
         self.dataManager = dataManager
         self.appSettings = self.dataManager.appSettings
+        self.appControlSettings = self.dataManager.appControlSettings
     }
     
     /// Update the start date
@@ -68,5 +81,10 @@ class SettingsViewModel: ObservableObject {
         if let url = URL(string: value) {
             UIApplication.shared.open(url, options: [:])
         }
+    }
+    
+    /// Open become a supporter view controller
+    func becomeASupporter() {
+        self.delegate?.becomeASupporter()
     }
 }

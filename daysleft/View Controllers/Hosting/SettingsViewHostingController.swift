@@ -29,7 +29,8 @@ class SettingsViewHostingController<Content: View>: UIHostingController<Content>
                                     end: dataManager.appSettings.end,
                                     title: dataManager.appSettings.title,
                                     weekdaysOnly: dataManager.appSettings.weekdaysOnly,
-                                    showBadge: dataManager.appControlSettings.showBadge)
+                                    showBadge: dataManager.appControlSettings.showBadge,
+                                    isASupporter: dataManager.appControlSettings.isASupporter)
         super.init(rootView: AnyView(rootView) as! Content)
         
         self.viewModel.delegate = self
@@ -75,5 +76,10 @@ class SettingsViewHostingController<Content: View>: UIHostingController<Content>
     func badgeChanged() {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.registerForNotifications()
+    }
+    
+    func becomeASupporter() {
+        let purchaseViewController = PurchaseViewController(nibName: "PurchaseViewController", bundle: nil)
+        self.navigationController?.pushViewController(purchaseViewController, animated: true)
     }
 }
