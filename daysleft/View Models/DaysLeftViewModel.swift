@@ -10,6 +10,10 @@ import Foundation
 import SwiftUI
 import Combine
 
+protocol ViewModelActionDelegate {
+    
+}
+
 class DaysLeftViewModel: ObservableObject {
     
     /// Current app settings
@@ -24,6 +28,11 @@ class DaysLeftViewModel: ObservableObject {
     /// Data manager
     let dataManager: AppSettingsDataManager
     
+    /// Delegate for view actions
+    var delegate: ViewModelActionDelegate? = nil
+    
+    /// Initialiser
+    /// - Parameter dataManager: Data manager
     init(dataManager: AppSettingsDataManager) {
         self.dataManager = dataManager
         self.appSettings = self.dataManager.appSettings
