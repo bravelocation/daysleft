@@ -10,7 +10,7 @@ import Foundation
 import SwiftUI
 import Combine
 
-class WatchDaysLeftViewModel: ObservableObject {
+class DaysLeftViewModel: ObservableObject {
     
     /// Current app settings
     @Published var appSettings: AppSettings

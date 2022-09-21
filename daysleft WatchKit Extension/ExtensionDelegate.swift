@@ -13,7 +13,7 @@ import ClockKit
 class ExtensionDelegate: NSObject, WKExtensionDelegate {
     
     /// View model for app
-    var dataModel = WatchDaysLeftViewModel(dataManager: AppSettingsDataManager())
+    var dataModel = DaysLeftViewModel(dataManager: AppSettingsDataManager())
     
     /// Subscribers to change events
     private var cancellables = Array<AnyCancellable>()

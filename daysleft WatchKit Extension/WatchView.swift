@@ -11,7 +11,7 @@ import SwiftUI
 
 struct WatchView: View {
     
-    @ObservedObject var model: WatchDaysLeftViewModel
+    @ObservedObject var model: DaysLeftViewModel
     
     var body: some View {
         VStack(alignment: .center) {
@@ -34,6 +34,6 @@ struct WatchView: View {
 
 struct WatchView_Previews: PreviewProvider {
     static var previews: some View {
-        WatchView(model: WatchDaysLeftViewModel(dataManager: AppSettingsDataManager(dataProvider: InMemoryDataProvider())))
+        WatchView(model: DaysLeftViewModel(dataManager: AppSettingsDataManager(dataProvider: InMemoryDataProvider())))
     }
 }
