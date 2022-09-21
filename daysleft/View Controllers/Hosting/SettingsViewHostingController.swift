@@ -24,7 +24,11 @@ class SettingsViewHostingController<Content: View>: UIHostingController<Content>
     init() {
         self.viewModel = SettingsViewModel(dataManager: self.dataManager)
         
-        let rootView = SettingsView(model: self.viewModel)
+        let rootView = SettingsView(model: self.viewModel,
+                                    start: dataManager.appSettings.start,
+                                    end: dataManager.appSettings.end,
+                                    title: dataManager.appSettings.title,
+                                    weekdaysOnly: dataManager.appSettings.weekdaysOnly)
         super.init(rootView: AnyView(rootView) as! Content)
     }
     

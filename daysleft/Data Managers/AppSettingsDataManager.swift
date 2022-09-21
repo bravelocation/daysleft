@@ -74,10 +74,34 @@ class AppSettingsDataManager {
     ///   - title: Title
     ///   - weekdaysOnly: Weekdays only?
     func updateAppSettings(start: Date, end: Date, title: String, weekdaysOnly: Bool) {
-        self.start = start
-        self.end = end
+        self.updateStartDate(start)
+        self.updateEndDate(end)
+        self.updateTitle(title)
+        self.updateWeekdaysOnly(weekdaysOnly)
+    }
+    
+    /// Update start date
+    /// - Parameter date: New date
+    func updateStartDate(_ date: Date) {
+        self.start = date
+    }
+    
+    /// Update end date
+    /// - Parameter date: New date
+    func updateEndDate(_ date: Date) {
+        self.end = date
+    }
+    
+    /// Update title
+    /// - Parameter title: New title
+    func updateTitle(_ title: String) {
         self.title = title
-        self.weekdaysOnly = weekdaysOnly
+    }
+    
+    /// Update weekdays only
+    /// - Parameter on: New weekdays only
+    func updateWeekdaysOnly(_ on: Bool) {
+        self.weekdaysOnly = on
     }
     
     func incrementAppOpenCount() {
