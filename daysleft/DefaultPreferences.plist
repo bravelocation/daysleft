@@ -12,13 +12,7 @@
 	<date>1999-12-31T00:00:00Z</date>
 	<key>start</key>
 	<date>1999-12-31T00:00:00Z</date>
-	<key>initialisedWatch</key>
-	<false/>
 	<key>showBadge</key>
 	<false/>
-	<key>adsFree</key>
-	<false/>
-	<key>appOpenCount</key>
-	<integer>0</integer>
 </dict>
 </plist>

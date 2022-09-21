@@ -14,7 +14,4 @@ struct AppControlSettings {
     
     /// Show badge flag
     let showBadge: Bool
-    
-    /// The number of times the app has been opened
-    let appOpenCount: Int
 }

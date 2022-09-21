@@ -60,8 +60,7 @@ class AppSettingsDataManager {
     var appControlSettings: AppControlSettings {
         get {
             return AppControlSettings(firstRun: self.firstRun,
-                                      showBadge: self.showBadge,
-                                      appOpenCount: self.appOpenCount)
+                                      showBadge: self.showBadge)
         }
     }
     
@@ -88,10 +87,6 @@ class AppSettingsDataManager {
     /// - Parameter on: New weekdays only
     func updateWeekdaysOnly(_ on: Bool) {
         self.weekdaysOnly = on
-    }
-    
-    func incrementAppOpenCount() {
-        self.appOpenCount += 1
     }
 
     func updateShowBadge(_ value: Bool) {
@@ -134,11 +129,5 @@ class AppSettingsDataManager {
     private var showBadge: Bool {
         get { return self.dataProvider.readObjectFromStore("showBadge") as! Bool }
         set { self.dataProvider.writeObjectToStore(newValue as AnyObject, key: "showBadge") }
-    }
-
-    /// Property to get and set the number of times the app has been opened
-    private var appOpenCount: Int {
-        get { return self.dataProvider.readObjectFromStore("appOpenCount") as! Int }
-        set { self.dataProvider.writeObjectToStore(newValue as AnyObject, key: "appOpenCount") }
     }
 }
