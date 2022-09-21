@@ -7,9 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5208B83A28D8733D007BB75C /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5295EE0D1A95E647007EF7E7 /* CounterView.swift */; };
 		5208B83D28D87450007BB75C /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5295EE0D1A95E647007EF7E7 /* CounterView.swift */; };
-		5208B83E28D87453007BB75C /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5295EE0D1A95E647007EF7E7 /* CounterView.swift */; };
 		520F20C3233631E800B1F73F /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52CFBF041A8B631B005234FB /* Media.xcassets */; };
 		523443631BBAFBEF00E95BA4 /* DaysLeft WatchKit Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 52B7E8771ABEDE9300E1949C /* DaysLeft WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		523443661BBAFBEF00E95BA4 /* DaysLeft WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 52B7E8811ABEDE9300E1949C /* DaysLeft WatchKit App.app */; platformFilter = ios; };
@@ -97,7 +95,6 @@
 		52CBC7C828DB0D0900C89F20 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CBC7C728DB0D0900C89F20 /* MainView.swift */; };
 		52CBC7C928DB101600C89F20 /* InMemoryDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CBC7A528D9E1F000C89F20 /* InMemoryDataProvider.swift */; };
 		52CFBEFE1A8B631B005234FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CFBEFD1A8B631B005234FB /* AppDelegate.swift */; };
-		52CFBF001A8B631B005234FB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CFBEFF1A8B631B005234FB /* ViewController.swift */; };
 		52CFBF031A8B631B005234FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52CFBF011A8B631B005234FB /* Main.storyboard */; };
 		52CFBF051A8B631B005234FB /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52CFBF041A8B631B005234FB /* Media.xcassets */; };
 		52D25F3C1BCB8595002E4C76 /* ComplicationsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D25F3B1BCB8595002E4C76 /* ComplicationsDataSource.swift */; };
@@ -271,7 +268,6 @@
 		52CFBEF81A8B631B005234FB /* DaysLeft.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DaysLeft.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52CFBEFC1A8B631B005234FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52CFBEFD1A8B631B005234FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		52CFBEFF1A8B631B005234FB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		52CFBF021A8B631B005234FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		52CFBF041A8B631B005234FB /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		52CFBF131A8B631B005234FB /* DaysLeftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysLeftTests.swift; sourceTree = "<group>"; };
@@ -428,7 +424,6 @@
 		5208B83928D87324007BB75C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				5295EE0D1A95E647007EF7E7 /* CounterView.swift */,
 				52CBC7BD28DAF84500C89F20 /* CircularProgressView.swift */,
 				52CBC7C728DB0D0900C89F20 /* MainView.swift */,
 			);
@@ -532,6 +527,7 @@
 				52AC69602154E4AB00E6C833 /* DaysLeftIntentUI.entitlements */,
 				52AC69452154DA7F00E6C833 /* Info.plist */,
 				52AC69402154DA7E00E6C833 /* IntentViewController.swift */,
+				5295EE0D1A95E647007EF7E7 /* CounterView.swift */,
 				52AC69422154DA7E00E6C833 /* MainInterface.storyboard */,
 			);
 			path = DaysLeftIntentUI;
@@ -585,7 +581,6 @@
 				527AD75B1E94EB2800F8637B /* PurchaseViewController.swift */,
 				527AD75C1E94EB2800F8637B /* PurchaseViewController.xib */,
 				52FAB11D1A9381B70039691E /* SettingsViewController.swift */,
-				52CFBEFF1A8B631B005234FB /* ViewController.swift */,
 			);
 			path = Legacy;
 			sourceTree = "<group>";
@@ -1044,7 +1039,6 @@
 				5240F1E728D9B6CB00B95FE5 /* AppSettingsDataManager.swift in Sources */,
 				5240F1F328D9C25700B95FE5 /* AppControlSettings.swift in Sources */,
 				52CBC7A228D9E01700C89F20 /* DataProviderProtocol.swift in Sources */,
-				5208B83E28D87453007BB75C /* CounterView.swift in Sources */,
 				52CBC7B828D9FBE000C89F20 /* AppSettings+DayCalculations.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1103,7 +1097,6 @@
 				52CBC7C828DB0D0900C89F20 /* MainView.swift in Sources */,
 				52CBC79A28D9DF1000C89F20 /* CloudKeyValueDataProvider.swift in Sources */,
 				52F9CDAC22D63D1900E0FFE8 /* SceneDelegate.swift in Sources */,
-				52CFBF001A8B631B005234FB /* ViewController.swift in Sources */,
 				5240F1F128D9C25700B95FE5 /* AppControlSettings.swift in Sources */,
 				52CFBEFE1A8B631B005234FB /* AppDelegate.swift in Sources */,
 				5240F1E528D9B6CB00B95FE5 /* AppSettingsDataManager.swift in Sources */,
@@ -1112,7 +1105,6 @@
 				52FAB11E1A9381B70039691E /* SettingsViewController.swift in Sources */,
 				5240F1D028D8C1BC00B95FE5 /* Date+Helpers.swift in Sources */,
 				52CBC7A028D9E01700C89F20 /* DataProviderProtocol.swift in Sources */,
-				5208B83A28D8733D007BB75C /* CounterView.swift in Sources */,
 				52FC401427AABAD9005DAD8C /* AnalyticsManager.swift in Sources */,
 				52DC9EB51FC97A9200AE02F6 /* FirebaseNotifications.swift in Sources */,
 				52CBC7B528D9FBE000C89F20 /* AppSettings+DayCalculations.swift in Sources */,
