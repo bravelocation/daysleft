@@ -9,9 +9,16 @@
 import Foundation
 import Combine
 
+protocol SettingsActionDelegate {
+    func badgeChanged()
+}
+
 /// Settings view model
 class SettingsViewModel: ObservableObject {
     var appSettings: AppSettings
+    
+    /// Delegate for view actions
+    var delegate: SettingsActionDelegate? = nil
     
     /// Data manager
     private let dataManager: AppSettingsDataManager
@@ -45,5 +52,12 @@ class SettingsViewModel: ObservableObject {
     /// - Parameter on: New weekdays only
     func updateWeekdaysOnly(_ on: Bool) {
         self.dataManager.updateWeekdaysOnly(on)
+    }
+    
+    /// Update show badge
+    /// - Parameter on: New show badge
+    func updateShowBadge(_ on: Bool) {
+        self.dataManager.updateShowBadge(on)
+        self.delegate?.badgeChanged()
     }
 }

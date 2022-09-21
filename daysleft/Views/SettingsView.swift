@@ -15,42 +15,59 @@ struct SettingsView: View {
     @State var end: Date
     @State var title: String
     @State var weekdaysOnly: Bool
+    @State var showBadge: Bool
     
     var body: some View {
         Form {
             Section {
-                VStack(alignment: .leading) {
-                    Text("What are you counting down to?")
-                        .font(.headline)
-                    
-                    TextField("Enter your title", text: self.$title)
-                        .textFieldStyle(.roundedBorder)
-                        .onChange(of: title) { newValue in
-                            self.model.updateTitle(newValue)
-                        }
-                    
-                    DatePicker(selection: $start, in: ...end, displayedComponents: .date) {
-                        Text("Start counting from:")
-                            .font(.subheadline)
+                Text("What are you counting down to?")
+                    .font(.headline)
+                    .listRowSeparator(.hidden)
+
+                TextField("Enter your title", text: self.$title)
+                    .textFieldStyle(.roundedBorder)
+                    .listRowSeparator(.hidden)
+                    .onChange(of: title) { newValue in
+                        self.model.updateTitle(newValue)
                     }
-                    .onChange(of: start) { newValue in
-                        self.model.updateStartDate(newValue)
-                    }
-                    
-                    DatePicker(selection: $end, in: start..., displayedComponents: .date) {
-                        Text("to:")
-                            .font(.subheadline)
-                    }
-                    .onChange(of: end) { newValue in
-                        self.model.updateEndDate(newValue)
-                    }
-                    
-                    Toggle("Weekdays only?", isOn: $weekdaysOnly)
+
+                DatePicker(selection: $start, in: ...end, displayedComponents: .date) {
+                    Text("Start counting from:")
                         .font(.subheadline)
-                        .onChange(of: weekdaysOnly) { newValue in
-                            self.model.updateWeekdaysOnly(newValue)
-                        }
                 }
+                .listRowSeparator(.hidden)
+                .onChange(of: start) { newValue in
+                    self.model.updateStartDate(newValue)
+                }
+
+                DatePicker(selection: $end, in: start..., displayedComponents: .date) {
+                    Text("to:")
+                        .font(.subheadline)
+                }
+                .listRowSeparator(.hidden)
+                .onChange(of: end) { newValue in
+                    self.model.updateEndDate(newValue)
+                }
+
+                Toggle("Weekdays only?", isOn: $weekdaysOnly)
+                    .font(.subheadline)
+                    .listRowSeparator(.hidden)
+                    .onChange(of: weekdaysOnly) { newValue in
+                        self.model.updateWeekdaysOnly(newValue)
+                    }
+            }
+            
+            Section {
+                Text("Settings")
+                    .font(.headline)
+                    .listRowSeparator(.hidden)
+
+                Toggle("Show days left on app badge", isOn: $showBadge)
+                    .font(.subheadline)
+                    .listRowSeparator(.hidden)
+                    .onChange(of: showBadge) { newValue in
+                        self.model.updateShowBadge(newValue)
+                    }
             }
         }
     }
@@ -64,6 +81,7 @@ struct SettingsView_Previews: PreviewProvider {
                      start: dataManager.appSettings.start,
                      end: dataManager.appSettings.end,
                      title: dataManager.appSettings.title,
-                     weekdaysOnly: dataManager.appSettings.weekdaysOnly)
+                     weekdaysOnly: dataManager.appSettings.weekdaysOnly,
+                     showBadge: dataManager.appControlSettings.showBadge)
     }
 }

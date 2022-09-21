@@ -12,8 +12,8 @@ import Intents
 import SwiftUI
 
 /// Main view hosting controller
-class SettingsViewHostingController<Content: View>: UIHostingController<Content> {
-    
+class SettingsViewHostingController<Content: View>: UIHostingController<Content>, SettingsActionDelegate {
+
     /// Data manager
     let dataManager = AppSettingsDataManager()
     
@@ -28,8 +28,11 @@ class SettingsViewHostingController<Content: View>: UIHostingController<Content>
                                     start: dataManager.appSettings.start,
                                     end: dataManager.appSettings.end,
                                     title: dataManager.appSettings.title,
-                                    weekdaysOnly: dataManager.appSettings.weekdaysOnly)
+                                    weekdaysOnly: dataManager.appSettings.weekdaysOnly,
+                                    showBadge: dataManager.appControlSettings.showBadge)
         super.init(rootView: AnyView(rootView) as! Content)
+        
+        self.viewModel.delegate = self
     }
     
     /// Required initialiser for view controllers - should not be used
@@ -66,5 +69,11 @@ class SettingsViewHostingController<Content: View>: UIHostingController<Content>
         super.viewWillAppear(animated)
         
         AnalyticsManager.shared.logScreenView(screenName: "Settings Screen")
+    }
+    
+    // MARK: - SettingsActionDelegate
+    func badgeChanged() {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.registerForNotifications()
     }
 }
