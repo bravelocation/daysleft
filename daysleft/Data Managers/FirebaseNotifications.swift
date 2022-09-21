@@ -18,7 +18,7 @@ class FirebaseNotifications: NSObject, MessagingDelegate {
     
     var enabled: Bool {
         get {
-            return AppSettingsDataManager.default.appControlSettings.showBadge
+            return AppSettingsDataManager().appControlSettings.showBadge
         }
     }
     

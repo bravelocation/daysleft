@@ -11,7 +11,7 @@ import WidgetKit
 import SwiftUI
 
 struct WidgetTimelineProvider: TimelineProvider {
-    let appSettings = AppSettingsDataManager.default.appSettings
+    let appSettings = AppSettingsDataManager().appSettings
     
     func placeholder(in context: Context) -> WidgetDaysLeftData {
         return WidgetDaysLeftData(date: Date(), appSettings: self.appSettings)

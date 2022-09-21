@@ -24,14 +24,12 @@ class PurchaseViewController: UIViewController, SKProductsRequestDelegate, SKPay
     var productRequest: SKProductsRequest?
     var product: SKProduct?
     var transactionInProgress: Bool = false
-    var model: AppSettingsDataManager!
+    let model = AppSettingsDataManager()
     var backItem: UIBarButtonItem?
     let appGreen = UIColor(named: "MainAppColor")!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.model = AppSettingsDataManager.default
 
         // Initialise elements
         self.labelTitle.text = "\u{1F596}"
@@ -137,9 +135,7 @@ class PurchaseViewController: UIViewController, SKProductsRequestDelegate, SKPay
     
     func successfulPayment() {
         DispatchQueue.main.async {
-            if let model = self.model {
-                model.updateIsASupporter(true)
-            }
+            self.model.updateIsASupporter(true)
             
             self.actionButtonChange(message: "", enable: false)
             
@@ -151,7 +147,7 @@ class PurchaseViewController: UIViewController, SKProductsRequestDelegate, SKPay
     }
     
     func isNotASupporter() -> Bool {
-        return self.model?.appControlSettings.isASupporter == false
+        return self.model.appControlSettings.isASupporter == false
     }
     
     // MARK: - SKProductsRequestDelegate

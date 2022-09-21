@@ -28,6 +28,9 @@ class ViewController: UIViewController {
     
     /// Subscribers to change events
     private var cancellables = Array<AnyCancellable>()
+    
+    /// App data manager
+    let dataManager = AppSettingsDataManager()
 
     // MARK: - Initialisation
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -142,7 +145,7 @@ class ViewController: UIViewController {
     
     @objc
     func shareButtonTouchUp() {
-        let modelText = AppSettingsDataManager.default.appSettings.fullDescription(Date())
+        let modelText = self.dataManager.appSettings.fullDescription(Date())
         let objectsToShare = [modelText]
         
         let activityViewController = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
@@ -182,7 +185,7 @@ class ViewController: UIViewController {
     // MARK: - Helper functions
     func updateViewFromModel() {
         print("updateViewFromModel started")
-        let appSettings = AppSettingsDataManager.default.appSettings
+        let appSettings = self.dataManager.appSettings
 
         let now: Date = Date()
         
@@ -236,7 +239,7 @@ class ViewController: UIViewController {
             relevantShortcut.relevanceProviders = [dailyProvider]
             
             // Set template for displaying on Watch face
-            let appSettings = AppSettingsDataManager.default.appSettings
+            let appSettings = self.dataManager.appSettings
             let templateTitle = appSettings.weekdaysOnly ? "Weekdays until" : "Days until"
             let templateSubTitle = appSettings.title
 
