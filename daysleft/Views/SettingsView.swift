@@ -69,6 +69,51 @@ struct SettingsView: View {
                         self.model.updateShowBadge(newValue)
                     }
             }
+            
+            Section {
+                Text("About")
+                    .font(.headline)
+                    .listRowSeparator(.hidden)
+                
+                SettingsLinkView(model: self.model,
+                                 iconName: "lock.fill",
+                                 title: "Privacy Policy",
+                                 url: "https://bravelocation.com/privacy/daysleft")
+                
+                SettingsLinkView(model: self.model,
+                                 iconName: "doc.richtext",
+                                 title: "Read how the app was built",
+                                 url: "https://bravelocation.com/countthedaysleft")
+                
+                SettingsLinkView(model: self.model,
+                                 iconName: "chevron.left.slash.chevron.right",
+                                 title: "See the code on GitHub",
+                                 url: "http://github.com/bravelocation/daysleft")
+                
+                SettingsLinkView(model: self.model,
+                                 iconName: "app.badge",
+                                 title: "More apps from Bravelocation Software",
+                                 url: "https://bravelocation.com/apps")
+
+            }
+        }
+    }
+}
+
+struct SettingsLinkView: View {
+    @ObservedObject var model: SettingsViewModel
+    let iconName: String
+    let title: String
+    let url: String
+    
+    var body: some View {
+        HStack {
+            Image(systemName: iconName)
+            Text(title)
+            Spacer()
+            Image(systemName: "chevron.right")
+        }.onTapGesture {
+            self.model.openExternalUrl(url)
         }
     }
 }

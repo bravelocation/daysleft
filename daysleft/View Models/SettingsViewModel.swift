@@ -8,6 +8,7 @@
 
 import Foundation
 import Combine
+import UIKit
 
 protocol SettingsActionDelegate {
     func badgeChanged()
@@ -59,5 +60,13 @@ class SettingsViewModel: ObservableObject {
     func updateShowBadge(_ on: Bool) {
         self.dataManager.updateShowBadge(on)
         self.delegate?.badgeChanged()
+    }
+    
+    /// Open external URL
+    /// - Parameter value: URL to pen as a string
+    func openExternalUrl(_ value: String) {
+        if let url = URL(string: value) {
+            UIApplication.shared.open(url, options: [:])
+        }
     }
 }
