@@ -21,6 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     /// Subscribers to change events
     private var cancellables = Array<AnyCancellable>()
+    
+    /// App data manager
+    let dataManager = AppSettingsDataManager()
 
     // MARK: Initialisation
     override init() {
@@ -50,7 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.firebaseNotifications?.setupNotifications(false)
 
         // Increment the number of times app opened
-        AppSettingsDataManager.default.incrementAppOpenCount()
+        self.dataManager.incrementAppOpenCount()
 
         return true
     }
@@ -134,7 +137,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     
     // MARK: Badge functions
     func updateBadge() {
-        if (AppSettingsDataManager.default.appControlSettings.showBadge == false) {
+        if (self.dataManager.appControlSettings.showBadge == false) {
             clearBadge()
             return
         }
@@ -143,7 +146,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
             if settings.badgeSetting == .enabled {
                 DispatchQueue.main.async {
                     let now: Date = Date()
-                    UIApplication.shared.applicationIconBadgeNumber = AppSettingsDataManager.default.appSettings.daysLeft(now)
+                    UIApplication.shared.applicationIconBadgeNumber = self.dataManager.appSettings.daysLeft(now)
                     print("Updated app badge")
                 }
             }

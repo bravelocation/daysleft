@@ -17,6 +17,15 @@ class CloudKeyValueDataProvider: DataProviderProtocol {
     /// Settings cache used to store settings locally for faster access
     private var settingsCache = Dictionary<String, Any>()
     
+    // MARK: - Shared setup
+    private static let sharedInstance = CloudKeyValueDataProvider()
+                                    
+    static var `default`: CloudKeyValueDataProvider {
+        get {
+            return sharedInstance
+        }
+    }
+    
     // MARK: - Initialisation functions
     
     /// Default initialiser for the class

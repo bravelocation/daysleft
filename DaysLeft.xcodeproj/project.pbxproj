@@ -57,8 +57,7 @@
 		52B7E8991ABEEA2200E1949C /* DefaultPreferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52B7E8981ABEEA2200E1949C /* DefaultPreferences.plist */; };
 		52BC1119237C45BC005EC3F7 /* InterfaceHostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BC1118237C45BC005EC3F7 /* InterfaceHostController.swift */; };
 		52BC111B237C461C005EC3F7 /* WatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BC111A237C461C005EC3F7 /* WatchView.swift */; };
-		52BC111D237C464A005EC3F7 /* ProgressControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BC111C237C464A005EC3F7 /* ProgressControl.swift */; };
-		52BC111F237C4AD0005EC3F7 /* WatchDaysLeftViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BC111E237C4AD0005EC3F7 /* WatchDaysLeftViewModel.swift */; };
+		52BC111F237C4AD0005EC3F7 /* DaysLeftViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BC111E237C4AD0005EC3F7 /* DaysLeftViewModel.swift */; };
 		52C595311E952667006C5269 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52C595301E952667006C5269 /* StoreKit.framework */; };
 		52CBC79A28D9DF1000C89F20 /* CloudKeyValueDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CBC79928D9DF1000C89F20 /* CloudKeyValueDataProvider.swift */; };
 		52CBC79B28D9DF1000C89F20 /* CloudKeyValueDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CBC79928D9DF1000C89F20 /* CloudKeyValueDataProvider.swift */; };
@@ -90,6 +89,10 @@
 		52CBC7B928D9FBE000C89F20 /* AppSettings+DayCalculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CBC7B428D9FBE000C89F20 /* AppSettings+DayCalculations.swift */; };
 		52CBC7BA28D9FBE000C89F20 /* AppSettings+DayCalculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CBC7B428D9FBE000C89F20 /* AppSettings+DayCalculations.swift */; };
 		52CBC7BB28DA1A4200C89F20 /* InMemoryDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CBC7A528D9E1F000C89F20 /* InMemoryDataProvider.swift */; };
+		52CBC7BE28DAF84500C89F20 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CBC7BD28DAF84500C89F20 /* CircularProgressView.swift */; };
+		52CBC7BF28DAF84500C89F20 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CBC7BD28DAF84500C89F20 /* CircularProgressView.swift */; };
+		52CBC7C028DAFC9400C89F20 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CBC7BD28DAF84500C89F20 /* CircularProgressView.swift */; };
+		52CBC7C128DB028D00C89F20 /* DaysLeftViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BC111E237C4AD0005EC3F7 /* DaysLeftViewModel.swift */; };
 		52CFBEFE1A8B631B005234FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CFBEFD1A8B631B005234FB /* AppDelegate.swift */; };
 		52CFBF001A8B631B005234FB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CFBEFF1A8B631B005234FB /* ViewController.swift */; };
 		52CFBF031A8B631B005234FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52CFBF011A8B631B005234FB /* Main.storyboard */; };
@@ -252,14 +255,14 @@
 		52B7E8981ABEEA2200E1949C /* DefaultPreferences.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DefaultPreferences.plist; sourceTree = "<group>"; };
 		52BC1118237C45BC005EC3F7 /* InterfaceHostController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceHostController.swift; sourceTree = "<group>"; };
 		52BC111A237C461C005EC3F7 /* WatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchView.swift; sourceTree = "<group>"; };
-		52BC111C237C464A005EC3F7 /* ProgressControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressControl.swift; sourceTree = "<group>"; };
-		52BC111E237C4AD0005EC3F7 /* WatchDaysLeftViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchDaysLeftViewModel.swift; sourceTree = "<group>"; };
+		52BC111E237C4AD0005EC3F7 /* DaysLeftViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysLeftViewModel.swift; sourceTree = "<group>"; };
 		52C595301E952667006C5269 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		52CBC79928D9DF1000C89F20 /* CloudKeyValueDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKeyValueDataProvider.swift; sourceTree = "<group>"; };
 		52CBC79F28D9E01700C89F20 /* DataProviderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProviderProtocol.swift; sourceTree = "<group>"; };
 		52CBC7A528D9E1F000C89F20 /* InMemoryDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryDataProvider.swift; sourceTree = "<group>"; };
 		52CBC7AD28D9EE6700C89F20 /* AppSettings+Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppSettings+Text.swift"; sourceTree = "<group>"; };
 		52CBC7B428D9FBE000C89F20 /* AppSettings+DayCalculations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppSettings+DayCalculations.swift"; sourceTree = "<group>"; };
+		52CBC7BD28DAF84500C89F20 /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
 		52CFBEF81A8B631B005234FB /* DaysLeft.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DaysLeft.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52CFBEFC1A8B631B005234FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52CFBEFD1A8B631B005234FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -389,6 +392,7 @@
 		5208B83428D871E6007BB75C /* View Models */ = {
 			isa = PBXGroup;
 			children = (
+				52BC111E237C4AD0005EC3F7 /* DaysLeftViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -423,6 +427,7 @@
 			isa = PBXGroup;
 			children = (
 				5295EE0D1A95E647007EF7E7 /* CounterView.swift */,
+				52CBC7BD28DAF84500C89F20 /* CircularProgressView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -439,7 +444,6 @@
 		5208B84A28D87933007BB75C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				52BC111C237C464A005EC3F7 /* ProgressControl.swift */,
 				52BC111A237C461C005EC3F7 /* WatchView.swift */,
 			);
 			name = Views;
@@ -451,14 +455,6 @@
 				52BC1118237C45BC005EC3F7 /* InterfaceHostController.swift */,
 			);
 			name = "Host Controllers";
-			sourceTree = "<group>";
-		};
-		5208B84C28D87975007BB75C /* View Models */ = {
-			isa = PBXGroup;
-			children = (
-				52BC111E237C4AD0005EC3F7 /* WatchDaysLeftViewModel.swift */,
-			);
-			name = "View Models";
 			sourceTree = "<group>";
 		};
 		5208B84D28D87992007BB75C /* Assets */ = {
@@ -545,7 +541,6 @@
 				52D25F3B1BCB8595002E4C76 /* ComplicationsDataSource.swift */,
 				5234436C1BBB181C00E95BA4 /* ExtensionDelegate.swift */,
 				5208B84B28D8794E007BB75C /* Host Controllers */,
-				5208B84C28D87975007BB75C /* View Models */,
 				5208B84A28D87933007BB75C /* Views */,
 			);
 			path = "daysleft WatchKit Extension";
@@ -1055,7 +1050,6 @@
 			files = (
 				5240F1D228D8C1BC00B95FE5 /* Date+Helpers.swift in Sources */,
 				52BC1119237C45BC005EC3F7 /* InterfaceHostController.swift in Sources */,
-				52BC111D237C464A005EC3F7 /* ProgressControl.swift in Sources */,
 				52D25F3C1BCB8595002E4C76 /* ComplicationsDataSource.swift in Sources */,
 				52CBC7A128D9E01700C89F20 /* DataProviderProtocol.swift in Sources */,
 				52CBC79B28D9DF1000C89F20 /* CloudKeyValueDataProvider.swift in Sources */,
@@ -1063,11 +1057,12 @@
 				5240F1E628D9B6CB00B95FE5 /* AppSettingsDataManager.swift in Sources */,
 				5240F1F228D9C25700B95FE5 /* AppControlSettings.swift in Sources */,
 				5234436D1BBB181C00E95BA4 /* ExtensionDelegate.swift in Sources */,
+				52CBC7BF28DAF84500C89F20 /* CircularProgressView.swift in Sources */,
 				52CBC7BB28DA1A4200C89F20 /* InMemoryDataProvider.swift in Sources */,
 				52CBC7B028D9EE6700C89F20 /* AppSettings+Text.swift in Sources */,
 				52CBC7B728D9FBE000C89F20 /* AppSettings+DayCalculations.swift in Sources */,
 				5240F1EC28D9BE1A00B95FE5 /* AppSettings.swift in Sources */,
-				52BC111F237C4AD0005EC3F7 /* WatchDaysLeftViewModel.swift in Sources */,
+				52BC111F237C4AD0005EC3F7 /* DaysLeftViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1077,6 +1072,8 @@
 			files = (
 				52AC69532154DAFB00E6C833 /* Intents.intentdefinition in Sources */,
 				527AD75D1E94EB2800F8637B /* PurchaseViewController.swift in Sources */,
+				52CBC7C128DB028D00C89F20 /* DaysLeftViewModel.swift in Sources */,
+				52CBC7BE28DAF84500C89F20 /* CircularProgressView.swift in Sources */,
 				5240F1EB28D9BE1A00B95FE5 /* AppSettings.swift in Sources */,
 				52CBC7AE28D9EE6700C89F20 /* AppSettings+Text.swift in Sources */,
 				52CBC79A28D9DF1000C89F20 /* CloudKeyValueDataProvider.swift in Sources */,
@@ -1113,6 +1110,7 @@
 				52CBC7B328D9EE6700C89F20 /* AppSettings+Text.swift in Sources */,
 				52CBC7BA28D9FBE000C89F20 /* AppSettings+DayCalculations.swift in Sources */,
 				52CBC7AC28D9EA2D00C89F20 /* InMemoryDataProvider.swift in Sources */,
+				52CBC7C028DAFC9400C89F20 /* CircularProgressView.swift in Sources */,
 				5240F1F528D9C25700B95FE5 /* AppControlSettings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
