@@ -16,8 +16,10 @@ struct MainView: View {
     var body: some View {
         VStack(alignment: .center) {
             
+            Spacer()
+            
             Text("\(self.model.appSettings.daysLeft(now))")
-                .font(.largeTitle)
+                .font(.custom("San Francisco", size: 72, relativeTo: .largeTitle))
             
             Text(self.model.appSettings.description(now))
                 .lineLimit(nil)
@@ -25,8 +27,9 @@ struct MainView: View {
             
             CircularProgressView(progress: self.model.percentageDone,
                                  lineWidth: 76.0)
-            .padding([.top, .bottom], 64.0)
-            .padding([.leading, .trailing], 96.0)
+            .padding([.top, .bottom], 16.0)
+            .padding([.leading, .trailing], 64.0)
+            .frame(maxWidth: 300.0, maxHeight: 300.0)
             
             HStack {
                 Text(self.model.appSettings.shortDateFormatted(date: self.model.appSettings.start))
@@ -35,11 +38,14 @@ struct MainView: View {
                 Text(self.model.appSettings.shortDateFormatted(date: self.model.appSettings.end))
                     .font(.footnote)
             }
+                .frame(maxWidth: 400.0)
                 .padding([.leading, .trailing], 64.0)
             
             Text(self.model.appSettings.currentPercentageLeft(date: now))
                 .font(.title)
-                .padding()
+                .padding([.top, .bottom], 16.0)
+            
+            Spacer()
         }
         .padding()
         .onAppear() {
