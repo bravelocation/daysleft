@@ -15,9 +15,6 @@ struct AppControlSettings {
     /// Show badge flag
     let showBadge: Bool
     
-    /// Is a supporter flag (called adsFree because of legacy usage)
-    let isASupporter: Bool
-    
     /// The number of times the app has been opened
     let appOpenCount: Int
 }

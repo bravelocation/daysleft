@@ -12,7 +12,6 @@ import UIKit
 
 protocol SettingsActionDelegate {
     func badgeChanged()
-    func becomeASupporter()
 }
 
 /// Settings view model
@@ -81,10 +80,5 @@ class SettingsViewModel: ObservableObject {
         if let url = URL(string: value) {
             UIApplication.shared.open(url, options: [:])
         }
-    }
-    
-    /// Open become a supporter view controller
-    func becomeASupporter() {
-        self.delegate?.becomeASupporter()
     }
 }
