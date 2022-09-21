@@ -11,15 +11,22 @@ import Foundation
 import Intents
 import SwiftUI
 
+/// Main view hosting controller
 class MainViewHostingController<Content: View>: UIHostingController<Content>, ViewModelActionDelegate {
-
+    
+    /// Data manager
     let dataManager = AppSettingsDataManager()
+    
+    /// View model for view
     let viewModel: DaysLeftViewModel
+    
+    /// Timer that runs at the start of each day
     var dayChangeTimer: Timer?
     
     /// Subscribers to change events
     private var cancellables = Array<AnyCancellable>()
-
+    
+    /// Initialiser
     init() {
         self.viewModel = DaysLeftViewModel(dataManager: self.dataManager)
         
@@ -30,26 +37,34 @@ class MainViewHostingController<Content: View>: UIHostingController<Content>, Vi
         
         self.viewModel.delegate = self
         
-        // Setup timer to update on a day change
+        // Setup timer to update at
         self.dayChangeTimer = Timer(fireAt: Date().addingTimeInterval(secondsInADay).startOfDay,
                                     interval: secondsInADay,
                                     target: self,
-                                    selector: #selector(MainViewHostingController.dayChangedTimerFired), userInfo: nil, repeats: false)
+                                    selector: #selector(MainViewHostingController.dayChangedTimerFired),
+                                    userInfo: nil,
+                                    repeats: true)
 
     }
     
+    /// Required initialiser for view controllers - should not be used
+    /// - Parameter aDecoder: Coder
     @objc required dynamic init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
     // MARK: - Event handlers
+    
     @objc
+    /// Event handler if the day changed timer fires
+    /// - Parameter timer: Timer that fired
     func dayChangedTimerFired(_ timer: Timer) {
         self.viewModel.updateViewData()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    /// Event handler for view loading
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
         // Customise the nav bar
         let appearance = UINavigationBarAppearance()
@@ -74,6 +89,17 @@ class MainViewHostingController<Content: View>: UIHostingController<Content>, Vi
         self.setupMenuCommandHandler()
     }
     
+    /// Event handler for when view appears
+    /// - Parameter animated: Animated or not
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        AnalyticsManager.shared.logScreenView(screenName: "Main Screen")
+    }
+    
+    // MARK: - ViewModelActionDelegate
+    
+    /// Called to share the current model
     func share() {
         let modelText = self.dataManager.appSettings.fullDescription(Date())
         let objectsToShare = [modelText]
@@ -85,13 +111,14 @@ class MainViewHostingController<Content: View>: UIHostingController<Content>, Vi
         self.present(activityViewController, animated: true, completion: nil)
     }
     
+    /// Called to load the settings screen
     func edit() {
-        let settingsViewController = UIStoryboard(name: "Main", bundle: nil)
-            .instantiateViewController(withIdentifier: "SettingsViewController")
+        let settingsViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SettingsViewController")
         self.navigationController?.pushViewController(settingsViewController, animated: true)
     }
-    
+
     // MARK: - User Activity functions
+    /// Donates current interaction
     private func donateInteraction() {
         let intent = DaysLeftIntent()
         intent.suggestedInvocationPhrase = "How Many Days Left"
@@ -127,7 +154,8 @@ class MainViewHostingController<Content: View>: UIHostingController<Content>, Vi
             }
         }
     }
-
+    
+    /// Sets up handoff
     @objc func setupHandoff() {
         // Set activity for handoff
         let activity = NSUserActivity(activityType: "com.bravelocation.daysleft.mainscreen")
@@ -146,6 +174,7 @@ class MainViewHostingController<Content: View>: UIHostingController<Content>, Vi
 // MARK: - Menu options
 
 extension MainViewHostingController {
+    /// Sets up handlers for any meu commands
     func setupMenuCommandHandler() {
         let editSubscriber = NotificationCenter.default.publisher(for: .editCommand)
             .receive(on: RunLoop.main)
@@ -163,4 +192,3 @@ extension MainViewHostingController {
         self.cancellables.append(shareSubscriber)
     }
 }
-
