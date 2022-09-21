@@ -10,6 +10,11 @@ import Foundation
 import SwiftUI
 import Combine
 
+protocol ViewModelActionDelegate {
+    func share()
+    func edit()
+}
+
 class DaysLeftViewModel: ObservableObject {
     
     /// Current app settings
@@ -24,6 +29,11 @@ class DaysLeftViewModel: ObservableObject {
     /// Data manager
     let dataManager: AppSettingsDataManager
     
+    /// Delegate for view actions
+    var delegate: ViewModelActionDelegate? = nil
+    
+    /// Initialiser
+    /// - Parameter dataManager: Data manager
     init(dataManager: AppSettingsDataManager) {
         self.dataManager = dataManager
         self.appSettings = self.dataManager.appSettings
@@ -47,6 +57,18 @@ class DaysLeftViewModel: ObservableObject {
         // Set the published properties based on the model
         self.appSettings = self.dataManager.appSettings
         self.percentageDone = self.appSettings.percentageDone(date: Date())
+    }
+    
+    func share() {
+        if let delegate = delegate {
+            delegate.share()
+        }
+    }
+        
+    func edit() {
+        if let delegate = delegate {
+            delegate.edit()
+        }
     }
     
     /// Event handler for data update
