@@ -19,7 +19,7 @@ struct MainView: View {
             Spacer()
             
             Text("\(self.model.appSettings.daysLeft(now))")
-                .font(.custom("San Francisco", size: 72, relativeTo: .largeTitle))
+                .font(.system(size: 72, weight: .bold, design: .default))
             
             Text(self.model.appSettings.description(now))
                 .lineLimit(nil)
@@ -51,6 +51,15 @@ struct MainView: View {
         .onAppear() {
             self.model.updateViewData()
         }
+        .gesture(
+            DragGesture(minimumDistance: 100.0)
+                .onEnded { endedGesture in
+                    // On swipe left, open the edit screen
+                    if (endedGesture.location.x - endedGesture.startLocation.x) < 0 {
+                        self.model.edit()
+                    }
+                }
+            )
         .navigationBarTitle(Text("Count The Days Left"))
         .navigationBarItems(leading:
                                 Button(
