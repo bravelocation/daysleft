@@ -51,11 +51,11 @@ extension AppSettings {
     }
     
     func percentageDone(date: Date) -> Double {
-        return (Double(self.daysGone(date)) * 100.0) / Double(self.daysLength)
+        return (Double(self.daysGone(date))) / Double(self.daysLength)
     }
     
     func currentPercentageLeft(date: Date) -> String {
-        return String(format: "%3.0f%% done", self.percentageDone(date: date))
+        return String(format: "%3.0f%% done", self.percentageDone(date: date) * 100.0)
     }
     
     func watchDurationTitle(date: Date) -> String {

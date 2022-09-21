@@ -14,30 +14,20 @@ struct WatchView: View {
     @ObservedObject var model: WatchDaysLeftViewModel
     
     var body: some View {
-        GeometryReader { geo in
-            VStack(alignment: .center) {
-                Text(self.model.appSettings.watchDurationTitle(date: Date()))
-                    .lineLimit(nil)
-                    .multilineTextAlignment(.center)
-                Text(self.model.appSettings.title)
-                    .lineLimit(nil)
-                    .multilineTextAlignment(.center)
-                ProgressControl(foregroundColor: Color("MainAppColor"),
-                                backgroundColor: Color("LightAppColor"),
-                                model: self.model,
-                                lineWidth: 20.0,
-                                frameSize: self.progressDimensions(geo.size))
-                    .padding()
-                Text(self.model.appSettings.currentPercentageLeft(date: Date())).font(.footnote)
-            }.frame(width: geo.size.width, height: geo.size.height, alignment: .center)
-        }
-    }
-    
-    func progressDimensions(_ screenSize: CGSize) -> CGFloat {
-        if (screenSize.width > screenSize.height) {
-            return screenSize.height - 100
-        } else {
-            return screenSize.width - 100
+        VStack(alignment: .center) {
+            Text(self.model.appSettings.watchDurationTitle(date: Date()))
+                .lineLimit(nil)
+                .multilineTextAlignment(.center)
+            
+            Text(self.model.appSettings.title)
+                .lineLimit(nil)
+                .multilineTextAlignment(.center)
+            
+            CircularProgressView(progress: self.model.percentageDone,
+                                 lineWidth: 20.0)
+            .padding([.top, .bottom], 16.0)
+            
+            Text(self.model.appSettings.currentPercentageLeft(date: Date())).font(.footnote)
         }
     }
 }

@@ -13,39 +13,28 @@ import WidgetKit
 struct WidgetView: View {
     
     var model: WidgetDaysLeftData
-    @Environment(\.colorScheme) var colorScheme
+    @Environment(\.widgetFamily) var widgetFamily
     
     var body: some View {
-        GeometryReader { geo in
-            VStack(alignment: .center) {
-                Text(self.model.appSettings.fullTitle(date: model.date))
-                    .lineLimit(2)
-                    .allowsTightening(true)
-                    .minimumScaleFactor(0.5)
-                    .multilineTextAlignment(.center)
-                    .fixedSize(horizontal: false, vertical: true)
-                    .foregroundColor(Color.primary)
-                WidgetProgressControl(
-                    foregroundColor: Color("MainAppColor"),
-                    backgroundColor: Color("LightAppColor"),
-                    model: self.model,
-                    lineWidth: 20.0,
-                    frameSize: self.progressDimensions(geo.size))
-                    .padding()
-                Text(self.model.appSettings.currentPercentageLeft(date: model.date))
-                    .font(.footnote)
-                    .foregroundColor(Color.primary)
-            }.frame(
-                width: geo.size.width,
-                height: geo.size.height,
-                alignment: .center)
+        VStack(alignment: .center) {
+            Text(self.model.appSettings.fullTitle(date: model.date))
+                .lineLimit(2)
+                .allowsTightening(true)
+                .minimumScaleFactor(0.5)
+                .multilineTextAlignment(.center)
+                .fixedSize(horizontal: false, vertical: true)
+                .foregroundColor(Color.primary)
+            
+            CircularProgressView(progress: self.model.appSettings.percentageDone(date: self.model.date),
+                                 lineWidth: widgetFamily == .systemSmall ? 12.0 :   20.0)
+            .padding([.top, .bottom], 16.0)
+            
+            Text(self.model.appSettings.currentPercentageLeft(date: model.date))
+                .font(.footnote)
+                .foregroundColor(Color.primary)
         }
         .padding()
-        .background(colorScheme == .dark ? Color.black : Color.white)
-    }
-    
-    func progressDimensions(_ screenSize: CGSize) -> CGFloat {
-        return screenSize.height / 4.0
+        .background(Color(UIColor.systemBackground))
     }
 }
 
