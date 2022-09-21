@@ -52,9 +52,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UNUserNotificationCenter.current().delegate = self
         self.firebaseNotifications?.setupNotifications(false)
 
-        // Increment the number of times app opened
-        self.dataManager.incrementAppOpenCount()
-
         return true
     }
     

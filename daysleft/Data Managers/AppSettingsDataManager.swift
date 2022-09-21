@@ -60,9 +60,7 @@ class AppSettingsDataManager {
     var appControlSettings: AppControlSettings {
         get {
             return AppControlSettings(firstRun: self.firstRun,
-                                      showBadge: self.showBadge,
-                                      isASupporter: self.isASupporter,
-                                      appOpenCount: self.appOpenCount)
+                                      showBadge: self.showBadge)
         }
     }
     
@@ -89,14 +87,6 @@ class AppSettingsDataManager {
     /// - Parameter on: New weekdays only
     func updateWeekdaysOnly(_ on: Bool) {
         self.weekdaysOnly = on
-    }
-    
-    func incrementAppOpenCount() {
-        self.appOpenCount += 1
-    }
-    
-    func updateIsASupporter(_ value: Bool) {
-        self.isASupporter = value
     }
 
     func updateShowBadge(_ value: Bool) {
@@ -139,17 +129,5 @@ class AppSettingsDataManager {
     private var showBadge: Bool {
         get { return self.dataProvider.readObjectFromStore("showBadge") as! Bool }
         set { self.dataProvider.writeObjectToStore(newValue as AnyObject, key: "showBadge") }
-    }
-    
-    /// Property to get and set the is a supporter flag (called adsFree because of legacy usage)
-    private var isASupporter: Bool {
-        get { return self.dataProvider.readObjectFromStore("adsFree") as! Bool }
-        set { self.dataProvider.writeObjectToStore(newValue as AnyObject, key: "adsFree") }
-    }
-
-    /// Property to get and set the number of times the app has been opened
-    private var appOpenCount: Int {
-        get { return self.dataProvider.readObjectFromStore("appOpenCount") as! Int }
-        set { self.dataProvider.writeObjectToStore(newValue as AnyObject, key: "appOpenCount") }
     }
 }

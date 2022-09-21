@@ -33,8 +33,6 @@
 		5240F1F328D9C25700B95FE5 /* AppControlSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5240F1F028D9C25700B95FE5 /* AppControlSettings.swift */; };
 		5240F1F428D9C25700B95FE5 /* AppControlSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5240F1F028D9C25700B95FE5 /* AppControlSettings.swift */; };
 		5240F1F528D9C25700B95FE5 /* AppControlSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5240F1F028D9C25700B95FE5 /* AppControlSettings.swift */; };
-		527AD75D1E94EB2800F8637B /* PurchaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527AD75B1E94EB2800F8637B /* PurchaseViewController.swift */; };
-		527AD75E1E94EB2800F8637B /* PurchaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 527AD75C1E94EB2800F8637B /* PurchaseViewController.xib */; };
 		527E15401D83F80300D81B15 /* gallery.ckcomplication in Resources */ = {isa = PBXBuildFile; fileRef = 527E153F1D83F80300D81B15 /* gallery.ckcomplication */; };
 		5295EDF01A94AF83007EF7E7 /* DaysLeftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CFBF131A8B631B005234FB /* DaysLeftTests.swift */; };
 		52AC69362154DA7E00E6C833 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AC69352154DA7E00E6C833 /* IntentHandler.swift */; };
@@ -224,8 +222,6 @@
 		5240F1EA28D9BE1A00B95FE5 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 		5240F1F028D9C25700B95FE5 /* AppControlSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppControlSettings.swift; sourceTree = "<group>"; };
 		52790F781D056F500025AF10 /* daysleft-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "daysleft-Bridging-Header.h"; sourceTree = "<group>"; };
-		527AD75B1E94EB2800F8637B /* PurchaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurchaseViewController.swift; sourceTree = "<group>"; };
-		527AD75C1E94EB2800F8637B /* PurchaseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PurchaseViewController.xib; sourceTree = "<group>"; };
 		527E153F1D83F80300D81B15 /* gallery.ckcomplication */ = {isa = PBXFileReference; lastKnownFileType = folder; path = gallery.ckcomplication; sourceTree = "<group>"; };
 		5295EDDA1A94AE53007EF7E7 /* DaysLeftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DaysLeftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5295EDFA1A94B398007EF7E7 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
@@ -384,7 +380,6 @@
 			isa = PBXGroup;
 			children = (
 				52CBC7C428DB0C5D00C89F20 /* Hosting */,
-				52CBC7C328DB0C4D00C89F20 /* Legacy */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -576,15 +571,6 @@
 				52CBC7A528D9E1F000C89F20 /* InMemoryDataProvider.swift */,
 			);
 			path = "Data Providers";
-			sourceTree = "<group>";
-		};
-		52CBC7C328DB0C4D00C89F20 /* Legacy */ = {
-			isa = PBXGroup;
-			children = (
-				527AD75B1E94EB2800F8637B /* PurchaseViewController.swift */,
-				527AD75C1E94EB2800F8637B /* PurchaseViewController.xib */,
-			);
-			path = Legacy;
 			sourceTree = "<group>";
 		};
 		52CBC7C428DB0C5D00C89F20 /* Hosting */ = {
@@ -951,7 +937,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				527E15401D83F80300D81B15 /* gallery.ckcomplication in Resources */,
-				527AD75E1E94EB2800F8637B /* PurchaseViewController.xib in Resources */,
 				52FAB11C1A9240490039691E /* DefaultPreferences.plist in Resources */,
 				52CFBF051A8B631B005234FB /* Media.xcassets in Resources */,
 				52DC9EB31FC97A3200AE02F6 /* GoogleService-Info.plist in Resources */,
@@ -1090,7 +1075,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				52AC69532154DAFB00E6C833 /* Intents.intentdefinition in Sources */,
-				527AD75D1E94EB2800F8637B /* PurchaseViewController.swift in Sources */,
 				52CBC7C128DB028D00C89F20 /* DaysLeftViewModel.swift in Sources */,
 				52CBC7C628DB0CA300C89F20 /* MainViewHostingController.swift in Sources */,
 				52CBC7BE28DAF84500C89F20 /* CircularProgressView.swift in Sources */,

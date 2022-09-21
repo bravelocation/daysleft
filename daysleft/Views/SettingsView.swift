@@ -16,7 +16,6 @@ struct SettingsView: View {
     @State var title: String
     @State var weekdaysOnly: Bool
     @State var showBadge: Bool
-    @State var isASupporter: Bool
     
     var body: some View {
         Form {
@@ -71,7 +70,7 @@ struct SettingsView: View {
                     }
             }
             
-            Section {
+            Section(footer: Text(self.model.versionNumber)) {
                 Text("About")
                     .font(.headline)
                     .listRowSeparator(.hidden)
@@ -96,27 +95,6 @@ struct SettingsView: View {
                                  title: "More apps from Bravelocation Software",
                                  url: "https://bravelocation.com/apps")
             }
-            
-            Section(footer: Text(self.model.versionNumber)) {
-                Text("Support development of this app")
-                    .font(.headline)
-                    .listRowSeparator(.hidden)
-                
-                if self.isASupporter {
-                    Text("Thanks for supporting the app!")
-                        .listRowSeparator(.hidden)
-                } else {
-                    HStack {
-                        Text("Become a supporter now")
-                        Spacer()
-                        Image(systemName: "chevron.right")
-                    }.onTapGesture {
-                        self.model.becomeASupporter()
-                    }
-                }
-            }
-        }.onAppear {
-            self.isASupporter = self.model.appControlSettings.isASupporter
         }
     }
 }
@@ -148,7 +126,6 @@ struct SettingsView_Previews: PreviewProvider {
                      end: dataManager.appSettings.end,
                      title: dataManager.appSettings.title,
                      weekdaysOnly: dataManager.appSettings.weekdaysOnly,
-                     showBadge: dataManager.appControlSettings.showBadge,
-                     isASupporter: dataManager.appControlSettings.isASupporter)
+                     showBadge: dataManager.appControlSettings.showBadge)
     }
 }
