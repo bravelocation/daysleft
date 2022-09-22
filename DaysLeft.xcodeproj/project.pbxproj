@@ -56,11 +56,10 @@
 		52A70D8728DC9F6D00DCE9CB /* DefaultPreferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52A70D8528DC9F4900DCE9CB /* DefaultPreferences.plist */; };
 		52A70D8928DCA11900DCE9CB /* ComplicationsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A70D8828DCA11900DCE9CB /* ComplicationsDataSource.swift */; };
 		52B7E87E1ABEDE9300E1949C /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52B7E87D1ABEDE9300E1949C /* Media.xcassets */; };
-		52B7E88A1ABEDE9300E1949C /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52B7E8881ABEDE9300E1949C /* Interface.storyboard */; };
 		52B7E88C1ABEDE9300E1949C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52B7E88B1ABEDE9300E1949C /* Images.xcassets */; };
 		52B7E8991ABEEA2200E1949C /* DefaultPreferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52B7E8981ABEEA2200E1949C /* DefaultPreferences.plist */; };
-		52BC1119237C45BC005EC3F7 /* InterfaceHostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BC1118237C45BC005EC3F7 /* InterfaceHostController.swift */; };
 		52BC111B237C461C005EC3F7 /* WatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BC111A237C461C005EC3F7 /* WatchView.swift */; };
+		52C3524C28DCB2EC00D02445 /* DaysLeftWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C3524B28DCB2EC00D02445 /* DaysLeftWatchApp.swift */; };
 		52C595311E952667006C5269 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52C595301E952667006C5269 /* StoreKit.framework */; };
 		52CBC79A28D9DF1000C89F20 /* CloudKeyValueDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CBC79928D9DF1000C89F20 /* CloudKeyValueDataProvider.swift */; };
 		52CBC79B28D9DF1000C89F20 /* CloudKeyValueDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CBC79928D9DF1000C89F20 /* CloudKeyValueDataProvider.swift */; };
@@ -244,13 +243,12 @@
 		52B7E87D1ABEDE9300E1949C /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		52B7E8811ABEDE9300E1949C /* DaysLeft WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DaysLeft WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52B7E8871ABEDE9300E1949C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		52B7E8891ABEDE9300E1949C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		52B7E88B1ABEDE9300E1949C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		52B7E8961ABEDEDE00E1949C /* daysleft WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "daysleft WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		52B7E8981ABEEA2200E1949C /* DefaultPreferences.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DefaultPreferences.plist; sourceTree = "<group>"; };
-		52BC1118237C45BC005EC3F7 /* InterfaceHostController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceHostController.swift; sourceTree = "<group>"; };
 		52BC111A237C461C005EC3F7 /* WatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchView.swift; sourceTree = "<group>"; };
 		52BC111E237C4AD0005EC3F7 /* DaysLeftViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysLeftViewModel.swift; sourceTree = "<group>"; };
+		52C3524B28DCB2EC00D02445 /* DaysLeftWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysLeftWatchApp.swift; sourceTree = "<group>"; };
 		52C595301E952667006C5269 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		52CBC79928D9DF1000C89F20 /* CloudKeyValueDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKeyValueDataProvider.swift; sourceTree = "<group>"; };
 		52CBC79F28D9E01700C89F20 /* DataProviderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProviderProtocol.swift; sourceTree = "<group>"; };
@@ -434,14 +432,6 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
-		5208B84B28D8794E007BB75C /* Host Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				52BC1118237C45BC005EC3F7 /* InterfaceHostController.swift */,
-			);
-			name = "Host Controllers";
-			sourceTree = "<group>";
-		};
 		5208B84D28D87992007BB75C /* Assets */ = {
 			isa = PBXGroup;
 			children = (
@@ -525,8 +515,8 @@
 			children = (
 				5208B84D28D87992007BB75C /* Assets */,
 				52A70D8828DCA11900DCE9CB /* ComplicationsDataSource.swift */,
+				52C3524B28DCB2EC00D02445 /* DaysLeftWatchApp.swift */,
 				5234436C1BBB181C00E95BA4 /* ExtensionDelegate.swift */,
-				5208B84B28D8794E007BB75C /* Host Controllers */,
 				5208B84A28D87933007BB75C /* Views */,
 			);
 			path = "daysleft WatchKit Extension";
@@ -536,7 +526,6 @@
 			isa = PBXGroup;
 			children = (
 				5234436B1BBB00B800E95BA4 /* daysleft WatchKit App.entitlements */,
-				52B7E8881ABEDE9300E1949C /* Interface.storyboard */,
 				52B7E88B1ABEDE9300E1949C /* Images.xcassets */,
 				52B7E8861ABEDE9300E1949C /* Supporting Files */,
 			);
@@ -860,7 +849,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52B7E88A1ABEDE9300E1949C /* Interface.storyboard in Resources */,
 				52B7E88C1ABEDE9300E1949C /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -972,10 +960,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5240F1D228D8C1BC00B95FE5 /* Date+Helpers.swift in Sources */,
-				52BC1119237C45BC005EC3F7 /* InterfaceHostController.swift in Sources */,
 				52CBC7A128D9E01700C89F20 /* DataProviderProtocol.swift in Sources */,
 				52CBC79B28D9DF1000C89F20 /* CloudKeyValueDataProvider.swift in Sources */,
 				52BC111B237C461C005EC3F7 /* WatchView.swift in Sources */,
+				52C3524C28DCB2EC00D02445 /* DaysLeftWatchApp.swift in Sources */,
 				52A70D8928DCA11900DCE9CB /* ComplicationsDataSource.swift in Sources */,
 				5240F1E628D9B6CB00B95FE5 /* AppSettingsDataManager.swift in Sources */,
 				52A70D8428DC9EA600DCE9CB /* DaysLeftViewModel.swift in Sources */,
@@ -1075,17 +1063,6 @@
 			targetProxy = 52E048AB25077AFE009A2169 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		52B7E8881ABEDE9300E1949C /* Interface.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				52B7E8891ABEDE9300E1949C /* Base */,
-			);
-			name = Interface.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		5295EDEC1A94AE53007EF7E7 /* Debug */ = {
