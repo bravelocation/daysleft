@@ -30,7 +30,7 @@ struct WidgetSwitcherView: View {
             }
         case .accessoryRectangular:
             if #available(iOSApplicationExtension 16.0, *) {
-                Text("Rect")
+                AccessoryRectangularView(model: self.model)
             }
 #endif
         default:
