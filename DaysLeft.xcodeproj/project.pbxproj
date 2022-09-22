@@ -23,10 +23,13 @@
 		5240F1F128D9C25700B95FE5 /* AppControlSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5240F1F028D9C25700B95FE5 /* AppControlSettings.swift */; };
 		5240F1F228D9C25700B95FE5 /* AppControlSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5240F1F028D9C25700B95FE5 /* AppControlSettings.swift */; };
 		5240F1F528D9C25700B95FE5 /* AppControlSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5240F1F028D9C25700B95FE5 /* AppControlSettings.swift */; };
-		527E15401D83F80300D81B15 /* gallery.ckcomplication in Resources */ = {isa = PBXBuildFile; fileRef = 527E153F1D83F80300D81B15 /* gallery.ckcomplication */; };
 		5295EDF01A94AF83007EF7E7 /* DaysLeftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CFBF131A8B631B005234FB /* DaysLeftTests.swift */; };
 		52A70D4928DC555800DCE9CB /* DaysLeftAppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A70D4828DC555800DCE9CB /* DaysLeftAppIntent.swift */; };
 		52A70D5028DC660C00DCE9CB /* ShortcutProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A70D4F28DC660C00DCE9CB /* ShortcutProvider.swift */; };
+		52A70D5228DC8A6D00DCE9CB /* WidgetSwitcherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A70D5128DC8A6D00DCE9CB /* WidgetSwitcherView.swift */; };
+		52A70D5428DC8D2500DCE9CB /* AccessoryRectangularView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A70D5328DC8D2500DCE9CB /* AccessoryRectangularView.swift */; };
+		52A70D5628DC913D00DCE9CB /* AccessoryInlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A70D5528DC913D00DCE9CB /* AccessoryInlineView.swift */; };
+		52A70D5828DC92A600DCE9CB /* AccessoryCircularView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A70D5728DC92A600DCE9CB /* AccessoryCircularView.swift */; };
 		52B7E87E1ABEDE9300E1949C /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52B7E87D1ABEDE9300E1949C /* Media.xcassets */; };
 		52B7E88A1ABEDE9300E1949C /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52B7E8881ABEDE9300E1949C /* Interface.storyboard */; };
 		52B7E88C1ABEDE9300E1949C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52B7E88B1ABEDE9300E1949C /* Images.xcassets */; };
@@ -76,7 +79,6 @@
 		52E048A225077AFB009A2169 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52E048A125077AFB009A2169 /* WidgetKit.framework */; platformFilter = ios; };
 		52E048A425077AFB009A2169 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52E048A325077AFB009A2169 /* SwiftUI.framework */; };
 		52E048A725077AFB009A2169 /* DaysLeftWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E048A625077AFB009A2169 /* DaysLeftWidget.swift */; };
-		52E048A925077AFE009A2169 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52E048A825077AFE009A2169 /* Assets.xcassets */; };
 		52E048AD25077AFE009A2169 /* DaysLeftWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 52E048A025077AFB009A2169 /* DaysLeftWidgetExtension.appex */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		52E048B325077E1C009A2169 /* WidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E048B225077E1C009A2169 /* WidgetView.swift */; };
 		52E048B525077E6A009A2169 /* WidgetDaysLeftData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E048B425077E6A009A2169 /* WidgetDaysLeftData.swift */; };
@@ -177,11 +179,14 @@
 		5240F1EA28D9BE1A00B95FE5 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 		5240F1F028D9C25700B95FE5 /* AppControlSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppControlSettings.swift; sourceTree = "<group>"; };
 		52790F781D056F500025AF10 /* daysleft-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "daysleft-Bridging-Header.h"; sourceTree = "<group>"; };
-		527E153F1D83F80300D81B15 /* gallery.ckcomplication */ = {isa = PBXFileReference; lastKnownFileType = folder; path = gallery.ckcomplication; sourceTree = "<group>"; };
 		5295EDDA1A94AE53007EF7E7 /* DaysLeftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DaysLeftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5295EDFA1A94B398007EF7E7 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		52A70D4828DC555800DCE9CB /* DaysLeftAppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysLeftAppIntent.swift; sourceTree = "<group>"; };
 		52A70D4F28DC660C00DCE9CB /* ShortcutProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutProvider.swift; sourceTree = "<group>"; };
+		52A70D5128DC8A6D00DCE9CB /* WidgetSwitcherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetSwitcherView.swift; sourceTree = "<group>"; };
+		52A70D5328DC8D2500DCE9CB /* AccessoryRectangularView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessoryRectangularView.swift; sourceTree = "<group>"; };
+		52A70D5528DC913D00DCE9CB /* AccessoryInlineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessoryInlineView.swift; sourceTree = "<group>"; };
+		52A70D5728DC92A600DCE9CB /* AccessoryCircularView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessoryCircularView.swift; sourceTree = "<group>"; };
 		52AC693D2154DA7E00E6C833 /* IntentsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IntentsUI.framework; path = System/Library/Frameworks/IntentsUI.framework; sourceTree = SDKROOT; };
 		52B78DF31D982A6E00AB629D /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
 		52B78E091D98388D00AB629D /* WatchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchKit.framework; path = System/Library/Frameworks/WatchKit.framework; sourceTree = SDKROOT; };
@@ -223,7 +228,6 @@
 		52E048A125077AFB009A2169 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		52E048A325077AFB009A2169 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		52E048A625077AFB009A2169 /* DaysLeftWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysLeftWidget.swift; sourceTree = "<group>"; };
-		52E048A825077AFE009A2169 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		52E048AA25077AFE009A2169 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52E048AE25077AFF009A2169 /* DaysLeftWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DaysLeftWidgetExtension.entitlements; sourceTree = "<group>"; };
 		52E048B225077E1C009A2169 /* WidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetView.swift; sourceTree = "<group>"; };
@@ -296,7 +300,6 @@
 				52790F781D056F500025AF10 /* daysleft-Bridging-Header.h */,
 				52FAB11A1A923F500039691E /* daysleft.entitlements */,
 				52FAB11B1A9240490039691E /* DefaultPreferences.plist */,
-				527E153F1D83F80300D81B15 /* gallery.ckcomplication */,
 				52DC9EB21FC97A3200AE02F6 /* GoogleService-Info.plist */,
 				52CFBEFC1A8B631B005234FB /* Info.plist */,
 				52CFBF041A8B631B005234FB /* Media.xcassets */,
@@ -397,7 +400,6 @@
 		5208B84E28D879E6007BB75C /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				52E048A825077AFE009A2169 /* Assets.xcassets */,
 				52E048AE25077AFF009A2169 /* DaysLeftWidgetExtension.entitlements */,
 				52E048AA25077AFE009A2169 /* Info.plist */,
 			);
@@ -407,6 +409,10 @@
 		5208B84F28D87A05007BB75C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				52A70D5728DC92A600DCE9CB /* AccessoryCircularView.swift */,
+				52A70D5528DC913D00DCE9CB /* AccessoryInlineView.swift */,
+				52A70D5328DC8D2500DCE9CB /* AccessoryRectangularView.swift */,
+				52A70D5128DC8A6D00DCE9CB /* WidgetSwitcherView.swift */,
 				52E048B225077E1C009A2169 /* WidgetView.swift */,
 			);
 			path = Views;
@@ -760,7 +766,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				527E15401D83F80300D81B15 /* gallery.ckcomplication in Resources */,
 				52FAB11C1A9240490039691E /* DefaultPreferences.plist in Resources */,
 				52CFBF051A8B631B005234FB /* Media.xcassets in Resources */,
 				52DC9EB31FC97A3200AE02F6 /* GoogleService-Info.plist in Resources */,
@@ -771,7 +776,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52E048A925077AFE009A2169 /* Assets.xcassets in Resources */,
 				52E048BD2507883A009A2169 /* Media.xcassets in Resources */,
 				52E048BC250787F0009A2169 /* DefaultPreferences.plist in Resources */,
 			);
@@ -894,11 +898,15 @@
 			files = (
 				52E048B325077E1C009A2169 /* WidgetView.swift in Sources */,
 				52E048A725077AFB009A2169 /* DaysLeftWidget.swift in Sources */,
+				52A70D5628DC913D00DCE9CB /* AccessoryInlineView.swift in Sources */,
+				52A70D5228DC8A6D00DCE9CB /* WidgetSwitcherView.swift in Sources */,
+				52A70D5828DC92A600DCE9CB /* AccessoryCircularView.swift in Sources */,
 				5240F1D528D8C1BC00B95FE5 /* Date+Helpers.swift in Sources */,
 				52E048BF2507A57E009A2169 /* WidgetTimelineProvider.swift in Sources */,
 				52E048B525077E6A009A2169 /* WidgetDaysLeftData.swift in Sources */,
 				52CBC7A428D9E01700C89F20 /* DataProviderProtocol.swift in Sources */,
 				5240F1EF28D9BE1A00B95FE5 /* AppSettings.swift in Sources */,
+				52A70D5428DC8D2500DCE9CB /* AccessoryRectangularView.swift in Sources */,
 				5240F1E928D9B6CB00B95FE5 /* AppSettingsDataManager.swift in Sources */,
 				52CBC79E28D9DF1000C89F20 /* CloudKeyValueDataProvider.swift in Sources */,
 				52CBC7B328D9EE6700C89F20 /* AppSettings+Text.swift in Sources */,

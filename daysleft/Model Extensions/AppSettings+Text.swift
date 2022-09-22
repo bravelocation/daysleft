@@ -55,7 +55,7 @@ extension AppSettings {
     }
     
     func currentPercentageLeft(date: Date) -> String {
-        return String(format: "%3.0f%% done", self.percentageDone(date: date) * 100.0)
+        return String(format: "%.0f%% done", self.percentageDone(date: date) * 100.0)
     }
     
     func watchDurationTitle(date: Date) -> String {

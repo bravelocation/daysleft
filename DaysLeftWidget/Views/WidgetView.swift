@@ -25,9 +25,11 @@ struct WidgetView: View {
                 .fixedSize(horizontal: false, vertical: true)
                 .foregroundColor(Color.primary)
             
-            CircularProgressView(progress: self.model.appSettings.percentageDone(date: self.model.date),
-                                 lineWidth: widgetFamily == .systemSmall ? 12.0 :   20.0)
-            .padding([.top, .bottom], 16.0)
+            CircularProgressView(
+                progress: self.model.appSettings.percentageDone(date: self.model.date),
+                lineWidth: widgetFamily == .systemSmall ? 12.0 : 20.0
+            )
+                .padding([.top, .bottom], 16.0)
             
             Text(self.model.appSettings.currentPercentageLeft(date: model.date))
                 .font(.footnote)

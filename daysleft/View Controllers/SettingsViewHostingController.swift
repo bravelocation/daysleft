@@ -76,4 +76,10 @@ class SettingsViewHostingController<Content: View>: UIHostingController<Content>
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.registerForNotifications()
     }
+    
+    func dataUpdated() {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.updateBadge()
+        appDelegate.updateWidgets()
+    }
 }
