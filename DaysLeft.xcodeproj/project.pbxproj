@@ -30,13 +30,37 @@
 		52A70D5428DC8D2500DCE9CB /* AccessoryRectangularView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A70D5328DC8D2500DCE9CB /* AccessoryRectangularView.swift */; };
 		52A70D5628DC913D00DCE9CB /* AccessoryInlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A70D5528DC913D00DCE9CB /* AccessoryInlineView.swift */; };
 		52A70D5828DC92A600DCE9CB /* AccessoryCircularView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A70D5728DC92A600DCE9CB /* AccessoryCircularView.swift */; };
+		52A70D5E28DC98E100DCE9CB /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52E048A125077AFB009A2169 /* WidgetKit.framework */; };
+		52A70D5F28DC98E100DCE9CB /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52E048A325077AFB009A2169 /* SwiftUI.framework */; };
+		52A70D6228DC98E100DCE9CB /* DaysLeftWatchWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A70D6128DC98E100DCE9CB /* DaysLeftWatchWidget.swift */; };
+		52A70D6428DC98E300DCE9CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52A70D6328DC98E300DCE9CB /* Assets.xcassets */; };
+		52A70D6828DC98E300DCE9CB /* DaysLeft WatchKit WidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 52A70D5D28DC98E100DCE9CB /* DaysLeft WatchKit WidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		52A70D7028DC9ADA00DCE9CB /* WidgetTimelineProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E048BE2507A57E009A2169 /* WidgetTimelineProvider.swift */; };
+		52A70D7128DC9ADF00DCE9CB /* WidgetDaysLeftData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E048B425077E6A009A2169 /* WidgetDaysLeftData.swift */; };
+		52A70D7228DC9AE300DCE9CB /* AccessoryCircularView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A70D5728DC92A600DCE9CB /* AccessoryCircularView.swift */; };
+		52A70D7328DC9AE600DCE9CB /* AccessoryInlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A70D5528DC913D00DCE9CB /* AccessoryInlineView.swift */; };
+		52A70D7428DC9AE900DCE9CB /* AccessoryRectangularView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A70D5328DC8D2500DCE9CB /* AccessoryRectangularView.swift */; };
+		52A70D7628DC9B2100DCE9CB /* WatchWidgetSwitcherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A70D7528DC9B2100DCE9CB /* WatchWidgetSwitcherView.swift */; };
+		52A70D7728DC9BC800DCE9CB /* AppSettingsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5240F1E428D9B6CB00B95FE5 /* AppSettingsDataManager.swift */; };
+		52A70D7828DC9BD100DCE9CB /* AppSettings+DayCalculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CBC7B428D9FBE000C89F20 /* AppSettings+DayCalculations.swift */; };
+		52A70D7928DC9BD300DCE9CB /* AppSettings+Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CBC7AD28D9EE6700C89F20 /* AppSettings+Text.swift */; };
+		52A70D7A28DC9BD600DCE9CB /* Date+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5240F1CF28D8C1BC00B95FE5 /* Date+Helpers.swift */; };
+		52A70D7B28DC9BDB00DCE9CB /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5240F1EA28D9BE1A00B95FE5 /* AppSettings.swift */; };
+		52A70D7C28DC9BDD00DCE9CB /* AppControlSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5240F1F028D9C25700B95FE5 /* AppControlSettings.swift */; };
+		52A70D7D28DC9BEF00DCE9CB /* CloudKeyValueDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CBC79928D9DF1000C89F20 /* CloudKeyValueDataProvider.swift */; };
+		52A70D7E28DC9BF200DCE9CB /* DataProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CBC79F28D9E01700C89F20 /* DataProviderProtocol.swift */; };
+		52A70D7F28DC9BF400DCE9CB /* InMemoryDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CBC7A528D9E1F000C89F20 /* InMemoryDataProvider.swift */; };
+		52A70D8228DC9E2800DCE9CB /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52CFBF041A8B631B005234FB /* Media.xcassets */; };
+		52A70D8328DC9E5900DCE9CB /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CBC7BD28DAF84500C89F20 /* CircularProgressView.swift */; };
+		52A70D8428DC9EA600DCE9CB /* DaysLeftViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BC111E237C4AD0005EC3F7 /* DaysLeftViewModel.swift */; };
+		52A70D8728DC9F6D00DCE9CB /* DefaultPreferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52A70D8528DC9F4900DCE9CB /* DefaultPreferences.plist */; };
+		52A70D8928DCA11900DCE9CB /* ComplicationsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A70D8828DCA11900DCE9CB /* ComplicationsDataSource.swift */; };
 		52B7E87E1ABEDE9300E1949C /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52B7E87D1ABEDE9300E1949C /* Media.xcassets */; };
 		52B7E88A1ABEDE9300E1949C /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52B7E8881ABEDE9300E1949C /* Interface.storyboard */; };
 		52B7E88C1ABEDE9300E1949C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52B7E88B1ABEDE9300E1949C /* Images.xcassets */; };
 		52B7E8991ABEEA2200E1949C /* DefaultPreferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52B7E8981ABEEA2200E1949C /* DefaultPreferences.plist */; };
 		52BC1119237C45BC005EC3F7 /* InterfaceHostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BC1118237C45BC005EC3F7 /* InterfaceHostController.swift */; };
 		52BC111B237C461C005EC3F7 /* WatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BC111A237C461C005EC3F7 /* WatchView.swift */; };
-		52BC111F237C4AD0005EC3F7 /* DaysLeftViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BC111E237C4AD0005EC3F7 /* DaysLeftViewModel.swift */; };
 		52C595311E952667006C5269 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52C595301E952667006C5269 /* StoreKit.framework */; };
 		52CBC79A28D9DF1000C89F20 /* CloudKeyValueDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CBC79928D9DF1000C89F20 /* CloudKeyValueDataProvider.swift */; };
 		52CBC79B28D9DF1000C89F20 /* CloudKeyValueDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CBC79928D9DF1000C89F20 /* CloudKeyValueDataProvider.swift */; };
@@ -69,7 +93,6 @@
 		52CBC7C928DB101600C89F20 /* InMemoryDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CBC7A528D9E1F000C89F20 /* InMemoryDataProvider.swift */; };
 		52CFBEFE1A8B631B005234FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CFBEFD1A8B631B005234FB /* AppDelegate.swift */; };
 		52CFBF051A8B631B005234FB /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52CFBF041A8B631B005234FB /* Media.xcassets */; };
-		52D25F3C1BCB8595002E4C76 /* ComplicationsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D25F3B1BCB8595002E4C76 /* ComplicationsDataSource.swift */; };
 		52D617B124D06F9000465F4C /* MenuBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D617B024D06F9000465F4C /* MenuBuilder.swift */; };
 		52DC5AD028DB3EE300AFF24D /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DC5ACF28DB3EE300AFF24D /* SettingsViewModel.swift */; };
 		52DC5AD228DB431900AFF24D /* SettingsViewHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DC5AD128DB431900AFF24D /* SettingsViewHostingController.swift */; };
@@ -114,6 +137,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 52CFBEF71A8B631B005234FB;
 			remoteInfo = daysleft;
+		};
+		52A70D6628DC98E300DCE9CB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 52CFBEF01A8B631B005234FB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 52A70D5C28DC98E100DCE9CB;
+			remoteInfo = "DaysLeft WatchKit WidgetExtension";
 		};
 		52E048AB25077AFE009A2169 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -168,6 +198,17 @@
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		52A70D6C28DC98E300DCE9CB /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				52A70D6828DC98E300DCE9CB /* DaysLeft WatchKit WidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -187,6 +228,13 @@
 		52A70D5328DC8D2500DCE9CB /* AccessoryRectangularView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessoryRectangularView.swift; sourceTree = "<group>"; };
 		52A70D5528DC913D00DCE9CB /* AccessoryInlineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessoryInlineView.swift; sourceTree = "<group>"; };
 		52A70D5728DC92A600DCE9CB /* AccessoryCircularView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessoryCircularView.swift; sourceTree = "<group>"; };
+		52A70D5D28DC98E100DCE9CB /* DaysLeft WatchKit WidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "DaysLeft WatchKit WidgetExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		52A70D6128DC98E100DCE9CB /* DaysLeftWatchWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysLeftWatchWidget.swift; sourceTree = "<group>"; };
+		52A70D6328DC98E300DCE9CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		52A70D6528DC98E300DCE9CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52A70D7528DC9B2100DCE9CB /* WatchWidgetSwitcherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchWidgetSwitcherView.swift; sourceTree = "<group>"; };
+		52A70D8528DC9F4900DCE9CB /* DefaultPreferences.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DefaultPreferences.plist; sourceTree = "<group>"; };
+		52A70D8828DCA11900DCE9CB /* ComplicationsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComplicationsDataSource.swift; sourceTree = "<group>"; };
 		52AC693D2154DA7E00E6C833 /* IntentsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IntentsUI.framework; path = System/Library/Frameworks/IntentsUI.framework; sourceTree = SDKROOT; };
 		52B78DF31D982A6E00AB629D /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
 		52B78E091D98388D00AB629D /* WatchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchKit.framework; path = System/Library/Frameworks/WatchKit.framework; sourceTree = SDKROOT; };
@@ -217,7 +265,6 @@
 		52CFBEFD1A8B631B005234FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52CFBF041A8B631B005234FB /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		52CFBF131A8B631B005234FB /* DaysLeftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysLeftTests.swift; sourceTree = "<group>"; };
-		52D25F3B1BCB8595002E4C76 /* ComplicationsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComplicationsDataSource.swift; sourceTree = "<group>"; };
 		52D617B024D06F9000465F4C /* MenuBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBuilder.swift; sourceTree = "<group>"; };
 		52DC5ACF28DB3EE300AFF24D /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		52DC5AD128DB431900AFF24D /* SettingsViewHostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewHostingController.swift; sourceTree = "<group>"; };
@@ -251,6 +298,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52A70D5A28DC98E100DCE9CB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52A70D5F28DC98E100DCE9CB /* SwiftUI.framework in Frameworks */,
+				52A70D5E28DC98E100DCE9CB /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,11 +508,23 @@
 			path = AppIntents;
 			sourceTree = "<group>";
 		};
+		52A70D6028DC98E100DCE9CB /* DaysLeft WatchKit Widget */ = {
+			isa = PBXGroup;
+			children = (
+				52A70D8528DC9F4900DCE9CB /* DefaultPreferences.plist */,
+				52A70D6328DC98E300DCE9CB /* Assets.xcassets */,
+				52A70D6128DC98E100DCE9CB /* DaysLeftWatchWidget.swift */,
+				52A70D6528DC98E300DCE9CB /* Info.plist */,
+				52A70D7528DC9B2100DCE9CB /* WatchWidgetSwitcherView.swift */,
+			);
+			path = "DaysLeft WatchKit Widget";
+			sourceTree = "<group>";
+		};
 		52B7E8781ABEDE9300E1949C /* daysleft WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
 				5208B84D28D87992007BB75C /* Assets */,
-				52D25F3B1BCB8595002E4C76 /* ComplicationsDataSource.swift */,
+				52A70D8828DCA11900DCE9CB /* ComplicationsDataSource.swift */,
 				5234436C1BBB181C00E95BA4 /* ExtensionDelegate.swift */,
 				5208B84B28D8794E007BB75C /* Host Controllers */,
 				5208B84A28D87933007BB75C /* Views */,
@@ -500,6 +568,7 @@
 				52B7E8851ABEDE9300E1949C /* daysleft WatchKit App */,
 				52B7E8781ABEDE9300E1949C /* daysleft WatchKit Extension */,
 				52E048A525077AFB009A2169 /* DaysLeftWidget */,
+				52A70D6028DC98E100DCE9CB /* DaysLeft WatchKit Widget */,
 				5295EDF91A94B398007EF7E7 /* Frameworks */,
 				52CFBEF91A8B631B005234FB /* Products */,
 				5208B84428D8757D007BB75C /* Unit Tests */,
@@ -514,6 +583,7 @@
 				52B7E8771ABEDE9300E1949C /* DaysLeft WatchKit Extension.appex */,
 				52B7E8811ABEDE9300E1949C /* DaysLeft WatchKit App.app */,
 				52E048A025077AFB009A2169 /* DaysLeftWidgetExtension.appex */,
+				52A70D5D28DC98E100DCE9CB /* DaysLeft WatchKit WidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -568,6 +638,23 @@
 			productReference = 5295EDDA1A94AE53007EF7E7 /* DaysLeftTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		52A70D5C28DC98E100DCE9CB /* DaysLeft WatchKit WidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52A70D6928DC98E300DCE9CB /* Build configuration list for PBXNativeTarget "DaysLeft WatchKit WidgetExtension" */;
+			buildPhases = (
+				52A70D5928DC98E100DCE9CB /* Sources */,
+				52A70D5A28DC98E100DCE9CB /* Frameworks */,
+				52A70D5B28DC98E100DCE9CB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "DaysLeft WatchKit WidgetExtension";
+			productName = "DaysLeft WatchKit WidgetExtension";
+			productReference = 52A70D5D28DC98E100DCE9CB /* DaysLeft WatchKit WidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		52B7E8761ABEDE9300E1949C /* DaysLeft WatchKit Extension */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 52B7E8951ABEDE9300E1949C /* Build configuration list for PBXNativeTarget "DaysLeft WatchKit Extension" */;
@@ -575,10 +662,12 @@
 				52B7E8731ABEDE9300E1949C /* Sources */,
 				52B7E8741ABEDE9300E1949C /* Frameworks */,
 				52B7E8751ABEDE9300E1949C /* Resources */,
+				52A70D6C28DC98E300DCE9CB /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				52A70D6728DC98E300DCE9CB /* PBXTargetDependency */,
 			);
 			name = "DaysLeft WatchKit Extension";
 			productName = "daysleft WatchKit Extension";
@@ -655,7 +744,7 @@
 		52CFBEF01A8B631B005234FB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1200;
+				LastSwiftUpdateCheck = 1400;
 				LastUpgradeCheck = 1400;
 				ORGANIZATIONNAME = "Brave Location Software";
 				TargetAttributes = {
@@ -664,6 +753,9 @@
 						DevelopmentTeam = W8B3V597R9;
 						LastSwiftMigration = 1020;
 						TestTargetID = 52CFBEF71A8B631B005234FB;
+					};
+					52A70D5C28DC98E100DCE9CB = {
+						CreatedOnToolsVersion = 14.0;
 					};
 					52B7E8761ABEDE9300E1949C = {
 						CreatedOnToolsVersion = 6.2;
@@ -738,12 +830,23 @@
 				5295EDD91A94AE53007EF7E7 /* DaysLeftTests */,
 				52B7E8761ABEDE9300E1949C /* DaysLeft WatchKit Extension */,
 				52B7E8801ABEDE9300E1949C /* DaysLeft WatchKit App */,
+				52A70D5C28DC98E100DCE9CB /* DaysLeft WatchKit WidgetExtension */,
 				52E0489F25077AFB009A2169 /* DaysLeftWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		52A70D5B28DC98E100DCE9CB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52A70D8228DC9E2800DCE9CB /* Media.xcassets in Resources */,
+				52A70D6428DC98E300DCE9CB /* Assets.xcassets in Resources */,
+				52A70D8728DC9F6D00DCE9CB /* DefaultPreferences.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		52B7E8751ABEDE9300E1949C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -840,17 +943,42 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		52A70D5928DC98E100DCE9CB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52A70D7428DC9AE900DCE9CB /* AccessoryRectangularView.swift in Sources */,
+				52A70D7C28DC9BDD00DCE9CB /* AppControlSettings.swift in Sources */,
+				52A70D6228DC98E100DCE9CB /* DaysLeftWatchWidget.swift in Sources */,
+				52A70D7B28DC9BDB00DCE9CB /* AppSettings.swift in Sources */,
+				52A70D7328DC9AE600DCE9CB /* AccessoryInlineView.swift in Sources */,
+				52A70D7028DC9ADA00DCE9CB /* WidgetTimelineProvider.swift in Sources */,
+				52A70D7D28DC9BEF00DCE9CB /* CloudKeyValueDataProvider.swift in Sources */,
+				52A70D8328DC9E5900DCE9CB /* CircularProgressView.swift in Sources */,
+				52A70D7628DC9B2100DCE9CB /* WatchWidgetSwitcherView.swift in Sources */,
+				52A70D7928DC9BD300DCE9CB /* AppSettings+Text.swift in Sources */,
+				52A70D7228DC9AE300DCE9CB /* AccessoryCircularView.swift in Sources */,
+				52A70D7F28DC9BF400DCE9CB /* InMemoryDataProvider.swift in Sources */,
+				52A70D7A28DC9BD600DCE9CB /* Date+Helpers.swift in Sources */,
+				52A70D7728DC9BC800DCE9CB /* AppSettingsDataManager.swift in Sources */,
+				52A70D7128DC9ADF00DCE9CB /* WidgetDaysLeftData.swift in Sources */,
+				52A70D7E28DC9BF200DCE9CB /* DataProviderProtocol.swift in Sources */,
+				52A70D7828DC9BD100DCE9CB /* AppSettings+DayCalculations.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		52B7E8731ABEDE9300E1949C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				5240F1D228D8C1BC00B95FE5 /* Date+Helpers.swift in Sources */,
 				52BC1119237C45BC005EC3F7 /* InterfaceHostController.swift in Sources */,
-				52D25F3C1BCB8595002E4C76 /* ComplicationsDataSource.swift in Sources */,
 				52CBC7A128D9E01700C89F20 /* DataProviderProtocol.swift in Sources */,
 				52CBC79B28D9DF1000C89F20 /* CloudKeyValueDataProvider.swift in Sources */,
 				52BC111B237C461C005EC3F7 /* WatchView.swift in Sources */,
+				52A70D8928DCA11900DCE9CB /* ComplicationsDataSource.swift in Sources */,
 				5240F1E628D9B6CB00B95FE5 /* AppSettingsDataManager.swift in Sources */,
+				52A70D8428DC9EA600DCE9CB /* DaysLeftViewModel.swift in Sources */,
 				5240F1F228D9C25700B95FE5 /* AppControlSettings.swift in Sources */,
 				5234436D1BBB181C00E95BA4 /* ExtensionDelegate.swift in Sources */,
 				52CBC7BF28DAF84500C89F20 /* CircularProgressView.swift in Sources */,
@@ -858,7 +986,6 @@
 				52CBC7B028D9EE6700C89F20 /* AppSettings+Text.swift in Sources */,
 				52CBC7B728D9FBE000C89F20 /* AppSettings+DayCalculations.swift in Sources */,
 				5240F1EC28D9BE1A00B95FE5 /* AppSettings.swift in Sources */,
-				52BC111F237C4AD0005EC3F7 /* DaysLeftViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -936,6 +1063,11 @@
 			target = 52CFBEF71A8B631B005234FB /* DaysLeft */;
 			targetProxy = 5295EDDE1A94AE53007EF7E7 /* PBXContainerItemProxy */;
 		};
+		52A70D6728DC98E300DCE9CB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 52A70D5C28DC98E100DCE9CB /* DaysLeft WatchKit WidgetExtension */;
+			targetProxy = 52A70D6628DC98E300DCE9CB /* PBXContainerItemProxy */;
+		};
 		52E048AC25077AFE009A2169 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			platformFilter = ios;
@@ -999,6 +1131,86 @@
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DaysLeft.app/DaysLeft";
+			};
+			name = Release;
+		};
+		52A70D6A28DC98E300DCE9CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "DaysLeft WatchKit Widget/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "DaysLeft WatchKit Widget";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 Brave Location Software. All rights reserved.";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bravelocation.daysleft.watchkitapp.watchkitextension.DaysLeft-WatchKit-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Debug;
+		};
+		52A70D6B28DC98E300DCE9CB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "DaysLeft WatchKit Widget/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "DaysLeft WatchKit Widget";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 Brave Location Software. All rights reserved.";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bravelocation.daysleft.watchkitapp.watchkitextension.DaysLeft-WatchKit-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 9.0;
 			};
 			name = Release;
 		};
@@ -1371,6 +1583,15 @@
 			buildConfigurations = (
 				5295EDEC1A94AE53007EF7E7 /* Debug */,
 				5295EDED1A94AE53007EF7E7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		52A70D6928DC98E300DCE9CB /* Build configuration list for PBXNativeTarget "DaysLeft WatchKit WidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52A70D6A28DC98E300DCE9CB /* Debug */,
+				52A70D6B28DC98E300DCE9CB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
