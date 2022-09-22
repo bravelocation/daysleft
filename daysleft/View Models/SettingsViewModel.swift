@@ -12,6 +12,7 @@ import UIKit
 
 protocol SettingsActionDelegate {
     func badgeChanged()
+    func dataUpdated()
 }
 
 /// Settings view model
@@ -47,24 +48,28 @@ class SettingsViewModel: ObservableObject {
     /// - Parameter date: New start date
     func updateStartDate(_ date: Date) {
         self.dataManager.updateStartDate(date)
+        self.delegate?.dataUpdated()
     }
     
     /// Update the end date
     /// - Parameter date: New end date
     func updateEndDate(_ date: Date) {
         self.dataManager.updateEndDate(date)
+        self.delegate?.dataUpdated()
     }
     
     /// Update the title
     /// - Parameter title: New title
     func updateTitle(_ title: String) {
         self.dataManager.updateTitle(title)
+        self.delegate?.dataUpdated()
     }
     
     /// Update weekdays only
     /// - Parameter on: New weekdays only
     func updateWeekdaysOnly(_ on: Bool) {
         self.dataManager.updateWeekdaysOnly(on)
+        self.delegate?.dataUpdated()
     }
     
     /// Update show badge
