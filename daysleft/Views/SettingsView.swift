@@ -84,7 +84,7 @@ struct SettingsView: View {
                 SettingsLinkView(model: self.model,
                                  iconName: "doc.richtext",
                                  title: "Read how the app was built",
-                                 url: "https://bravelocation.com/countthedaysleft")
+                                 url: "https://writingontablets.com/categories#Count%20The%20Days%20Left")
                 
                 SettingsLinkView(model: self.model,
                                  iconName: "curlybraces",

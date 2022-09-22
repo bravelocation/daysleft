@@ -307,7 +307,8 @@
 		5208B83328D87199007BB75C /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				52CBC7C428DB0C5D00C89F20 /* Hosting */,
+				52CBC7C528DB0CA300C89F20 /* MainViewHostingController.swift */,
+				52DC5AD128DB431900AFF24D /* SettingsViewHostingController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -484,15 +485,6 @@
 				52CBC7A528D9E1F000C89F20 /* InMemoryDataProvider.swift */,
 			);
 			path = "Data Providers";
-			sourceTree = "<group>";
-		};
-		52CBC7C428DB0C5D00C89F20 /* Hosting */ = {
-			isa = PBXGroup;
-			children = (
-				52CBC7C528DB0CA300C89F20 /* MainViewHostingController.swift */,
-				52DC5AD128DB431900AFF24D /* SettingsViewHostingController.swift */,
-			);
-			path = Hosting;
 			sourceTree = "<group>";
 		};
 		52CFBEEF1A8B631B005234FB = {
