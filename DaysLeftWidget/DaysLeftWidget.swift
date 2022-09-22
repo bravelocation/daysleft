@@ -17,10 +17,20 @@ struct DaysLeftWidget: Widget {
         StaticConfiguration(
             kind: kind,
             provider: WidgetTimelineProvider()) { entry in
-            WidgetView(model: entry)
-        }
-        .supportedFamilies([.systemSmall, .systemMedium])
+                WidgetSwitcherView(model: entry)
+            }
+        .supportedFamilies(self.supportedFamilies())
         .configurationDisplayName("Days Left")
         .description("Count The Days Left")
+    }
+    
+    private func supportedFamilies() -> [WidgetFamily] {
+        if #available(iOSApplicationExtension 16.0, *) {
+            #if !targetEnvironment(macCatalyst)
+            return [.systemSmall, .systemMedium, .accessoryCircular, .accessoryRectangular, .accessoryInline]
+            #endif
+        }
+        
+        return [.systemSmall, .systemMedium]
     }
 }
