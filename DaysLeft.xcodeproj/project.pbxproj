@@ -409,11 +409,11 @@
 		5208B84F28D87A05007BB75C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				52A70D5728DC92A600DCE9CB /* AccessoryCircularView.swift */,
 				52A70D5528DC913D00DCE9CB /* AccessoryInlineView.swift */,
 				52A70D5328DC8D2500DCE9CB /* AccessoryRectangularView.swift */,
 				52A70D5128DC8A6D00DCE9CB /* WidgetSwitcherView.swift */,
 				52E048B225077E1C009A2169 /* WidgetView.swift */,
-				52A70D5728DC92A600DCE9CB /* AccessoryCircularView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
