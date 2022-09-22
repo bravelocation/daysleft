@@ -81,9 +81,8 @@ class MainViewHostingController<Content: View>: UIHostingController<Content>, Vi
         
         self.navigationController?.navigationBar.tintColor = UIColor.white
         
-        // Setup user intents
+        // Setup handoff
         self.setupHandoff()
-        self.donateInteraction()
         
         // Setup menu command handler
         self.setupMenuCommandHandler()
@@ -118,43 +117,6 @@ class MainViewHostingController<Content: View>: UIHostingController<Content>, Vi
     }
 
     // MARK: - User Activity functions
-    /// Donates current interaction
-    private func donateInteraction() {
-        let intent = DaysLeftIntent()
-        intent.suggestedInvocationPhrase = "How Many Days Left"
-                    
-        // Donate relevant daily shortcut
-        var relevantShortcuts: [INRelevantShortcut] = []
-        
-        if let shortcut = INShortcut(intent: intent) {
-            
-            let relevantShortcut = INRelevantShortcut(shortcut: shortcut)
-            relevantShortcut.shortcutRole = INRelevantShortcutRole.action
-            
-            let dailyProvider = INDailyRoutineRelevanceProvider(situation: .morning)
-            relevantShortcut.relevanceProviders = [dailyProvider]
-            
-            // Set template for displaying on Watch face
-            let appSettings = self.dataManager.appSettings
-            let templateTitle = appSettings.weekdaysOnly ? "Weekdays until" : "Days until"
-            let templateSubTitle = appSettings.title
-
-            let template = INDefaultCardTemplate(title: templateTitle)
-            template.subtitle = templateSubTitle
-            relevantShortcut.watchTemplate = template
-            
-            relevantShortcuts.append(relevantShortcut)
-        }
-        
-        INRelevantShortcutStore.default.setRelevantShortcuts(relevantShortcuts) { (error) in
-            if let error = error {
-                print("Failed to set relevant shortcuts. \(error))")
-            } else {
-                print("Relevant shortcuts set.")
-            }
-        }
-    }
-    
     /// Sets up handoff
     @objc func setupHandoff() {
         // Set activity for handoff
