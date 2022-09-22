@@ -24,9 +24,7 @@ struct WidgetSwitcherView: View {
             }
         case .accessoryCircular:
             if #available(iOSApplicationExtension 16.0, *) {
-                Gauge(value: model.appSettings.percentageDone(date: model.date)) {
-                    Text("\(self.model.appSettings.daysLeft(model.date))")
-                }
+                AccessoryCircularView(model: self.model)
             }
         case .accessoryRectangular:
             if #available(iOSApplicationExtension 16.0, *) {
