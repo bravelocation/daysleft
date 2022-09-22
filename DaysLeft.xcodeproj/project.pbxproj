@@ -26,7 +26,6 @@
 		527E15401D83F80300D81B15 /* gallery.ckcomplication in Resources */ = {isa = PBXBuildFile; fileRef = 527E153F1D83F80300D81B15 /* gallery.ckcomplication */; };
 		5295EDF01A94AF83007EF7E7 /* DaysLeftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CFBF131A8B631B005234FB /* DaysLeftTests.swift */; };
 		52A70D4928DC555800DCE9CB /* DaysLeftAppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A70D4828DC555800DCE9CB /* DaysLeftAppIntent.swift */; };
-		52A70D4C28DC57A900DCE9CB /* AppIntentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A70D4B28DC57A900DCE9CB /* AppIntentView.swift */; };
 		52AC69532154DAFB00E6C833 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 52AC69522154DAFB00E6C833 /* Intents.intentdefinition */; settings = {ATTRIBUTES = (codegen, ); }; };
 		52B7E87E1ABEDE9300E1949C /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52B7E87D1ABEDE9300E1949C /* Media.xcassets */; };
 		52B7E88A1ABEDE9300E1949C /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52B7E8881ABEDE9300E1949C /* Interface.storyboard */; };
@@ -182,7 +181,6 @@
 		5295EDDA1A94AE53007EF7E7 /* DaysLeftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DaysLeftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5295EDFA1A94B398007EF7E7 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		52A70D4828DC555800DCE9CB /* DaysLeftAppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysLeftAppIntent.swift; sourceTree = "<group>"; };
-		52A70D4B28DC57A900DCE9CB /* AppIntentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntentView.swift; sourceTree = "<group>"; };
 		52AC693D2154DA7E00E6C833 /* IntentsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IntentsUI.framework; path = System/Library/Frameworks/IntentsUI.framework; sourceTree = SDKROOT; };
 		52AC69522154DAFB00E6C833 /* Intents.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = Intents.intentdefinition; sourceTree = "<group>"; };
 		52B78DF31D982A6E00AB629D /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
@@ -442,7 +440,6 @@
 		52A70D4728DC553000DCE9CB /* AppIntents */ = {
 			isa = PBXGroup;
 			children = (
-				52A70D4B28DC57A900DCE9CB /* AppIntentView.swift */,
 				52A70D4828DC555800DCE9CB /* DaysLeftAppIntent.swift */,
 			);
 			path = AppIntents;
@@ -885,7 +882,6 @@
 				52F9CDAC22D63D1900E0FFE8 /* SceneDelegate.swift in Sources */,
 				5240F1F128D9C25700B95FE5 /* AppControlSettings.swift in Sources */,
 				52CFBEFE1A8B631B005234FB /* AppDelegate.swift in Sources */,
-				52A70D4C28DC57A900DCE9CB /* AppIntentView.swift in Sources */,
 				5240F1E528D9B6CB00B95FE5 /* AppSettingsDataManager.swift in Sources */,
 				52CBC7C928DB101600C89F20 /* InMemoryDataProvider.swift in Sources */,
 				52D617B124D06F9000465F4C /* MenuBuilder.swift in Sources */,
