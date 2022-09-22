@@ -47,6 +47,7 @@ struct MainView: View {
             
             Spacer()
         }
+        .background(Color(uiColor: UIColor.systemBackground))
         .padding()
         .onAppear() {
             self.model.updateViewData()
