@@ -41,6 +41,9 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
         // Setup background refresh
         self.setupBackgroundRefresh()
         
+        // Update complications
+        self.updateComplications()
+        
         print("applicationDidBecomeActive completed")
     }
     
@@ -53,14 +56,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
             if (task is WKApplicationRefreshBackgroundTask) {
                 
                 // Simply update the complications on a background task being triggered
-                let complicationServer = CLKComplicationServer.sharedInstance()
-                let activeComplications = complicationServer.activeComplications
-                
-                if (activeComplications != nil) {
-                    for complication in activeComplications! {
-                        complicationServer.reloadTimeline(for: complication)
-                    }
-                }
+                self.updateComplications()
                 
                 // Also update the data model
                 self.dataModel.updateViewData()
@@ -71,11 +67,6 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
             
             task.setTaskCompletedWithSnapshot(true)
         }
-    }
-    
-    func handle(_ userActivity: NSUserActivity) {
-        print("Handling user activity")
-        // Not sure what to do here
     }
     
     // MARK: Event handlers
