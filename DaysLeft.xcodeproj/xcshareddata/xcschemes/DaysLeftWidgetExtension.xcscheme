@@ -57,8 +57,18 @@
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES"
       launchAutomaticallySubstyle = "2">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <RemoteRunnable
+         runnableDebuggingMode = "2"
+         BundleIdentifier = "com.apple.springboard">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "52E0489F25077AFB009A2169"
+            BuildableName = "DaysLeftWidgetExtension.appex"
+            BlueprintName = "DaysLeftWidgetExtension"
+            ReferencedContainer = "container:DaysLeft.xcodeproj">
+         </BuildableReference>
+      </RemoteRunnable>
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "52CFBEF71A8B631B005234FB"
@@ -66,7 +76,7 @@
             BlueprintName = "DaysLeft"
             ReferencedContainer = "container:DaysLeft.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
       <EnvironmentVariables>
          <EnvironmentVariable
             key = "_XCWidgetKind"
