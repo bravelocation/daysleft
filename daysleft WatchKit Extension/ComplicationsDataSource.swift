@@ -28,6 +28,17 @@ class ComplicationsDataSource: NSObject, CLKComplicationDataSource {
         handler(nextUpdate)
     }
     
+    func getComplicationDescriptors(handler: @escaping ([CLKComplicationDescriptor]) -> Void) {
+        let mySupportedFamilies = CLKComplicationFamily.allCases
+
+        let daysLeftDescriptor = CLKComplicationDescriptor(
+            identifier: "ComplicationDaysLeft",
+            displayName: "Count The Days Left",
+            supportedFamilies: mySupportedFamilies)
+        
+        handler([daysLeftDescriptor])
+    }
+    
     // swiftlint:disable:next cyclomatic_complexity
     func getLocalizableSampleTemplate(for complication: CLKComplication,
                                       withHandler handler: @escaping (CLKComplicationTemplate?) -> Void) {
@@ -35,95 +46,76 @@ class ComplicationsDataSource: NSObject, CLKComplicationDataSource {
 
         switch complication.family {
         case .circularSmall:
-            let template = CLKComplicationTemplateCircularSmallRingText()
-            template.textProvider = CLKSimpleTextProvider(text: "--")
-            template.fillFraction = 0.7
-            template.ringStyle = CLKComplicationRingStyle.open
+            let template = CLKComplicationTemplateCircularSmallRingText(textProvider: CLKSimpleTextProvider(text: "--"),
+                                                                        fillFraction: 0.7,
+                                                                        ringStyle: CLKComplicationRingStyle.open)
             handler(template)
         case .modularSmall:
-            let template = CLKComplicationTemplateModularSmallRingText()
-            template.textProvider = CLKSimpleTextProvider(text: "--")
-            template.fillFraction = 0.7
-            template.ringStyle = CLKComplicationRingStyle.open
+            let template = CLKComplicationTemplateModularSmallRingText(textProvider: CLKSimpleTextProvider(text: "--"),
+                                                                       fillFraction: 0.7,
+                                                                       ringStyle: CLKComplicationRingStyle.open)
             handler(template)
         case .utilitarianSmall:
-            let template = CLKComplicationTemplateUtilitarianSmallRingText()
-            template.textProvider = CLKSimpleTextProvider(text: "--")
-            template.fillFraction = 0.7
-            template.ringStyle = CLKComplicationRingStyle.open
+            let template = CLKComplicationTemplateUtilitarianSmallRingText(textProvider: CLKSimpleTextProvider(text: "--"),
+                                                                           fillFraction: 0.7,
+                                                                           ringStyle: CLKComplicationRingStyle.open)
             handler(template)
         case .utilitarianSmallFlat:
-            let template = CLKComplicationTemplateUtilitarianSmallFlat()
-            template.textProvider = CLKSimpleTextProvider(text: "--")
+            let template = CLKComplicationTemplateUtilitarianSmallFlat(textProvider: CLKSimpleTextProvider(text: "--"))
             handler(template)
         case .utilitarianLarge:
-            let template = CLKComplicationTemplateUtilitarianLargeFlat()
-            template.textProvider = CLKSimpleTextProvider(text: "--")
+            let template = CLKComplicationTemplateUtilitarianLargeFlat(textProvider: CLKSimpleTextProvider(text: "--"))
             handler(template)
         case .extraLarge:
-            let template = CLKComplicationTemplateExtraLargeRingText()
-            template.textProvider = CLKSimpleTextProvider(text: "--")
-            template.fillFraction = 0.7
-            template.ringStyle = CLKComplicationRingStyle.open
+            let template = CLKComplicationTemplateExtraLargeRingText(textProvider: CLKSimpleTextProvider(text: "--"),
+                                                                     fillFraction: 0.7,
+                                                                     ringStyle: CLKComplicationRingStyle.open)
             handler(template)
         case .modularLarge:
-            let template = CLKComplicationTemplateModularLargeStandardBody()
-            template.headerTextProvider = CLKSimpleTextProvider(text: "Christmas")
-            template.body1TextProvider = CLKSimpleTextProvider(text: "30 days")
-            template.body2TextProvider = CLKSimpleTextProvider(text: "10% done")
+            let template = CLKComplicationTemplateModularLargeStandardBody(headerTextProvider: CLKSimpleTextProvider(text: "Christmas"),
+                                                                           body1TextProvider: CLKSimpleTextProvider(text: "30 days"),
+                                                                           body2TextProvider: CLKSimpleTextProvider(text: "10% done"))
             handler(template)
         case .graphicBezel:
-            let template = CLKComplicationTemplateGraphicBezelCircularText()
-            template.tintColor = appTintColor
-            
-            template.textProvider = CLKSimpleTextProvider(text: "20 days until Christmas")
-            
-            let gaugeProvider = CLKComplicationTemplateGraphicCircularOpenGaugeSimpleText()
-            gaugeProvider.centerTextProvider = CLKSimpleTextProvider(text: String("20"))
-            gaugeProvider.bottomTextProvider = CLKSimpleTextProvider(text: String(format: "%d%%", 10))
-            
             let gauge = CLKSimpleGaugeProvider(style: .fill, gaugeColor: appTintColor, fillFraction: 0.1)
-            gaugeProvider.gaugeProvider = gauge
-            template.circularTemplate = gaugeProvider
+            let gaugeProvider = CLKComplicationTemplateGraphicCircularOpenGaugeSimpleText(gaugeProvider: gauge,
+                                                                                          bottomTextProvider: CLKSimpleTextProvider(text: String(format: "%d%%", 10)),
+                                                                                          centerTextProvider: CLKSimpleTextProvider(text: String("20")))
+            
+            let template = CLKComplicationTemplateGraphicBezelCircularText(circularTemplate: gaugeProvider,
+                                                                           textProvider: CLKSimpleTextProvider(text: "20 days until Christmas"))
+            template.tintColor = appTintColor
             
             handler(template)
         case .graphicCorner:
-            let template = CLKComplicationTemplateGraphicCornerGaugeText()
-            template.outerTextProvider = CLKSimpleTextProvider(text: "20 days")
-            
             let gauge = CLKSimpleGaugeProvider(style: .fill, gaugeColor: appTintColor, fillFraction: 0.1)
-            template.gaugeProvider = gauge
-            
+            let template = CLKComplicationTemplateGraphicCornerGaugeText(gaugeProvider: gauge,
+                                                                         outerTextProvider: CLKSimpleTextProvider(text: "20 days"))
             template.tintColor = appTintColor
             handler(template)
         case .graphicCircular:
-            let template = CLKComplicationTemplateGraphicCircularOpenGaugeSimpleText()
-            template.centerTextProvider = CLKSimpleTextProvider(text: "20")
-            template.bottomTextProvider = CLKSimpleTextProvider(text: String(format: "%d%%", 10))
-            
             let gauge = CLKSimpleGaugeProvider(style: .fill, gaugeColor: appTintColor, fillFraction: 0.1)
-            template.gaugeProvider = gauge
-            
+
+            let template = CLKComplicationTemplateGraphicCircularOpenGaugeSimpleText(gaugeProvider: gauge,
+                                                                                     bottomTextProvider: CLKSimpleTextProvider(text: String(format: "%d%%", 10)),
+                                                                                     centerTextProvider: CLKSimpleTextProvider(text: "20"))
             template.tintColor = appTintColor
             handler(template)
         case .graphicRectangular:
-                let template = CLKComplicationTemplateGraphicRectangularStandardBody()
-                template.headerTextProvider = CLKSimpleTextProvider(text: "Christmas")
-                template.body1TextProvider = CLKSimpleTextProvider(text: "20 days")
-                template.body2TextProvider = CLKSimpleTextProvider(text: String(format: "%d%% done", 0.1))
+                let template = CLKComplicationTemplateGraphicRectangularStandardBody(headerTextProvider: CLKSimpleTextProvider(text: "Christmas"),
+                                                                                     body1TextProvider: CLKSimpleTextProvider(text: "20 days"),
+                                                                                     body2TextProvider: CLKSimpleTextProvider(text: String(format: "%d%% done", 0.1)))
                 template.tintColor = appTintColor
                 
                 handler(template)
         case .graphicExtraLarge:
             if #available(watchOS 7, *) {
-                let template = CLKComplicationTemplateGraphicExtraLargeCircularOpenGaugeRangeText()
-                template.centerTextProvider = CLKSimpleTextProvider(text: "20")
-                template.leadingTextProvider = CLKSimpleTextProvider(text: "")
-                template.trailingTextProvider = CLKSimpleTextProvider(text: "")
-
                 let gauge = CLKSimpleGaugeProvider(style: .fill, gaugeColor: appTintColor, fillFraction: 0.1)
-                template.gaugeProvider = gauge
-                
+
+                let template = CLKComplicationTemplateGraphicExtraLargeCircularOpenGaugeRangeText(gaugeProvider: gauge,
+                                                                                                  leadingTextProvider: CLKSimpleTextProvider(text: ""),
+                                                                                                  trailingTextProvider: CLKSimpleTextProvider(text: ""),
+                                                                                                  centerTextProvider: CLKSimpleTextProvider(text: "20"))
                 template.tintColor = appTintColor
                 
                 handler(template)
@@ -203,106 +195,87 @@ class ComplicationsDataSource: NSObject, CLKComplicationDataSource {
 
         switch family {
         case .circularSmall:
-            let template = CLKComplicationTemplateCircularSmallRingText()
-            template.textProvider = CLKSimpleTextProvider(text: String(currentDaysLeft))
-            template.fillFraction = percentageDone
-            template.ringStyle = CLKComplicationRingStyle.open
+            let template = CLKComplicationTemplateCircularSmallRingText(textProvider: CLKSimpleTextProvider(text: String(currentDaysLeft)),
+                                                                        fillFraction: percentageDone,
+                                                                        ringStyle: CLKComplicationRingStyle.open)
             template.tintColor = appTintColor
             entry = CLKComplicationTimelineEntry(date: date, complicationTemplate: template)
         case .modularSmall:
-            let template = CLKComplicationTemplateModularSmallRingText()
-            template.textProvider = CLKSimpleTextProvider(text: String(currentDaysLeft))
-            template.fillFraction = percentageDone
-            template.ringStyle = CLKComplicationRingStyle.open
+            let template = CLKComplicationTemplateModularSmallRingText(textProvider: CLKSimpleTextProvider(text: String(currentDaysLeft)),
+                                                                       fillFraction: percentageDone,
+                                                                       ringStyle: CLKComplicationRingStyle.open)
             template.tintColor = appTintColor
             entry = CLKComplicationTimelineEntry(date: date, complicationTemplate: template)
         case .utilitarianSmall:
-            let template = CLKComplicationTemplateUtilitarianSmallRingText()
-            template.textProvider = CLKSimpleTextProvider(text: String(currentDaysLeft))
-            template.fillFraction = percentageDone
-            template.ringStyle = CLKComplicationRingStyle.open
+            let template = CLKComplicationTemplateUtilitarianSmallRingText(textProvider: CLKSimpleTextProvider(text: String(currentDaysLeft)),
+                                                                           fillFraction: percentageDone,
+                                                                           ringStyle: CLKComplicationRingStyle.open)
             template.tintColor = appTintColor
             entry = CLKComplicationTimelineEntry(date: date, complicationTemplate: template)
         case .utilitarianSmallFlat:
-            let template = CLKComplicationTemplateUtilitarianSmallFlat()
-            template.textProvider = CLKSimpleTextProvider(text: String(currentDaysLeft))
+            let template = CLKComplicationTemplateUtilitarianSmallFlat(textProvider: CLKSimpleTextProvider(text: String(currentDaysLeft)))
             template.tintColor = appTintColor
             entry = CLKComplicationTimelineEntry(date: date, complicationTemplate: template)
         case .utilitarianLarge:
-            let template = CLKComplicationTemplateUtilitarianLargeFlat()
-            template.textProvider = CLKSimpleTextProvider(text: String(currentDaysLeft))
+            let template = CLKComplicationTemplateUtilitarianLargeFlat(textProvider: CLKSimpleTextProvider(text: String(currentDaysLeft)))
             template.tintColor = appTintColor
             entry = CLKComplicationTimelineEntry(date: date, complicationTemplate: template)
         case .extraLarge:
-            let template = CLKComplicationTemplateExtraLargeRingText()
-            template.textProvider = CLKSimpleTextProvider(text: String(currentDaysLeft))
-            template.fillFraction = percentageDone
-            template.ringStyle = CLKComplicationRingStyle.open
+            let template = CLKComplicationTemplateExtraLargeRingText(textProvider: CLKSimpleTextProvider(text: String(currentDaysLeft)),
+                                                                     fillFraction: percentageDone,
+                                                                     ringStyle: CLKComplicationRingStyle.open)
             template.tintColor = appTintColor
             entry = CLKComplicationTimelineEntry(date: date, complicationTemplate: template)
         case .modularLarge:
-            let template = CLKComplicationTemplateModularLargeStandardBody()
-            template.headerTextProvider = CLKSimpleTextProvider(text: self.appSettings.title)
-            template.body1TextProvider = CLKSimpleTextProvider(text: String(format: "%d days", currentDaysLeft))
-            template.body2TextProvider = CLKSimpleTextProvider(text: String(format: "%d%% done", displayPercentageDone))
+            let template = CLKComplicationTemplateModularLargeStandardBody(headerTextProvider: CLKSimpleTextProvider(text: self.appSettings.title),
+                                                                           body1TextProvider: CLKSimpleTextProvider(text: String(format: "%d days", currentDaysLeft)),
+                                                                           body2TextProvider: CLKSimpleTextProvider(text: String(format: "%d%% done", displayPercentageDone)))
             template.tintColor = appTintColor
             entry = CLKComplicationTimelineEntry(date: date, complicationTemplate: template)
         case .graphicBezel:
-            let template = CLKComplicationTemplateGraphicBezelCircularText()
-            template.tintColor = appTintColor
-            
-            let longDesc = String(format: "%d %@ until %@", currentDaysLeft, self.appSettings.weekdaysOnly ? "weekdays" : "days", self.appSettings.title)
-            template.textProvider = CLKSimpleTextProvider(text: longDesc)
-            
-            let gaugeProvider = CLKComplicationTemplateGraphicCircularOpenGaugeSimpleText()
-            gaugeProvider.centerTextProvider = CLKSimpleTextProvider(text: String(currentDaysLeft))
-            gaugeProvider.bottomTextProvider = CLKSimpleTextProvider(text: String(format: "%d%%", displayPercentageDone))
-            
             let gauge = CLKSimpleGaugeProvider(style: .fill, gaugeColor: appTintColor, fillFraction: percentageDone)
-            gaugeProvider.gaugeProvider = gauge
-            template.circularTemplate = gaugeProvider
-            
+
+            let gaugeProvider = CLKComplicationTemplateGraphicCircularOpenGaugeSimpleText(gaugeProvider: gauge,
+                                                                                          bottomTextProvider: CLKSimpleTextProvider(text: String(format: "%d%%", displayPercentageDone)),
+                                                                                          centerTextProvider: CLKSimpleTextProvider(text: String(currentDaysLeft)))
+
+            let longDesc = String(format: "%d %@ until %@", currentDaysLeft, self.appSettings.weekdaysOnly ? "weekdays" : "days", self.appSettings.title)
+
+            let template = CLKComplicationTemplateGraphicBezelCircularText(circularTemplate: gaugeProvider,
+                                                                           textProvider: CLKSimpleTextProvider(text: longDesc))
+            template.tintColor = appTintColor
             entry = CLKComplicationTimelineEntry(date: date, complicationTemplate: template)
         case .graphicCorner:
-            let template = CLKComplicationTemplateGraphicCornerGaugeText()
-            let daysDesc = String(format: "%d days", currentDaysLeft)
-            template.outerTextProvider = CLKSimpleTextProvider(text: daysDesc)
-            
             let gauge = CLKSimpleGaugeProvider(style: .fill, gaugeColor: appTintColor, fillFraction: percentageDone)
-            template.gaugeProvider = gauge
-
+            let daysDesc = String(format: "%d days", currentDaysLeft)
+            let template = CLKComplicationTemplateGraphicCornerGaugeText(gaugeProvider: gauge,
+                                                                         outerTextProvider: CLKSimpleTextProvider(text: daysDesc))
             template.tintColor = appTintColor
             entry = CLKComplicationTimelineEntry(date: date, complicationTemplate: template)
         case .graphicCircular:
-            let template = CLKComplicationTemplateGraphicCircularOpenGaugeSimpleText()
-            template.centerTextProvider = CLKSimpleTextProvider(text: String(currentDaysLeft))
-            template.bottomTextProvider = CLKSimpleTextProvider(text: String(format: "%d%%", displayPercentageDone))
-            
             let gauge = CLKSimpleGaugeProvider(style: .fill, gaugeColor: appTintColor, fillFraction: percentageDone)
-            template.gaugeProvider = gauge
-            
+
+            let template = CLKComplicationTemplateGraphicCircularOpenGaugeSimpleText(gaugeProvider: gauge,
+                                                                                     bottomTextProvider: CLKSimpleTextProvider(text: String(format: "%d%%", displayPercentageDone)),
+                                                                                     centerTextProvider: CLKSimpleTextProvider(text: String(currentDaysLeft)))
             template.tintColor = appTintColor
             entry = CLKComplicationTimelineEntry(date: date, complicationTemplate: template)
         case .graphicRectangular:
-            let template = CLKComplicationTemplateGraphicRectangularStandardBody()
-            template.headerTextProvider = CLKSimpleTextProvider(text: self.appSettings.title)
-            template.body1TextProvider = CLKSimpleTextProvider(text: String(format: "%d days", currentDaysLeft))
-            template.body2TextProvider = CLKSimpleTextProvider(text: String(format: "%d%% done", displayPercentageDone))
+            let template = CLKComplicationTemplateGraphicRectangularStandardBody(headerTextProvider: CLKSimpleTextProvider(text: self.appSettings.title),
+                                                                                 body1TextProvider: CLKSimpleTextProvider(text: String(format: "%d days", currentDaysLeft)),
+                                                                                 body2TextProvider: CLKSimpleTextProvider(text: String(format: "%d%% done", displayPercentageDone)))
             template.tintColor = appTintColor
             
             entry = CLKComplicationTimelineEntry(date: date, complicationTemplate: template)
         case .graphicExtraLarge:
             if #available(watchOS 7, *) {
-                let template = CLKComplicationTemplateGraphicExtraLargeCircularOpenGaugeRangeText()
-                template.centerTextProvider = CLKSimpleTextProvider(text: String(format: "%d", currentDaysLeft))
-                template.leadingTextProvider = CLKSimpleTextProvider(text: "")
-                template.trailingTextProvider = CLKSimpleTextProvider(text: "")
-
                 let gauge = CLKSimpleGaugeProvider(style: .fill, gaugeColor: appTintColor, fillFraction: 0.1)
-                template.gaugeProvider = gauge
-                
+
+                let template = CLKComplicationTemplateGraphicExtraLargeCircularOpenGaugeRangeText(gaugeProvider: gauge,
+                                                                                                  leadingTextProvider: CLKSimpleTextProvider(text: ""),
+                                                                                                  trailingTextProvider: CLKSimpleTextProvider(text: ""),
+                                                                                                  centerTextProvider: CLKSimpleTextProvider(text: String(format: "%d", currentDaysLeft)))
                 template.tintColor = appTintColor
-                
                 entry = CLKComplicationTimelineEntry(date: date, complicationTemplate: template)
             }
         default:

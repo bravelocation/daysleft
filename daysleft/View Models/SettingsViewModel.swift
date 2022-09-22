@@ -81,7 +81,7 @@ class SettingsViewModel: ObservableObject {
     
     /// Open external URL
     /// - Parameter value: URL to pen as a string
-    func openExternalUrl(_ value: String) {
+    @MainActor func openExternalUrl(_ value: String) {
         if let url = URL(string: value) {
             UIApplication.shared.open(url, options: [:])
         }
