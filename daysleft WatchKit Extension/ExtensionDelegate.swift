@@ -78,7 +78,6 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
         // Not sure what to do here
     }
     
-    
     // MARK: Event handlers
     @objc
     fileprivate func iCloudSettingsUpdated() {

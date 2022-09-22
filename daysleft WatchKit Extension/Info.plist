@@ -24,21 +24,6 @@
 	<string>427</string>
 	<key>CLKComplicationPrincipalClass</key>
 	<string>$(PRODUCT_MODULE_NAME).ComplicationsDataSource</string>
-	<key>CLKComplicationSupportedFamilies</key>
-	<array>
-		<string>CLKComplicationFamilyModularSmall</string>
-		<string>CLKComplicationFamilyUtilitarianSmall</string>
-		<string>CLKComplicationFamilyCircularSmall</string>
-		<string>CLKComplicationFamilyExtraLarge</string>
-		<string>CLKComplicationFamilyUtilitarianSmallFlat</string>
-		<string>CLKComplicationFamilyModularLarge</string>
-		<string>CLKComplicationFamilyUtilitarianLarge</string>
-		<string>CLKComplicationFamilyGraphicCorner</string>
-		<string>CLKComplicationFamilyGraphicBezel</string>
-		<string>CLKComplicationFamilyGraphicCircular</string>
-		<string>CLKComplicationFamilyGraphicRectangular</string>
-		<string>CLKComplicationFamilyGraphicExtraLarge</string>
-	</array>
 	<key>NSExtension</key>
 	<dict>
 		<key>NSExtensionAttributes</key>

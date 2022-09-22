@@ -36,7 +36,6 @@ struct WidgetView: View {
                 .foregroundColor(Color.primary)
         }
         .padding()
-        .background(Color(UIColor.systemBackground))
     }
 }
 
