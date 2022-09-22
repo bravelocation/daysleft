@@ -12,7 +12,6 @@ import WidgetKit
 @available(iOSApplicationExtension 16.0, *)
 struct AccessoryRectangularView: View {
     var model: WidgetDaysLeftData
-    @Environment(\.widgetRenderingMode) var widgetRenderingMode
     
     var body: some View {
         VStack(alignment: .leading) {

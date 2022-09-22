@@ -20,7 +20,7 @@ struct WidgetSwitcherView: View {
 #if !targetEnvironment(macCatalyst)
         case .accessoryInline:
             if #available(iOSApplicationExtension 16.0, *) {
-                Text("Inline")
+                AccessoryInlineView(model: self.model)
             }
         case .accessoryCircular:
             if #available(iOSApplicationExtension 16.0, *) {

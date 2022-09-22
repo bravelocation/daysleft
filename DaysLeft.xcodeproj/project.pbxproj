@@ -28,6 +28,7 @@
 		52A70D5028DC660C00DCE9CB /* ShortcutProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A70D4F28DC660C00DCE9CB /* ShortcutProvider.swift */; };
 		52A70D5228DC8A6D00DCE9CB /* WidgetSwitcherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A70D5128DC8A6D00DCE9CB /* WidgetSwitcherView.swift */; };
 		52A70D5428DC8D2500DCE9CB /* AccessoryRectangularView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A70D5328DC8D2500DCE9CB /* AccessoryRectangularView.swift */; };
+		52A70D5628DC913D00DCE9CB /* AccessoryInlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A70D5528DC913D00DCE9CB /* AccessoryInlineView.swift */; };
 		52B7E87E1ABEDE9300E1949C /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52B7E87D1ABEDE9300E1949C /* Media.xcassets */; };
 		52B7E88A1ABEDE9300E1949C /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52B7E8881ABEDE9300E1949C /* Interface.storyboard */; };
 		52B7E88C1ABEDE9300E1949C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52B7E88B1ABEDE9300E1949C /* Images.xcassets */; };
@@ -183,6 +184,7 @@
 		52A70D4F28DC660C00DCE9CB /* ShortcutProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutProvider.swift; sourceTree = "<group>"; };
 		52A70D5128DC8A6D00DCE9CB /* WidgetSwitcherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetSwitcherView.swift; sourceTree = "<group>"; };
 		52A70D5328DC8D2500DCE9CB /* AccessoryRectangularView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessoryRectangularView.swift; sourceTree = "<group>"; };
+		52A70D5528DC913D00DCE9CB /* AccessoryInlineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessoryInlineView.swift; sourceTree = "<group>"; };
 		52AC693D2154DA7E00E6C833 /* IntentsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IntentsUI.framework; path = System/Library/Frameworks/IntentsUI.framework; sourceTree = SDKROOT; };
 		52B78DF31D982A6E00AB629D /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
 		52B78E091D98388D00AB629D /* WatchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchKit.framework; path = System/Library/Frameworks/WatchKit.framework; sourceTree = SDKROOT; };
@@ -405,9 +407,10 @@
 		5208B84F28D87A05007BB75C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				52E048B225077E1C009A2169 /* WidgetView.swift */,
-				52A70D5128DC8A6D00DCE9CB /* WidgetSwitcherView.swift */,
+				52A70D5528DC913D00DCE9CB /* AccessoryInlineView.swift */,
 				52A70D5328DC8D2500DCE9CB /* AccessoryRectangularView.swift */,
+				52A70D5128DC8A6D00DCE9CB /* WidgetSwitcherView.swift */,
+				52E048B225077E1C009A2169 /* WidgetView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -892,6 +895,7 @@
 			files = (
 				52E048B325077E1C009A2169 /* WidgetView.swift in Sources */,
 				52E048A725077AFB009A2169 /* DaysLeftWidget.swift in Sources */,
+				52A70D5628DC913D00DCE9CB /* AccessoryInlineView.swift in Sources */,
 				52A70D5228DC8A6D00DCE9CB /* WidgetSwitcherView.swift in Sources */,
 				5240F1D528D8C1BC00B95FE5 /* Date+Helpers.swift in Sources */,
 				52E048BF2507A57E009A2169 /* WidgetTimelineProvider.swift in Sources */,
