@@ -12,16 +12,30 @@ import WidgetKit
 @available(iOSApplicationExtension 16.0, *)
 struct AccessoryCircularView: View {
     var model: WidgetDaysLeftData
+        @Environment(\.showsWidgetLabel) var showsWidgetLabel
     
     var body: some View {
-        ZStack {
-            AccessoryWidgetBackground()
+        if showsWidgetLabel {
             Gauge(value: model.appSettings.percentageDone(date: model.date)) {
                 Text(self.model.appSettings.weekdaysOnly ? "WKDY" : "DAYS")
             } currentValueLabel: {
                 Text("\(self.model.appSettings.daysLeft(model.date))")
             }
-            .gaugeStyle(.accessoryCircular)
+                .gaugeStyle(.accessoryCircular)
+                .widgetLabel {
+                    Text(model.appSettings.title)
+                        .widgetAccentable()
+                }
+        } else {
+            ZStack {
+                AccessoryWidgetBackground()
+                Gauge(value: model.appSettings.percentageDone(date: model.date)) {
+                    Text(self.model.appSettings.weekdaysOnly ? "WKDY" : "DAYS")
+                } currentValueLabel: {
+                    Text("\(self.model.appSettings.daysLeft(model.date))")
+                }
+                .gaugeStyle(.accessoryCircular)
+            }
         }
     }
 }
