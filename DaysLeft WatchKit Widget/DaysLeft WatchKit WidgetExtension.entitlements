@@ -4,15 +4,11 @@
 <dict>
 	<key>com.apple.developer.icloud-container-identifiers</key>
 	<array/>
-	<key>com.apple.security.app-sandbox</key>
-	<true/>
-	<key>com.apple.developer.ubiquity-kvstore-identifier</key>
-	<string>$(TeamIdentifierPrefix)com.bravelocation.daysleft</string>
 	<key>com.apple.security.application-groups</key>
 	<array>
 		<string>group.bravelocation.daysleft</string>
 	</array>
-	<key>com.apple.security.network.client</key>
-	<true/>
+	<key>com.apple.developer.ubiquity-kvstore-identifier</key>
+	<string>$(TeamIdentifierPrefix)com.bravelocation.daysleft</string>
 </dict>
 </plist>
