@@ -26,6 +26,7 @@ struct AccessoryCircularView: View {
                     Text(model.appSettings.title)
                         .widgetAccentable()
                 }
+                .padding(1.0)
         } else {
             ZStack {
                 AccessoryWidgetBackground()
@@ -35,6 +36,7 @@ struct AccessoryCircularView: View {
                     Text("\(self.model.appSettings.daysLeft(model.date))")
                 }
                 .gaugeStyle(.accessoryCircular)
+                .padding(1.0)
             }
         }
     }
