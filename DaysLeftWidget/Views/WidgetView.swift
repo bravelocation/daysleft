@@ -29,7 +29,7 @@ struct WidgetView: View {
                 progress: self.model.appSettings.percentageDone(date: self.model.date),
                 lineWidth: widgetFamily == .systemSmall ? 12.0 : 20.0
             )
-                .padding([.top, .bottom], 16.0)
+            .padding([.top, .bottom], widgetFamily == .systemSmall ? 8.0 : 16.0)
             
             Text(self.model.appSettings.currentPercentageLeft(date: model.date))
                 .font(.footnote)

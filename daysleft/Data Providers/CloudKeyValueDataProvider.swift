@@ -9,14 +9,12 @@
 import Foundation
 
 class CloudKeyValueDataProvider: DataProviderProtocol {
+    
     // MARK: - Properties
     
     /// User defaults
     private var appStandardUserDefaults: UserDefaults?
-    
-    /// Settings cache used to store settings locally for faster access
-    private var settingsCache = Dictionary<String, Any>()
-    
+        
     // MARK: - Shared setup
     private static let sharedInstance = CloudKeyValueDataProvider()
                                     
@@ -47,33 +45,18 @@ class CloudKeyValueDataProvider: DataProviderProtocol {
         self.appStandardUserDefaults = UserDefaults(suiteName: suiteName)
         self.appStandardUserDefaults?.register(defaults: defaultPrefs as! [String: AnyObject])
         
-        // Preload cache
-        print("Preloading settings cache...")
-        self.settingsCache["start"] = self.appStandardUserDefaults!.value(forKey: "start")
-        self.settingsCache["end"] = self.appStandardUserDefaults!.value(forKey: "end")
-        self.settingsCache["title"] = self.appStandardUserDefaults!.value(forKey: "title")
-        self.settingsCache["weekdaysOnly"] = self.appStandardUserDefaults!.value(forKey: "weekdaysOnly")
-        
         self.initialiseiCloudSettings()
     }
  
+    // MARK: - DataProviderProtocol methods
+    
     /// Used to read an object setting from the user setting store
     ///
     /// param: key The key for the setting
     /// returns: An AnyObject? value retrieved from the settings store
     func readObjectFromStore(_ key: String) -> Any? {
-        // First try the local cache
-        let cachedValue = self.settingsCache[key]
-        
-        if (cachedValue != nil) {
-            return cachedValue
-        }
-        
         // Otherwise try the user details
         let userSettingsValue = self.appStandardUserDefaults!.value(forKey: key)
-        if (userSettingsValue != nil) {
-            self.settingsCache[key] = userSettingsValue as AnyObject?
-        }
         
         return userSettingsValue as AnyObject?
     }
@@ -83,9 +66,6 @@ class CloudKeyValueDataProvider: DataProviderProtocol {
     /// param: value The value for the setting
     /// param: key The key for the setting
     func writeObjectToStore(_ value: AnyObject, key: String) {
-        // First write to local store
-        self.settingsCache[key] = value
-        
         // Then write to local user settings
         if let settings = self.appStandardUserDefaults {
             settings.set(value, forKey: key)
@@ -96,6 +76,12 @@ class CloudKeyValueDataProvider: DataProviderProtocol {
         
         // The write to iCloud store (if needed)
         self.writeSettingToiCloudStore(value, key: key)
+    }
+    
+    /// Synchronises data with the remote data store
+    func synchronise() {
+        let store: NSUbiquitousKeyValueStore = NSUbiquitousKeyValueStore.default
+        store.synchronize()
     }
     
     // MARK: - iCloud functions
