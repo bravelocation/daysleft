@@ -42,6 +42,9 @@ class AppSettingsDataManager {
             // Save the first run once working
             self.firstRun = self.currentFirstRun
         }
+        
+        // Synchronise the data provider to try to get the latest data
+        self.dataProvider.synchronise()
     }
     
     // MARK: - Settings values

@@ -20,4 +20,7 @@ protocol DataProviderProtocol {
     /// param: value The value for the setting
     /// param: key The key for the setting
     func writeObjectToStore(_ value: AnyObject, key: String)
+    
+    /// Synchronises data with the remote data store
+    func synchronise()
 }

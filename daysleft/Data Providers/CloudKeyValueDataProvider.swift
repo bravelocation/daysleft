@@ -9,6 +9,7 @@
 import Foundation
 
 class CloudKeyValueDataProvider: DataProviderProtocol {
+    
     // MARK: - Properties
     
     /// User defaults
@@ -57,6 +58,8 @@ class CloudKeyValueDataProvider: DataProviderProtocol {
         self.initialiseiCloudSettings()
     }
  
+    // MARK: - DataProviderProtocol methods
+    
     /// Used to read an object setting from the user setting store
     ///
     /// param: key The key for the setting
@@ -96,6 +99,12 @@ class CloudKeyValueDataProvider: DataProviderProtocol {
         
         // The write to iCloud store (if needed)
         self.writeSettingToiCloudStore(value, key: key)
+    }
+    
+    /// Synchronises data with the remote data store
+    func synchronise() {
+        let store: NSUbiquitousKeyValueStore = NSUbiquitousKeyValueStore.default
+        store.synchronize()
     }
     
     // MARK: - iCloud functions

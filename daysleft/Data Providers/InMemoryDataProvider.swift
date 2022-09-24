@@ -37,4 +37,9 @@ class InMemoryDataProvider: DataProviderProtocol {
     func writeObjectToStore(_ value: AnyObject, key: String) {
         self.settingsCache[key] = value
     }
+    
+    /// Synchronises data with the remote data store
+    func synchronise() {
+        // No need to do anything on an in-memory sync
+    }
 }
