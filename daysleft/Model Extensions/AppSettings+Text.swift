@@ -61,11 +61,4 @@ extension AppSettings {
     func watchDurationTitle(date: Date) -> String {
         return "\(self.daysLeftDescription(date)) until"
     }
-    
-    func shortDateFormatted(date: Date) -> String {
-        let shortDateFormatter = DateFormatter()
-        shortDateFormatter.dateFormat = "EEE d MMM"
-        
-        return shortDateFormatter.string(from: date)
-    }
 }

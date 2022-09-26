@@ -10,6 +10,10 @@
 		523443631BBAFBEF00E95BA4 /* DaysLeft WatchKit Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 52B7E8771ABEDE9300E1949C /* DaysLeft WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		523443661BBAFBEF00E95BA4 /* DaysLeft WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 52B7E8811ABEDE9300E1949C /* DaysLeft WatchKit App.app */; platformFilter = ios; };
 		5234436D1BBB181C00E95BA4 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5234436C1BBB181C00E95BA4 /* ExtensionDelegate.swift */; };
+		5234FD9F28E2021D0003515F /* DisplayValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5234FD9E28E2021D0003515F /* DisplayValues.swift */; };
+		5234FDA028E2021D0003515F /* DisplayValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5234FD9E28E2021D0003515F /* DisplayValues.swift */; };
+		5234FDA128E2021D0003515F /* DisplayValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5234FD9E28E2021D0003515F /* DisplayValues.swift */; };
+		5234FDA228E2021D0003515F /* DisplayValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5234FD9E28E2021D0003515F /* DisplayValues.swift */; };
 		5240F1D028D8C1BC00B95FE5 /* Date+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5240F1CF28D8C1BC00B95FE5 /* Date+Helpers.swift */; };
 		5240F1D128D8C1BC00B95FE5 /* Date+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5240F1CF28D8C1BC00B95FE5 /* Date+Helpers.swift */; };
 		5240F1D228D8C1BC00B95FE5 /* Date+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5240F1CF28D8C1BC00B95FE5 /* Date+Helpers.swift */; };
@@ -215,6 +219,7 @@
 		5234436B1BBB00B800E95BA4 /* daysleft WatchKit App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "daysleft WatchKit App.entitlements"; sourceTree = "<group>"; };
 		5234436C1BBB181C00E95BA4 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		5234FD9D28DF286B0003515F /* DaysLeft WatchKit WidgetExtension.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = "DaysLeft WatchKit WidgetExtension.entitlements"; sourceTree = "<group>"; };
+		5234FD9E28E2021D0003515F /* DisplayValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayValues.swift; sourceTree = "<group>"; };
 		5240F1CF28D8C1BC00B95FE5 /* Date+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Helpers.swift"; sourceTree = "<group>"; };
 		5240F1E428D9B6CB00B95FE5 /* AppSettingsDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsDataManager.swift; sourceTree = "<group>"; };
 		5240F1EA28D9BE1A00B95FE5 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
@@ -402,6 +407,7 @@
 			children = (
 				5240F1EA28D9BE1A00B95FE5 /* AppSettings.swift */,
 				5240F1F028D9C25700B95FE5 /* AppControlSettings.swift */,
+				5234FD9E28E2021D0003515F /* DisplayValues.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -955,6 +961,7 @@
 				52A70D7728DC9BC800DCE9CB /* AppSettingsDataManager.swift in Sources */,
 				52A70D7128DC9ADF00DCE9CB /* WidgetDaysLeftData.swift in Sources */,
 				52A70D7E28DC9BF200DCE9CB /* DataProviderProtocol.swift in Sources */,
+				5234FDA128E2021D0003515F /* DisplayValues.swift in Sources */,
 				52A70D7828DC9BD100DCE9CB /* AppSettings+DayCalculations.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -967,6 +974,7 @@
 				52CBC7A128D9E01700C89F20 /* DataProviderProtocol.swift in Sources */,
 				52CBC79B28D9DF1000C89F20 /* CloudKeyValueDataProvider.swift in Sources */,
 				52BC111B237C461C005EC3F7 /* WatchView.swift in Sources */,
+				5234FDA028E2021D0003515F /* DisplayValues.swift in Sources */,
 				52C3524C28DCB2EC00D02445 /* DaysLeftWatchApp.swift in Sources */,
 				52A70D8928DCA11900DCE9CB /* ComplicationsDataSource.swift in Sources */,
 				5240F1E628D9B6CB00B95FE5 /* AppSettingsDataManager.swift in Sources */,
@@ -989,6 +997,7 @@
 				52CBC7C628DB0CA300C89F20 /* MainViewHostingController.swift in Sources */,
 				52CBC7BE28DAF84500C89F20 /* CircularProgressView.swift in Sources */,
 				5240F1EB28D9BE1A00B95FE5 /* AppSettings.swift in Sources */,
+				5234FD9F28E2021D0003515F /* DisplayValues.swift in Sources */,
 				52CBC7AE28D9EE6700C89F20 /* AppSettings+Text.swift in Sources */,
 				52CBC7C828DB0D0900C89F20 /* MainView.swift in Sources */,
 				52CBC79A28D9DF1000C89F20 /* CloudKeyValueDataProvider.swift in Sources */,
@@ -1018,6 +1027,7 @@
 				52E048B325077E1C009A2169 /* WidgetView.swift in Sources */,
 				52E048A725077AFB009A2169 /* DaysLeftWidget.swift in Sources */,
 				52A70D5628DC913D00DCE9CB /* AccessoryInlineView.swift in Sources */,
+				5234FDA228E2021D0003515F /* DisplayValues.swift in Sources */,
 				52A70D5228DC8A6D00DCE9CB /* WidgetSwitcherView.swift in Sources */,
 				52A70D5828DC92A600DCE9CB /* AccessoryCircularView.swift in Sources */,
 				5240F1D528D8C1BC00B95FE5 /* Date+Helpers.swift in Sources */,

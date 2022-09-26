@@ -14,7 +14,7 @@ struct AccessoryInlineView: View {
     var model: WidgetDaysLeftData
     
     var body: some View {
-        Text(model.appSettings.fullTitle(date: self.model.date))
+        Text(model.displayValues.fullTitle)
     }
 }
 
