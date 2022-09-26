@@ -17,11 +17,8 @@ protocol ViewModelActionDelegate {
 
 class DaysLeftViewModel: ObservableObject {
     
-    /// Current app settings
-    @Published var appSettings: AppSettings
-    
-    /// Percentage done
-    @Published var percentageDone: Double = 0.0
+    /// Current display values
+    @Published var displayValues: DisplayValues
     
     /// Subscribers to change events
     private var cancellables = Array<AnyCancellable>()
@@ -36,7 +33,7 @@ class DaysLeftViewModel: ObservableObject {
     /// - Parameter dataManager: Data manager
     init(dataManager: AppSettingsDataManager) {
         self.dataManager = dataManager
-        self.appSettings = self.dataManager.appSettings
+        self.displayValues = DisplayValues(appSettings: self.dataManager.appSettings)
         
         // Setup listener for iCloud setting change
         let keyValueChangeSubscriber = NotificationCenter.default
@@ -55,8 +52,7 @@ class DaysLeftViewModel: ObservableObject {
         print("Updating view data...")
         
         // Set the published properties based on the model
-        self.appSettings = self.dataManager.appSettings
-        self.percentageDone = self.appSettings.percentageDone(date: Date())
+        self.displayValues = DisplayValues(appSettings: self.dataManager.appSettings)
     }
     
     func share() {
@@ -69,6 +65,13 @@ class DaysLeftViewModel: ObservableObject {
         if let delegate = delegate {
             delegate.edit()
         }
+    }
+    
+    func shortDateFormatted(date: Date) -> String {
+        let shortDateFormatter = DateFormatter()
+        shortDateFormatter.dateFormat = "EEE d MMM"
+        
+        return shortDateFormatter.string(from: date)
     }
     
     /// Event handler for data update

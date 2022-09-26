@@ -15,19 +15,20 @@ struct WatchView: View {
     
     var body: some View {
         VStack(alignment: .center) {
-            Text(self.model.appSettings.watchDurationTitle(date: Date()))
+            Text(self.model.displayValues.watchDurationTitle)
                 .lineLimit(nil)
                 .multilineTextAlignment(.center)
             
-            Text(self.model.appSettings.title)
+            Text(self.model.displayValues.title)
                 .lineLimit(nil)
                 .multilineTextAlignment(.center)
             
-            CircularProgressView(progress: self.model.percentageDone,
+            CircularProgressView(progress: self.model.displayValues.percentageDone,
                                  lineWidth: 20.0)
             .padding([.top, .bottom], 16.0)
             
-            Text(self.model.appSettings.currentPercentageLeft(date: Date())).font(.footnote)
+            Text(self.model.displayValues.currentPercentageLeft)
+                .font(.footnote)
         }
     }
 }

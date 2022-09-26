@@ -18,30 +18,30 @@ struct MainView: View {
             
             Spacer()
             
-            Text("\(self.model.appSettings.daysLeft(now))")
+            Text("\(self.model.displayValues.daysLeft)")
                 .font(.system(size: 72, weight: .bold, design: .default))
             
-            Text(self.model.appSettings.description(now))
+            Text(self.model.displayValues.description)
                 .lineLimit(nil)
                 .multilineTextAlignment(.center)
             
-            CircularProgressView(progress: self.model.percentageDone,
+            CircularProgressView(progress: self.model.displayValues.percentageDone,
                                  lineWidth: 76.0)
             .padding([.top, .bottom], 16.0)
             .padding([.leading, .trailing], 64.0)
             .frame(maxWidth: 300.0, maxHeight: 300.0)
             
             HStack {
-                Text(self.model.appSettings.shortDateFormatted(date: self.model.appSettings.start))
+                Text(self.model.shortDateFormatted(date: self.model.displayValues.start))
                     .font(.footnote)
                 Spacer()
-                Text(self.model.appSettings.shortDateFormatted(date: self.model.appSettings.end))
+                Text(self.model.shortDateFormatted(date: self.model.displayValues.end))
                     .font(.footnote)
             }
                 .frame(maxWidth: 400.0)
                 .padding([.leading, .trailing], 64.0)
             
-            Text(self.model.appSettings.currentPercentageLeft(date: now))
+            Text(self.model.displayValues.currentPercentageLeft)
                 .font(.title)
                 .padding([.top, .bottom], 16.0)
             
