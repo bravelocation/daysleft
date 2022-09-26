@@ -37,8 +37,8 @@ struct WidgetTimelineProvider: TimelineProvider {
         var entryDate = Date().addingTimeInterval(60*60)
         
         // If the expiry time is tomorrow, set it to be start of tomorrow
-        if Calendar.current.component(.hour, from: entryDate) == 0 {
-            entryDate = Calendar.current.startOfDay(for: Date()).addingTimeInterval(60*60*24)
+        if Calendar.current.isDateInTomorrow(entryDate) {
+            entryDate = Calendar.current.startOfDay(for: entryDate)
         }
 
         let timeline = Timeline(entries: entries, policy: .after(entryDate))
