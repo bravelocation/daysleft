@@ -11,21 +11,26 @@ import WidgetKit
 import SwiftUI
 
 struct WidgetTimelineProvider: TimelineProvider {
-    let appSettings = AppSettingsDataManager().appSettings
-    
     func placeholder(in context: Context) -> WidgetDaysLeftData {
-        return WidgetDaysLeftData(date: Date(), appSettings: self.appSettings)
+        let dataManager = AppSettingsDataManager()
+        
+        return WidgetDaysLeftData(date: Date(), appSettings: dataManager.appSettings)
     }
 
     func getSnapshot(in context: Context, completion: @escaping (WidgetDaysLeftData) -> Void) {
-        let entry = WidgetDaysLeftData(date: Date(), appSettings: self.appSettings)
+        let dataManager = AppSettingsDataManager()
+
+        let entry = WidgetDaysLeftData(date: Date(), appSettings: dataManager.appSettings)
         completion(entry)
     }
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<WidgetDaysLeftData>) -> Void) {
+        let dataManager = AppSettingsDataManager()
+        let appSettings = dataManager.appSettings
+
         // Add entry just for now
         var entries: [WidgetDaysLeftData] = []
-        let entry = WidgetDaysLeftData(date: Date(), appSettings: self.appSettings)
+        let entry = WidgetDaysLeftData(date: Date(), appSettings: appSettings)
         entries.append(entry)
 
         // Update the widget every hour

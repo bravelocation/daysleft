@@ -13,14 +13,14 @@ import WidgetKit
 
 class WidgetDaysLeftData: TimelineEntry {
     let date: Date
-    let appSettings: AppSettings
+    let displayValues: DisplayValues
     
     var relevance: TimelineEntryRelevance? {
-        return TimelineEntryRelevance(score: Float(self.appSettings.percentageDone(date: self.date)))
+        return TimelineEntryRelevance(score: Float(self.displayValues.percentageDone))
     }
     
     init(date: Date, appSettings: AppSettings) {
         self.date = date
-        self.appSettings = appSettings
+        self.displayValues = DisplayValues(appSettings: appSettings, date: date)
     }
 }

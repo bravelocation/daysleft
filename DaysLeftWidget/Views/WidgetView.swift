@@ -17,7 +17,7 @@ struct WidgetView: View {
     
     var body: some View {
         VStack(alignment: .center) {
-            Text(self.model.appSettings.fullTitle(date: model.date))
+            Text(self.model.displayValues.fullTitle)
                 .lineLimit(2)
                 .allowsTightening(true)
                 .minimumScaleFactor(0.5)
@@ -26,12 +26,12 @@ struct WidgetView: View {
                 .foregroundColor(Color.primary)
             
             CircularProgressView(
-                progress: self.model.appSettings.percentageDone(date: self.model.date),
+                progress: self.model.displayValues.percentageDone,
                 lineWidth: widgetFamily == .systemSmall ? 12.0 : 20.0
             )
             .padding([.top, .bottom], widgetFamily == .systemSmall ? 8.0 : 16.0)
             
-            Text(self.model.appSettings.currentPercentageLeft(date: model.date))
+            Text(self.model.displayValues.currentPercentageLeft)
                 .font(.footnote)
                 .foregroundColor(Color.primary)
         }

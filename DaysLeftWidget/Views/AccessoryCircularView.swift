@@ -16,24 +16,24 @@ struct AccessoryCircularView: View {
     
     var body: some View {
         if showsWidgetLabel {
-            Gauge(value: model.appSettings.percentageDone(date: model.date)) {
-                Text(self.model.appSettings.weekdaysOnly ? "WKDY" : "DAYS")
+            Gauge(value: model.displayValues.percentageDone) {
+                Text(self.model.displayValues.weekdaysOnly ? "WKDY" : "DAYS")
             } currentValueLabel: {
-                Text("\(self.model.appSettings.daysLeft(model.date))")
+                Text("\(self.model.displayValues.daysLeft)")
             }
                 .gaugeStyle(.accessoryCircular)
                 .widgetLabel {
-                    Text(model.appSettings.title)
+                    Text(model.displayValues.title)
                         .widgetAccentable()
                 }
                 .padding(1.0)
         } else {
             ZStack {
                 AccessoryWidgetBackground()
-                Gauge(value: model.appSettings.percentageDone(date: model.date)) {
-                    Text(self.model.appSettings.weekdaysOnly ? "WKDY" : "DAYS")
+                Gauge(value: model.displayValues.percentageDone) {
+                    Text(self.model.displayValues.weekdaysOnly ? "WKDY" : "DAYS")
                 } currentValueLabel: {
-                    Text("\(self.model.appSettings.daysLeft(model.date))")
+                    Text("\(self.model.displayValues.daysLeft)")
                 }
                 .gaugeStyle(.accessoryCircular)
                 .padding(1.0)

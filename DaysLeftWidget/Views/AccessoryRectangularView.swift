@@ -15,11 +15,11 @@ struct AccessoryRectangularView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text(self.model.appSettings.title)
+            Text(self.model.displayValues.title)
                 .widgetAccentable()
             
-            Text("\(self.model.appSettings.daysLeftDescription(model.date)) left")
-            Text(self.model.appSettings.currentPercentageLeft(date: model.date))
+            Text("\(self.model.displayValues.daysLeftDescription) left")
+            Text(self.model.displayValues.currentPercentageLeft)
                 .font(.footnote)
         }
     }
