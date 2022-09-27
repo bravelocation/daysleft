@@ -19,6 +19,8 @@
 		5234FDA628E2EA560003515F /* String+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5234FDA328E2EA560003515F /* String+Helpers.swift */; };
 		5234FDA728E2EA560003515F /* String+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5234FDA328E2EA560003515F /* String+Helpers.swift */; };
 		5234FDA828E2EA560003515F /* String+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5234FDA328E2EA560003515F /* String+Helpers.swift */; };
+		5234FDAA28E2ED810003515F /* WatchConnectivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5234FDA928E2ED810003515F /* WatchConnectivityManager.swift */; };
+		5234FDAB28E2ED810003515F /* WatchConnectivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5234FDA928E2ED810003515F /* WatchConnectivityManager.swift */; };
 		5240F1D028D8C1BC00B95FE5 /* Date+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5240F1CF28D8C1BC00B95FE5 /* Date+Helpers.swift */; };
 		5240F1D128D8C1BC00B95FE5 /* Date+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5240F1CF28D8C1BC00B95FE5 /* Date+Helpers.swift */; };
 		5240F1D228D8C1BC00B95FE5 /* Date+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5240F1CF28D8C1BC00B95FE5 /* Date+Helpers.swift */; };
@@ -226,6 +228,7 @@
 		5234FD9D28DF286B0003515F /* DaysLeft WatchKit WidgetExtension.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = "DaysLeft WatchKit WidgetExtension.entitlements"; sourceTree = "<group>"; };
 		5234FD9E28E2021D0003515F /* DisplayValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayValues.swift; sourceTree = "<group>"; };
 		5234FDA328E2EA560003515F /* String+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Helpers.swift"; sourceTree = "<group>"; };
+		5234FDA928E2ED810003515F /* WatchConnectivityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchConnectivityManager.swift; sourceTree = "<group>"; };
 		5240F1CF28D8C1BC00B95FE5 /* Date+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Helpers.swift"; sourceTree = "<group>"; };
 		5240F1E428D9B6CB00B95FE5 /* AppSettingsDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsDataManager.swift; sourceTree = "<group>"; };
 		5240F1EA28D9BE1A00B95FE5 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
@@ -356,6 +359,7 @@
 				52FC401327AABAD9005DAD8C /* AnalyticsManager.swift */,
 				5240F1E428D9B6CB00B95FE5 /* AppSettingsDataManager.swift */,
 				52DC9EB41FC97A9200AE02F6 /* FirebaseNotifications.swift */,
+				5234FDA928E2ED810003515F /* WatchConnectivityManager.swift */,
 			);
 			path = "Data Managers";
 			sourceTree = "<group>";
@@ -983,6 +987,7 @@
 				52CBC7A128D9E01700C89F20 /* DataProviderProtocol.swift in Sources */,
 				52CBC79B28D9DF1000C89F20 /* CloudKeyValueDataProvider.swift in Sources */,
 				52BC111B237C461C005EC3F7 /* WatchView.swift in Sources */,
+				5234FDAB28E2ED810003515F /* WatchConnectivityManager.swift in Sources */,
 				5234FDA628E2EA560003515F /* String+Helpers.swift in Sources */,
 				5234FDA028E2021D0003515F /* DisplayValues.swift in Sources */,
 				52C3524C28DCB2EC00D02445 /* DaysLeftWatchApp.swift in Sources */,
@@ -1009,6 +1014,7 @@
 				5240F1EB28D9BE1A00B95FE5 /* AppSettings.swift in Sources */,
 				5234FD9F28E2021D0003515F /* DisplayValues.swift in Sources */,
 				52CBC7AE28D9EE6700C89F20 /* AppSettings+Text.swift in Sources */,
+				5234FDAA28E2ED810003515F /* WatchConnectivityManager.swift in Sources */,
 				52CBC7C828DB0D0900C89F20 /* MainView.swift in Sources */,
 				52CBC79A28D9DF1000C89F20 /* CloudKeyValueDataProvider.swift in Sources */,
 				52DC5AD428DB43CE00AFF24D /* SettingsView.swift in Sources */,

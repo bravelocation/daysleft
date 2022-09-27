@@ -47,6 +47,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Must be done after FirebaseApp.configure() according to https://github.com/firebase/firebase-ios-sdk/issues/2240
         self.firebaseNotifications = FirebaseNotifications()
+        
+        // Setup watch session
+        WatchConnectivityManager.shared.setupConnection()
 
         // Setup push notifications (if required) to ensure the badge gets updated
         UNUserNotificationCenter.current().delegate = self
@@ -108,6 +111,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Update badge and widgets
         self.updateBadge()
         self.updateWidgets()
+        
+        // Reload any watch complications if the data changed
+        WatchConnectivityManager.shared.sendComplicationUpdateMessage()
     }
 }
 
