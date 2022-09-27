@@ -23,10 +23,8 @@ class WatchConnectivityManager: NSObject, WCSessionDelegate {
         case systemVersion = "system_version"
         case currentDay = "current_day"
     }
-
-    static let shared = WatchConnectivityManager()
     
-    private override init() {
+    override init() {
         super.init()
         
         if WCSession.isSupported() {
@@ -105,7 +103,7 @@ class WatchConnectivityManager: NSObject, WCSessionDelegate {
                         activationDidCompleteWith activationState: WCSessionActivationState,
                         error: Error?) {
         #if os(watchOS)
-        WatchConnectivityManager.shared.sendConnectionMessage(eventName: "session_activated")
+        self.sendConnectionMessage(eventName: "session_activated")
         #endif
     }
   

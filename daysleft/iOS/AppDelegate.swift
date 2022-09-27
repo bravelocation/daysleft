@@ -24,6 +24,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     /// App data manager
     let dataManager = AppSettingsDataManager()
+    
+    /// Watch connectivity manager
+    let watchConnectivityManager = WatchConnectivityManager()
 
     // MARK: Initialisation
     override init() {
@@ -49,7 +52,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.firebaseNotifications = FirebaseNotifications()
         
         // Setup watch session
-        WatchConnectivityManager.shared.setupConnection()
+        self.watchConnectivityManager.setupConnection()
 
         // Setup push notifications (if required) to ensure the badge gets updated
         UNUserNotificationCenter.current().delegate = self
@@ -113,7 +116,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.updateWidgets()
         
         // Reload any watch complications if the data changed
-        WatchConnectivityManager.shared.sendComplicationUpdateMessage()
+        self.watchConnectivityManager.sendComplicationUpdateMessage()
     }
 }
 

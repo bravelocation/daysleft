@@ -15,6 +15,9 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
     /// View model for app
     var dataModel = DaysLeftViewModel(dataManager: AppSettingsDataManager())
     
+    /// Watch connectivity manager
+    let watchConnectivityManager = WatchConnectivityManager()
+    
     /// Subscribers to change events
     private var cancellables = Array<AnyCancellable>()
     
@@ -36,7 +39,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
         print("applicationDidBecomeActive started")
         
         // Setup connection with the phone app
-        WatchConnectivityManager.shared.setupConnection()
+        self.watchConnectivityManager.setupConnection()
         
         // Update the data model
         self.dataModel.updateViewData()
