@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  DaysLeft
+
+  Created by John Pollard on 27/09/2022.
+  Copyright © 2022 Brave Location Software. All rights reserved.
+*/
+
+/* Menu commands */
+"Edit Settings" = "Edit Settings";
+"Share" = "Share";

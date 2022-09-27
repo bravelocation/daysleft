@@ -19,8 +19,14 @@ extension AppDelegate {
         
         guard builder.system == UIMenuSystem.main else { return }
         
-        let editCommand = UIKeyCommand(title: "Edit Settings", action: #selector(editSettingsMenuCalled), input: "E", modifierFlags: .command)
-        let shareCommand = UIKeyCommand(title: "Share", action: #selector(shareMenuCalled), input: "S", modifierFlags: [.command, .shift])
+        let editCommand = UIKeyCommand(title: NSLocalizedString("Edit Settings", comment: "Name of the edit settings menu command"),
+                                       action: #selector(editSettingsMenuCalled),
+                                       input: "E",
+                                       modifierFlags: .command)
+        let shareCommand = UIKeyCommand(title: NSLocalizedString("Share", comment: "Name of the share menu command"),
+                                        action: #selector(shareMenuCalled),
+                                        input: "S",
+                                        modifierFlags: [.command, .shift])
         
         let commandsMenu = UIMenu(title: "", options: .displayInline, children: [editCommand, shareCommand])
         builder.insertChild(commandsMenu, atStartOfMenu: .file)
