@@ -16,8 +16,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "52E0489F25077AFB009A2169"
-               BuildableName = "DaysLeftWidgetExtension.appex"
-               BlueprintName = "DaysLeftWidgetExtension"
+               BuildableName = "DaysLeft Widget Extension.appex"
+               BlueprintName = "DaysLeft Widget Extension"
                ReferencedContainer = "container:DaysLeft.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -63,8 +63,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "52E0489F25077AFB009A2169"
-            BuildableName = "DaysLeftWidgetExtension.appex"
-            BlueprintName = "DaysLeftWidgetExtension"
+            BuildableName = "DaysLeft Widget Extension.appex"
+            BlueprintName = "DaysLeft Widget Extension"
             ReferencedContainer = "container:DaysLeft.xcodeproj">
          </BuildableReference>
       </RemoteRunnable>

@@ -14,14 +14,19 @@ struct AccessoryRectangularView: View {
     var model: WidgetDaysLeftData
     
     var body: some View {
-        VStack(alignment: .leading) {
-            Text(self.model.displayValues.title)
-                .widgetAccentable()
+        HStack {
+            VStack(alignment: .leading) {
+                Text(self.model.displayValues.title.capitalizingFirstLetter())
+                    .widgetAccentable()
+                
+                Text("\(self.model.displayValues.daysLeftDescription) left")
+                Text(self.model.displayValues.currentPercentageLeft)
+                    .font(.footnote)
+            }
             
-            Text("\(self.model.displayValues.daysLeftDescription) left")
-            Text(self.model.displayValues.currentPercentageLeft)
-                .font(.footnote)
+            Spacer()
         }
+        .padding([.leading, .trailing], 4.0)
     }
 }
 
