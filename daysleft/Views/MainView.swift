@@ -62,7 +62,7 @@ struct MainView: View {
                     }
                 }
             )
-        .navigationBarTitle(Text("Count The Days Left"))
+        .navigationBarTitle(LocalizedStringKey("App Title"))
         .navigationBarItems(leading:
                                 Button(
                                     action: {
@@ -78,7 +78,7 @@ struct MainView: View {
                                     self.model.edit()
                                 },
                                 label: {
-                                    Text("Edit")
+                                    Text(LocalizedStringKey("Toolbar Edit"))
                                         .foregroundColor(Color.white)
                                 })
                                 .buttonStyle(PlainButtonStyle())

@@ -1,0 +1,39 @@
+/* 
+  Localizable.strings
+  DaysLeft
+
+  Created by John Pollard on 27/09/2022.
+  Copyright © 2022 Brave Location Software. All rights reserved.
+*/
+
+/* Mac menu commands */
+"Edit Settings" = "Edit Settings";
+"Share" = "Share";
+
+/* Description terms */
+"Time Left" = "left";
+"Time until" = "until";
+"Time done" = "done";
+
+/* App values */
+"App Title" = "Count The Days Left";
+"Abbreviated App Title" = "Days Left";
+"Toolbar Edit" = "Edit";
+
+/* Settings screen */
+"What are you counting down to?" = "What are you counting down to?";
+"Enter your title" = "Enter your title";
+"From" = "From";
+"To" = "To";
+"Weekdays only?" = "Weekdays only?";
+"Settings" = "Settings";
+"Show days left on app badge" = "Show days left on app badge";
+"About" = "About";
+"Privacy Policy"= "Privacy Policy";
+"Read how the app was built" = "Read how the app was built";
+"See the code on GitHub" = "See the code on GitHub";
+"Bravelocation Software" = "Bravelocation Software";
+
+/* Widget abbreviations */
+"Abbreviated Weekdays" = "WKDY";
+"Abbreviated Days" = "DAYS";
