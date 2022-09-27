@@ -35,6 +35,9 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
     func applicationDidBecomeActive() {
         print("applicationDidBecomeActive started")
         
+        // Setup connection with the phone app
+        WatchConnectivityManager.shared.setupConnection()
+        
         // Update the data model
         self.dataModel.updateViewData()
         
