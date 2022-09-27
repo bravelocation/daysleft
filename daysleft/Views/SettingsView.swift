@@ -20,12 +20,12 @@ struct SettingsView: View {
     var body: some View {
         Form {
             Section {
-                Text("What are you counting down to?")
+                Text(LocalizedStringKey("What are you counting down to?"))
                     .font(.headline)
                     .foregroundColor(Color("SettingsIconTint"))
                     .listRowSeparator(.hidden)
 
-                TextField("Enter your title", text: self.$title)
+                TextField(LocalizedStringKey("Enter your title"), text: self.$title)
                     .textFieldStyle(.roundedBorder)
                     .listRowSeparator(.hidden)
                     .onChange(of: title) { newValue in
@@ -33,7 +33,7 @@ struct SettingsView: View {
                     }
 
                 DatePicker(selection: $start, in: ...end, displayedComponents: .date) {
-                    Text("From")
+                    Text(LocalizedStringKey("From"))
                 }
                 .listRowSeparator(.hidden)
                 .onChange(of: start) { newValue in
@@ -41,14 +41,14 @@ struct SettingsView: View {
                 }
 
                 DatePicker(selection: $end, in: start..., displayedComponents: .date) {
-                    Text("To")
+                    Text(LocalizedStringKey("To"))
                 }
                 .listRowSeparator(.hidden)
                 .onChange(of: end) { newValue in
                     self.model.updateEndDate(newValue)
                 }
 
-                Toggle("Weekdays only?", isOn: $weekdaysOnly)
+                Toggle(LocalizedStringKey("Weekdays only?"), isOn: $weekdaysOnly)
                     .listRowSeparator(.hidden)
                     .tint(Color("SettingsIconTint"))
                     .onChange(of: weekdaysOnly) { newValue in
@@ -57,12 +57,12 @@ struct SettingsView: View {
             }
             
             Section {
-                Text("Settings")
+                Text(LocalizedStringKey("Settings"))
                     .font(.headline)
                     .foregroundColor(Color("SettingsIconTint"))
                     .listRowSeparator(.hidden)
 
-                Toggle("Show days left on app badge", isOn: $showBadge)
+                Toggle(LocalizedStringKey("Show days left on app badge"), isOn: $showBadge)
                     .listRowSeparator(.hidden)
                     .tint(Color("SettingsIconTint"))
                     .onChange(of: showBadge) { newValue in
@@ -71,7 +71,7 @@ struct SettingsView: View {
             }
             
             Section(footer: Text(self.model.versionNumber)) {
-                Text("About")
+                Text(LocalizedStringKey("About"))
                     .font(.headline)
                     .foregroundColor(Color("SettingsIconTint"))
                     .listRowSeparator(.hidden)
@@ -110,7 +110,7 @@ struct SettingsLinkView: View {
         HStack {
             Image(systemName: iconName)
                 .foregroundColor(Color("SettingsIconTint"))
-            Text(title)
+            Text(LocalizedStringKey(title))
             Spacer()
             Image(systemName: "chevron.right")
                 .foregroundColor(Color(uiColor: UIColor.tertiaryLabel))

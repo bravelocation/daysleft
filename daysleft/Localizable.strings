@@ -18,3 +18,17 @@
 /* App values */
 "App Title" = "Count The Days Left";
 "Toolbar Edit" = "Edit";
+
+/* Settings screen */
+"What are you counting down to?" = "What are you counting down to?";
+"Enter your title" = "Enter your title";
+"From" = "From";
+"To" = "To";
+"Weekdays only?" = "Weekdays only?";
+"Settings" = "Settings";
+"Show days left on app badge" = "Show days left on app badge";
+"About" = "About";
+"Privacy Policy"= "Privacy Policy";
+"Read how the app was built" = "Read how the app was built";
+"See the code on GitHub" = "See the code on GitHub";
+"Bravelocation Software" = "Bravelocation Software";
