@@ -17,6 +17,7 @@
 
 /* App values */
 "App Title" = "Count The Days Left";
+"Abbreviated App Title" = "Days Left";
 "Toolbar Edit" = "Edit";
 
 /* Settings screen */

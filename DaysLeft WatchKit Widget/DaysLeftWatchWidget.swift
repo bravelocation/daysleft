@@ -20,8 +20,8 @@ struct DaysLeftWatchWidget: Widget {
                 WatchWidgetSwitcherView(model: entry)
             }
         .supportedFamilies(self.supportedFamilies())
-        .configurationDisplayName("Days Left")
-        .description("Count The Days Left")
+        .configurationDisplayName(NSLocalizedString("Abbreviated App Title", comment: ""))
+        .description(NSLocalizedString("App Title", comment: ""))
     }
     
     private func supportedFamilies() -> [WidgetFamily] {
