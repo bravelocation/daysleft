@@ -11,8 +11,6 @@ import SwiftUI
 struct MainView: View {
     @ObservedObject var model: DaysLeftViewModel
     
-    let now = Date()
-    
     var body: some View {
         VStack(alignment: .center) {
             
@@ -51,6 +49,9 @@ struct MainView: View {
         .padding()
         .onAppear() {
             self.model.updateViewData()
+        }
+        .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
+                self.model.updateViewData()
         }
         .gesture(
             DragGesture(minimumDistance: 100.0)
