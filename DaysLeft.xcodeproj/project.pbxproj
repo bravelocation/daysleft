@@ -79,7 +79,6 @@
 		52A70D8428DC9EA600DCE9CB /* DaysLeftViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BC111E237C4AD0005EC3F7 /* DaysLeftViewModel.swift */; };
 		52A70D8728DC9F6D00DCE9CB /* DefaultPreferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52A70D8528DC9F4900DCE9CB /* DefaultPreferences.plist */; };
 		52A70D8928DCA11900DCE9CB /* ComplicationsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A70D8828DCA11900DCE9CB /* ComplicationsDataSource.swift */; };
-		52B7E87E1ABEDE9300E1949C /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52B7E87D1ABEDE9300E1949C /* Media.xcassets */; };
 		52B7E88C1ABEDE9300E1949C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52B7E88B1ABEDE9300E1949C /* Images.xcassets */; };
 		52B7E8991ABEEA2200E1949C /* DefaultPreferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52B7E8981ABEEA2200E1949C /* DefaultPreferences.plist */; };
 		52BC111B237C461C005EC3F7 /* WatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BC111A237C461C005EC3F7 /* WatchView.swift */; };
@@ -271,7 +270,6 @@
 		52B78E0B1D9838B800AB629D /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = System/Library/Frameworks/WatchConnectivity.framework; sourceTree = SDKROOT; };
 		52B7E8771ABEDE9300E1949C /* DaysLeft WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "DaysLeft WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52B7E87A1ABEDE9300E1949C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		52B7E87D1ABEDE9300E1949C /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		52B7E8811ABEDE9300E1949C /* DaysLeft WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DaysLeft WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52B7E8871ABEDE9300E1949C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52B7E88B1ABEDE9300E1949C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -474,7 +472,6 @@
 				52B7E8961ABEDEDE00E1949C /* daysleft WatchKit Extension.entitlements */,
 				52B7E8981ABEEA2200E1949C /* DefaultPreferences.plist */,
 				52B7E87A1ABEDE9300E1949C /* Info.plist */,
-				52B7E87D1ABEDE9300E1949C /* Media.xcassets */,
 			);
 			name = Assets;
 			sourceTree = "<group>";
@@ -882,7 +879,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5234FDB628E337500003515F /* Media.xcassets in Resources */,
-				52B7E87E1ABEDE9300E1949C /* Media.xcassets in Resources */,
 				5234FDB428E2F9B60003515F /* Localizable.stringsdict in Resources */,
 				5234FDBA28E3377E0003515F /* Colors.xcassets in Resources */,
 				5234FDAF28E2F6B20003515F /* Localizable.strings in Resources */,
