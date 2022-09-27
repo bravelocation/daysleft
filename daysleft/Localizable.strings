@@ -34,6 +34,11 @@
 "See the code on GitHub" = "See the code on GitHub";
 "Bravelocation Software" = "Bravelocation Software";
 
+/* Accessibility values */
+"Open" = "Open";
+"App Version Number"= "App Version Number";
+"Button" = "Button";
+
 /* Widget abbreviations */
 "Abbreviated Weekdays" = "WKDY";
 "Abbreviated Days" = "DAYS";

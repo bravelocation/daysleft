@@ -74,6 +74,13 @@ class DaysLeftViewModel: ObservableObject {
         return shortDateFormatter.string(from: date)
     }
     
+    func accessibilityDateFormatted(date: Date) -> String {
+        let accessibilityDateFormatter = DateFormatter()
+        accessibilityDateFormatter.dateFormat = "EEEE d MMM"
+        
+        return accessibilityDateFormatter.string(from: date)
+    }
+    
     /// Event handler for data update
     private func userSettingsUpdated() {
         print("Received UserSettingsUpdated notification")

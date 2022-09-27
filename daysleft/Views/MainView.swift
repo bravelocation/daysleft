@@ -32,9 +32,11 @@ struct MainView: View {
             HStack {
                 Text(self.model.shortDateFormatted(date: self.model.displayValues.start))
                     .font(.footnote)
+                    .accessibilityLabel("\(NSLocalizedString("From", comment: "")) \(self.model.accessibilityDateFormatted(date: self.model.displayValues.start))")
                 Spacer()
                 Text(self.model.shortDateFormatted(date: self.model.displayValues.end))
                     .font(.footnote)
+                    .accessibilityLabel("\(NSLocalizedString("To", comment: "")) \(self.model.accessibilityDateFormatted(date: self.model.displayValues.end))")
             }
                 .frame(maxWidth: 400.0)
                 .padding([.leading, .trailing], 64.0)

@@ -70,7 +70,9 @@ struct SettingsView: View {
                     }
             }
             
-            Section(footer: Text(self.model.versionNumber)) {
+            Section(footer:
+                        Text(self.model.versionNumber)
+                            .accessibilityLabel("\(NSLocalizedString("App Version Number", comment: "")) \(self.model.versionNumber)")) {
                 Text(LocalizedStringKey("About"))
                     .font(.headline)
                     .foregroundColor(Color("SettingsIconTint"))
@@ -114,9 +116,13 @@ struct SettingsLinkView: View {
             Spacer()
             Image(systemName: "chevron.right")
                 .foregroundColor(Color(uiColor: UIColor.tertiaryLabel))
-        }.onTapGesture {
+        }
+        .onTapGesture {
             self.model.openExternalUrl(url)
         }
+        .accessibilityElement(children: .combine)
+        .accessibilityHint(LocalizedStringKey("Button"))
+        .accessibilityLabel("\(NSLocalizedString("Open", comment: "")) \(NSLocalizedString(title, comment: ""))")
     }
 }
 
