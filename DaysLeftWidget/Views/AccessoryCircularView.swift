@@ -17,7 +17,9 @@ struct AccessoryCircularView: View {
     var body: some View {
         if showsWidgetLabel {
             Gauge(value: model.displayValues.percentageDone) {
-                Text(self.model.displayValues.weekdaysOnly ? "WKDY" : "DAYS")
+                Text(self.model.displayValues.weekdaysOnly ?
+                     LocalizedStringKey("Abbreviated Weekdays") :
+                     LocalizedStringKey("Abbreviated Days"))
             } currentValueLabel: {
                 Text("\(self.model.displayValues.daysLeft)")
             }
@@ -31,7 +33,9 @@ struct AccessoryCircularView: View {
             ZStack {
                 AccessoryWidgetBackground()
                 Gauge(value: model.displayValues.percentageDone) {
-                    Text(self.model.displayValues.weekdaysOnly ? "WKDY" : "DAYS")
+                    Text(self.model.displayValues.weekdaysOnly ?
+                         LocalizedStringKey("Abbreviated Weekdays") :
+                         LocalizedStringKey("Abbreviated Days"))
                 } currentValueLabel: {
                     Text("\(self.model.displayValues.daysLeft)")
                 }

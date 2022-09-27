@@ -19,7 +19,7 @@ struct AccessoryRectangularView: View {
                 Text(self.model.displayValues.title.capitalizingFirstLetter())
                     .widgetAccentable()
                 
-                Text("\(self.model.displayValues.daysLeftDescription) left")
+                Text("\(self.model.displayValues.daysLeftDescription) \(NSLocalizedString("Time Left", comment: ""))")
                 Text(self.model.displayValues.currentPercentageLeft)
                     .font(.footnote)
             }

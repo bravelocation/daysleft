@@ -33,3 +33,7 @@
 "Read how the app was built" = "Read how the app was built";
 "See the code on GitHub" = "See the code on GitHub";
 "Bravelocation Software" = "Bravelocation Software";
+
+/* Widget abbreviations */
+"Abbreviated Weekdays" = "WKDY";
+"Abbreviated Days" = "DAYS";
