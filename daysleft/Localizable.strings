@@ -6,7 +6,7 @@
   Copyright © 2022 Brave Location Software. All rights reserved.
 */
 
-/* Menu commands */
+/* Mac menu commands */
 "Edit Settings" = "Edit Settings";
 "Share" = "Share";
 
@@ -15,3 +15,6 @@
 "Time until" = "until";
 "Time done" = "done";
 
+/* App values */
+"App Title" = "Count The Days Left";
+"Toolbar Edit" = "Edit";
