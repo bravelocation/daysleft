@@ -16,17 +16,19 @@ extension AppSettings {
     func description(_ currentDate: Date) -> String {
         let daysLeft: Int = self.daysLeft(currentDate)
         
-        var titleSuffix = "left"
+        var titleSuffix = NSLocalizedString("Time Left", comment: "")
         var titleDays = ""
         
         if (self.title.count > 0) {
-            titleSuffix = "until " + self.title
+            titleSuffix = "\(NSLocalizedString("Time until", comment: "")) \(self.title)"
         }
         
         if (self.weekdaysOnly) {
-            titleDays = (daysLeft == 1) ? "weekday" : "weekdays"
+            let localised = NSLocalizedString("weekdays", comment: "")
+            titleDays = String(format: localised, daysLeft)
         } else {
-            titleDays = (daysLeft == 1) ? "day" : "days"
+            let localised = NSLocalizedString("days", comment: "")
+            titleDays = String(format: localised, daysLeft)
         }
         
         return String(format: "%@ %@", titleDays, titleSuffix)
@@ -38,9 +40,11 @@ extension AppSettings {
         var titleDays = ""
         
         if (self.weekdaysOnly) {
-            titleDays = (daysLeft == 1) ? "weekday" : "weekdays"
+            let localised = NSLocalizedString("weekdays", comment: "")
+            titleDays = String(format: localised, daysLeft)
         } else {
-            titleDays = (daysLeft == 1) ? "day" : "days"
+            let localised = NSLocalizedString("days", comment: "")
+            titleDays = String(format: localised, daysLeft)
         }
         
         return String(format: "%d %@", daysLeft, titleDays)
@@ -55,10 +59,10 @@ extension AppSettings {
     }
     
     func currentPercentageLeft(date: Date) -> String {
-        return String(format: "%.0f%% done", self.percentageDone(date: date) * 100.0)
+        return "\(String(format: "%.0f%%", self.percentageDone(date: date) * 100.0)) \(NSLocalizedString("Time done", comment: ""))"
     }
     
     func watchDurationTitle(date: Date) -> String {
-        return "\(self.daysLeftDescription(date)) until"
+        return "\(self.daysLeftDescription(date)) \(NSLocalizedString("Time until", comment: ""))"
     }
 }

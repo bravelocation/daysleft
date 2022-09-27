@@ -19,11 +19,11 @@ extension AppDelegate {
         
         guard builder.system == UIMenuSystem.main else { return }
         
-        let editCommand = UIKeyCommand(title: NSLocalizedString("Edit Settings", comment: "Name of the edit settings menu command"),
+        let editCommand = UIKeyCommand(title: NSLocalizedString("Edit Settings", comment: ""),
                                        action: #selector(editSettingsMenuCalled),
                                        input: "E",
                                        modifierFlags: .command)
-        let shareCommand = UIKeyCommand(title: NSLocalizedString("Share", comment: "Name of the share menu command"),
+        let shareCommand = UIKeyCommand(title: NSLocalizedString("Share", comment: ""),
                                         action: #selector(shareMenuCalled),
                                         input: "S",
                                         modifierFlags: [.command, .shift])

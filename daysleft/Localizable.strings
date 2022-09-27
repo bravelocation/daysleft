@@ -9,3 +9,9 @@
 /* Menu commands */
 "Edit Settings" = "Edit Settings";
 "Share" = "Share";
+
+/* Description terms */
+"Time Left" = "left";
+"Time until" = "until";
+"Time done" = "done";
+

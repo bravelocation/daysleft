@@ -25,6 +25,10 @@
 		5234FDAE28E2F6B20003515F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5234FDAC28E2F6B20003515F /* Localizable.strings */; };
 		5234FDAF28E2F6B20003515F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5234FDAC28E2F6B20003515F /* Localizable.strings */; };
 		5234FDB028E2F6B20003515F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5234FDAC28E2F6B20003515F /* Localizable.strings */; };
+		5234FDB228E2F9B60003515F /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = 5234FDB128E2F9B60003515F /* Localizable.stringsdict */; };
+		5234FDB328E2F9B60003515F /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = 5234FDB128E2F9B60003515F /* Localizable.stringsdict */; };
+		5234FDB428E2F9B60003515F /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = 5234FDB128E2F9B60003515F /* Localizable.stringsdict */; };
+		5234FDB528E2F9B60003515F /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = 5234FDB128E2F9B60003515F /* Localizable.stringsdict */; };
 		5240F1D028D8C1BC00B95FE5 /* Date+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5240F1CF28D8C1BC00B95FE5 /* Date+Helpers.swift */; };
 		5240F1D128D8C1BC00B95FE5 /* Date+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5240F1CF28D8C1BC00B95FE5 /* Date+Helpers.swift */; };
 		5240F1D228D8C1BC00B95FE5 /* Date+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5240F1CF28D8C1BC00B95FE5 /* Date+Helpers.swift */; };
@@ -234,6 +238,7 @@
 		5234FDA328E2EA560003515F /* String+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Helpers.swift"; sourceTree = "<group>"; };
 		5234FDA928E2ED810003515F /* WatchConnectivityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchConnectivityManager.swift; sourceTree = "<group>"; };
 		5234FDAC28E2F6B20003515F /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		5234FDB128E2F9B60003515F /* Localizable.stringsdict */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; path = Localizable.stringsdict; sourceTree = "<group>"; };
 		5240F1CF28D8C1BC00B95FE5 /* Date+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Helpers.swift"; sourceTree = "<group>"; };
 		5240F1E428D9B6CB00B95FE5 /* AppSettingsDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsDataManager.swift; sourceTree = "<group>"; };
 		5240F1EA28D9BE1A00B95FE5 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
@@ -379,6 +384,7 @@
 				52CFBEFC1A8B631B005234FB /* Info.plist */,
 				52CFBF041A8B631B005234FB /* Media.xcassets */,
 				5234FDAC28E2F6B20003515F /* Localizable.strings */,
+				5234FDB128E2F9B60003515F /* Localizable.stringsdict */,
 			);
 			name = Assets;
 			sourceTree = "<group>";
@@ -858,6 +864,7 @@
 				52A70D8228DC9E2800DCE9CB /* Media.xcassets in Resources */,
 				5234FDB028E2F6B20003515F /* Localizable.strings in Resources */,
 				52A70D6428DC98E300DCE9CB /* Assets.xcassets in Resources */,
+				5234FDB528E2F9B60003515F /* Localizable.stringsdict in Resources */,
 				52A70D8728DC9F6D00DCE9CB /* DefaultPreferences.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -867,6 +874,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				52B7E87E1ABEDE9300E1949C /* Media.xcassets in Resources */,
+				5234FDB428E2F9B60003515F /* Localizable.stringsdict in Resources */,
 				5234FDAF28E2F6B20003515F /* Localizable.strings in Resources */,
 				52B7E8991ABEEA2200E1949C /* DefaultPreferences.plist in Resources */,
 			);
@@ -887,6 +895,7 @@
 				52FAB11C1A9240490039691E /* DefaultPreferences.plist in Resources */,
 				5234FDAD28E2F6B20003515F /* Localizable.strings in Resources */,
 				52CFBF051A8B631B005234FB /* Media.xcassets in Resources */,
+				5234FDB228E2F9B60003515F /* Localizable.stringsdict in Resources */,
 				52DC9EB31FC97A3200AE02F6 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -896,6 +905,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				52E048BD2507883A009A2169 /* Media.xcassets in Resources */,
+				5234FDB328E2F9B60003515F /* Localizable.stringsdict in Resources */,
 				5234FDAE28E2F6B20003515F /* Localizable.strings in Resources */,
 				52E048BC250787F0009A2169 /* DefaultPreferences.plist in Resources */,
 			);
