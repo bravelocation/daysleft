@@ -55,10 +55,9 @@ class MainViewHostingController<Content: View>: UIHostingController<Content>, Vi
     
     // MARK: - Event handlers
     
-    @objc
     /// Event handler if the day changed timer fires
     /// - Parameter timer: Timer that fired
-    func dayChangedTimerFired(_ timer: Timer) {
+    @objc func dayChangedTimerFired(_ timer: Timer) {
         self.viewModel.updateViewData()
     }
     

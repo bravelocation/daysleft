@@ -93,7 +93,9 @@ class AppSettingsDataManager {
     func updateWeekdaysOnly(_ on: Bool) {
         self.weekdaysOnly = on
     }
-
+    
+    /// Update the show badge value
+    /// - Parameter value: Show badge i=on app icon
     func updateShowBadge(_ value: Bool) {
         self.showBadge = value
     }

@@ -125,7 +125,7 @@ struct SettingsLinkView: View {
     /// Title
     let title: String
     
-    /// Url as string to link to
+    /// URL (as string) to link to
     let url: String
     
     /// Body of view
