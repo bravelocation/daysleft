@@ -19,8 +19,8 @@ extension AppSettings {
     
     /// Finds the number of days to the end of the period from the current date
     ///
-    /// param: currentDate The current date
-    /// returns: The number of days to the end from the current date
+    /// - Parameter currentDate: The current date
+    /// - Returns: The number of days to the end from the current date
     func daysLeft(_ currentDate: Date) -> Int {
         let startCurrentDate = currentDate.startOfDay
         
@@ -42,8 +42,8 @@ extension AppSettings {
     
     /// Finds the number of days from the start of the period from the current date
     ///
-    /// param: currentDate The current date
-    /// returns: The number of days from the start to the current date
+    /// - Parameter currentDate: The current date
+    /// - Returns: The number of days from the start to the current date
     func daysGone(_ currentDate: Date) -> Int {
         let startCurrentDate = currentDate.startOfDay
         

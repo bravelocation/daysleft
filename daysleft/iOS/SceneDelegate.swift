@@ -9,10 +9,17 @@
 import UIKit
 import SwiftUI
 
+/// Scene delegate for the app
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-
+    
+    /// Main scene window
     var window: UIWindow?
-
+    
+    /// Called when a scene needs setting up
+    /// - Parameters:
+    ///   - scene: Scene connecting to
+    ///   - session: Scene session
+    ///   - connectionOptions: Connection options
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         

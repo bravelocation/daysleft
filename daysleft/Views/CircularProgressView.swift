@@ -8,10 +8,15 @@
 
 import SwiftUI
 
+/// A circular progress view
 struct CircularProgressView: View {
+    /// Progress value - should be between 0.0 and 1.0
     let progress: Double
+    
+    /// Line width of progress circle
     let lineWidth: Double
     
+    /// Body of view
     var body: some View {
         ZStack {
             Circle()
@@ -32,6 +37,7 @@ struct CircularProgressView: View {
     }
 }
 
+/// Preview provider for CircularProgressView
 struct CircularProgressView_Previews: PreviewProvider {
     static var previews: some View {
         CircularProgressView(progress: 0.4, lineWidth: 20.0)

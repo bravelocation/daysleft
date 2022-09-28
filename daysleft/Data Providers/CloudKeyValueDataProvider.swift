@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Class that provides access to the iCloud key-value data
 class CloudKeyValueDataProvider: DataProviderProtocol {
     
     // MARK: - Properties
@@ -16,8 +17,12 @@ class CloudKeyValueDataProvider: DataProviderProtocol {
     private var appStandardUserDefaults: UserDefaults?
         
     // MARK: - Shared setup
+    
+    /// Static instance
     private static let sharedInstance = CloudKeyValueDataProvider()
-                                    
+    
+    /// Default instance of the class, used in most places
+    /// As we register for update notifications, it doesn't make sense to allow multiple instances of the class running within the app
     static var `default`: CloudKeyValueDataProvider {
         get {
             return sharedInstance
@@ -28,7 +33,9 @@ class CloudKeyValueDataProvider: DataProviderProtocol {
     
     /// Default initialiser for the class
     ///
-    /// param: defaultPreferencesName The name of the plist file containing the default preferences
+    /// - Parameters:
+    ///     - defaultPreferencesName:The name of the plist file containing the default preferences
+    ///     - suiteName: Name of the suite used to store the key value pair
     init(defaultPreferencesName: String = "DefaultPreferences", suiteName: String = "group.bravelocation.daysleft") {
 
         // Setup the default preferences
@@ -52,8 +59,8 @@ class CloudKeyValueDataProvider: DataProviderProtocol {
     
     /// Used to read an object setting from the user setting store
     ///
-    /// param: key The key for the setting
-    /// returns: An AnyObject? value retrieved from the settings store
+    /// - Parameter key: The key for the setting
+    /// - Returns: An AnyObject? value retrieved from the settings store
     func readObjectFromStore(_ key: String) -> Any? {
         // Otherwise try the user details
         let userSettingsValue = self.appStandardUserDefaults!.value(forKey: key)
@@ -63,8 +70,9 @@ class CloudKeyValueDataProvider: DataProviderProtocol {
     
     /// Used to write an Object setting to the user setting store (local and the cloud)
     ///
-    /// param: value The value for the setting
-    /// param: key The key for the setting
+    /// - Parameters:
+    ///     - value: The value for the setting
+    ///     - key: The key for the setting
     func writeObjectToStore(_ value: AnyObject, key: String) {
         // Then write to local user settings
         if let settings = self.appStandardUserDefaults {
@@ -86,7 +94,7 @@ class CloudKeyValueDataProvider: DataProviderProtocol {
     
     // MARK: - iCloud functions
     
-    /// Send updated settings to watch
+    /// Initialises the listeners to key-value store changes
     private func initialiseiCloudSettings() {
         print("Initialising iCloud Settings")
         let store: NSUbiquitousKeyValueStore = NSUbiquitousKeyValueStore.default
@@ -96,6 +104,10 @@ class CloudKeyValueDataProvider: DataProviderProtocol {
         store.synchronize()
     }
     
+    /// Writes a setting to the key-value store
+    /// - Parameters:
+    ///   - value: Value to write
+    ///   - key: Key to write
     private func writeSettingToiCloudStore(_ value: AnyObject, key: String) {
         let store: NSUbiquitousKeyValueStore = NSUbiquitousKeyValueStore.default
         store.set(value, forKey: key)
@@ -104,7 +116,7 @@ class CloudKeyValueDataProvider: DataProviderProtocol {
     
     /// Used in the selector to handle incoming notifications of changes from the cloud
     ///
-    /// param: notification The incoming notification
+    /// - Parameter notification: The incoming notification
     @objc
     private func updateKVStoreItems(_ notification: Notification) {
         print("Detected iCloud key-value storage change")

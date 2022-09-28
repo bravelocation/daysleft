@@ -1,4 +1,4 @@
-![Count The Days Left](https://bravelocation.com/images/logos/countthedaysleft.jpg)
+# Count The Days Left
 
 Count The Days Left is a simple, elegant iOS app that does just one thing - counts the days between the start and 
     end date of an event or project, and how far along you've progressed so far.
@@ -21,4 +21,4 @@ If you want to build this app yourself, you'll need to provide some API settings
 
 From [SwiftLint repo](https://github.com/realm/SwiftLint)
 
-Use ```brew install swiftlint``` to install from HomeBrew
+Use brew install swiftlint to install from HomeBrew

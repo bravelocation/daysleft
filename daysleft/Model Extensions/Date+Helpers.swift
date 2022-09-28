@@ -9,17 +9,28 @@
 import Foundation
 
 extension Date {
+    /// Returns the start of the day based on the current date
     var startOfDay: Date {
         let startOfDayComponents = Calendar.current.dateComponents([.year, .month, .day], from: self)
         return Calendar.current.date(from: startOfDayComponents)!
     }
     
+    /// Adds a number of days to the current date
+    /// - Parameter daysToAdd: Number of days to add
+    /// - Returns: Date with days added
     func addDays(_ daysToAdd: Int) -> Date {
         var dateComponents: DateComponents = DateComponents()
         dateComponents.day = daysToAdd
         return Calendar.current.date(byAdding: dateComponents, to: self)!
     }
     
+    /// Number of days between two dates
+    /// - Parameters:
+    ///   - startDate: Start date
+    ///   - endDate: End date
+    ///   - currentDate: Current date used in calulations
+    ///   - weekdaysOnly: Should we use weekdays only in the calculations
+    /// - Returns: Number of days bwteen the dates
     static func daysDifference(_ startDate: Date, endDate: Date, currentDate: Date? = nil, weekdaysOnly: Bool) -> Int {
         let startOfStartDate = startDate.startOfDay
         let startOfEndDate = endDate.startOfDay
@@ -85,6 +96,8 @@ extension Date {
         return (fullWeeks * 5) + daysOfWeekDifference
     }
     
+    /// Returns the next Xmas
+    /// - Returns: Date of next Xmas
     static func nextXmas() -> Date {
         // If it is first run, initialise the model data to Christmas
         let todayComponents = Calendar.current.dateComponents([.year, .month, .day], from: Date())

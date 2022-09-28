@@ -10,11 +10,16 @@ import Foundation
 import SwiftUI
 import WidgetKit
 
+/// Main iOS widget view
 struct WidgetView: View {
     
+    /// View model
     var model: WidgetDaysLeftData
+    
+    /// Current widget family
     @Environment(\.widgetFamily) var widgetFamily
     
+    /// View body
     var body: some View {
         VStack(alignment: .center) {
             Text(self.model.displayValues.fullTitle)
@@ -39,6 +44,7 @@ struct WidgetView: View {
     }
 }
 
+/// Preview provider for WidgetView
 struct WidgetView_Previews: PreviewProvider {
     static var appSettings = AppSettingsDataManager(dataProvider: InMemoryDataProvider()).appSettings
     

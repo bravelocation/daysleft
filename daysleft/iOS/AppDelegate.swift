@@ -11,12 +11,15 @@ import Firebase
 import WidgetKit
 import Combine
 
-@UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+/// Application delegate for the app
+@UIApplicationMain class AppDelegate: UIResponder, UIApplicationDelegate {
 
     // MARK: Class properties
+    
+    /// Main app window
     var window: UIWindow?
-
+    
+    /// Manager for Firebase notifications
     var firebaseNotifications: FirebaseNotifications?
     
     /// Subscribers to change events
@@ -29,6 +32,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let watchConnectivityManager = WatchConnectivityManager()
 
     // MARK: Initialisation
+    
+    /// Initialiser
     override init() {
         super.init()
         
@@ -43,6 +48,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     // MARK: UIApplicationDelegate functions
+    
+    /// Delegate called after app finished launching
+    /// - Parameters:
+    ///   - application: Current application
+    ///   - launchOptions: Launch options
+    /// - Returns: True if can launch app successfully
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
         // Use Firebase library to configure APIs
@@ -61,16 +72,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
+    /// Delegate method when an app has successfully registered for remote notifications
+    /// - Parameters:
+    ///   - application: Current application
+    ///   - deviceToken: Device token returned
     func application(_ application: UIApplication,
                      didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         self.firebaseNotifications?.register(deviceToken)
     }
     
+    /// Delegate method called when registering for remote notifications failed
+    /// - Parameters:
+    ///   - application: Current application
+    ///   - error: Error description
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
         print("Device token for push notifications: FAIL -- ")
         print(error.localizedDescription)
     }
     
+    /// Delegate method called when restoring a user activity i.e via handoff
+    /// - Parameters:
+    ///   - application: Current application
+    ///   - userActivity: User activity to restore
+    ///   - restorationHandler: Restoration handler
+    /// - Returns: True if has handled restoration
     func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
         if let window = self.window {
             window.rootViewController?.restoreUserActivityState(userActivity)
@@ -79,6 +104,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
+    /// Delegate called if the app receives a remote notification
+    /// - Parameters:
+    ///   - application: Current application
+    ///   - userInfo: User info sent
+    ///   - completionHandler: Completion handler to be called when complete
     func application(_ application: UIApplication,
                      didReceiveRemoteNotification userInfo: [AnyHashable: Any],
                      fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult)
@@ -87,33 +117,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         // Update badge and widgets
         self.updateBadge()
-        self.updateWidgets()
+        WidgetCenter.shared.reloadAllTimelines()
 
         completionHandler(UIBackgroundFetchResult.newData)
     }
     
     // MARK: UISceneSession Lifecycle
     
+    /// Handles configuring a scene
+    /// - Parameters:
+    ///   - application: Current applucation
+    ///   - connectingSceneSession: Description of the scene
+    ///   - options: Scene options
+    /// - Returns: Scene configuration
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
         // Called when a new scene session is being created.
         // Use this method to select a configuration to create the new scene with.
         return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
     }
     
-    func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
-        // Called when the user discards a scene session.
-        // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
-        // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
-    }
-    
-    // MARK: Event handlers
-    @objc
-    fileprivate func iCloudSettingsUpdated() {
+    // MARK: - Event handlers
+    /// Event handler when iCloud change notifications are received
+    @objc fileprivate func iCloudSettingsUpdated() {
         print("Received iCloudSettingsUpdated notification")
         
         // Update badge and widgets
         self.updateBadge()
-        self.updateWidgets()
+        WidgetCenter.shared.reloadAllTimelines()
         
         // Reload any watch complications if the data changed
         self.watchConnectivityManager.sendComplicationUpdateMessage()
@@ -122,6 +152,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 // MARK: - User notifications
 extension AppDelegate: UNUserNotificationCenterDelegate {
+    /// Event handler called when a notification is received
+    /// - Parameters:
+    ///   - center: Notification center
+    ///   - response: Message response
+    ///   - completionHandler: Completion handler called once message has been dealt with
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         // Print message
         print("Notification received ...")
@@ -130,18 +165,21 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         
         // Update badge and widgets
         self.updateBadge()
-        self.updateWidgets()
+        WidgetCenter.shared.reloadAllTimelines()
         
         completionHandler()
     }
     
+    /// Register for notifications and badge updates
     func registerForNotifications() {
         print("Registering notification settings")
         self.firebaseNotifications?.setupNotifications(true)
         self.updateBadge()
     }
     
-    // MARK: Badge functions
+    // MARK: - Badge functions
+    
+    /// Update the badge number if required
     func updateBadge() {
         if (self.dataManager.appControlSettings.showBadge == false) {
             clearBadge()
@@ -159,6 +197,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         }
     }
     
+    /// Clear the badge number if required
     func clearBadge() {
         UNUserNotificationCenter.current().getNotificationSettings() {settings in
             if settings.badgeSetting == .enabled {
@@ -168,10 +207,5 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
                 }
             }
         }
-    }
-    
-    // MARK: Widget functions
-    func updateWidgets() {
-        WidgetCenter.shared.reloadAllTimelines()
     }
 }

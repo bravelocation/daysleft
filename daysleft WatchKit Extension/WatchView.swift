@@ -9,10 +9,13 @@
 import Foundation
 import SwiftUI
 
+/// Main watch view
 struct WatchView: View {
     
+    /// View model
     @ObservedObject var model: DaysLeftViewModel
     
+    /// View body
     var body: some View {
         VStack(alignment: .center) {
             Text(self.model.displayValues.watchDurationTitle)
@@ -34,6 +37,7 @@ struct WatchView: View {
     }
 }
 
+/// Preview provider for WatchView
 struct WatchView_Previews: PreviewProvider {
     static var previews: some View {
         WatchView(model: DaysLeftViewModel(dataManager: AppSettingsDataManager(dataProvider: InMemoryDataProvider())))

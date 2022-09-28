@@ -8,12 +8,16 @@
 
 import SwiftUI
 
+/// View that switches between views based on the widget family
 struct WidgetSwitcherView: View {
+    /// View model
     var model: WidgetDaysLeftData
+    
+    /// Current widget family
     @Environment(\.widgetFamily) var widgetFamily
     
-    @ViewBuilder
-    var body: some View {
+    /// View body
+    @ViewBuilder var body: some View {
         switch widgetFamily {
         case .systemSmall, .systemMedium:
             WidgetView(model: model)

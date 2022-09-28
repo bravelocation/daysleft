@@ -10,6 +10,7 @@ import WatchKit
 import Combine
 import ClockKit
 
+/// Watch app extension delegate
 class ExtensionDelegate: NSObject, WKExtensionDelegate {
     
     /// View model for app
@@ -22,6 +23,8 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
     private var cancellables = Array<AnyCancellable>()
     
     // MARK: Initialisation
+    
+    /// Initialiser
     override init() {
         super.init()
         
@@ -34,7 +37,8 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
         
         self.cancellables.append(keyValueChangeSubscriber)
     }
-
+    
+    /// Delegate when watch becomes active
     func applicationDidBecomeActive() {
         print("applicationDidBecomeActive started")
         
@@ -53,6 +57,8 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
         print("applicationDidBecomeActive completed")
     }
     
+    /// Handelr for background tasks running
+    /// - Parameter backgroundTasks: Set of background tasks scheduled
     func handle(_ backgroundTasks: Set<WKRefreshBackgroundTask>) {
         print("Handling background task started")
 
@@ -76,14 +82,16 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
     }
     
     // MARK: Event handlers
-    @objc
-    fileprivate func iCloudSettingsUpdated() {
+    
+    /// Event handler when iCloud key-value settings have changed
+    @objc fileprivate func iCloudSettingsUpdated() {
         print("Received iCloudSettingsUpdated notification")
         
         // Update complications
         self.updateComplications()
     }
     
+    /// Setup a background refresh to update data etc.
     private func setupBackgroundRefresh() {
         // Setup a background refresh for 0100 tomorrow
         let twoHoursTime = Calendar.current.date(byAdding: .hour, value: 2, to: Date())

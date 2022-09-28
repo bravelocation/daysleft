@@ -113,6 +113,7 @@
 		52CBC7C628DB0CA300C89F20 /* MainViewHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CBC7C528DB0CA300C89F20 /* MainViewHostingController.swift */; };
 		52CBC7C828DB0D0900C89F20 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CBC7C728DB0D0900C89F20 /* MainView.swift */; };
 		52CBC7C928DB101600C89F20 /* InMemoryDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CBC7A528D9E1F000C89F20 /* InMemoryDataProvider.swift */; };
+		52CE53DB28E49E3A00174D39 /* Documentation.docc in Sources */ = {isa = PBXBuildFile; fileRef = 52CE53DA28E49E3A00174D39 /* Documentation.docc */; };
 		52CFBEFE1A8B631B005234FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CFBEFD1A8B631B005234FB /* AppDelegate.swift */; };
 		52CFBF051A8B631B005234FB /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52CFBF041A8B631B005234FB /* Media.xcassets */; };
 		52D617B124D06F9000465F4C /* MenuBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D617B024D06F9000465F4C /* MenuBuilder.swift */; };
@@ -289,6 +290,7 @@
 		52CBC7BD28DAF84500C89F20 /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
 		52CBC7C528DB0CA300C89F20 /* MainViewHostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewHostingController.swift; sourceTree = "<group>"; };
 		52CBC7C728DB0D0900C89F20 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		52CE53DA28E49E3A00174D39 /* Documentation.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Documentation.docc; sourceTree = "<group>"; };
 		52CFBEF81A8B631B005234FB /* DaysLeft.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DaysLeft.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52CFBEFC1A8B631B005234FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52CFBEFD1A8B631B005234FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -591,6 +593,7 @@
 		52CFBEEF1A8B631B005234FB = {
 			isa = PBXGroup;
 			children = (
+				52CE53DA28E49E3A00174D39 /* Documentation.docc */,
 				52CFBEFA1A8B631B005234FB /* daysleft */,
 				52B7E8851ABEDE9300E1949C /* daysleft WatchKit App */,
 				52B7E8781ABEDE9300E1949C /* daysleft WatchKit Extension */,
@@ -1054,6 +1057,7 @@
 				52F9CDAC22D63D1900E0FFE8 /* SceneDelegate.swift in Sources */,
 				5234FDA428E2EA560003515F /* String+Helpers.swift in Sources */,
 				5240F1F128D9C25700B95FE5 /* AppControlSettings.swift in Sources */,
+				52CE53DB28E49E3A00174D39 /* Documentation.docc in Sources */,
 				52CFBEFE1A8B631B005234FB /* AppDelegate.swift in Sources */,
 				5240F1E528D9B6CB00B95FE5 /* AppSettingsDataManager.swift in Sources */,
 				52CBC7C928DB101600C89F20 /* InMemoryDataProvider.swift in Sources */,
@@ -1494,6 +1498,8 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = W8B3V597R9;
+				DOCC_EXTRACT_OBJC_INFO_FOR_SWIFT_SYMBOLS = YES;
+				DOCC_HOSTING_BASE_PATH = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1511,6 +1517,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				RUN_DOCUMENTATION_COMPILER = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = YES;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -1532,6 +1539,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = W8B3V597R9;
+				DOCC_EXTRACT_OBJC_INFO_FOR_SWIFT_SYMBOLS = YES;
+				DOCC_HOSTING_BASE_PATH = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1549,6 +1558,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				RUN_DOCUMENTATION_COMPILER = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = YES;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;

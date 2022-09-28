@@ -8,9 +8,12 @@
 
 import SwiftUI
 
+/// Main view of app
 struct MainView: View {
+    /// View model
     @ObservedObject var model: DaysLeftViewModel
     
+    /// Body of view
     var body: some View {
         VStack(alignment: .center) {
             
@@ -90,6 +93,7 @@ struct MainView: View {
     }
 }
 
+/// Preview provider for MainView
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         MainView(model: DaysLeftViewModel(dataManager: AppSettingsDataManager(dataProvider: InMemoryDataProvider())))

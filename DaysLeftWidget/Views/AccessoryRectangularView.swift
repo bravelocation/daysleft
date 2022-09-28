@@ -9,10 +9,13 @@
 import SwiftUI
 import WidgetKit
 
+/// Accessory rectangular view
 @available(iOSApplicationExtension 16.0, *)
 struct AccessoryRectangularView: View {
+    /// View model
     var model: WidgetDaysLeftData
     
+    /// View body
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
@@ -30,6 +33,7 @@ struct AccessoryRectangularView: View {
     }
 }
 
+/// Preview provider for AccessoryRectangularView
 @available(iOSApplicationExtension 16.0, *)
 struct AccessoryRectangularView_Previews: PreviewProvider {
     static var appSettings = AppSettingsDataManager(dataProvider: InMemoryDataProvider()).appSettings

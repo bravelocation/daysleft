@@ -10,6 +10,7 @@ import Combine
 import Foundation
 import Intents
 import SwiftUI
+import WidgetKit
 
 /// Main view hosting controller
 class SettingsViewHostingController<Content: View>: UIHostingController<Content>, SettingsActionDelegate {
@@ -72,14 +73,16 @@ class SettingsViewHostingController<Content: View>: UIHostingController<Content>
     }
     
     // MARK: - SettingsActionDelegate
+    /// Event handler for when badge toggle changes
     func badgeChanged() {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.registerForNotifications()
     }
     
+    /// Event handler for when data changes
     func dataUpdated() {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.updateBadge()
-        appDelegate.updateWidgets()
+        WidgetCenter.shared.reloadAllTimelines()
     }
 }
