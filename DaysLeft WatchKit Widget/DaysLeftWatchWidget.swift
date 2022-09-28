@@ -9,10 +9,12 @@
 import WidgetKit
 import SwiftUI
 
-@main
-struct DaysLeftWatchWidget: Widget {
+/// Watch extension widget
+@main struct DaysLeftWatchWidget: Widget {
+    /// Widget kind
     let kind: String = "DaysLeftWatchWidget"
-
+    
+    /// Configuration body
     var body: some WidgetConfiguration {
         StaticConfiguration(
             kind: kind,
@@ -24,6 +26,8 @@ struct DaysLeftWatchWidget: Widget {
         .description(NSLocalizedString("App Title", comment: ""))
     }
     
+    /// Supported fwidget families
+    /// - Returns: Array of supported families
     private func supportedFamilies() -> [WidgetFamily] {
         return [.accessoryCircular, .accessoryRectangular, .accessoryInline, .accessoryCorner]
     }

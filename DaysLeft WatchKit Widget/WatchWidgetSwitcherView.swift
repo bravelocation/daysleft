@@ -8,12 +8,16 @@
 
 import SwiftUI
 
+/// View that switches view based on widget family
 struct WatchWidgetSwitcherView: View {
+    /// View model
     var model: WidgetDaysLeftData
+    
+    /// Current widget family
     @Environment(\.widgetFamily) var widgetFamily
     
-    @ViewBuilder
-    var body: some View {
+    /// View body
+    @ViewBuilder var body: some View {
         switch widgetFamily {
         case .accessoryInline:
             AccessoryInlineView(model: self.model)
