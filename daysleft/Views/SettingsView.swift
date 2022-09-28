@@ -8,15 +8,27 @@
 
 import SwiftUI
 
+/// Settings view
 struct SettingsView: View {
+    /// View model
     @ObservedObject var model: SettingsViewModel
     
+    /// Start date
     @State var start: Date
+    
+    /// End date
     @State var end: Date
+    
+    /// Title
     @State var title: String
+    
+    /// Weekdays only?
     @State var weekdaysOnly: Bool
+    
+    /// Show the badge?
     @State var showBadge: Bool
     
+    /// Body of view
     var body: some View {
         Form {
             Section {
@@ -102,12 +114,21 @@ struct SettingsView: View {
     }
 }
 
+/// View to show link in settings
 struct SettingsLinkView: View {
+    /// View model
     @ObservedObject var model: SettingsViewModel
+    
+    /// System name of icon
     let iconName: String
+    
+    /// Title
     let title: String
+    
+    /// Url as string to link to
     let url: String
     
+    /// Body of view
     var body: some View {
         HStack {
             Image(systemName: iconName)
@@ -126,6 +147,7 @@ struct SettingsLinkView: View {
     }
 }
 
+/// Preview provider for SettingsView
 struct SettingsView_Previews: PreviewProvider {
     static var dataManager = AppSettingsDataManager(dataProvider: InMemoryDataProvider())
     
