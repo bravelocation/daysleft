@@ -8,8 +8,10 @@
 
 import Foundation
 
+/// Class that provides simple in-memory data - used soley for previews and unit tests
 class InMemoryDataProvider: DataProviderProtocol {
     
+    /// Initialiser
     init() {
         // Set some initial settings
         self.settingsCache["start"] = Date().addingTimeInterval(-20*24*60*60)
@@ -22,18 +24,21 @@ class InMemoryDataProvider: DataProviderProtocol {
     /// Settings cache used to store settings locally for faster access
     private var settingsCache = Dictionary<String, Any>()
     
+    // MARK: - DataProviderProtocol implementation
+    
     /// Used to read an object setting from the setting store
     ///
-    /// param: key The key for the setting
-    /// returns: An AnyObject? value retrieved from the settings store
+    /// - Parameter key: The key for the setting
+    /// - Returns: An AnyObject? value retrieved from the settings store
     func readObjectFromStore(_ key: String) -> Any? {
         return self.settingsCache[key]
     }
     
     /// Used to write an Object setting to the user setting store
     ///
-    /// param: value The value for the setting
-    /// param: key The key for the setting
+    /// - Parameters:
+    ///     - value: The value for the setting
+    ///     - key: The key for the setting
     func writeObjectToStore(_ value: AnyObject, key: String) {
         self.settingsCache[key] = value
     }
