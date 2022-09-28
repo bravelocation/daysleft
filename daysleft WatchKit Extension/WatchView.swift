@@ -23,11 +23,11 @@ struct WatchView: View {
                 .lineLimit(nil)
                 .multilineTextAlignment(.center)
             
-            CircularProgressView(progress: self.model.displayValues.percentageDone,
+            AnimatedCircularProgressView(progress: self.model.displayValues.percentageDone,
                                  lineWidth: 20.0)
             .padding([.top, .bottom], 16.0)
             
-            Text(self.model.displayValues.currentPercentageLeft)
+            AnimatedPercentageDone(percentageDone: self.model.displayValues.percentageDone)
                 .font(.footnote)
         }
     }

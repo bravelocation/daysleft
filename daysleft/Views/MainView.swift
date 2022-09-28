@@ -23,7 +23,7 @@ struct MainView: View {
                 .lineLimit(nil)
                 .multilineTextAlignment(.center)
             
-            CircularProgressView(progress: self.model.displayValues.percentageDone,
+            AnimatedCircularProgressView(progress: self.model.displayValues.percentageDone,
                                  lineWidth: 76.0)
             .padding([.top, .bottom], 16.0)
             .padding([.leading, .trailing], 64.0)
@@ -41,7 +41,7 @@ struct MainView: View {
                 .frame(maxWidth: 400.0)
                 .padding([.leading, .trailing], 64.0)
             
-            Text(self.model.displayValues.currentPercentageLeft)
+            AnimatedPercentageDone(percentageDone: self.model.displayValues.percentageDone)
                 .font(.title)
                 .padding([.top, .bottom], 16.0)
             
