@@ -10,6 +10,7 @@ import Combine
 import Foundation
 import Intents
 import SwiftUI
+import WidgetKit
 
 /// Main view hosting controller
 class SettingsViewHostingController<Content: View>: UIHostingController<Content>, SettingsActionDelegate {
@@ -80,6 +81,6 @@ class SettingsViewHostingController<Content: View>: UIHostingController<Content>
     func dataUpdated() {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.updateBadge()
-        appDelegate.updateWidgets()
+        WidgetCenter.shared.reloadAllTimelines()
     }
 }

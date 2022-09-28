@@ -9,11 +9,16 @@
 import UIKit
 
 extension Notification.Name {
+    /// Notification sent when the edit command is called from the menu
     static let editCommand = Notification.Name("com.bravelocation.daysleft.edit")
+    
+    /// Notification sent when the share command is called from the menu
     static let shareCommand = Notification.Name("com.bravelocation.daysleft.share")
 }
 
 extension AppDelegate {
+    /// Build the menu on the Mac and iPad
+    /// - Parameter builder: Menu builder to use
     override func buildMenu(with builder: UIMenuBuilder) {
         super.buildMenu(with: builder)
         
@@ -33,13 +38,15 @@ extension AppDelegate {
 
     }
     
-    @objc
-    func editSettingsMenuCalled(_ sender: UIKeyCommand) {
+    /// Function called when Edit menu item is used
+    /// - Parameter sender: Key sender
+    @objc func editSettingsMenuCalled(_ sender: UIKeyCommand) {
         NotificationCenter.default.post(name: .editCommand, object: nil)
     }
     
-    @objc
-    func shareMenuCalled(_ sender: UIKeyCommand) {
+    /// Function called when Share menu item is used
+    /// - Parameter sender: Key sender
+    @objc func shareMenuCalled(_ sender: UIKeyCommand) {
         NotificationCenter.default.post(name: .shareCommand, object: nil)
     }
 }
