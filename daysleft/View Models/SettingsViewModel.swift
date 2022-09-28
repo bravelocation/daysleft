@@ -10,8 +10,12 @@ import Foundation
 import Combine
 import UIKit
 
+/// Protocol for handlers of settings events
 protocol SettingsActionDelegate {
+    /// The badge toggle is changed
     func badgeChanged()
+    
+    /// A data field is changed
     func dataUpdated()
 }
 
@@ -29,6 +33,7 @@ class SettingsViewModel: ObservableObject {
     /// Data manager
     private let dataManager: AppSettingsDataManager
     
+    /// App version number
     var versionNumber: String {
         let infoDictionary = Bundle.main
         let version = infoDictionary.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
