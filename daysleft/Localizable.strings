@@ -42,3 +42,6 @@
 /* Widget abbreviations */
 "Abbreviated Weekdays" = "WKDY";
 "Abbreviated Days" = "DAYS";
+
+/* App intent */
+"App Intent Response" = "There are %d %@ until %@";

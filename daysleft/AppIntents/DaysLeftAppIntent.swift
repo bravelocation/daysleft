@@ -11,23 +11,42 @@ import AppIntents
 import SwiftUI
 
 @available(iOS 16, watchOS 9.0, *)
+/// App Intent definition for the accessing of the data via Siri shortcuts
 struct DaysLeftAppIntent: AppIntent, CustomIntentMigratedAppIntent {
+    /// Title of the intent
     static var title: LocalizedStringResource = "How many days left?"
+    
+    /// Description of the intent
     static var description = IntentDescription("How many days left?")
+    
+    /// The app shouldn't be opened when the intent is run
     static var openAppWhenRun: Bool = false
+    
+    /// Class name of the previous intent handler
     static var intentClassName: String = "DaysLeftIntentHandler"
     
+    /// Handler to perform the intent
+    /// - Returns: The intent will return a visual snippet, plus the number of days left as a result
     func perform() async throws -> some IntentResult & ShowsSnippetView {
         let dataManager = AppSettingsDataManager()
         let appSettings = dataManager.appSettings
         
         let now = Date()
         let daysLeft = appSettings.daysLeft(now)
-        let daysType = appSettings.weekdaysOnly ? "weekdays" : "days"
-        let title = appSettings.title
         
-        let spokenText = "There are \(daysLeft) \(daysType) until \(title)"
+        var daysType = ""
         
+        if (appSettings.weekdaysOnly) {
+            let localised = NSLocalizedString("weekdays", comment: "")
+            daysType = String(format: localised, daysLeft)
+        } else {
+            let localised = NSLocalizedString("days", comment: "")
+            daysType = String(format: localised, daysLeft)
+        }
+                
+        let localisedString = NSLocalizedString("App Intent Response", comment: "")
+        let spokenText = String(format: localisedString, daysLeft, daysType, appSettings.title)
+                
         let progress = appSettings.percentageDone(date: now)
         let percentageDone = appSettings.currentPercentageLeft(date: now)
 
