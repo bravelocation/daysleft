@@ -9,10 +9,12 @@
 import WidgetKit
 import SwiftUI
 
-@main
-struct DaysLeftWidget: Widget {
+/// iOS widget
+@main struct DaysLeftWidget: Widget {
+    /// Kind of widget
     let kind: String = "DaysLeftWidget"
-
+    
+    /// Widget configuration
     var body: some WidgetConfiguration {
         StaticConfiguration(
             kind: kind,
@@ -24,6 +26,8 @@ struct DaysLeftWidget: Widget {
         .description(NSLocalizedString("App Title", comment: ""))
     }
     
+    /// Supported families for the widget
+    /// - Returns: Families, depending on the current platform
     private func supportedFamilies() -> [WidgetFamily] {
         if #available(iOSApplicationExtension 16.0, *) {
             #if !targetEnvironment(macCatalyst)

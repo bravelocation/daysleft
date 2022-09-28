@@ -10,20 +10,32 @@ import Foundation
 import WidgetKit
 import SwiftUI
 
+/// Widget timeline provider
 struct WidgetTimelineProvider: TimelineProvider {
+    /// Placeholder data
+    /// - Parameter context: Current context
+    /// - Returns: Widget data to be used in placeholder
     func placeholder(in context: Context) -> WidgetDaysLeftData {
         let dataManager = AppSettingsDataManager()
         
         return WidgetDaysLeftData(date: Date(), appSettings: dataManager.appSettings)
     }
-
+    
+    /// Handler provider for snapshot
+    /// - Parameters:
+    ///   - context: Current context
+    ///   - completion: Completion handler
     func getSnapshot(in context: Context, completion: @escaping (WidgetDaysLeftData) -> Void) {
         let dataManager = AppSettingsDataManager()
 
         let entry = WidgetDaysLeftData(date: Date(), appSettings: dataManager.appSettings)
         completion(entry)
     }
-
+    
+    /// Timeline provider
+    /// - Parameters:
+    ///   - context: Current context
+    ///   - completion: Completion handler
     func getTimeline(in context: Context, completion: @escaping (Timeline<WidgetDaysLeftData>) -> Void) {
         let dataManager = AppSettingsDataManager()
         let appSettings = dataManager.appSettings

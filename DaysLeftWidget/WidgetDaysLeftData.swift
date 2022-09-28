@@ -11,14 +11,23 @@ import SwiftUI
 import Combine
 import WidgetKit
 
+/// Timelien entry used in widgets
 class WidgetDaysLeftData: TimelineEntry {
+    /// Current date
     let date: Date
+    
+    /// Display values for widget
     let displayValues: DisplayValues
     
+    /// Relevance - more relevant closer to end date
     var relevance: TimelineEntryRelevance? {
         return TimelineEntryRelevance(score: Float(self.displayValues.percentageDone))
     }
     
+    /// Initialiser
+    /// - Parameters:
+    ///   - date: Current date
+    ///   - appSettings: App settings
     init(date: Date, appSettings: AppSettings) {
         self.date = date
         self.displayValues = DisplayValues(appSettings: appSettings, date: date)

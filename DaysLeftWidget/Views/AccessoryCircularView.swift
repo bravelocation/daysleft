@@ -9,11 +9,16 @@
 import SwiftUI
 import WidgetKit
 
+/// Accessory Circular View
 @available(iOSApplicationExtension 16.0, *)
 struct AccessoryCircularView: View {
+    /// View model
     var model: WidgetDaysLeftData
-        @Environment(\.showsWidgetLabel) var showsWidgetLabel
     
+    /// Should we show the widget label?
+    @Environment(\.showsWidgetLabel) var showsWidgetLabel
+    
+    /// View body
     var body: some View {
         if showsWidgetLabel {
             Gauge(value: model.displayValues.percentageDone) {
@@ -46,6 +51,7 @@ struct AccessoryCircularView: View {
     }
 }
 
+/// Preview provider for AccessoryCircularView
 @available(iOSApplicationExtension 16.0, *)
 struct AccessoryCircularView_Previews: PreviewProvider {
     static var appSettings = AppSettingsDataManager(dataProvider: InMemoryDataProvider()).appSettings
