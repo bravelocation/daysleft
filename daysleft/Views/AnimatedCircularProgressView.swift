@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct AnimatedCircularProgressView: View {
-    @State var animatedProgress: Double = 0.0
+    @State private var animatedProgress: Double = 0.0
     
     let progress: Double
     let lineWidth: Double

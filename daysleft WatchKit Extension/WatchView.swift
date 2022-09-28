@@ -27,7 +27,7 @@ struct WatchView: View {
                                  lineWidth: 20.0)
             .padding([.top, .bottom], 16.0)
             
-            Text(self.model.displayValues.currentPercentageLeft)
+            AnimatedPercentageDone(percentageDone: self.model.displayValues.percentageDone)
                 .font(.footnote)
         }
     }

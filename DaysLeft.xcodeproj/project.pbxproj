@@ -131,6 +131,8 @@
 		52E048BD2507883A009A2169 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52CFBF041A8B631B005234FB /* Media.xcassets */; };
 		52E048BF2507A57E009A2169 /* WidgetTimelineProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E048BE2507A57E009A2169 /* WidgetTimelineProvider.swift */; };
 		52F58DF428E44412006F9698 /* AnimatedCircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5234FDBD28E436730003515F /* AnimatedCircularProgressView.swift */; };
+		52F58DF628E444AE006F9698 /* AnimatedPercentageDone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F58DF528E444AE006F9698 /* AnimatedPercentageDone.swift */; };
+		52F58DF728E444AE006F9698 /* AnimatedPercentageDone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F58DF528E444AE006F9698 /* AnimatedPercentageDone.swift */; };
 		52F9CDAC22D63D1900E0FFE8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F9CDAB22D63D1900E0FFE8 /* SceneDelegate.swift */; };
 		52FAB11C1A9240490039691E /* DefaultPreferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52FAB11B1A9240490039691E /* DefaultPreferences.plist */; };
 		52FC400D27AA8B1B005DAD8C /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 52FC400C27AA8B1B005DAD8C /* FirebaseMessaging */; };
@@ -307,6 +309,7 @@
 		52E048B225077E1C009A2169 /* WidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetView.swift; sourceTree = "<group>"; };
 		52E048B425077E6A009A2169 /* WidgetDaysLeftData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetDaysLeftData.swift; sourceTree = "<group>"; };
 		52E048BE2507A57E009A2169 /* WidgetTimelineProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetTimelineProvider.swift; sourceTree = "<group>"; };
+		52F58DF528E444AE006F9698 /* AnimatedPercentageDone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedPercentageDone.swift; sourceTree = "<group>"; };
 		52F9CDAB22D63D1900E0FFE8 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		52FAB11A1A923F500039691E /* daysleft.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = daysleft.entitlements; sourceTree = "<group>"; };
 		52FAB11B1A9240490039691E /* DefaultPreferences.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DefaultPreferences.plist; sourceTree = "<group>"; };
@@ -442,10 +445,11 @@
 		5208B83928D87324007BB75C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5234FDBD28E436730003515F /* AnimatedCircularProgressView.swift */,
+				52F58DF528E444AE006F9698 /* AnimatedPercentageDone.swift */,
 				52CBC7BD28DAF84500C89F20 /* CircularProgressView.swift */,
 				52CBC7C728DB0D0900C89F20 /* MainView.swift */,
 				52DC5AD328DB43CE00AFF24D /* SettingsView.swift */,
-				5234FDBD28E436730003515F /* AnimatedCircularProgressView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1019,6 +1023,7 @@
 				5234FDA028E2021D0003515F /* DisplayValues.swift in Sources */,
 				52C3524C28DCB2EC00D02445 /* DaysLeftWatchApp.swift in Sources */,
 				52A70D8928DCA11900DCE9CB /* ComplicationsDataSource.swift in Sources */,
+				52F58DF728E444AE006F9698 /* AnimatedPercentageDone.swift in Sources */,
 				5240F1E628D9B6CB00B95FE5 /* AppSettingsDataManager.swift in Sources */,
 				52A70D8428DC9EA600DCE9CB /* DaysLeftViewModel.swift in Sources */,
 				5240F1F228D9C25700B95FE5 /* AppControlSettings.swift in Sources */,
@@ -1037,6 +1042,7 @@
 			files = (
 				52CBC7C128DB028D00C89F20 /* DaysLeftViewModel.swift in Sources */,
 				52CBC7C628DB0CA300C89F20 /* MainViewHostingController.swift in Sources */,
+				52F58DF628E444AE006F9698 /* AnimatedPercentageDone.swift in Sources */,
 				52CBC7BE28DAF84500C89F20 /* CircularProgressView.swift in Sources */,
 				5240F1EB28D9BE1A00B95FE5 /* AppSettings.swift in Sources */,
 				5234FD9F28E2021D0003515F /* DisplayValues.swift in Sources */,
