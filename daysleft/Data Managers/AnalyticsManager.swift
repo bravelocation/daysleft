@@ -9,23 +9,30 @@
 import Foundation
 import FirebaseAnalytics
 
+/// Class that provides app-wide access to calling Analytics functions
 public class AnalyticsManager {
     
+    /// Static instance of the class
     private static let sharedInstance = AnalyticsManager()
-                                    
+    
+    /// Shared static instance of the class, to make it easy to access across the app
     class var shared: AnalyticsManager {
         get {
             return sharedInstance
         }
     }
     
+    /// Logs views of individual screens
+    /// - Parameter screenName: Name of the screen
     public func logScreenView(screenName: String) {
         Analytics.logEvent(AnalyticsEventScreenView, parameters: [
             AnalyticsParameterScreenName: screenName
         ])
     }
     
-    #if os(iOS)
+#if os(iOS)
+    /// Logs an message received from the watch app
+    /// - Parameter messageParameters: Dictionary of additioanl parameters sent from the watch
     public func logWatchEvent(messageParameters: [String: Any]) {
         var allParameters: [String: Any] = [:]
         

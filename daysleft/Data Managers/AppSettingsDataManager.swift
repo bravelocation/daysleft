@@ -9,9 +9,11 @@
 import Foundation
 
 extension Notification.Name {
+    /// Name of the notification sent when app settings are updated
     static let AppSettingsUpdated = Notification.Name(rawValue: "UpdateSettingsNotification")
 }
 
+/// Class that manages access to the data the app needs, either in local settings or via the iCloud key-value store
 class AppSettingsDataManager {
     
     // MARK: - Properties
@@ -25,8 +27,7 @@ class AppSettingsDataManager {
     // MARK: - Initialisation functions
     
     /// Default initialiser for the class
-    ///
-    /// param: defaultPreferencesName The name of the plist file containing the default preferences
+    /// - Parameter dataProvider: Data provider that provides actula access to the data
     init(dataProvider: DataProviderProtocol = CloudKeyValueDataProvider.default) {
 
         self.dataProvider = dataProvider
@@ -68,6 +69,7 @@ class AppSettingsDataManager {
     }
     
     // MARK: - Data updating methods
+    
     /// Update start date
     /// - Parameter date: New date
     func updateStartDate(_ date: Date) {

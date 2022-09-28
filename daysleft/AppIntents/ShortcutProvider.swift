@@ -9,10 +9,12 @@
 #if canImport(AppIntents)
 import AppIntents
 
+/// Provides preset shortcuts automatically from the app
 @available(iOS 16, watchOS 9.0, *)
 struct ShortcutsProvider: AppShortcutsProvider {
     
     @AppShortcutsBuilder
+    /// Provided shortcuts
     static var appShortcuts: [AppShortcut] {
         AppShortcut(
             intent: DaysLeftAppIntent(),
@@ -21,6 +23,7 @@ struct ShortcutsProvider: AppShortcutsProvider {
         )
     }
     
+    /// The background color of the tile that Shortcuts displays for each of the app’s App Shortcuts.
     static var shortcutTileColor: ShortcutTileColor {
         ShortcutTileColor.grayGreen
     }
