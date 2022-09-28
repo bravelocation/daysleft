@@ -28,6 +28,7 @@ struct WatchView: View {
             .padding([.top, .bottom], 16.0)
             
             AnimatedPercentageDone(percentageDone: self.model.displayValues.percentageDone)
+                .frame(height: 30.0)
                 .font(.footnote)
         }
     }

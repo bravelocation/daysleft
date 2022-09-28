@@ -42,6 +42,7 @@ struct MainView: View {
                 .padding([.leading, .trailing], 64.0)
             
             AnimatedPercentageDone(percentageDone: self.model.displayValues.percentageDone)
+                .frame(height: 50.0)
                 .font(.title)
                 .padding([.top, .bottom], 16.0)
             
