@@ -10,8 +10,11 @@ import Foundation
 import WatchKit
 import ClockKit
 
+/// Legacy complications data source
+@available(watchOS, deprecated: 9.0, message: "Remove legacy complications data source once people have updated")
 class ComplicationsDataSource: NSObject, CLKComplicationDataSource {
     
+    /// App settings
     let appSettings = AppSettingsDataManager().appSettings
     
     func getCurrentTimelineEntry(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTimelineEntry?) -> Void) {

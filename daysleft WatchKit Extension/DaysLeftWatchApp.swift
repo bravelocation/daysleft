@@ -9,13 +9,13 @@
 import SwiftUI
 import WatchKit
 
-@main
 /// Main entry point for app
-struct DaysLeftWatchApp: App {
+@main struct DaysLeftWatchApp: App {
     
     /// Reference to extension delegate
     @WKExtensionDelegateAdaptor(ExtensionDelegate.self) var delegate
     
+    /// Body of app
     var body: some Scene {
         WindowGroup {
             return WatchView(model: delegate.dataModel)
