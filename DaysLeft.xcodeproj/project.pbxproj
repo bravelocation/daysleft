@@ -35,6 +35,7 @@
 		5234FDBA28E3377E0003515F /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5234FDB728E3377E0003515F /* Colors.xcassets */; };
 		5234FDBB28E3377E0003515F /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5234FDB728E3377E0003515F /* Colors.xcassets */; };
 		5234FDBC28E34B710003515F /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52CFBF041A8B631B005234FB /* Media.xcassets */; };
+		5234FDBE28E436730003515F /* AnimatedCircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5234FDBD28E436730003515F /* AnimatedCircularProgressView.swift */; };
 		5240F1D028D8C1BC00B95FE5 /* Date+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5240F1CF28D8C1BC00B95FE5 /* Date+Helpers.swift */; };
 		5240F1D128D8C1BC00B95FE5 /* Date+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5240F1CF28D8C1BC00B95FE5 /* Date+Helpers.swift */; };
 		5240F1D228D8C1BC00B95FE5 /* Date+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5240F1CF28D8C1BC00B95FE5 /* Date+Helpers.swift */; };
@@ -129,6 +130,7 @@
 		52E048BC250787F0009A2169 /* DefaultPreferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52FAB11B1A9240490039691E /* DefaultPreferences.plist */; };
 		52E048BD2507883A009A2169 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52CFBF041A8B631B005234FB /* Media.xcassets */; };
 		52E048BF2507A57E009A2169 /* WidgetTimelineProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E048BE2507A57E009A2169 /* WidgetTimelineProvider.swift */; };
+		52F58DF428E44412006F9698 /* AnimatedCircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5234FDBD28E436730003515F /* AnimatedCircularProgressView.swift */; };
 		52F9CDAC22D63D1900E0FFE8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F9CDAB22D63D1900E0FFE8 /* SceneDelegate.swift */; };
 		52FAB11C1A9240490039691E /* DefaultPreferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52FAB11B1A9240490039691E /* DefaultPreferences.plist */; };
 		52FC400D27AA8B1B005DAD8C /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 52FC400C27AA8B1B005DAD8C /* FirebaseMessaging */; };
@@ -243,6 +245,7 @@
 		5234FDAC28E2F6B20003515F /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		5234FDB128E2F9B60003515F /* Localizable.stringsdict */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; path = Localizable.stringsdict; sourceTree = "<group>"; };
 		5234FDB728E3377E0003515F /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		5234FDBD28E436730003515F /* AnimatedCircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedCircularProgressView.swift; sourceTree = "<group>"; };
 		5240F1CF28D8C1BC00B95FE5 /* Date+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Helpers.swift"; sourceTree = "<group>"; };
 		5240F1E428D9B6CB00B95FE5 /* AppSettingsDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsDataManager.swift; sourceTree = "<group>"; };
 		5240F1EA28D9BE1A00B95FE5 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
@@ -442,6 +445,7 @@
 				52CBC7BD28DAF84500C89F20 /* CircularProgressView.swift */,
 				52CBC7C728DB0D0900C89F20 /* MainView.swift */,
 				52DC5AD328DB43CE00AFF24D /* SettingsView.swift */,
+				5234FDBD28E436730003515F /* AnimatedCircularProgressView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1006,6 +1010,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5240F1D228D8C1BC00B95FE5 /* Date+Helpers.swift in Sources */,
+				52F58DF428E44412006F9698 /* AnimatedCircularProgressView.swift in Sources */,
 				52CBC7A128D9E01700C89F20 /* DataProviderProtocol.swift in Sources */,
 				52CBC79B28D9DF1000C89F20 /* CloudKeyValueDataProvider.swift in Sources */,
 				52BC111B237C461C005EC3F7 /* WatchView.swift in Sources */,
@@ -1046,6 +1051,7 @@
 				52CFBEFE1A8B631B005234FB /* AppDelegate.swift in Sources */,
 				5240F1E528D9B6CB00B95FE5 /* AppSettingsDataManager.swift in Sources */,
 				52CBC7C928DB101600C89F20 /* InMemoryDataProvider.swift in Sources */,
+				5234FDBE28E436730003515F /* AnimatedCircularProgressView.swift in Sources */,
 				52D617B124D06F9000465F4C /* MenuBuilder.swift in Sources */,
 				5240F1D028D8C1BC00B95FE5 /* Date+Helpers.swift in Sources */,
 				52A70D5028DC660C00DCE9CB /* ShortcutProvider.swift in Sources */,
