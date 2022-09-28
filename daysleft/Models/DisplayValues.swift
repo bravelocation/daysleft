@@ -8,19 +8,45 @@
 
 import Foundation
 
+/// Display values used in the UI of the app
 struct DisplayValues {
+    /// Number of days left
     let daysLeft: Int
+    
+    /// Display title
     let title: String
+    
+    /// Description of days left
     let description: String
+    
+    /// Are we counting weekdays only?
     let weekdaysOnly: Bool
+    
+    /// Percenatge of the count done
     let percentageDone: Double
+    
+    /// Start date
     let start: Date
+    
+    /// End date
     let end: Date
+    
+    /// Current percentage left as a string
     let currentPercentageLeft: String
+    
+    /// Duration title used on the watch
     let watchDurationTitle: String
+    
+    /// Full title, used in shortchts etc.
     let fullTitle: String
+    
+    /// Days left description
     let daysLeftDescription: String
     
+    /// Initialiser
+    /// - Parameters:
+    ///   - appSettings: App settings used in initialisation
+    ///   - date: Current date - default is now
     init(appSettings: AppSettings, date: Date = Date()) {
         self.daysLeft = appSettings.daysLeft(date)
         self.title = appSettings.title

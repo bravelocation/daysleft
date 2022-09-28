@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Current settings used in control of the app
 struct AppControlSettings {
     /// The firstRun value (integer for legacy reasons!)
     let firstRun: Int
