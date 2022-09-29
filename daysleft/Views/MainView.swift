@@ -78,7 +78,8 @@ struct MainView: View {
                                         Image(systemName: "square.and.arrow.up")
                                             .foregroundColor(Color.white)
                                     })
-                                    .buttonStyle(PlainButtonStyle()),
+                                    .buttonStyle(PlainButtonStyle())
+                                    .accessibilityIdentifier("shareButton"),
                             trailing: Button(
                                 action: {
                                     self.model.edit()
@@ -88,6 +89,7 @@ struct MainView: View {
                                         .foregroundColor(Color.white)
                                 })
                                 .buttonStyle(PlainButtonStyle())
+                                .accessibilityIdentifier("editButton")
                             
         )
     }

@@ -1,0 +1,30 @@
+{
+  "configurations" : [
+    {
+      "id" : "90D83D7E-8E73-413C-92A1-8DB14E332638",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : false,
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:DaysLeft.xcodeproj",
+      "identifier" : "52CFBEF71A8B631B005234FB",
+      "name" : "DaysLeft"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:DaysLeft.xcodeproj",
+        "identifier" : "52F3B3CD28E58E8400A13120",
+        "name" : "UI Tests"
+      }
+    }
+  ],
+  "version" : 1
+}

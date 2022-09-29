@@ -29,6 +29,11 @@ final class ScreenshotTests: XCTestCase {
         snapshot("01Main")
     }
     
+    func testSettingScreen() throws {
+        XCUIApplication().navigationBars["Count The Days Left"].buttons["editButton"].tap()
+        snapshot("02Settings")
+    }
+    
     // MARK: - Helper methods
     
     private func isIpad() -> Bool {

@@ -323,6 +323,7 @@
 		52F3B3CE28E58E8400A13120 /* UI Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "UI Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52F3B3D028E58E8400A13120 /* ScreenshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotTests.swift; sourceTree = "<group>"; };
 		52F3B3D928E58E9E00A13120 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
+		52F3B3DB28E5967100A13120 /* UI Tests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "UI Tests.xctestplan"; sourceTree = "<group>"; };
 		52F58DF528E444AE006F9698 /* AnimatedPercentageDone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedPercentageDone.swift; sourceTree = "<group>"; };
 		52F9CDAB22D63D1900E0FFE8 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		52FAB11A1A923F500039691E /* daysleft.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = daysleft.entitlements; sourceTree = "<group>"; };
@@ -674,6 +675,7 @@
 			children = (
 				52F3B3D928E58E9E00A13120 /* SnapshotHelper.swift */,
 				52F3B3D028E58E8400A13120 /* ScreenshotTests.swift */,
+				52F3B3DB28E5967100A13120 /* UI Tests.xctestplan */,
 			);
 			path = "UI Tests";
 			sourceTree = "<group>";
