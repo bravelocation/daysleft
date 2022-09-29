@@ -134,6 +134,8 @@
 		52F3B3D128E58E8400A13120 /* ScreenshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3B3D028E58E8400A13120 /* ScreenshotTests.swift */; };
 		52F3B3DA28E58E9E00A13120 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3B3D928E58E9E00A13120 /* SnapshotHelper.swift */; };
 		52F3B3DD28E59BBF00A13120 /* UIDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3B3DC28E59BBF00A13120 /* UIDevice.swift */; };
+		52F3B3DF28E5D8E900A13120 /* Notification+Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3B3DE28E5D8E900A13120 /* Notification+Name.swift */; };
+		52F3B3E028E5D8E900A13120 /* Notification+Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3B3DE28E5D8E900A13120 /* Notification+Name.swift */; };
 		52F58DF428E44412006F9698 /* AnimatedCircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5234FDBD28E436730003515F /* AnimatedCircularProgressView.swift */; };
 		52F58DF628E444AE006F9698 /* AnimatedPercentageDone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F58DF528E444AE006F9698 /* AnimatedPercentageDone.swift */; };
 		52F58DF728E444AE006F9698 /* AnimatedPercentageDone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F58DF528E444AE006F9698 /* AnimatedPercentageDone.swift */; };
@@ -316,6 +318,7 @@
 		52F3B3D928E58E9E00A13120 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		52F3B3DB28E5967100A13120 /* UI Tests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "UI Tests.xctestplan"; sourceTree = "<group>"; };
 		52F3B3DC28E59BBF00A13120 /* UIDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDevice.swift; sourceTree = "<group>"; };
+		52F3B3DE28E5D8E900A13120 /* Notification+Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Name.swift"; sourceTree = "<group>"; };
 		52F58DF528E444AE006F9698 /* AnimatedPercentageDone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedPercentageDone.swift; sourceTree = "<group>"; };
 		52F9CDAB22D63D1900E0FFE8 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		52FAB11A1A923F500039691E /* daysleft.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = daysleft.entitlements; sourceTree = "<group>"; };
@@ -522,6 +525,7 @@
 				52CBC7B428D9FBE000C89F20 /* AppSettings+DayCalculations.swift */,
 				52CBC7AD28D9EE6700C89F20 /* AppSettings+Text.swift */,
 				5240F1CF28D8C1BC00B95FE5 /* Date+Helpers.swift */,
+				52F3B3DE28E5D8E900A13120 /* Notification+Name.swift */,
 				5234FDA328E2EA560003515F /* String+Helpers.swift */,
 				52F3B3DC28E59BBF00A13120 /* UIDevice.swift */,
 			);
@@ -1081,6 +1085,7 @@
 				52C3524C28DCB2EC00D02445 /* DaysLeftWatchApp.swift in Sources */,
 				52A70D8928DCA11900DCE9CB /* ComplicationsDataSource.swift in Sources */,
 				52F58DF728E444AE006F9698 /* AnimatedPercentageDone.swift in Sources */,
+				52F3B3E028E5D8E900A13120 /* Notification+Name.swift in Sources */,
 				5240F1E628D9B6CB00B95FE5 /* AppSettingsDataManager.swift in Sources */,
 				52A70D8428DC9EA600DCE9CB /* DaysLeftViewModel.swift in Sources */,
 				5240F1F228D9C25700B95FE5 /* AppControlSettings.swift in Sources */,
@@ -1098,6 +1103,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				52CBC7C128DB028D00C89F20 /* DaysLeftViewModel.swift in Sources */,
+				52F3B3DF28E5D8E900A13120 /* Notification+Name.swift in Sources */,
 				52CBC7C628DB0CA300C89F20 /* MainViewHostingController.swift in Sources */,
 				52F58DF628E444AE006F9698 /* AnimatedPercentageDone.swift in Sources */,
 				52CBC7BE28DAF84500C89F20 /* CircularProgressView.swift in Sources */,
@@ -1491,8 +1497,10 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_SWIFT_FLAGS = "";
 				SDKROOT = iphoneos;
 				SHARED_VERSION_NUMBER = 5.0.0;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_STRICT_CONCURRENCY = targeted;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1582,6 +1590,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bravelocation.daysleft;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

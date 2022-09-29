@@ -87,11 +87,11 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "-FIRAnalyticsDebugEnabled"
+            argument = "-FIRAnalyticsDebugDisabled"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "-FIRDebugEnabled"
+            argument = "-FIRDebugDisabled"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>

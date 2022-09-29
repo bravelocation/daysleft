@@ -30,9 +30,11 @@ class MainViewHostingController<Content: View>: UIHostingController<Content>, Vi
     init() {
         self.dataManager = AppSettingsDataManager()
         
+        #if DEBUG
         if CommandLine.arguments.contains("-enable-ui-testing") || UIDevice.isSimulator {
-            self.dataManager = AppSettingsDataManager(dataProvider: InMemoryDataProvider())
+            self.dataManager = AppSettingsDataManager(dataProvider: InMemoryDataProvider.shared)
         }
+        #endif
         
         self.viewModel = DaysLeftViewModel(dataManager: self.dataManager)
         

@@ -24,7 +24,17 @@ struct AnimatedPercentageDone: View {
             .animatingOverlay(for: animatedPercentageDone)
         .animation(.easeInOut(duration: 1.0).delay(0.2), value: animatedPercentageDone)
         .onAppear {
-            self.animatedPercentageDone = self.percentageDone * 100
+            withAnimation(.easeInOut(duration: 1.0).delay(0.2)) {
+                self.animatedPercentageDone = self.percentageDone * 100
+            }
+        }
+        .onReceive(NotificationCenter.default.publisher(for: .WillEnterForegroundNotification)) { _ in
+            // If entering the foreground, reset and then update to force a re-animation
+            self.animatedPercentageDone = 0.0
+            
+            withAnimation(.easeInOut(duration: 1.0).delay(0.2)) {
+                self.animatedPercentageDone = self.percentageDone * 100
+            }
         }
     }
 }

@@ -17,12 +17,12 @@ protocol DataProviderProtocol {
     /// - Returns: An AnyObject? value retrieved from the settings store
     func readObjectFromStore(_ key: String) -> Any?
     
-    /// Used to write an Object setting to the user setting store
+    /// Used to write a setting to the user setting store
     ///
     /// - Parameters:
     ///     - value: The value for the setting
     ///     - key: The key for the setting
-    func writeObjectToStore(_ value: AnyObject, key: String)
+    func writeObjectToStore(_ value: Any, key: String)
     
     /// Synchronises data with the remote data store
     func synchronise()

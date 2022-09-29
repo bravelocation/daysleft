@@ -54,7 +54,7 @@ struct AccessoryCircularView: View {
 /// Preview provider for AccessoryCircularView
 @available(iOSApplicationExtension 16.0, *)
 struct AccessoryCircularView_Previews: PreviewProvider {
-    static var appSettings = AppSettingsDataManager(dataProvider: InMemoryDataProvider()).appSettings
+    static var appSettings = AppSettingsDataManager(dataProvider: InMemoryDataProvider.shared).appSettings
 
     static var previews: some View {
         AccessoryCircularView(model: WidgetDaysLeftData(date: Date(), appSettings: appSettings))

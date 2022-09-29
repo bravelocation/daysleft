@@ -73,7 +73,7 @@ class CloudKeyValueDataProvider: DataProviderProtocol {
     /// - Parameters:
     ///     - value: The value for the setting
     ///     - key: The key for the setting
-    func writeObjectToStore(_ value: AnyObject, key: String) {
+    func writeObjectToStore(_ value: Any, key: String) {
         // Then write to local user settings
         if let settings = self.appStandardUserDefaults {
             settings.set(value, forKey: key)
@@ -84,6 +84,9 @@ class CloudKeyValueDataProvider: DataProviderProtocol {
         
         // The write to iCloud store (if needed)
         self.writeSettingToiCloudStore(value, key: key)
+        
+        // Send a notification for the view controllers to refresh
+        NotificationCenter.default.post(name: .AppSettingsUpdated, object: nil)
     }
     
     /// Synchronises data with the remote data store
@@ -108,7 +111,7 @@ class CloudKeyValueDataProvider: DataProviderProtocol {
     /// - Parameters:
     ///   - value: Value to write
     ///   - key: Key to write
-    private func writeSettingToiCloudStore(_ value: AnyObject, key: String) {
+    private func writeSettingToiCloudStore(_ value: Any, key: String) {
         let store: NSUbiquitousKeyValueStore = NSUbiquitousKeyValueStore.default
         store.set(value, forKey: key)
         store.synchronize()

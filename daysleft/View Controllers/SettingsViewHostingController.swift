@@ -16,20 +16,29 @@ import WidgetKit
 class SettingsViewHostingController<Content: View>: UIHostingController<Content>, SettingsActionDelegate {
 
     /// Data manager
-    let dataManager = AppSettingsDataManager()
+    private var dataManager: AppSettingsDataManager
     
     /// View model for view
-    let viewModel: SettingsViewModel
+    private let viewModel: SettingsViewModel
     
     /// Initialiser
     init() {
+        self.dataManager = AppSettingsDataManager()
+        
+        #if DEBUG
+        if CommandLine.arguments.contains("-enable-ui-testing") || UIDevice.isSimulator {
+            self.dataManager = AppSettingsDataManager(dataProvider: InMemoryDataProvider.shared)
+        }
+        #endif
+        
         self.viewModel = SettingsViewModel(dataManager: self.dataManager)
+        let appSettings = self.dataManager.appSettings
         
         let rootView = SettingsView(model: self.viewModel,
-                                    start: dataManager.appSettings.start,
-                                    end: dataManager.appSettings.end,
-                                    title: dataManager.appSettings.title,
-                                    weekdaysOnly: dataManager.appSettings.weekdaysOnly,
+                                    start: appSettings.start,
+                                    end: appSettings.end,
+                                    title: appSettings.title,
+                                    weekdaysOnly: appSettings.weekdaysOnly,
                                     showBadge: dataManager.appControlSettings.showBadge)
         super.init(rootView: AnyView(rootView) as! Content)
         
