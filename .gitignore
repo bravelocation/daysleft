@@ -36,3 +36,4 @@ daysleft/GoogleService-Info.plist
 # UI test packages
 SourcePackages/*
 fastlane/report.xml
+fastlane/test_output/*

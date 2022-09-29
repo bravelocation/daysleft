@@ -28,5 +28,18 @@ platform :ios do
       cloned_source_packages_path: "SourcePackages"
     )
   end
+
+  desc "Runs the unit tests"
+  lane :test do
+    run_tests(
+      project: "DaysLeft.xcodeproj",
+      device: "iPhone 11 Pro Max",
+      scheme: "DaysLeft",
+      result_bundle: true,
+      output_directory: "fastlane/test_output/Networking",
+      derived_data_path: "~/Library/Developer/Xcode/DerivedData",
+      cloned_source_packages_path: "SourcePackages"
+    )
+  end
 end
 
