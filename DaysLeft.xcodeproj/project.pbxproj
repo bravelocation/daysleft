@@ -136,6 +136,9 @@
 		52F3B3DD28E59BBF00A13120 /* UIDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3B3DC28E59BBF00A13120 /* UIDevice.swift */; };
 		52F3B3DF28E5D8E900A13120 /* Notification+Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3B3DE28E5D8E900A13120 /* Notification+Name.swift */; };
 		52F3B3E028E5D8E900A13120 /* Notification+Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3B3DE28E5D8E900A13120 /* Notification+Name.swift */; };
+		52F3B3E128E5E90C00A13120 /* Notification+Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3B3DE28E5D8E900A13120 /* Notification+Name.swift */; };
+		52F3B3E228E5E90E00A13120 /* Notification+Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3B3DE28E5D8E900A13120 /* Notification+Name.swift */; };
+		52F3B3E328E5E91C00A13120 /* Notification+Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3B3DE28E5D8E900A13120 /* Notification+Name.swift */; };
 		52F58DF428E44412006F9698 /* AnimatedCircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5234FDBD28E436730003515F /* AnimatedCircularProgressView.swift */; };
 		52F58DF628E444AE006F9698 /* AnimatedPercentageDone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F58DF528E444AE006F9698 /* AnimatedPercentageDone.swift */; };
 		52F58DF728E444AE006F9698 /* AnimatedPercentageDone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F58DF528E444AE006F9698 /* AnimatedPercentageDone.swift */; };
@@ -1035,6 +1038,7 @@
 				52CBC7A728D9E20900C89F20 /* DataProviderProtocol.swift in Sources */,
 				52CBC7AF28D9EE6700C89F20 /* AppSettings+Text.swift in Sources */,
 				52CBC7A928D9E2E200C89F20 /* AppSettings.swift in Sources */,
+				52F3B3E328E5E91C00A13120 /* Notification+Name.swift in Sources */,
 				5295EDF01A94AF83007EF7E7 /* DaysLeftTests.swift in Sources */,
 				52CBC7B628D9FBE000C89F20 /* AppSettings+DayCalculations.swift in Sources */,
 				52CBC7AB28D9E39300C89F20 /* CloudKeyValueDataProvider.swift in Sources */,
@@ -1065,6 +1069,7 @@
 				52A70D7728DC9BC800DCE9CB /* AppSettingsDataManager.swift in Sources */,
 				52A70D7128DC9ADF00DCE9CB /* WidgetDaysLeftData.swift in Sources */,
 				52A70D7E28DC9BF200DCE9CB /* DataProviderProtocol.swift in Sources */,
+				52F3B3E228E5E90E00A13120 /* Notification+Name.swift in Sources */,
 				5234FDA128E2021D0003515F /* DisplayValues.swift in Sources */,
 				52A70D7828DC9BD100DCE9CB /* AppSettings+DayCalculations.swift in Sources */,
 			);
@@ -1151,6 +1156,7 @@
 				52E048BF2507A57E009A2169 /* WidgetTimelineProvider.swift in Sources */,
 				52E048B525077E6A009A2169 /* WidgetDaysLeftData.swift in Sources */,
 				52CBC7A428D9E01700C89F20 /* DataProviderProtocol.swift in Sources */,
+				52F3B3E128E5E90C00A13120 /* Notification+Name.swift in Sources */,
 				5240F1EF28D9BE1A00B95FE5 /* AppSettings.swift in Sources */,
 				52A70D5428DC8D2500DCE9CB /* AccessoryRectangularView.swift in Sources */,
 				5240F1E928D9B6CB00B95FE5 /* AppSettingsDataManager.swift in Sources */,

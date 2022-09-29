@@ -94,7 +94,7 @@ class DaysLeftTests: XCTestCase {
     
     // Helper method for running tests
     func actualTestRun(startDay: Int, endDay: Int, currentDay: Int, weekdaysOnly: Bool, expectedLength: Int, expectedGone: Int, expectedLeft: Int) {
-        let model = AppSettingsDataManager(dataProvider: InMemoryDataProvider())
+        let model = AppSettingsDataManager(dataProvider: InMemoryDataProvider.shared)
         
         var startComponents: DateComponents = DateComponents()
         startComponents.year = 2015
