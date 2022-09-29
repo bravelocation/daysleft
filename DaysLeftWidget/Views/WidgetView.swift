@@ -46,7 +46,7 @@ struct WidgetView: View {
 
 /// Preview provider for WidgetView
 struct WidgetView_Previews: PreviewProvider {
-    static var appSettings = AppSettingsDataManager(dataProvider: InMemoryDataProvider()).appSettings
+    static var appSettings = AppSettingsDataManager(dataProvider: InMemoryDataProvider.shared).appSettings
     
     static var previews: some View {
         Group {

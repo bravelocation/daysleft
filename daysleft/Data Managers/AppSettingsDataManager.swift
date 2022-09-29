@@ -111,30 +111,30 @@ class AppSettingsDataManager {
     /// Property to get and set the end date
     private var end: Date {
         get { return self.dataProvider.readObjectFromStore("end") as! Date }
-        set { self.dataProvider.writeObjectToStore(newValue.startOfDay as AnyObject, key: "end") }
+        set { self.dataProvider.writeObjectToStore(newValue.startOfDay, key: "end") }
     }
 
     /// Property to get and set the title
     private var title: String {
         get { return self.dataProvider.readObjectFromStore("title") as! String }
-        set { self.dataProvider.writeObjectToStore(newValue as AnyObject, key: "title") }
+        set { self.dataProvider.writeObjectToStore(newValue, key: "title") }
     }
 
     /// Property to get and set the weekdays only flag
     private var weekdaysOnly: Bool {
         get { return self.dataProvider.readObjectFromStore("weekdaysOnly") as! Bool }
-        set { self.dataProvider.writeObjectToStore(newValue as AnyObject, key: "weekdaysOnly") }
+        set { self.dataProvider.writeObjectToStore(newValue, key: "weekdaysOnly") }
     }
     
     /// Property to get and set the firstRun value
     private var firstRun: Int {
         get { return self.dataProvider.readObjectFromStore("firstRun") as! Int }
-        set { self.dataProvider.writeObjectToStore(newValue as AnyObject, key: "firstRun") }
+        set { self.dataProvider.writeObjectToStore(newValue, key: "firstRun") }
     }
     
     /// Property to get and set the show badge flag
     private var showBadge: Bool {
         get { return self.dataProvider.readObjectFromStore("showBadge") as! Bool }
-        set { self.dataProvider.writeObjectToStore(newValue as AnyObject, key: "showBadge") }
+        set { self.dataProvider.writeObjectToStore(newValue, key: "showBadge") }
     }
 }

@@ -57,7 +57,7 @@ struct MainView: View {
             self.model.updateViewData()
         }
         .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
-                self.model.updateViewData()
+            self.model.updateViewData()
         }
         .gesture(
             DragGesture(minimumDistance: 100.0)
@@ -98,6 +98,6 @@ struct MainView: View {
 /// Preview provider for MainView
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        MainView(model: DaysLeftViewModel(dataManager: AppSettingsDataManager(dataProvider: InMemoryDataProvider())))
+        MainView(model: DaysLeftViewModel(dataManager: AppSettingsDataManager(dataProvider: InMemoryDataProvider.shared)))
     }
 }

@@ -149,7 +149,7 @@ struct SettingsLinkView: View {
 
 /// Preview provider for SettingsView
 struct SettingsView_Previews: PreviewProvider {
-    static var dataManager = AppSettingsDataManager(dataProvider: InMemoryDataProvider())
+    static var dataManager = AppSettingsDataManager(dataProvider: InMemoryDataProvider.shared)
     
     static var previews: some View {
         SettingsView(model: SettingsViewModel(dataManager: dataManager),

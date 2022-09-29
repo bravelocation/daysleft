@@ -8,6 +8,10 @@
 
 import SwiftUI
 
+#if canImport(UIKit)
+import UIKit
+#endif
+
 /// View that animates a circular progress view
 struct AnimatedCircularProgressView: View {
     /// Animation progress value-  should be bewteen 0.0 and 1.0
@@ -22,10 +26,21 @@ struct AnimatedCircularProgressView: View {
     /// Body of view
     var body: some View {
         CircularProgressView(progress: animatedProgress, lineWidth: lineWidth)
-            .animation(.easeInOut(duration: 1.0).delay(0.2), value: animatedProgress)
             .onAppear {
-                self.animatedProgress = self.progress
+                withAnimation(.easeInOut(duration: 1.0).delay(0.2)) {
+                    self.animatedProgress = self.progress
+                }
             }
+        #if os(iOS)
+            .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
+                // If entering the foreground, reset and then update to force a re-animation
+                self.animatedProgress = 0.0
+                
+                withAnimation(.easeInOut(duration: 1.0).delay(0.2)) {
+                    self.animatedProgress = self.progress
+                }
+            }
+        #endif
     }
 }
 

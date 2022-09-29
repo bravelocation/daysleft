@@ -10,6 +10,10 @@
 
 import SwiftUI
 
+#if canImport(UIKit)
+import UIKit
+#endif
+
 /// View that animates the text showing the percentage done
 struct AnimatedPercentageDone: View {
     /// Animated percentage done - should be between 0.0 and 100.0
@@ -24,8 +28,20 @@ struct AnimatedPercentageDone: View {
             .animatingOverlay(for: animatedPercentageDone)
         .animation(.easeInOut(duration: 1.0).delay(0.2), value: animatedPercentageDone)
         .onAppear {
-            self.animatedPercentageDone = self.percentageDone * 100
+            withAnimation(.easeInOut(duration: 1.0).delay(0.2)) {
+                self.animatedPercentageDone = self.percentageDone * 100
+            }
         }
+        #if os(iOS)
+            .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
+                // If entering the foreground, reset and then update to force a re-animation
+                self.animatedPercentageDone = 0.0
+                
+                withAnimation(.easeInOut(duration: 1.0).delay(0.2)) {
+                    self.animatedPercentageDone = self.percentageDone * 100
+                }
+            }
+        #endif
     }
 }
 
