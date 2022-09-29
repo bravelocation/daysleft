@@ -84,6 +84,9 @@ class CloudKeyValueDataProvider: DataProviderProtocol {
         
         // The write to iCloud store (if needed)
         self.writeSettingToiCloudStore(value, key: key)
+        
+        // Send a notification for the view controllers to refresh
+        NotificationCenter.default.post(name: .AppSettingsUpdated, object: nil)
     }
     
     /// Synchronises data with the remote data store

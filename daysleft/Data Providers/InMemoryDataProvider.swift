@@ -54,7 +54,6 @@ class InMemoryDataProvider: DataProviderProtocol {
         self.settingsCache[key] = value
         
         // Send a notification for the view controllers to refresh
-        print("Sending AppSettingsUpdated notification because InMemoryDataProvider value updated: \(key) \(value)")
         NotificationCenter.default.post(name: .AppSettingsUpdated, object: nil)
     }
     
