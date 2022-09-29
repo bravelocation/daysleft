@@ -9,6 +9,7 @@
 import WatchKit
 import Combine
 import ClockKit
+import WidgetKit
 
 /// Watch app extension delegate
 class ExtensionDelegate: NSObject, WKExtensionDelegate {
@@ -129,5 +130,8 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
                 complicationServer.reloadTimeline(for: complication)
             }
         }
+        
+        // Should we be updating widgets too?
+        WidgetCenter.shared.reloadAllTimelines()
     }
 }
