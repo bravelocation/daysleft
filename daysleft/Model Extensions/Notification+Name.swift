@@ -17,7 +17,7 @@ import WatchKit
 #endif
 
 extension Notification.Name {
-    static var foregroundNotificationName: Notification.Name {
+    static var WillEnterForegroundNotification: Notification.Name {
         get {
             #if os(iOS)
                 return UIApplication.willEnterForegroundNotification
@@ -27,4 +27,7 @@ extension Notification.Name {
             #endif
         }
     }
+    
+    /// Name of the notification sent when app settings are updated
+    static let AppSettingsUpdated = Notification.Name(rawValue: "UpdateSettingsNotification")
 }

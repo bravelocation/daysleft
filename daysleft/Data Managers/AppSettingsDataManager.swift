@@ -8,11 +8,6 @@
 
 import Foundation
 
-extension Notification.Name {
-    /// Name of the notification sent when app settings are updated
-    static let AppSettingsUpdated = Notification.Name(rawValue: "UpdateSettingsNotification")
-}
-
 /// Class that manages access to the data the app needs, either in local settings or via the iCloud key-value store
 class AppSettingsDataManager {
     

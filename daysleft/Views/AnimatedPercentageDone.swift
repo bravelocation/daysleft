@@ -32,7 +32,7 @@ struct AnimatedPercentageDone: View {
                 self.animatedPercentageDone = self.percentageDone * 100
             }
         }
-        .onReceive(NotificationCenter.default.publisher(for: .foregroundNotificationName)) { _ in
+        .onReceive(NotificationCenter.default.publisher(for: .WillEnterForegroundNotification)) { _ in
             // If entering the foreground, reset and then update to force a re-animation
             self.animatedPercentageDone = 0.0
             

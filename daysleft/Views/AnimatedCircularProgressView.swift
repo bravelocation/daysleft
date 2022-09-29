@@ -27,7 +27,7 @@ struct AnimatedCircularProgressView: View {
                     self.animatedProgress = self.progress
                 }
             }
-            .onReceive(NotificationCenter.default.publisher(for: .foregroundNotificationName)) { _ in
+            .onReceive(NotificationCenter.default.publisher(for: .WillEnterForegroundNotification)) { _ in
                 // If entering the foreground, reset and then update to force a re-animation
                 self.animatedProgress = 0.0
                 
