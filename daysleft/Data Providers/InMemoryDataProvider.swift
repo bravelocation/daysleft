@@ -16,7 +16,7 @@ class InMemoryDataProvider: DataProviderProtocol {
         // Set some initial settings
         self.settingsCache["start"] = Date().addingTimeInterval(-20*24*60*60)
         self.settingsCache["end"] = Date.nextXmas()
-        self.settingsCache["title"] = "Testing"
+        self.settingsCache["title"] = "Christmas"
         self.settingsCache["weekdaysOnly"] = false
         self.settingsCache["firstRun"] = 1
     }

@@ -15,19 +15,25 @@ import SwiftUI
 class MainViewHostingController<Content: View>: UIHostingController<Content>, ViewModelActionDelegate {
     
     /// Data manager
-    let dataManager = AppSettingsDataManager()
+    private var dataManager: AppSettingsDataManager
     
     /// View model for view
-    let viewModel: DaysLeftViewModel
+    private let viewModel: DaysLeftViewModel
     
     /// Timer that runs at the start of each day
-    var dayChangeTimer: Timer?
+    private var dayChangeTimer: Timer?
     
     /// Subscribers to change events
     private var cancellables = Array<AnyCancellable>()
     
     /// Initialiser
     init() {
+        self.dataManager = AppSettingsDataManager()
+        
+        if CommandLine.arguments.contains("-enable-ui-testing") || UIDevice.isSimulator {
+            self.dataManager = AppSettingsDataManager(dataProvider: InMemoryDataProvider())
+        }
+        
         self.viewModel = DaysLeftViewModel(dataManager: self.dataManager)
         
         let secondsInADay: Double = 24*60*60
