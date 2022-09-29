@@ -59,6 +59,9 @@ disabled_rules: # rule identifiers to exclude from running
 
 excluded: # paths to ignore during linting. Takes precedence over `included`.
  - Pods
+ - SourcePackages
+ - R.generated.swift
+ - .build # Where Swift Package Manager checks out dependency sources
 
 type_name:
     min_length: 2
