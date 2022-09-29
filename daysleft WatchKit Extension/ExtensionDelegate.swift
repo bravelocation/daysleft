@@ -13,11 +13,14 @@ import ClockKit
 /// Watch app extension delegate
 class ExtensionDelegate: NSObject, WKExtensionDelegate {
     
+    /// Data manager
+    private var dataManager: AppSettingsDataManager
+    
     /// View model for app
-    var dataModel = DaysLeftViewModel(dataManager: AppSettingsDataManager())
+    let dataModel: DaysLeftViewModel
     
     /// Watch connectivity manager
-    let watchConnectivityManager = WatchConnectivityManager()
+    private let watchConnectivityManager = WatchConnectivityManager()
     
     /// Subscribers to change events
     private var cancellables = Array<AnyCancellable>()
@@ -26,6 +29,17 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
     
     /// Initialiser
     override init() {
+        
+        self.dataManager = AppSettingsDataManager()
+        
+        #if DEBUG
+            #if targetEnvironment(simulator)
+                self.dataManager = AppSettingsDataManager(dataProvider: InMemoryDataProvider.shared)
+            #endif
+        #endif
+        
+        self.dataModel = DaysLeftViewModel(dataManager: self.dataManager)
+        
         super.init()
         
         // Setup listener for iCloud setting change
@@ -36,6 +50,8 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
             }
         
         self.cancellables.append(keyValueChangeSubscriber)
+        
+
     }
     
     /// Delegate when watch becomes active

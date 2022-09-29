@@ -32,16 +32,14 @@ struct AnimatedPercentageDone: View {
                 self.animatedPercentageDone = self.percentageDone * 100
             }
         }
-        #if os(iOS)
-            .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
-                // If entering the foreground, reset and then update to force a re-animation
-                self.animatedPercentageDone = 0.0
-                
-                withAnimation(.easeInOut(duration: 1.0).delay(0.2)) {
-                    self.animatedPercentageDone = self.percentageDone * 100
-                }
+        .onReceive(NotificationCenter.default.publisher(for: .foregroundNotificationName)) { _ in
+            // If entering the foreground, reset and then update to force a re-animation
+            self.animatedPercentageDone = 0.0
+            
+            withAnimation(.easeInOut(duration: 1.0).delay(0.2)) {
+                self.animatedPercentageDone = self.percentageDone * 100
             }
-        #endif
+        }
     }
 }
 
