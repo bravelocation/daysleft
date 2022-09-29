@@ -8,14 +8,6 @@
 
 import UIKit
 
-extension Notification.Name {
-    /// Notification sent when the edit command is called from the menu
-    static let editCommand = Notification.Name("com.bravelocation.daysleft.edit")
-    
-    /// Notification sent when the share command is called from the menu
-    static let shareCommand = Notification.Name("com.bravelocation.daysleft.share")
-}
-
 extension AppDelegate {
     /// Build the menu on the Mac and iPad
     /// - Parameter builder: Menu builder to use

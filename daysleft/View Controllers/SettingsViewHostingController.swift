@@ -25,6 +25,7 @@ class SettingsViewHostingController<Content: View>: UIHostingController<Content>
     init() {
         self.dataManager = AppSettingsDataManager()
         
+        // If running UI tests or in the simulator, use the InMemoryDataProvider
         #if DEBUG
         if CommandLine.arguments.contains("-enable-ui-testing") || UIDevice.isSimulator {
             self.dataManager = AppSettingsDataManager(dataProvider: InMemoryDataProvider.shared)

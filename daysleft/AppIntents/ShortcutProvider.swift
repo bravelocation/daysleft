@@ -13,8 +13,8 @@ import AppIntents
 @available(iOS 16, watchOS 9.0, *)
 struct ShortcutsProvider: AppShortcutsProvider {
     
-    @AppShortcutsBuilder
     /// Provided shortcuts
+    @AppShortcutsBuilder
     static var appShortcuts: [AppShortcut] {
         AppShortcut(
             intent: DaysLeftAppIntent(),

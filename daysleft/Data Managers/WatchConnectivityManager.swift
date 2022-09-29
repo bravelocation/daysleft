@@ -56,6 +56,8 @@ class WatchConnectivityManager: NSObject, WCSessionDelegate {
     
     // MARK: - WCSessionDelegate implementation
 
+    // MARK: watchOS only functions
+    
     #if os(watchOS)
     /// Delegate method called on the watch when it receives user information e.g. when complications should be updated because of a data change detected
     /// - Parameters:
@@ -88,7 +90,7 @@ class WatchConnectivityManager: NSObject, WCSessionDelegate {
     public func session(_ session: WCSession,
                         activationDidCompleteWith activationState: WCSessionActivationState,
                         error: Error?) {
-        // If vwe are on the watch, send a connection message to the phone with analytics details
+        // If we are on the watch, send a connection message to the phone with analytics details
     #if os(watchOS)
         // Check we are connected and the companion app is installed
         guard WCSession.default.activationState == .activated else {
@@ -117,6 +119,8 @@ class WatchConnectivityManager: NSObject, WCSessionDelegate {
         
     #endif
     }
+    
+// MARK: iOS only functions
   
 #if os(iOS)
     /// On phone, delegate method called when application context information is received

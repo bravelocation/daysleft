@@ -30,6 +30,8 @@ public class AnalyticsManager {
         ])
     }
     
+// MARK: - iOS only code
+    
 #if os(iOS)
     /// Logs an message received from the watch app
     /// - Parameter messageParameters: Dictionary of additioanl parameters sent from the watch
