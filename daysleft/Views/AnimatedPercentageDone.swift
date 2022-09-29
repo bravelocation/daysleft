@@ -10,10 +10,6 @@
 
 import SwiftUI
 
-#if canImport(UIKit)
-import UIKit
-#endif
-
 /// View that animates the text showing the percentage done
 struct AnimatedPercentageDone: View {
     /// Animated percentage done - should be between 0.0 and 100.0

@@ -50,8 +50,6 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
             }
         
         self.cancellables.append(keyValueChangeSubscriber)
-        
-
     }
     
     /// Delegate when watch becomes active
