@@ -133,6 +133,7 @@
 		52E048BF2507A57E009A2169 /* WidgetTimelineProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E048BE2507A57E009A2169 /* WidgetTimelineProvider.swift */; };
 		52F3B3D128E58E8400A13120 /* ScreenshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3B3D028E58E8400A13120 /* ScreenshotTests.swift */; };
 		52F3B3DA28E58E9E00A13120 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3B3D928E58E9E00A13120 /* SnapshotHelper.swift */; };
+		52F3B3DD28E59BBF00A13120 /* UIDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3B3DC28E59BBF00A13120 /* UIDevice.swift */; };
 		52F58DF428E44412006F9698 /* AnimatedCircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5234FDBD28E436730003515F /* AnimatedCircularProgressView.swift */; };
 		52F58DF628E444AE006F9698 /* AnimatedPercentageDone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F58DF528E444AE006F9698 /* AnimatedPercentageDone.swift */; };
 		52F58DF728E444AE006F9698 /* AnimatedPercentageDone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F58DF528E444AE006F9698 /* AnimatedPercentageDone.swift */; };
@@ -210,16 +211,6 @@
 				523443661BBAFBEF00E95BA4 /* DaysLeft WatchKit App.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5295EDE81A94AE53007EF7E7 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-			);
-			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		5295EE091A94B398007EF7E7 /* Embed Foundation Extensions */ = {
@@ -324,6 +315,7 @@
 		52F3B3D028E58E8400A13120 /* ScreenshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotTests.swift; sourceTree = "<group>"; };
 		52F3B3D928E58E9E00A13120 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		52F3B3DB28E5967100A13120 /* UI Tests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "UI Tests.xctestplan"; sourceTree = "<group>"; };
+		52F3B3DC28E59BBF00A13120 /* UIDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDevice.swift; sourceTree = "<group>"; };
 		52F58DF528E444AE006F9698 /* AnimatedPercentageDone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedPercentageDone.swift; sourceTree = "<group>"; };
 		52F9CDAB22D63D1900E0FFE8 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		52FAB11A1A923F500039691E /* daysleft.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = daysleft.entitlements; sourceTree = "<group>"; };
@@ -531,6 +523,7 @@
 				52CBC7AD28D9EE6700C89F20 /* AppSettings+Text.swift */,
 				5240F1CF28D8C1BC00B95FE5 /* Date+Helpers.swift */,
 				5234FDA328E2EA560003515F /* String+Helpers.swift */,
+				52F3B3DC28E59BBF00A13120 /* UIDevice.swift */,
 			);
 			path = "Model Extensions";
 			sourceTree = "<group>";
@@ -761,7 +754,6 @@
 				52CFBEF41A8B631B005234FB /* Sources */,
 				52CFBEF51A8B631B005234FB /* Frameworks */,
 				52CFBEF61A8B631B005234FB /* Resources */,
-				5295EDE81A94AE53007EF7E7 /* Embed Frameworks */,
 				5295EE091A94B398007EF7E7 /* Embed Foundation Extensions */,
 				521B9C4022C8E0B300185CF4 /* Swift Lint */,
 				523443681BBAFBEF00E95BA4 /* Embed Watch Content */,
@@ -992,7 +984,7 @@
 		521B9C4022C8E0B300185CF4 /* Swift Lint */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
+			buildActionMask = 8;
 			files = (
 			);
 			inputFileListPaths = (
@@ -1004,14 +996,14 @@
 			);
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
 			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\n\nif which swiftlint >/dev/null; then\n  swiftlint --path . --config ./swiftlint.yml\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 		52FC401227AA97EE005DAD8C /* Upload dSYM files to Crashlytics */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
+			buildActionMask = 8;
 			files = (
 			);
 			inputFileListPaths = (
@@ -1023,7 +1015,7 @@
 			);
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
 			shellScript = "\"${BUILD_DIR%/Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\"\n";
 		};
@@ -1130,6 +1122,7 @@
 				52A70D4928DC555800DCE9CB /* DaysLeftAppIntent.swift in Sources */,
 				52DC5AD228DB431900AFF24D /* SettingsViewHostingController.swift in Sources */,
 				52CBC7A028D9E01700C89F20 /* DataProviderProtocol.swift in Sources */,
+				52F3B3DD28E59BBF00A13120 /* UIDevice.swift in Sources */,
 				52FC401427AABAD9005DAD8C /* AnalyticsManager.swift in Sources */,
 				52DC5AD028DB3EE300AFF24D /* SettingsViewModel.swift in Sources */,
 				52DC9EB51FC97A9200AE02F6 /* FirebaseNotifications.swift in Sources */,

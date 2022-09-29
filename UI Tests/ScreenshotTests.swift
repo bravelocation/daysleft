@@ -18,6 +18,7 @@ final class ScreenshotTests: XCTestCase {
         
         let app = XCUIApplication()
         setupSnapshot(app)
+        app.launchArguments += ["-enable-ui-testing"]
         app.launch()
         
         if self.isIpad() {
@@ -26,6 +27,9 @@ final class ScreenshotTests: XCTestCase {
     }
 
     func testMainScreen() throws {
+        // Wait for animation to complete
+        Thread.sleep(forTimeInterval: 5.0)
+        
         snapshot("01Main")
     }
     
