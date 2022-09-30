@@ -125,22 +125,26 @@ class CloudKeyValueDataProvider: DataProviderProtocol {
     private func updateKVStoreItems(_ notification: Notification) {
         print("Detected iCloud key-value storage change")
         
-        // Get the list of keys that changed
-        let userInfo = notification.userInfo! as NSDictionary
-        let reasonForChange = userInfo.object(forKey: NSUbiquitousKeyValueStoreChangeReasonKey) as AnyObject?
-        
         // Assuming we have a valid reason for the change
-        if let downcastedReason = reasonForChange as? NSNumber {
-            let reason: NSInteger = downcastedReason.intValue
-            if ((reason == NSUbiquitousKeyValueStoreServerChange) || (reason == NSUbiquitousKeyValueStoreInitialSyncChange)) {
+        if let downcastedReason = notification.userInfo?[NSUbiquitousKeyValueStoreChangeReasonKey] as? NSNumber {
+            
+            let reason = downcastedReason.intValue
+            
+            if reason == NSUbiquitousKeyValueStoreServerChange || reason == NSUbiquitousKeyValueStoreInitialSyncChange {
+                
                 // If something is changing externally, get the changes and update the corresponding keys locally.
-                let changedKeys = userInfo.object(forKey: NSUbiquitousKeyValueStoreChangedKeysKey) as! [String]
+                guard let changedKeys = notification.userInfo?[NSUbiquitousKeyValueStoreChangedKeysKey] as? [String] else {
+                    print("No changed keys")
+                    return
+                }
+                
                 let store: NSUbiquitousKeyValueStore = NSUbiquitousKeyValueStore.default
                 
                 // This loop assumes you are using the same key names in both the user defaults database and the iCloud key-value store
                 for key: String in changedKeys {
-                    let settingValue: AnyObject? = store.object(forKey: key) as AnyObject?
-                    self.writeObjectToStore(settingValue!, key: key)
+                    if let settingValue = store.object(forKey: key) {
+                        self.writeObjectToStore(settingValue, key: key)
+                    }
                 }
                 
                 store.synchronize()
