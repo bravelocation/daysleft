@@ -108,25 +108,26 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
     
     /// Setup a background refresh to update data etc.
     private func setupBackgroundRefresh() {
-        // Setup a background refresh for 0100 tomorrow
-        let twoHoursTime = Calendar.current.date(byAdding: .hour, value: 2, to: Date())
+        // Setup a background refresh for two hours time
+        let twoHoursTime = Date().addingTimeInterval(2*60*60)
         
-        WKExtension.shared().scheduleBackgroundRefresh(withPreferredDate: twoHoursTime!, userInfo: nil, scheduledCompletion: { (error: Error?) in
+        WKExtension.shared().scheduleBackgroundRefresh(withPreferredDate: twoHoursTime,
+                                                       userInfo: nil,
+                                                       scheduledCompletion: { (error: Error?) in
             if let error = error {
                 print("Error occurred while scheduling background refresh: \(error.localizedDescription)")
             }
         })
         
-        print("Setup background task for \(String(describing: twoHoursTime))")
+        print("Setup background task for \(twoHoursTime)")
     }
     
     /// Update any added complications
     private func updateComplications() {
         let complicationServer = CLKComplicationServer.sharedInstance()
-        let activeComplications = complicationServer.activeComplications
         
-        if activeComplications != nil {
-            for complication in activeComplications! {
+        if let activeComplications = complicationServer.activeComplications {
+            for complication in activeComplications {
                 complicationServer.reloadTimeline(for: complication)
             }
         }

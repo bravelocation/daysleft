@@ -9,19 +9,17 @@
 import Foundation
 
 extension Date {
+    
     /// Returns the start of the day based on the current date
     var startOfDay: Date {
-        let startOfDayComponents = Calendar.current.dateComponents([.year, .month, .day], from: self)
-        return Calendar.current.date(from: startOfDayComponents)!
+        return Calendar.current.startOfDay(for: self)
     }
     
     /// Adds a number of days to the current date
     /// - Parameter daysToAdd: Number of days to add
     /// - Returns: Date with days added
     func addDays(_ daysToAdd: Int) -> Date {
-        var dateComponents: DateComponents = DateComponents()
-        dateComponents.day = daysToAdd
-        return Calendar.current.date(byAdding: dateComponents, to: self)!
+        return Calendar.current.date(byAdding: .day, value: daysToAdd, to: self)!
     }
     
     /// Number of days between two dates
@@ -36,7 +34,7 @@ extension Date {
         let startOfEndDate = endDate.startOfDay
 
         // If want all days, just calculate the days difference and return it
-        if !weekdaysOnly {
+        if weekdaysOnly == false {
             let components: DateComponents = Calendar.current.dateComponents([.day], from: startOfStartDate, to: startOfEndDate)
             
             return components.day!
