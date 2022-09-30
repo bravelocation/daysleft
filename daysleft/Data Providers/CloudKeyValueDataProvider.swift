@@ -61,11 +61,12 @@ class CloudKeyValueDataProvider: DataProviderProtocol {
     ///
     /// - Parameter key: The key for the setting
     /// - Returns: An AnyObject? value retrieved from the settings store
-    func readObjectFromStore(_ key: String) -> Any? {
-        // Otherwise try the user details
-        let userSettingsValue = self.appStandardUserDefaults!.value(forKey: key)
+    func readObjectFromStore<T>(_ key: String, defaultValue: T) -> T {
+        if let userSettingsValue = self.appStandardUserDefaults?.value(forKey: key) as? T {
+            return userSettingsValue
+        }
         
-        return userSettingsValue as AnyObject?
+        return defaultValue
     }
     
     /// Used to write an Object setting to the user setting store (local and the cloud)
@@ -73,7 +74,7 @@ class CloudKeyValueDataProvider: DataProviderProtocol {
     /// - Parameters:
     ///     - value: The value for the setting
     ///     - key: The key for the setting
-    func writeObjectToStore(_ value: Any, key: String) {
+    func writeObjectToStore<T>(_ value: T, key: String) {
         // Then write to local user settings
         if let settings = self.appStandardUserDefaults {
             settings.set(value, forKey: key)
@@ -111,7 +112,7 @@ class CloudKeyValueDataProvider: DataProviderProtocol {
     /// - Parameters:
     ///   - value: Value to write
     ///   - key: Key to write
-    private func writeSettingToiCloudStore(_ value: Any, key: String) {
+    private func writeSettingToiCloudStore<T>(_ value: T, key: String) {
         let store: NSUbiquitousKeyValueStore = NSUbiquitousKeyValueStore.default
         store.set(value, forKey: key)
         store.synchronize()

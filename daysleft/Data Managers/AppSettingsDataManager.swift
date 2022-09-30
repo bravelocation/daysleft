@@ -99,37 +99,37 @@ class AppSettingsDataManager {
     
     /// Property to get and set the start date
     private var start: Date {
-        get { return self.dataProvider.readObjectFromStore("start") as! Date }
+        get { return self.dataProvider.readObjectFromStore("start", defaultValue: Date()) }
         set { self.dataProvider.writeObjectToStore(newValue.startOfDay as AnyObject, key: "start") }
     }
     
     /// Property to get and set the end date
     private var end: Date {
-        get { return self.dataProvider.readObjectFromStore("end") as! Date }
+        get { return self.dataProvider.readObjectFromStore("end", defaultValue: Date()) }
         set { self.dataProvider.writeObjectToStore(newValue.startOfDay, key: "end") }
     }
 
     /// Property to get and set the title
     private var title: String {
-        get { return self.dataProvider.readObjectFromStore("title") as! String }
+        get { return self.dataProvider.readObjectFromStore("title", defaultValue: "") }
         set { self.dataProvider.writeObjectToStore(newValue, key: "title") }
     }
 
     /// Property to get and set the weekdays only flag
     private var weekdaysOnly: Bool {
-        get { return self.dataProvider.readObjectFromStore("weekdaysOnly") as! Bool }
+        get { return self.dataProvider.readObjectFromStore("weekdaysOnly", defaultValue: false) }
         set { self.dataProvider.writeObjectToStore(newValue, key: "weekdaysOnly") }
     }
     
     /// Property to get and set the firstRun value
     private var firstRun: Int {
-        get { return self.dataProvider.readObjectFromStore("firstRun") as! Int }
+        get { return self.dataProvider.readObjectFromStore("firstRun", defaultValue: 0) }
         set { self.dataProvider.writeObjectToStore(newValue, key: "firstRun") }
     }
     
     /// Property to get and set the show badge flag
     private var showBadge: Bool {
-        get { return self.dataProvider.readObjectFromStore("showBadge") as! Bool }
+        get { return self.dataProvider.readObjectFromStore("showBadge", defaultValue: false) }
         set { self.dataProvider.writeObjectToStore(newValue, key: "showBadge") }
     }
 }
