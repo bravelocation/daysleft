@@ -40,9 +40,14 @@ class InMemoryDataProvider: DataProviderProtocol {
     /// Used to read an object setting from the setting store
     ///
     /// - Parameter key: The key for the setting
-    /// - Returns: An AnyObject? value retrieved from the settings store
-    func readObjectFromStore(_ key: String) -> Any? {
-        return self.settingsCache[key]
+    /// - Parameter defaultValue: Default value if not found
+    /// - Returns: A value retrieved from the settings store
+    func readObjectFromStore<T>(_ key: String, defaultValue: T) -> T {
+        if let userSettingsValue = self.settingsCache[key] as? T {
+            return userSettingsValue
+        }
+        
+        return defaultValue
     }
     
     /// Used to write an Object setting to the user setting store
@@ -50,7 +55,7 @@ class InMemoryDataProvider: DataProviderProtocol {
     /// - Parameters:
     ///     - value: The value for the setting
     ///     - key: The key for the setting
-    func writeObjectToStore(_ value: Any, key: String) {
+    func writeObjectToStore<T>(_ value: T, key: String) {
         self.settingsCache[key] = value
         
         // Send a notification for the view controllers to refresh

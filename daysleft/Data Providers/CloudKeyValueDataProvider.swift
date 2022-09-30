@@ -44,13 +44,13 @@ class CloudKeyValueDataProvider: DataProviderProtocol {
             return
         }
         
-        guard let defaultPrefs = NSDictionary(contentsOf: defaultPrefsFile) else {
+        guard let defaultPrefs = NSDictionary(contentsOf: defaultPrefsFile) as? [String: Any] else {
             print("Can't load default preferences plist")
             return
         }
         
         self.appStandardUserDefaults = UserDefaults(suiteName: suiteName)
-        self.appStandardUserDefaults?.register(defaults: defaultPrefs as! [String: AnyObject])
+        self.appStandardUserDefaults?.register(defaults: defaultPrefs)
         
         self.initialiseiCloudSettings()
     }
@@ -60,12 +60,14 @@ class CloudKeyValueDataProvider: DataProviderProtocol {
     /// Used to read an object setting from the user setting store
     ///
     /// - Parameter key: The key for the setting
-    /// - Returns: An AnyObject? value retrieved from the settings store
-    func readObjectFromStore(_ key: String) -> Any? {
-        // Otherwise try the user details
-        let userSettingsValue = self.appStandardUserDefaults!.value(forKey: key)
+    /// - Parameter defaultValue: Default value if not found
+    /// - Returns: A value retrieved from the settings store
+    func readObjectFromStore<T>(_ key: String, defaultValue: T) -> T {
+        if let userSettingsValue = self.appStandardUserDefaults?.value(forKey: key) as? T {
+            return userSettingsValue
+        }
         
-        return userSettingsValue as AnyObject?
+        return defaultValue
     }
     
     /// Used to write an Object setting to the user setting store (local and the cloud)
@@ -73,7 +75,7 @@ class CloudKeyValueDataProvider: DataProviderProtocol {
     /// - Parameters:
     ///     - value: The value for the setting
     ///     - key: The key for the setting
-    func writeObjectToStore(_ value: Any, key: String) {
+    func writeObjectToStore<T>(_ value: T, key: String) {
         // Then write to local user settings
         if let settings = self.appStandardUserDefaults {
             settings.set(value, forKey: key)
@@ -111,7 +113,7 @@ class CloudKeyValueDataProvider: DataProviderProtocol {
     /// - Parameters:
     ///   - value: Value to write
     ///   - key: Key to write
-    private func writeSettingToiCloudStore(_ value: Any, key: String) {
+    private func writeSettingToiCloudStore<T>(_ value: T, key: String) {
         let store: NSUbiquitousKeyValueStore = NSUbiquitousKeyValueStore.default
         store.set(value, forKey: key)
         store.synchronize()
@@ -124,22 +126,26 @@ class CloudKeyValueDataProvider: DataProviderProtocol {
     private func updateKVStoreItems(_ notification: Notification) {
         print("Detected iCloud key-value storage change")
         
-        // Get the list of keys that changed
-        let userInfo = notification.userInfo! as NSDictionary
-        let reasonForChange = userInfo.object(forKey: NSUbiquitousKeyValueStoreChangeReasonKey) as AnyObject?
-        
         // Assuming we have a valid reason for the change
-        if let downcastedReason = reasonForChange as? NSNumber {
-            let reason: NSInteger = downcastedReason.intValue
-            if ((reason == NSUbiquitousKeyValueStoreServerChange) || (reason == NSUbiquitousKeyValueStoreInitialSyncChange)) {
+        if let downcastedReason = notification.userInfo?[NSUbiquitousKeyValueStoreChangeReasonKey] as? NSNumber {
+            
+            let reason = downcastedReason.intValue
+            
+            if reason == NSUbiquitousKeyValueStoreServerChange || reason == NSUbiquitousKeyValueStoreInitialSyncChange {
+                
                 // If something is changing externally, get the changes and update the corresponding keys locally.
-                let changedKeys = userInfo.object(forKey: NSUbiquitousKeyValueStoreChangedKeysKey) as! [String]
+                guard let changedKeys = notification.userInfo?[NSUbiquitousKeyValueStoreChangedKeysKey] as? [String] else {
+                    print("No changed keys")
+                    return
+                }
+                
                 let store: NSUbiquitousKeyValueStore = NSUbiquitousKeyValueStore.default
                 
                 // This loop assumes you are using the same key names in both the user defaults database and the iCloud key-value store
                 for key: String in changedKeys {
-                    let settingValue: AnyObject? = store.object(forKey: key) as AnyObject?
-                    self.writeObjectToStore(settingValue!, key: key)
+                    if let settingValue = store.object(forKey: key) {
+                        self.writeObjectToStore(settingValue, key: key)
+                    }
                 }
                 
                 store.synchronize()

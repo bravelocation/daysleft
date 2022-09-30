@@ -42,7 +42,7 @@ class MainViewHostingController<Content: View>: UIHostingController<Content>, Vi
         let secondsInADay: Double = 24*60*60
         
         let rootView = MainView(model: self.viewModel)
-        super.init(rootView: AnyView(rootView) as! Content)
+        super.init(rootView: rootView as! Content)
         
         self.viewModel.delegate = self
         
@@ -120,7 +120,7 @@ class MainViewHostingController<Content: View>: UIHostingController<Content>, Vi
     
     /// Called to load the settings screen
     func edit() {
-        let settingsViewController = SettingsViewHostingController<AnyView>()
+        let settingsViewController = SettingsViewHostingController<SettingsView>()
         self.navigationController?.pushViewController(settingsViewController, animated: true)
     }
 

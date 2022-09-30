@@ -9,19 +9,17 @@
 import Foundation
 
 extension Date {
+    
     /// Returns the start of the day based on the current date
     var startOfDay: Date {
-        let startOfDayComponents = Calendar.current.dateComponents([.year, .month, .day], from: self)
-        return Calendar.current.date(from: startOfDayComponents)!
+        return Calendar.current.startOfDay(for: self)
     }
     
     /// Adds a number of days to the current date
     /// - Parameter daysToAdd: Number of days to add
     /// - Returns: Date with days added
     func addDays(_ daysToAdd: Int) -> Date {
-        var dateComponents: DateComponents = DateComponents()
-        dateComponents.day = daysToAdd
-        return Calendar.current.date(byAdding: dateComponents, to: self)!
+        return Calendar.current.date(byAdding: .day, value: daysToAdd, to: self)!
     }
     
     /// Number of days between two dates
@@ -36,7 +34,7 @@ extension Date {
         let startOfEndDate = endDate.startOfDay
 
         // If want all days, just calculate the days difference and return it
-        if (!weekdaysOnly) {
+        if weekdaysOnly == false {
             let components: DateComponents = Calendar.current.dateComponents([.day], from: startOfStartDate, to: startOfEndDate)
             
             return components.day!
@@ -50,10 +48,10 @@ extension Date {
         var adjustedEndDate = startOfEndDate
             
         // If start is a weekend, adjust to Monday
-        if (startDayOfWeek == 7) {
+        if startDayOfWeek == 7 {
             // Saturday
             adjustedStartDate = startOfStartDate.addDays(2)
-        } else if (startDayOfWeek == 1) {
+        } else if startDayOfWeek == 1 {
             // Sunday
             adjustedStartDate = startOfStartDate.addDays(1)
         }
@@ -64,16 +62,16 @@ extension Date {
 
             let startComparison = startOfCurrentDate.compare(adjustedStartDate)
             
-            if (startComparison == ComparisonResult.orderedAscending) {
+            if startComparison == ComparisonResult.orderedAscending {
                 return -1
             }
         }
             
         // If end is a weekend, move it back to Friday
-        if (endDayOfWeek == 7) {
+        if endDayOfWeek == 7 {
             // Saturday
             adjustedEndDate = startOfEndDate.addDays(-1)
-        } else if (endDayOfWeek == 1) {
+        } else if endDayOfWeek == 1 {
             // Sunday
             adjustedEndDate = startOfEndDate.addDays(-2)
         }
@@ -88,7 +86,7 @@ extension Date {
         endDayOfWeek = Calendar.current.component(.weekday, from: adjustedEndDate)
         
         var daysOfWeekDifference = endDayOfWeek - startDayOfWeek
-        if (daysOfWeekDifference < 0) {
+        if daysOfWeekDifference < 0 {
             daysOfWeekDifference += 5
         }
 
@@ -110,7 +108,7 @@ extension Date {
         
         var xmasDate: Date = Calendar.current.date(from: xmasComponents)!
         
-        if (Date.daysDifference(todayDate, endDate: xmasDate, weekdaysOnly: false) <= 0) {
+        if Date.daysDifference(todayDate, endDate: xmasDate, weekdaysOnly: false) <= 0 {
             // If we're past Xmas in the year, set it to next year
             xmasComponents.year = xmasComponents.year! + 1
             xmasDate = Calendar.current.date(from: xmasComponents)!

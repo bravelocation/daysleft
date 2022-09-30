@@ -41,7 +41,7 @@ class SettingsViewHostingController<Content: View>: UIHostingController<Content>
                                     title: appSettings.title,
                                     weekdaysOnly: appSettings.weekdaysOnly,
                                     showBadge: dataManager.appControlSettings.showBadge)
-        super.init(rootView: AnyView(rootView) as! Content)
+        super.init(rootView: rootView as! Content)
         
         self.viewModel.delegate = self
     }
@@ -85,14 +85,17 @@ class SettingsViewHostingController<Content: View>: UIHostingController<Content>
     // MARK: - SettingsActionDelegate
     /// Event handler for when badge toggle changes
     func badgeChanged() {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.registerForNotifications()
+        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+            appDelegate.registerForNotifications()
+        }
     }
     
     /// Event handler for when data changes
     func dataUpdated() {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.updateBadge()
+        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+            appDelegate.updateBadge()
+        }
+        
         WidgetCenter.shared.reloadAllTimelines()
     }
 }

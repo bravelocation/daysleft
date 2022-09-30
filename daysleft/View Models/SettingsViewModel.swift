@@ -36,9 +36,11 @@ class SettingsViewModel: ObservableObject {
     /// App version number
     var versionNumber: String {
         let infoDictionary = Bundle.main
-        let version = infoDictionary.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
-        let build = infoDictionary.object(forInfoDictionaryKey: "CFBundleVersion") as! String
-        return "v\(version).\(build)"
+        if let version = infoDictionary.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String, let build = infoDictionary.object(forInfoDictionaryKey: "CFBundleVersion") as? String {
+            return "v\(version).\(build)"
+        }
+        
+        return ""
     }
     
     /// Initialiser

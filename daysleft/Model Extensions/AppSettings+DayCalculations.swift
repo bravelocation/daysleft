@@ -27,12 +27,12 @@ extension AppSettings {
         // If the current date is before the start, return the length
         let startComparison = startCurrentDate.compare(self.start)
         
-        if (startComparison == ComparisonResult.orderedAscending) {
+        if startComparison == ComparisonResult.orderedAscending {
             return self.daysLength
         }
         
         // If the current date is after the end, return 0
-        if (startCurrentDate.compare(self.end) == ComparisonResult.orderedDescending) {
+        if startCurrentDate.compare(self.end) == ComparisonResult.orderedDescending {
             return 0
         }
         
@@ -50,12 +50,12 @@ extension AppSettings {
         let startComparison = startCurrentDate.compare(self.start)
         
         // If the current date is before the start (not weekdays only), return 0
-        if (startComparison == ComparisonResult.orderedAscending && self.weekdaysOnly == false) {
+        if startComparison == ComparisonResult.orderedAscending && self.weekdaysOnly == false {
             return 0
         }
         
         // If the current date is after the end, return the length
-        if (startCurrentDate.compare(self.end) == ComparisonResult.orderedDescending) {
+        if startCurrentDate.compare(self.end) == ComparisonResult.orderedDescending {
             return self.daysLength
         }
         

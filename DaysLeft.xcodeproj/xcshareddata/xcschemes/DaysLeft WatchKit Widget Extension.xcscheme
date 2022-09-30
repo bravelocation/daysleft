@@ -86,12 +86,21 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
+            BlueprintIdentifier = "52A70D5C28DC98E100DCE9CB"
+            BuildableName = "DaysLeft WatchKit Widget Extension.appex"
+            BlueprintName = "DaysLeft WatchKit Widget Extension"
+            ReferencedContainer = "container:DaysLeft.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
             BlueprintIdentifier = "52B7E8801ABEDE9300E1949C"
             BuildableName = "DaysLeft WatchKit App.app"
             BlueprintName = "DaysLeft WatchKit App"
             ReferencedContainer = "container:DaysLeft.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
       <EnvironmentVariables>
          <EnvironmentVariable
             key = "_XCWidgetKind"

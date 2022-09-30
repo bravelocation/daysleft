@@ -13,7 +13,7 @@ extension AppSettings {
     /// - Parameter currentDate: Current date
     /// - Returns: String
     func fullDescription(_ currentDate: Date) -> String {
-        return String(format: "%d %@", self.daysLeft(currentDate), self.description(currentDate))
+        return "\(self.daysLeft(currentDate)) \(self.description(currentDate))"
     }
     
     /// Description of the settings
@@ -25,11 +25,11 @@ extension AppSettings {
         var titleSuffix = NSLocalizedString("Time Left", comment: "")
         var titleDays = ""
         
-        if (self.title.count > 0) {
+        if self.title.count > 0 {
             titleSuffix = "\(NSLocalizedString("Time until", comment: "")) \(self.title)"
         }
         
-        if (self.weekdaysOnly) {
+        if self.weekdaysOnly {
             let localised = NSLocalizedString("weekdays", comment: "")
             titleDays = String(format: localised, daysLeft)
         } else {
@@ -37,7 +37,7 @@ extension AppSettings {
             titleDays = String(format: localised, daysLeft)
         }
         
-        return String(format: "%@ %@", titleDays, titleSuffix)
+        return "\(titleDays) \(titleSuffix)"
     }
     
     /// Days left description of the settings
@@ -48,7 +48,7 @@ extension AppSettings {
         
         var titleDays = ""
         
-        if (self.weekdaysOnly) {
+        if self.weekdaysOnly {
             let localised = NSLocalizedString("weekdays", comment: "")
             titleDays = String(format: localised, daysLeft)
         } else {
@@ -56,7 +56,7 @@ extension AppSettings {
             titleDays = String(format: localised, daysLeft)
         }
         
-        return String(format: "%d %@", daysLeft, titleDays)
+        return "\(daysLeft) \(titleDays)"
     }
     
     /// Full title of the settings

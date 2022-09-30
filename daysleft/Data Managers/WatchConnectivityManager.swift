@@ -47,7 +47,7 @@ class WatchConnectivityManager: NSObject, WCSessionDelegate {
     #if os(iOS)
     /// Sends a message to the watch to update the complications
     public func sendComplicationUpdateMessage() {
-        if (WCSession.isSupported() && WCSession.default.isComplicationEnabled) {
+        if WCSession.isSupported() && WCSession.default.isComplicationEnabled {
             let userInfo = ["updateComplications": true]
             _ = WCSession.default.transferCurrentComplicationUserInfo(userInfo)
         }
