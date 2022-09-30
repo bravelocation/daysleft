@@ -78,9 +78,7 @@
 		52A70D8228DC9E2800DCE9CB /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52CFBF041A8B631B005234FB /* Media.xcassets */; };
 		52A70D8328DC9E5900DCE9CB /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CBC7BD28DAF84500C89F20 /* CircularProgressView.swift */; };
 		52A70D8428DC9EA600DCE9CB /* DaysLeftViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BC111E237C4AD0005EC3F7 /* DaysLeftViewModel.swift */; };
-		52A70D8728DC9F6D00DCE9CB /* DefaultPreferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52A70D8528DC9F4900DCE9CB /* DefaultPreferences.plist */; };
 		52A70D8928DCA11900DCE9CB /* ComplicationsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A70D8828DCA11900DCE9CB /* ComplicationsDataSource.swift */; };
-		52B7E8991ABEEA2200E1949C /* DefaultPreferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52B7E8981ABEEA2200E1949C /* DefaultPreferences.plist */; };
 		52BC111B237C461C005EC3F7 /* WatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BC111A237C461C005EC3F7 /* WatchView.swift */; };
 		52C3524C28DCB2EC00D02445 /* DaysLeftWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C3524B28DCB2EC00D02445 /* DaysLeftWatchApp.swift */; };
 		52C595311E952667006C5269 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52C595301E952667006C5269 /* StoreKit.framework */; };
@@ -139,6 +137,8 @@
 		52F3B3E128E5E90C00A13120 /* Notification+Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3B3DE28E5D8E900A13120 /* Notification+Name.swift */; };
 		52F3B3E228E5E90E00A13120 /* Notification+Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3B3DE28E5D8E900A13120 /* Notification+Name.swift */; };
 		52F3B3E328E5E91C00A13120 /* Notification+Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3B3DE28E5D8E900A13120 /* Notification+Name.swift */; };
+		52F3B3E428E6E28900A13120 /* DefaultPreferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52FAB11B1A9240490039691E /* DefaultPreferences.plist */; };
+		52F3B3E528E6E28D00A13120 /* DefaultPreferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52FAB11B1A9240490039691E /* DefaultPreferences.plist */; };
 		52F58DF428E44412006F9698 /* AnimatedCircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5234FDBD28E436730003515F /* AnimatedCircularProgressView.swift */; };
 		52F58DF628E444AE006F9698 /* AnimatedPercentageDone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F58DF528E444AE006F9698 /* AnimatedPercentageDone.swift */; };
 		52F58DF728E444AE006F9698 /* AnimatedPercentageDone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F58DF528E444AE006F9698 /* AnimatedPercentageDone.swift */; };
@@ -271,7 +271,6 @@
 		52A70D6128DC98E100DCE9CB /* DaysLeftWatchWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysLeftWatchWidget.swift; sourceTree = "<group>"; };
 		52A70D6528DC98E300DCE9CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52A70D7528DC9B2100DCE9CB /* WatchWidgetSwitcherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchWidgetSwitcherView.swift; sourceTree = "<group>"; };
-		52A70D8528DC9F4900DCE9CB /* DefaultPreferences.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DefaultPreferences.plist; sourceTree = "<group>"; };
 		52A70D8828DCA11900DCE9CB /* ComplicationsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComplicationsDataSource.swift; sourceTree = "<group>"; };
 		52AC693D2154DA7E00E6C833 /* IntentsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IntentsUI.framework; path = System/Library/Frameworks/IntentsUI.framework; sourceTree = SDKROOT; };
 		52B78DF31D982A6E00AB629D /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
@@ -282,7 +281,6 @@
 		52B7E8811ABEDE9300E1949C /* DaysLeft WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DaysLeft WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52B7E8871ABEDE9300E1949C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52B7E8961ABEDEDE00E1949C /* daysleft WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "daysleft WatchKit Extension.entitlements"; sourceTree = "<group>"; };
-		52B7E8981ABEEA2200E1949C /* DefaultPreferences.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DefaultPreferences.plist; sourceTree = "<group>"; };
 		52BC111A237C461C005EC3F7 /* WatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchView.swift; sourceTree = "<group>"; };
 		52BC111E237C4AD0005EC3F7 /* DaysLeftViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysLeftViewModel.swift; sourceTree = "<group>"; };
 		52C3524B28DCB2EC00D02445 /* DaysLeftWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysLeftWatchApp.swift; sourceTree = "<group>"; };
@@ -495,7 +493,6 @@
 			isa = PBXGroup;
 			children = (
 				52B7E8961ABEDEDE00E1949C /* daysleft WatchKit Extension.entitlements */,
-				52B7E8981ABEEA2200E1949C /* DefaultPreferences.plist */,
 				52B7E87A1ABEDE9300E1949C /* Info.plist */,
 			);
 			name = Assets;
@@ -563,7 +560,6 @@
 			isa = PBXGroup;
 			children = (
 				5234FD9D28DF286B0003515F /* DaysLeft WatchKit WidgetExtension.entitlements */,
-				52A70D8528DC9F4900DCE9CB /* DefaultPreferences.plist */,
 				52A70D6128DC98E100DCE9CB /* DaysLeftWatchWidget.swift */,
 				52A70D6528DC98E300DCE9CB /* Info.plist */,
 				52A70D7528DC9B2100DCE9CB /* WatchWidgetSwitcherView.swift */,
@@ -929,7 +925,7 @@
 				5234FDB028E2F6B20003515F /* Localizable.strings in Resources */,
 				5234FDBB28E3377E0003515F /* Colors.xcassets in Resources */,
 				5234FDB528E2F9B60003515F /* Localizable.stringsdict in Resources */,
-				52A70D8728DC9F6D00DCE9CB /* DefaultPreferences.plist in Resources */,
+				52F3B3E528E6E28D00A13120 /* DefaultPreferences.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -941,7 +937,7 @@
 				5234FDB428E2F9B60003515F /* Localizable.stringsdict in Resources */,
 				5234FDBA28E3377E0003515F /* Colors.xcassets in Resources */,
 				5234FDAF28E2F6B20003515F /* Localizable.strings in Resources */,
-				52B7E8991ABEEA2200E1949C /* DefaultPreferences.plist in Resources */,
+				52F3B3E428E6E28900A13120 /* DefaultPreferences.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

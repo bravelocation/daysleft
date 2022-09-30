@@ -3,15 +3,15 @@
 <plist version="1.0">
 <dict>
 	<key>title</key>
-	<string>&quot;&quot;</string>
+	<string>&quot;Christmas&quot;</string>
 	<key>firstRun</key>
 	<integer>0</integer>
 	<key>weekdaysOnly</key>
 	<false/>
 	<key>end</key>
-	<date>1999-12-31T00:00:00Z</date>
+	<date>2022-12-25T00:00:00Z</date>
 	<key>start</key>
-	<date>1999-12-31T00:00:00Z</date>
+	<date>2021-12-31T00:00:00Z</date>
 	<key>showBadge</key>
 	<false/>
 </dict>

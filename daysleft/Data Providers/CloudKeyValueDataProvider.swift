@@ -44,13 +44,13 @@ class CloudKeyValueDataProvider: DataProviderProtocol {
             return
         }
         
-        guard let defaultPrefs = NSDictionary(contentsOf: defaultPrefsFile) else {
+        guard let defaultPrefs = NSDictionary(contentsOf: defaultPrefsFile) as? [String: Any] else {
             print("Can't load default preferences plist")
             return
         }
         
         self.appStandardUserDefaults = UserDefaults(suiteName: suiteName)
-        self.appStandardUserDefaults?.register(defaults: defaultPrefs as! [String: AnyObject])
+        self.appStandardUserDefaults?.register(defaults: defaultPrefs)
         
         self.initialiseiCloudSettings()
     }
