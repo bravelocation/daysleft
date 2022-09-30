@@ -100,7 +100,7 @@ class AppSettingsDataManager {
     /// Property to get and set the start date
     private var start: Date {
         get { return self.dataProvider.readObjectFromStore("start", defaultValue: Date()) }
-        set { self.dataProvider.writeObjectToStore(newValue.startOfDay as AnyObject, key: "start") }
+        set { self.dataProvider.writeObjectToStore(newValue.startOfDay, key: "start") }
     }
     
     /// Property to get and set the end date

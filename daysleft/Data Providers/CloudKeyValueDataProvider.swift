@@ -60,7 +60,8 @@ class CloudKeyValueDataProvider: DataProviderProtocol {
     /// Used to read an object setting from the user setting store
     ///
     /// - Parameter key: The key for the setting
-    /// - Returns: An AnyObject? value retrieved from the settings store
+    /// - Parameter defaultValue: Default value if not found
+    /// - Returns: A value retrieved from the settings store
     func readObjectFromStore<T>(_ key: String, defaultValue: T) -> T {
         if let userSettingsValue = self.appStandardUserDefaults?.value(forKey: key) as? T {
             return userSettingsValue
