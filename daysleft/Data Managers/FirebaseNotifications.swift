@@ -34,9 +34,9 @@ class FirebaseNotifications: NSObject, MessagingDelegate {
     /// Sets up notifications for the app
     /// - Parameter forceSetup: Should we force a request for authorisation?
     func setupNotifications(_ forceSetup: Bool) {
-        if (forceSetup || self.enabled) {
+        if forceSetup || self.enabled {
             UNUserNotificationCenter.current().requestAuthorization(options: [.badge]) { (granted, _) in
-                if (granted) {
+                if granted {
                     DispatchQueue.main.async {
                         UIApplication.shared.registerForRemoteNotifications()
                     }

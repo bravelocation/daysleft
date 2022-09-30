@@ -36,7 +36,7 @@ struct DaysLeftAppIntent: AppIntent, CustomIntentMigratedAppIntent {
         
         var daysType = ""
         
-        if (appSettings.weekdaysOnly) {
+        if appSettings.weekdaysOnly {
             let localised = NSLocalizedString("weekdays", comment: "")
             daysType = String(format: localised, daysLeft)
         } else {

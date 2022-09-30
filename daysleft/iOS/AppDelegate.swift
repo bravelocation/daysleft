@@ -181,7 +181,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     
     /// Update the badge number if required
     func updateBadge() {
-        if (self.dataManager.appControlSettings.showBadge == false) {
+        if self.dataManager.appControlSettings.showBadge == false {
             clearBadge()
             return
         }

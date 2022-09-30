@@ -28,7 +28,7 @@ class AppSettingsDataManager {
         self.dataProvider = dataProvider
         
         // Setup some of the settings if first run of the app
-        if (self.firstRun < self.currentFirstRun) {
+        if self.firstRun < self.currentFirstRun {
             // If it is first run, initialise the model data to Christmas
             self.start = Date().startOfDay
             self.end = Date.nextXmas()

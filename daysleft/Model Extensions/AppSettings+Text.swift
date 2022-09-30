@@ -25,11 +25,11 @@ extension AppSettings {
         var titleSuffix = NSLocalizedString("Time Left", comment: "")
         var titleDays = ""
         
-        if (self.title.count > 0) {
+        if self.title.count > 0 {
             titleSuffix = "\(NSLocalizedString("Time until", comment: "")) \(self.title)"
         }
         
-        if (self.weekdaysOnly) {
+        if self.weekdaysOnly {
             let localised = NSLocalizedString("weekdays", comment: "")
             titleDays = String(format: localised, daysLeft)
         } else {
@@ -48,7 +48,7 @@ extension AppSettings {
         
         var titleDays = ""
         
-        if (self.weekdaysOnly) {
+        if self.weekdaysOnly {
             let localised = NSLocalizedString("weekdays", comment: "")
             titleDays = String(format: localised, daysLeft)
         } else {

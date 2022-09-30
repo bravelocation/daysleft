@@ -80,7 +80,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
         // Mark tasks as completed
         for task in backgroundTasks {
             // If it was a background task, update complications and setup a new one
-            if (task is WKApplicationRefreshBackgroundTask) {
+            if task is WKApplicationRefreshBackgroundTask {
                 
                 // Simply update the complications on a background task being triggered
                 self.updateComplications()
@@ -125,7 +125,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
         let complicationServer = CLKComplicationServer.sharedInstance()
         let activeComplications = complicationServer.activeComplications
         
-        if (activeComplications != nil) {
+        if activeComplications != nil {
             for complication in activeComplications! {
                 complicationServer.reloadTimeline(for: complication)
             }
