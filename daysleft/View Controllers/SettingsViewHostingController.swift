@@ -41,7 +41,7 @@ class SettingsViewHostingController<Content: View>: UIHostingController<Content>
                                     title: appSettings.title,
                                     weekdaysOnly: appSettings.weekdaysOnly,
                                     showBadge: dataManager.appControlSettings.showBadge)
-        super.init(rootView: AnyView(rootView) as! Content)
+        super.init(rootView: rootView as! Content)
         
         self.viewModel.delegate = self
     }

@@ -25,7 +25,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         // Make a main view hosting controller window
         let window = UIWindow(windowScene: windowScene)
-        let mainViewController = MainViewHostingController<AnyView>()
+        let mainViewController = MainViewHostingController<MainView>()
         
         let navController = UINavigationController()
         navController.viewControllers = [mainViewController]
