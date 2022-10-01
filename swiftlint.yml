@@ -5,6 +5,13 @@ disabled_rules: # rule identifiers to exclude from running
 
 opt_in_rules:
  - accessibility_label_for_image
+ - convenience_type
+ - empty_count
+ - empty_string
+ - fatal_error_message
+ - modifier_order
+ - toggle_bool
+ - unused_private_declaration
 
 excluded: # paths to ignore during linting. Takes precedence over `included`.
  - Pods

@@ -25,7 +25,7 @@ extension AppSettings {
         var titleSuffix = NSLocalizedString("Time Left", comment: "")
         var titleDays = ""
         
-        if self.title.count > 0 {
+        if self.title.isEmpty == false {
             titleSuffix = "\(NSLocalizedString("Time until", comment: "")) \(self.title)"
         }
         

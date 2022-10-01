@@ -60,7 +60,7 @@ class MainViewHostingController<Content: View>: UIHostingController<Content>, Vi
     
     /// Required initialiser for view controllers - should not be used
     /// - Parameter aDecoder: Coder
-    @objc required dynamic init?(coder aDecoder: NSCoder) {
+    @objc dynamic required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
