@@ -47,6 +47,20 @@ import Combine
         self.cancellables.append(keyValueChangeSubscriber)
     }
     
+    // MARK: Update external information function
+    
+    /// Updates all external information e.g. badges, widgets, watch settings
+    func updateExternalInformation() {
+        // Update the app badge if required
+        self.updateBadge()
+        
+        // Reload any widgets
+        WidgetCenter.shared.reloadAllTimelines()
+        
+        // Tell the watch to update it's complications
+        self.watchConnectivityManager.sendComplicationUpdateMessage()
+    }
+    
     // MARK: UIApplicationDelegate functions
     
     /// Delegate called after app finished launching
@@ -115,9 +129,7 @@ import Combine
                        -> Void) {
         Messaging.messaging().appDidReceiveMessage(userInfo)
 
-        // Update badge and widgets
-        self.updateBadge()
-        WidgetCenter.shared.reloadAllTimelines()
+        self.updateExternalInformation()
 
         completionHandler(UIBackgroundFetchResult.newData)
     }
@@ -141,12 +153,7 @@ import Combine
     @objc fileprivate func iCloudSettingsUpdated() {
         print("Received iCloudSettingsUpdated notification")
         
-        // Update badge and widgets
-        self.updateBadge()
-        WidgetCenter.shared.reloadAllTimelines()
-        
-        // Reload any watch complications if the data changed
-        self.watchConnectivityManager.sendComplicationUpdateMessage()
+        self.updateExternalInformation()
     }
 }
 
@@ -163,9 +170,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         
         Messaging.messaging().appDidReceiveMessage(response.notification.request.content.userInfo)
         
-        // Update badge and widgets
-        self.updateBadge()
-        WidgetCenter.shared.reloadAllTimelines()
+        self.updateExternalInformation()
         
         completionHandler()
     }

@@ -93,9 +93,7 @@ class SettingsViewHostingController<Content: View>: UIHostingController<Content>
     /// Event handler for when data changes
     func dataUpdated() {
         if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
-            appDelegate.updateBadge()
+            appDelegate.updateExternalInformation()
         }
-        
-        WidgetCenter.shared.reloadAllTimelines()
     }
 }
