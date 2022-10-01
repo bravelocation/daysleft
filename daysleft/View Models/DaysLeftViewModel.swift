@@ -11,7 +11,7 @@ import SwiftUI
 import Combine
 
 /// Protocol for handlers of view model actions
-protocol ViewModelActionDelegate {
+protocol ViewModelActionDelegate: AnyObject {
     /// Share event is raised
     func share()
     

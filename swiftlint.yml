@@ -1,7 +1,5 @@
 disabled_rules: # rule identifiers to exclude from running
- #- syntactic_sugar
 
- - class_delegate_protocol
  - redundant_optional_initialization
 
  - line_length
