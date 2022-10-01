@@ -42,6 +42,8 @@ class MainViewHostingController<Content: View>: UIHostingController<Content>, Vi
         let secondsInADay: Double = 24*60*60
         
         let rootView = MainView(model: self.viewModel)
+        
+        // swiftlint:disable:next force_cast
         super.init(rootView: rootView as! Content)
         
         self.viewModel.delegate = self

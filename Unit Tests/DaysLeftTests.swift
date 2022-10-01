@@ -92,7 +92,7 @@ class DaysLeftTests: XCTestCase {
         self.actualTestRun(startDay: 4, endDay: 12, currentDay: 4, weekdaysOnly: true, expectedLength: 6, expectedGone: 0, expectedLeft: 6)
     }
     
-    // Helper method for running tests
+    // swiftlint:disable function_parameter_count
     func actualTestRun(startDay: Int, endDay: Int, currentDay: Int, weekdaysOnly: Bool, expectedLength: Int, expectedGone: Int, expectedLeft: Int) {
         let model = AppSettingsDataManager(dataProvider: InMemoryDataProvider.shared)
         

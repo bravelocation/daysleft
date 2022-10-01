@@ -41,6 +41,8 @@ class SettingsViewHostingController<Content: View>: UIHostingController<Content>
                                     title: appSettings.title,
                                     weekdaysOnly: appSettings.weekdaysOnly,
                                     showBadge: dataManager.appControlSettings.showBadge)
+        
+        // swiftlint:disable:next force_cast
         super.init(rootView: rootView as! Content)
         
         self.viewModel.delegate = self
