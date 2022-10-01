@@ -1,7 +1,5 @@
 disabled_rules: # rule identifiers to exclude from running
 
- - redundant_optional_initialization
-
  - line_length
  - trailing_whitespace
 

@@ -28,7 +28,7 @@ class SettingsViewModel: ObservableObject {
     private(set) var appControlSettings: AppControlSettings
 
     /// Delegate for view actions
-    var delegate: SettingsActionDelegate? = nil
+    var delegate: SettingsActionDelegate?
     
     /// Data manager
     private let dataManager: AppSettingsDataManager

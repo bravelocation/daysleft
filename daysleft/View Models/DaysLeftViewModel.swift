@@ -32,7 +32,7 @@ class DaysLeftViewModel: ObservableObject {
     let dataManager: AppSettingsDataManager
     
     /// Delegate for view actions
-    var delegate: ViewModelActionDelegate? = nil
+    var delegate: ViewModelActionDelegate?
     
     /// Initialiser
     /// - Parameter dataManager: Data manager
