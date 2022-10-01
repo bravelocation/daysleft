@@ -61,6 +61,8 @@ struct AnimatableNumberModifier: AnimatableModifier {
                     Text("% ")
                     Text(LocalizedStringKey("Time done"))
                 }
+                .accessibilityElement(children: .combine)
+                .accessibilityLabel("\(Int(number))% \(NSLocalizedString("Time done", comment: ""))")
             )
     }
 }
