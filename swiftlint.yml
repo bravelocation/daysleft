@@ -1,6 +1,5 @@
 disabled_rules: # rule identifiers to exclude from running
- # - implicit_getter
- - syntactic_sugar
+ #- syntactic_sugar
 
  - class_delegate_protocol
  - redundant_optional_initialization

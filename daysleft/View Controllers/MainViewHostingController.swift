@@ -24,7 +24,7 @@ class MainViewHostingController<Content: View>: UIHostingController<Content>, Vi
     private var dayChangeTimer: Timer?
     
     /// Subscribers to change events
-    private var cancellables = Array<AnyCancellable>()
+    private var cancellables = [AnyCancellable]()
     
     /// Initialiser
     init() {

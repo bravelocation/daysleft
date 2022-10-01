@@ -23,7 +23,7 @@ import Combine
     var firebaseNotifications: FirebaseNotifications?
     
     /// Subscribers to change events
-    private var cancellables = Array<AnyCancellable>()
+    private var cancellables = [AnyCancellable]()
     
     /// App data manager
     let dataManager = AppSettingsDataManager()

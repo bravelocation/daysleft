@@ -26,7 +26,7 @@ class DaysLeftViewModel: ObservableObject {
     @Published var displayValues: DisplayValues
     
     /// Subscribers to change events
-    private var cancellables = Array<AnyCancellable>()
+    private var cancellables = [AnyCancellable]()
     
     /// Data manager
     let dataManager: AppSettingsDataManager

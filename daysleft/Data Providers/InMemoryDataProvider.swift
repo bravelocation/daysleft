@@ -31,7 +31,7 @@ class InMemoryDataProvider: DataProviderProtocol {
     }
     
     /// Settings cache used to store settings locally for faster access
-    private var settingsCache = Dictionary<String, Any>()
+    private var settingsCache = [String: Any]()
     
     // MARK: - DataProviderProtocol implementation
     
