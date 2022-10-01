@@ -38,6 +38,7 @@ struct SettingsView: View {
                     .listRowSeparator(.hidden)
 
                 TextField(LocalizedStringKey("Enter your title"), text: self.$title)
+                    .addClearButton(for: self.$title)
                     .textFieldStyle(.roundedBorder)
                     .listRowSeparator(.hidden)
                     .onChange(of: title) { newValue in
