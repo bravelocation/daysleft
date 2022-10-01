@@ -11,7 +11,7 @@ import SwiftUI
 import Combine
 
 /// Protocol for handlers of view model actions
-protocol ViewModelActionDelegate {
+protocol ViewModelActionDelegate: AnyObject {
     /// Share event is raised
     func share()
     
@@ -26,13 +26,13 @@ class DaysLeftViewModel: ObservableObject {
     @Published var displayValues: DisplayValues
     
     /// Subscribers to change events
-    private var cancellables = Array<AnyCancellable>()
+    private var cancellables = [AnyCancellable]()
     
     /// Data manager
     let dataManager: AppSettingsDataManager
     
     /// Delegate for view actions
-    var delegate: ViewModelActionDelegate? = nil
+    var delegate: ViewModelActionDelegate?
     
     /// Initialiser
     /// - Parameter dataManager: Data manager

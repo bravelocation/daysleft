@@ -24,7 +24,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
     private let watchConnectivityManager = WatchConnectivityManager()
     
     /// Subscribers to change events
-    private var cancellables = Array<AnyCancellable>()
+    private var cancellables = [AnyCancellable]()
     
     // MARK: Initialisation
     

@@ -17,9 +17,7 @@ public class AnalyticsManager {
     
     /// Shared static instance of the class, to make it easy to access across the app
     class var shared: AnalyticsManager {
-        get {
-            return sharedInstance
-        }
+        return sharedInstance
     }
     
     /// Logs views of individual screens

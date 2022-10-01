@@ -10,6 +10,7 @@ import Foundation
 import WatchKit
 import ClockKit
 
+// swiftlint:disable type_body_length
 /// Legacy complications data source
 @available(watchOS, deprecated: 9.0, message: "Remove legacy complications data source once people have updated")
 class ComplicationsDataSource: NSObject, CLKComplicationDataSource {
@@ -42,7 +43,8 @@ class ComplicationsDataSource: NSObject, CLKComplicationDataSource {
         handler([daysLeftDescriptor])
     }
     
-    // swiftlint:disable:next cyclomatic_complexity
+    // swiftlint:disable cyclomatic_complexity
+    // swiftlint:disable function_body_length
     func getLocalizableSampleTemplate(for complication: CLKComplication,
                                       withHandler handler: @escaping (CLKComplicationTemplate?) -> Void) {
         let appTintColor = UIColor(red: 203/255, green: 237/255, blue: 142/255, alpha: 1.0)
@@ -186,7 +188,8 @@ class ComplicationsDataSource: NSObject, CLKComplicationDataSource {
             handler(CLKComplicationTimelineAnimationBehavior.always)
     }
     
-    // swiftlint:disable:next cyclomatic_complexity
+    // swiftlint:disable cyclomatic_complexity
+    // swiftlint:disable function_body_length
     fileprivate func createTimeLineEntry(_ family: CLKComplicationFamily, date: Date) -> CLKComplicationTimelineEntry? {
 
         let currentDaysLeft: Int = self.appSettings.daysLeft(date)

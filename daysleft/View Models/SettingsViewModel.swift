@@ -11,7 +11,7 @@ import Combine
 import UIKit
 
 /// Protocol for handlers of settings events
-protocol SettingsActionDelegate {
+protocol SettingsActionDelegate: AnyObject {
     /// The badge toggle is changed
     func badgeChanged()
     
@@ -28,7 +28,7 @@ class SettingsViewModel: ObservableObject {
     private(set) var appControlSettings: AppControlSettings
 
     /// Delegate for view actions
-    var delegate: SettingsActionDelegate? = nil
+    var delegate: SettingsActionDelegate?
     
     /// Data manager
     private let dataManager: AppSettingsDataManager

@@ -47,20 +47,16 @@ class AppSettingsDataManager {
     
     /// Main app settings
     var appSettings: AppSettings {
-        get {
-            return AppSettings(start: self.start,
-                               end: self.end,
-                               title: self.title,
-                               weekdaysOnly: self.weekdaysOnly)
-        }
+        return AppSettings(start: self.start,
+                           end: self.end,
+                           title: self.title,
+                           weekdaysOnly: self.weekdaysOnly)
     }
     
     /// App control settings
     var appControlSettings: AppControlSettings {
-        get {
-            return AppControlSettings(firstRun: self.firstRun,
-                                      showBadge: self.showBadge)
-        }
+        return AppControlSettings(firstRun: self.firstRun,
+                                  showBadge: self.showBadge)
     }
     
     // MARK: - Data updating methods

@@ -41,6 +41,8 @@ class SettingsViewHostingController<Content: View>: UIHostingController<Content>
                                     title: appSettings.title,
                                     weekdaysOnly: appSettings.weekdaysOnly,
                                     showBadge: dataManager.appControlSettings.showBadge)
+        
+        // swiftlint:disable:next force_cast
         super.init(rootView: rootView as! Content)
         
         self.viewModel.delegate = self
@@ -48,7 +50,7 @@ class SettingsViewHostingController<Content: View>: UIHostingController<Content>
     
     /// Required initialiser for view controllers - should not be used
     /// - Parameter aDecoder: Coder
-    @objc required dynamic init?(coder aDecoder: NSCoder) {
+    @objc dynamic required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
