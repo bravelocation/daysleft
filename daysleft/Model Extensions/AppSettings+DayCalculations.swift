@@ -12,9 +12,7 @@ extension AppSettings {
     
     /// Property to get the number of days between the start and the end
     var daysLength: Int {
-        get {
-            return Date.daysDifference(self.start, endDate: self.end, weekdaysOnly: self.weekdaysOnly) + 1 // Inclusive so add one
-        }
+        return Date.daysDifference(self.start, endDate: self.end, weekdaysOnly: self.weekdaysOnly) + 1 // Inclusive so add one
     }
     
     /// Finds the number of days to the end of the period from the current date

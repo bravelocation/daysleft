@@ -16,9 +16,7 @@ class InMemoryDataProvider: DataProviderProtocol {
     
     /// Shared static instance of the class, to make it easy to access across the app
     class var shared: InMemoryDataProvider {
-        get {
-            return sharedInstance
-        }
+        return sharedInstance
     }
     
     /// Initialiser

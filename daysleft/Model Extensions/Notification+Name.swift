@@ -18,14 +18,12 @@ import WatchKit
 
 extension Notification.Name {
     static var WillEnterForegroundNotification: Notification.Name {
-        get {
-            #if os(iOS)
-                return UIApplication.willEnterForegroundNotification
-            #endif
-            #if os(watchOS)
-                return WKExtension.applicationWillEnterForegroundNotification
-            #endif
-        }
+        #if os(iOS)
+            return UIApplication.willEnterForegroundNotification
+        #endif
+        #if os(watchOS)
+            return WKExtension.applicationWillEnterForegroundNotification
+        #endif
     }
     
     /// Name of the notification sent when app settings are updated
