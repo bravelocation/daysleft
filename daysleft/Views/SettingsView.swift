@@ -112,6 +112,7 @@ struct SettingsView: View {
                                  url: "https://bravelocation.com")
             }
         }
+        .frame(maxWidth: 800)
     }
 }
 

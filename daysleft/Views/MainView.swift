@@ -51,6 +51,7 @@ struct MainView: View {
             
             Spacer()
         }
+        .frame(maxWidth: 800)
         .background(Color(uiColor: UIColor.systemBackground))
         .padding()
         .onAppear() {
