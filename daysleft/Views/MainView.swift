@@ -54,7 +54,7 @@ struct MainView: View {
         .frame(maxWidth: 800)
         .background(Color(uiColor: UIColor.systemBackground))
         .padding()
-        .onAppear() {
+        .onAppear {
             self.model.updateViewData()
         }
         .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
