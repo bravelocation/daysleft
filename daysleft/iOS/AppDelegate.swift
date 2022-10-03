@@ -191,7 +191,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
             return
         }
         
-        UNUserNotificationCenter.current().getNotificationSettings() {settings in
+        UNUserNotificationCenter.current().getNotificationSettings {settings in
             if settings.badgeSetting == .enabled {
                 DispatchQueue.main.async {
                     let now: Date = Date()
@@ -204,7 +204,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     
     /// Clear the badge number if required
     func clearBadge() {
-        UNUserNotificationCenter.current().getNotificationSettings() {settings in
+        UNUserNotificationCenter.current().getNotificationSettings {settings in
             if settings.badgeSetting == .enabled {
                 DispatchQueue.main.async {
                     UIApplication.shared.applicationIconBadgeNumber = 0
