@@ -9,6 +9,8 @@
 import SwiftUI
 import WidgetKit
 
+#if !targetEnvironment(macCatalyst)
+
 /// Accessory inline view
 @available(iOSApplicationExtension 16.0, *)
 struct AccessoryInlineView: View {
@@ -31,3 +33,5 @@ struct AccessoryInlineView_Previews: PreviewProvider {
             .previewContext(WidgetPreviewContext(family: .accessoryInline))
     }
 }
+
+#endif

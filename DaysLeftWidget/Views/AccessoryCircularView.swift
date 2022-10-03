@@ -9,6 +9,8 @@
 import SwiftUI
 import WidgetKit
 
+#if !targetEnvironment(macCatalyst)
+
 /// Accessory Circular View
 @available(iOSApplicationExtension 16.0, *)
 struct AccessoryCircularView: View {
@@ -61,3 +63,5 @@ struct AccessoryCircularView_Previews: PreviewProvider {
             .previewContext(WidgetPreviewContext(family: .accessoryCircular))
     }
 }
+
+#endif

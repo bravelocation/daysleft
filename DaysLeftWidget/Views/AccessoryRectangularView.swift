@@ -9,6 +9,8 @@
 import SwiftUI
 import WidgetKit
 
+#if !targetEnvironment(macCatalyst)
+
 /// Accessory rectangular view
 @available(iOSApplicationExtension 16.0, *)
 struct AccessoryRectangularView: View {
@@ -43,3 +45,4 @@ struct AccessoryRectangularView_Previews: PreviewProvider {
             .previewContext(WidgetPreviewContext(family: .accessoryRectangular))
     }
 }
+#endif
