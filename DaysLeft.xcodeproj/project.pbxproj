@@ -121,7 +121,7 @@
 		52DC5AD428DB43CE00AFF24D /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DC5AD328DB43CE00AFF24D /* SettingsView.swift */; };
 		52DC9EB31FC97A3200AE02F6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52DC9EB21FC97A3200AE02F6 /* GoogleService-Info.plist */; };
 		52DC9EB51FC97A9200AE02F6 /* FirebaseNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DC9EB41FC97A9200AE02F6 /* FirebaseNotifications.swift */; };
-		52E048A225077AFB009A2169 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52E048A125077AFB009A2169 /* WidgetKit.framework */; platformFilter = ios; };
+		52E048A225077AFB009A2169 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52E048A125077AFB009A2169 /* WidgetKit.framework */; };
 		52E048A425077AFB009A2169 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52E048A325077AFB009A2169 /* SwiftUI.framework */; };
 		52E048A725077AFB009A2169 /* DaysLeftWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E048A625077AFB009A2169 /* DaysLeftWidget.swift */; };
 		52E048AD25077AFE009A2169 /* DaysLeft Widget Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 52E048A025077AFB009A2169 /* DaysLeft Widget Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
