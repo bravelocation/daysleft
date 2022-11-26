@@ -14,4 +14,4 @@ jobs:
           TODOIST_PROJECT_ID: ${{ secrets.TODOIST_PROJECT_ID }}
           ISSUE_TITLE: ${{ github.event.issue.title }}
         run: |
-          curl "https://api.todoist.com/rest/v1/tasks" -X POST --data '{"content": "'"$ISSUE_TITLE"'", "label_ids": ['$TODOIST_LABEL_ID'], "project_id": '$TODOIST_PROJECT_ID', "due_string": "Today"}' -H "Content-Type: application/json" -H "Authorization: Bearer $TODOIST_TOKEN"
+          curl "https://api.todoist.com/rest/v2/tasks" -X POST --data '{"content": "'"$ISSUE_TITLE"'", "label_ids": ['$TODOIST_LABEL_ID'], "project_id": '$TODOIST_PROJECT_ID', "due_string": "Today"}' -H "Content-Type: application/json" -H "Authorization: Bearer $TODOIST_TOKEN"
