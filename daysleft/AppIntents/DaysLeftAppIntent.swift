@@ -27,7 +27,7 @@ struct DaysLeftAppIntent: AppIntent, CustomIntentMigratedAppIntent {
     
     /// Handler to perform the intent
     /// - Returns: The intent will return a visual snippet, plus the number of days left as a result
-    func perform() async throws -> some IntentResult & ShowsSnippetView {
+    func perform() async throws -> some IntentResult & ShowsSnippetView & ProvidesDialog & ReturnsValue<Int> {
         let dataManager = AppSettingsDataManager()
         let appSettings = dataManager.appSettings
         
