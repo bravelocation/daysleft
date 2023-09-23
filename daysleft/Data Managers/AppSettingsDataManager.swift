@@ -16,9 +16,6 @@ class AppSettingsDataManager {
     /// Data provider
     private let dataProvider: DataProviderProtocol
     
-    /// Is this the current first run (integer not boolean for legacy reasons)
-    let currentFirstRun: Int = 1
-    
     // MARK: - Initialisation functions
     
     /// Default initialiser for the class
@@ -27,20 +24,11 @@ class AppSettingsDataManager {
 
         self.dataProvider = dataProvider
         
-        // Setup some of the settings if first run of the app
-        if self.firstRun < self.currentFirstRun {
-            // If it is first run, initialise the model data to Christmas
-            self.start = Date().startOfDay
-            self.end = Date.nextXmas()
-            self.title = "Christmas"
-            self.weekdaysOnly = false
-            
-            // Save the first run once working
-            self.firstRun = self.currentFirstRun
-        }
-        
         // Synchronise the data provider to try to get the latest data
         self.dataProvider.synchronise()
+        
+        // Save the first run once working
+        self.firstRun = 1
     }
     
     // MARK: - Settings values
@@ -95,19 +83,19 @@ class AppSettingsDataManager {
     
     /// Property to get and set the start date
     private var start: Date {
-        get { return self.dataProvider.readObjectFromStore("start", defaultValue: Date()) }
+        get { return self.dataProvider.readObjectFromStore("start", defaultValue: Date().startOfDay) }
         set { self.dataProvider.writeObjectToStore(newValue.startOfDay, key: "start") }
     }
     
     /// Property to get and set the end date
     private var end: Date {
-        get { return self.dataProvider.readObjectFromStore("end", defaultValue: Date()) }
+        get { return self.dataProvider.readObjectFromStore("end", defaultValue: Date.nextXmas()) }
         set { self.dataProvider.writeObjectToStore(newValue.startOfDay, key: "end") }
     }
 
     /// Property to get and set the title
     private var title: String {
-        get { return self.dataProvider.readObjectFromStore("title", defaultValue: "") }
+        get { return self.dataProvider.readObjectFromStore("title", defaultValue: "Christmas") }
         set { self.dataProvider.writeObjectToStore(newValue, key: "title") }
     }
 
