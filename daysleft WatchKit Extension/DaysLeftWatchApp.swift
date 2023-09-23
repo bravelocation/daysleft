@@ -13,7 +13,7 @@ import WatchKit
 @main struct DaysLeftWatchApp: App {
     
     /// Reference to extension delegate
-    @WKExtensionDelegateAdaptor(ExtensionDelegate.self) var delegate
+    @WKApplicationDelegateAdaptor(ExtensionDelegate.self) var delegate
     
     /// Body of app
     var body: some Scene {

@@ -12,7 +12,7 @@ import ClockKit
 import WidgetKit
 
 /// Watch app extension delegate
-class ExtensionDelegate: NSObject, WKExtensionDelegate {
+class ExtensionDelegate: NSObject, WKApplicationDelegate {
     
     /// Data manager
     private var dataManager: AppSettingsDataManager
