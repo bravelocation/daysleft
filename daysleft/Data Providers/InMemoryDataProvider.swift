@@ -8,7 +8,7 @@
 
 import Foundation
 
-/// Class that provides simple in-memory data - used soley for previews and unit tests
+/// Class that provides simple in-memory data - used solely for previews and unit tests
 class InMemoryDataProvider: DataProviderProtocol {
     
     /// Static instance of the class
