@@ -26,9 +26,6 @@ class AppSettingsDataManager {
         
         // Synchronise the data provider to try to get the latest data
         self.dataProvider.synchronise()
-        
-        // Save the first run once working
-        self.firstRun = 1
     }
     
     // MARK: - Settings values
@@ -43,8 +40,7 @@ class AppSettingsDataManager {
     
     /// App control settings
     var appControlSettings: AppControlSettings {
-        return AppControlSettings(firstRun: self.firstRun,
-                                  showBadge: self.showBadge)
+        return AppControlSettings(showBadge: self.showBadge)
     }
     
     // MARK: - Data updating methods
@@ -103,12 +99,6 @@ class AppSettingsDataManager {
     private var weekdaysOnly: Bool {
         get { return self.dataProvider.readObjectFromStore("weekdaysOnly", defaultValue: false) }
         set { self.dataProvider.writeObjectToStore(newValue, key: "weekdaysOnly") }
-    }
-    
-    /// Property to get and set the firstRun value
-    private var firstRun: Int {
-        get { return self.dataProvider.readObjectFromStore("firstRun", defaultValue: 0) }
-        set { self.dataProvider.writeObjectToStore(newValue, key: "firstRun") }
     }
     
     /// Property to get and set the show badge flag

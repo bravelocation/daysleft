@@ -26,7 +26,6 @@ class InMemoryDataProvider: DataProviderProtocol {
         self.settingsCache["end"] = Date.nextXmas()
         self.settingsCache["title"] = "Christmas"
         self.settingsCache["weekdaysOnly"] = false
-        self.settingsCache["firstRun"] = 1
         self.settingsCache["showBadge"] = false
     }
     
