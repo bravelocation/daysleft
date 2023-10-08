@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		523443631BBAFBEF00E95BA4 /* DaysLeft WatchKit Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 52B7E8771ABEDE9300E1949C /* DaysLeft WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		523443661BBAFBEF00E95BA4 /* DaysLeft WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 52B7E8811ABEDE9300E1949C /* DaysLeft WatchKit App.app */; platformFilter = ios; };
 		5234436D1BBB181C00E95BA4 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5234436C1BBB181C00E95BA4 /* ExtensionDelegate.swift */; };
 		5234FD9F28E2021D0003515F /* DisplayValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5234FD9E28E2021D0003515F /* DisplayValues.swift */; };
@@ -152,12 +151,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		523443611BBAFBEF00E95BA4 /* PBXContainerItemProxy */ = {
+		5211F3342AD2A8020009E1F9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 52CFBEF01A8B631B005234FB /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 52B7E8761ABEDE9300E1949C;
-			remoteInfo = "daysleft WatchKit Extension";
+			remoteGlobalIDString = 52A70D5C28DC98E100DCE9CB;
+			remoteInfo = "DaysLeft WatchKit Widget Extension";
 		};
 		523443641BBAFBEF00E95BA4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -172,13 +171,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 52CFBEF71A8B631B005234FB;
 			remoteInfo = daysleft;
-		};
-		52A70D6628DC98E300DCE9CB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 52CFBEF01A8B631B005234FB /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 52A70D5C28DC98E100DCE9CB;
-			remoteInfo = "DaysLeft WatchKit WidgetExtension";
 		};
 		52E048AB25077AFE009A2169 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -197,17 +189,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		523443671BBAFBEF00E95BA4 /* Embed Foundation Extensions */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 13;
-			files = (
-				523443631BBAFBEF00E95BA4 /* DaysLeft WatchKit Extension.appex in Embed Foundation Extensions */,
-			);
-			name = "Embed Foundation Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		523443681BBAFBEF00E95BA4 /* Embed Watch Content */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -277,7 +258,6 @@
 		52B78DF31D982A6E00AB629D /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
 		52B78E091D98388D00AB629D /* WatchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchKit.framework; path = System/Library/Frameworks/WatchKit.framework; sourceTree = SDKROOT; };
 		52B78E0B1D9838B800AB629D /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = System/Library/Frameworks/WatchConnectivity.framework; sourceTree = SDKROOT; };
-		52B7E8771ABEDE9300E1949C /* DaysLeft WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "DaysLeft WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52B7E87A1ABEDE9300E1949C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52B7E8811ABEDE9300E1949C /* DaysLeft WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DaysLeft WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52B7E8871ABEDE9300E1949C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -350,13 +330,6 @@
 			files = (
 				52A70D5F28DC98E100DCE9CB /* SwiftUI.framework in Frameworks */,
 				52A70D5E28DC98E100DCE9CB /* WidgetKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		52B7E8741ABEDE9300E1949C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -630,7 +603,6 @@
 			children = (
 				52CFBEF81A8B631B005234FB /* DaysLeft.app */,
 				5295EDDA1A94AE53007EF7E7 /* DaysLeftTests.xctest */,
-				52B7E8771ABEDE9300E1949C /* DaysLeft WatchKit Extension.appex */,
 				52B7E8811ABEDE9300E1949C /* DaysLeft WatchKit App.app */,
 				52E048A025077AFB009A2169 /* DaysLeft Widget Extension.appex */,
 				52A70D5D28DC98E100DCE9CB /* DaysLeft WatchKit Widget Extension.appex */,
@@ -716,42 +688,24 @@
 			productReference = 52A70D5D28DC98E100DCE9CB /* DaysLeft WatchKit Widget Extension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
-		52B7E8761ABEDE9300E1949C /* DaysLeft WatchKit Extension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 52B7E8951ABEDE9300E1949C /* Build configuration list for PBXNativeTarget "DaysLeft WatchKit Extension" */;
-			buildPhases = (
-				52B7E8731ABEDE9300E1949C /* Sources */,
-				52B7E8741ABEDE9300E1949C /* Frameworks */,
-				52B7E8751ABEDE9300E1949C /* Resources */,
-				52A70D6C28DC98E300DCE9CB /* Embed Foundation Extensions */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				52A70D6728DC98E300DCE9CB /* PBXTargetDependency */,
-			);
-			name = "DaysLeft WatchKit Extension";
-			productName = "daysleft WatchKit Extension";
-			productReference = 52B7E8771ABEDE9300E1949C /* DaysLeft WatchKit Extension.appex */;
-			productType = "com.apple.product-type.watchkit2-extension";
-		};
 		52B7E8801ABEDE9300E1949C /* DaysLeft WatchKit App */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 52B7E8941ABEDE9300E1949C /* Build configuration list for PBXNativeTarget "DaysLeft WatchKit App" */;
 			buildPhases = (
 				52B7E87F1ABEDE9300E1949C /* Resources */,
-				523443671BBAFBEF00E95BA4 /* Embed Foundation Extensions */,
 				20118CCB11B59DAA0A7CA7B7 /* Frameworks */,
+				52B7E8731ABEDE9300E1949C /* Sources */,
+				52A70D6C28DC98E300DCE9CB /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				523443621BBAFBEF00E95BA4 /* PBXTargetDependency */,
+				5211F3352AD2A8020009E1F9 /* PBXTargetDependency */,
 			);
 			name = "DaysLeft WatchKit App";
 			productName = "daysleft WatchKit App";
 			productReference = 52B7E8811ABEDE9300E1949C /* DaysLeft WatchKit App.app */;
-			productType = "com.apple.product-type.application.watchapp2";
+			productType = "com.apple.product-type.application";
 		};
 		52CFBEF71A8B631B005234FB /* DaysLeft */ = {
 			isa = PBXNativeTarget;
@@ -822,8 +776,9 @@
 		52CFBEF01A8B631B005234FB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1400;
-				LastUpgradeCheck = 1400;
+				LastUpgradeCheck = 1500;
 				ORGANIZATIONNAME = "Brave Location Software";
 				TargetAttributes = {
 					5295EDD91A94AE53007EF7E7 = {
@@ -834,18 +789,6 @@
 					};
 					52A70D5C28DC98E100DCE9CB = {
 						CreatedOnToolsVersion = 14.0;
-					};
-					52B7E8761ABEDE9300E1949C = {
-						CreatedOnToolsVersion = 6.2;
-						LastSwiftMigration = 1020;
-						SystemCapabilities = {
-							com.apple.ApplicationGroups.iOS = {
-								enabled = 1;
-							};
-							com.apple.iCloud = {
-								enabled = 1;
-							};
-						};
 					};
 					52B7E8801ABEDE9300E1949C = {
 						CreatedOnToolsVersion = 6.2;
@@ -910,7 +853,6 @@
 				52CFBEF71A8B631B005234FB /* DaysLeft */,
 				5295EDD91A94AE53007EF7E7 /* DaysLeftTests */,
 				52E0489F25077AFB009A2169 /* DaysLeft Widget Extension */,
-				52B7E8761ABEDE9300E1949C /* DaysLeft WatchKit Extension */,
 				52B7E8801ABEDE9300E1949C /* DaysLeft WatchKit App */,
 				52A70D5C28DC98E100DCE9CB /* DaysLeft WatchKit Widget Extension */,
 				52F3B3CD28E58E8400A13120 /* UI Tests */,
@@ -931,23 +873,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		52B7E8751ABEDE9300E1949C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5234FDB628E337500003515F /* Media.xcassets in Resources */,
-				5234FDB428E2F9B60003515F /* Localizable.stringsdict in Resources */,
-				5234FDBA28E3377E0003515F /* Colors.xcassets in Resources */,
-				5234FDAF28E2F6B20003515F /* Localizable.strings in Resources */,
-				52F3B3E428E6E28900A13120 /* DefaultPreferences.plist in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		52B7E87F1ABEDE9300E1949C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5234FDAF28E2F6B20003515F /* Localizable.strings in Resources */,
+				5234FDB628E337500003515F /* Media.xcassets in Resources */,
+				5234FDBA28E3377E0003515F /* Colors.xcassets in Resources */,
 				5234FDBC28E34B710003515F /* Media.xcassets in Resources */,
+				5234FDB428E2F9B60003515F /* Localizable.stringsdict in Resources */,
+				52F3B3E428E6E28900A13120 /* DefaultPreferences.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1181,10 +1116,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		523443621BBAFBEF00E95BA4 /* PBXTargetDependency */ = {
+		5211F3352AD2A8020009E1F9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 52B7E8761ABEDE9300E1949C /* DaysLeft WatchKit Extension */;
-			targetProxy = 523443611BBAFBEF00E95BA4 /* PBXContainerItemProxy */;
+			target = 52A70D5C28DC98E100DCE9CB /* DaysLeft WatchKit Widget Extension */;
+			targetProxy = 5211F3342AD2A8020009E1F9 /* PBXContainerItemProxy */;
 		};
 		523443651BBAFBEF00E95BA4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1196,11 +1131,6 @@
 			isa = PBXTargetDependency;
 			target = 52CFBEF71A8B631B005234FB /* DaysLeft */;
 			targetProxy = 5295EDDE1A94AE53007EF7E7 /* PBXContainerItemProxy */;
-		};
-		52A70D6728DC98E300DCE9CB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 52A70D5C28DC98E100DCE9CB /* DaysLeft WatchKit Widget Extension */;
-			targetProxy = 52A70D6628DC98E300DCE9CB /* PBXContainerItemProxy */;
 		};
 		52E048AC25077AFE009A2169 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1221,6 +1151,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = W8B3V597R9;
 				ENABLE_BITCODE = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -1246,6 +1177,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = W8B3V597R9;
 				ENABLE_BITCODE = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				INFOPLIST_FILE = "Unit Tests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1279,6 +1211,7 @@
 				CURRENT_PROJECT_VERSION = 442;
 				DEPLOYMENT_POSTPROCESSING = YES;
 				DEVELOPMENT_TEAM = W8B3V597R9;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = "DaysLeft WatchKit Widget/Info.plist";
@@ -1293,7 +1226,7 @@
 				MARKETING_VERSION = 1.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.bravelocation.daysleft.watchkitapp.watchkitextension.DaysLeft-WatchKit-Widget";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bravelocation.daysleft.watchkitapp.DaysLeft-WatchKit-Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1324,6 +1257,7 @@
 				CURRENT_PROJECT_VERSION = 442;
 				DEPLOYMENT_POSTPROCESSING = YES;
 				DEVELOPMENT_TEAM = W8B3V597R9;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = "DaysLeft WatchKit Widget/Info.plist";
@@ -1337,7 +1271,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.bravelocation.daysleft.watchkitapp.watchkitextension.DaysLeft-WatchKit-Widget";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bravelocation.daysleft.watchkitapp.DaysLeft-WatchKit-Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1349,81 +1283,27 @@
 			};
 			name = Release;
 		};
-		52B7E8901ABEDE9300E1949C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = "daysleft WatchKit Extension/daysleft WatchKit Extension.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEPLOYMENT_POSTPROCESSING = YES;
-				DEVELOPMENT_TEAM = W8B3V597R9;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "daysleft WatchKit Extension/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.bravelocation.daysleft.watchkitapp.watchkitextension;
-				PRODUCT_NAME = "${TARGET_NAME}";
-				PROVISIONING_PROFILE = "";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				STRIPFLAGS = "-rSTx";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 9.0;
-			};
-			name = Debug;
-		};
-		52B7E8911ABEDE9300E1949C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = "daysleft WatchKit Extension/daysleft WatchKit Extension.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEPLOYMENT_POSTPROCESSING = YES;
-				DEVELOPMENT_TEAM = W8B3V597R9;
-				INFOPLIST_FILE = "daysleft WatchKit Extension/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.bravelocation.daysleft.watchkitapp.watchkitextension;
-				PRODUCT_NAME = "${TARGET_NAME}";
-				PROVISIONING_PROFILE = "";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				STRIPFLAGS = "-rSTx";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 9.0;
-			};
-			name = Release;
-		};
 		52B7E8921ABEDE9300E1949C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
-				CODE_SIGN_ENTITLEMENTS = "daysleft WatchKit App/daysleft WatchKit App.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "daysleft WatchKit Extension/daysleft WatchKit Extension.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEPLOYMENT_POSTPROCESSING = YES;
 				DEVELOPMENT_TEAM = W8B3V597R9;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				IBSC_MODULE = daysleft_WatchKit_Extension;
 				INFOPLIST_FILE = "daysleft WatchKit App/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.bravelocation.daysleft.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -1431,7 +1311,7 @@
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				STRIPFLAGS = "-rSTx";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 9.0;
 			};
@@ -1442,14 +1322,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
-				CODE_SIGN_ENTITLEMENTS = "daysleft WatchKit App/daysleft WatchKit App.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "daysleft WatchKit Extension/daysleft WatchKit Extension.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEPLOYMENT_POSTPROCESSING = YES;
 				DEVELOPMENT_TEAM = W8B3V597R9;
-				IBSC_MODULE = daysleft_WatchKit_Extension;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				INFOPLIST_FILE = "daysleft WatchKit App/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.bravelocation.daysleft.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -1457,7 +1341,7 @@
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				STRIPFLAGS = "-rSTx";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 9.0;
 			};
@@ -1496,8 +1380,10 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
+				ENABLE_MODULE_VERIFIER = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -1514,6 +1400,8 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu99 gnu++11";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-Wl,-no_warn_duplicate_libraries";
@@ -1560,8 +1448,10 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
+				ENABLE_MODULE_VERIFIER = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -1571,6 +1461,8 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu99 gnu++11";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "-Wl,-no_warn_duplicate_libraries";
 				SDKROOT = iphoneos;
@@ -1600,6 +1492,8 @@
 				DOCC_EXTRACT_OBJC_INFO_FOR_SWIFT_SYMBOLS = NO;
 				DOCC_HOSTING_BASE_PATH = "";
 				ENABLE_BITCODE = NO;
+				ENABLE_MODULE_VERIFIER = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1612,6 +1506,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu99 gnu++11";
 				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bravelocation.daysleft;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1644,6 +1540,8 @@
 				DOCC_EXTRACT_OBJC_INFO_FOR_SWIFT_SYMBOLS = NO;
 				DOCC_HOSTING_BASE_PATH = "";
 				ENABLE_BITCODE = NO;
+				ENABLE_MODULE_VERIFIER = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1656,6 +1554,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu99 gnu++11";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bravelocation.daysleft;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -1688,6 +1588,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEPLOYMENT_POSTPROCESSING = YES;
 				DEVELOPMENT_TEAM = W8B3V597R9;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = DaysLeftWidget/Assets/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -1726,6 +1627,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEPLOYMENT_POSTPROCESSING = YES;
 				DEVELOPMENT_TEAM = W8B3V597R9;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = DaysLeftWidget/Assets/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -1756,6 +1658,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 442;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = W8B3V597R9;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1787,6 +1690,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 442;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = W8B3V597R9;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1831,15 +1735,6 @@
 			buildConfigurations = (
 				52B7E8921ABEDE9300E1949C /* Debug */,
 				52B7E8931ABEDE9300E1949C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		52B7E8951ABEDE9300E1949C /* Build configuration list for PBXNativeTarget "DaysLeft WatchKit Extension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				52B7E8901ABEDE9300E1949C /* Debug */,
-				52B7E8911ABEDE9300E1949C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

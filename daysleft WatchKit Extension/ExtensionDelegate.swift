@@ -111,7 +111,7 @@ class ExtensionDelegate: NSObject, WKApplicationDelegate {
         // Setup a background refresh for two hours time
         let twoHoursTime = Date().addingTimeInterval(2*60*60)
         
-        WKExtension.shared().scheduleBackgroundRefresh(withPreferredDate: twoHoursTime,
+        WKApplication.shared().scheduleBackgroundRefresh(withPreferredDate: twoHoursTime,
                                                        userInfo: nil,
                                                        scheduledCompletion: { (error: Error?) in
             if let error = error {
