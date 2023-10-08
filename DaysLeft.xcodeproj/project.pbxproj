@@ -995,6 +995,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
+				"${PROJECT_DIR}/swiftlint.yml",
 			);
 			name = "Swift Lint";
 			outputFileListPaths = (
@@ -1003,7 +1004,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
-			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\n\nif which swiftlint >/dev/null; then\n  swiftlint --config ./swiftlint.yml .\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\n\nif which swiftlint >/dev/null; then\n  swiftlint --config \"${PROJECT_DIR}/swiftlint.yml\"\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 		52FC401227AA97EE005DAD8C /* Upload dSYM files to Crashlytics */ = {
 			isa = PBXShellScriptBuildPhase;
