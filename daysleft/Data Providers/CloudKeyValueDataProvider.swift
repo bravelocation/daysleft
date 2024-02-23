@@ -7,9 +7,13 @@
 //
 
 import Foundation
+import OSLog
 
 /// Class that provides access to the iCloud key-value data
 class CloudKeyValueDataProvider: DataProviderProtocol {
+    
+    /// Logger
+    private let logger = Logger(subsystem: "com.bravelocation.daysleft", category: "CloudKeyValueDataProvider")
     
     // MARK: - Properties
     
@@ -38,12 +42,12 @@ class CloudKeyValueDataProvider: DataProviderProtocol {
 
         // Setup the default preferences
         guard let defaultPrefsFile = Bundle.main.url(forResource: defaultPreferencesName, withExtension: "plist") else {
-            print("Can't find default preferences plist")
+            self.logger.info("Can't find default preferences plist")
             return
         }
         
         guard let defaultPrefs = NSDictionary(contentsOf: defaultPrefsFile) as? [String: Any] else {
-            print("Can't load default preferences plist")
+            self.logger.info("Can't load default preferences plist")
             return
         }
         
@@ -79,7 +83,7 @@ class CloudKeyValueDataProvider: DataProviderProtocol {
             settings.set(value, forKey: key)
             settings.synchronize()
         } else {
-            print("Couldn't get settings defaults")
+            self.logger.debug("Couldn't get settings defaults")
         }
         
         // The write to iCloud store (if needed)
@@ -99,7 +103,7 @@ class CloudKeyValueDataProvider: DataProviderProtocol {
     
     /// Initialises the listeners to key-value store changes
     private func initialiseiCloudSettings() {
-        print("Initialising iCloud Settings")
+        self.logger.debug("Initialising iCloud Settings")
         let store: NSUbiquitousKeyValueStore = NSUbiquitousKeyValueStore.default
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(CloudKeyValueDataProvider.updateKVStoreItems(_:)),
@@ -122,7 +126,7 @@ class CloudKeyValueDataProvider: DataProviderProtocol {
     /// - Parameter notification: The incoming notification
     @objc
     private func updateKVStoreItems(_ notification: Notification) {
-        print("Detected iCloud key-value storage change")
+        self.logger.debug("Detected iCloud key-value storage change")
         
         // Assuming we have a valid reason for the change
         if let downcastedReason = notification.userInfo?[NSUbiquitousKeyValueStoreChangeReasonKey] as? NSNumber {
@@ -133,7 +137,7 @@ class CloudKeyValueDataProvider: DataProviderProtocol {
                 
                 // If something is changing externally, get the changes and update the corresponding keys locally.
                 guard let changedKeys = notification.userInfo?[NSUbiquitousKeyValueStoreChangedKeysKey] as? [String] else {
-                    print("No changed keys")
+                    self.logger.debug("No changed keys")
                     return
                 }
                 
@@ -150,10 +154,10 @@ class CloudKeyValueDataProvider: DataProviderProtocol {
                 
                 // Finally send a notification for the view controllers to refresh
                 NotificationCenter.default.post(name: .AppSettingsUpdated, object: nil)
-                print("Sent notification for iCloud change")
+                self.logger.debug("Sent notification for iCloud change")
             }
         } else {
-            print("Unknown iCloud KV reason for change")
+            self.logger.debug("Unknown iCloud KV reason for change")
         }
     }
 }

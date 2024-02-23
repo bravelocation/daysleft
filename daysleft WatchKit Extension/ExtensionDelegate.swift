@@ -10,9 +10,13 @@ import WatchKit
 import Combine
 import ClockKit
 import WidgetKit
+import OSLog
 
 /// Watch app extension delegate
 class ExtensionDelegate: NSObject, WKApplicationDelegate {
+    
+    /// Logger
+    private let logger = Logger(subsystem: "com.bravelocation.daysleft", category: "ExtensionDelegate")
     
     /// Data manager
     private var dataManager: AppSettingsDataManager
@@ -55,7 +59,7 @@ class ExtensionDelegate: NSObject, WKApplicationDelegate {
     
     /// Delegate when watch becomes active
     func applicationDidBecomeActive() {
-        print("applicationDidBecomeActive started")
+        self.logger.debug("applicationDidBecomeActive started")
         
         // Setup connection with the phone app
         self.watchConnectivityManager.setupConnection()
@@ -69,13 +73,13 @@ class ExtensionDelegate: NSObject, WKApplicationDelegate {
         // Update complications
         self.updateComplications()
         
-        print("applicationDidBecomeActive completed")
+        self.logger.debug("applicationDidBecomeActive completed")
     }
     
     /// Handelr for background tasks running
     /// - Parameter backgroundTasks: Set of background tasks scheduled
     func handle(_ backgroundTasks: Set<WKRefreshBackgroundTask>) {
-        print("Handling background task started")
+        self.logger.debug("Handling background task started")
 
         // Mark tasks as completed
         for task in backgroundTasks {
@@ -100,7 +104,7 @@ class ExtensionDelegate: NSObject, WKApplicationDelegate {
     
     /// Event handler when iCloud key-value settings have changed
     @objc fileprivate func iCloudSettingsUpdated() {
-        print("Received iCloudSettingsUpdated notification")
+        self.logger.debug("Received iCloudSettingsUpdated notification")
         
         // Update complications
         self.updateComplications()
@@ -115,11 +119,11 @@ class ExtensionDelegate: NSObject, WKApplicationDelegate {
                                                        userInfo: nil,
                                                        scheduledCompletion: { (error: Error?) in
             if let error = error {
-                print("Error occurred while scheduling background refresh: \(error.localizedDescription)")
+                self.logger.debug("Error occurred while scheduling background refresh: \(error.localizedDescription)")
             }
         })
         
-        print("Setup background task for \(twoHoursTime)")
+        self.logger.debug("Setup background task for \(twoHoursTime)")
     }
     
     /// Update any added complications
