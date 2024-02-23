@@ -9,6 +9,7 @@
 import Foundation
 import WatchConnectivity
 import WidgetKit
+import OSLog
 
 #if canImport(WatchKit)
 import WatchKit
@@ -17,6 +18,9 @@ import ClockKit
 
 /// Class that manages interactions between the watch and the main app
 class WatchConnectivityManager: NSObject, WCSessionDelegate {
+    
+    /// Logger
+    private let logger = Logger(subsystem: "com.bravelocation.daysleft", category: "WatchConnectivityManager")
     
     /// Analytics values that will be returned from the watch on connection
     public enum AnalyticsValues: String {
@@ -65,7 +69,7 @@ class WatchConnectivityManager: NSObject, WCSessionDelegate {
     ///   - userInfo: User info sent in the message
     func session(_ session: WCSession, didReceiveUserInfo userInfo: [String: Any] = [:]) {
         // If we receive an update message, update the complications
-        print("Updating complications due to receiving userInfo...")
+        self.logger.debug("Updating complications due to receiving userInfo...")
         let complicationServer = CLKComplicationServer.sharedInstance()
         
         if let activeComplications = complicationServer.activeComplications {
@@ -77,7 +81,7 @@ class WatchConnectivityManager: NSObject, WCSessionDelegate {
         // Should we be updating widgets too?
         WidgetCenter.shared.reloadAllTimelines()
         
-        print("Complications updated")
+        self.logger.debug("Complications updated")
     }
     #endif
     
@@ -114,7 +118,7 @@ class WatchConnectivityManager: NSObject, WCSessionDelegate {
         do {
             try WCSession.default.updateApplicationContext(deviceDetails)
         } catch {
-            print("A problem occurred sending the analytics details from the watch")
+            self.logger.debug("A problem occurred sending the analytics details from the watch")
         }
         
     #endif

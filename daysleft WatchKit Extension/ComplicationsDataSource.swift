@@ -9,11 +9,15 @@
 import Foundation
 import WatchKit
 import ClockKit
+import OSLog
 
 // swiftlint:disable type_body_length
 /// Legacy complications data source
 @available(watchOS, deprecated: 9.0, message: "Remove legacy complications data source once people have updated")
 class ComplicationsDataSource: NSObject, CLKComplicationDataSource {
+    
+    /// Logger
+    private let logger = Logger(subsystem: "com.bravelocation.daysleft", category: "ComplicationsDataSource")
     
     /// App settings
     let appSettings = AppSettingsDataManager().appSettings
@@ -27,7 +31,7 @@ class ComplicationsDataSource: NSObject, CLKComplicationDataSource {
         // Update at the start of tomorrow
         let nextUpdate = Date().addDays(1).startOfDay
         
-        print("Setting next extension update to be at \(nextUpdate)")
+        self.logger.debug("Setting next extension update to be at \(nextUpdate)")
         
         handler(nextUpdate)
     }
@@ -138,7 +142,7 @@ class ComplicationsDataSource: NSObject, CLKComplicationDataSource {
     // --- Timeline functions ---
 
     func getTimelineEntries(for complication: CLKComplication, before date: Date, limit: Int, withHandler handler: @escaping ([CLKComplicationTimelineEntry]?) -> Void) {
-        print("Getting timeline: \(limit) before \(date)")
+        self.logger.debug("Getting timeline: \(limit) before \(date)")
 
         var entries: [CLKComplicationTimelineEntry] = []
         
@@ -155,7 +159,7 @@ class ComplicationsDataSource: NSObject, CLKComplicationDataSource {
     }
     
     func getTimelineEntries(for complication: CLKComplication, after date: Date, limit: Int, withHandler handler: @escaping ([CLKComplicationTimelineEntry]?) -> Void) {
-        print("Getting timeline: \(limit) before \(date)")
+        self.logger.debug("Getting timeline: \(limit) before \(date)")
 
         var entries: [CLKComplicationTimelineEntry] = []
         

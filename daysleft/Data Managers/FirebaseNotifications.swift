@@ -9,9 +9,13 @@
 import UIKit
 import Firebase
 import FirebaseMessaging
+import OSLog
 
 /// Class to manage registering for remote notifications via Firebase
 class FirebaseNotifications: NSObject, MessagingDelegate {
+    
+    /// Logger
+    private let logger = Logger(subsystem: "com.bravelocation.daysleft", category: "FirebaseNotifications")
     
     /// Name of the topic the notifications use
     let topicName: String = "dataupdates"
@@ -47,7 +51,7 @@ class FirebaseNotifications: NSObject, MessagingDelegate {
     /// - Parameter deviceToken: Device token
     func register(_ deviceToken: Data) {
         // Register with Firebase Hub
-        print("Remote device token received")
+        self.logger.debug("Remote device token received")
         Messaging.messaging().apnsToken = deviceToken
     }
     
@@ -58,14 +62,14 @@ class FirebaseNotifications: NSObject, MessagingDelegate {
     ///   - messaging: Messaging reference
     ///   - fcmToken: Token received
     func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
-        print("Firebase registration token: \(String(describing: fcmToken))")
+        self.logger.debug("Firebase registration token: \(String(describing: fcmToken))")
         
         if self.enabled {
             Messaging.messaging().subscribe(toTopic: self.topicName)
-            print("Registered with Firebase: \(self.topicName)")
+            self.logger.debug("Registered with Firebase: \(self.topicName)")
         } else {
             Messaging.messaging().unsubscribe(fromTopic: self.topicName)
-            print("Unregistered with firebase \(self.topicName)")
+            self.logger.debug("Unregistered with firebase \(self.topicName)")
         }
     }
 }

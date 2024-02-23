@@ -9,6 +9,7 @@
 import Foundation
 import SwiftUI
 import Combine
+import OSLog
 
 /// Protocol for handlers of view model actions
 protocol ViewModelActionDelegate: AnyObject {
@@ -21,6 +22,9 @@ protocol ViewModelActionDelegate: AnyObject {
 
 /// Main view model for display of days left settings
 class DaysLeftViewModel: ObservableObject {
+    
+    /// Logger
+    private let logger = Logger(subsystem: "com.bravelocation.daysleft", category: "DaysLeftViewModel")
     
     /// Current display values
     @Published var displayValues: DisplayValues
@@ -54,7 +58,7 @@ class DaysLeftViewModel: ObservableObject {
     
     /// Update the view data on initialisation, or on a data update
     func updateViewData() {
-        print("Updating view data...")
+        self.logger.debug("Updating view data...")
         
         // Set the published properties based on the model
         self.displayValues = DisplayValues(appSettings: self.dataManager.appSettings)
@@ -96,7 +100,7 @@ class DaysLeftViewModel: ObservableObject {
     
     /// Event handler for data update
     private func userSettingsUpdated() {
-        print("Received UserSettingsUpdated notification")
+        self.logger.debug("Received UserSettingsUpdated notification")
         
         // Update view data on main thread
         DispatchQueue.main.async {

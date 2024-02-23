@@ -10,9 +10,13 @@ import UIKit
 import Firebase
 import WidgetKit
 import Combine
+import OSLog
 
 /// Application delegate for the app
 @UIApplicationMain class AppDelegate: UIResponder, UIApplicationDelegate {
+    
+    /// Logger
+    private let logger = Logger(subsystem: "com.bravelocation.daysleft", category: "AppDelegate")
 
     // MARK: Class properties
     
@@ -100,8 +104,8 @@ import Combine
     ///   - application: Current application
     ///   - error: Error description
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
-        print("Device token for push notifications: FAIL -- ")
-        print(error.localizedDescription)
+        self.logger.debug("Device token for push notifications: FAIL -- ")
+        self.logger.debug("\(error.localizedDescription)")
     }
     
     /// Delegate method called when restoring a user activity i.e via handoff
@@ -151,7 +155,7 @@ import Combine
     // MARK: - Event handlers
     /// Event handler when iCloud change notifications are received
     @objc fileprivate func iCloudSettingsUpdated() {
-        print("Received iCloudSettingsUpdated notification")
+        self.logger.debug("Received iCloudSettingsUpdated notification")
         
         self.updateExternalInformation()
     }
@@ -166,7 +170,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     ///   - completionHandler: Completion handler called once message has been dealt with
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         // Print message
-        print("Notification received ...")
+        self.logger.debug("Notification received ...")
         
         Messaging.messaging().appDidReceiveMessage(response.notification.request.content.userInfo)
         
@@ -177,7 +181,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     
     /// Register for notifications and badge updates
     func registerForNotifications() {
-        print("Registering notification settings")
+        self.logger.debug("Registering notification settings")
         self.firebaseNotifications?.setupNotifications(true)
         self.updateBadge()
     }
@@ -196,7 +200,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
                 DispatchQueue.main.async {
                     let now: Date = Date()
                     UIApplication.shared.applicationIconBadgeNumber = self.dataManager.appSettings.daysLeft(now)
-                    print("Updated app badge")
+                    self.logger.debug("Updated app badge")
                 }
             }
         }
@@ -208,7 +212,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
             if settings.badgeSetting == .enabled {
                 DispatchQueue.main.async {
                     UIApplication.shared.applicationIconBadgeNumber = 0
-                    print("Cleared app badge")
+                    self.logger.debug("Cleared app badge")
                 }
             }
         }
