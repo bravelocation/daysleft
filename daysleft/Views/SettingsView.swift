@@ -105,11 +105,6 @@ struct SettingsView: View {
                                  iconName: "curlybraces",
                                  title: "See the code on GitHub",
                                  url: "http://github.com/bravelocation/daysleft")
-                
-                SettingsLinkView(model: self.model,
-                                 iconName: "info.circle",
-                                 title: "Bravelocation Software",
-                                 url: "https://bravelocation.com")
             }
         }
         .frame(maxWidth: 800)
