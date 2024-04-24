@@ -33,7 +33,6 @@
 		5234FDB928E3377E0003515F /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5234FDB728E3377E0003515F /* Colors.xcassets */; };
 		5234FDBA28E3377E0003515F /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5234FDB728E3377E0003515F /* Colors.xcassets */; };
 		5234FDBB28E3377E0003515F /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5234FDB728E3377E0003515F /* Colors.xcassets */; };
-		5234FDBC28E34B710003515F /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52CFBF041A8B631B005234FB /* Media.xcassets */; };
 		5234FDBE28E436730003515F /* AnimatedCircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5234FDBD28E436730003515F /* AnimatedCircularProgressView.swift */; };
 		5240F1D028D8C1BC00B95FE5 /* Date+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5240F1CF28D8C1BC00B95FE5 /* Date+Helpers.swift */; };
 		5240F1D128D8C1BC00B95FE5 /* Date+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5240F1CF28D8C1BC00B95FE5 /* Date+Helpers.swift */; };
@@ -85,7 +84,6 @@
 		52A70D8928DCA11900DCE9CB /* ComplicationsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A70D8828DCA11900DCE9CB /* ComplicationsDataSource.swift */; };
 		52BC111B237C461C005EC3F7 /* WatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BC111A237C461C005EC3F7 /* WatchView.swift */; };
 		52C3524C28DCB2EC00D02445 /* DaysLeftWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C3524B28DCB2EC00D02445 /* DaysLeftWatchApp.swift */; };
-		52C595311E952667006C5269 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52C595301E952667006C5269 /* StoreKit.framework */; };
 		52C9A4A128E893D600F7EAF1 /* TextFieldClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C9A4A028E893D600F7EAF1 /* TextFieldClearButton.swift */; };
 		52CBC79A28D9DF1000C89F20 /* CloudKeyValueDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CBC79928D9DF1000C89F20 /* CloudKeyValueDataProvider.swift */; };
 		52CBC79B28D9DF1000C89F20 /* CloudKeyValueDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CBC79928D9DF1000C89F20 /* CloudKeyValueDataProvider.swift */; };
@@ -268,7 +266,6 @@
 		52BC111A237C461C005EC3F7 /* WatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchView.swift; sourceTree = "<group>"; };
 		52BC111E237C4AD0005EC3F7 /* DaysLeftViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysLeftViewModel.swift; sourceTree = "<group>"; };
 		52C3524B28DCB2EC00D02445 /* DaysLeftWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysLeftWatchApp.swift; sourceTree = "<group>"; };
-		52C595301E952667006C5269 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		52C9A4A028E893D600F7EAF1 /* TextFieldClearButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldClearButton.swift; sourceTree = "<group>"; };
 		52CBC79928D9DF1000C89F20 /* CloudKeyValueDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKeyValueDataProvider.swift; sourceTree = "<group>"; };
 		52CBC79F28D9E01700C89F20 /* DataProviderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProviderProtocol.swift; sourceTree = "<group>"; };
@@ -342,7 +339,6 @@
 			files = (
 				529EF6062AF683B500B2AB35 /* FirebaseMessaging in Frameworks */,
 				529EF6042AF683B500B2AB35 /* FirebaseCrashlytics in Frameworks */,
-				52C595311E952667006C5269 /* StoreKit.framework in Frameworks */,
 				529EF6022AF683B500B2AB35 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -517,7 +513,6 @@
 				52AC693D2154DA7E00E6C833 /* IntentsUI.framework */,
 				52B78DF31D982A6E00AB629D /* Messages.framework */,
 				5295EDFA1A94B398007EF7E7 /* NotificationCenter.framework */,
-				52C595301E952667006C5269 /* StoreKit.framework */,
 				52E048A325077AFB009A2169 /* SwiftUI.framework */,
 				52B78E0B1D9838B800AB629D /* WatchConnectivity.framework */,
 				52B78E091D98388D00AB629D /* WatchKit.framework */,
@@ -782,7 +777,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1400;
-				LastUpgradeCheck = 1500;
+				LastUpgradeCheck = 1530;
 				ORGANIZATIONNAME = "Brave Location Software";
 				TargetAttributes = {
 					5295EDD91A94AE53007EF7E7 = {
@@ -885,7 +880,6 @@
 				527FEA432BBE9F8B004BA03E /* PrivacyInfo.xcprivacy in Resources */,
 				5234FDB628E337500003515F /* Media.xcassets in Resources */,
 				5234FDBA28E3377E0003515F /* Colors.xcassets in Resources */,
-				5234FDBC28E34B710003515F /* Media.xcassets in Resources */,
 				5234FDB428E2F9B60003515F /* Localizable.stringsdict in Resources */,
 				52F3B3E428E6E28900A13120 /* DefaultPreferences.plist in Resources */,
 			);
