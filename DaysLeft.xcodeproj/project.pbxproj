@@ -83,6 +83,8 @@
 		52C03E3D2BD94F7F002E33D2 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 52C03E3C2BD94F7F002E33D2 /* FirebaseAnalyticsWithoutAdIdSupport */; };
 		52C03E3F2BD94F7F002E33D2 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 52C03E3E2BD94F7F002E33D2 /* FirebaseCrashlytics */; };
 		52C03E412BD94F7F002E33D2 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 52C03E402BD94F7F002E33D2 /* FirebaseMessaging */; };
+		52C03E422BD95545002E33D2 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 527FEA412BBE9F8B004BA03E /* PrivacyInfo.xcprivacy */; };
+		52C03E432BD95553002E33D2 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 527FEA412BBE9F8B004BA03E /* PrivacyInfo.xcprivacy */; };
 		52C3524C28DCB2EC00D02445 /* DaysLeftWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C3524B28DCB2EC00D02445 /* DaysLeftWatchApp.swift */; };
 		52C9A4A128E893D600F7EAF1 /* TextFieldClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C9A4A028E893D600F7EAF1 /* TextFieldClearButton.swift */; };
 		52CBC79A28D9DF1000C89F20 /* CloudKeyValueDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CBC79928D9DF1000C89F20 /* CloudKeyValueDataProvider.swift */; };
@@ -864,6 +866,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52C03E432BD95553002E33D2 /* PrivacyInfo.xcprivacy in Resources */,
 				52A70D8228DC9E2800DCE9CB /* Media.xcassets in Resources */,
 				5234FDB028E2F6B20003515F /* Localizable.strings in Resources */,
 				5234FDBB28E3377E0003515F /* Colors.xcassets in Resources */,
@@ -903,6 +906,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52C03E422BD95545002E33D2 /* PrivacyInfo.xcprivacy in Resources */,
 				5234FDB928E3377E0003515F /* Colors.xcassets in Resources */,
 				52E048BD2507883A009A2169 /* Media.xcassets in Resources */,
 				5234FDB328E2F9B60003515F /* Localizable.stringsdict in Resources */,
@@ -1208,7 +1212,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 446;
+				CURRENT_PROJECT_VERSION = 447;
 				DEPLOYMENT_POSTPROCESSING = YES;
 				DEVELOPMENT_TEAM = W8B3V597R9;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -1254,7 +1258,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 446;
+				CURRENT_PROJECT_VERSION = 447;
 				DEPLOYMENT_POSTPROCESSING = YES;
 				DEVELOPMENT_TEAM = W8B3V597R9;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -1657,7 +1661,7 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 446;
+				CURRENT_PROJECT_VERSION = 447;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = W8B3V597R9;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -1689,7 +1693,7 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 446;
+				CURRENT_PROJECT_VERSION = 447;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = W8B3V597R9;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
