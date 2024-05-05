@@ -47,7 +47,6 @@
 		5240F1F128D9C25700B95FE5 /* AppControlSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5240F1F028D9C25700B95FE5 /* AppControlSettings.swift */; };
 		5240F1F228D9C25700B95FE5 /* AppControlSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5240F1F028D9C25700B95FE5 /* AppControlSettings.swift */; };
 		5240F1F528D9C25700B95FE5 /* AppControlSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5240F1F028D9C25700B95FE5 /* AppControlSettings.swift */; };
-		525D88F62BE7794400E94D86 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52CFBEFC1A8B631B005234FB /* Info.plist */; };
 		527FEA422BBE9F8B004BA03E /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 527FEA412BBE9F8B004BA03E /* PrivacyInfo.xcprivacy */; };
 		527FEA432BBE9F8B004BA03E /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 527FEA412BBE9F8B004BA03E /* PrivacyInfo.xcprivacy */; };
 		5295EDF01A94AF83007EF7E7 /* DaysLeftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CFBF131A8B631B005234FB /* DaysLeftTests.swift */; };
@@ -894,7 +893,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				525D88F62BE7794400E94D86 /* Info.plist in Resources */,
 				52FAB11C1A9240490039691E /* DefaultPreferences.plist in Resources */,
 				527FEA422BBE9F8B004BA03E /* PrivacyInfo.xcprivacy in Resources */,
 				5234FDAD28E2F6B20003515F /* Localizable.strings in Resources */,
@@ -1224,7 +1222,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEPLOYMENT_POSTPROCESSING = YES;
+				DEPLOYMENT_POSTPROCESSING = NO;
 				DEVELOPMENT_TEAM = W8B3V597R9;
 				DOCC_EXTRACT_OBJC_INFO_FOR_SWIFT_SYMBOLS = NO;
 				DOCC_HOSTING_BASE_PATH = "";
@@ -1506,7 +1504,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
-				DEPLOYMENT_POSTPROCESSING = YES;
+				DEPLOYMENT_POSTPROCESSING = NO;
 				DEVELOPMENT_TEAM = W8B3V597R9;
 				DOCC_EXTRACT_OBJC_INFO_FOR_SWIFT_SYMBOLS = NO;
 				DOCC_HOSTING_BASE_PATH = "";
@@ -2065,7 +2063,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
-				DEPLOYMENT_POSTPROCESSING = YES;
+				DEPLOYMENT_POSTPROCESSING = NO;
 				DEVELOPMENT_TEAM = W8B3V597R9;
 				DOCC_EXTRACT_OBJC_INFO_FOR_SWIFT_SYMBOLS = NO;
 				DOCC_HOSTING_BASE_PATH = "";
@@ -2112,7 +2110,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEPLOYMENT_POSTPROCESSING = YES;
+				DEPLOYMENT_POSTPROCESSING = NO;
 				DEVELOPMENT_TEAM = W8B3V597R9;
 				DOCC_EXTRACT_OBJC_INFO_FOR_SWIFT_SYMBOLS = NO;
 				DOCC_HOSTING_BASE_PATH = "";
