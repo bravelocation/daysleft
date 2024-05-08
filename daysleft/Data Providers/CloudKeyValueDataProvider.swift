@@ -51,7 +51,14 @@ class CloudKeyValueDataProvider: DataProviderProtocol {
             return
         }
         
-        self.appStandardUserDefaults = UserDefaults(suiteName: suiteName)
+        // Don't use the suite on a Mac because of transfer issues on App Store Connect
+        // May remove this if successfully transferred app
+        #if targetEnvironment(macCatalyst)
+            self.appStandardUserDefaults = UserDefaults.standard
+        #else
+            self.appStandardUserDefaults = UserDefaults(suiteName: suiteName)
+        #endif
+        
         self.appStandardUserDefaults?.register(defaults: defaultPrefs)
         
         self.initialiseiCloudSettings()

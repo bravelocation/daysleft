@@ -31,14 +31,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         navController.viewControllers = [mainViewController]
         window.rootViewController = navController
         
-        // Hode toolbar for Mac
-        #if targetEnvironment(macCatalyst)
-        if let titlebar = windowScene.titlebar {
-            titlebar.titleVisibility = .hidden
-            titlebar.toolbar = nil
-        }
-        #endif
-        
         // Set window and make visible
         self.window = window
         window.makeKeyAndVisible()

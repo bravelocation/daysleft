@@ -69,30 +69,48 @@ struct MainView: View {
                     }
                 }
             )
-        .navigationBarTitle(LocalizedStringKey("App Title"))
-        .navigationBarItems(leading:
-                                Button(
-                                    action: {
-                                        self.model.share()
-                                    },
-                                    label: {
-                                        Image(systemName: "square.and.arrow.up")
-                                            .foregroundColor(Color.white)
-                                    })
-                                    .buttonStyle(PlainButtonStyle())
-                                    .accessibilityIdentifier("shareButton"),
-                            trailing: Button(
-                                action: {
-                                    self.model.edit()
-                                },
-                                label: {
-                                    Text(LocalizedStringKey("Toolbar Edit"))
-                                        .foregroundColor(Color.white)
-                                })
-                                .buttonStyle(PlainButtonStyle())
-                                .accessibilityIdentifier("editButton")
-                            
-        )
+        .toolbar {
+            ToolbarItem(placement: .primaryAction) {
+                Button(
+                    action: {
+                        self.model.edit()
+                    },
+                    label: {
+                        Text(LocalizedStringKey("Toolbar Edit"))
+                            .foregroundColor(Color.white)
+                    })
+                    .buttonStyle(PlainButtonStyle())
+                    .accessibilityIdentifier("editButton")
+            }
+            
+            ToolbarItem(placement: self.shareButtonPlacement) {
+                Button(
+                    action: {
+                        self.model.share()
+                    },
+                    label: {
+                        Image(systemName: "square.and.arrow.up")
+                            .foregroundColor(Color.white)
+                    })
+                    .buttonStyle(PlainButtonStyle())
+                    .accessibilityIdentifier("shareButton")
+            }
+            
+            ToolbarItem(placement: .principal) {
+                Text(LocalizedStringKey("App Title"))
+                    .foregroundColor(Color.white)
+            }
+        }
+    }
+    
+    private var shareButtonPlacement: ToolbarItemPlacement {
+//        #if targetEnvironment(macCatalyst)
+//        if #available(macCatalyst 16.0, *) {
+//            return .secondaryAction
+//        }
+//        #endif
+        
+        return .topBarLeading
     }
 }
 
