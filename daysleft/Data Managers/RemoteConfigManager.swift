@@ -43,8 +43,8 @@ class RemoteConfigManager: ObservableObject {
         fetchInitialSettings()
         
         // Setup listener for changes
-        remoteConfig.addOnConfigUpdateListener { configUpdate, error in
-          self.remoteConfig.activate { changed, error in
+        remoteConfig.addOnConfigUpdateListener { _, _ in
+          self.remoteConfig.activate { _, _ in
               self.updateValues()
           }
         }
@@ -64,7 +64,7 @@ class RemoteConfigManager: ObservableObject {
         remoteConfig.fetch { (status, error) -> Void in
           if status == .success {
               self.logger.debug("Config fetched!")
-              self.remoteConfig.activate { changed, error in
+              self.remoteConfig.activate { _, _ in
                   self.updateValues()
               }
           } else {
