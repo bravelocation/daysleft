@@ -13,11 +13,18 @@ struct MainView: View {
     /// View model
     @ObservedObject var model: DaysLeftViewModel
     
+    // Remote settings
+    @ObservedObject var remoteConfig: RemoteConfigManager
+    
     /// Body of view
     var body: some View {
         VStack(alignment: .center) {
             
             Spacer()
+            
+            if remoteConfig.showMessage {
+                Text(remoteConfig.message ?? "")
+            }
             
             Text("\(self.model.displayValues.daysLeft)")
                 .font(.system(size: 72, weight: .bold, design: .default))
@@ -117,6 +124,7 @@ struct MainView: View {
 /// Preview provider for MainView
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        MainView(model: DaysLeftViewModel(dataManager: AppSettingsDataManager(dataProvider: InMemoryDataProvider.shared)))
+        MainView(model: DaysLeftViewModel(dataManager: AppSettingsDataManager(dataProvider: InMemoryDataProvider.shared)),
+                 remoteConfig: RemoteConfigManager.shared)
     }
 }

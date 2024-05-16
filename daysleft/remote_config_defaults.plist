@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>new_app_id</key>
+  <string>966499832</string>
+  <key>message</key>
+  <string>To keep getting updates for this app, please uninstall and reinstall the new version from the App store</string>
+  <key>bundle_id</key>
+  <string>com.bravelocation.daysleft</string>
+</dict>
+</plist>
