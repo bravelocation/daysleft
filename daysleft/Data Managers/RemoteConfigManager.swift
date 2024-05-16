@@ -6,8 +6,9 @@
 //  Copyright © 2024 Brave Location Software. All rights reserved.
 //
 
-import Foundation
 import FirebaseRemoteConfig
+import SwiftUI
+import OSLog
 
 class RemoteConfigManager: ObservableObject {
     private var remoteConfig: RemoteConfig
@@ -24,6 +25,8 @@ class RemoteConfigManager: ObservableObject {
     class var shared: RemoteConfigManager {
         return sharedInstance
     }
+    
+    private let logger = Logger(subsystem: "com.bravelocation.daysleft", category: "RemoteConfigManager")
     
     private init() {
         remoteConfig = RemoteConfig.remoteConfig()
@@ -47,16 +50,26 @@ class RemoteConfigManager: ObservableObject {
         }
     }
     
+    func openInAppStore() {
+        guard let appId = self.newAppId else { return }
+        
+        let appStoreLink = "https://itunes.apple.com/app/id" + appId + "?mt=8&at=1001ln7z"
+        let appStoreUrl = URL(string: appStoreLink)
+        
+        self.logger.debug("Opening App Store link: \(appStoreLink)")
+        UIApplication.shared.open(appStoreUrl!)
+    }
+    
     private func fetchInitialSettings() {
         remoteConfig.fetch { (status, error) -> Void in
           if status == .success {
-            print("Config fetched!")
-            self.remoteConfig.activate { changed, error in
-                self.updateValues()
-            }
+              self.logger.debug("Config fetched!")
+              self.remoteConfig.activate { changed, error in
+                  self.updateValues()
+              }
           } else {
-            print("Config not fetched")
-            print("Error: \(error?.localizedDescription ?? "No error available.")")
+              self.logger.debug("Config not fetched")
+              self.logger.debug("Error: \(error?.localizedDescription ?? "No error available.")")
           }
         }
     }
