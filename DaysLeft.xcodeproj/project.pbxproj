@@ -119,6 +119,10 @@
 		52CE53DB28E49E3A00174D39 /* Documentation.docc in Sources */ = {isa = PBXBuildFile; fileRef = 52CE53DA28E49E3A00174D39 /* Documentation.docc */; };
 		52CFBEFE1A8B631B005234FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CFBEFD1A8B631B005234FB /* AppDelegate.swift */; };
 		52CFBF051A8B631B005234FB /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52CFBF041A8B631B005234FB /* Media.xcassets */; };
+		52D26A4E2BF63B7E00485AD0 /* RemoteConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D26A4D2BF63B7E00485AD0 /* RemoteConfigManager.swift */; };
+		52D26A502BF63BF800485AD0 /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = 52D26A4F2BF63BF800485AD0 /* FirebaseRemoteConfig */; };
+		52D26A522BF63DE600485AD0 /* remote_config_defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52D26A512BF63DE600485AD0 /* remote_config_defaults.plist */; };
+		52D26A542BF646A400485AD0 /* UpgradeWarningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D26A532BF646A400485AD0 /* UpgradeWarningView.swift */; };
 		52D617B124D06F9000465F4C /* MenuBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D617B024D06F9000465F4C /* MenuBuilder.swift */; };
 		52DC5AD028DB3EE300AFF24D /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DC5ACF28DB3EE300AFF24D /* SettingsViewModel.swift */; };
 		52DC5AD228DB431900AFF24D /* SettingsViewHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DC5AD128DB431900AFF24D /* SettingsViewHostingController.swift */; };
@@ -284,6 +288,9 @@
 		52CFBEFD1A8B631B005234FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52CFBF041A8B631B005234FB /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		52CFBF131A8B631B005234FB /* DaysLeftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysLeftTests.swift; sourceTree = "<group>"; };
+		52D26A4D2BF63B7E00485AD0 /* RemoteConfigManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigManager.swift; sourceTree = "<group>"; };
+		52D26A512BF63DE600485AD0 /* remote_config_defaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = remote_config_defaults.plist; sourceTree = "<group>"; };
+		52D26A532BF646A400485AD0 /* UpgradeWarningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpgradeWarningView.swift; sourceTree = "<group>"; };
 		52D617B024D06F9000465F4C /* MenuBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBuilder.swift; sourceTree = "<group>"; };
 		52DC5ACF28DB3EE300AFF24D /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		52DC5AD128DB431900AFF24D /* SettingsViewHostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewHostingController.swift; sourceTree = "<group>"; };
@@ -343,6 +350,7 @@
 				52C03E412BD94F7F002E33D2 /* FirebaseMessaging in Frameworks */,
 				52C03E3D2BD94F7F002E33D2 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 				52C03E3F2BD94F7F002E33D2 /* FirebaseCrashlytics in Frameworks */,
+				52D26A502BF63BF800485AD0 /* FirebaseRemoteConfig in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,6 +379,7 @@
 				52FC401327AABAD9005DAD8C /* AnalyticsManager.swift */,
 				5240F1E428D9B6CB00B95FE5 /* AppSettingsDataManager.swift */,
 				52DC9EB41FC97A9200AE02F6 /* FirebaseNotifications.swift */,
+				52D26A4D2BF63B7E00485AD0 /* RemoteConfigManager.swift */,
 				5234FDA928E2ED810003515F /* WatchConnectivityManager.swift */,
 			);
 			path = "Data Managers";
@@ -389,6 +398,7 @@
 				5234FDAC28E2F6B20003515F /* Localizable.strings */,
 				5234FDB128E2F9B60003515F /* Localizable.stringsdict */,
 				52CFBF041A8B631B005234FB /* Media.xcassets */,
+				52D26A512BF63DE600485AD0 /* remote_config_defaults.plist */,
 			);
 			name = Assets;
 			sourceTree = "<group>";
@@ -447,6 +457,7 @@
 				52CBC7C728DB0D0900C89F20 /* MainView.swift */,
 				52DC5AD328DB43CE00AFF24D /* SettingsView.swift */,
 				52C9A4A028E893D600F7EAF1 /* TextFieldClearButton.swift */,
+				52D26A532BF646A400485AD0 /* UpgradeWarningView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -733,6 +744,7 @@
 				52C03E3C2BD94F7F002E33D2 /* FirebaseAnalyticsWithoutAdIdSupport */,
 				52C03E3E2BD94F7F002E33D2 /* FirebaseCrashlytics */,
 				52C03E402BD94F7F002E33D2 /* FirebaseMessaging */,
+				52D26A4F2BF63BF800485AD0 /* FirebaseRemoteConfig */,
 			);
 			productName = daysleft;
 			productReference = 52CFBEF81A8B631B005234FB /* DaysLeft.app */;
@@ -781,7 +793,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1400;
-				LastUpgradeCheck = 1530;
+				LastUpgradeCheck = 1540;
 				ORGANIZATIONNAME = "Brave Location Software";
 				TargetAttributes = {
 					5295EDD91A94AE53007EF7E7 = {
@@ -899,6 +911,7 @@
 				52CFBF051A8B631B005234FB /* Media.xcassets in Resources */,
 				5234FDB828E3377E0003515F /* Colors.xcassets in Resources */,
 				5234FDB228E2F9B60003515F /* Localizable.stringsdict in Resources */,
+				52D26A522BF63DE600485AD0 /* remote_config_defaults.plist in Resources */,
 				52DC9EB31FC97A3200AE02F6 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1064,12 +1077,14 @@
 				5240F1F128D9C25700B95FE5 /* AppControlSettings.swift in Sources */,
 				52CE53DB28E49E3A00174D39 /* Documentation.docc in Sources */,
 				52CFBEFE1A8B631B005234FB /* AppDelegate.swift in Sources */,
+				52D26A542BF646A400485AD0 /* UpgradeWarningView.swift in Sources */,
 				5240F1E528D9B6CB00B95FE5 /* AppSettingsDataManager.swift in Sources */,
 				52CBC7C928DB101600C89F20 /* InMemoryDataProvider.swift in Sources */,
 				5234FDBE28E436730003515F /* AnimatedCircularProgressView.swift in Sources */,
 				52D617B124D06F9000465F4C /* MenuBuilder.swift in Sources */,
 				5240F1D028D8C1BC00B95FE5 /* Date+Helpers.swift in Sources */,
 				52A70D5028DC660C00DCE9CB /* ShortcutProvider.swift in Sources */,
+				52D26A4E2BF63B7E00485AD0 /* RemoteConfigManager.swift in Sources */,
 				52A70D4928DC555800DCE9CB /* DaysLeftAppIntent.swift in Sources */,
 				52DC5AD228DB431900AFF24D /* SettingsViewHostingController.swift in Sources */,
 				52CBC7A028D9E01700C89F20 /* DataProviderProtocol.swift in Sources */,
@@ -1155,6 +1170,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -1202,7 +1218,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "-Wl,-no_warn_duplicate_libraries";
 				SDKROOT = iphoneos;
-				SHARED_VERSION_NUMBER = 5.3.0;
+				SHARED_VERSION_NUMBER = 5.4.0;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_STRICT_CONCURRENCY = targeted;
@@ -1364,7 +1380,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 449;
+				CURRENT_PROJECT_VERSION = 450;
 				DEPLOYMENT_POSTPROCESSING = YES;
 				DEVELOPMENT_TEAM = W8B3V597R9;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -1403,7 +1419,7 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 449;
+				CURRENT_PROJECT_VERSION = 450;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = W8B3V597R9;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -1427,6 +1443,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -1484,7 +1501,7 @@
 				OTHER_LDFLAGS = "-Wl,-no_warn_duplicate_libraries";
 				OTHER_SWIFT_FLAGS = "";
 				SDKROOT = iphoneos;
-				SHARED_VERSION_NUMBER = 5.3.0;
+				SHARED_VERSION_NUMBER = 5.4.0;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_STRICT_CONCURRENCY = targeted;
@@ -1657,7 +1674,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 449;
+				CURRENT_PROJECT_VERSION = 450;
 				DEPLOYMENT_POSTPROCESSING = YES;
 				DEVELOPMENT_TEAM = W8B3V597R9;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -1698,7 +1715,7 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 449;
+				CURRENT_PROJECT_VERSION = 450;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = W8B3V597R9;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -1783,7 +1800,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 449;
+				CURRENT_PROJECT_VERSION = 450;
 				DEPLOYMENT_POSTPROCESSING = YES;
 				DEVELOPMENT_TEAM = W8B3V597R9;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -1829,7 +1846,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 449;
+				CURRENT_PROJECT_VERSION = 450;
 				DEPLOYMENT_POSTPROCESSING = YES;
 				DEVELOPMENT_TEAM = W8B3V597R9;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -1926,6 +1943,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -1983,7 +2001,7 @@
 				OTHER_LDFLAGS = "-Wl,-no_warn_duplicate_libraries";
 				OTHER_SWIFT_FLAGS = "";
 				SDKROOT = iphoneos;
-				SHARED_VERSION_NUMBER = 5.3.0;
+				SHARED_VERSION_NUMBER = 5.4.0;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_STRICT_CONCURRENCY = targeted;
@@ -1995,6 +2013,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -2042,7 +2061,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "-Wl,-no_warn_duplicate_libraries";
 				SDKROOT = iphoneos;
-				SHARED_VERSION_NUMBER = 5.3.0;
+				SHARED_VERSION_NUMBER = 5.4.0;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_STRICT_CONCURRENCY = targeted;
@@ -2237,7 +2256,7 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 449;
+				CURRENT_PROJECT_VERSION = 450;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = W8B3V597R9;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -2269,7 +2288,7 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 449;
+				CURRENT_PROJECT_VERSION = 450;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = W8B3V597R9;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -2397,6 +2416,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 52C03E3B2BD94F7F002E33D2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseMessaging;
+		};
+		52D26A4F2BF63BF800485AD0 /* FirebaseRemoteConfig */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 52C03E3B2BD94F7F002E33D2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseRemoteConfig;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

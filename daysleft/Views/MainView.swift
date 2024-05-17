@@ -17,6 +17,8 @@ struct MainView: View {
     var body: some View {
         VStack(alignment: .center) {
             
+            UpgradeWarningView()
+            
             Spacer()
             
             Text("\(self.model.displayValues.daysLeft)")
