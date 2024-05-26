@@ -20,6 +20,7 @@ struct AccessoryInlineView: View {
     /// View body
     var body: some View {
         Text(model.displayValues.fullTitle)
+            .preferWidgetBackground(accessoryWidget: true)
     }
 }
 

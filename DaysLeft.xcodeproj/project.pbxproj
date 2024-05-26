@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		522D6ABC2C030F4600B64778 /* WidgetBackgroundModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522D6ABB2C030F4600B64778 /* WidgetBackgroundModifier.swift */; };
+		522D6ABD2C030F4600B64778 /* WidgetBackgroundModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522D6ABB2C030F4600B64778 /* WidgetBackgroundModifier.swift */; };
 		523443661BBAFBEF00E95BA4 /* DaysLeft WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 52B7E8811ABEDE9300E1949C /* DaysLeft WatchKit App.app */; platformFilter = ios; };
 		5234436D1BBB181C00E95BA4 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5234436C1BBB181C00E95BA4 /* ExtensionDelegate.swift */; };
 		5234FD9F28E2021D0003515F /* DisplayValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5234FD9E28E2021D0003515F /* DisplayValues.swift */; };
@@ -232,6 +234,7 @@
 
 /* Begin PBXFileReference section */
 		5208B84728D87679007BB75C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		522D6ABB2C030F4600B64778 /* WidgetBackgroundModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetBackgroundModifier.swift; sourceTree = "<group>"; };
 		5234436B1BBB00B800E95BA4 /* daysleft WatchKit App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "daysleft WatchKit App.entitlements"; sourceTree = "<group>"; };
 		5234436C1BBB181C00E95BA4 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		5234FD9D28DF286B0003515F /* DaysLeft WatchKit WidgetExtension.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = "DaysLeft WatchKit WidgetExtension.entitlements"; sourceTree = "<group>"; };
@@ -505,6 +508,7 @@
 				52A70D5328DC8D2500DCE9CB /* AccessoryRectangularView.swift */,
 				52A70D5128DC8A6D00DCE9CB /* WidgetSwitcherView.swift */,
 				52E048B225077E1C009A2169 /* WidgetView.swift */,
+				522D6ABB2C030F4600B64778 /* WidgetBackgroundModifier.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1008,6 +1012,7 @@
 				5234FDA728E2EA560003515F /* String+Helpers.swift in Sources */,
 				52A70D7C28DC9BDD00DCE9CB /* AppControlSettings.swift in Sources */,
 				52A70D6228DC98E100DCE9CB /* DaysLeftWatchWidget.swift in Sources */,
+				522D6ABD2C030F4600B64778 /* WidgetBackgroundModifier.swift in Sources */,
 				52A70D7B28DC9BDB00DCE9CB /* AppSettings.swift in Sources */,
 				52A70D7328DC9AE600DCE9CB /* AccessoryInlineView.swift in Sources */,
 				52A70D7028DC9ADA00DCE9CB /* WidgetTimelineProvider.swift in Sources */,
@@ -1116,6 +1121,7 @@
 				52A70D5428DC8D2500DCE9CB /* AccessoryRectangularView.swift in Sources */,
 				5240F1E928D9B6CB00B95FE5 /* AppSettingsDataManager.swift in Sources */,
 				52CBC79E28D9DF1000C89F20 /* CloudKeyValueDataProvider.swift in Sources */,
+				522D6ABC2C030F4600B64778 /* WidgetBackgroundModifier.swift in Sources */,
 				52CBC7B328D9EE6700C89F20 /* AppSettings+Text.swift in Sources */,
 				52CBC7BA28D9FBE000C89F20 /* AppSettings+DayCalculations.swift in Sources */,
 				52CBC7AC28D9EA2D00C89F20 /* InMemoryDataProvider.swift in Sources */,

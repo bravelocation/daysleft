@@ -51,7 +51,7 @@ class ComplicationsDataSource: NSObject, CLKComplicationDataSource {
     // swiftlint:disable function_body_length
     func getLocalizableSampleTemplate(for complication: CLKComplication,
                                       withHandler handler: @escaping (CLKComplicationTemplate?) -> Void) {
-        let appTintColor = UIColor(red: 203/255, green: 237/255, blue: 142/255, alpha: 1.0)
+        let appTintColor = UIColor(named: "LightAppColor")!
 
         switch complication.family {
         case .circularSmall:
