@@ -15,6 +15,13 @@
 
 default_platform(:ios)
 
+screenshots_path_ios = "./fastlane/screenshots/ios"
+screenshots_path_macos = "./fastlane/screenshots/macos"
+screenshots_path_watchos = "./fastlane/screenshots/watchos"
+
+metadata_path_ios = "./fastlane/metadata/ios"
+metadata_path_macos = "./fastlane/metadata/macos"
+
 platform :ios do
   desc "Generates iOS screenshots"
   lane :screenshots do
@@ -22,10 +29,11 @@ platform :ios do
       project: "DaysLeft.xcodeproj",
       scheme: "UI Tests",
       derived_data_path: "~/Library/Developer/Xcode/DerivedData",
-      devices: ["iPhone 8 Plus", "iPhone 11 Pro Max", "iPad Pro (12.9-inch) (5th generation)"],
+      devices: ["iPhone 15 Plus", "iPhone 15 Pro Max", "iPad Pro (12.9-inch) (6th generation)"],
       languages: ["en-US"],
       clear_previous_screenshots: false,
-      cloned_source_packages_path: "SourcePackages"
+      cloned_source_packages_path: "SourcePackages",
+      output_directory: screenshots_path_ios
     )
   end
 
@@ -33,7 +41,7 @@ platform :ios do
   lane :test do
     run_tests(
       project: "DaysLeft.xcodeproj",
-      device: "iPhone 11 Pro Max",
+      device: "iPhone 15 Plus",
       scheme: "DaysLeft",
       result_bundle: true,
       output_directory: "fastlane/test_output/Networking",
