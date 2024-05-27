@@ -16,7 +16,7 @@ import OSLog
 class ExtensionDelegate: NSObject, WKApplicationDelegate {
     
     /// Logger
-    private let logger = Logger(subsystem: "com.bravelocation.daysleft", category: "ExtensionDelegate")
+    private let logger = Logger(subsystem: "com.bravelocation.daysleft.v2", category: "ExtensionDelegate")
     
     /// Data manager
     private var dataManager: AppSettingsDataManager

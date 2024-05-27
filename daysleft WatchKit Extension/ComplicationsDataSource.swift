@@ -17,7 +17,7 @@ import OSLog
 class ComplicationsDataSource: NSObject, CLKComplicationDataSource {
     
     /// Logger
-    private let logger = Logger(subsystem: "com.bravelocation.daysleft", category: "ComplicationsDataSource")
+    private let logger = Logger(subsystem: "com.bravelocation.daysleft.v2", category: "ComplicationsDataSource")
     
     /// App settings
     let appSettings = AppSettingsDataManager().appSettings

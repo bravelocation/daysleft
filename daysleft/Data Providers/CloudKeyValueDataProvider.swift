@@ -13,7 +13,7 @@ import OSLog
 class CloudKeyValueDataProvider: DataProviderProtocol {
     
     /// Logger
-    private let logger = Logger(subsystem: "com.bravelocation.daysleft", category: "CloudKeyValueDataProvider")
+    private let logger = Logger(subsystem: "com.bravelocation.daysleft.v2", category: "CloudKeyValueDataProvider")
     
     // MARK: - Properties
     
@@ -38,7 +38,7 @@ class CloudKeyValueDataProvider: DataProviderProtocol {
     /// - Parameters:
     ///     - defaultPreferencesName:The name of the plist file containing the default preferences
     ///     - suiteName: Name of the suite used to store the key value pair
-    init(defaultPreferencesName: String = "DefaultPreferences", suiteName: String = "group.bravelocation.daysleft") {
+    init(defaultPreferencesName: String = "DefaultPreferences", suiteName: String = "group.bravelocation.daysleft.v2") {
 
         // Setup the default preferences
         guard let defaultPrefsFile = Bundle.main.url(forResource: defaultPreferencesName, withExtension: "plist") else {

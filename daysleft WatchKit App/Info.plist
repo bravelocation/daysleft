@@ -32,6 +32,6 @@
 	<key>WKApplication</key>
 	<true/>
 	<key>WKCompanionAppBundleIdentifier</key>
-	<string>com.bravelocation.daysleft</string>
+	<string>com.bravelocation.daysleft.v2</string>
 </dict>
 </plist>

@@ -26,7 +26,7 @@
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLName</key>
-			<string>com.bravelocation.daysleft</string>
+			<string>com.bravelocation.daysleft.v2</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>daysleft</string>
@@ -57,7 +57,7 @@
 	<key>NSUserActivityTypes</key>
 	<array>
 		<string>DaysLeftIntent</string>
-		<string>com.bravelocation.daysleft.mainscreen</string>
+		<string>com.bravelocation.daysleft.v2.mainscreen</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>

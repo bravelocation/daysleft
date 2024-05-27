@@ -130,7 +130,7 @@ class MainViewHostingController<Content: View>: UIHostingController<Content>, Vi
     /// Sets up handoff
     @objc func setupHandoff() {
         // Set activity for handoff
-        let activity = NSUserActivity(activityType: "com.bravelocation.daysleft.mainscreen")
+        let activity = NSUserActivity(activityType: "com.bravelocation.daysleft.v2.mainscreen")
         
         // Eligible for handoff
         activity.isEligibleForHandoff = true

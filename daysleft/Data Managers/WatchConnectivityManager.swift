@@ -20,7 +20,7 @@ import ClockKit
 class WatchConnectivityManager: NSObject, WCSessionDelegate {
     
     /// Logger
-    private let logger = Logger(subsystem: "com.bravelocation.daysleft", category: "WatchConnectivityManager")
+    private let logger = Logger(subsystem: "com.bravelocation.daysleft.v2", category: "WatchConnectivityManager")
     
     /// Analytics values that will be returned from the watch on connection
     public enum AnalyticsValues: String {
