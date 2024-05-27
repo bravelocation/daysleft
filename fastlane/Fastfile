@@ -80,3 +80,36 @@ platform :ios do
   end
 end
 
+platform :mac do
+  desc "Uploads MacOS screenshots"
+  lane :upload_screenshots do
+    deliver(
+      skip_binary_upload: true,
+      skip_metadata: true,
+      skip_screenshots: false,
+      force: true,
+      languages: ["en-US"],
+      precheck_include_in_app_purchases: false,
+      submit_for_review: false,
+      platform: "osx",
+      screenshots_path: screenshots_path_macos,
+      metadata_path: metadata_path_macos
+    )
+  end
+
+  desc "Uploads MacOS metadata"
+  lane :upload_metadata do
+    deliver(
+      skip_binary_upload: true,
+      skip_metadata: false,
+      skip_screenshots: true,
+      force: true,
+      languages: ["en-US"],
+      precheck_include_in_app_purchases: false,
+      submit_for_review: false,
+      platform: "osx",
+      metadata_path: metadata_path_macos
+    )
+  end
+end
+
