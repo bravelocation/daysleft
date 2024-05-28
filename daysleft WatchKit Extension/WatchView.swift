@@ -26,8 +26,7 @@ struct WatchView: View {
                 .lineLimit(nil)
                 .multilineTextAlignment(.center)
             
-            AnimatedCircularProgressView(progress: self.model.displayValues.percentageDone,
-                                 lineWidth: 20.0)
+            AnimatedCircularProgressView(model: self.model, lineWidth: 20.0)
             .padding([.top, .bottom], 16.0)
             
             AnimatedPercentageDone(percentageDone: self.model.displayValues.percentageDone)

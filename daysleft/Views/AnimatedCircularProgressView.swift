@@ -13,8 +13,7 @@ struct AnimatedCircularProgressView: View {
     /// Animation progress value-  should be bewteen 0.0 and 1.0
     @State private var animatedProgress: Double = 0.0
     
-    /// Progress value - should be bewteen 0.0 and 1.0
-    let progress: Double
+    @ObservedObject var model: DaysLeftViewModel
     
     /// Width of the lines of the prgress view
     let lineWidth: Double
@@ -24,7 +23,7 @@ struct AnimatedCircularProgressView: View {
         CircularProgressView(progress: animatedProgress, lineWidth: lineWidth)
             .onAppear {
                 withAnimation(.easeInOut(duration: 1.0).delay(0.2)) {
-                    self.animatedProgress = self.progress
+                    self.animatedProgress = self.model.displayValues.percentageDone
                 }
             }
             .onReceive(NotificationCenter.default.publisher(for: .WillEnterForegroundNotification)) { _ in
@@ -32,7 +31,7 @@ struct AnimatedCircularProgressView: View {
                 self.animatedProgress = 0.0
                 
                 withAnimation(.easeInOut(duration: 1.0).delay(0.2)) {
-                    self.animatedProgress = self.progress
+                    self.animatedProgress = self.model.displayValues.percentageDone
                 }
             }
     }
@@ -41,6 +40,6 @@ struct AnimatedCircularProgressView: View {
 /// Preview provider for AnimatedCircularProgressView
 struct AnimatedCircularProgressView_Previews: PreviewProvider {
     static var previews: some View {
-        AnimatedCircularProgressView(progress: 0.4, lineWidth: 20.0)
+        AnimatedCircularProgressView(model: DaysLeftViewModel(dataManager: AppSettingsDataManager(dataProvider: InMemoryDataProvider.shared)), lineWidth: 20.0)
     }
 }

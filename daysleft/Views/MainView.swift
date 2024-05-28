@@ -28,8 +28,7 @@ struct MainView: View {
                 .lineLimit(nil)
                 .multilineTextAlignment(.center)
             
-            AnimatedCircularProgressView(progress: self.model.displayValues.percentageDone,
-                                 lineWidth: 76.0)
+            AnimatedCircularProgressView(model: self.model, lineWidth: 76.0)
             .padding([.top, .bottom], 16.0)
             .padding([.leading, .trailing], 64.0)
             .frame(maxWidth: 300.0, maxHeight: 300.0)
