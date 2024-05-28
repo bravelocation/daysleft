@@ -26,7 +26,7 @@ class RemoteConfigManager: ObservableObject {
         return sharedInstance
     }
     
-    private let logger = Logger(subsystem: "com.bravelocation.daysleft", category: "RemoteConfigManager")
+    private let logger = Logger(subsystem: "com.bravelocation.daysleft.v2", category: "RemoteConfigManager")
     
     private init() {
         remoteConfig = RemoteConfig.remoteConfig()

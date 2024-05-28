@@ -29,7 +29,7 @@
 		<key>NSExtensionAttributes</key>
 		<dict>
 			<key>WKAppBundleIdentifier</key>
-			<string>com.bravelocation.daysleft.watchkitapp</string>
+			<string>com.bravelocation.daysleft.v2.watchkitapp</string>
 		</dict>
 		<key>NSExtensionPointIdentifier</key>
 		<string>com.apple.watchkit</string>

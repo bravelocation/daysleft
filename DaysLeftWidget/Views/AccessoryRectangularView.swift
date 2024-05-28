@@ -32,6 +32,7 @@ struct AccessoryRectangularView: View {
             Spacer()
         }
         .padding([.leading, .trailing], 4.0)
+        .preferWidgetBackground(accessoryWidget: true)
     }
 }
 

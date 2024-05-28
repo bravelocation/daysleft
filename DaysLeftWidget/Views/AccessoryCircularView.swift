@@ -30,12 +30,13 @@ struct AccessoryCircularView: View {
             } currentValueLabel: {
                 Text("\(self.model.displayValues.daysLeft)")
             }
-                .gaugeStyle(.accessoryCircular)
-                .widgetLabel {
-                    Text(model.displayValues.title)
-                        .widgetAccentable()
-                }
-                .padding(1.0)
+            .gaugeStyle(.accessoryCircular)
+            .widgetLabel {
+                Text(model.displayValues.title)
+                    .widgetAccentable()
+            }
+            .padding(1.0)
+            .preferWidgetBackground(accessoryWidget: true)
         } else {
             ZStack {
                 AccessoryWidgetBackground()
@@ -48,6 +49,7 @@ struct AccessoryCircularView: View {
                 }
                 .gaugeStyle(.accessoryCircular)
                 .padding(1.0)
+                .preferWidgetBackground(accessoryWidget: true)
             }
         }
     }

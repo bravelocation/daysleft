@@ -1,0 +1,7 @@
+A simple, elegant app that does just one thing - counts the days between the start and end date of an event or project, and how far along you've progressed so far.
+
+It's optimised around your work tasks, as you can decide to count just weekdays if required.
+
+You can also access the information on your Apple Watch (in an app or in watch complications), or via helpful widgets or via Siri Shortcuts.
+
+The app was written as part of a "develop in the open" project, so if you're interested in finding out how we built it, you can find out more at https://bravelocation.com/countthedaysleft

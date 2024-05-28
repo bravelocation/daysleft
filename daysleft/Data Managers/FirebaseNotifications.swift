@@ -15,7 +15,7 @@ import OSLog
 class FirebaseNotifications: NSObject, MessagingDelegate {
     
     /// Logger
-    private let logger = Logger(subsystem: "com.bravelocation.daysleft", category: "FirebaseNotifications")
+    private let logger = Logger(subsystem: "com.bravelocation.daysleft.v2", category: "FirebaseNotifications")
     
     /// Name of the topic the notifications use
     let topicName: String = "dataupdates"

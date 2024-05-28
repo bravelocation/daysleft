@@ -10,7 +10,7 @@ import XCTest
 
 final class ScreenshotTests: XCTestCase {
 
-    override func setUp() {
+    @MainActor override func setUp() {
         super.setUp()
         
         // In UI tests it is usually best to stop immediately when a failure occurs.
@@ -26,15 +26,15 @@ final class ScreenshotTests: XCTestCase {
         }
     }
 
-    func testMainScreen() throws {
+    @MainActor func testMainScreen() throws {
         // Wait for animation to complete
         Thread.sleep(forTimeInterval: 5.0)
         
         snapshot("01Main")
     }
     
-    func testSettingScreen() throws {
-        XCUIApplication().navigationBars["Count The Days Left"].buttons["editButton"].tap()
+    @MainActor func testSettingScreen() throws {
+        XCUIApplication().buttons["editButton"].tap()
         snapshot("02Settings")
     }
     

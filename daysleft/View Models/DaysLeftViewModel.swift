@@ -24,7 +24,7 @@ protocol ViewModelActionDelegate: AnyObject {
 class DaysLeftViewModel: ObservableObject {
     
     /// Logger
-    private let logger = Logger(subsystem: "com.bravelocation.daysleft", category: "DaysLeftViewModel")
+    private let logger = Logger(subsystem: "com.bravelocation.daysleft.v2", category: "DaysLeftViewModel")
     
     /// Current display values
     @Published var displayValues: DisplayValues

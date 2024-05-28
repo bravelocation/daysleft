@@ -16,7 +16,7 @@ import OSLog
 @UIApplicationMain class AppDelegate: UIResponder, UIApplicationDelegate {
     
     /// Logger
-    private let logger = Logger(subsystem: "com.bravelocation.daysleft", category: "AppDelegate")
+    private let logger = Logger(subsystem: "com.bravelocation.daysleft.v2", category: "AppDelegate")
 
     // MARK: Class properties
     

@@ -106,12 +106,6 @@ struct MainView: View {
     }
     
     private var shareButtonPlacement: ToolbarItemPlacement {
-//        #if targetEnvironment(macCatalyst)
-//        if #available(macCatalyst 16.0, *) {
-//            return .secondaryAction
-//        }
-//        #endif
-        
         return .topBarLeading
     }
 }

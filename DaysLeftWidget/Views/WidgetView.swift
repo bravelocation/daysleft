@@ -28,19 +28,19 @@ struct WidgetView: View {
                 .minimumScaleFactor(0.5)
                 .multilineTextAlignment(.center)
                 .fixedSize(horizontal: false, vertical: true)
-                .foregroundColor(Color.primary)
             
             CircularProgressView(
                 progress: self.model.displayValues.percentageDone,
-                lineWidth: widgetFamily == .systemSmall ? 12.0 : 20.0
+                lineWidth: widgetFamily == .systemSmall ? 16.0 : 24.0
             )
             .padding([.top, .bottom], widgetFamily == .systemSmall ? 8.0 : 16.0)
             
             Text(self.model.displayValues.currentPercentageLeft)
                 .font(.footnote)
-                .foregroundColor(Color.primary)
+
         }
         .padding()
+        .preferWidgetBackground()
     }
 }
 

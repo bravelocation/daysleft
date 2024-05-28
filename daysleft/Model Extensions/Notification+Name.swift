@@ -30,8 +30,8 @@ extension Notification.Name {
     static let AppSettingsUpdated = Notification.Name(rawValue: "UpdateSettingsNotification")
     
     /// Notification sent when the edit command is called from the menu
-    static let editCommand = Notification.Name("com.bravelocation.daysleft.edit")
+    static let editCommand = Notification.Name("com.bravelocation.daysleft.v2.edit")
     
     /// Notification sent when the share command is called from the menu
-    static let shareCommand = Notification.Name("com.bravelocation.daysleft.share")
+    static let shareCommand = Notification.Name("com.bravelocation.daysleft.v2.share")
 }

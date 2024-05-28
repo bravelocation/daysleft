@@ -1,4 +1,4 @@
-app_identifier("com.bravelocation.daysleft") # The bundle identifier of your app
+app_identifier("com.bravelocation.daysleft.v2") # The bundle identifier of your app
 # apple_id("[[APPLE_ID]]") # Your Apple Developer Portal username
 
 

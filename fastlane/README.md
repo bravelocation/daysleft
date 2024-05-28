@@ -31,6 +31,43 @@ Generates iOS screenshots
 
 Runs the unit tests
 
+### ios upload_screenshots
+
+```sh
+[bundle exec] fastlane ios upload_screenshots
+```
+
+Uploads iOS screenshots
+
+### ios upload_metadata
+
+```sh
+[bundle exec] fastlane ios upload_metadata
+```
+
+Uploads iOS metadata
+
+----
+
+
+## Mac
+
+### mac upload_screenshots
+
+```sh
+[bundle exec] fastlane mac upload_screenshots
+```
+
+Uploads MacOS screenshots
+
+### mac upload_metadata
+
+```sh
+[bundle exec] fastlane mac upload_metadata
+```
+
+Uploads MacOS metadata
+
 ----
 
 This README.md is auto-generated and will be re-generated every time [_fastlane_](https://fastlane.tools) is run.
