@@ -86,6 +86,9 @@ import OSLog
         // Setup push notifications (if required) to ensure the badge gets updated
         UNUserNotificationCenter.current().delegate = self
         self.firebaseNotifications?.setupNotifications(false)
+        
+        // Update any external info on app start
+        self.updateExternalInformation()
 
         return true
     }

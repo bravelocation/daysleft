@@ -62,6 +62,13 @@ class DaysLeftViewModel: ObservableObject {
         
         // Set the published properties based on the model
         self.displayValues = DisplayValues(appSettings: self.dataManager.appSettings)
+        
+        // Also update the badge on iOS and macOS
+        #if os(iOS) || os(macOS)
+        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+            appDelegate.updateBadge()
+        }
+        #endif
     }
     
     /// Called when share button is tapped
