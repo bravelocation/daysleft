@@ -231,7 +231,9 @@ extension AppDelegate {
     func initBackgroundBadgeUpdate() {
         // Schedule a background refresh to update the badge
         BGTaskScheduler.shared.register(forTaskWithIdentifier: "com.bravelocation.daysleft.v2.background-badge-update", using: .main) { task in
-             self.handleAppRefresh(task: task as! BGAppRefreshTask)
+            if let task = task as? BGAppRefreshTask {
+                self.handleAppRefresh(task: task)
+            }
         }
     }
     
@@ -244,7 +246,7 @@ extension AppDelegate {
        do {
           try BGTaskScheduler.shared.submit(request)
        } catch {
-          print("Could not schedule app refresh: \(error)")
+           self.logger.error("Could not schedule app refresh: \(error)")
        }
     }
     
