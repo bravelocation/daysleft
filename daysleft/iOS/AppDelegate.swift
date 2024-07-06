@@ -11,6 +11,7 @@ import Firebase
 import WidgetKit
 import Combine
 import OSLog
+import BackgroundTasks
 
 /// Application delegate for the app
 @UIApplicationMain class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -89,6 +90,9 @@ import OSLog
         
         // Update any external info on app start
         self.updateExternalInformation()
+        
+        // Schedule a background refresh to update the badge
+        self.initBackgroundBadgeUpdate()
 
         return true
     }
@@ -219,5 +223,39 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
                 }
             }
         }
+    }
+}
+
+// MARK: - Background refresh
+extension AppDelegate {
+    func initBackgroundBadgeUpdate() {
+        // Schedule a background refresh to update the badge
+        BGTaskScheduler.shared.register(forTaskWithIdentifier: "com.bravelocation.daysleft.v2.background-badge-update", using: .main) { task in
+             self.handleAppRefresh(task: task as! BGAppRefreshTask)
+        }
+    }
+    
+    func scheduleAppRefresh() {
+       let request = BGAppRefreshTaskRequest(identifier: "com.bravelocation.daysleft.v2.background-badge-update")
+        
+       // Fetch no earlier than 1 day from now.
+       request.earliestBeginDate = Date(timeIntervalSinceNow: 24 * 60 * 60)
+            
+       do {
+          try BGTaskScheduler.shared.submit(request)
+       } catch {
+          print("Could not schedule app refresh: \(error)")
+       }
+    }
+    
+    func handleAppRefresh(task: BGAppRefreshTask) {
+        // Schedule a new refresh task.
+        self.scheduleAppRefresh()
+        
+        // Update the badge
+        self.updateBadge()
+
+        // set the background task as completed
+        task.setTaskCompleted(success: true)
     }
 }
