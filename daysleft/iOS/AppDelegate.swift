@@ -91,8 +91,9 @@ import BackgroundTasks
         // Update any external info on app start
         self.updateExternalInformation()
         
-        // Schedule a background refresh to update the badge
+        // Schedule a background refresh to update the badge, and schedule the first one
         self.initBackgroundBadgeUpdate()
+        self.scheduleAppRefresh()
 
         return true
     }
@@ -238,16 +239,20 @@ extension AppDelegate {
     }
     
     func scheduleAppRefresh() {
-       let request = BGAppRefreshTaskRequest(identifier: "com.bravelocation.daysleft.v2.background-badge-update")
+        let request = BGAppRefreshTaskRequest(identifier: "com.bravelocation.daysleft.v2.background-badge-update")
         
-       // Fetch no earlier than 1 day from now.
-       request.earliestBeginDate = Date(timeIntervalSinceNow: 24 * 60 * 60)
+        // Fetch no earlier than a minute after start of day tomorrow
+        let startOfDayTomorrow = Date.now.startOfDay.addDays(1)
+        let justAfterMidnightTomorrow = Calendar.current.date(byAdding: .minute, value: 1, to: startOfDayTomorrow)!
+        request.earliestBeginDate = justAfterMidnightTomorrow
+        
+        self.logger.debug("Scheduling background refresh for \(justAfterMidnightTomorrow)")
             
-       do {
-          try BGTaskScheduler.shared.submit(request)
-       } catch {
-           self.logger.error("Could not schedule app refresh: \(error)")
-       }
+        do {
+            try BGTaskScheduler.shared.submit(request)
+        } catch {
+            self.logger.error("Could not schedule app refresh: \(error)")
+        }
     }
     
     func handleAppRefresh(task: BGAppRefreshTask) {
