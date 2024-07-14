@@ -11,6 +11,7 @@ import Firebase
 import WidgetKit
 import Combine
 import OSLog
+import BackgroundTasks
 
 /// Application delegate for the app
 @UIApplicationMain class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -89,6 +90,10 @@ import OSLog
         
         // Update any external info on app start
         self.updateExternalInformation()
+        
+        // Schedule a background refresh to update the badge, and schedule the first one
+        self.initBackgroundBadgeUpdate()
+        self.scheduleAppRefresh()
 
         return true
     }
@@ -219,5 +224,45 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
                 }
             }
         }
+    }
+}
+
+// MARK: - Background refresh
+extension AppDelegate {
+    func initBackgroundBadgeUpdate() {
+        // Schedule a background refresh to update the badge
+        BGTaskScheduler.shared.register(forTaskWithIdentifier: "com.bravelocation.daysleft.v2.background-badge-update", using: .main) { task in
+            if let task = task as? BGAppRefreshTask {
+                self.handleAppRefresh(task: task)
+            }
+        }
+    }
+    
+    func scheduleAppRefresh() {
+        let request = BGAppRefreshTaskRequest(identifier: "com.bravelocation.daysleft.v2.background-badge-update")
+        
+        // Fetch no earlier than a minute after start of day tomorrow
+        let startOfDayTomorrow = Date.now.startOfDay.addDays(1)
+        let justAfterMidnightTomorrow = Calendar.current.date(byAdding: .minute, value: 1, to: startOfDayTomorrow)!
+        request.earliestBeginDate = justAfterMidnightTomorrow
+        
+        self.logger.debug("Scheduling background refresh for \(justAfterMidnightTomorrow)")
+            
+        do {
+            try BGTaskScheduler.shared.submit(request)
+        } catch {
+            self.logger.error("Could not schedule app refresh: \(error)")
+        }
+    }
+    
+    func handleAppRefresh(task: BGAppRefreshTask) {
+        // Schedule a new refresh task.
+        self.scheduleAppRefresh()
+        
+        // Update the badge
+        self.updateBadge()
+
+        // set the background task as completed
+        task.setTaskCompleted(success: true)
     }
 }
