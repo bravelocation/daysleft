@@ -49,6 +49,12 @@
 		5240F1F128D9C25700B95FE5 /* AppControlSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5240F1F028D9C25700B95FE5 /* AppControlSettings.swift */; };
 		5240F1F228D9C25700B95FE5 /* AppControlSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5240F1F028D9C25700B95FE5 /* AppControlSettings.swift */; };
 		5240F1F528D9C25700B95FE5 /* AppControlSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5240F1F028D9C25700B95FE5 /* AppControlSettings.swift */; };
+		525960702C5FB1CD004E1BB6 /* DaysLeftWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5259606E2C5FB1C2004E1BB6 /* DaysLeftWidgetBundle.swift */; };
+		525960732C5FB272004E1BB6 /* LaunchAppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525960712C5FB229004E1BB6 /* LaunchAppIntent.swift */; };
+		525960762C5FB2B9004E1BB6 /* DaysLeftControlWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525960742C5FB2A1004E1BB6 /* DaysLeftControlWidget.swift */; };
+		525960782C5FB465004E1BB6 /* DaysLeftWatchWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525960772C5FB459004E1BB6 /* DaysLeftWatchWidgetBundle.swift */; };
+		5259607A2C5FB69C004E1BB6 /* DaysLeftValueProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525960792C5FB67E004E1BB6 /* DaysLeftValueProvider.swift */; };
+		5259607B2C5FBC83004E1BB6 /* LaunchAppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525960712C5FB229004E1BB6 /* LaunchAppIntent.swift */; };
 		527FEA422BBE9F8B004BA03E /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 527FEA412BBE9F8B004BA03E /* PrivacyInfo.xcprivacy */; };
 		527FEA432BBE9F8B004BA03E /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 527FEA412BBE9F8B004BA03E /* PrivacyInfo.xcprivacy */; };
 		5295EDF01A94AF83007EF7E7 /* DaysLeftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CFBF131A8B631B005234FB /* DaysLeftTests.swift */; };
@@ -249,6 +255,11 @@
 		5240F1E428D9B6CB00B95FE5 /* AppSettingsDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsDataManager.swift; sourceTree = "<group>"; };
 		5240F1EA28D9BE1A00B95FE5 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 		5240F1F028D9C25700B95FE5 /* AppControlSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppControlSettings.swift; sourceTree = "<group>"; };
+		5259606E2C5FB1C2004E1BB6 /* DaysLeftWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysLeftWidgetBundle.swift; sourceTree = "<group>"; };
+		525960712C5FB229004E1BB6 /* LaunchAppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchAppIntent.swift; sourceTree = "<group>"; };
+		525960742C5FB2A1004E1BB6 /* DaysLeftControlWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysLeftControlWidget.swift; sourceTree = "<group>"; };
+		525960772C5FB459004E1BB6 /* DaysLeftWatchWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysLeftWatchWidgetBundle.swift; sourceTree = "<group>"; };
+		525960792C5FB67E004E1BB6 /* DaysLeftValueProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysLeftValueProvider.swift; sourceTree = "<group>"; };
 		525D88E52BE67E5600E94D86 /* daysleft-mac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "daysleft-mac.entitlements"; sourceTree = "<group>"; };
 		52790F781D056F500025AF10 /* daysleft-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "daysleft-Bridging-Header.h"; sourceTree = "<group>"; };
 		527FEA412BBE9F8B004BA03E /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
@@ -544,6 +555,7 @@
 			isa = PBXGroup;
 			children = (
 				52A70D4828DC555800DCE9CB /* DaysLeftAppIntent.swift */,
+				525960712C5FB229004E1BB6 /* LaunchAppIntent.swift */,
 				52A70D4F28DC660C00DCE9CB /* ShortcutProvider.swift */,
 			);
 			path = AppIntents;
@@ -554,6 +566,7 @@
 			children = (
 				5234FD9D28DF286B0003515F /* DaysLeft WatchKit WidgetExtension.entitlements */,
 				52A70D6128DC98E100DCE9CB /* DaysLeftWatchWidget.swift */,
+				525960772C5FB459004E1BB6 /* DaysLeftWatchWidgetBundle.swift */,
 				52A70D6528DC98E300DCE9CB /* Info.plist */,
 				52A70D7528DC9B2100DCE9CB /* WatchWidgetSwitcherView.swift */,
 			);
@@ -651,7 +664,10 @@
 			isa = PBXGroup;
 			children = (
 				5208B84E28D879E6007BB75C /* Assets */,
+				525960742C5FB2A1004E1BB6 /* DaysLeftControlWidget.swift */,
+				525960792C5FB67E004E1BB6 /* DaysLeftValueProvider.swift */,
 				52E048A625077AFB009A2169 /* DaysLeftWidget.swift */,
+				5259606E2C5FB1C2004E1BB6 /* DaysLeftWidgetBundle.swift */,
 				5208B84F28D87A05007BB75C /* Views */,
 				52E048B425077E6A009A2169 /* WidgetDaysLeftData.swift */,
 				52E048BE2507A57E009A2169 /* WidgetTimelineProvider.swift */,
@@ -1008,6 +1024,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				52A70D7428DC9AE900DCE9CB /* AccessoryRectangularView.swift in Sources */,
+				525960782C5FB465004E1BB6 /* DaysLeftWatchWidgetBundle.swift in Sources */,
 				5234FDA728E2EA560003515F /* String+Helpers.swift in Sources */,
 				52A70D7C28DC9BDD00DCE9CB /* AppControlSettings.swift in Sources */,
 				52A70D6228DC98E100DCE9CB /* DaysLeftWatchWidget.swift in Sources */,
@@ -1078,6 +1095,7 @@
 				52DC5AD428DB43CE00AFF24D /* SettingsView.swift in Sources */,
 				52F9CDAC22D63D1900E0FFE8 /* SceneDelegate.swift in Sources */,
 				5234FDA428E2EA560003515F /* String+Helpers.swift in Sources */,
+				5259607B2C5FBC83004E1BB6 /* LaunchAppIntent.swift in Sources */,
 				5240F1F128D9C25700B95FE5 /* AppControlSettings.swift in Sources */,
 				52CE53DB28E49E3A00174D39 /* Documentation.docc in Sources */,
 				52CFBEFE1A8B631B005234FB /* AppDelegate.swift in Sources */,
@@ -1107,6 +1125,7 @@
 				5234FDA828E2EA560003515F /* String+Helpers.swift in Sources */,
 				52E048B325077E1C009A2169 /* WidgetView.swift in Sources */,
 				52E048A725077AFB009A2169 /* DaysLeftWidget.swift in Sources */,
+				525960762C5FB2B9004E1BB6 /* DaysLeftControlWidget.swift in Sources */,
 				52A70D5628DC913D00DCE9CB /* AccessoryInlineView.swift in Sources */,
 				5234FDA228E2021D0003515F /* DisplayValues.swift in Sources */,
 				52A70D5228DC8A6D00DCE9CB /* WidgetSwitcherView.swift in Sources */,
@@ -1115,14 +1134,17 @@
 				52E048BF2507A57E009A2169 /* WidgetTimelineProvider.swift in Sources */,
 				52E048B525077E6A009A2169 /* WidgetDaysLeftData.swift in Sources */,
 				52CBC7A428D9E01700C89F20 /* DataProviderProtocol.swift in Sources */,
+				5259607A2C5FB69C004E1BB6 /* DaysLeftValueProvider.swift in Sources */,
 				52F3B3E128E5E90C00A13120 /* Notification+Name.swift in Sources */,
 				5240F1EF28D9BE1A00B95FE5 /* AppSettings.swift in Sources */,
 				52A70D5428DC8D2500DCE9CB /* AccessoryRectangularView.swift in Sources */,
+				525960732C5FB272004E1BB6 /* LaunchAppIntent.swift in Sources */,
 				5240F1E928D9B6CB00B95FE5 /* AppSettingsDataManager.swift in Sources */,
 				52CBC79E28D9DF1000C89F20 /* CloudKeyValueDataProvider.swift in Sources */,
 				522D6ABC2C030F4600B64778 /* WidgetBackgroundModifier.swift in Sources */,
 				52CBC7B328D9EE6700C89F20 /* AppSettings+Text.swift in Sources */,
 				52CBC7BA28D9FBE000C89F20 /* AppSettings+DayCalculations.swift in Sources */,
+				525960702C5FB1CD004E1BB6 /* DaysLeftWidgetBundle.swift in Sources */,
 				52CBC7AC28D9EA2D00C89F20 /* InMemoryDataProvider.swift in Sources */,
 				52CBC7C028DAFC9400C89F20 /* CircularProgressView.swift in Sources */,
 				5240F1F528D9C25700B95FE5 /* AppControlSettings.swift in Sources */,

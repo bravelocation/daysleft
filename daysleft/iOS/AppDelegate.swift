@@ -62,6 +62,10 @@ import BackgroundTasks
         // Reload any widgets
         WidgetCenter.shared.reloadAllTimelines()
         
+        if #available(iOS 18.0, *) {
+            ControlCenter.shared.reloadAllControls()
+        }
+        
         // Tell the watch to update it's complications
         self.watchConnectivityManager.sendComplicationUpdateMessage()
     }

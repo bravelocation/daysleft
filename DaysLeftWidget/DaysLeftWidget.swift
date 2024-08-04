@@ -10,7 +10,7 @@ import WidgetKit
 import SwiftUI
 
 /// iOS widget
-@main struct DaysLeftWidget: Widget {
+struct DaysLeftWidget: Widget {
     /// Kind of widget
     let kind: String = "DaysLeftWidget"
     
