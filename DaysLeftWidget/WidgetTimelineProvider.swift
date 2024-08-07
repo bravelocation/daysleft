@@ -57,3 +57,44 @@ struct WidgetTimelineProvider: TimelineProvider {
         completion(timeline)
     }
 }
+
+@available(iOS 17, watchOS 10.0, *)
+struct AppIntentWidgetTimelineProvider: AppIntentTimelineProvider {
+    typealias Entry = WidgetDaysLeftData
+    typealias Intent = DaysLeftWidgetConfigurationIntent
+    
+    let baseTimeline: WidgetTimelineProvider = WidgetTimelineProvider()
+    
+    func placeholder(in context: Context) -> WidgetDaysLeftData {
+        return baseTimeline.placeholder(in: context)
+    }
+    
+    func snapshot(for configuration: DaysLeftWidgetConfigurationIntent, in context: Context) async -> WidgetDaysLeftData {
+        let data = await withCheckedContinuation { continuation in
+            baseTimeline.getSnapshot(in: context) { data in
+                continuation.resume(returning: data)
+            }
+        }
+        
+        return data
+    }
+    
+    func timeline(for configuration: DaysLeftWidgetConfigurationIntent, in context: Context) async -> Timeline<WidgetDaysLeftData> {
+        let timeline = await withCheckedContinuation { continuation in
+            baseTimeline.getTimeline(in: context) { timeline in
+                continuation.resume(returning: timeline)
+            }
+        }
+        
+        return timeline
+    }
+    
+    func recommendations() -> [AppIntentRecommendation<DaysLeftWidgetConfigurationIntent>] {
+        return []
+    }
+    
+//    @available(iOSApplicationExtension 18.0, *)
+//    func relevances() async -> WidgetRelevances<Self.Intent> {
+//
+//    }
+}

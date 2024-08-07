@@ -55,6 +55,9 @@
 		525960782C5FB465004E1BB6 /* DaysLeftWatchWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525960772C5FB459004E1BB6 /* DaysLeftWatchWidgetBundle.swift */; };
 		5259607A2C5FB69C004E1BB6 /* DaysLeftValueProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525960792C5FB67E004E1BB6 /* DaysLeftValueProvider.swift */; };
 		5259607B2C5FBC83004E1BB6 /* LaunchAppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525960712C5FB229004E1BB6 /* LaunchAppIntent.swift */; };
+		525960862C63A27D004E1BB6 /* DaysLeftWidgetConfigurationIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525960852C63A27D004E1BB6 /* DaysLeftWidgetConfigurationIntent.swift */; };
+		525960872C63A27D004E1BB6 /* DaysLeftWidgetConfigurationIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525960852C63A27D004E1BB6 /* DaysLeftWidgetConfigurationIntent.swift */; };
+		525960882C63A27D004E1BB6 /* DaysLeftWidgetConfigurationIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525960852C63A27D004E1BB6 /* DaysLeftWidgetConfigurationIntent.swift */; };
 		527FEA422BBE9F8B004BA03E /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 527FEA412BBE9F8B004BA03E /* PrivacyInfo.xcprivacy */; };
 		527FEA432BBE9F8B004BA03E /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 527FEA412BBE9F8B004BA03E /* PrivacyInfo.xcprivacy */; };
 		5295EDF01A94AF83007EF7E7 /* DaysLeftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CFBF131A8B631B005234FB /* DaysLeftTests.swift */; };
@@ -260,6 +263,7 @@
 		525960742C5FB2A1004E1BB6 /* DaysLeftControlWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysLeftControlWidget.swift; sourceTree = "<group>"; };
 		525960772C5FB459004E1BB6 /* DaysLeftWatchWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysLeftWatchWidgetBundle.swift; sourceTree = "<group>"; };
 		525960792C5FB67E004E1BB6 /* DaysLeftValueProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysLeftValueProvider.swift; sourceTree = "<group>"; };
+		525960852C63A27D004E1BB6 /* DaysLeftWidgetConfigurationIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysLeftWidgetConfigurationIntent.swift; sourceTree = "<group>"; };
 		525D88E52BE67E5600E94D86 /* daysleft-mac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "daysleft-mac.entitlements"; sourceTree = "<group>"; };
 		52790F781D056F500025AF10 /* daysleft-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "daysleft-Bridging-Header.h"; sourceTree = "<group>"; };
 		527FEA412BBE9F8B004BA03E /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
@@ -555,6 +559,7 @@
 			isa = PBXGroup;
 			children = (
 				52A70D4828DC555800DCE9CB /* DaysLeftAppIntent.swift */,
+				525960852C63A27D004E1BB6 /* DaysLeftWidgetConfigurationIntent.swift */,
 				525960712C5FB229004E1BB6 /* LaunchAppIntent.swift */,
 				52A70D4F28DC660C00DCE9CB /* ShortcutProvider.swift */,
 			);
@@ -1027,6 +1032,7 @@
 				525960782C5FB465004E1BB6 /* DaysLeftWatchWidgetBundle.swift in Sources */,
 				5234FDA728E2EA560003515F /* String+Helpers.swift in Sources */,
 				52A70D7C28DC9BDD00DCE9CB /* AppControlSettings.swift in Sources */,
+				525960882C63A27D004E1BB6 /* DaysLeftWidgetConfigurationIntent.swift in Sources */,
 				52A70D6228DC98E100DCE9CB /* DaysLeftWatchWidget.swift in Sources */,
 				522D6ABD2C030F4600B64778 /* WidgetBackgroundModifier.swift in Sources */,
 				52A70D7B28DC9BDB00DCE9CB /* AppSettings.swift in Sources */,
@@ -1100,6 +1106,7 @@
 				52CE53DB28E49E3A00174D39 /* Documentation.docc in Sources */,
 				52CFBEFE1A8B631B005234FB /* AppDelegate.swift in Sources */,
 				52D26A542BF646A400485AD0 /* UpgradeWarningView.swift in Sources */,
+				525960862C63A27D004E1BB6 /* DaysLeftWidgetConfigurationIntent.swift in Sources */,
 				5240F1E528D9B6CB00B95FE5 /* AppSettingsDataManager.swift in Sources */,
 				52CBC7C928DB101600C89F20 /* InMemoryDataProvider.swift in Sources */,
 				5234FDBE28E436730003515F /* AnimatedCircularProgressView.swift in Sources */,
@@ -1124,6 +1131,7 @@
 			files = (
 				5234FDA828E2EA560003515F /* String+Helpers.swift in Sources */,
 				52E048B325077E1C009A2169 /* WidgetView.swift in Sources */,
+				525960872C63A27D004E1BB6 /* DaysLeftWidgetConfigurationIntent.swift in Sources */,
 				52E048A725077AFB009A2169 /* DaysLeftWidget.swift in Sources */,
 				525960762C5FB2B9004E1BB6 /* DaysLeftControlWidget.swift in Sources */,
 				52A70D5628DC913D00DCE9CB /* AccessoryInlineView.swift in Sources */,
