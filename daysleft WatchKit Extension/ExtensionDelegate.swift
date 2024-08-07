@@ -132,15 +132,6 @@ class ExtensionDelegate: NSObject, WKApplicationDelegate {
     
     /// Update any added complications
     private func updateComplications() {
-        let complicationServer = CLKComplicationServer.sharedInstance()
-        
-        if let activeComplications = complicationServer.activeComplications {
-            for complication in activeComplications {
-                complicationServer.reloadTimeline(for: complication)
-            }
-        }
-        
-        // Should we be updating widgets too?
         WidgetCenter.shared.reloadAllTimelines()
     }
     

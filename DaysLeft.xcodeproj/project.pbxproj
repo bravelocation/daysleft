@@ -90,7 +90,6 @@
 		52A70D8228DC9E2800DCE9CB /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52CFBF041A8B631B005234FB /* Media.xcassets */; };
 		52A70D8328DC9E5900DCE9CB /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CBC7BD28DAF84500C89F20 /* CircularProgressView.swift */; };
 		52A70D8428DC9EA600DCE9CB /* DaysLeftViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BC111E237C4AD0005EC3F7 /* DaysLeftViewModel.swift */; };
-		52A70D8928DCA11900DCE9CB /* ComplicationsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A70D8828DCA11900DCE9CB /* ComplicationsDataSource.swift */; };
 		52BC111B237C461C005EC3F7 /* WatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BC111A237C461C005EC3F7 /* WatchView.swift */; };
 		52C03E3D2BD94F7F002E33D2 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 52C03E3C2BD94F7F002E33D2 /* FirebaseAnalyticsWithoutAdIdSupport */; };
 		52C03E3F2BD94F7F002E33D2 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 52C03E3E2BD94F7F002E33D2 /* FirebaseCrashlytics */; };
@@ -280,7 +279,6 @@
 		52A70D6128DC98E100DCE9CB /* DaysLeftWatchWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysLeftWatchWidget.swift; sourceTree = "<group>"; };
 		52A70D6528DC98E300DCE9CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52A70D7528DC9B2100DCE9CB /* WatchWidgetSwitcherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchWidgetSwitcherView.swift; sourceTree = "<group>"; };
-		52A70D8828DCA11900DCE9CB /* ComplicationsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComplicationsDataSource.swift; sourceTree = "<group>"; };
 		52AC693D2154DA7E00E6C833 /* IntentsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IntentsUI.framework; path = System/Library/Frameworks/IntentsUI.framework; sourceTree = SDKROOT; };
 		52B78DF31D982A6E00AB629D /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
 		52B78E091D98388D00AB629D /* WatchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchKit.framework; path = System/Library/Frameworks/WatchKit.framework; sourceTree = SDKROOT; };
@@ -583,7 +581,6 @@
 			isa = PBXGroup;
 			children = (
 				5208B84D28D87992007BB75C /* Assets */,
-				52A70D8828DCA11900DCE9CB /* ComplicationsDataSource.swift */,
 				52C3524B28DCB2EC00D02445 /* DaysLeftWatchApp.swift */,
 				5234436C1BBB181C00E95BA4 /* ExtensionDelegate.swift */,
 				5208B84A28D87933007BB75C /* Views */,
@@ -1068,7 +1065,6 @@
 				5234FDA628E2EA560003515F /* String+Helpers.swift in Sources */,
 				5234FDA028E2021D0003515F /* DisplayValues.swift in Sources */,
 				52C3524C28DCB2EC00D02445 /* DaysLeftWatchApp.swift in Sources */,
-				52A70D8928DCA11900DCE9CB /* ComplicationsDataSource.swift in Sources */,
 				520510992C63BB0A00BCBBE5 /* DaysLeftWidgetConfigurationIntent.swift in Sources */,
 				52F58DF728E444AE006F9698 /* AnimatedPercentageDone.swift in Sources */,
 				52F3B3E028E5D8E900A13120 /* Notification+Name.swift in Sources */,
