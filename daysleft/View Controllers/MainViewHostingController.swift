@@ -10,6 +10,7 @@ import Combine
 import Foundation
 import Intents
 import SwiftUI
+import AppIntents
 
 /// Main view hosting controller
 class MainViewHostingController<Content: View>: UIHostingController<Content>, ViewModelActionDelegate {
@@ -96,6 +97,9 @@ class MainViewHostingController<Content: View>: UIHostingController<Content>, Vi
         
         // Setup menu command handler
         self.setupMenuCommandHandler()
+        
+        // Donate intent to help widget relevance
+        self.donateIntent()
     }
     
     /// Event handler for when view appears
@@ -140,6 +144,14 @@ class MainViewHostingController<Content: View>: UIHostingController<Content>, Vi
         
         self.userActivity = activity
         self.userActivity?.becomeCurrent()
+    }
+    
+    // MARK: - Intent functions
+    /// Donates app intent to help smart stack inteliigence for widget
+    func donateIntent() {
+        if #available(iOS 17, *) {
+            IntentDonationManager.shared.donate(intent: DaysLeftWidgetConfigurationIntent())
+        }
     }
 }
 
