@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		520510992C63BB0A00BCBBE5 /* DaysLeftWidgetConfigurationIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525960852C63A27D004E1BB6 /* DaysLeftWidgetConfigurationIntent.swift */; };
 		522D6ABC2C030F4600B64778 /* WidgetBackgroundModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522D6ABB2C030F4600B64778 /* WidgetBackgroundModifier.swift */; };
 		522D6ABD2C030F4600B64778 /* WidgetBackgroundModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522D6ABB2C030F4600B64778 /* WidgetBackgroundModifier.swift */; };
 		523443661BBAFBEF00E95BA4 /* DaysLeft WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 52B7E8811ABEDE9300E1949C /* DaysLeft WatchKit App.app */; platformFilter = ios; };
@@ -1068,6 +1069,7 @@
 				5234FDA028E2021D0003515F /* DisplayValues.swift in Sources */,
 				52C3524C28DCB2EC00D02445 /* DaysLeftWatchApp.swift in Sources */,
 				52A70D8928DCA11900DCE9CB /* ComplicationsDataSource.swift in Sources */,
+				520510992C63BB0A00BCBBE5 /* DaysLeftWidgetConfigurationIntent.swift in Sources */,
 				52F58DF728E444AE006F9698 /* AnimatedPercentageDone.swift in Sources */,
 				52F3B3E028E5D8E900A13120 /* Notification+Name.swift in Sources */,
 				5240F1E628D9B6CB00B95FE5 /* AppSettingsDataManager.swift in Sources */,

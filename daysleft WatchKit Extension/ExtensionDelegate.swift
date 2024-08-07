@@ -11,6 +11,7 @@ import Combine
 import ClockKit
 import WidgetKit
 import OSLog
+import AppIntents
 
 /// Watch app extension delegate
 class ExtensionDelegate: NSObject, WKApplicationDelegate {
@@ -72,6 +73,9 @@ class ExtensionDelegate: NSObject, WKApplicationDelegate {
         
         // Update complications
         self.updateComplications()
+        
+        // Donate any intents for smart stack optimisation
+        self.donateIntent()
         
         self.logger.debug("applicationDidBecomeActive completed")
     }
@@ -138,5 +142,26 @@ class ExtensionDelegate: NSObject, WKApplicationDelegate {
         
         // Should we be updating widgets too?
         WidgetCenter.shared.reloadAllTimelines()
+    }
+    
+    
+    // MARK: - Intent functions
+    /// Donates app intent to help smart stack inteliigence for widget
+    func donateIntent() {
+        if #available(watchOS 10, *) {
+            // Donate the widget intent to help smart stack intelligence
+            IntentDonationManager.shared.donate(intent: DaysLeftWidgetConfigurationIntent())
+            
+            // Also update the relevance time for the length of the countdown
+            Task {
+               let relevantContext: RelevantContext = .date(from: self.dataManager.appSettings.start, to: self.dataManager.appSettings.end)
+               let relevantIntent = RelevantIntent(
+                   DaysLeftWidgetConfigurationIntent(),
+                   widgetKind: "DaysLeftWidget",
+                   relevance: relevantContext)
+               
+                try await RelevantIntentManager.shared.updateRelevantIntents([relevantIntent])
+            }
+        }
     }
 }

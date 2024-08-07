@@ -9,6 +9,7 @@
 import Foundation
 import WidgetKit
 import SwiftUI
+import AppIntents
 
 /// Widget timeline provider
 struct WidgetTimelineProvider: TimelineProvider {
@@ -92,9 +93,4 @@ struct AppIntentWidgetTimelineProvider: AppIntentTimelineProvider {
     func recommendations() -> [AppIntentRecommendation<DaysLeftWidgetConfigurationIntent>] {
         return []
     }
-    
-//    @available(iOSApplicationExtension 18.0, *)
-//    func relevances() async -> WidgetRelevances<Self.Intent> {
-//
-//    }
 }
