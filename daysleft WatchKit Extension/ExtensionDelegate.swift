@@ -71,8 +71,8 @@ class ExtensionDelegate: NSObject, WKApplicationDelegate {
         // Setup background refresh
         self.setupBackgroundRefresh()
         
-        // Update complications
-        self.updateComplications()
+        // Update widgets
+        self.updateWidgets()
         
         // Donate any intents for smart stack optimisation
         self.donateIntent()
@@ -87,11 +87,11 @@ class ExtensionDelegate: NSObject, WKApplicationDelegate {
 
         // Mark tasks as completed
         for task in backgroundTasks {
-            // If it was a background task, update complications and setup a new one
+            // If it was a background task, update widgets and setup a new one
             if task is WKApplicationRefreshBackgroundTask {
                 
-                // Simply update the complications on a background task being triggered
-                self.updateComplications()
+                // Simply update the widgets
+                self.updateWidgets()
                 
                 // Also update the data model
                 self.dataModel.updateViewData()
@@ -110,8 +110,8 @@ class ExtensionDelegate: NSObject, WKApplicationDelegate {
     @objc fileprivate func iCloudSettingsUpdated() {
         self.logger.debug("Received iCloudSettingsUpdated notification")
         
-        // Update complications
-        self.updateComplications()
+        // Update widgets
+        self.updateWidgets()
     }
     
     /// Setup a background refresh to update data etc.
@@ -130,8 +130,8 @@ class ExtensionDelegate: NSObject, WKApplicationDelegate {
         self.logger.debug("Setup background task for \(twoHoursTime)")
     }
     
-    /// Update any added complications
-    private func updateComplications() {
+    /// Update any added widgets
+    private func updateWidgets() {
         WidgetCenter.shared.reloadAllTimelines()
     }
     

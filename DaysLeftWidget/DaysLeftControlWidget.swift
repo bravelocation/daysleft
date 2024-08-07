@@ -12,7 +12,7 @@ import SwiftUI
 @available(iOS 18.0, *)
 struct DaysLeftControlWidget: ControlWidget {
     
-    static let kind: String = "com.bravelocation.daysleft.DaysLeftControlWidget"
+    static let kind: String = "com.bravelocation.daysleft.v2.DaysLeftControlWidget"
     
     var body: some ControlWidgetConfiguration {
         StaticControlConfiguration(

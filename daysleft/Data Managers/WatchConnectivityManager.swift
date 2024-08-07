@@ -63,25 +63,15 @@ class WatchConnectivityManager: NSObject, WCSessionDelegate {
     // MARK: watchOS only functions
     
     #if os(watchOS)
-    /// Delegate method called on the watch when it receives user information e.g. when complications should be updated because of a data change detected
+    /// Delegate method called on the watch when it receives user information e.g. when widgets should be updated because of a data change detected
     /// - Parameters:
     ///   - session: Current session
     ///   - userInfo: User info sent in the message
     func session(_ session: WCSession, didReceiveUserInfo userInfo: [String: Any] = [:]) {
-        // If we receive an update message, update the complications
-        self.logger.debug("Updating complications due to receiving userInfo...")
-        let complicationServer = CLKComplicationServer.sharedInstance()
-        
-        if let activeComplications = complicationServer.activeComplications {
-            for complication in activeComplications {
-                complicationServer.reloadTimeline(for: complication)
-            }
-        }
-        
         // Should we be updating widgets too?
         WidgetCenter.shared.reloadAllTimelines()
         
-        self.logger.debug("Complications updated")
+        self.logger.debug("Widgets updated")
     }
     #endif
     
