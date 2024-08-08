@@ -91,6 +91,12 @@ struct AppIntentWidgetTimelineProvider: AppIntentTimelineProvider {
     }
     
     func recommendations() -> [AppIntentRecommendation<DaysLeftWidgetConfigurationIntent>] {
-        return []
+        var recs = [AppIntentRecommendation<DaysLeftWidgetConfigurationIntent>]()
+
+        let configIntent = DaysLeftWidgetConfigurationIntent()
+        let recommendation = AppIntentRecommendation(intent: configIntent, description: "None")
+        recs.append(recommendation)
+
+        return recs
     }
 }
