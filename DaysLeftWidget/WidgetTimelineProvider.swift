@@ -81,11 +81,23 @@ struct AppIntentWidgetTimelineProvider: AppIntentTimelineProvider {
     }
     
     func timeline(for configuration: DaysLeftWidgetConfigurationIntent, in context: Context) async -> Timeline<WidgetDaysLeftData> {
-        let timeline = await withCheckedContinuation { continuation in
-            baseTimeline.getTimeline(in: context) { timeline in
-                continuation.resume(returning: timeline)
-            }
+        let dataManager = AppSettingsDataManager()
+        let appSettings = dataManager.appSettings
+
+        // Add entry just for now
+        var entries: [WidgetDaysLeftData] = []
+        let entry = WidgetDaysLeftData(date: Date(), appSettings: appSettings)
+        entries.append(entry)
+
+        // Update the widget every hour
+        var entryDate = Date().addingTimeInterval(60*60)
+        
+        // If the expiry time is tomorrow, set it to be start of tomorrow
+        if Calendar.current.isDateInTomorrow(entryDate) {
+            entryDate = Calendar.current.startOfDay(for: entryDate)
         }
+
+        let timeline = Timeline(entries: entries, policy: .after(entryDate))
         
         return timeline
     }
