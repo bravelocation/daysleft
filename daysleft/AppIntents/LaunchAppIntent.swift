@@ -11,9 +11,9 @@ import UIKit
 
 @available(iOS 16, *)
 struct LaunchAppIntent: AppIntent {
-    static var title: LocalizedStringResource = "Open Days Left"
-    static var description = IntentDescription("Open Days Left")
-    static var openAppWhenRun: Bool = true
+    static let title: LocalizedStringResource = "Open Days Left"
+    static let description = IntentDescription("Open Days Left")
+    static let openAppWhenRun: Bool = true
     
     @MainActor
     func perform() async throws -> some IntentResult {
