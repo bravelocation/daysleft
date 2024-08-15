@@ -12,6 +12,7 @@ import Combine
 import OSLog
 
 /// Protocol for handlers of view model actions
+@MainActor
 protocol ViewModelActionDelegate: AnyObject {
     /// Share event is raised
     func share()

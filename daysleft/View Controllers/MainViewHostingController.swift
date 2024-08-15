@@ -10,7 +10,7 @@ import Combine
 import Foundation
 import Intents
 import SwiftUI
-@preconcurrency import AppIntents
+import AppIntents
 
 /// Main view hosting controller
 class MainViewHostingController<Content: View>: UIHostingController<Content>, ViewModelActionDelegate {

@@ -10,7 +10,7 @@ import Foundation
 import FirebaseAnalytics
 
 /// Class that provides app-wide access to calling Analytics functions
-public class AnalyticsManager {
+public class AnalyticsManager: @unchecked Sendable {
     
     /// Static instance of the class
     private static let sharedInstance = AnalyticsManager()

@@ -35,6 +35,7 @@ class ExtensionDelegate: NSObject, WKApplicationDelegate {
     // MARK: Initialisation
     
     /// Initialiser
+    @MainActor
     override init() {
         self.dataManager = AppSettingsDataManager()
         

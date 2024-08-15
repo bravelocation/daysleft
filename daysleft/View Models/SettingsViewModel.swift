@@ -11,6 +11,7 @@ import Combine
 import UIKit
 
 /// Protocol for handlers of settings events
+@MainActor
 protocol SettingsActionDelegate: AnyObject {
     /// The badge toggle is changed
     func badgeChanged()
