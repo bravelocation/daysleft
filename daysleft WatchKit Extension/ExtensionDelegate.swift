@@ -136,7 +136,6 @@ class ExtensionDelegate: NSObject, WKApplicationDelegate {
         WidgetCenter.shared.reloadAllTimelines()
     }
     
-    
     // MARK: - Intent functions
     /// Donates app intent to help smart stack inteliigence for widget
     func donateIntent() {

@@ -46,7 +46,7 @@ struct AnimatableNumberModifier: AnimatableModifier {
     
     /// Animatable data
     var animatableData: Double {
-        get { number }
+        return number
     }
     
     /// Body of modifier
