@@ -14,6 +14,7 @@ import OSLog
 import AppIntents
 
 /// Watch app extension delegate
+@MainActor
 class ExtensionDelegate: NSObject, WKApplicationDelegate {
     
     /// Logger

@@ -12,7 +12,7 @@ import WidgetKit
 #if !targetEnvironment(macCatalyst)
 
 /// Accessory rectangular view
-@available(iOSApplicationExtension 16.0, *)
+@available(iOS 16.0, *)
 struct AccessoryRectangularView: View {
     /// View model
     var model: WidgetDaysLeftData
@@ -37,7 +37,7 @@ struct AccessoryRectangularView: View {
 }
 
 /// Preview provider for AccessoryRectangularView
-@available(iOSApplicationExtension 16.0, *)
+@available(iOS 16.0, *)
 struct AccessoryRectangularView_Previews: PreviewProvider {
     static var appSettings = AppSettingsDataManager(dataProvider: InMemoryDataProvider.shared).appSettings
 
