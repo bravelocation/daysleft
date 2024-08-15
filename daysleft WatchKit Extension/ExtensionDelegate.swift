@@ -36,7 +36,6 @@ class ExtensionDelegate: NSObject, WKApplicationDelegate {
     
     /// Initialiser
     override init() {
-        
         self.dataManager = AppSettingsDataManager()
         
         #if DEBUG
