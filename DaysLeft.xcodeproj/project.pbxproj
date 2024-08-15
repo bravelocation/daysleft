@@ -130,10 +130,8 @@
 		52CE53DB28E49E3A00174D39 /* Documentation.docc in Sources */ = {isa = PBXBuildFile; fileRef = 52CE53DA28E49E3A00174D39 /* Documentation.docc */; };
 		52CFBEFE1A8B631B005234FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CFBEFD1A8B631B005234FB /* AppDelegate.swift */; };
 		52CFBF051A8B631B005234FB /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52CFBF041A8B631B005234FB /* Media.xcassets */; };
-		52D26A4E2BF63B7E00485AD0 /* RemoteConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D26A4D2BF63B7E00485AD0 /* RemoteConfigManager.swift */; };
 		52D26A502BF63BF800485AD0 /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = 52D26A4F2BF63BF800485AD0 /* FirebaseRemoteConfig */; };
 		52D26A522BF63DE600485AD0 /* remote_config_defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52D26A512BF63DE600485AD0 /* remote_config_defaults.plist */; };
-		52D26A542BF646A400485AD0 /* UpgradeWarningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D26A532BF646A400485AD0 /* UpgradeWarningView.swift */; };
 		52D617B124D06F9000465F4C /* MenuBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D617B024D06F9000465F4C /* MenuBuilder.swift */; };
 		52DC5AD028DB3EE300AFF24D /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DC5ACF28DB3EE300AFF24D /* SettingsViewModel.swift */; };
 		52DC5AD228DB431900AFF24D /* SettingsViewHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DC5AD128DB431900AFF24D /* SettingsViewHostingController.swift */; };
@@ -305,9 +303,7 @@
 		52CFBEFD1A8B631B005234FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52CFBF041A8B631B005234FB /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		52CFBF131A8B631B005234FB /* DaysLeftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysLeftTests.swift; sourceTree = "<group>"; };
-		52D26A4D2BF63B7E00485AD0 /* RemoteConfigManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigManager.swift; sourceTree = "<group>"; };
 		52D26A512BF63DE600485AD0 /* remote_config_defaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = remote_config_defaults.plist; sourceTree = "<group>"; };
-		52D26A532BF646A400485AD0 /* UpgradeWarningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpgradeWarningView.swift; sourceTree = "<group>"; };
 		52D617B024D06F9000465F4C /* MenuBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBuilder.swift; sourceTree = "<group>"; };
 		52DC5ACF28DB3EE300AFF24D /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		52DC5AD128DB431900AFF24D /* SettingsViewHostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewHostingController.swift; sourceTree = "<group>"; };
@@ -397,7 +393,6 @@
 				52FC401327AABAD9005DAD8C /* AnalyticsManager.swift */,
 				5240F1E428D9B6CB00B95FE5 /* AppSettingsDataManager.swift */,
 				52DC9EB41FC97A9200AE02F6 /* FirebaseNotifications.swift */,
-				52D26A4D2BF63B7E00485AD0 /* RemoteConfigManager.swift */,
 				5234FDA928E2ED810003515F /* WatchConnectivityManager.swift */,
 			);
 			path = "Data Managers";
@@ -475,7 +470,6 @@
 				52CBC7C728DB0D0900C89F20 /* MainView.swift */,
 				52DC5AD328DB43CE00AFF24D /* SettingsView.swift */,
 				52C9A4A028E893D600F7EAF1 /* TextFieldClearButton.swift */,
-				52D26A532BF646A400485AD0 /* UpgradeWarningView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1103,7 +1097,6 @@
 				5240F1F128D9C25700B95FE5 /* AppControlSettings.swift in Sources */,
 				52CE53DB28E49E3A00174D39 /* Documentation.docc in Sources */,
 				52CFBEFE1A8B631B005234FB /* AppDelegate.swift in Sources */,
-				52D26A542BF646A400485AD0 /* UpgradeWarningView.swift in Sources */,
 				525960862C63A27D004E1BB6 /* DaysLeftWidgetConfigurationIntent.swift in Sources */,
 				5240F1E528D9B6CB00B95FE5 /* AppSettingsDataManager.swift in Sources */,
 				52CBC7C928DB101600C89F20 /* InMemoryDataProvider.swift in Sources */,
@@ -1111,7 +1104,6 @@
 				52D617B124D06F9000465F4C /* MenuBuilder.swift in Sources */,
 				5240F1D028D8C1BC00B95FE5 /* Date+Helpers.swift in Sources */,
 				52A70D5028DC660C00DCE9CB /* ShortcutProvider.swift in Sources */,
-				52D26A4E2BF63B7E00485AD0 /* RemoteConfigManager.swift in Sources */,
 				52A70D4928DC555800DCE9CB /* DaysLeftAppIntent.swift in Sources */,
 				52DC5AD228DB431900AFF24D /* SettingsViewHostingController.swift in Sources */,
 				52CBC7A028D9E01700C89F20 /* DataProviderProtocol.swift in Sources */,
