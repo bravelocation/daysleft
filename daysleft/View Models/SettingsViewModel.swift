@@ -20,6 +20,7 @@ protocol SettingsActionDelegate: AnyObject {
 }
 
 /// Settings view model
+@MainActor
 class SettingsViewModel: ObservableObject {
     /// Current app settings
     private(set) var appSettings: AppSettings

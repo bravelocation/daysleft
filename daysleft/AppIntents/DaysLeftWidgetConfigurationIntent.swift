@@ -10,6 +10,7 @@ import AppIntents
 import WidgetKit
 
 @available(iOS 17, watchOS 10, *)
+@preconcurrency
 struct DaysLeftWidgetConfigurationIntent: WidgetConfigurationIntent {
     static var title: LocalizedStringResource = "Configure Days Left"
     static var description = IntentDescription("Configure Days Left")

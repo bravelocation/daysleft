@@ -21,6 +21,7 @@ protocol ViewModelActionDelegate: AnyObject {
 }
 
 /// Main view model for display of days left settings
+@MainActor
 class DaysLeftViewModel: ObservableObject {
     
     /// Logger
@@ -109,9 +110,6 @@ class DaysLeftViewModel: ObservableObject {
     private func userSettingsUpdated() {
         self.logger.debug("Received UserSettingsUpdated notification")
         
-        // Update view data on main thread
-        DispatchQueue.main.async {
-            self.updateViewData()
-        }
+        self.updateViewData()
     }
 }

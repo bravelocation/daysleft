@@ -10,6 +10,7 @@ import FirebaseRemoteConfig
 import SwiftUI
 import OSLog
 
+@MainActor
 class RemoteConfigManager: ObservableObject {
     private var remoteConfig: RemoteConfig
     
@@ -75,13 +76,11 @@ class RemoteConfigManager: ObservableObject {
     }
     
     private func updateValues() {
-        DispatchQueue.main.async {
-            self.bundleId = self.remoteConfig["bundle_id"].stringValue
-            self.message = self.remoteConfig["message"].stringValue
-            self.newAppId = self.remoteConfig["new_app_id"].stringValue
-            
-            // Show the message if bundleID matches the current bundle ID
-            self.showMessage = (self.bundleId == Bundle.main.bundleIdentifier)
-        }
+        self.bundleId = self.remoteConfig["bundle_id"].stringValue
+        self.message = self.remoteConfig["message"].stringValue
+        self.newAppId = self.remoteConfig["new_app_id"].stringValue
+        
+        // Show the message if bundleID matches the current bundle ID
+        self.showMessage = (self.bundleId == Bundle.main.bundleIdentifier)
     }
 }
