@@ -31,7 +31,6 @@ struct WidgetAccessoryBackgroundModifier: ViewModifier {
 }
 
 extension View {
-    @warn_unqualified_access
     func preferWidgetBackground(accessoryWidget: Bool = false) -> some View {
         Group {
             if accessoryWidget {
