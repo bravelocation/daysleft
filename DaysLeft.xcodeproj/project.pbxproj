@@ -281,10 +281,8 @@
 		52B78DF31D982A6E00AB629D /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
 		52B78E091D98388D00AB629D /* WatchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchKit.framework; path = System/Library/Frameworks/WatchKit.framework; sourceTree = SDKROOT; };
 		52B78E0B1D9838B800AB629D /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = System/Library/Frameworks/WatchConnectivity.framework; sourceTree = SDKROOT; };
-		52B7E87A1ABEDE9300E1949C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52B7E8811ABEDE9300E1949C /* DaysLeft WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DaysLeft WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52B7E8871ABEDE9300E1949C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		52B7E8961ABEDEDE00E1949C /* daysleft WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "daysleft WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		52BC111A237C461C005EC3F7 /* WatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchView.swift; sourceTree = "<group>"; };
 		52BC111E237C4AD0005EC3F7 /* DaysLeftViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysLeftViewModel.swift; sourceTree = "<group>"; };
 		52C3524B28DCB2EC00D02445 /* DaysLeftWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysLeftWatchApp.swift; sourceTree = "<group>"; };
@@ -491,15 +489,6 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
-		5208B84D28D87992007BB75C /* Assets */ = {
-			isa = PBXGroup;
-			children = (
-				52B7E8961ABEDEDE00E1949C /* daysleft WatchKit Extension.entitlements */,
-				52B7E87A1ABEDE9300E1949C /* Info.plist */,
-			);
-			name = Assets;
-			sourceTree = "<group>";
-		};
 		5208B84E28D879E6007BB75C /* Assets */ = {
 			isa = PBXGroup;
 			children = (
@@ -572,22 +561,14 @@
 			path = "DaysLeft WatchKit Widget";
 			sourceTree = "<group>";
 		};
-		52B7E8781ABEDE9300E1949C /* daysleft WatchKit Extension */ = {
-			isa = PBXGroup;
-			children = (
-				5208B84D28D87992007BB75C /* Assets */,
-				52C3524B28DCB2EC00D02445 /* DaysLeftWatchApp.swift */,
-				5234436C1BBB181C00E95BA4 /* ExtensionDelegate.swift */,
-				5208B84A28D87933007BB75C /* Views */,
-			);
-			path = "daysleft WatchKit Extension";
-			sourceTree = "<group>";
-		};
 		52B7E8851ABEDE9300E1949C /* daysleft WatchKit App */ = {
 			isa = PBXGroup;
 			children = (
 				5234436B1BBB00B800E95BA4 /* daysleft WatchKit App.entitlements */,
+				52C3524B28DCB2EC00D02445 /* DaysLeftWatchApp.swift */,
+				5234436C1BBB181C00E95BA4 /* ExtensionDelegate.swift */,
 				52B7E8861ABEDE9300E1949C /* Supporting Files */,
+				5208B84A28D87933007BB75C /* Views */,
 			);
 			path = "daysleft WatchKit App";
 			sourceTree = "<group>";
@@ -615,7 +596,6 @@
 			children = (
 				52CFBEFA1A8B631B005234FB /* daysleft */,
 				52B7E8851ABEDE9300E1949C /* daysleft WatchKit App */,
-				52B7E8781ABEDE9300E1949C /* daysleft WatchKit Extension */,
 				52A70D6028DC98E100DCE9CB /* DaysLeft WatchKit Widget */,
 				52E048A525077AFB009A2169 /* DaysLeftWidget */,
 				52CE53DA28E49E3A00174D39 /* Documentation.docc */,
@@ -1409,7 +1389,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
-				CODE_SIGN_ENTITLEMENTS = "daysleft WatchKit Extension/daysleft WatchKit Extension.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "daysleft WatchKit App/daysleft WatchKit App.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -1765,7 +1745,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
-				CODE_SIGN_ENTITLEMENTS = "daysleft WatchKit Extension/daysleft WatchKit Extension.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "daysleft WatchKit App/daysleft WatchKit App.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -2085,7 +2065,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
-				CODE_SIGN_ENTITLEMENTS = "daysleft WatchKit Extension/daysleft WatchKit Extension.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "daysleft WatchKit App/daysleft WatchKit App.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -2130,7 +2110,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
-				CODE_SIGN_ENTITLEMENTS = "daysleft WatchKit Extension/daysleft WatchKit Extension.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "daysleft WatchKit App/daysleft WatchKit App.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
