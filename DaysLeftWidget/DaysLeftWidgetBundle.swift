@@ -27,7 +27,10 @@ struct DaysLeftWidgetBundle: WidgetBundle {
     @available(iOS 18.0, *)
     @WidgetBundleBuilder
     var iOS18Widgets: some Widget {
-        DaysLeftControlWidget()
+        // Removing control widget for now, as Firebase Messaging doesn't support properly updating via push notification
+        // Thinking about writing own server software to manage the push notifications, and can then get rid of the Firebase dependency
+        
+        // DaysLeftControlWidget()
         DaysLeftWidget()
     }
 }
