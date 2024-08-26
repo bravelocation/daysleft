@@ -93,7 +93,6 @@
 		52A70D8428DC9EA600DCE9CB /* DaysLeftViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BC111E237C4AD0005EC3F7 /* DaysLeftViewModel.swift */; };
 		52BC111B237C461C005EC3F7 /* WatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BC111A237C461C005EC3F7 /* WatchView.swift */; };
 		52C03E3D2BD94F7F002E33D2 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 52C03E3C2BD94F7F002E33D2 /* FirebaseAnalyticsWithoutAdIdSupport */; };
-		52C03E3F2BD94F7F002E33D2 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 52C03E3E2BD94F7F002E33D2 /* FirebaseCrashlytics */; };
 		52C03E412BD94F7F002E33D2 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 52C03E402BD94F7F002E33D2 /* FirebaseMessaging */; };
 		52C03E422BD95545002E33D2 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 527FEA412BBE9F8B004BA03E /* PrivacyInfo.xcprivacy */; };
 		52C03E432BD95553002E33D2 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 527FEA412BBE9F8B004BA03E /* PrivacyInfo.xcprivacy */; };
@@ -361,7 +360,6 @@
 			files = (
 				52C03E412BD94F7F002E33D2 /* FirebaseMessaging in Frameworks */,
 				52C03E3D2BD94F7F002E33D2 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
-				52C03E3F2BD94F7F002E33D2 /* FirebaseCrashlytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -729,7 +727,6 @@
 				5295EE091A94B398007EF7E7 /* Embed Foundation Extensions */,
 				521B9C4022C8E0B300185CF4 /* Swift Lint */,
 				523443681BBAFBEF00E95BA4 /* Embed Watch Content */,
-				52FC401227AA97EE005DAD8C /* Upload dSYM files to Crashlytics */,
 			);
 			buildRules = (
 			);
@@ -740,7 +737,6 @@
 			name = DaysLeft;
 			packageProductDependencies = (
 				52C03E3C2BD94F7F002E33D2 /* FirebaseAnalyticsWithoutAdIdSupport */,
-				52C03E3E2BD94F7F002E33D2 /* FirebaseCrashlytics */,
 				52C03E402BD94F7F002E33D2 /* FirebaseMessaging */,
 			);
 			productName = daysleft;
@@ -954,25 +950,6 @@
 			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
 			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\n\nif which swiftlint >/dev/null; then\n  swiftlint --config \"${PROJECT_DIR}/swiftlint.yml\"\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
-		};
-		52FC401227AA97EE005DAD8C /* Upload dSYM files to Crashlytics */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 8;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Upload dSYM files to Crashlytics";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 1;
-			shellPath = /bin/sh;
-			shellScript = "\"${BUILD_DIR%/Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -2678,11 +2655,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 52C03E3B2BD94F7F002E33D2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAnalyticsWithoutAdIdSupport;
-		};
-		52C03E3E2BD94F7F002E33D2 /* FirebaseCrashlytics */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 52C03E3B2BD94F7F002E33D2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseCrashlytics;
 		};
 		52C03E402BD94F7F002E33D2 /* FirebaseMessaging */ = {
 			isa = XCSwiftPackageProductDependency;
