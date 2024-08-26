@@ -23,7 +23,6 @@ class ExtensionDelegate: NSObject, WKApplicationDelegate {
     /// View model for app
     var dataModel: DaysLeftViewModel?
 
-    
     /// Handler for background tasks running
     /// - Parameter backgroundTasks: Set of background tasks scheduled
     func handle(_ backgroundTasks: Set<WKRefreshBackgroundTask>) {
