@@ -102,14 +102,6 @@ class MainViewHostingController<Content: View>: UIHostingController<Content>, Vi
         self.donateIntent()
     }
     
-    /// Event handler for when view appears
-    /// - Parameter animated: Animated or not
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        AnalyticsManager.shared.logScreenView(screenName: "Main Screen")
-    }
-    
     // MARK: - ViewModelActionDelegate
     
     /// Called to share the current model

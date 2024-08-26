@@ -122,7 +122,7 @@ class WatchConnectivityManager: NSObject, WCSessionDelegate {
     ///   - session: Session
     ///   - applicationContext: Context data received
     func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String: Any]) {
-        AnalyticsManager.shared.logWatchEvent(messageParameters: applicationContext)
+        // Nothing to do
     }
     
     /// Placeholder delegate method when session becomes inactive

@@ -76,14 +76,6 @@ class SettingsViewHostingController<Content: View>: UIHostingController<Content>
         self.navigationController?.navigationBar.tintColor = UIColor.white
     }
     
-    /// Event handler for when view appears
-    /// - Parameter animated: Animated or not
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        AnalyticsManager.shared.logScreenView(screenName: "Settings Screen")
-    }
-    
     // MARK: - SettingsActionDelegate
     /// Event handler for when badge toggle changes
     func badgeChanged() {

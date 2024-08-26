@@ -92,7 +92,6 @@
 		52A70D8328DC9E5900DCE9CB /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CBC7BD28DAF84500C89F20 /* CircularProgressView.swift */; };
 		52A70D8428DC9EA600DCE9CB /* DaysLeftViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BC111E237C4AD0005EC3F7 /* DaysLeftViewModel.swift */; };
 		52BC111B237C461C005EC3F7 /* WatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BC111A237C461C005EC3F7 /* WatchView.swift */; };
-		52C03E3D2BD94F7F002E33D2 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 52C03E3C2BD94F7F002E33D2 /* FirebaseAnalyticsWithoutAdIdSupport */; };
 		52C03E412BD94F7F002E33D2 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 52C03E402BD94F7F002E33D2 /* FirebaseMessaging */; };
 		52C03E422BD95545002E33D2 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 527FEA412BBE9F8B004BA03E /* PrivacyInfo.xcprivacy */; };
 		52C03E432BD95553002E33D2 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 527FEA412BBE9F8B004BA03E /* PrivacyInfo.xcprivacy */; };
@@ -161,7 +160,6 @@
 		52F58DF728E444AE006F9698 /* AnimatedPercentageDone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F58DF528E444AE006F9698 /* AnimatedPercentageDone.swift */; };
 		52F9CDAC22D63D1900E0FFE8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F9CDAB22D63D1900E0FFE8 /* SceneDelegate.swift */; };
 		52FAB11C1A9240490039691E /* DefaultPreferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52FAB11B1A9240490039691E /* DefaultPreferences.plist */; };
-		52FC401427AABAD9005DAD8C /* AnalyticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FC401327AABAD9005DAD8C /* AnalyticsManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -326,7 +324,6 @@
 		52F9CDAB22D63D1900E0FFE8 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		52FAB11A1A923F500039691E /* daysleft.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = daysleft.entitlements; sourceTree = "<group>"; };
 		52FAB11B1A9240490039691E /* DefaultPreferences.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DefaultPreferences.plist; sourceTree = "<group>"; };
-		52FC401327AABAD9005DAD8C /* AnalyticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -359,7 +356,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				52C03E412BD94F7F002E33D2 /* FirebaseMessaging in Frameworks */,
-				52C03E3D2BD94F7F002E33D2 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,7 +382,6 @@
 		5208B83128D870BF007BB75C /* Data Managers */ = {
 			isa = PBXGroup;
 			children = (
-				52FC401327AABAD9005DAD8C /* AnalyticsManager.swift */,
 				5240F1E428D9B6CB00B95FE5 /* AppSettingsDataManager.swift */,
 				52DC9EB41FC97A9200AE02F6 /* FirebaseNotifications.swift */,
 				5234FDA928E2ED810003515F /* WatchConnectivityManager.swift */,
@@ -736,7 +731,6 @@
 			);
 			name = DaysLeft;
 			packageProductDependencies = (
-				52C03E3C2BD94F7F002E33D2 /* FirebaseAnalyticsWithoutAdIdSupport */,
 				52C03E402BD94F7F002E33D2 /* FirebaseMessaging */,
 			);
 			productName = daysleft;
@@ -1064,7 +1058,6 @@
 				52DC5AD228DB431900AFF24D /* SettingsViewHostingController.swift in Sources */,
 				52CBC7A028D9E01700C89F20 /* DataProviderProtocol.swift in Sources */,
 				52F3B3DD28E59BBF00A13120 /* UIDevice.swift in Sources */,
-				52FC401427AABAD9005DAD8C /* AnalyticsManager.swift in Sources */,
 				52DC5AD028DB3EE300AFF24D /* SettingsViewModel.swift in Sources */,
 				52DC9EB51FC97A9200AE02F6 /* FirebaseNotifications.swift in Sources */,
 				52CBC7B528D9FBE000C89F20 /* AppSettings+DayCalculations.swift in Sources */,
@@ -2650,11 +2643,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 52C03E3B2BD94F7F002E33D2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseMessaging;
-		};
-		52C03E3C2BD94F7F002E33D2 /* FirebaseAnalyticsWithoutAdIdSupport */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 52C03E3B2BD94F7F002E33D2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAnalyticsWithoutAdIdSupport;
 		};
 		52C03E402BD94F7F002E33D2 /* FirebaseMessaging */ = {
 			isa = XCSwiftPackageProductDependency;
