@@ -69,6 +69,7 @@ import BackgroundTasks
         
         if #available(iOS 18.0, *) {
             ControlCenter.shared.reloadAllControls()
+            self.logger.debug("Updated control center widgets")
         }
         
         // Tell the watch to update it's complications
@@ -148,6 +149,7 @@ import BackgroundTasks
                      didReceiveRemoteNotification userInfo: [AnyHashable: Any],
                      fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult)
                        -> Void) {
+        self.logger.debug("Received remote notification ...")
         Messaging.messaging().appDidReceiveMessage(userInfo)
 
         self.updateExternalInformation()

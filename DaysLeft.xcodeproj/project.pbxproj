@@ -51,6 +51,7 @@
 		5240F1F128D9C25700B95FE5 /* AppControlSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5240F1F028D9C25700B95FE5 /* AppControlSettings.swift */; };
 		5240F1F228D9C25700B95FE5 /* AppControlSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5240F1F028D9C25700B95FE5 /* AppControlSettings.swift */; };
 		5240F1F528D9C25700B95FE5 /* AppControlSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5240F1F028D9C25700B95FE5 /* AppControlSettings.swift */; };
+		5244BD292C7B2D1D008B7EDD /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 5244BD282C7B2D1D008B7EDD /* FirebaseMessaging */; };
 		525960702C5FB1CD004E1BB6 /* DaysLeftWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5259606E2C5FB1C2004E1BB6 /* DaysLeftWidgetBundle.swift */; };
 		525960732C5FB272004E1BB6 /* LaunchAppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525960712C5FB229004E1BB6 /* LaunchAppIntent.swift */; };
 		525960762C5FB2B9004E1BB6 /* DaysLeftControlWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525960742C5FB2A1004E1BB6 /* DaysLeftControlWidget.swift */; };
@@ -370,6 +371,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5244BD292C7B2D1D008B7EDD /* FirebaseMessaging in Frameworks */,
 				52E048A425077AFB009A2169 /* SwiftUI.framework in Frameworks */,
 				52E048A225077AFB009A2169 /* WidgetKit.framework in Frameworks */,
 			);
@@ -2671,6 +2673,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		5244BD282C7B2D1D008B7EDD /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 52C03E3B2BD94F7F002E33D2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
 		52C03E3C2BD94F7F002E33D2 /* FirebaseAnalyticsWithoutAdIdSupport */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 52C03E3B2BD94F7F002E33D2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

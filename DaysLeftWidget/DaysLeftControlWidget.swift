@@ -8,6 +8,7 @@
 
 import WidgetKit
 import SwiftUI
+import FirebaseMessaging
 
 @available(iOS 18.0, *)
 struct DaysLeftControlWidget: ControlWidget {
@@ -27,5 +28,21 @@ struct DaysLeftControlWidget: ControlWidget {
         }
         .displayName("Days Left")
         .description("How many days left?")
+        .pushHandler(ControlWidgetPushHandler.self)
+    }
+}
+
+@available(iOS 18.0, *)
+struct ControlWidgetPushHandler: ControlPushHandler {
+    func pushTokensDidChange(controls: [ControlInfo]) {
+        let pushTokens = controls.compactMap { $0.pushInfo?.token }
+        
+        if let deviceToken = pushTokens.first {
+            // Register with Firebase Hub
+            let logMessage = "Remote device token received for control widget: \(String(data: deviceToken, encoding: .utf8) ?? "")"
+            print(logMessage)
+            
+            Messaging.messaging().apnsToken = deviceToken
+        }
     }
 }
