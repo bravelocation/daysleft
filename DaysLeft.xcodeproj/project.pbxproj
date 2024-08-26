@@ -131,7 +131,6 @@
 		52CE53DB28E49E3A00174D39 /* Documentation.docc in Sources */ = {isa = PBXBuildFile; fileRef = 52CE53DA28E49E3A00174D39 /* Documentation.docc */; };
 		52CFBEFE1A8B631B005234FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CFBEFD1A8B631B005234FB /* AppDelegate.swift */; };
 		52CFBF051A8B631B005234FB /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52CFBF041A8B631B005234FB /* Media.xcassets */; };
-		52D26A502BF63BF800485AD0 /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = 52D26A4F2BF63BF800485AD0 /* FirebaseRemoteConfig */; };
 		52D26A522BF63DE600485AD0 /* remote_config_defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52D26A512BF63DE600485AD0 /* remote_config_defaults.plist */; };
 		52D617B124D06F9000465F4C /* MenuBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D617B024D06F9000465F4C /* MenuBuilder.swift */; };
 		52DC5AD028DB3EE300AFF24D /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DC5ACF28DB3EE300AFF24D /* SettingsViewModel.swift */; };
@@ -363,7 +362,6 @@
 				52C03E412BD94F7F002E33D2 /* FirebaseMessaging in Frameworks */,
 				52C03E3D2BD94F7F002E33D2 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 				52C03E3F2BD94F7F002E33D2 /* FirebaseCrashlytics in Frameworks */,
-				52D26A502BF63BF800485AD0 /* FirebaseRemoteConfig in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -744,7 +742,6 @@
 				52C03E3C2BD94F7F002E33D2 /* FirebaseAnalyticsWithoutAdIdSupport */,
 				52C03E3E2BD94F7F002E33D2 /* FirebaseCrashlytics */,
 				52C03E402BD94F7F002E33D2 /* FirebaseMessaging */,
-				52D26A4F2BF63BF800485AD0 /* FirebaseRemoteConfig */,
 			);
 			productName = daysleft;
 			productReference = 52CFBEF81A8B631B005234FB /* DaysLeft.app */;
@@ -1441,7 +1438,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 456;
+				CURRENT_PROJECT_VERSION = 457;
 				DEPLOYMENT_POSTPROCESSING = YES;
 				DEVELOPMENT_TEAM = K7GD2Y4SFX;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -1491,7 +1488,7 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 456;
+				CURRENT_PROJECT_VERSION = 457;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = K7GD2Y4SFX;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -1801,7 +1798,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 456;
+				CURRENT_PROJECT_VERSION = 457;
 				DEPLOYMENT_POSTPROCESSING = YES;
 				DEVELOPMENT_TEAM = K7GD2Y4SFX;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -1853,7 +1850,7 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 456;
+				CURRENT_PROJECT_VERSION = 457;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = K7GD2Y4SFX;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -1964,7 +1961,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 456;
+				CURRENT_PROJECT_VERSION = 457;
 				DEPLOYMENT_POSTPROCESSING = YES;
 				DEVELOPMENT_TEAM = K7GD2Y4SFX;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -2021,7 +2018,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 456;
+				CURRENT_PROJECT_VERSION = 457;
 				DEPLOYMENT_POSTPROCESSING = YES;
 				DEVELOPMENT_TEAM = K7GD2Y4SFX;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -2526,7 +2523,7 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 456;
+				CURRENT_PROJECT_VERSION = 457;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = K7GD2Y4SFX;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -2558,7 +2555,7 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 456;
+				CURRENT_PROJECT_VERSION = 457;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = K7GD2Y4SFX;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -2691,11 +2688,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 52C03E3B2BD94F7F002E33D2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseMessaging;
-		};
-		52D26A4F2BF63BF800485AD0 /* FirebaseRemoteConfig */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 52C03E3B2BD94F7F002E33D2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseRemoteConfig;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
