@@ -16,14 +16,28 @@ import SwiftUI
     
     /// Configuration body
     var body: some WidgetConfiguration {
-        StaticConfiguration(
-            kind: kind,
-            provider: WidgetTimelineProvider()) { entry in
-                WatchWidgetSwitcherView(model: entry)
-            }
-        .supportedFamilies(self.supportedFamilies())
-        .configurationDisplayName(NSLocalizedString("Abbreviated App Title", comment: ""))
-        .description(NSLocalizedString("App Title", comment: ""))
+        if #available(watchOS 10.0, *) {
+            return AppIntentConfiguration(
+                kind: kind,
+                intent: DaysLeftWidgetConfigurationIntent.self,
+                provider: AppIntentWidgetTimelineProvider()) { entry in
+                    WatchWidgetSwitcherView(model: entry)
+                }
+                .supportedFamilies(self.supportedFamilies())
+                .configurationDisplayName(NSLocalizedString("Abbreviated App Title", comment: ""))
+                .description(NSLocalizedString("App Title", comment: "")
+            )
+        } else {
+            return StaticConfiguration(
+                kind: kind,
+                provider: WidgetTimelineProvider()) { entry in
+                    WatchWidgetSwitcherView(model: entry)
+                }
+                .supportedFamilies(self.supportedFamilies())
+                .configurationDisplayName(NSLocalizedString("Abbreviated App Title", comment: ""))
+                .description(NSLocalizedString("App Title", comment: "")
+            )
+        }
     }
     
     /// Supported fwidget families

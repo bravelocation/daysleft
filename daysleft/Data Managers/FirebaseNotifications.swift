@@ -51,7 +51,9 @@ class FirebaseNotifications: NSObject, MessagingDelegate {
     /// - Parameter deviceToken: Device token
     func register(_ deviceToken: Data) {
         // Register with Firebase Hub
-        self.logger.debug("Remote device token received")
+        let logMessage = "Remote device token received: \(String(data: deviceToken, encoding: .utf8) ?? "")"
+        self.logger.debug("\(String(describing: logMessage))")
+        
         Messaging.messaging().apnsToken = deviceToken
     }
     

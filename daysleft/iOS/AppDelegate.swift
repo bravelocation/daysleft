@@ -14,7 +14,8 @@ import OSLog
 import BackgroundTasks
 
 /// Application delegate for the app
-@UIApplicationMain class AppDelegate: UIResponder, UIApplicationDelegate {
+@MainActor
+@main class AppDelegate: UIResponder, UIApplicationDelegate {
     
     /// Logger
     private let logger = Logger(subsystem: "com.bravelocation.daysleft.v2", category: "AppDelegate")
@@ -43,13 +44,17 @@ import BackgroundTasks
         super.init()
         
         // Setup listener for iCloud setting change
-        let keyValueChangeSubscriber = NotificationCenter.default
-            .publisher(for: .AppSettingsUpdated)
-            .sink { _ in
-                self.iCloudSettingsUpdated()
+        Task {
+            await MainActor.run {
+                let keyValueChangeSubscriber = NotificationCenter.default
+                    .publisher(for: .AppSettingsUpdated)
+                    .sink { _ in
+                        self.iCloudSettingsUpdated()
+                    }
+                
+                self.cancellables.append(keyValueChangeSubscriber)
             }
-        
-        self.cancellables.append(keyValueChangeSubscriber)
+        }
     }
     
     // MARK: Update external information function
@@ -61,6 +66,11 @@ import BackgroundTasks
         
         // Reload any widgets
         WidgetCenter.shared.reloadAllTimelines()
+        
+        if #available(iOS 18.0, *) {
+            ControlCenter.shared.reloadAllControls()
+            self.logger.debug("Updated control center widgets")
+        }
         
         // Tell the watch to update it's complications
         self.watchConnectivityManager.sendComplicationUpdateMessage()
@@ -139,6 +149,7 @@ import BackgroundTasks
                      didReceiveRemoteNotification userInfo: [AnyHashable: Any],
                      fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult)
                        -> Void) {
+        self.logger.debug("Received remote notification ...")
         Messaging.messaging().appDidReceiveMessage(userInfo)
 
         self.updateExternalInformation()
@@ -170,7 +181,7 @@ import BackgroundTasks
 }
 
 // MARK: - User notifications
-extension AppDelegate: UNUserNotificationCenterDelegate {
+extension AppDelegate: @preconcurrency UNUserNotificationCenterDelegate {
     /// Event handler called when a notification is received
     /// - Parameters:
     ///   - center: Notification center

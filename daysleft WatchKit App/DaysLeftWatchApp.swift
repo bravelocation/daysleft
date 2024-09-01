@@ -1,19 +1,24 @@
 //
-//  ExtensionDelegate.swift
-//  daysleft
+//  DaysLeftWatchApp.swift
+//  DaysLeft WatchKit Extension
 //
-//  Created by John Pollard on 29/09/2015.
-//  Copyright © 2015 Brave Location Software. All rights reserved.
+//  Created by John Pollard on 22/09/2022.
+//  Copyright © 2022 Brave Location Software. All rights reserved.
 //
 
+import SwiftUI
 import WatchKit
 import Combine
 import ClockKit
 import WidgetKit
 import OSLog
+import AppIntents
 
-/// Watch app extension delegate
-class ExtensionDelegate: NSObject, WKApplicationDelegate {
+/// Main entry point for app
+@MainActor
+@main struct DaysLeftWatchApp: App {
+    /// Reference to extension delegate
+    @WKApplicationDelegateAdaptor(ExtensionDelegate.self) var delegate
     
     /// Logger
     private let logger = Logger(subsystem: "com.bravelocation.daysleft.v2", category: "ExtensionDelegate")
@@ -30,11 +35,7 @@ class ExtensionDelegate: NSObject, WKApplicationDelegate {
     /// Subscribers to change events
     private var cancellables = [AnyCancellable]()
     
-    // MARK: Initialisation
-    
-    /// Initialiser
-    override init() {
-        
+    init() {
         self.dataManager = AppSettingsDataManager()
         
         #if DEBUG
@@ -45,16 +46,36 @@ class ExtensionDelegate: NSObject, WKApplicationDelegate {
         
         self.dataModel = DaysLeftViewModel(dataManager: self.dataManager)
         
-        super.init()
-        
         // Setup listener for iCloud setting change
         let keyValueChangeSubscriber = NotificationCenter.default
             .publisher(for: .AppSettingsUpdated)
             .sink { _ in
-                self.iCloudSettingsUpdated()
+                WidgetCenter.shared.reloadAllTimelines()
             }
         
         self.cancellables.append(keyValueChangeSubscriber)
+        
+        self.delegate.dataModel = self.dataModel
+    }
+    
+    @Environment(\.scenePhase) private var scenePhase
+    
+    /// Body of app
+    var body: some Scene {
+        WindowGroup {
+            WatchView(model: self.dataModel)
+        }
+        .onChange(of: scenePhase) { newScenePhase, _ in
+            switch newScenePhase {
+            case .active:
+                self.applicationDidBecomeActive()
+                
+            case .inactive, .background:
+                break
+            @unknown default:
+                self.logger.warning("Oh - interesting: I received an unexpected new value.")
+            }
+        }
     }
     
     /// Delegate when watch becomes active
@@ -70,44 +91,23 @@ class ExtensionDelegate: NSObject, WKApplicationDelegate {
         // Setup background refresh
         self.setupBackgroundRefresh()
         
-        // Update complications
-        self.updateComplications()
+        // Update widgets
+        self.updateWidgets()
+        
+        // Donate any intents for smart stack optimisation
+        self.donateIntent()
         
         self.logger.debug("applicationDidBecomeActive completed")
-    }
-    
-    /// Handelr for background tasks running
-    /// - Parameter backgroundTasks: Set of background tasks scheduled
-    func handle(_ backgroundTasks: Set<WKRefreshBackgroundTask>) {
-        self.logger.debug("Handling background task started")
-
-        // Mark tasks as completed
-        for task in backgroundTasks {
-            // If it was a background task, update complications and setup a new one
-            if task is WKApplicationRefreshBackgroundTask {
-                
-                // Simply update the complications on a background task being triggered
-                self.updateComplications()
-                
-                // Also update the data model
-                self.dataModel.updateViewData()
-                
-                // Setup new refresh for tomorrow
-                self.setupBackgroundRefresh()
-            }
-            
-            task.setTaskCompletedWithSnapshot(true)
-        }
     }
     
     // MARK: Event handlers
     
     /// Event handler when iCloud key-value settings have changed
-    @objc fileprivate func iCloudSettingsUpdated() {
+    fileprivate func iCloudSettingsUpdated() {
         self.logger.debug("Received iCloudSettingsUpdated notification")
         
-        // Update complications
-        self.updateComplications()
+        // Update widgets
+        self.updateWidgets()
     }
     
     /// Setup a background refresh to update data etc.
@@ -126,17 +126,28 @@ class ExtensionDelegate: NSObject, WKApplicationDelegate {
         self.logger.debug("Setup background task for \(twoHoursTime)")
     }
     
-    /// Update any added complications
-    private func updateComplications() {
-        let complicationServer = CLKComplicationServer.sharedInstance()
-        
-        if let activeComplications = complicationServer.activeComplications {
-            for complication in activeComplications {
-                complicationServer.reloadTimeline(for: complication)
+    /// Update any added widgets
+    private func updateWidgets() {
+        WidgetCenter.shared.reloadAllTimelines()
+    }
+    
+    // MARK: - Intent functions
+    /// Donates app intent to help smart stack inteliigence for widget
+    func donateIntent() {
+        if #available(watchOS 10, *) {
+            // Donate the widget intent to help smart stack intelligence
+            IntentDonationManager.shared.donate(intent: DaysLeftWidgetConfigurationIntent())
+            
+            // Also update the relevance time for the length of the countdown
+            Task {
+               let relevantContext: RelevantContext = .date(from: self.dataManager.appSettings.start, to: self.dataManager.appSettings.end)
+               let relevantIntent = RelevantIntent(
+                   DaysLeftWidgetConfigurationIntent(),
+                   widgetKind: "DaysLeftWidget",
+                   relevance: relevantContext)
+               
+                try await RelevantIntentManager.shared.updateRelevantIntents([relevantIntent])
             }
         }
-        
-        // Should we be updating widgets too?
-        WidgetCenter.shared.reloadAllTimelines()
     }
 }

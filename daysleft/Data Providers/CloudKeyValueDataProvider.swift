@@ -23,7 +23,7 @@ class CloudKeyValueDataProvider: DataProviderProtocol {
     // MARK: - Shared setup
     
     /// Static instance
-    private static let sharedInstance = CloudKeyValueDataProvider()
+    nonisolated(unsafe) private static let sharedInstance = CloudKeyValueDataProvider()
     
     /// Default instance of the class, used in most places
     /// As we register for update notifications, it doesn't make sense to allow multiple instances of the class running within the app

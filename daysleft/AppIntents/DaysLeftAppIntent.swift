@@ -14,16 +14,16 @@ import SwiftUI
 /// App Intent definition for the accessing of the data via Siri shortcuts
 struct DaysLeftAppIntent: AppIntent, CustomIntentMigratedAppIntent {
     /// Title of the intent
-    static var title: LocalizedStringResource = "How many days left?"
+    static let title: LocalizedStringResource = "How many days left?"
     
     /// Description of the intent
-    static var description = IntentDescription("How many days left?")
+    static let description = IntentDescription("How many days left?")
     
     /// The app shouldn't be opened when the intent is run
-    static var openAppWhenRun: Bool = false
+    static let openAppWhenRun: Bool = false
     
     /// Class name of the previous intent handler
-    static var intentClassName: String = "DaysLeftIntentHandler"
+    static let intentClassName: String = "DaysLeftIntentHandler"
     
     /// Handler to perform the intent
     /// - Returns: The intent will return a visual snippet, plus the number of days left as a result

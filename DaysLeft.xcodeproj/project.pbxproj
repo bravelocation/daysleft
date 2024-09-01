@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		520510992C63BB0A00BCBBE5 /* DaysLeftWidgetConfigurationIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525960852C63A27D004E1BB6 /* DaysLeftWidgetConfigurationIntent.swift */; };
+		5205109B2C63C7DE00BCBBE5 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5205109A2C63C7DE00BCBBE5 /* WidgetKit.framework */; };
 		522D6ABC2C030F4600B64778 /* WidgetBackgroundModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522D6ABB2C030F4600B64778 /* WidgetBackgroundModifier.swift */; };
 		522D6ABD2C030F4600B64778 /* WidgetBackgroundModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522D6ABB2C030F4600B64778 /* WidgetBackgroundModifier.swift */; };
 		523443661BBAFBEF00E95BA4 /* DaysLeft WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 52B7E8811ABEDE9300E1949C /* DaysLeft WatchKit App.app */; platformFilter = ios; };
@@ -49,6 +51,15 @@
 		5240F1F128D9C25700B95FE5 /* AppControlSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5240F1F028D9C25700B95FE5 /* AppControlSettings.swift */; };
 		5240F1F228D9C25700B95FE5 /* AppControlSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5240F1F028D9C25700B95FE5 /* AppControlSettings.swift */; };
 		5240F1F528D9C25700B95FE5 /* AppControlSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5240F1F028D9C25700B95FE5 /* AppControlSettings.swift */; };
+		5244BD292C7B2D1D008B7EDD /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 5244BD282C7B2D1D008B7EDD /* FirebaseMessaging */; };
+		525960702C5FB1CD004E1BB6 /* DaysLeftWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5259606E2C5FB1C2004E1BB6 /* DaysLeftWidgetBundle.swift */; };
+		525960732C5FB272004E1BB6 /* LaunchAppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525960712C5FB229004E1BB6 /* LaunchAppIntent.swift */; };
+		525960762C5FB2B9004E1BB6 /* DaysLeftControlWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525960742C5FB2A1004E1BB6 /* DaysLeftControlWidget.swift */; };
+		5259607A2C5FB69C004E1BB6 /* DaysLeftValueProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525960792C5FB67E004E1BB6 /* DaysLeftValueProvider.swift */; };
+		5259607B2C5FBC83004E1BB6 /* LaunchAppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525960712C5FB229004E1BB6 /* LaunchAppIntent.swift */; };
+		525960862C63A27D004E1BB6 /* DaysLeftWidgetConfigurationIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525960852C63A27D004E1BB6 /* DaysLeftWidgetConfigurationIntent.swift */; };
+		525960872C63A27D004E1BB6 /* DaysLeftWidgetConfigurationIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525960852C63A27D004E1BB6 /* DaysLeftWidgetConfigurationIntent.swift */; };
+		525960882C63A27D004E1BB6 /* DaysLeftWidgetConfigurationIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525960852C63A27D004E1BB6 /* DaysLeftWidgetConfigurationIntent.swift */; };
 		527FEA422BBE9F8B004BA03E /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 527FEA412BBE9F8B004BA03E /* PrivacyInfo.xcprivacy */; };
 		527FEA432BBE9F8B004BA03E /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 527FEA412BBE9F8B004BA03E /* PrivacyInfo.xcprivacy */; };
 		5295EDF01A94AF83007EF7E7 /* DaysLeftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CFBF131A8B631B005234FB /* DaysLeftTests.swift */; };
@@ -80,10 +91,7 @@
 		52A70D8228DC9E2800DCE9CB /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52CFBF041A8B631B005234FB /* Media.xcassets */; };
 		52A70D8328DC9E5900DCE9CB /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CBC7BD28DAF84500C89F20 /* CircularProgressView.swift */; };
 		52A70D8428DC9EA600DCE9CB /* DaysLeftViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BC111E237C4AD0005EC3F7 /* DaysLeftViewModel.swift */; };
-		52A70D8928DCA11900DCE9CB /* ComplicationsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A70D8828DCA11900DCE9CB /* ComplicationsDataSource.swift */; };
 		52BC111B237C461C005EC3F7 /* WatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BC111A237C461C005EC3F7 /* WatchView.swift */; };
-		52C03E3D2BD94F7F002E33D2 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 52C03E3C2BD94F7F002E33D2 /* FirebaseAnalyticsWithoutAdIdSupport */; };
-		52C03E3F2BD94F7F002E33D2 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 52C03E3E2BD94F7F002E33D2 /* FirebaseCrashlytics */; };
 		52C03E412BD94F7F002E33D2 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 52C03E402BD94F7F002E33D2 /* FirebaseMessaging */; };
 		52C03E422BD95545002E33D2 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 527FEA412BBE9F8B004BA03E /* PrivacyInfo.xcprivacy */; };
 		52C03E432BD95553002E33D2 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 527FEA412BBE9F8B004BA03E /* PrivacyInfo.xcprivacy */; };
@@ -121,10 +129,7 @@
 		52CE53DB28E49E3A00174D39 /* Documentation.docc in Sources */ = {isa = PBXBuildFile; fileRef = 52CE53DA28E49E3A00174D39 /* Documentation.docc */; };
 		52CFBEFE1A8B631B005234FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CFBEFD1A8B631B005234FB /* AppDelegate.swift */; };
 		52CFBF051A8B631B005234FB /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52CFBF041A8B631B005234FB /* Media.xcassets */; };
-		52D26A4E2BF63B7E00485AD0 /* RemoteConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D26A4D2BF63B7E00485AD0 /* RemoteConfigManager.swift */; };
-		52D26A502BF63BF800485AD0 /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = 52D26A4F2BF63BF800485AD0 /* FirebaseRemoteConfig */; };
 		52D26A522BF63DE600485AD0 /* remote_config_defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52D26A512BF63DE600485AD0 /* remote_config_defaults.plist */; };
-		52D26A542BF646A400485AD0 /* UpgradeWarningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D26A532BF646A400485AD0 /* UpgradeWarningView.swift */; };
 		52D617B124D06F9000465F4C /* MenuBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D617B024D06F9000465F4C /* MenuBuilder.swift */; };
 		52DC5AD028DB3EE300AFF24D /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DC5ACF28DB3EE300AFF24D /* SettingsViewModel.swift */; };
 		52DC5AD228DB431900AFF24D /* SettingsViewHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DC5AD128DB431900AFF24D /* SettingsViewHostingController.swift */; };
@@ -134,7 +139,7 @@
 		52E048A225077AFB009A2169 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52E048A125077AFB009A2169 /* WidgetKit.framework */; };
 		52E048A425077AFB009A2169 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52E048A325077AFB009A2169 /* SwiftUI.framework */; };
 		52E048A725077AFB009A2169 /* DaysLeftWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E048A625077AFB009A2169 /* DaysLeftWidget.swift */; };
-		52E048AD25077AFE009A2169 /* DaysLeft Widget Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 52E048A025077AFB009A2169 /* DaysLeft Widget Extension.appex */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		52E048AD25077AFE009A2169 /* DaysLeft Widget Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 52E048A025077AFB009A2169 /* DaysLeft Widget Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		52E048B325077E1C009A2169 /* WidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E048B225077E1C009A2169 /* WidgetView.swift */; };
 		52E048B525077E6A009A2169 /* WidgetDaysLeftData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E048B425077E6A009A2169 /* WidgetDaysLeftData.swift */; };
 		52E048BC250787F0009A2169 /* DefaultPreferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52FAB11B1A9240490039691E /* DefaultPreferences.plist */; };
@@ -155,7 +160,6 @@
 		52F58DF728E444AE006F9698 /* AnimatedPercentageDone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F58DF528E444AE006F9698 /* AnimatedPercentageDone.swift */; };
 		52F9CDAC22D63D1900E0FFE8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F9CDAB22D63D1900E0FFE8 /* SceneDelegate.swift */; };
 		52FAB11C1A9240490039691E /* DefaultPreferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52FAB11B1A9240490039691E /* DefaultPreferences.plist */; };
-		52FC401427AABAD9005DAD8C /* AnalyticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FC401327AABAD9005DAD8C /* AnalyticsManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -233,6 +237,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5205109A2C63C7DE00BCBBE5 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS11.0.sdk/System/Library/Frameworks/WidgetKit.framework; sourceTree = DEVELOPER_DIR; };
 		5208B84728D87679007BB75C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		522D6ABB2C030F4600B64778 /* WidgetBackgroundModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetBackgroundModifier.swift; sourceTree = "<group>"; };
 		5234436B1BBB00B800E95BA4 /* daysleft WatchKit App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "daysleft WatchKit App.entitlements"; sourceTree = "<group>"; };
@@ -249,6 +254,11 @@
 		5240F1E428D9B6CB00B95FE5 /* AppSettingsDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsDataManager.swift; sourceTree = "<group>"; };
 		5240F1EA28D9BE1A00B95FE5 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 		5240F1F028D9C25700B95FE5 /* AppControlSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppControlSettings.swift; sourceTree = "<group>"; };
+		5259606E2C5FB1C2004E1BB6 /* DaysLeftWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysLeftWidgetBundle.swift; sourceTree = "<group>"; };
+		525960712C5FB229004E1BB6 /* LaunchAppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchAppIntent.swift; sourceTree = "<group>"; };
+		525960742C5FB2A1004E1BB6 /* DaysLeftControlWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysLeftControlWidget.swift; sourceTree = "<group>"; };
+		525960792C5FB67E004E1BB6 /* DaysLeftValueProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysLeftValueProvider.swift; sourceTree = "<group>"; };
+		525960852C63A27D004E1BB6 /* DaysLeftWidgetConfigurationIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysLeftWidgetConfigurationIntent.swift; sourceTree = "<group>"; };
 		525D88E52BE67E5600E94D86 /* daysleft-mac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "daysleft-mac.entitlements"; sourceTree = "<group>"; };
 		52790F781D056F500025AF10 /* daysleft-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "daysleft-Bridging-Header.h"; sourceTree = "<group>"; };
 		527FEA412BBE9F8B004BA03E /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
@@ -264,15 +274,12 @@
 		52A70D6128DC98E100DCE9CB /* DaysLeftWatchWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysLeftWatchWidget.swift; sourceTree = "<group>"; };
 		52A70D6528DC98E300DCE9CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52A70D7528DC9B2100DCE9CB /* WatchWidgetSwitcherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchWidgetSwitcherView.swift; sourceTree = "<group>"; };
-		52A70D8828DCA11900DCE9CB /* ComplicationsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComplicationsDataSource.swift; sourceTree = "<group>"; };
 		52AC693D2154DA7E00E6C833 /* IntentsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IntentsUI.framework; path = System/Library/Frameworks/IntentsUI.framework; sourceTree = SDKROOT; };
 		52B78DF31D982A6E00AB629D /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
 		52B78E091D98388D00AB629D /* WatchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchKit.framework; path = System/Library/Frameworks/WatchKit.framework; sourceTree = SDKROOT; };
 		52B78E0B1D9838B800AB629D /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = System/Library/Frameworks/WatchConnectivity.framework; sourceTree = SDKROOT; };
-		52B7E87A1ABEDE9300E1949C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52B7E8811ABEDE9300E1949C /* DaysLeft WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DaysLeft WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52B7E8871ABEDE9300E1949C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		52B7E8961ABEDEDE00E1949C /* daysleft WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "daysleft WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		52BC111A237C461C005EC3F7 /* WatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchView.swift; sourceTree = "<group>"; };
 		52BC111E237C4AD0005EC3F7 /* DaysLeftViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysLeftViewModel.swift; sourceTree = "<group>"; };
 		52C3524B28DCB2EC00D02445 /* DaysLeftWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysLeftWatchApp.swift; sourceTree = "<group>"; };
@@ -291,9 +298,7 @@
 		52CFBEFD1A8B631B005234FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52CFBF041A8B631B005234FB /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		52CFBF131A8B631B005234FB /* DaysLeftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysLeftTests.swift; sourceTree = "<group>"; };
-		52D26A4D2BF63B7E00485AD0 /* RemoteConfigManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigManager.swift; sourceTree = "<group>"; };
 		52D26A512BF63DE600485AD0 /* remote_config_defaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = remote_config_defaults.plist; sourceTree = "<group>"; };
-		52D26A532BF646A400485AD0 /* UpgradeWarningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpgradeWarningView.swift; sourceTree = "<group>"; };
 		52D617B024D06F9000465F4C /* MenuBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBuilder.swift; sourceTree = "<group>"; };
 		52DC5ACF28DB3EE300AFF24D /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		52DC5AD128DB431900AFF24D /* SettingsViewHostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewHostingController.swift; sourceTree = "<group>"; };
@@ -319,7 +324,6 @@
 		52F9CDAB22D63D1900E0FFE8 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		52FAB11A1A923F500039691E /* daysleft.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = daysleft.entitlements; sourceTree = "<group>"; };
 		52FAB11B1A9240490039691E /* DefaultPreferences.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DefaultPreferences.plist; sourceTree = "<group>"; };
-		52FC401327AABAD9005DAD8C /* AnalyticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -327,6 +331,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5205109B2C63C7DE00BCBBE5 /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,9 +356,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				52C03E412BD94F7F002E33D2 /* FirebaseMessaging in Frameworks */,
-				52C03E3D2BD94F7F002E33D2 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
-				52C03E3F2BD94F7F002E33D2 /* FirebaseCrashlytics in Frameworks */,
-				52D26A502BF63BF800485AD0 /* FirebaseRemoteConfig in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,6 +363,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5244BD292C7B2D1D008B7EDD /* FirebaseMessaging in Frameworks */,
 				52E048A425077AFB009A2169 /* SwiftUI.framework in Frameworks */,
 				52E048A225077AFB009A2169 /* WidgetKit.framework in Frameworks */,
 			);
@@ -379,10 +382,8 @@
 		5208B83128D870BF007BB75C /* Data Managers */ = {
 			isa = PBXGroup;
 			children = (
-				52FC401327AABAD9005DAD8C /* AnalyticsManager.swift */,
 				5240F1E428D9B6CB00B95FE5 /* AppSettingsDataManager.swift */,
 				52DC9EB41FC97A9200AE02F6 /* FirebaseNotifications.swift */,
-				52D26A4D2BF63B7E00485AD0 /* RemoteConfigManager.swift */,
 				5234FDA928E2ED810003515F /* WatchConnectivityManager.swift */,
 			);
 			path = "Data Managers";
@@ -460,7 +461,6 @@
 				52CBC7C728DB0D0900C89F20 /* MainView.swift */,
 				52DC5AD328DB43CE00AFF24D /* SettingsView.swift */,
 				52C9A4A028E893D600F7EAF1 /* TextFieldClearButton.swift */,
-				52D26A532BF646A400485AD0 /* UpgradeWarningView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -480,15 +480,6 @@
 				52BC111A237C461C005EC3F7 /* WatchView.swift */,
 			);
 			name = Views;
-			sourceTree = "<group>";
-		};
-		5208B84D28D87992007BB75C /* Assets */ = {
-			isa = PBXGroup;
-			children = (
-				52B7E8961ABEDEDE00E1949C /* daysleft WatchKit Extension.entitlements */,
-				52B7E87A1ABEDE9300E1949C /* Info.plist */,
-			);
-			name = Assets;
 			sourceTree = "<group>";
 		};
 		5208B84E28D879E6007BB75C /* Assets */ = {
@@ -529,6 +520,7 @@
 		5295EDF91A94B398007EF7E7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5205109A2C63C7DE00BCBBE5 /* WidgetKit.framework */,
 				52AC693D2154DA7E00E6C833 /* IntentsUI.framework */,
 				52B78DF31D982A6E00AB629D /* Messages.framework */,
 				5295EDFA1A94B398007EF7E7 /* NotificationCenter.framework */,
@@ -544,6 +536,8 @@
 			isa = PBXGroup;
 			children = (
 				52A70D4828DC555800DCE9CB /* DaysLeftAppIntent.swift */,
+				525960852C63A27D004E1BB6 /* DaysLeftWidgetConfigurationIntent.swift */,
+				525960712C5FB229004E1BB6 /* LaunchAppIntent.swift */,
 				52A70D4F28DC660C00DCE9CB /* ShortcutProvider.swift */,
 			);
 			path = AppIntents;
@@ -560,23 +554,14 @@
 			path = "DaysLeft WatchKit Widget";
 			sourceTree = "<group>";
 		};
-		52B7E8781ABEDE9300E1949C /* daysleft WatchKit Extension */ = {
-			isa = PBXGroup;
-			children = (
-				5208B84D28D87992007BB75C /* Assets */,
-				52A70D8828DCA11900DCE9CB /* ComplicationsDataSource.swift */,
-				52C3524B28DCB2EC00D02445 /* DaysLeftWatchApp.swift */,
-				5234436C1BBB181C00E95BA4 /* ExtensionDelegate.swift */,
-				5208B84A28D87933007BB75C /* Views */,
-			);
-			path = "daysleft WatchKit Extension";
-			sourceTree = "<group>";
-		};
 		52B7E8851ABEDE9300E1949C /* daysleft WatchKit App */ = {
 			isa = PBXGroup;
 			children = (
 				5234436B1BBB00B800E95BA4 /* daysleft WatchKit App.entitlements */,
+				52C3524B28DCB2EC00D02445 /* DaysLeftWatchApp.swift */,
+				5234436C1BBB181C00E95BA4 /* ExtensionDelegate.swift */,
 				52B7E8861ABEDE9300E1949C /* Supporting Files */,
+				5208B84A28D87933007BB75C /* Views */,
 			);
 			path = "daysleft WatchKit App";
 			sourceTree = "<group>";
@@ -604,7 +589,6 @@
 			children = (
 				52CFBEFA1A8B631B005234FB /* daysleft */,
 				52B7E8851ABEDE9300E1949C /* daysleft WatchKit App */,
-				52B7E8781ABEDE9300E1949C /* daysleft WatchKit Extension */,
 				52A70D6028DC98E100DCE9CB /* DaysLeft WatchKit Widget */,
 				52E048A525077AFB009A2169 /* DaysLeftWidget */,
 				52CE53DA28E49E3A00174D39 /* Documentation.docc */,
@@ -651,7 +635,10 @@
 			isa = PBXGroup;
 			children = (
 				5208B84E28D879E6007BB75C /* Assets */,
+				525960742C5FB2A1004E1BB6 /* DaysLeftControlWidget.swift */,
+				525960792C5FB67E004E1BB6 /* DaysLeftValueProvider.swift */,
 				52E048A625077AFB009A2169 /* DaysLeftWidget.swift */,
+				5259606E2C5FB1C2004E1BB6 /* DaysLeftWidgetBundle.swift */,
 				5208B84F28D87A05007BB75C /* Views */,
 				52E048B425077E6A009A2169 /* WidgetDaysLeftData.swift */,
 				52E048BE2507A57E009A2169 /* WidgetTimelineProvider.swift */,
@@ -735,7 +722,6 @@
 				5295EE091A94B398007EF7E7 /* Embed Foundation Extensions */,
 				521B9C4022C8E0B300185CF4 /* Swift Lint */,
 				523443681BBAFBEF00E95BA4 /* Embed Watch Content */,
-				52FC401227AA97EE005DAD8C /* Upload dSYM files to Crashlytics */,
 			);
 			buildRules = (
 			);
@@ -745,10 +731,7 @@
 			);
 			name = DaysLeft;
 			packageProductDependencies = (
-				52C03E3C2BD94F7F002E33D2 /* FirebaseAnalyticsWithoutAdIdSupport */,
-				52C03E3E2BD94F7F002E33D2 /* FirebaseCrashlytics */,
 				52C03E402BD94F7F002E33D2 /* FirebaseMessaging */,
-				52D26A4F2BF63BF800485AD0 /* FirebaseRemoteConfig */,
 			);
 			productName = daysleft;
 			productReference = 52CFBEF81A8B631B005234FB /* DaysLeft.app */;
@@ -797,7 +780,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1400;
-				LastUpgradeCheck = 1540;
+				LastUpgradeCheck = 1600;
 				ORGANIZATIONNAME = "Brave Location Software";
 				TargetAttributes = {
 					5295EDD91A94AE53007EF7E7 = {
@@ -962,25 +945,6 @@
 			shellPath = /bin/sh;
 			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\n\nif which swiftlint >/dev/null; then\n  swiftlint --config \"${PROJECT_DIR}/swiftlint.yml\"\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
-		52FC401227AA97EE005DAD8C /* Upload dSYM files to Crashlytics */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 8;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Upload dSYM files to Crashlytics";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 1;
-			shellPath = /bin/sh;
-			shellScript = "\"${BUILD_DIR%/Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\"\n";
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -1010,6 +974,7 @@
 				52A70D7428DC9AE900DCE9CB /* AccessoryRectangularView.swift in Sources */,
 				5234FDA728E2EA560003515F /* String+Helpers.swift in Sources */,
 				52A70D7C28DC9BDD00DCE9CB /* AppControlSettings.swift in Sources */,
+				525960882C63A27D004E1BB6 /* DaysLeftWidgetConfigurationIntent.swift in Sources */,
 				52A70D6228DC98E100DCE9CB /* DaysLeftWatchWidget.swift in Sources */,
 				522D6ABD2C030F4600B64778 /* WidgetBackgroundModifier.swift in Sources */,
 				52A70D7B28DC9BDB00DCE9CB /* AppSettings.swift in Sources */,
@@ -1044,7 +1009,7 @@
 				5234FDA628E2EA560003515F /* String+Helpers.swift in Sources */,
 				5234FDA028E2021D0003515F /* DisplayValues.swift in Sources */,
 				52C3524C28DCB2EC00D02445 /* DaysLeftWatchApp.swift in Sources */,
-				52A70D8928DCA11900DCE9CB /* ComplicationsDataSource.swift in Sources */,
+				520510992C63BB0A00BCBBE5 /* DaysLeftWidgetConfigurationIntent.swift in Sources */,
 				52F58DF728E444AE006F9698 /* AnimatedPercentageDone.swift in Sources */,
 				52F3B3E028E5D8E900A13120 /* Notification+Name.swift in Sources */,
 				5240F1E628D9B6CB00B95FE5 /* AppSettingsDataManager.swift in Sources */,
@@ -1078,22 +1043,21 @@
 				52DC5AD428DB43CE00AFF24D /* SettingsView.swift in Sources */,
 				52F9CDAC22D63D1900E0FFE8 /* SceneDelegate.swift in Sources */,
 				5234FDA428E2EA560003515F /* String+Helpers.swift in Sources */,
+				5259607B2C5FBC83004E1BB6 /* LaunchAppIntent.swift in Sources */,
 				5240F1F128D9C25700B95FE5 /* AppControlSettings.swift in Sources */,
 				52CE53DB28E49E3A00174D39 /* Documentation.docc in Sources */,
 				52CFBEFE1A8B631B005234FB /* AppDelegate.swift in Sources */,
-				52D26A542BF646A400485AD0 /* UpgradeWarningView.swift in Sources */,
+				525960862C63A27D004E1BB6 /* DaysLeftWidgetConfigurationIntent.swift in Sources */,
 				5240F1E528D9B6CB00B95FE5 /* AppSettingsDataManager.swift in Sources */,
 				52CBC7C928DB101600C89F20 /* InMemoryDataProvider.swift in Sources */,
 				5234FDBE28E436730003515F /* AnimatedCircularProgressView.swift in Sources */,
 				52D617B124D06F9000465F4C /* MenuBuilder.swift in Sources */,
 				5240F1D028D8C1BC00B95FE5 /* Date+Helpers.swift in Sources */,
 				52A70D5028DC660C00DCE9CB /* ShortcutProvider.swift in Sources */,
-				52D26A4E2BF63B7E00485AD0 /* RemoteConfigManager.swift in Sources */,
 				52A70D4928DC555800DCE9CB /* DaysLeftAppIntent.swift in Sources */,
 				52DC5AD228DB431900AFF24D /* SettingsViewHostingController.swift in Sources */,
 				52CBC7A028D9E01700C89F20 /* DataProviderProtocol.swift in Sources */,
 				52F3B3DD28E59BBF00A13120 /* UIDevice.swift in Sources */,
-				52FC401427AABAD9005DAD8C /* AnalyticsManager.swift in Sources */,
 				52DC5AD028DB3EE300AFF24D /* SettingsViewModel.swift in Sources */,
 				52DC9EB51FC97A9200AE02F6 /* FirebaseNotifications.swift in Sources */,
 				52CBC7B528D9FBE000C89F20 /* AppSettings+DayCalculations.swift in Sources */,
@@ -1106,7 +1070,9 @@
 			files = (
 				5234FDA828E2EA560003515F /* String+Helpers.swift in Sources */,
 				52E048B325077E1C009A2169 /* WidgetView.swift in Sources */,
+				525960872C63A27D004E1BB6 /* DaysLeftWidgetConfigurationIntent.swift in Sources */,
 				52E048A725077AFB009A2169 /* DaysLeftWidget.swift in Sources */,
+				525960762C5FB2B9004E1BB6 /* DaysLeftControlWidget.swift in Sources */,
 				52A70D5628DC913D00DCE9CB /* AccessoryInlineView.swift in Sources */,
 				5234FDA228E2021D0003515F /* DisplayValues.swift in Sources */,
 				52A70D5228DC8A6D00DCE9CB /* WidgetSwitcherView.swift in Sources */,
@@ -1115,14 +1081,17 @@
 				52E048BF2507A57E009A2169 /* WidgetTimelineProvider.swift in Sources */,
 				52E048B525077E6A009A2169 /* WidgetDaysLeftData.swift in Sources */,
 				52CBC7A428D9E01700C89F20 /* DataProviderProtocol.swift in Sources */,
+				5259607A2C5FB69C004E1BB6 /* DaysLeftValueProvider.swift in Sources */,
 				52F3B3E128E5E90C00A13120 /* Notification+Name.swift in Sources */,
 				5240F1EF28D9BE1A00B95FE5 /* AppSettings.swift in Sources */,
 				52A70D5428DC8D2500DCE9CB /* AccessoryRectangularView.swift in Sources */,
+				525960732C5FB272004E1BB6 /* LaunchAppIntent.swift in Sources */,
 				5240F1E928D9B6CB00B95FE5 /* AppSettingsDataManager.swift in Sources */,
 				52CBC79E28D9DF1000C89F20 /* CloudKeyValueDataProvider.swift in Sources */,
 				522D6ABC2C030F4600B64778 /* WidgetBackgroundModifier.swift in Sources */,
 				52CBC7B328D9EE6700C89F20 /* AppSettings+Text.swift in Sources */,
 				52CBC7BA28D9FBE000C89F20 /* AppSettings+DayCalculations.swift in Sources */,
+				525960702C5FB1CD004E1BB6 /* DaysLeftWidgetBundle.swift in Sources */,
 				52CBC7AC28D9EA2D00C89F20 /* InMemoryDataProvider.swift in Sources */,
 				52CBC7C028DAFC9400C89F20 /* CircularProgressView.swift in Sources */,
 				5240F1F528D9C25700B95FE5 /* AppControlSettings.swift in Sources */,
@@ -1159,7 +1128,6 @@
 		};
 		52E048AC25077AFE009A2169 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			platformFilter = ios;
 			target = 52E0489F25077AFB009A2169 /* DaysLeft Widget Extension */;
 			targetProxy = 52E048AB25077AFE009A2169 /* PBXContainerItemProxy */;
 		};
@@ -1223,10 +1191,20 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "-Wl,-no_warn_duplicate_libraries";
 				SDKROOT = iphoneos;
-				SHARED_VERSION_NUMBER = 6.0.2;
+				SHARED_VERSION_NUMBER = 6.1.0;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_STRICT_CONCURRENCY = targeted;
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_UPCOMING_FEATURE_CONCISE_MAGIC_FILE = YES;
+				SWIFT_UPCOMING_FEATURE_DEPRECATE_APPLICATION_MAIN = YES;
+				SWIFT_UPCOMING_FEATURE_DISABLE_OUTWARD_ACTOR_ISOLATION = YES;
+				SWIFT_UPCOMING_FEATURE_FORWARD_TRAILING_CLOSURES = YES;
+				SWIFT_UPCOMING_FEATURE_GLOBAL_CONCURRENCY = YES;
+				SWIFT_UPCOMING_FEATURE_IMPLICIT_OPEN_EXISTENTIALS = YES;
+				SWIFT_UPCOMING_FEATURE_IMPORT_OBJC_FORWARD_DECLS = YES;
+				SWIFT_UPCOMING_FEATURE_INFER_SENDABLE_FROM_CAPTURES = YES;
+				SWIFT_UPCOMING_FEATURE_ISOLATED_DEFAULT_VALUES = YES;
+				SWIFT_UPCOMING_FEATURE_REGION_BASED_ISOLATION = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1235,7 +1213,6 @@
 		525D88E82BE6824600E94D86 /* Release Mac */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = "daysleft/daysleft-mac.entitlements";
@@ -1273,6 +1250,17 @@
 				SUPPORTS_MACCATALYST = YES;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "./daysleft/daysleft-Bridging-Header.h";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_UPCOMING_FEATURE_CONCISE_MAGIC_FILE = YES;
+				SWIFT_UPCOMING_FEATURE_DEPRECATE_APPLICATION_MAIN = YES;
+				SWIFT_UPCOMING_FEATURE_DISABLE_OUTWARD_ACTOR_ISOLATION = YES;
+				SWIFT_UPCOMING_FEATURE_FORWARD_TRAILING_CLOSURES = YES;
+				SWIFT_UPCOMING_FEATURE_GLOBAL_CONCURRENCY = YES;
+				SWIFT_UPCOMING_FEATURE_IMPLICIT_OPEN_EXISTENTIALS = YES;
+				SWIFT_UPCOMING_FEATURE_IMPORT_OBJC_FORWARD_DECLS = YES;
+				SWIFT_UPCOMING_FEATURE_INFER_SENDABLE_FROM_CAPTURES = YES;
+				SWIFT_UPCOMING_FEATURE_ISOLATED_DEFAULT_VALUES = YES;
+				SWIFT_UPCOMING_FEATURE_REGION_BASED_ISOLATION = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,6";
 			};
@@ -1297,6 +1285,17 @@
 				"PRODUCT_BUNDLE_IDENTIFIER[sdk=macosx*]" = com.bravelocation.DaysLeftTests.v2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_UPCOMING_FEATURE_CONCISE_MAGIC_FILE = YES;
+				SWIFT_UPCOMING_FEATURE_DEPRECATE_APPLICATION_MAIN = YES;
+				SWIFT_UPCOMING_FEATURE_DISABLE_OUTWARD_ACTOR_ISOLATION = YES;
+				SWIFT_UPCOMING_FEATURE_FORWARD_TRAILING_CLOSURES = YES;
+				SWIFT_UPCOMING_FEATURE_GLOBAL_CONCURRENCY = YES;
+				SWIFT_UPCOMING_FEATURE_IMPLICIT_OPEN_EXISTENTIALS = YES;
+				SWIFT_UPCOMING_FEATURE_IMPORT_OBJC_FORWARD_DECLS = YES;
+				SWIFT_UPCOMING_FEATURE_INFER_SENDABLE_FROM_CAPTURES = YES;
+				SWIFT_UPCOMING_FEATURE_ISOLATED_DEFAULT_VALUES = YES;
+				SWIFT_UPCOMING_FEATURE_REGION_BASED_ISOLATION = YES;
 				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DaysLeft.app/DaysLeft";
 			};
@@ -1334,9 +1333,20 @@
 				SKIP_INSTALL = YES;
 				STRIPFLAGS = "-rSTx";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MACCATALYST = YES;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_UPCOMING_FEATURE_CONCISE_MAGIC_FILE = YES;
+				SWIFT_UPCOMING_FEATURE_DEPRECATE_APPLICATION_MAIN = YES;
+				SWIFT_UPCOMING_FEATURE_DISABLE_OUTWARD_ACTOR_ISOLATION = YES;
+				SWIFT_UPCOMING_FEATURE_FORWARD_TRAILING_CLOSURES = YES;
+				SWIFT_UPCOMING_FEATURE_GLOBAL_CONCURRENCY = YES;
+				SWIFT_UPCOMING_FEATURE_IMPLICIT_OPEN_EXISTENTIALS = YES;
+				SWIFT_UPCOMING_FEATURE_IMPORT_OBJC_FORWARD_DECLS = YES;
+				SWIFT_UPCOMING_FEATURE_INFER_SENDABLE_FROM_CAPTURES = YES;
+				SWIFT_UPCOMING_FEATURE_ISOLATED_DEFAULT_VALUES = YES;
+				SWIFT_UPCOMING_FEATURE_REGION_BASED_ISOLATION = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1347,7 +1357,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
-				CODE_SIGN_ENTITLEMENTS = "daysleft WatchKit Extension/daysleft WatchKit Extension.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "daysleft WatchKit App/daysleft WatchKit App.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -1366,9 +1376,20 @@
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				STRIPFLAGS = "-rSTx";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_UPCOMING_FEATURE_CONCISE_MAGIC_FILE = YES;
+				SWIFT_UPCOMING_FEATURE_DEPRECATE_APPLICATION_MAIN = YES;
+				SWIFT_UPCOMING_FEATURE_DISABLE_OUTWARD_ACTOR_ISOLATION = YES;
+				SWIFT_UPCOMING_FEATURE_FORWARD_TRAILING_CLOSURES = YES;
+				SWIFT_UPCOMING_FEATURE_GLOBAL_CONCURRENCY = YES;
+				SWIFT_UPCOMING_FEATURE_IMPLICIT_OPEN_EXISTENTIALS = YES;
+				SWIFT_UPCOMING_FEATURE_IMPORT_OBJC_FORWARD_DECLS = YES;
+				SWIFT_UPCOMING_FEATURE_INFER_SENDABLE_FROM_CAPTURES = YES;
+				SWIFT_UPCOMING_FEATURE_ISOLATED_DEFAULT_VALUES = YES;
+				SWIFT_UPCOMING_FEATURE_REGION_BASED_ISOLATION = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 9.0;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
 			};
 			name = "Release Mac";
 		};
@@ -1387,7 +1408,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 454;
+				CURRENT_PROJECT_VERSION = 458;
 				DEPLOYMENT_POSTPROCESSING = YES;
 				DEVELOPMENT_TEAM = K7GD2Y4SFX;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -1410,6 +1431,17 @@
 				SKIP_INSTALL = YES;
 				STRIPFLAGS = "-rSTx";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_UPCOMING_FEATURE_CONCISE_MAGIC_FILE = YES;
+				SWIFT_UPCOMING_FEATURE_DEPRECATE_APPLICATION_MAIN = YES;
+				SWIFT_UPCOMING_FEATURE_DISABLE_OUTWARD_ACTOR_ISOLATION = YES;
+				SWIFT_UPCOMING_FEATURE_FORWARD_TRAILING_CLOSURES = YES;
+				SWIFT_UPCOMING_FEATURE_GLOBAL_CONCURRENCY = YES;
+				SWIFT_UPCOMING_FEATURE_IMPLICIT_OPEN_EXISTENTIALS = YES;
+				SWIFT_UPCOMING_FEATURE_IMPORT_OBJC_FORWARD_DECLS = YES;
+				SWIFT_UPCOMING_FEATURE_INFER_SENDABLE_FROM_CAPTURES = YES;
+				SWIFT_UPCOMING_FEATURE_ISOLATED_DEFAULT_VALUES = YES;
+				SWIFT_UPCOMING_FEATURE_REGION_BASED_ISOLATION = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 9.0;
@@ -1426,7 +1458,7 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 454;
+				CURRENT_PROJECT_VERSION = 458;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = K7GD2Y4SFX;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -1508,10 +1540,20 @@
 				OTHER_LDFLAGS = "-Wl,-no_warn_duplicate_libraries";
 				OTHER_SWIFT_FLAGS = "";
 				SDKROOT = iphoneos;
-				SHARED_VERSION_NUMBER = 6.0.2;
+				SHARED_VERSION_NUMBER = 6.1.0;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_STRICT_CONCURRENCY = targeted;
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_UPCOMING_FEATURE_CONCISE_MAGIC_FILE = YES;
+				SWIFT_UPCOMING_FEATURE_DEPRECATE_APPLICATION_MAIN = YES;
+				SWIFT_UPCOMING_FEATURE_DISABLE_OUTWARD_ACTOR_ISOLATION = YES;
+				SWIFT_UPCOMING_FEATURE_FORWARD_TRAILING_CLOSURES = YES;
+				SWIFT_UPCOMING_FEATURE_GLOBAL_CONCURRENCY = YES;
+				SWIFT_UPCOMING_FEATURE_IMPLICIT_OPEN_EXISTENTIALS = YES;
+				SWIFT_UPCOMING_FEATURE_IMPORT_OBJC_FORWARD_DECLS = YES;
+				SWIFT_UPCOMING_FEATURE_INFER_SENDABLE_FROM_CAPTURES = YES;
+				SWIFT_UPCOMING_FEATURE_ISOLATED_DEFAULT_VALUES = YES;
+				SWIFT_UPCOMING_FEATURE_REGION_BASED_ISOLATION = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = "Debug Mac";
@@ -1519,7 +1561,6 @@
 		525D88EF2BE682B600E94D86 /* Debug Mac */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = "daysleft/daysleft-mac.entitlements";
@@ -1559,6 +1600,17 @@
 				SUPPORTS_MACCATALYST = YES;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "./daysleft/daysleft-Bridging-Header.h";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_UPCOMING_FEATURE_CONCISE_MAGIC_FILE = YES;
+				SWIFT_UPCOMING_FEATURE_DEPRECATE_APPLICATION_MAIN = YES;
+				SWIFT_UPCOMING_FEATURE_DISABLE_OUTWARD_ACTOR_ISOLATION = YES;
+				SWIFT_UPCOMING_FEATURE_FORWARD_TRAILING_CLOSURES = YES;
+				SWIFT_UPCOMING_FEATURE_GLOBAL_CONCURRENCY = YES;
+				SWIFT_UPCOMING_FEATURE_IMPLICIT_OPEN_EXISTENTIALS = YES;
+				SWIFT_UPCOMING_FEATURE_IMPORT_OBJC_FORWARD_DECLS = YES;
+				SWIFT_UPCOMING_FEATURE_INFER_SENDABLE_FROM_CAPTURES = YES;
+				SWIFT_UPCOMING_FEATURE_ISOLATED_DEFAULT_VALUES = YES;
+				SWIFT_UPCOMING_FEATURE_REGION_BASED_ISOLATION = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,6";
 			};
@@ -1587,6 +1639,17 @@
 				"PRODUCT_BUNDLE_IDENTIFIER[sdk=macosx*]" = com.bravelocation.DaysLeftTests.v2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_UPCOMING_FEATURE_CONCISE_MAGIC_FILE = YES;
+				SWIFT_UPCOMING_FEATURE_DEPRECATE_APPLICATION_MAIN = YES;
+				SWIFT_UPCOMING_FEATURE_DISABLE_OUTWARD_ACTOR_ISOLATION = YES;
+				SWIFT_UPCOMING_FEATURE_FORWARD_TRAILING_CLOSURES = YES;
+				SWIFT_UPCOMING_FEATURE_GLOBAL_CONCURRENCY = YES;
+				SWIFT_UPCOMING_FEATURE_IMPLICIT_OPEN_EXISTENTIALS = YES;
+				SWIFT_UPCOMING_FEATURE_IMPORT_OBJC_FORWARD_DECLS = YES;
+				SWIFT_UPCOMING_FEATURE_INFER_SENDABLE_FROM_CAPTURES = YES;
+				SWIFT_UPCOMING_FEATURE_ISOLATED_DEFAULT_VALUES = YES;
+				SWIFT_UPCOMING_FEATURE_REGION_BASED_ISOLATION = YES;
 				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DaysLeft.app/DaysLeft";
 			};
@@ -1625,10 +1688,21 @@
 				SKIP_INSTALL = YES;
 				STRIPFLAGS = "-rSTx";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MACCATALYST = YES;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_UPCOMING_FEATURE_CONCISE_MAGIC_FILE = YES;
+				SWIFT_UPCOMING_FEATURE_DEPRECATE_APPLICATION_MAIN = YES;
+				SWIFT_UPCOMING_FEATURE_DISABLE_OUTWARD_ACTOR_ISOLATION = YES;
+				SWIFT_UPCOMING_FEATURE_FORWARD_TRAILING_CLOSURES = YES;
+				SWIFT_UPCOMING_FEATURE_GLOBAL_CONCURRENCY = YES;
+				SWIFT_UPCOMING_FEATURE_IMPLICIT_OPEN_EXISTENTIALS = YES;
+				SWIFT_UPCOMING_FEATURE_IMPORT_OBJC_FORWARD_DECLS = YES;
+				SWIFT_UPCOMING_FEATURE_INFER_SENDABLE_FROM_CAPTURES = YES;
+				SWIFT_UPCOMING_FEATURE_ISOLATED_DEFAULT_VALUES = YES;
+				SWIFT_UPCOMING_FEATURE_REGION_BASED_ISOLATION = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1639,7 +1713,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
-				CODE_SIGN_ENTITLEMENTS = "daysleft WatchKit Extension/daysleft WatchKit Extension.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "daysleft WatchKit App/daysleft WatchKit App.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -1662,9 +1736,20 @@
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				STRIPFLAGS = "-rSTx";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_UPCOMING_FEATURE_CONCISE_MAGIC_FILE = YES;
+				SWIFT_UPCOMING_FEATURE_DEPRECATE_APPLICATION_MAIN = YES;
+				SWIFT_UPCOMING_FEATURE_DISABLE_OUTWARD_ACTOR_ISOLATION = YES;
+				SWIFT_UPCOMING_FEATURE_FORWARD_TRAILING_CLOSURES = YES;
+				SWIFT_UPCOMING_FEATURE_GLOBAL_CONCURRENCY = YES;
+				SWIFT_UPCOMING_FEATURE_IMPLICIT_OPEN_EXISTENTIALS = YES;
+				SWIFT_UPCOMING_FEATURE_IMPORT_OBJC_FORWARD_DECLS = YES;
+				SWIFT_UPCOMING_FEATURE_INFER_SENDABLE_FROM_CAPTURES = YES;
+				SWIFT_UPCOMING_FEATURE_ISOLATED_DEFAULT_VALUES = YES;
+				SWIFT_UPCOMING_FEATURE_REGION_BASED_ISOLATION = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 9.0;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
 			};
 			name = "Debug Mac";
 		};
@@ -1683,7 +1768,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 454;
+				CURRENT_PROJECT_VERSION = 458;
 				DEPLOYMENT_POSTPROCESSING = YES;
 				DEVELOPMENT_TEAM = K7GD2Y4SFX;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -1708,6 +1793,17 @@
 				STRIPFLAGS = "-rSTx";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_UPCOMING_FEATURE_CONCISE_MAGIC_FILE = YES;
+				SWIFT_UPCOMING_FEATURE_DEPRECATE_APPLICATION_MAIN = YES;
+				SWIFT_UPCOMING_FEATURE_DISABLE_OUTWARD_ACTOR_ISOLATION = YES;
+				SWIFT_UPCOMING_FEATURE_FORWARD_TRAILING_CLOSURES = YES;
+				SWIFT_UPCOMING_FEATURE_GLOBAL_CONCURRENCY = YES;
+				SWIFT_UPCOMING_FEATURE_IMPLICIT_OPEN_EXISTENTIALS = YES;
+				SWIFT_UPCOMING_FEATURE_IMPORT_OBJC_FORWARD_DECLS = YES;
+				SWIFT_UPCOMING_FEATURE_INFER_SENDABLE_FROM_CAPTURES = YES;
+				SWIFT_UPCOMING_FEATURE_ISOLATED_DEFAULT_VALUES = YES;
+				SWIFT_UPCOMING_FEATURE_REGION_BASED_ISOLATION = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 9.0;
@@ -1724,7 +1820,7 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 454;
+				CURRENT_PROJECT_VERSION = 458;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = K7GD2Y4SFX;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -1769,6 +1865,17 @@
 				"PRODUCT_BUNDLE_IDENTIFIER[sdk=macosx*]" = com.bravelocation.DaysLeftTests.v2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_UPCOMING_FEATURE_CONCISE_MAGIC_FILE = YES;
+				SWIFT_UPCOMING_FEATURE_DEPRECATE_APPLICATION_MAIN = YES;
+				SWIFT_UPCOMING_FEATURE_DISABLE_OUTWARD_ACTOR_ISOLATION = YES;
+				SWIFT_UPCOMING_FEATURE_FORWARD_TRAILING_CLOSURES = YES;
+				SWIFT_UPCOMING_FEATURE_GLOBAL_CONCURRENCY = YES;
+				SWIFT_UPCOMING_FEATURE_IMPLICIT_OPEN_EXISTENTIALS = YES;
+				SWIFT_UPCOMING_FEATURE_IMPORT_OBJC_FORWARD_DECLS = YES;
+				SWIFT_UPCOMING_FEATURE_INFER_SENDABLE_FROM_CAPTURES = YES;
+				SWIFT_UPCOMING_FEATURE_ISOLATED_DEFAULT_VALUES = YES;
+				SWIFT_UPCOMING_FEATURE_REGION_BASED_ISOLATION = YES;
 				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DaysLeft.app/DaysLeft";
 			};
@@ -1793,6 +1900,17 @@
 				"PRODUCT_BUNDLE_IDENTIFIER[sdk=macosx*]" = com.bravelocation.DaysLeftTests.v2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_UPCOMING_FEATURE_CONCISE_MAGIC_FILE = YES;
+				SWIFT_UPCOMING_FEATURE_DEPRECATE_APPLICATION_MAIN = YES;
+				SWIFT_UPCOMING_FEATURE_DISABLE_OUTWARD_ACTOR_ISOLATION = YES;
+				SWIFT_UPCOMING_FEATURE_FORWARD_TRAILING_CLOSURES = YES;
+				SWIFT_UPCOMING_FEATURE_GLOBAL_CONCURRENCY = YES;
+				SWIFT_UPCOMING_FEATURE_IMPLICIT_OPEN_EXISTENTIALS = YES;
+				SWIFT_UPCOMING_FEATURE_IMPORT_OBJC_FORWARD_DECLS = YES;
+				SWIFT_UPCOMING_FEATURE_INFER_SENDABLE_FROM_CAPTURES = YES;
+				SWIFT_UPCOMING_FEATURE_ISOLATED_DEFAULT_VALUES = YES;
+				SWIFT_UPCOMING_FEATURE_REGION_BASED_ISOLATION = YES;
 				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DaysLeft.app/DaysLeft";
 			};
@@ -1813,7 +1931,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 454;
+				CURRENT_PROJECT_VERSION = 458;
 				DEPLOYMENT_POSTPROCESSING = YES;
 				DEVELOPMENT_TEAM = K7GD2Y4SFX;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -1838,6 +1956,17 @@
 				STRIPFLAGS = "-rSTx";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_UPCOMING_FEATURE_CONCISE_MAGIC_FILE = YES;
+				SWIFT_UPCOMING_FEATURE_DEPRECATE_APPLICATION_MAIN = YES;
+				SWIFT_UPCOMING_FEATURE_DISABLE_OUTWARD_ACTOR_ISOLATION = YES;
+				SWIFT_UPCOMING_FEATURE_FORWARD_TRAILING_CLOSURES = YES;
+				SWIFT_UPCOMING_FEATURE_GLOBAL_CONCURRENCY = YES;
+				SWIFT_UPCOMING_FEATURE_IMPLICIT_OPEN_EXISTENTIALS = YES;
+				SWIFT_UPCOMING_FEATURE_IMPORT_OBJC_FORWARD_DECLS = YES;
+				SWIFT_UPCOMING_FEATURE_INFER_SENDABLE_FROM_CAPTURES = YES;
+				SWIFT_UPCOMING_FEATURE_ISOLATED_DEFAULT_VALUES = YES;
+				SWIFT_UPCOMING_FEATURE_REGION_BASED_ISOLATION = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 9.0;
@@ -1859,7 +1988,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 454;
+				CURRENT_PROJECT_VERSION = 458;
 				DEPLOYMENT_POSTPROCESSING = YES;
 				DEVELOPMENT_TEAM = K7GD2Y4SFX;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -1882,6 +2011,17 @@
 				SKIP_INSTALL = YES;
 				STRIPFLAGS = "-rSTx";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_UPCOMING_FEATURE_CONCISE_MAGIC_FILE = YES;
+				SWIFT_UPCOMING_FEATURE_DEPRECATE_APPLICATION_MAIN = YES;
+				SWIFT_UPCOMING_FEATURE_DISABLE_OUTWARD_ACTOR_ISOLATION = YES;
+				SWIFT_UPCOMING_FEATURE_FORWARD_TRAILING_CLOSURES = YES;
+				SWIFT_UPCOMING_FEATURE_GLOBAL_CONCURRENCY = YES;
+				SWIFT_UPCOMING_FEATURE_IMPLICIT_OPEN_EXISTENTIALS = YES;
+				SWIFT_UPCOMING_FEATURE_IMPORT_OBJC_FORWARD_DECLS = YES;
+				SWIFT_UPCOMING_FEATURE_INFER_SENDABLE_FROM_CAPTURES = YES;
+				SWIFT_UPCOMING_FEATURE_ISOLATED_DEFAULT_VALUES = YES;
+				SWIFT_UPCOMING_FEATURE_REGION_BASED_ISOLATION = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 9.0;
@@ -1893,7 +2033,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
-				CODE_SIGN_ENTITLEMENTS = "daysleft WatchKit Extension/daysleft WatchKit Extension.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "daysleft WatchKit App/daysleft WatchKit App.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -1916,9 +2056,20 @@
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				STRIPFLAGS = "-rSTx";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_UPCOMING_FEATURE_CONCISE_MAGIC_FILE = YES;
+				SWIFT_UPCOMING_FEATURE_DEPRECATE_APPLICATION_MAIN = YES;
+				SWIFT_UPCOMING_FEATURE_DISABLE_OUTWARD_ACTOR_ISOLATION = YES;
+				SWIFT_UPCOMING_FEATURE_FORWARD_TRAILING_CLOSURES = YES;
+				SWIFT_UPCOMING_FEATURE_GLOBAL_CONCURRENCY = YES;
+				SWIFT_UPCOMING_FEATURE_IMPLICIT_OPEN_EXISTENTIALS = YES;
+				SWIFT_UPCOMING_FEATURE_IMPORT_OBJC_FORWARD_DECLS = YES;
+				SWIFT_UPCOMING_FEATURE_INFER_SENDABLE_FROM_CAPTURES = YES;
+				SWIFT_UPCOMING_FEATURE_ISOLATED_DEFAULT_VALUES = YES;
+				SWIFT_UPCOMING_FEATURE_REGION_BASED_ISOLATION = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 9.0;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
 			};
 			name = Debug;
 		};
@@ -1927,7 +2078,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
-				CODE_SIGN_ENTITLEMENTS = "daysleft WatchKit Extension/daysleft WatchKit Extension.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "daysleft WatchKit App/daysleft WatchKit App.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -1946,9 +2097,20 @@
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				STRIPFLAGS = "-rSTx";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_UPCOMING_FEATURE_CONCISE_MAGIC_FILE = YES;
+				SWIFT_UPCOMING_FEATURE_DEPRECATE_APPLICATION_MAIN = YES;
+				SWIFT_UPCOMING_FEATURE_DISABLE_OUTWARD_ACTOR_ISOLATION = YES;
+				SWIFT_UPCOMING_FEATURE_FORWARD_TRAILING_CLOSURES = YES;
+				SWIFT_UPCOMING_FEATURE_GLOBAL_CONCURRENCY = YES;
+				SWIFT_UPCOMING_FEATURE_IMPLICIT_OPEN_EXISTENTIALS = YES;
+				SWIFT_UPCOMING_FEATURE_IMPORT_OBJC_FORWARD_DECLS = YES;
+				SWIFT_UPCOMING_FEATURE_INFER_SENDABLE_FROM_CAPTURES = YES;
+				SWIFT_UPCOMING_FEATURE_ISOLATED_DEFAULT_VALUES = YES;
+				SWIFT_UPCOMING_FEATURE_REGION_BASED_ISOLATION = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 9.0;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
 			};
 			name = Release;
 		};
@@ -2014,10 +2176,20 @@
 				OTHER_LDFLAGS = "-Wl,-no_warn_duplicate_libraries";
 				OTHER_SWIFT_FLAGS = "";
 				SDKROOT = iphoneos;
-				SHARED_VERSION_NUMBER = 6.0.2;
+				SHARED_VERSION_NUMBER = 6.1.0;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_STRICT_CONCURRENCY = targeted;
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_UPCOMING_FEATURE_CONCISE_MAGIC_FILE = YES;
+				SWIFT_UPCOMING_FEATURE_DEPRECATE_APPLICATION_MAIN = YES;
+				SWIFT_UPCOMING_FEATURE_DISABLE_OUTWARD_ACTOR_ISOLATION = YES;
+				SWIFT_UPCOMING_FEATURE_FORWARD_TRAILING_CLOSURES = YES;
+				SWIFT_UPCOMING_FEATURE_GLOBAL_CONCURRENCY = YES;
+				SWIFT_UPCOMING_FEATURE_IMPLICIT_OPEN_EXISTENTIALS = YES;
+				SWIFT_UPCOMING_FEATURE_IMPORT_OBJC_FORWARD_DECLS = YES;
+				SWIFT_UPCOMING_FEATURE_INFER_SENDABLE_FROM_CAPTURES = YES;
+				SWIFT_UPCOMING_FEATURE_ISOLATED_DEFAULT_VALUES = YES;
+				SWIFT_UPCOMING_FEATURE_REGION_BASED_ISOLATION = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -2074,10 +2246,20 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "-Wl,-no_warn_duplicate_libraries";
 				SDKROOT = iphoneos;
-				SHARED_VERSION_NUMBER = 6.0.2;
+				SHARED_VERSION_NUMBER = 6.1.0;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_STRICT_CONCURRENCY = targeted;
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_UPCOMING_FEATURE_CONCISE_MAGIC_FILE = YES;
+				SWIFT_UPCOMING_FEATURE_DEPRECATE_APPLICATION_MAIN = YES;
+				SWIFT_UPCOMING_FEATURE_DISABLE_OUTWARD_ACTOR_ISOLATION = YES;
+				SWIFT_UPCOMING_FEATURE_FORWARD_TRAILING_CLOSURES = YES;
+				SWIFT_UPCOMING_FEATURE_GLOBAL_CONCURRENCY = YES;
+				SWIFT_UPCOMING_FEATURE_IMPLICIT_OPEN_EXISTENTIALS = YES;
+				SWIFT_UPCOMING_FEATURE_IMPORT_OBJC_FORWARD_DECLS = YES;
+				SWIFT_UPCOMING_FEATURE_INFER_SENDABLE_FROM_CAPTURES = YES;
+				SWIFT_UPCOMING_FEATURE_ISOLATED_DEFAULT_VALUES = YES;
+				SWIFT_UPCOMING_FEATURE_REGION_BASED_ISOLATION = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -2086,7 +2268,6 @@
 		52CFBF181A8B631B005234FB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = daysleft/daysleft.entitlements;
@@ -2126,6 +2307,17 @@
 				SUPPORTS_MACCATALYST = YES;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "./daysleft/daysleft-Bridging-Header.h";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_UPCOMING_FEATURE_CONCISE_MAGIC_FILE = YES;
+				SWIFT_UPCOMING_FEATURE_DEPRECATE_APPLICATION_MAIN = YES;
+				SWIFT_UPCOMING_FEATURE_DISABLE_OUTWARD_ACTOR_ISOLATION = YES;
+				SWIFT_UPCOMING_FEATURE_FORWARD_TRAILING_CLOSURES = YES;
+				SWIFT_UPCOMING_FEATURE_GLOBAL_CONCURRENCY = YES;
+				SWIFT_UPCOMING_FEATURE_IMPLICIT_OPEN_EXISTENTIALS = YES;
+				SWIFT_UPCOMING_FEATURE_IMPORT_OBJC_FORWARD_DECLS = YES;
+				SWIFT_UPCOMING_FEATURE_INFER_SENDABLE_FROM_CAPTURES = YES;
+				SWIFT_UPCOMING_FEATURE_ISOLATED_DEFAULT_VALUES = YES;
+				SWIFT_UPCOMING_FEATURE_REGION_BASED_ISOLATION = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,6";
 			};
@@ -2134,7 +2326,6 @@
 		52CFBF191A8B631B005234FB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = daysleft/daysleft.entitlements;
@@ -2172,6 +2363,17 @@
 				SUPPORTS_MACCATALYST = YES;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "./daysleft/daysleft-Bridging-Header.h";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_UPCOMING_FEATURE_CONCISE_MAGIC_FILE = YES;
+				SWIFT_UPCOMING_FEATURE_DEPRECATE_APPLICATION_MAIN = YES;
+				SWIFT_UPCOMING_FEATURE_DISABLE_OUTWARD_ACTOR_ISOLATION = YES;
+				SWIFT_UPCOMING_FEATURE_FORWARD_TRAILING_CLOSURES = YES;
+				SWIFT_UPCOMING_FEATURE_GLOBAL_CONCURRENCY = YES;
+				SWIFT_UPCOMING_FEATURE_IMPLICIT_OPEN_EXISTENTIALS = YES;
+				SWIFT_UPCOMING_FEATURE_IMPORT_OBJC_FORWARD_DECLS = YES;
+				SWIFT_UPCOMING_FEATURE_INFER_SENDABLE_FROM_CAPTURES = YES;
+				SWIFT_UPCOMING_FEATURE_ISOLATED_DEFAULT_VALUES = YES;
+				SWIFT_UPCOMING_FEATURE_REGION_BASED_ISOLATION = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,6";
 			};
@@ -2210,10 +2412,21 @@
 				SKIP_INSTALL = YES;
 				STRIPFLAGS = "-rSTx";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MACCATALYST = YES;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_UPCOMING_FEATURE_CONCISE_MAGIC_FILE = YES;
+				SWIFT_UPCOMING_FEATURE_DEPRECATE_APPLICATION_MAIN = YES;
+				SWIFT_UPCOMING_FEATURE_DISABLE_OUTWARD_ACTOR_ISOLATION = YES;
+				SWIFT_UPCOMING_FEATURE_FORWARD_TRAILING_CLOSURES = YES;
+				SWIFT_UPCOMING_FEATURE_GLOBAL_CONCURRENCY = YES;
+				SWIFT_UPCOMING_FEATURE_IMPLICIT_OPEN_EXISTENTIALS = YES;
+				SWIFT_UPCOMING_FEATURE_IMPORT_OBJC_FORWARD_DECLS = YES;
+				SWIFT_UPCOMING_FEATURE_INFER_SENDABLE_FROM_CAPTURES = YES;
+				SWIFT_UPCOMING_FEATURE_ISOLATED_DEFAULT_VALUES = YES;
+				SWIFT_UPCOMING_FEATURE_REGION_BASED_ISOLATION = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -2251,9 +2464,20 @@
 				SKIP_INSTALL = YES;
 				STRIPFLAGS = "-rSTx";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MACCATALYST = YES;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_UPCOMING_FEATURE_CONCISE_MAGIC_FILE = YES;
+				SWIFT_UPCOMING_FEATURE_DEPRECATE_APPLICATION_MAIN = YES;
+				SWIFT_UPCOMING_FEATURE_DISABLE_OUTWARD_ACTOR_ISOLATION = YES;
+				SWIFT_UPCOMING_FEATURE_FORWARD_TRAILING_CLOSURES = YES;
+				SWIFT_UPCOMING_FEATURE_GLOBAL_CONCURRENCY = YES;
+				SWIFT_UPCOMING_FEATURE_IMPLICIT_OPEN_EXISTENTIALS = YES;
+				SWIFT_UPCOMING_FEATURE_IMPORT_OBJC_FORWARD_DECLS = YES;
+				SWIFT_UPCOMING_FEATURE_INFER_SENDABLE_FROM_CAPTURES = YES;
+				SWIFT_UPCOMING_FEATURE_ISOLATED_DEFAULT_VALUES = YES;
+				SWIFT_UPCOMING_FEATURE_REGION_BASED_ISOLATION = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -2269,7 +2493,7 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 454;
+				CURRENT_PROJECT_VERSION = 458;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = K7GD2Y4SFX;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -2301,7 +2525,7 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 454;
+				CURRENT_PROJECT_VERSION = 458;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = K7GD2Y4SFX;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -2415,25 +2639,15 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		52C03E3C2BD94F7F002E33D2 /* FirebaseAnalyticsWithoutAdIdSupport */ = {
+		5244BD282C7B2D1D008B7EDD /* FirebaseMessaging */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 52C03E3B2BD94F7F002E33D2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAnalyticsWithoutAdIdSupport;
-		};
-		52C03E3E2BD94F7F002E33D2 /* FirebaseCrashlytics */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 52C03E3B2BD94F7F002E33D2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseCrashlytics;
+			productName = FirebaseMessaging;
 		};
 		52C03E402BD94F7F002E33D2 /* FirebaseMessaging */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 52C03E3B2BD94F7F002E33D2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseMessaging;
-		};
-		52D26A4F2BF63BF800485AD0 /* FirebaseRemoteConfig */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 52C03E3B2BD94F7F002E33D2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseRemoteConfig;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

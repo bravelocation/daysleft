@@ -10,6 +10,7 @@ import Combine
 import Foundation
 import Intents
 import SwiftUI
+import AppIntents
 
 /// Main view hosting controller
 class MainViewHostingController<Content: View>: UIHostingController<Content>, ViewModelActionDelegate {
@@ -96,14 +97,9 @@ class MainViewHostingController<Content: View>: UIHostingController<Content>, Vi
         
         // Setup menu command handler
         self.setupMenuCommandHandler()
-    }
-    
-    /// Event handler for when view appears
-    /// - Parameter animated: Animated or not
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         
-        AnalyticsManager.shared.logScreenView(screenName: "Main Screen")
+        // Donate intent to help widget relevance
+        self.donateIntent()
     }
     
     // MARK: - ViewModelActionDelegate
@@ -140,6 +136,26 @@ class MainViewHostingController<Content: View>: UIHostingController<Content>, Vi
         
         self.userActivity = activity
         self.userActivity?.becomeCurrent()
+    }
+    
+    // MARK: - Intent functions
+    /// Donates app intent to help smart stack inteliigence for widget
+    func donateIntent() {
+        if #available(iOS 17, *) {
+            // Donate the widget intent to help smart stack intelligence
+            IntentDonationManager.shared.donate(intent: DaysLeftWidgetConfigurationIntent())
+            
+            // Also update the relevance time for the length of the countdown
+            Task {
+               let relevantContext: RelevantContext = .date(from: self.dataManager.appSettings.start, to: self.dataManager.appSettings.end)
+               let relevantIntent = RelevantIntent(
+                   DaysLeftWidgetConfigurationIntent(),
+                   widgetKind: "DaysLeftWidget",
+                   relevance: relevantContext)
+               
+                try await RelevantIntentManager.shared.updateRelevantIntents([relevantIntent])
+            }
+        }
     }
 }
 

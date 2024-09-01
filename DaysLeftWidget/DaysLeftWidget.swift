@@ -10,20 +10,34 @@ import WidgetKit
 import SwiftUI
 
 /// iOS widget
-@main struct DaysLeftWidget: Widget {
+struct DaysLeftWidget: Widget {
     /// Kind of widget
     let kind: String = "DaysLeftWidget"
     
     /// Widget configuration
     var body: some WidgetConfiguration {
-        StaticConfiguration(
-            kind: kind,
-            provider: WidgetTimelineProvider()) { entry in
-                WidgetSwitcherView(model: entry)
-            }
-        .supportedFamilies(self.supportedFamilies())
-        .configurationDisplayName(NSLocalizedString("Abbreviated App Title", comment: ""))
-        .description(NSLocalizedString("App Title", comment: ""))
+        if #available(iOS 17.0, *) {
+            return AppIntentConfiguration(
+                kind: kind,
+                intent: DaysLeftWidgetConfigurationIntent.self,
+                provider: AppIntentWidgetTimelineProvider()) { entry in
+                    WidgetSwitcherView(model: entry)
+                }
+                .supportedFamilies(self.supportedFamilies())
+                .configurationDisplayName(NSLocalizedString("Abbreviated App Title", comment: ""))
+                .description(NSLocalizedString("App Title", comment: "")
+            )
+        } else {
+            return StaticConfiguration(
+                kind: kind,
+                provider: WidgetTimelineProvider()) { entry in
+                    WidgetSwitcherView(model: entry)
+                }
+                .supportedFamilies(self.supportedFamilies())
+                .configurationDisplayName(NSLocalizedString("Abbreviated App Title", comment: ""))
+                .description(NSLocalizedString("App Title", comment: "")
+            )
+        }
     }
     
     /// Supported families for the widget

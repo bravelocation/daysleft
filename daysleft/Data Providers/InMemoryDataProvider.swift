@@ -12,7 +12,7 @@ import Foundation
 class InMemoryDataProvider: DataProviderProtocol {
     
     /// Static instance of the class
-    private static let sharedInstance = InMemoryDataProvider()
+    nonisolated(unsafe) private static let sharedInstance = InMemoryDataProvider()
     
     /// Shared static instance of the class, to make it easy to access across the app
     class var shared: InMemoryDataProvider {

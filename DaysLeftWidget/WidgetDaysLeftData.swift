@@ -12,7 +12,7 @@ import Combine
 import WidgetKit
 
 /// Timelien entry used in widgets
-class WidgetDaysLeftData: TimelineEntry {
+final class WidgetDaysLeftData: TimelineEntry, Sendable {
     /// Current date
     let date: Date
     
