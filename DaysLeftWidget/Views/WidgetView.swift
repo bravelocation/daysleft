@@ -33,13 +33,12 @@ struct WidgetView: View {
                 progress: self.model.displayValues.percentageDone,
                 lineWidth: widgetFamily == .systemSmall ? 16.0 : 24.0
             )
-            .padding([.top, .bottom], widgetFamily == .systemSmall ? 8.0 : 16.0)
+            .padding([.top, .bottom], widgetFamily == .systemSmall ? 12.0 : 16.0)
             
             Text(self.model.displayValues.currentPercentageLeft)
                 .font(.footnote)
 
         }
-        .padding()
         .preferWidgetBackground()
     }
 }
