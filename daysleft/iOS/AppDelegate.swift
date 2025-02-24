@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Brave Location Software. All rights reserved.
 //
 
-import UIKit
+@preconcurrency import UIKit
 import Firebase
 import WidgetKit
 import Combine
@@ -214,7 +214,8 @@ extension AppDelegate: @preconcurrency UNUserNotificationCenterDelegate {
             return
         }
         
-        UNUserNotificationCenter.current().getNotificationSettings {settings in
+        Task {
+            let settings = await UNUserNotificationCenter.current().notificationSettings()
             if settings.badgeSetting == .enabled {
                 DispatchQueue.main.async {
                     let now: Date = Date()
@@ -227,14 +228,17 @@ extension AppDelegate: @preconcurrency UNUserNotificationCenterDelegate {
     
     /// Clear the badge number if required
     func clearBadge() {
-        UNUserNotificationCenter.current().getNotificationSettings {settings in
+        Task {
+            let settings = await UNUserNotificationCenter.current().notificationSettings()
             if settings.badgeSetting == .enabled {
                 DispatchQueue.main.async {
-                    UIApplication.shared.applicationIconBadgeNumber = 0
-                    self.logger.debug("Cleared app badge")
+                    let now: Date = Date()
+                    UIApplication.shared.applicationIconBadgeNumber = self.dataManager.appSettings.daysLeft(now)
+                    self.logger.debug("Updated app badge")
                 }
             }
         }
+    
     }
 }
 
