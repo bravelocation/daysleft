@@ -12,7 +12,6 @@ import WidgetKit
 #if !targetEnvironment(macCatalyst)
 
 /// Accessory Circular View
-@available(iOS 16.0, *)
 struct AccessoryCircularView: View {
     /// View model
     var model: WidgetDaysLeftData
@@ -56,7 +55,6 @@ struct AccessoryCircularView: View {
 }
 
 /// Preview provider for AccessoryCircularView
-@available(iOS 16.0, *)
 struct AccessoryCircularView_Previews: PreviewProvider {
     static var appSettings = AppSettingsDataManager(dataProvider: InMemoryDataProvider.shared).appSettings
 

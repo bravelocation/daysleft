@@ -28,23 +28,15 @@ struct WidgetBackgroundModifier: ViewModifier {
         endPoint: .bottom)
     
     func body(content: Content) -> some View {
-        if #available(iOS 17.0, macOS 14.0, watchOS 10.0, *) {
-            content
-                .containerBackground(colorScheme == .dark ? self.widgetDarkBackgroundGradient : self.widgetLightBackgroundGradient, for: .widget)
-        } else {
-            content
-        }
+        content
+            .containerBackground(colorScheme == .dark ? self.widgetDarkBackgroundGradient : self.widgetLightBackgroundGradient, for: .widget)
     }
 }
 
 struct WidgetAccessoryBackgroundModifier: ViewModifier {
     func body(content: Content) -> some View {
-        if #available(iOS 17.0, macOS 14.0, watchOS 10.0, *) {
-            content
-                .containerBackground(Color.clear, for: .widget)
-        } else {
-            content
-        }
+        content
+            .containerBackground(Color.clear, for: .widget)
     }
 }
 

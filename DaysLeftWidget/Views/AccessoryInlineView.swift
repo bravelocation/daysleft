@@ -12,7 +12,6 @@ import WidgetKit
 #if !targetEnvironment(macCatalyst)
 
 /// Accessory inline view
-@available(iOS 16.0, *)
 struct AccessoryInlineView: View {
     /// View model
     var model: WidgetDaysLeftData
@@ -25,7 +24,6 @@ struct AccessoryInlineView: View {
 }
 
 /// Preview provider for AccessoryInlineView
-@available(iOS 16.0, *)
 struct AccessoryInlineView_Previews: PreviewProvider {
     static var appSettings = AppSettingsDataManager(dataProvider: InMemoryDataProvider.shared).appSettings
 

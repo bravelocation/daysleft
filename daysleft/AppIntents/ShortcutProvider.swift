@@ -10,7 +10,6 @@
 import AppIntents
 
 /// Provides preset shortcuts automatically from the app
-@available(iOS 16, watchOS 9.0, *)
 struct ShortcutsProvider: AppShortcutsProvider {
     
     /// Provided shortcuts

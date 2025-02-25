@@ -12,6 +12,7 @@ import WidgetKit
 import Combine
 import OSLog
 import BackgroundTasks
+import TipKit
 
 /// Application delegate for the app
 @MainActor
@@ -55,6 +56,11 @@ import BackgroundTasks
                 self.cancellables.append(keyValueChangeSubscriber)
             }
         }
+        
+        // Setup TipKit
+        try? Tips.configure([
+            .displayFrequency(.daily)
+        ])
     }
     
     // MARK: Update external information function
