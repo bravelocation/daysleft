@@ -23,17 +23,11 @@ struct WidgetSwitcherView: View {
             WidgetView(model: model)
 #if !targetEnvironment(macCatalyst)
         case .accessoryInline:
-            if #available(iOSApplicationExtension 16.0, *) {
-                AccessoryInlineView(model: self.model)
-            }
+            AccessoryInlineView(model: self.model)
         case .accessoryCircular:
-            if #available(iOSApplicationExtension 16.0, *) {
-                AccessoryCircularView(model: self.model)
-            }
+            AccessoryCircularView(model: self.model)
         case .accessoryRectangular:
-            if #available(iOSApplicationExtension 16.0, *) {
-                AccessoryRectangularView(model: self.model)
-            }
+            AccessoryRectangularView(model: self.model)
 #endif
         default:
             EmptyView()

@@ -141,20 +141,18 @@ class MainViewHostingController<Content: View>: UIHostingController<Content>, Vi
     // MARK: - Intent functions
     /// Donates app intent to help smart stack inteliigence for widget
     func donateIntent() {
-        if #available(iOS 17, *) {
-            // Donate the widget intent to help smart stack intelligence
-            IntentDonationManager.shared.donate(intent: DaysLeftWidgetConfigurationIntent())
-            
-            // Also update the relevance time for the length of the countdown
-            Task {
-               let relevantContext: RelevantContext = .date(from: self.dataManager.appSettings.start, to: self.dataManager.appSettings.end)
-               let relevantIntent = RelevantIntent(
-                   DaysLeftWidgetConfigurationIntent(),
-                   widgetKind: "DaysLeftWidget",
-                   relevance: relevantContext)
-               
-                try await RelevantIntentManager.shared.updateRelevantIntents([relevantIntent])
-            }
+        // Donate the widget intent to help smart stack intelligence
+        IntentDonationManager.shared.donate(intent: DaysLeftWidgetConfigurationIntent())
+        
+        // Also update the relevance time for the length of the countdown
+        Task {
+           let relevantContext: RelevantContext = .date(from: self.dataManager.appSettings.start, to: self.dataManager.appSettings.end)
+           let relevantIntent = RelevantIntent(
+               DaysLeftWidgetConfigurationIntent(),
+               widgetKind: "DaysLeftWidget",
+               relevance: relevantContext)
+           
+            try await RelevantIntentManager.shared.updateRelevantIntents([relevantIntent])
         }
     }
 }

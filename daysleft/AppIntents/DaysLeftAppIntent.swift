@@ -10,7 +10,6 @@
 import AppIntents
 import SwiftUI
 
-@available(iOS 16, watchOS 9.0, *)
 /// App Intent definition for the accessing of the data via Siri shortcuts
 struct DaysLeftAppIntent: AppIntent, CustomIntentMigratedAppIntent {
     /// Title of the intent

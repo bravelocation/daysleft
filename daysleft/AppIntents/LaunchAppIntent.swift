@@ -9,7 +9,6 @@
 import AppIntents
 import UIKit
 
-@available(iOS 16, *)
 struct LaunchAppIntent: AppIntent {
     static let title: LocalizedStringResource = "Open Days Left"
     static let description = IntentDescription("Open Days Left")

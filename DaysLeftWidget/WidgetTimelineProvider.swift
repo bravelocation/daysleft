@@ -59,7 +59,6 @@ struct WidgetTimelineProvider: TimelineProvider {
     }
 }
 
-@available(iOS 17, watchOS 10.0, *)
 struct AppIntentWidgetTimelineProvider: AppIntentTimelineProvider {
     typealias Entry = WidgetDaysLeftData
     typealias Intent = DaysLeftWidgetConfigurationIntent

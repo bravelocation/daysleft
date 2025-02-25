@@ -72,11 +72,18 @@ struct MainView: View {
                 Button(
                     action: {
                         self.model.edit()
+                        
+                        Task {
+                            await EditIntroTip.settingsOpenedCount.donate()
+                        }
                     },
                     label: {
                         Text(LocalizedStringKey("Toolbar Edit"))
                             .foregroundColor(Color.white)
                     })
+                    .popoverTip(
+                        EditIntroTip()
+                    )
                     .buttonStyle(PlainButtonStyle())
                     .accessibilityIdentifier("editButton")
             }
