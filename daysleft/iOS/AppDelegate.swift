@@ -220,7 +220,7 @@ extension AppDelegate: @preconcurrency UNUserNotificationCenterDelegate {
                 DispatchQueue.main.async {
                     let now: Date = Date()
                     UIApplication.shared.applicationIconBadgeNumber = self.dataManager.appSettings.daysLeft(now)
-                    self.logger.debug("Updated app badge")
+                    self.logger.debug("Updated app badge to \(self.dataManager.appSettings.daysLeft(now))")
                 }
             }
         }
@@ -232,9 +232,8 @@ extension AppDelegate: @preconcurrency UNUserNotificationCenterDelegate {
             let settings = await UNUserNotificationCenter.current().notificationSettings()
             if settings.badgeSetting == .enabled {
                 DispatchQueue.main.async {
-                    let now: Date = Date()
-                    UIApplication.shared.applicationIconBadgeNumber = self.dataManager.appSettings.daysLeft(now)
-                    self.logger.debug("Updated app badge")
+                    UIApplication.shared.applicationIconBadgeNumber = 0
+                    self.logger.debug("Updated app badge to 0")
                 }
             }
         }
