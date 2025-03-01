@@ -54,7 +54,6 @@
 		5244BD292C7B2D1D008B7EDD /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 5244BD282C7B2D1D008B7EDD /* FirebaseMessaging */; };
 		525960702C5FB1CD004E1BB6 /* DaysLeftWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5259606E2C5FB1C2004E1BB6 /* DaysLeftWidgetBundle.swift */; };
 		525960732C5FB272004E1BB6 /* LaunchAppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525960712C5FB229004E1BB6 /* LaunchAppIntent.swift */; };
-		525960762C5FB2B9004E1BB6 /* DaysLeftControlWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525960742C5FB2A1004E1BB6 /* DaysLeftControlWidget.swift */; };
 		5259607A2C5FB69C004E1BB6 /* DaysLeftValueProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525960792C5FB67E004E1BB6 /* DaysLeftValueProvider.swift */; };
 		5259607B2C5FBC83004E1BB6 /* LaunchAppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525960712C5FB229004E1BB6 /* LaunchAppIntent.swift */; };
 		525960862C63A27D004E1BB6 /* DaysLeftWidgetConfigurationIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525960852C63A27D004E1BB6 /* DaysLeftWidgetConfigurationIntent.swift */; };
@@ -260,7 +259,6 @@
 		5240F1F028D9C25700B95FE5 /* AppControlSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppControlSettings.swift; sourceTree = "<group>"; };
 		5259606E2C5FB1C2004E1BB6 /* DaysLeftWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysLeftWidgetBundle.swift; sourceTree = "<group>"; };
 		525960712C5FB229004E1BB6 /* LaunchAppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchAppIntent.swift; sourceTree = "<group>"; };
-		525960742C5FB2A1004E1BB6 /* DaysLeftControlWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysLeftControlWidget.swift; sourceTree = "<group>"; };
 		525960792C5FB67E004E1BB6 /* DaysLeftValueProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysLeftValueProvider.swift; sourceTree = "<group>"; };
 		525960852C63A27D004E1BB6 /* DaysLeftWidgetConfigurationIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysLeftWidgetConfigurationIntent.swift; sourceTree = "<group>"; };
 		525D88E52BE67E5600E94D86 /* daysleft-mac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "daysleft-mac.entitlements"; sourceTree = "<group>"; };
@@ -649,7 +647,6 @@
 			isa = PBXGroup;
 			children = (
 				5208B84E28D879E6007BB75C /* Assets */,
-				525960742C5FB2A1004E1BB6 /* DaysLeftControlWidget.swift */,
 				525960792C5FB67E004E1BB6 /* DaysLeftValueProvider.swift */,
 				52E048A625077AFB009A2169 /* DaysLeftWidget.swift */,
 				5259606E2C5FB1C2004E1BB6 /* DaysLeftWidgetBundle.swift */,
@@ -1089,7 +1086,6 @@
 				52E048B325077E1C009A2169 /* WidgetView.swift in Sources */,
 				525960872C63A27D004E1BB6 /* DaysLeftWidgetConfigurationIntent.swift in Sources */,
 				52E048A725077AFB009A2169 /* DaysLeftWidget.swift in Sources */,
-				525960762C5FB2B9004E1BB6 /* DaysLeftControlWidget.swift in Sources */,
 				52A70D5628DC913D00DCE9CB /* AccessoryInlineView.swift in Sources */,
 				5234FDA228E2021D0003515F /* DisplayValues.swift in Sources */,
 				52A70D5228DC8A6D00DCE9CB /* WidgetSwitcherView.swift in Sources */,
