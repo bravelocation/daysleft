@@ -30,6 +30,7 @@ struct AccessoryRectangularView: View {
             
             Spacer()
         }
+        .foregroundColor(Color("LightAppColor"))
         .padding([.leading, .trailing], 4.0)
         .preferWidgetBackground(accessoryWidget: true)
     }
