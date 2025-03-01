@@ -19,6 +19,7 @@ struct AccessoryInlineView: View {
     /// View body
     var body: some View {
         Text(model.displayValues.fullTitle)
+            .foregroundColor(Color("LightAppColor"))
             .preferWidgetBackground(accessoryWidget: true)
     }
 }

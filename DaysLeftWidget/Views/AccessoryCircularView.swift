@@ -21,6 +21,21 @@ struct AccessoryCircularView: View {
     
     /// View body
     var body: some View {
+        let percentageDone = model.displayValues.percentageDone
+        let gradientColors = [
+            Color("MainAppColor"),
+            Color("MainAppColor").opacity(0.5),
+            Color("LightAppColor"),
+        ]
+        
+        let gaugeGradient = Gradient(stops: [
+            .init(color: gradientColors[0], location: 0),
+            .init(color: gradientColors[1], location: CGFloat(percentageDone)),
+            .init(color: gradientColors[2], location: 1)
+        ])
+        
+        let textColor = Color("LightAppColor")
+        
         if showsWidgetLabel {
             Gauge(value: model.displayValues.percentageDone) {
                 Text(self.model.displayValues.weekdaysOnly ?
@@ -28,10 +43,13 @@ struct AccessoryCircularView: View {
                      LocalizedStringKey("Abbreviated Days"))
             } currentValueLabel: {
                 Text("\(self.model.displayValues.daysLeft)")
+                    .foregroundColor(textColor)
             }
             .gaugeStyle(.accessoryCircular)
+            .tint(gaugeGradient)
             .widgetLabel {
                 Text(model.displayValues.title)
+                    .foregroundColor(textColor)
                     .widgetAccentable()
             }
             .padding(1.0)
@@ -43,10 +61,13 @@ struct AccessoryCircularView: View {
                     Text(self.model.displayValues.weekdaysOnly ?
                          LocalizedStringKey("Abbreviated Weekdays") :
                          LocalizedStringKey("Abbreviated Days"))
+                    .foregroundColor(textColor)
                 } currentValueLabel: {
                     Text("\(self.model.displayValues.daysLeft)")
+                        .foregroundColor(textColor)
                 }
                 .gaugeStyle(.accessoryCircular)
+                .tint(gaugeGradient)
                 .padding(1.0)
                 .preferWidgetBackground(accessoryWidget: true)
             }
