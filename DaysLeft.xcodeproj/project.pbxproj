@@ -94,6 +94,7 @@
 		52AF58372D6E037500F15EF0 /* EditIntroTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AF58342D6E037500F15EF0 /* EditIntroTip.swift */; };
 		52AF58382D6E037500F15EF0 /* EditIntroTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AF58342D6E037500F15EF0 /* EditIntroTip.swift */; };
 		52AF58392D6E037500F15EF0 /* EditIntroTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AF58342D6E037500F15EF0 /* EditIntroTip.swift */; };
+		52B374032D818CC4001BE6F9 /* AppRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B373FF2D818CBF001BE6F9 /* AppRegister.swift */; };
 		52BC111B237C461C005EC3F7 /* WatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BC111A237C461C005EC3F7 /* WatchView.swift */; };
 		52C03E412BD94F7F002E33D2 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 52C03E402BD94F7F002E33D2 /* FirebaseMessaging */; };
 		52C03E422BD95545002E33D2 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 527FEA412BBE9F8B004BA03E /* PrivacyInfo.xcprivacy */; };
@@ -278,6 +279,7 @@
 		52A70D7528DC9B2100DCE9CB /* WatchWidgetSwitcherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchWidgetSwitcherView.swift; sourceTree = "<group>"; };
 		52AC693D2154DA7E00E6C833 /* IntentsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IntentsUI.framework; path = System/Library/Frameworks/IntentsUI.framework; sourceTree = SDKROOT; };
 		52AF58342D6E037500F15EF0 /* EditIntroTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditIntroTip.swift; sourceTree = "<group>"; };
+		52B373FF2D818CBF001BE6F9 /* AppRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRegister.swift; sourceTree = "<group>"; };
 		52B78DF31D982A6E00AB629D /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
 		52B78E091D98388D00AB629D /* WatchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchKit.framework; path = System/Library/Frameworks/WatchKit.framework; sourceTree = SDKROOT; };
 		52B78E0B1D9838B800AB629D /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = System/Library/Frameworks/WatchConnectivity.framework; sourceTree = SDKROOT; };
@@ -588,6 +590,7 @@
 		52CBC79828D9DEE700C89F20 /* Data Providers */ = {
 			isa = PBXGroup;
 			children = (
+				52B373FF2D818CBF001BE6F9 /* AppRegister.swift */,
 				52CBC79928D9DF1000C89F20 /* CloudKeyValueDataProvider.swift */,
 				52CBC79F28D9E01700C89F20 /* DataProviderProtocol.swift */,
 				52CBC7A528D9E1F000C89F20 /* InMemoryDataProvider.swift */,
@@ -1064,6 +1067,7 @@
 				525960862C63A27D004E1BB6 /* DaysLeftWidgetConfigurationIntent.swift in Sources */,
 				5240F1E528D9B6CB00B95FE5 /* AppSettingsDataManager.swift in Sources */,
 				52CBC7C928DB101600C89F20 /* InMemoryDataProvider.swift in Sources */,
+				52B374032D818CC4001BE6F9 /* AppRegister.swift in Sources */,
 				5234FDBE28E436730003515F /* AnimatedCircularProgressView.swift in Sources */,
 				52D617B124D06F9000465F4C /* MenuBuilder.swift in Sources */,
 				5240F1D028D8C1BC00B95FE5 /* Date+Helpers.swift in Sources */,

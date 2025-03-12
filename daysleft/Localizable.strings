@@ -33,6 +33,9 @@
 "Read how the app was built" = "Read how the app was built";
 "See the code on GitHub" = "See the code on GitHub";
 
+"Settings Register Header" = "App Options";
+"Settings Register Body" = "Launch automatically on Login";
+
 /* Accessibility values */
 "Open" = "Open";
 "App Version Number"= "App Version Number";

@@ -83,6 +83,19 @@ struct SettingsView: View {
                     }
             }
             
+            if model.canRegister {
+                Section {
+                    Text(LocalizedStringKey("Settings Register Header"))
+                        .font(.headline)
+                        .foregroundColor(Color("SettingsIconTint"))
+                        .listRowSeparator(.hidden)
+
+                    Toggle(LocalizedStringKey("Settings Register Body"), isOn: $model.isRegistered)
+                        .listRowSeparator(.hidden)
+                        .tint(Color("SettingsIconTint"))
+                }
+            }
+            
             Section(footer:
                         Text(self.model.versionNumber)
                             .accessibilityLabel("\(NSLocalizedString("App Version Number", comment: "")) \(self.model.versionNumber)")) {

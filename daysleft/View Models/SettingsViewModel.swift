@@ -35,6 +35,16 @@ class SettingsViewModel: ObservableObject {
     /// Data manager
     private let dataManager: AppSettingsDataManager
     
+    /// Is app registered
+    @Published var isRegistered: Bool {
+        didSet {
+            self.updateRegistered(register: self.isRegistered)
+        }
+    }
+    
+    /// Can app be registered
+    @Published private(set) var canRegister: Bool = false
+    
     /// App version number
     var versionNumber: String {
         let infoDictionary = Bundle.main
@@ -51,6 +61,9 @@ class SettingsViewModel: ObservableObject {
         self.dataManager = dataManager
         self.appSettings = self.dataManager.appSettings
         self.appControlSettings = self.dataManager.appControlSettings
+        
+        self.isRegistered = AppRegister.shared.isRegistered()
+        self.canRegister = AppRegister.shared.canRegister()
     }
     
     /// Update the start date
@@ -86,6 +99,14 @@ class SettingsViewModel: ObservableObject {
     func updateShowBadge(_ on: Bool) {
         self.dataManager.updateShowBadge(on)
         self.delegate?.badgeChanged()
+    }
+    
+    func updateRegistered(register: Bool) {
+        if register {
+            AppRegister.shared.register()
+        } else {
+            AppRegister.shared.unregister()
+        }
     }
     
     /// Open external URL
