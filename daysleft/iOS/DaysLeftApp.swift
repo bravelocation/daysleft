@@ -18,16 +18,32 @@ struct DaysLeftApp: App {
     /// App delegate
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
+    /// Scene phase environment variable
     @Environment(\.scenePhase) private var scenePhase
     
     /// Logger
     private let logger = Logger(subsystem: "com.bravelocation.daysleft.v2", category: "DaysLeftApp")
 
-
     /// App data manager
     let dataManager = AppSettingsDataManager()
     
+    /// Main view model
+    private var viewModel: DaysLeftViewModel
+    
+    /// Initialiser
     init() {
+        // If running UI tests or in the simulator, use the InMemoryDataProvider
+        #if DEBUG
+        if CommandLine.arguments.contains("-enable-ui-testing") || UIDevice.isSimulator {
+            self.viewModel = DaysLeftViewModel(dataManager: AppSettingsDataManager(dataProvider: InMemoryDataProvider.shared))
+        }
+        #endif
+        
+        self.viewModel = DaysLeftViewModel(dataManager: self.dataManager)
+        
+        // TODO: Set view model delegate
+        
+        
         // Setup TipKit
         try? Tips.configure([
             .displayFrequency(.daily)
@@ -60,16 +76,5 @@ struct DaysLeftApp: App {
                 self.logger.warning("Oh - interesting: I received an unexpected new value.")
             }
         }
-    }
-    
-    private var viewModel: DaysLeftViewModel {
-        // If running UI tests or in the simulator, use the InMemoryDataProvider
-        #if DEBUG
-        if CommandLine.arguments.contains("-enable-ui-testing") || UIDevice.isSimulator {
-            return DaysLeftViewModel(dataManager: AppSettingsDataManager(dataProvider: InMemoryDataProvider.shared))
-        }
-        #endif
-        
-        return DaysLeftViewModel(dataManager: self.dataManager)
     }
 }
