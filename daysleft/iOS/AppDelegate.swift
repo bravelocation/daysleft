@@ -16,7 +16,7 @@ import TipKit
 
 /// Application delegate for the app
 @MainActor
-@main class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate {
     
     /// Logger
     private let logger = Logger(subsystem: "com.bravelocation.daysleft.v2", category: "AppDelegate")
@@ -43,6 +43,16 @@ import TipKit
     /// Initialiser
     override init() {
         super.init()
+        
+        // Set nav bar for all views
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = UIColor(named: "MainAppColor")
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+        
+        UINavigationBar.appearance().standardAppearance = appearance
+        UINavigationBar.appearance().compactAppearance = appearance
+        UINavigationBar.appearance().scrollEdgeAppearance = appearance
         
         // Setup listener for iCloud setting change
         Task {
