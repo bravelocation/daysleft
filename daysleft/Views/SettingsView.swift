@@ -41,7 +41,7 @@ struct SettingsView: View {
                     .addClearButton(for: self.$title)
                     .textFieldStyle(.roundedBorder)
                     .listRowSeparator(.hidden)
-                    .onChange(of: title) { newValue, _ in
+                    .onChange(of: title) { _, newValue in
                         self.model.updateTitle(newValue)
                     }
 
@@ -49,7 +49,7 @@ struct SettingsView: View {
                     Text(LocalizedStringKey("From"))
                 }
                 .listRowSeparator(.hidden)
-                .onChange(of: start) { newValue, _ in
+                .onChange(of: start) { _, newValue in
                     self.model.updateStartDate(newValue)
                 }
 
@@ -57,14 +57,14 @@ struct SettingsView: View {
                     Text(LocalizedStringKey("To"))
                 }
                 .listRowSeparator(.hidden)
-                .onChange(of: end) { newValue, _ in
+                .onChange(of: end) { _, newValue in
                     self.model.updateEndDate(newValue)
                 }
 
                 Toggle(LocalizedStringKey("Weekdays only?"), isOn: $weekdaysOnly)
                     .listRowSeparator(.hidden)
                     .tint(Color("SettingsIconTint"))
-                    .onChange(of: weekdaysOnly) { newValue, _ in
+                    .onChange(of: weekdaysOnly) { _, newValue in
                         self.model.updateWeekdaysOnly(newValue)
                     }
             }
@@ -78,7 +78,7 @@ struct SettingsView: View {
                 Toggle(LocalizedStringKey("Show days left on app badge"), isOn: $showBadge)
                     .listRowSeparator(.hidden)
                     .tint(Color("SettingsIconTint"))
-                    .onChange(of: showBadge) { newValue, _ in
+                    .onChange(of: showBadge) { _, newValue in
                         self.model.updateShowBadge(newValue)
                     }
             }
