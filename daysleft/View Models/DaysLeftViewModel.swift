@@ -49,6 +49,7 @@ class DaysLeftViewModel: ObservableObject {
         // Setup listener for iCloud setting change
         let keyValueChangeSubscriber = NotificationCenter.default
             .publisher(for: .AppSettingsUpdated)
+            .receive(on: RunLoop.main)
             .sink { _ in
                 self.userSettingsUpdated()
             }

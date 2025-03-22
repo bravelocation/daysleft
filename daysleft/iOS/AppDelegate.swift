@@ -49,6 +49,7 @@ import TipKit
             await MainActor.run {
                 let keyValueChangeSubscriber = NotificationCenter.default
                     .publisher(for: .AppSettingsUpdated)
+                    .receive(on: RunLoop.main)
                     .sink { _ in
                         self.iCloudSettingsUpdated()
                     }
