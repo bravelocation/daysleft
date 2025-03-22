@@ -96,8 +96,10 @@ class CloudKeyValueDataProvider: DataProviderProtocol {
         // The write to iCloud store (if needed)
         self.writeSettingToiCloudStore(value, key: key)
         
-        // Send a notification for the view controllers to refresh
-        NotificationCenter.default.post(name: .AppSettingsUpdated, object: nil)
+        // Send a notification for the view controllers to refresh on main thread
+        DispatchQueue.main.async {
+            NotificationCenter.default.post(name: .AppSettingsUpdated, object: nil)
+        }
     }
     
     /// Synchronises data with the remote data store
@@ -159,8 +161,11 @@ class CloudKeyValueDataProvider: DataProviderProtocol {
                 
                 store.synchronize()
                 
-                // Finally send a notification for the view controllers to refresh
-                NotificationCenter.default.post(name: .AppSettingsUpdated, object: nil)
+                // Finally send a notification for the view controllers to refresh on main thread
+                DispatchQueue.main.async {
+                    NotificationCenter.default.post(name: .AppSettingsUpdated, object: nil)
+                }
+                
                 self.logger.debug("Sent notification for iCloud change")
             }
         } else {

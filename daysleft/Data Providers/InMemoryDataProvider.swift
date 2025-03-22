@@ -55,8 +55,10 @@ class InMemoryDataProvider: DataProviderProtocol {
     func writeObjectToStore<T>(_ value: T, key: String) {
         self.settingsCache[key] = value
         
-        // Send a notification for the view controllers to refresh
-        NotificationCenter.default.post(name: .AppSettingsUpdated, object: nil)
+        // Send a notification for the view controllers to refresh on main thread
+        DispatchQueue.main.async {
+            NotificationCenter.default.post(name: .AppSettingsUpdated, object: nil)
+        }
     }
     
     /// Synchronises data with the remote data store
