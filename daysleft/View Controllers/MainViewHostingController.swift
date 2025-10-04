@@ -78,19 +78,27 @@ class MainViewHostingController<Content: View>: UIHostingController<Content>, Vi
         super.viewDidLoad()
         
         // Customise the nav bar
+        var backgroundColor = UIColor(named: "MainAppColor") ?? UIColor.blue
+        var foregroundColor = UIColor.white
+        
+        if #available(iOS 26.0, *) {
+            backgroundColor = UIColor.clear
+            foregroundColor = UIColor(named: "SettingsIconTint")  ?? UIColor.blue
+        }
+        
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
-        appearance.backgroundColor = UIColor(named: "MainAppColor")
-        appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+        appearance.backgroundColor = backgroundColor
+        appearance.titleTextAttributes = [.foregroundColor: foregroundColor]
         
         self.navigationController?.navigationBar.standardAppearance = appearance
         self.navigationController?.navigationBar.scrollEdgeAppearance = self.navigationController?.navigationBar.standardAppearance
         
         let buttonAppearance = UIBarButtonItemAppearance(style: .plain)
-        buttonAppearance.normal.titleTextAttributes = [.foregroundColor: UIColor.white]
+        buttonAppearance.normal.titleTextAttributes = [.foregroundColor: foregroundColor]
         appearance.buttonAppearance = buttonAppearance
         
-        self.navigationController?.navigationBar.tintColor = UIColor.white
+        self.navigationController?.navigationBar.tintColor = foregroundColor
         
         // Setup handoff
         self.setupHandoff()

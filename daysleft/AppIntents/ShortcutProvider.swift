@@ -17,7 +17,7 @@ struct ShortcutsProvider: AppShortcutsProvider {
     static var appShortcuts: [AppShortcut] {
         AppShortcut(
             intent: DaysLeftAppIntent(),
-            phrases: ["How Many \(.applicationName)", "How many days left?"],
+            phrases: ["How Many \(.applicationName)"],
             shortTitle: "Days Left?",
             systemImageName: "calendar.circle"
         )
