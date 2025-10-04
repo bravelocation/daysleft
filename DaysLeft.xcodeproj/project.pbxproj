@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		520510992C63BB0A00BCBBE5 /* DaysLeftWidgetConfigurationIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525960852C63A27D004E1BB6 /* DaysLeftWidgetConfigurationIntent.swift */; };
 		5205109B2C63C7DE00BCBBE5 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5205109A2C63C7DE00BCBBE5 /* WidgetKit.framework */; };
+		521B20392E91134D007D4CF0 /* DaysLeftIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = 521B20382E91134D007D4CF0 /* DaysLeftIcon.icon */; };
+		521B203A2E91134D007D4CF0 /* DaysLeftIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = 521B20382E91134D007D4CF0 /* DaysLeftIcon.icon */; };
+		521B203B2E91134D007D4CF0 /* DaysLeftIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = 521B20382E91134D007D4CF0 /* DaysLeftIcon.icon */; };
+		521B203C2E91134D007D4CF0 /* DaysLeftIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = 521B20382E91134D007D4CF0 /* DaysLeftIcon.icon */; };
 		522D6ABC2C030F4600B64778 /* WidgetBackgroundModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522D6ABB2C030F4600B64778 /* WidgetBackgroundModifier.swift */; };
 		522D6ABD2C030F4600B64778 /* WidgetBackgroundModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522D6ABB2C030F4600B64778 /* WidgetBackgroundModifier.swift */; };
 		523443661BBAFBEF00E95BA4 /* DaysLeft WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 52B7E8811ABEDE9300E1949C /* DaysLeft WatchKit App.app */; platformFilter = ios; };
@@ -242,6 +246,7 @@
 /* Begin PBXFileReference section */
 		5205109A2C63C7DE00BCBBE5 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS11.0.sdk/System/Library/Frameworks/WidgetKit.framework; sourceTree = DEVELOPER_DIR; };
 		5208B84728D87679007BB75C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		521B20382E91134D007D4CF0 /* DaysLeftIcon.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = DaysLeftIcon.icon; sourceTree = "<group>"; };
 		522D6ABB2C030F4600B64778 /* WidgetBackgroundModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetBackgroundModifier.swift; sourceTree = "<group>"; };
 		5234436B1BBB00B800E95BA4 /* daysleft WatchKit App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "daysleft WatchKit App.entitlements"; sourceTree = "<group>"; };
 		5234436C1BBB181C00E95BA4 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
@@ -630,6 +635,7 @@
 				5208B83228D870F8007BB75C /* Assets */,
 				5208B83128D870BF007BB75C /* Data Managers */,
 				52CBC79828D9DEE700C89F20 /* Data Providers */,
+				521B20382E91134D007D4CF0 /* DaysLeftIcon.icon */,
 				5208B83528D871F4007BB75C /* iOS */,
 				5208B83628D87203007BB75C /* Mac */,
 				5240F1CE28D8C19E00B95FE5 /* Model Extensions */,
@@ -877,6 +883,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				52C03E432BD95553002E33D2 /* PrivacyInfo.xcprivacy in Resources */,
+				521B20392E91134D007D4CF0 /* DaysLeftIcon.icon in Resources */,
 				52A70D8228DC9E2800DCE9CB /* Media.xcassets in Resources */,
 				5234FDB028E2F6B20003515F /* Localizable.strings in Resources */,
 				5234FDBB28E3377E0003515F /* Colors.xcassets in Resources */,
@@ -890,6 +897,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5234FDAF28E2F6B20003515F /* Localizable.strings in Resources */,
+				521B203C2E91134D007D4CF0 /* DaysLeftIcon.icon in Resources */,
 				527FEA432BBE9F8B004BA03E /* PrivacyInfo.xcprivacy in Resources */,
 				5234FDB628E337500003515F /* Media.xcassets in Resources */,
 				5234FDBA28E3377E0003515F /* Colors.xcassets in Resources */,
@@ -905,6 +913,7 @@
 				52FAB11C1A9240490039691E /* DefaultPreferences.plist in Resources */,
 				527FEA422BBE9F8B004BA03E /* PrivacyInfo.xcprivacy in Resources */,
 				5234FDAD28E2F6B20003515F /* Localizable.strings in Resources */,
+				521B203A2E91134D007D4CF0 /* DaysLeftIcon.icon in Resources */,
 				52CFBF051A8B631B005234FB /* Media.xcassets in Resources */,
 				5234FDB828E3377E0003515F /* Colors.xcassets in Resources */,
 				5234FDB228E2F9B60003515F /* Localizable.stringsdict in Resources */,
@@ -918,6 +927,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				52C03E422BD95545002E33D2 /* PrivacyInfo.xcprivacy in Resources */,
+				521B203B2E91134D007D4CF0 /* DaysLeftIcon.icon in Resources */,
 				5234FDB928E3377E0003515F /* Colors.xcassets in Resources */,
 				52E048BD2507883A009A2169 /* Media.xcassets in Resources */,
 				5234FDB328E2F9B60003515F /* Localizable.stringsdict in Resources */,
