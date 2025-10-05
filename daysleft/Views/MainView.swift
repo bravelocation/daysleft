@@ -86,6 +86,7 @@ struct MainView: View {
                     )
                     .buttonStyle(PlainButtonStyle())
                     .accessibilityIdentifier("editButton")
+                    .fixedSize(horizontal: true, vertical: false)
             }
             
             ToolbarItem(placement: self.shareButtonPlacement) {
