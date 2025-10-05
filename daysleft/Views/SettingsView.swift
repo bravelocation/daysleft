@@ -107,7 +107,6 @@ struct SettingsView: View {
                                  url: "http://github.com/bravelocation/daysleft")
             }
         }
-        .frame(maxWidth: 800)
     }
 }
 

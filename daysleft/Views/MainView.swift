@@ -79,13 +79,14 @@ struct MainView: View {
                     },
                     label: {
                         Text(LocalizedStringKey("Toolbar Edit"))
-                            .foregroundColor(Color.white)
+                            .foregroundColor(Color(self.toolbarColor))
                     })
                     .popoverTip(
                         EditIntroTip()
                     )
                     .buttonStyle(PlainButtonStyle())
                     .accessibilityIdentifier("editButton")
+                    .fixedSize(horizontal: true, vertical: false)
             }
             
             ToolbarItem(placement: self.shareButtonPlacement) {
@@ -95,7 +96,7 @@ struct MainView: View {
                     },
                     label: {
                         Image(systemName: "square.and.arrow.up")
-                            .foregroundColor(Color.white)
+                            .foregroundColor(Color(self.toolbarColor))
                     })
                     .buttonStyle(PlainButtonStyle())
                     .accessibilityIdentifier("shareButton")
@@ -103,13 +104,26 @@ struct MainView: View {
             
             ToolbarItem(placement: .principal) {
                 Text(LocalizedStringKey("App Title"))
-                    .foregroundColor(Color.white)
+                    .foregroundColor(Color(self.toolbarColor))
             }
         }
     }
     
     private var shareButtonPlacement: ToolbarItemPlacement {
         return .topBarLeading
+    }
+    
+    private var toolbarColor: UIColor {
+        // Customise the nav bar
+        let blueColor = UIColor(named: "SettingsIconTint") ?? UIColor.blue
+        
+        var foregroundColor = UIColor.white
+        
+        if #available(iOS 26.0, *) {
+            foregroundColor = blueColor
+        }
+        
+        return foregroundColor
     }
 }
 

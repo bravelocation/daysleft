@@ -25,7 +25,7 @@ struct AccessoryCircularView: View {
         let gradientColors = [
             Color("MainAppColor"),
             Color("MainAppColor").opacity(0.5),
-            Color("LightAppColor"),
+            Color("LightAppColor")
         ]
         
         let gaugeGradient = Gradient(stops: [

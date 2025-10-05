@@ -95,6 +95,8 @@
 		52AF58382D6E037500F15EF0 /* EditIntroTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AF58342D6E037500F15EF0 /* EditIntroTip.swift */; };
 		52AF58392D6E037500F15EF0 /* EditIntroTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AF58342D6E037500F15EF0 /* EditIntroTip.swift */; };
 		52BC111B237C461C005EC3F7 /* WatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BC111A237C461C005EC3F7 /* WatchView.swift */; };
+		52BC14022E92611100096E95 /* DaysLeftIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = 52BC14012E92611100096E95 /* DaysLeftIcon.icon */; };
+		52BC14032E92611100096E95 /* DaysLeftIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = 52BC14012E92611100096E95 /* DaysLeftIcon.icon */; };
 		52C03E412BD94F7F002E33D2 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 52C03E402BD94F7F002E33D2 /* FirebaseMessaging */; };
 		52C03E422BD95545002E33D2 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 527FEA412BBE9F8B004BA03E /* PrivacyInfo.xcprivacy */; };
 		52C03E432BD95553002E33D2 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 527FEA412BBE9F8B004BA03E /* PrivacyInfo.xcprivacy */; };
@@ -285,6 +287,7 @@
 		52B7E8871ABEDE9300E1949C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52BC111A237C461C005EC3F7 /* WatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchView.swift; sourceTree = "<group>"; };
 		52BC111E237C4AD0005EC3F7 /* DaysLeftViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysLeftViewModel.swift; sourceTree = "<group>"; };
+		52BC14012E92611100096E95 /* DaysLeftIcon.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = DaysLeftIcon.icon; sourceTree = "<group>"; };
 		52C3524B28DCB2EC00D02445 /* DaysLeftWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysLeftWatchApp.swift; sourceTree = "<group>"; };
 		52C9A4A028E893D600F7EAF1 /* TextFieldClearButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldClearButton.swift; sourceTree = "<group>"; };
 		52CBC79928D9DF1000C89F20 /* CloudKeyValueDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKeyValueDataProvider.swift; sourceTree = "<group>"; };
@@ -399,6 +402,7 @@
 				52790F781D056F500025AF10 /* daysleft-Bridging-Header.h */,
 				52FAB11A1A923F500039691E /* daysleft.entitlements */,
 				525D88E52BE67E5600E94D86 /* daysleft-mac.entitlements */,
+				52BC14012E92611100096E95 /* DaysLeftIcon.icon */,
 				52FAB11B1A9240490039691E /* DefaultPreferences.plist */,
 				52DC9EB21FC97A3200AE02F6 /* GoogleService-Info.plist */,
 				52CFBEFC1A8B631B005234FB /* Info.plist */,
@@ -890,6 +894,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5234FDAF28E2F6B20003515F /* Localizable.strings in Resources */,
+				52BC14032E92611100096E95 /* DaysLeftIcon.icon in Resources */,
 				527FEA432BBE9F8B004BA03E /* PrivacyInfo.xcprivacy in Resources */,
 				5234FDB628E337500003515F /* Media.xcassets in Resources */,
 				5234FDBA28E3377E0003515F /* Colors.xcassets in Resources */,
@@ -905,6 +910,7 @@
 				52FAB11C1A9240490039691E /* DefaultPreferences.plist in Resources */,
 				527FEA422BBE9F8B004BA03E /* PrivacyInfo.xcprivacy in Resources */,
 				5234FDAD28E2F6B20003515F /* Localizable.strings in Resources */,
+				52BC14022E92611100096E95 /* DaysLeftIcon.icon in Resources */,
 				52CFBF051A8B631B005234FB /* Media.xcassets in Resources */,
 				5234FDB828E3377E0003515F /* Colors.xcassets in Resources */,
 				5234FDB228E2F9B60003515F /* Localizable.stringsdict in Resources */,
@@ -1205,7 +1211,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "-Wl,-no_warn_duplicate_libraries";
 				SDKROOT = iphoneos;
-				SHARED_VERSION_NUMBER = 6.2.3;
+				SHARED_VERSION_NUMBER = 7.0.0;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_STRICT_CONCURRENCY = complete;
@@ -1227,7 +1233,7 @@
 		525D88E82BE6824600E94D86 /* Release Mac */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = DaysLeftIcon;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = "daysleft/daysleft-mac.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1369,7 +1375,7 @@
 		525D88EB2BE6824600E94D86 /* Release Mac */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = DaysLeftIcon;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = "daysleft WatchKit App/daysleft WatchKit App.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
@@ -1422,7 +1428,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 467;
+				CURRENT_PROJECT_VERSION = 469;
 				DEPLOYMENT_POSTPROCESSING = YES;
 				DEVELOPMENT_TEAM = K7GD2Y4SFX;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -1472,7 +1478,7 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 467;
+				CURRENT_PROJECT_VERSION = 469;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = K7GD2Y4SFX;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -1554,7 +1560,7 @@
 				OTHER_LDFLAGS = "-Wl,-no_warn_duplicate_libraries";
 				OTHER_SWIFT_FLAGS = "";
 				SDKROOT = iphoneos;
-				SHARED_VERSION_NUMBER = 6.2.3;
+				SHARED_VERSION_NUMBER = 7.0.0;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_STRICT_CONCURRENCY = complete;
@@ -1575,7 +1581,7 @@
 		525D88EF2BE682B600E94D86 /* Debug Mac */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = DaysLeftIcon;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = "daysleft/daysleft-mac.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1725,7 +1731,7 @@
 		525D88F22BE682B600E94D86 /* Debug Mac */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = DaysLeftIcon;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = "daysleft WatchKit App/daysleft WatchKit App.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
@@ -1782,7 +1788,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 467;
+				CURRENT_PROJECT_VERSION = 469;
 				DEPLOYMENT_POSTPROCESSING = YES;
 				DEVELOPMENT_TEAM = K7GD2Y4SFX;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -1834,7 +1840,7 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 467;
+				CURRENT_PROJECT_VERSION = 469;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = K7GD2Y4SFX;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -1945,7 +1951,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 467;
+				CURRENT_PROJECT_VERSION = 469;
 				DEPLOYMENT_POSTPROCESSING = YES;
 				DEVELOPMENT_TEAM = K7GD2Y4SFX;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -2002,7 +2008,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 467;
+				CURRENT_PROJECT_VERSION = 469;
 				DEPLOYMENT_POSTPROCESSING = YES;
 				DEVELOPMENT_TEAM = K7GD2Y4SFX;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -2045,7 +2051,7 @@
 		52B7E8921ABEDE9300E1949C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = DaysLeftIcon;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = "daysleft WatchKit App/daysleft WatchKit App.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
@@ -2090,7 +2096,7 @@
 		52B7E8931ABEDE9300E1949C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = DaysLeftIcon;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = "daysleft WatchKit App/daysleft WatchKit App.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
@@ -2190,7 +2196,7 @@
 				OTHER_LDFLAGS = "-Wl,-no_warn_duplicate_libraries";
 				OTHER_SWIFT_FLAGS = "";
 				SDKROOT = iphoneos;
-				SHARED_VERSION_NUMBER = 6.2.3;
+				SHARED_VERSION_NUMBER = 7.0.0;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_STRICT_CONCURRENCY = complete;
@@ -2260,7 +2266,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "-Wl,-no_warn_duplicate_libraries";
 				SDKROOT = iphoneos;
-				SHARED_VERSION_NUMBER = 6.2.3;
+				SHARED_VERSION_NUMBER = 7.0.0;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_STRICT_CONCURRENCY = complete;
@@ -2282,7 +2288,7 @@
 		52CFBF181A8B631B005234FB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = DaysLeftIcon;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = daysleft/daysleft.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -2340,7 +2346,7 @@
 		52CFBF191A8B631B005234FB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = DaysLeftIcon;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = daysleft/daysleft.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -2507,7 +2513,7 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 467;
+				CURRENT_PROJECT_VERSION = 469;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = K7GD2Y4SFX;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -2539,7 +2545,7 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 467;
+				CURRENT_PROJECT_VERSION = 469;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = K7GD2Y4SFX;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
