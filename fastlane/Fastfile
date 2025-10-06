@@ -29,7 +29,7 @@ platform :ios do
       project: "DaysLeft.xcodeproj",
       scheme: "UI Tests",
       derived_data_path: "~/Library/Developer/Xcode/DerivedData",
-      devices: ["iPhone 8 Plus", "iPhone 11 Pro Max", "iPhone 15 Pro Max", "iPad Pro (12.9-inch) (6th generation)"],
+      devices: ["iPhone 17 Pro Max"],
       languages: ["en-US"],
       clear_previous_screenshots: true,
       cloned_source_packages_path: "SourcePackages",
@@ -41,7 +41,7 @@ platform :ios do
   lane :test do
     run_tests(
       project: "DaysLeft.xcodeproj",
-      device: "iPhone 15 Plus",
+      device: "iPhone 17 Pro Max",
       scheme: "DaysLeft",
       result_bundle: true,
       output_directory: "fastlane/test_output/Networking",
