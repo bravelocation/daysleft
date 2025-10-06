@@ -30,8 +30,7 @@ struct WidgetView: View {
                 .fixedSize(horizontal: false, vertical: true)
             
             CircularProgressView(
-                progress: self.model.displayValues.percentageDone,
-                lineWidth: widgetFamily == .systemSmall ? 10.0 : 16.0
+                progress: self.model.displayValues.percentageDone
             )
             .padding([.top, .bottom], widgetFamily == .systemSmall ? 10.0 : 16.0)
             
