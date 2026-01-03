@@ -5,7 +5,7 @@
 	<key>aps-environment</key>
 	<string>development</string>
 	<key>com.apple.developer.ubiquity-kvstore-identifier</key>
-	<string>$(TeamIdentifierPrefix)$(CFBundleIdentifier)</string>
+	<string>$(TeamIdentifierPrefix)com.bravelocation.daysleft.v2</string>
 	<key>com.apple.security.app-sandbox</key>
 	<true/>
 	<key>com.apple.security.network.client</key>
