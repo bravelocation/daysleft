@@ -13,7 +13,6 @@ struct CircularProgressView: View {
     /// Progress value - should be between 0.0 and 1.0
     let progress: Double
 
-    
     /// Body of view
     var body: some View {
         GeometryReader { geo in

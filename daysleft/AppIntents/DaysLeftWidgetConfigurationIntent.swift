@@ -14,8 +14,4 @@ struct DaysLeftWidgetConfigurationIntent: WidgetConfigurationIntent {
     static let description = IntentDescription("Configure Days Left")
     static let openAppWhenRun: Bool = false
     static let isDiscoverable: Bool = false
-
-    init() {
-       // Placeholder initialiser
-    }
 }

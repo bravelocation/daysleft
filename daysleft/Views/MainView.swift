@@ -102,6 +102,7 @@ struct MainView: View {
                         label: {
                             Image(systemName: "square.and.arrow.up")
                                 .foregroundColor(Color(self.toolbarColor))
+                                .accessibilityLabel(Text("Share"))
                         })
                     .buttonStyle(PlainButtonStyle())
                     .accessibilityIdentifier("shareButton")
@@ -140,3 +141,4 @@ struct MainView_Previews: PreviewProvider {
         MainView(model: DaysLeftViewModel(dataManager: AppSettingsDataManager(dataProvider: InMemoryDataProvider.shared)))
     }
 }
+

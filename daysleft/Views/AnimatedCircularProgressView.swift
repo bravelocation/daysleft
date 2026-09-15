@@ -15,7 +15,6 @@ struct AnimatedCircularProgressView: View {
     
     @ObservedObject var model: DaysLeftViewModel
 
-    
     /// Body of view
     var body: some View {
         CircularProgressView(progress: animatedProgress)
