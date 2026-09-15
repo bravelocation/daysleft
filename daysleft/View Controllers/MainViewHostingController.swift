@@ -11,9 +11,13 @@ import Foundation
 import Intents
 import SwiftUI
 import AppIntents
+import OSLog
 
 /// Main view hosting controller
 class MainViewHostingController<Content: View>: UIHostingController<Content>, ViewModelActionDelegate {
+
+    /// Logger
+    private let logger = Logger(subsystem: "com.bravelocation.daysleft.v2", category: "MainViewHostingController")
     
     /// Data manager
     private var dataManager: AppSettingsDataManager
@@ -153,14 +157,22 @@ class MainViewHostingController<Content: View>: UIHostingController<Content>, Vi
         IntentDonationManager.shared.donate(intent: DaysLeftWidgetConfigurationIntent())
         
         // Also update the relevance time for the length of the countdown
-        Task {
-           let relevantContext: RelevantContext = .date(from: self.dataManager.appSettings.start, to: self.dataManager.appSettings.end)
+        let startDate = self.dataManager.appSettings.start
+        let endDate = self.dataManager.appSettings.end
+        let logger = self.logger
+
+        Task { @MainActor in
+           let relevantContext: RelevantContext = .date(from: startDate, to: endDate)
            let relevantIntent = RelevantIntent(
                DaysLeftWidgetConfigurationIntent(),
                widgetKind: "DaysLeftWidget",
                relevance: relevantContext)
            
-            try await RelevantIntentManager.shared.updateRelevantIntents([relevantIntent])
+            do {
+                try await RelevantIntentManager.shared.updateRelevantIntents([relevantIntent])
+            } catch {
+                logger.error("Failed to update relevant intents: \(error.localizedDescription, privacy: .public)")
+            }
         }
     }
 }

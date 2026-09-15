@@ -135,19 +135,25 @@ import AppIntents
     // MARK: - Intent functions
     /// Donates app intent to help smart stack inteliigence for widget
     func donateIntent() {
-        if #available(watchOS 10, *) {
-            // Donate the widget intent to help smart stack intelligence
-            IntentDonationManager.shared.donate(intent: DaysLeftWidgetConfigurationIntent())
-            
-            // Also update the relevance time for the length of the countdown
-            Task {
-               let relevantContext: RelevantContext = .date(from: self.dataManager.appSettings.start, to: self.dataManager.appSettings.end)
-               let relevantIntent = RelevantIntent(
-                   DaysLeftWidgetConfigurationIntent(),
-                   widgetKind: "DaysLeftWidget",
-                   relevance: relevantContext)
-               
+        // Donate the widget intent to help smart stack intelligence
+        IntentDonationManager.shared.donate(intent: DaysLeftWidgetConfigurationIntent())
+        
+        // Also update the relevance time for the length of the countdown
+        let startDate = self.dataManager.appSettings.start
+        let endDate = self.dataManager.appSettings.end
+        let logger = self.logger
+
+        Task { @MainActor in
+           let relevantContext: RelevantContext = .date(from: startDate, to: endDate)
+           let relevantIntent = RelevantIntent(
+               DaysLeftWidgetConfigurationIntent(),
+               widgetKind: "DaysLeftWidget",
+               relevance: relevantContext)
+           
+            do {
                 try await RelevantIntentManager.shared.updateRelevantIntents([relevantIntent])
+            } catch {
+                logger.error("Failed to update relevant intents: \(error.localizedDescription, privacy: .public)")
             }
         }
     }

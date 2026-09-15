@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import WidgetKit
 
 /// View that switches between views based on the widget family
 struct WidgetSwitcherView: View {

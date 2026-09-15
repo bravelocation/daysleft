@@ -52,7 +52,7 @@ struct DaysLeftAppIntent: AppIntent, CustomIntentMigratedAppIntent {
         return .result(value: daysLeft,
                        dialog: IntentDialog(stringLiteral: spokenText)) {
             VStack(alignment: .center) {
-                CircularProgressView(progress: progress,)
+                CircularProgressView(progress: progress)
                     .padding([.top, .bottom], 16.0)
                     .frame(width: 100.0, height: 100.0)
                 

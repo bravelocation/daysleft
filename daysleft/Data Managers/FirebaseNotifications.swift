@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import FirebaseMessaging
 import OSLog
+import Combine
 
 /// Class to manage registering for remote notifications via Firebase
 class FirebaseNotifications: NSObject, MessagingDelegate {
@@ -37,10 +38,16 @@ class FirebaseNotifications: NSObject, MessagingDelegate {
     /// - Parameter forceSetup: Should we force a request for authorisation?
     func setupNotifications(_ forceSetup: Bool) {
         if forceSetup || self.enabled {
-            Task {
-                let granted = try await UNUserNotificationCenter.current().requestAuthorization(options: [.badge])
-                if granted {
-                    await UIApplication.shared.registerForRemoteNotifications()
+            let logger = self.logger
+
+            Task { @MainActor in
+                do {
+                    let granted = try await UNUserNotificationCenter.current().requestAuthorization(options: [.badge])
+                    if granted {
+                        UIApplication.shared.registerForRemoteNotifications()
+                    }
+                } catch {
+                    logger.error("Notification authorization failed: \(error.localizedDescription, privacy: .public)")
                 }
             }
         }

@@ -22,7 +22,7 @@ extension Notification.Name {
             return UIApplication.willEnterForegroundNotification
         #endif
         #if os(watchOS)
-            return WKExtension.applicationWillEnterForegroundNotification
+            return WKApplication.willEnterForegroundNotification
         #endif
     }
     

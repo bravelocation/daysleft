@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import WidgetKit
 
 /// View that switches view based on widget family
 struct WatchWidgetSwitcherView: View {

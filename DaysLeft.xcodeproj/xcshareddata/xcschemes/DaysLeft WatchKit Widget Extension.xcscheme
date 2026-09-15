@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1620"
+   LastUpgradeVersion = "2700"
    wasCreatedForAppExtension = "YES"
    version = "2.0">
    <BuildAction
@@ -88,7 +88,6 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "52A70D5C28DC98E100DCE9CB"
             BuildableName = "DaysLeft WatchKit Widget Extension.appex"
-            BlueprintName = "DaysLeft WatchKit Widget Extension"
             ReferencedContainer = "container:DaysLeft.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -131,7 +130,6 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "52A70D5C28DC98E100DCE9CB"
             BuildableName = "DaysLeft WatchKit Widget Extension.appex"
-            BlueprintName = "DaysLeft WatchKit Widget Extension"
             ReferencedContainer = "container:DaysLeft.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
