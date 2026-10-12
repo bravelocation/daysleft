@@ -32,7 +32,6 @@
 		5234FDB328E2F9B60003515F /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = 5234FDB128E2F9B60003515F /* Localizable.stringsdict */; };
 		5234FDB428E2F9B60003515F /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = 5234FDB128E2F9B60003515F /* Localizable.stringsdict */; };
 		5234FDB528E2F9B60003515F /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = 5234FDB128E2F9B60003515F /* Localizable.stringsdict */; };
-		5234FDB628E337500003515F /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52CFBF041A8B631B005234FB /* Media.xcassets */; };
 		5234FDB828E3377E0003515F /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5234FDB728E3377E0003515F /* Colors.xcassets */; };
 		5234FDB928E3377E0003515F /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5234FDB728E3377E0003515F /* Colors.xcassets */; };
 		5234FDBA28E3377E0003515F /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5234FDB728E3377E0003515F /* Colors.xcassets */; };
@@ -87,7 +86,6 @@
 		52A70D7D28DC9BEF00DCE9CB /* CloudKeyValueDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CBC79928D9DF1000C89F20 /* CloudKeyValueDataProvider.swift */; };
 		52A70D7E28DC9BF200DCE9CB /* DataProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CBC79F28D9E01700C89F20 /* DataProviderProtocol.swift */; };
 		52A70D7F28DC9BF400DCE9CB /* InMemoryDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CBC7A528D9E1F000C89F20 /* InMemoryDataProvider.swift */; };
-		52A70D8228DC9E2800DCE9CB /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52CFBF041A8B631B005234FB /* Media.xcassets */; };
 		52A70D8328DC9E5900DCE9CB /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CBC7BD28DAF84500C89F20 /* CircularProgressView.swift */; };
 		52A70D8428DC9EA600DCE9CB /* DaysLeftViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BC111E237C4AD0005EC3F7 /* DaysLeftViewModel.swift */; };
 		52AF58362D6E037500F15EF0 /* EditIntroTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AF58342D6E037500F15EF0 /* EditIntroTip.swift */; };
@@ -1212,7 +1210,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "-Wl,-no_warn_duplicate_libraries";
 				SDKROOT = iphoneos;
-				SHARED_VERSION_NUMBER = 8.0.0;
+				SHARED_VERSION_NUMBER = 8.1.0;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -1427,7 +1425,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 473;
+				CURRENT_PROJECT_VERSION = 474;
 				DEPLOYMENT_POSTPROCESSING = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -1477,7 +1475,7 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 473;
+				CURRENT_PROJECT_VERSION = 474;
 				DEAD_CODE_STRIPPING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1559,7 +1557,7 @@
 				OTHER_LDFLAGS = "-Wl,-no_warn_duplicate_libraries";
 				OTHER_SWIFT_FLAGS = "";
 				SDKROOT = iphoneos;
-				SHARED_VERSION_NUMBER = 8.0.0;
+				SHARED_VERSION_NUMBER = 8.1.0;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1785,7 +1783,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 473;
+				CURRENT_PROJECT_VERSION = 474;
 				DEPLOYMENT_POSTPROCESSING = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -1837,7 +1835,7 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 473;
+				CURRENT_PROJECT_VERSION = 474;
 				DEAD_CODE_STRIPPING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1945,7 +1943,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 473;
+				CURRENT_PROJECT_VERSION = 474;
 				DEPLOYMENT_POSTPROCESSING = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -2002,7 +2000,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 473;
+				CURRENT_PROJECT_VERSION = 474;
 				DEPLOYMENT_POSTPROCESSING = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -2191,7 +2189,7 @@
 				OTHER_LDFLAGS = "-Wl,-no_warn_duplicate_libraries";
 				OTHER_SWIFT_FLAGS = "";
 				SDKROOT = iphoneos;
-				SHARED_VERSION_NUMBER = 8.0.0;
+				SHARED_VERSION_NUMBER = 8.1.0;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -2263,7 +2261,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "-Wl,-no_warn_duplicate_libraries";
 				SDKROOT = iphoneos;
-				SHARED_VERSION_NUMBER = 8.0.0;
+				SHARED_VERSION_NUMBER = 8.1.0;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -2507,7 +2505,7 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 473;
+				CURRENT_PROJECT_VERSION = 474;
 				DEAD_CODE_STRIPPING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -2538,7 +2536,7 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 473;
+				CURRENT_PROJECT_VERSION = 474;
 				DEAD_CODE_STRIPPING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GENERATE_INFOPLIST_FILE = YES;

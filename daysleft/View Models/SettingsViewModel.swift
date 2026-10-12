@@ -15,7 +15,7 @@ import UIKit
 protocol SettingsActionDelegate: AnyObject {
     /// The badge toggle is changed
     func badgeChanged()
-    
+
     /// A data field is changed
     func dataUpdated()
 }

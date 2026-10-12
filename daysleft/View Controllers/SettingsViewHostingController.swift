@@ -91,7 +91,7 @@ class SettingsViewHostingController<Content: View>: UIHostingController<Content>
             appDelegate.registerForNotifications()
         }
     }
-    
+
     /// Event handler for when data changes
     func dataUpdated() {
         if let appDelegate = UIApplication.shared.delegate as? AppDelegate {

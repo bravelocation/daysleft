@@ -18,12 +18,15 @@ struct MainView: View {
         let progressHeightFraction = 2.5
         
         GeometryReader { geo in
+            let horizontalPadding = min(64.0, max(16.0, geo.size.width * 0.12))
+            let dayCountFontSize = min(72.0, max(40.0, geo.size.height * 0.12))
+
             ZStack(alignment: .center) {
                 VStack(alignment: .center) {
                     Spacer()
                     
                     Text("\(self.model.displayValues.daysLeft)")
-                        .font(.system(size: 72, weight: .bold, design: .default))
+                        .font(.system(size: dayCountFontSize, weight: .bold, design: .default))
                     
                     Text(self.model.displayValues.description)
                         .lineLimit(nil)
@@ -31,7 +34,7 @@ struct MainView: View {
                     
                     AnimatedCircularProgressView(model: self.model)
                         .padding([.top, .bottom], 16.0)
-                        .padding([.leading, .trailing], 64.0)
+                        .padding([.leading, .trailing], horizontalPadding)
                         .frame(maxWidth: geo.size.height / progressHeightFraction, maxHeight: geo.size.height / progressHeightFraction)
                         .id(geo.size.height) // Force a redraw when the screen height changes
                     
@@ -45,7 +48,7 @@ struct MainView: View {
                             .accessibilityLabel("\(NSLocalizedString("To", comment: "")) \(self.model.accessibilityDateFormatted(date: self.model.displayValues.end))")
                     }
                     .frame(maxWidth: 400.0)
-                    .padding([.leading, .trailing], 64.0)
+                    .padding([.leading, .trailing], horizontalPadding)
                     
                     AnimatedPercentageDone(percentageDone: self.model.displayValues.percentageDone)
                         .frame(height: 50.0)

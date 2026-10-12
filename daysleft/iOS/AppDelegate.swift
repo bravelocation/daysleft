@@ -23,9 +23,6 @@ import TipKit
 
     // MARK: Class properties
     
-    /// Main app window
-    var window: UIWindow?
-    
     /// Manager for Firebase notifications
     var firebaseNotifications: FirebaseNotifications?
     
@@ -55,6 +52,7 @@ import TipKit
                     }
                 
                 self.cancellables.append(keyValueChangeSubscriber)
+
             }
         }
         
@@ -103,7 +101,9 @@ import TipKit
 
         // Setup push notifications (if required) to ensure the badge gets updated
         UNUserNotificationCenter.current().delegate = self
-        self.firebaseNotifications?.setupNotifications(false)
+        self.firebaseNotifications?.setupNotifications(false) {
+            self.updateBadge()
+        }
         
         // Update any external info on app start
         self.updateExternalInformation()
@@ -131,20 +131,6 @@ import TipKit
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
         self.logger.debug("Device token for push notifications: FAIL -- ")
         self.logger.debug("\(error.localizedDescription)")
-    }
-    
-    /// Delegate method called when restoring a user activity i.e via handoff
-    /// - Parameters:
-    ///   - application: Current application
-    ///   - userActivity: User activity to restore
-    ///   - restorationHandler: Restoration handler
-    /// - Returns: True if has handled restoration
-    func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
-        if let window = self.window {
-            window.rootViewController?.restoreUserActivityState(userActivity)
-        }
-        
-        return true
     }
     
     /// Delegate called if the app receives a remote notification
@@ -208,8 +194,13 @@ extension AppDelegate: @preconcurrency UNUserNotificationCenterDelegate {
     /// Register for notifications and badge updates
     func registerForNotifications() {
         self.logger.debug("Registering notification settings")
-        self.firebaseNotifications?.setupNotifications(true)
-        self.updateBadge()
+        if self.dataManager.appControlSettings.showBadge {
+            self.firebaseNotifications?.setupNotifications(true) {
+                self.updateBadge()
+            }
+        } else {
+            self.updateBadge()
+        }
     }
     
     // MARK: - Badge functions
@@ -226,7 +217,6 @@ extension AppDelegate: @preconcurrency UNUserNotificationCenterDelegate {
             if settings.badgeSetting == .enabled {
                 DispatchQueue.main.async {
                     let now: Date = Date()
-                    
                     UNUserNotificationCenter.current().setBadgeCount(self.dataManager.appSettings.daysLeft(now))
                     self.logger.debug("Updated app badge to \(self.dataManager.appSettings.daysLeft(now))")
                 }

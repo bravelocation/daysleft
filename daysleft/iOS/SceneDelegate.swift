@@ -30,9 +30,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let navController = UINavigationController()
         navController.viewControllers = [mainViewController]
         window.rootViewController = navController
+
+        if let userActivity = connectionOptions.userActivities.first {
+            window.rootViewController?.restoreUserActivityState(userActivity)
+        }
         
         // Set window and make visible
         self.window = window
         window.makeKeyAndVisible()
+    }
+
+    /// Restores an activity in the scene that received it.
+    func scene(_ scene: UIScene, continue userActivity: NSUserActivity) {
+        self.window?.rootViewController?.restoreUserActivityState(userActivity)
     }
 }
