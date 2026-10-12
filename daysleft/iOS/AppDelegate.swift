@@ -23,9 +23,6 @@ import TipKit
 
     // MARK: Class properties
     
-    /// Main app window
-    var window: UIWindow?
-    
     /// Manager for Firebase notifications
     var firebaseNotifications: FirebaseNotifications?
     
@@ -55,6 +52,24 @@ import TipKit
                     }
                 
                 self.cancellables.append(keyValueChangeSubscriber)
+
+                let notificationRegistrationSubscriber = NotificationCenter.default
+                    .publisher(for: .registerForNotifications)
+                    .receive(on: RunLoop.main)
+                    .sink { _ in
+                        self.registerForNotifications()
+                    }
+
+                self.cancellables.append(notificationRegistrationSubscriber)
+
+                let foregroundSubscriber = NotificationCenter.default
+                    .publisher(for: UIApplication.willEnterForegroundNotification)
+                    .receive(on: RunLoop.main)
+                    .sink { _ in
+                        self.updateBadge()
+                    }
+
+                self.cancellables.append(foregroundSubscriber)
             }
         }
         
@@ -131,20 +146,6 @@ import TipKit
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
         self.logger.debug("Device token for push notifications: FAIL -- ")
         self.logger.debug("\(error.localizedDescription)")
-    }
-    
-    /// Delegate method called when restoring a user activity i.e via handoff
-    /// - Parameters:
-    ///   - application: Current application
-    ///   - userActivity: User activity to restore
-    ///   - restorationHandler: Restoration handler
-    /// - Returns: True if has handled restoration
-    func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
-        if let window = self.window {
-            window.rootViewController?.restoreUserActivityState(userActivity)
-        }
-        
-        return true
     }
     
     /// Delegate called if the app receives a remote notification

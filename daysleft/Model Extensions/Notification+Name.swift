@@ -28,6 +28,9 @@ extension Notification.Name {
     
     /// Name of the notification sent when app settings are updated
     static let AppSettingsUpdated = Notification.Name(rawValue: "UpdateSettingsNotification")
+
+    /// Name of the notification sent when the user enables app badge updates
+    static let registerForNotifications = Notification.Name("com.bravelocation.daysleft.v2.registerForNotifications")
     
     /// Notification sent when the edit command is called from the menu
     static let editCommand = Notification.Name("com.bravelocation.daysleft.v2.edit")

@@ -87,15 +87,6 @@ class SettingsViewHostingController<Content: View>: UIHostingController<Content>
     // MARK: - SettingsActionDelegate
     /// Event handler for when badge toggle changes
     func badgeChanged() {
-        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
-            appDelegate.registerForNotifications()
-        }
-    }
-    
-    /// Event handler for when data changes
-    func dataUpdated() {
-        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
-            appDelegate.updateExternalInformation()
-        }
+        NotificationCenter.default.post(name: .registerForNotifications, object: nil)
     }
 }
