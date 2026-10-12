@@ -144,4 +144,3 @@ struct MainView_Previews: PreviewProvider {
         MainView(model: DaysLeftViewModel(dataManager: AppSettingsDataManager(dataProvider: InMemoryDataProvider.shared)))
     }
 }
-
