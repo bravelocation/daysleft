@@ -53,23 +53,6 @@ import TipKit
                 
                 self.cancellables.append(keyValueChangeSubscriber)
 
-                let notificationRegistrationSubscriber = NotificationCenter.default
-                    .publisher(for: .registerForNotifications)
-                    .receive(on: RunLoop.main)
-                    .sink { _ in
-                        self.registerForNotifications()
-                    }
-
-                self.cancellables.append(notificationRegistrationSubscriber)
-
-                let foregroundSubscriber = NotificationCenter.default
-                    .publisher(for: UIApplication.willEnterForegroundNotification)
-                    .receive(on: RunLoop.main)
-                    .sink { _ in
-                        self.updateBadge()
-                    }
-
-                self.cancellables.append(foregroundSubscriber)
             }
         }
         
@@ -118,7 +101,9 @@ import TipKit
 
         // Setup push notifications (if required) to ensure the badge gets updated
         UNUserNotificationCenter.current().delegate = self
-        self.firebaseNotifications?.setupNotifications(false)
+        self.firebaseNotifications?.setupNotifications(false) {
+            self.updateBadge()
+        }
         
         // Update any external info on app start
         self.updateExternalInformation()
@@ -209,8 +194,13 @@ extension AppDelegate: @preconcurrency UNUserNotificationCenterDelegate {
     /// Register for notifications and badge updates
     func registerForNotifications() {
         self.logger.debug("Registering notification settings")
-        self.firebaseNotifications?.setupNotifications(true)
-        self.updateBadge()
+        if self.dataManager.appControlSettings.showBadge {
+            self.firebaseNotifications?.setupNotifications(true) {
+                self.updateBadge()
+            }
+        } else {
+            self.updateBadge()
+        }
     }
     
     // MARK: - Badge functions
@@ -227,7 +217,6 @@ extension AppDelegate: @preconcurrency UNUserNotificationCenterDelegate {
             if settings.badgeSetting == .enabled {
                 DispatchQueue.main.async {
                     let now: Date = Date()
-                    
                     UNUserNotificationCenter.current().setBadgeCount(self.dataManager.appSettings.daysLeft(now))
                     self.logger.debug("Updated app badge to \(self.dataManager.appSettings.daysLeft(now))")
                 }
