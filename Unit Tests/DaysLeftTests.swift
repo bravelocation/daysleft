@@ -91,6 +91,11 @@ class DaysLeftTests: XCTestCase {
         // If today is Sunday 4th, that's 0 days gone, 6 days to go
         self.actualTestRun(startDay: 4, endDay: 12, currentDay: 4, weekdaysOnly: true, expectedLength: 6, expectedGone: 0, expectedLeft: 6)
     }
+
+    func testWeekdaysRangeContainingOnlyWeekendHasNoWeekdays() {
+        // 3rd and 4th of Jan 2015 are Saturday and Sunday.
+        self.actualTestRun(startDay: 3, endDay: 4, currentDay: 3, weekdaysOnly: true, expectedLength: 0, expectedGone: 0, expectedLeft: 0)
+    }
     
     // swiftlint:disable:this function_parameter_count
     func actualTestRun(startDay: Int, endDay: Int, currentDay: Int, weekdaysOnly: Bool, expectedLength: Int, expectedGone: Int, expectedLeft: Int) {

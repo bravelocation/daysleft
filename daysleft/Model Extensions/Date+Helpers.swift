@@ -75,6 +75,12 @@ extension Date {
             // Sunday
             adjustedEndDate = startOfEndDate.addDays(-2)
         }
+
+        // A range contained entirely within a weekend has no weekdays. Return -1
+        // because callers add 1 for inclusive date ranges.
+        if adjustedEndDate < adjustedStartDate {
+            return -1
+        }
             
         let adjustedComponents: DateComponents = Calendar.current.dateComponents([.day], from: adjustedStartDate, to: adjustedEndDate)
             
